@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oxygen Bioinnovations | Precision Nutrition</title>
+
+    <!-- Preconnect and Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">OXYGEN<span>.</span></a>
+
+            <!-- Desktop Nav -->
+            <nav class="desktop-nav">
+                <a href="index.html">Home</a>
+                
+                <div class="nav-item has-mega">
+                    <a href="about.html">About Us <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                    <div class="mega-menu">
+                        <div class="mega-card">
+                            <div class="mega-icon">👥</div>
+                            <h4>Who is Oxygen?</h4>
+                            <p>Building India's first precision nutrition system.</p>
+                        </div>
+                        <div class="mega-links">
+                            <a href="about.html#about-vision">Vision & Mission</a>
+                            <a href="about.html#about-founder">Founder & Team</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-item has-mega">
+                    <a href="science.html">Our Science <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                    <div class="mega-menu">
+                        <div class="mega-card">
+                            <div class="mega-icon">🧪</div>
+                            <h4>Evidence-Based</h4>
+                            <p>Active forms, verified extracts, clinical proof.</p>
+                        </div>
+                        <div class="mega-links">
+                            <a href="problem.html">The Problem</a>
+                            <a href="ingredients.html">Ingredients Index</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="blog.html">Blog</a>
+                <a href="careers.html">Careers</a>
+                <a href="contact.html">Contact</a>
+                <a href="index.html#join" class="btn btn-primary" style="margin-left: 1rem;">Join Waitlist</a>
+            </nav>
+
+            <!-- Mobile Hamburger -->
+            <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Overlay & Menu -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <nav class="mobile-menu" id="mobileMenu">
+        <a href="index.html" class="menu-link">Home</a>
+        
+        <div style="width:100%;">
+            <a href="about.html" class="menu-link" style="margin-bottom:0;">About Us</a>
+            <div class="mobile-submenu">
+                <a href="about.html#about-vision" class="menu-link">Vision & Mission</a>
+                <a href="about.html#about-founder" class="menu-link">Founder & Team</a>
+            </div>
+        </div>
+
+        <div style="width:100%;">
+            <a href="science.html" class="menu-link" style="margin-bottom:0; margin-top:1rem;">Our Science</a>
+            <div class="mobile-submenu">
+                <a href="problem.html" class="menu-link">The Problem</a>
+                <a href="ingredients.html" class="menu-link">Ingredients Index</a>
+            </div>
+        </div>
+
+        <a href="blog.html" class="menu-link" style="margin-top:1rem;">Blog</a>
+        <a href="careers.html" class="menu-link">Careers</a>
+        <a href="contact.html" class="menu-link">Contact</a>
+        <a href="index.html#join" class="btn btn-primary menu-link">Join Waitlist</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <main><main>
+
+        <!-- Ingredients Hero Section -->
+        <section class="hero" id="ingredients-hero" style="min-height: 50vh; display: flex; align-items: center; padding-top: 100px;">
+            <div class="hero-glow"></div>
+            <div class="container hero-content" style="text-align: center;">
+                <div class="badge reveal" style="transition-delay: 0ms; margin: 0 auto 1.5rem;">Full Transparency</div>
+                <h1 class="reveal" style="transition-delay: 150ms;">
+                    Every ingredient.<br>
+                    <span style="color: var(--accent);">Every reason.</span>
+                </h1>
+                <p class="subtitle reveal" style="transition-delay: 300ms;" style="max-width: 650px; margin-left: auto; margin-right: auto;">
+                    Nothing in Oxygen is there by accident. Nothing is there for label appeal. Everything has peer-reviewed evidence for its inclusion.
+                </p>
+            </div>
+        </section>
+
+        <!-- Category Overview -->
+        <section id="categories" style="background: var(--bg); padding-top: 4rem; padding-bottom: 4rem;">
+            <div class="container">
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
+                    <a href="#millet-base" class="btn btn-outline" style="min-height: 40px; border-radius: 30px;">Millet Base</a>
+                    <a href="#mushroom-complex" class="btn btn-outline" style="min-height: 40px; border-radius: 30px;">Mushroom Complex</a>
+                    <a href="#adaptogens" class="btn btn-outline" style="min-height: 40px; border-radius: 30px;">Adaptogens</a>
+                    <a href="#cognitive-stack" class="btn btn-outline" style="min-height: 40px; border-radius: 30px;">Cognitive Stack</a>
+                    <a href="#performance-stack" class="btn btn-outline" style="min-height: 40px; border-radius: 30px;">Performance Stack</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ingredients Detail Section -->
+        <section id="ingredients-detail" style="padding-top: 5rem; padding-bottom: 5rem;">
+            <div class="container">
+                
+                <!-- Category 1: Millet Base -->
+                <div id="millet-base" class="reveal" style="margin-bottom: 5rem;">
+                    <h2 style="border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 2rem;">Millet Base</h2>
+                    <div style="display: grid; gap: 1.5rem;">
+                        <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; border: 1px solid var(--border);">
+                            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">Finger Millet (Ragi)</h3>
+                            <p style="font-style: italic; color: var(--text-muted); margin-bottom: 1rem;">"India's most nutritious forgotten grain"</p>
+                            <p>Sprouted & micro-milled flour. Standardized to 344mg calcium/100g.</p>
+                            <p style="margin-top: 0.5rem; font-weight: 600;">Dose: <span style="font-weight: normal;">8g (CORE)</span></p>
+                        </div>
+                        <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; border: 1px solid var(--border);">
+                            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">Pearl Millet (Bajra)</h3>
+                            <p style="font-style: italic; color: var(--text-muted); margin-bottom: 1rem;">"The iron-rich ancient grain of Rajasthan"</p>
+                            <p>Whole grain micro-milled flour. Standardized to 8mg iron/100g.</p>
+                            <p style="margin-top: 0.5rem; font-weight: 600;">Dose: <span style="font-weight: normal;">4g (CORE)</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 2: Mushroom Complex -->
+                <div id="mushroom-complex" class="reveal" style="margin-bottom: 5rem;">
+                    <h2 style="border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 2rem;">Mushroom Complex</h2>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                        <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; border: 1px solid var(--border);">
+                            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">Lion's Mane</h3>
+                            <p style="font-style: italic; color: var(--text-muted); margin-bottom: 1rem;">"The neurotrophic mushroom"</p>
+                            <p>Hot-water + ethanol dual extract (fruiting body). Standardized ≥30% β-glucan, ≥1% hericenones. Stimulates NGF.</p>
+                        </div>
+                        <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; border: 1px solid var(--border);">
+                            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">Cordyceps</h3>
+                            <p style="font-style: italic; color: var(--text-muted); margin-bottom: 1rem;">"The ATP production mushroom"</p>
+                            <p>Hot-water extract (fruiting body). Standardized ≥1% cordycepin. Enhances cellular ATP production.</p>
+                        </div>
+                        <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; border: 1px solid var(--border);">
+                            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">Reishi</h3>
+                            <p style="font-style: italic; color: var(--text-muted); margin-bottom: 1rem;">"The immune modulation mushroom"</p>
+                            <p>Dual extract (fruiting body). Standardized ≥30% polysaccharides, ≥2% triterpenes.</p>
+                        </div>
+                        <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; border: 1px solid var(--border);">
+                            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">Chaga</h3>
+                            <p style="font-style: italic; color: var(--text-muted); margin-bottom: 1rem;">"The antioxidant powerhouse"</p>
+                            <p>Hot-water extract. Standardized ≥30% polysaccharides.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 3: Adaptogens -->
+                <div id="adaptogens" class="reveal" style="margin-bottom: 5rem;">
+                    <h2 style="border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 2rem;">Adaptogens</h2>
+                    <div style="display: grid; gap: 1.5rem;">
+                        <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; border: 1px solid var(--border);">
+                            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">Ashwagandha KSM-66®</h3>
+                            <p style="font-style: italic; color: var(--text-muted); margin-bottom: 1rem;">"The stress adaptation root"</p>
+                            <p>Full-spectrum root extract. Standardized ≥5% withanolides.</p>
+                            <p style="margin-top: 0.5rem; font-weight: 600;">Dose: <span style="font-weight: normal;">600mg</span></p>
+                        </div>
+                        <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; border: 1px solid var(--border);">
+                            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">Moringa</h3>
+                            <p style="font-style: italic; color: var(--text-muted); margin-bottom: 1rem;">"The nutrient-dense Indian superfood"</p>
+                            <p>Shade-dried leaf powder. Standardized min 2% total flavonoids.</p>
+                            <p style="margin-top: 0.5rem; font-weight: 600;">Dose: <span style="font-weight: normal;">500mg</span></p>
+                        </div>
+                        <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; border: 1px solid var(--border);">
+                            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">Bacopa Monnieri</h3>
+                            <p style="font-style: italic; color: var(--text-muted); margin-bottom: 1rem;">"The Ayurvedic memory herb"</p>
+                            <p>Standardized extract ≥50% bacosides.</p>
+                            <p style="margin-top: 0.5rem; font-weight: 600;">Dose: <span style="font-weight: normal;">300mg</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 4: Cognitive & Performance Stack -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 3rem; margin-bottom: 5rem;">
+                    <div id="cognitive-stack" class="reveal">
+                        <h2 style="border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 2rem;">Cognitive Stack</h2>
+                        <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; border: 1px solid var(--border);">
+                            <h3 style="color: var(--accent); margin-bottom: 0.5rem;">L-Theanine</h3>
+                            <p style="font-style: italic; color: var(--text-muted); margin-bottom: 1rem;">"Calm focus without sedation"</p>
+                            <p>Pharmaceutical-grade L-Theanine ≥98% purity. Provides relaxed alertness when paired with caffeine.</p>
+                            <p style="margin-top: 0.5rem; font-weight: 600;">Dose: <span style="font-weight: normal;">200mg</span></p>
+                        </div>
+                    </div>
+
+                    <div id="performance-stack" class="reveal">
+                        <h2 style="border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 2rem;">Performance Stack</h2>
+                        <div style="display: grid; gap: 1.5rem;">
+                            <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; border: 1px solid var(--border);">
+                                <h3 style="color: var(--accent); margin-bottom: 0.5rem;">Creatine HCl</h3>
+                                <p style="font-style: italic; color: var(--text-muted); margin-bottom: 1rem;">"Strength and power, bioavailable form"</p>
+                                <p>38x more soluble than monohydrate, no loading phase. ≥99% purity.</p>
+                                <p style="margin-top: 0.5rem; font-weight: 600;">Dose: <span style="font-weight: normal;">2g</span></p>
+                            </div>
+                            <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; border: 1px solid var(--border);">
+                                <h3 style="color: var(--accent); margin-bottom: 0.5rem;">L-Citrulline</h3>
+                                <p style="font-style: italic; color: var(--text-muted); margin-bottom: 1rem;">"Blood flow and endurance amplifier"</p>
+                                <p>Free-form L-Citrulline for nitric oxide production. ≥99% purity.</p>
+                                <p style="margin-top: 0.5rem; font-weight: 600;">Dose: <span style="font-weight: normal;">3g</span></p>
+                            </div>
+                            <div style="background: var(--card-bg); padding: 2rem; border-radius: 12px; border: 1px solid var(--border);">
+                                <h3 style="color: var(--accent); margin-bottom: 0.5rem;">Kokum Extract</h3>
+                                <p style="font-style: italic; color: var(--text-muted); margin-bottom: 1rem;">"India's recovery fruit"</p>
+                                <p>Standardized fruit extract ≥10% garcinol potent anti-inflammatory.</p>
+                                <p style="margin-top: 0.5rem; font-weight: 600;">Dose: <span style="font-weight: normal;">500mg</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Note -->
+                <div class="reveal" style="background: var(--bg); padding: 3rem; border-radius: 12px; text-align: center; border-top: 4px solid var(--accent);">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--accent); margin-bottom: 1rem;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="9" x2="15" y2="15"></line><line x1="15" y1="9" x2="9" y2="15"></line></svg>
+                    <h3 style="margin-bottom: 1rem;">Full Certificate of Analysis for every batch</h3>
+                    <p style="color: var(--text-muted); max-width: 700px; margin: 0 auto; line-height: 1.6;">
+                        When we launch, every batch will have a publicly available CoA with third-party verified test results. Scan the QR code on any product to see the exact test report for your batch.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+</main>
+</main>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <a href="#" class="logo" style="font-size: 2rem; color: #fff;">OXYGEN<span
+                    style="color: var(--accent);">.</span></a>
+            <p>Ancient Ingredients. Modern Science. No Compromise. India's first precision nutrition system.</p>
+
+            <div class="footer-links">
+                <a href="about.html">About Us</a>
+                <a href="problem.html">The Problem</a>
+                <a href="index.html#products">Formulas</a>
+                <a href="science.html">Science</a>
+                <a href="blog.html">Blog</a>
+                <a href="careers.html">Careers</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div class="footer-bottom" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <div>&copy; <span id="year"></span> Oxygen Bioinnovations. All rights reserved.</div>
+                <div style="display: flex; gap: 1.5rem; font-size: 0.9rem;">
+                    <a href="privacy.html" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Privacy Policy</a>
+                    <a href="terms.html" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Sticky CTA -->
+    <div class="mobile-sticky-cta" id="mobileCta">
+        <a href="#join" class="btn btn-primary">Join the Waitlist</a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
