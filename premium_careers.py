@@ -1,126 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+import re
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oxygen Bioinnovations | Precision Nutrition. India's First.</title>
-    <meta name="description"
-        content="Ancient ingredients. Modern science. No compromise. India's first millet and mushroom-based precision nutrition system.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/styles.css">
-</head>
+with open('e:\\OXYBIO\\careers.html', 'r', encoding='utf-8') as f:
+    html = f.read()
 
-<body>
+# ── 1. Redesign Hero Section ──
+old_hero_start = html.find('<!-- ═══════════════════════════════════════════════════════\n     HERO SECTION')
+old_hero_end = html.find('<!-- ═══════════════════════════════════════════════════════\n     CURRENT OPENINGS')
 
-    <!-- ── Navigation ──────────────────────────────────────── -->
-    <header id="header">
-        <div class="container nav-container">
-            <a href="index.html" class="logo" style="font-size:1.2rem; letter-spacing:-0.5px;">Oxygen Bioinnovations</a>
-            <nav class="desktop-nav custom-nav-replaced">
-                <a href="index.html">Home</a>
-                
-                <div class="nav-item">
-                    <a href="about.html">About Us <svg width="12" height="12" viewBox="0 0 24 24" fill="none" class="nav-arrow" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
-                    <div class="mega-dropdown">
-                        <div class="mega-dropdown-inner">
-                            <div class="mega-feature">
-                                <div class="icon-wrap">
-                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
-                                </div>
-                                <h4>Who is Oxygen?</h4>
-                                <p>Building India's first precision nutrition system.</p>
-                            </div>
-                            <div class="mega-links-col">
-                                <a href="about.html#about-vision" class="mega-nav-link">
-                                    <span class="link-title">Vision & Mission</span>
-                                    <span class="link-desc">Why we started and where we are heading.</span>
-                                </a>
-                                <a href="about.html#about-founder" class="mega-nav-link">
-                                    <span class="link-title">Founder & Team</span>
-                                    <span class="link-desc">Meet the researchers and scientists behind the brand.</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="nav-item">
-                    <a href="science.html">Our Science <svg width="12" height="12" viewBox="0 0 24 24" fill="none" class="nav-arrow" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
-                    <div class="mega-dropdown">
-                        <div class="mega-dropdown-inner">
-                            <div class="mega-feature">
-                                <div class="icon-wrap">
-                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 2v7.31M14 9.31V2M8.5 2h7M14 9.31l6.5 11.17c.39.66-.08 1.5-.85 1.5H4.35c-.77 0-1.24-.84-.85-1.5L10 9.31M8.5 16.5h7"/></svg>
-                                </div>
-                                <h4>Evidence-Based</h4>
-                                <p>Active forms, verified extracts, and clinical proof.</p>
-                            </div>
-                            <div class="mega-links-col">
-                                <a href="problem.html" class="mega-nav-link">
-                                    <span class="link-title">The Problem</span>
-                                    <span class="link-desc">Understand the nutritional breakdown in urban India.</span>
-                                </a>
-                                <a href="ingredients.html" class="mega-nav-link">
-                                    <span class="link-title">Ingredients Index</span>
-                                    <span class="link-desc">Deep dive into every component of our formulations.</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <a href="blog.html">Blog</a>
-                <a href="careers.html">Careers</a>
-                <a href="contact.html">Contact</a>
-                <a href="index.html#join" class="btn btn-primary" style="margin-left: 1rem;">Join Waitlist</a>
-            </nav>
-            <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </header>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-overlay" id="mobileOverlay"></div>
-    <nav class="mobile-menu" id="mobileMenu">
-        <div class="mobile-menu-header">
-            <a href="index.html" class="logo" style="font-size:1.2rem; letter-spacing:-0.5px;">Oxygen Bioinnovations</a>
-            <button class="mobile-close" id="mobileClose" aria-label="Close">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
-        </div>
-        <a href="index.html" class="menu-link">Home</a>
-        <a href="about.html" class="menu-link">About Us</a>
-        <div class="mobile-submenu">
-            <a href="about.html#about-story" class="menu-link">Our Story</a>
-                <a href="about.html#about-vision" class="menu-link">Vision &amp; Mission</a>
-            <a href="about.html#about-who" class="menu-link">Who We Are</a>
-        </div>
-        <a href="science.html" class="menu-link">Our Science</a>
-        <div class="mobile-submenu">
-            <a href="problem.html" class="menu-link">The Problem</a>
-            <a href="ingredients.html" class="menu-link">Ingredients Index</a>
-        </div>
-        <a href="blog.html" class="menu-link">Blog</a>
-        <a href="careers.html" class="menu-link">Careers</a>
-        <a href="contact.html" class="menu-link">Contact</a>
-        <div class="mobile-cta">
-            <a href="#join" class="btn btn-primary" style="width:100%;justify-content:center;padding:1rem;">Join the
-                Waitlist</a>
-        </div>
-    </nav>
-
-    
-
-<main>
-
-<!-- ═══════════════════════════════════════════════════════
+NEW_HERO = '''<!-- ═══════════════════════════════════════════════════════
      PREMIUM HERO SECTION
 ════════════════════════════════════════════════════════ -->
 <section class="structure-section" style="padding-top:160px; padding-bottom:100px; background:var(--bg); border-bottom:1px solid var(--border); position:relative; overflow:hidden;">
@@ -140,7 +27,19 @@
     <div style="position:absolute; right:-10%; top:20%; width:600px; height:600px; border-radius:50%; border:1px dashed var(--border); opacity:0.5; pointer-events:none; z-index:1;"></div>
     <div style="position:absolute; right:5%; top:40%; width:300px; height:300px; border-radius:50%; border:1px solid var(--border); opacity:0.3; pointer-events:none; z-index:1;"></div>
 </section>
-<!-- ═══════════════════════════════════════════════════════
+'''
+
+if old_hero_start != -1 and old_hero_end != -1:
+    html = html[:old_hero_start] + NEW_HERO + html[old_hero_end:]
+    print("Hero updated.")
+
+
+# ── 2. Redesign Openings Section ──
+# Refresh content to find new boundaries
+old_openings_start = html.find('<!-- ═══════════════════════════════════════════════════════\n     CURRENT OPENINGS')
+old_openings_end = html.find('<!-- ═══════════════════════════════════════════════════════\n     STUDENT INTERNSHIP PORTAL')
+
+NEW_OPENINGS = '''<!-- ═══════════════════════════════════════════════════════
      PREMIUM CURRENT OPENINGS
 ════════════════════════════════════════════════════════ -->
 <section class="structure-section" style="background:var(--bg-alt); padding:var(--space-2xl) 0;">
@@ -207,7 +106,21 @@
 
     </div>
 </section>
-<!-- ═══════════════════════════════════════════════════════
+'''
+
+if old_openings_start != -1 and old_openings_end != -1:
+    html = html[:old_openings_start] + NEW_OPENINGS + html[old_openings_end:]
+    print("Openings updated.")
+
+
+# ── 3. Redesign Internship Section ──
+old_intern_start = html.find('<!-- ═══════════════════════════════════════════════════════\n     STUDENT INTERNSHIP PORTAL')
+old_intern_end = html.find('<!-- Site Footer -->')
+
+if old_intern_end == -1: # check alternative
+    old_intern_end = html.find('<!-- Mobile Sticky CTA -->')
+
+NEW_INTERNSHIP = '''<!-- ═══════════════════════════════════════════════════════
      PREMIUM INTERNSHIP PORTAL
 ════════════════════════════════════════════════════════ -->
 <section class="structure-section" style="background:var(--text-main); color:var(--bg); border-top:1px solid var(--border); padding:var(--space-2xl) 0;">
@@ -277,53 +190,15 @@
 
 </main>
     
-<!-- Site Footer -->
-    <footer class="site-footer">
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <h3>Oxygen Bioinnovations</h3>
-                <p>Precision nutrition for every ambitious Indian.<br><br>India's first honest precision nutrition system. Built on millet, mushrooms, and real science.</p>
-                <div class="footer-socials">
-                    <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
-                    <a href="#" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg></a>
-                    <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
-                </div>
-            </div>
-            
-            <div class="footer-column">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="science.html">Our Science</a></li>
-                    <li><a href="ingredients.html">Ingredients</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-column">
-                <h4>Get In Touch</h4>
-                <ul>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="careers.html">Careers</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-column">
-                <h4>Legal</h4>
-                <ul>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="terms.html">Terms & Conditions</a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
+'''
 
-    <!-- Mobile Sticky CTA -->
-    <div class="mobile-sticky-cta" id="mobileCta">
-        <a href="#join">Join the Waitlist →</a>
-    </div>
+# Find exactly where to end
+if old_intern_end != -1:
+    footer_start = html.find('<!-- Site Footer -->', old_intern_start)
+    if footer_start != -1:
+        html = html[:old_intern_start] + NEW_INTERNSHIP + html[footer_start:]
+        print("Internship updated.")
 
-    <script src="assets/js/main.js"></script>
-</body>
-
-</html>
+with open('e:\\OXYBIO\\careers.html', 'w', encoding='utf-8') as f:
+    f.write(html)
+print("careers.html saved.")
