@@ -38,7 +38,7 @@
                                     <span class="link-title">Vision & Mission</span>
                                     <span class="link-desc">Why we started and where we are heading.</span>
                                 </a>
-                                <a href="about.html#about-founder" class="mega-nav-link">
+                                <a href="about.html#about-who" class="mega-nav-link">
                                     <span class="link-title">Founder & Team</span>
                                     <span class="link-desc">Meet the researchers and scientists behind the brand.</span>
                                 </a>
@@ -135,82 +135,96 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════
-     LAYER 1: THE MARKET PROBLEM
+     LAYER 1: THE MARKET PROBLEM (Premium Interface)
 ════════════════════════════════════════════════════════ -->
-<section class="structure-section" style="background:var(--bg-alt); border-top:1px solid var(--border);">
-    <div class="container reveal">
-        <div style="display:grid; grid-template-columns:1fr 2fr; gap:var(--space-xl); align-items:start;" class="mobile-stack">
+<section class="structure-section" style="background:#0a0a0a; color:#fff; border-top:1px solid #333; padding-top:var(--space-2xl); padding-bottom:var(--space-2xl); overflow:hidden; position:relative;">
+    
+    <!-- Radar/Scan Grid Background -->
+    <div style="position:absolute; top:0; left:0; right:0; bottom:0; background-image: linear-gradient(#1a1a1a 1px, transparent 1px), linear-gradient(90deg, #1a1a1a 1px, transparent 1px); background-size: 40px 40px; opacity: 0.3; pointer-events:none;"></div>
+
+    <div class="container reveal" style="position:relative; z-index:2;">
+        
+        <div style="text-align:center; max-width:800px; margin:0 auto 5rem;">
+            <div style="display:inline-flex; align-items:center; gap:0.5rem; background:rgba(220,38,38,0.1); border:1px solid rgba(220,38,38,0.3); color:#ef4444; padding:0.5rem 1rem; border-radius:50px; font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.1em; margin-bottom:1.5rem;">
+                <span style="width:6px; height:6px; background:#ef4444; border-radius:50%; box-shadow:0 0 8px #ef4444;"></span> CRITICAL DIAGNOSTIC
+            </div>
+            <h2 style="font-family:var(--font-serif); font-size:clamp(3rem, 6vw, 4.5rem); line-height:1; letter-spacing:-0.03em; margin-bottom:1.5rem;">India's Hidden Crisis.</h2>
+            <p style="font-size:1.25rem; line-height:1.6; color:#a3a3a3;">These are not estimates. These are empirical measurements from the ICMR, WHO, and the National Family Health Survey. The urban Indian workforce is operating on empty.</p>
+        </div>
+
+        <!-- The Crisis Terminal -->
+        <div style="border:1px solid #333; background:rgba(10,10,10,0.8); backdrop-filter:blur(10px); border-radius:12px; overflow:hidden; box-shadow:0 20px 40px rgba(0,0,0,0.5);">
+            <!-- Terminal Header -->
+            <div style="display:flex; justify-content:space-between; align-items:center; padding:1rem 1.5rem; border-bottom:1px solid #333; background:#111;">
+                <div style="font-family:var(--font-mono); font-size:0.75rem; color:#666;">POPULATION_SCAN_V2.1</div>
+                <div style="display:flex; gap:0.5rem;">
+                    <span style="width:10px; height:10px; border-radius:50%; background:#333;"></span>
+                    <span style="width:10px; height:10px; border-radius:50%; background:#333;"></span>
+                    <span style="width:10px; height:10px; border-radius:50%; background:#dc2626; box-shadow:0 0 10px rgba(220,38,38,0.5);"></span>
+                </div>
+            </div>
+
+            <!-- Terminal Data Grid -->
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); border-bottom:1px solid #333;">
+                
+                <div style="padding:3rem; border-right:1px solid #333; position:relative;" class="mobile-no-border">
+                    <div style="position:absolute; top:2rem; right:2rem; font-family:var(--font-mono); color:#ef4444; opacity:0.3;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                    </div>
+                    <div class="data-num" data-target="85" data-suffix="%" style="font-size:4.5rem; letter-spacing:-0.05em; line-height:1; font-family:var(--font-sans); font-weight:800; color:#ef4444; margin-bottom:0.5rem;">85%</div>
+                    <h4 style="font-family:var(--font-serif); font-size:1.25rem; margin-bottom:0.5rem; color:#fff;">Vitamin D Deficient</h4>
+                    <p style="font-size:0.95rem; line-height:1.5; color:#888;">Urban professional baseline heavily compromised.</p>
+                    <div style="margin-top:2rem; height:2px; background:#222; width:100%; position:relative;">
+                        <div style="position:absolute; top:0; left:0; height:100%; background:#ef4444; width:85%;"></div>
+                    </div>
+                </div>
+
+                <div style="padding:3rem; border-right:1px solid #333; position:relative;" class="mobile-no-border">
+                    <div style="position:absolute; top:2rem; right:2rem; font-family:var(--font-mono); color:#ef4444; opacity:0.3;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+                    </div>
+                    <div class="data-num" data-target="47" data-suffix="%" style="font-size:4.5rem; letter-spacing:-0.05em; line-height:1; font-family:var(--font-sans); font-weight:800; color:#ef4444; margin-bottom:0.5rem;">47%</div>
+                    <h4 style="font-family:var(--font-serif); font-size:1.25rem; margin-bottom:0.5rem; color:#fff;">B12 Depleted</h4>
+                    <p style="font-size:0.95rem; line-height:1.5; color:#888;">Critical for neurological function. Epidemic in vegetarian diets.</p>
+                    <div style="margin-top:2rem; height:2px; background:#222; width:100%; position:relative;">
+                        <div style="position:absolute; top:0; left:0; height:100%; background:#ef4444; width:47%;"></div>
+                    </div>
+                </div>
+
+                <div style="padding:3rem; position:relative;">
+                    <div style="position:absolute; top:2rem; right:2rem; font-family:var(--font-mono); color:#ef4444; opacity:0.3;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                    </div>
+                    <div class="data-num" data-target="53" data-suffix="%" style="font-size:4.5rem; letter-spacing:-0.05em; line-height:1; font-family:var(--font-sans); font-weight:800; color:#ef4444; margin-bottom:0.5rem;">53%</div>
+                    <h4 style="font-family:var(--font-serif); font-size:1.25rem; margin-bottom:0.5rem; color:#fff;">Iron Malnourished</h4>
+                    <p style="font-size:0.95rem; line-height:1.5; color:#888;">Severe among working women. Drops cognitive output by 20%.</p>
+                    <div style="margin-top:2rem; height:2px; background:#222; width:100%; position:relative;">
+                        <div style="position:absolute; top:0; left:0; height:100%; background:#ef4444; width:53%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Terminal Footer / Impact -->
+            <div style="padding:3rem; background:linear-gradient(to right, rgba(220,38,38,0.05), transparent);">
+                <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:2rem;">
+                    <div style="max-width:600px;">
+                        <h4 style="font-family:var(--font-mono); font-size:0.85rem; letter-spacing:0.1em; color:#ef4444; margin-bottom:1rem; text-transform:uppercase;">Extrapolated Economic Impact</h4>
+                        <p style="font-size:1.25rem; line-height:1.6; color:#ccc; margin:0;">
+                            This nutritional gap physically alters brain function, causing chronic fatigue and brain fog. It costs the Indian GDP an estimated <strong>₹4.5 Lakh Crore</strong> annually in lost productivity.
+                        </p>
+                    </div>
+                    <div>
+                        <div style="font-family:var(--font-mono); font-size:0.75rem; color:#888; text-align:right;">
+                            SOURCES VERIFIED<br>
+                            ICMR, NFHS-5, WHO (2022)
+                        </div>
+                    </div>
+                </div>
+            </div>
             
-            <div style="position:sticky; top:120px;" class="flow-left">
-                <div class="section-label">
-                    <div class="section-label-line"></div>
-                    <span class="section-label-text">Layer 01</span>
-                </div>
-                <h2 class="headline" style="margin-top:var(--space-sm);">The Market Problem</h2>
-                <h3 style="font-family:var(--font-serif); font-size:var(--text-xl); line-height:var(--leading-relaxed); color:var(--text-main); margin-top:0.5rem;">India Has a Nutrition Crisis</h3>
-                <p class="subtext editorial-col" style="margin-top:var(--space-sm); font-size:1.05rem; color:var(--text-muted);">
-                    That nobody is talking about honestly. These are not estimates — these are ICMR, NFHS-5, and WHO measurements.
-                </p>
-            </div>
-
-            <div class="bento-grid">
-                <!-- Stats -->
-                <div class="bento-cell" style="grid-column: span 6; background:var(--bg);">
-                    <div class="data-num" data-target="90" data-suffix="%" style="font-size:var(--text-6xl); line-height:var(--leading-none); color:#DC2626;">70-90%</div>
-                    <div class="data-label" style="font-size:var(--text-base); font-weight:600; margin-top:0.5rem; line-height:var(--leading-snug);">Vitamin D Deficient (Urban Indians)</div>
-                    <div class="stat-bar-container" style="display:block; margin: 1rem 0;"><div class="stat-bar-fill" style="width: 85%; background:#DC2626;"></div></div>
-                    <p style="margin-top:var(--space-xs); font-family:var(--font-mono); font-size:0.75rem; color:var(--text-muted);">(Source: ICMR Task Force, 2022)</p>
-                </div>
-                <div class="bento-cell" style="grid-column: span 6; background:var(--bg);">
-                    <div class="data-num" data-target="47" data-suffix="%" style="font-size:var(--text-6xl); line-height:var(--leading-none); color:#DC2626;">47%</div>
-                    <div class="data-label" style="font-size:var(--text-base); font-weight:600; margin-top:0.5rem; line-height:var(--leading-snug);">B12 Deficient (Total population)</div>
-                    <div class="stat-bar-container" style="display:block; margin: 1rem 0;"><div class="stat-bar-fill" style="width: 47%; background:#DC2626;"></div></div>
-                    <p style="margin-top:var(--space-xs); font-family:var(--font-mono); font-size:0.75rem; color:var(--text-muted);">(Source: J. Nutritional Science)</p>
-                </div>
-                <div class="bento-cell" style="grid-column: span 6; background:var(--bg);">
-                    <div class="data-num" data-target="53" data-suffix="%" style="font-size:var(--text-6xl); line-height:var(--leading-none); color:#DC2626;">53%</div>
-                    <div class="data-label" style="font-size:var(--text-base); font-weight:600; margin-top:0.5rem; line-height:var(--leading-snug);">Iron Deficient (Working women)</div>
-                    <div class="stat-bar-container" style="display:block; margin: 1rem 0;"><div class="stat-bar-fill" style="width: 53%; background:#DC2626;"></div></div>
-                    <p style="margin-top:var(--space-xs); font-family:var(--font-mono); font-size:0.75rem; color:var(--text-muted);">(Source: NFHS-5)</p>
-                </div>
-                <div class="bento-cell" style="grid-column: span 6; background:var(--bg);">
-                    <div class="data-num" data-target="68" data-suffix="%" style="font-size:var(--text-6xl); line-height:var(--leading-none); color:#DC2626;">68%</div>
-                    <div class="data-label" style="font-size:var(--text-base); font-weight:600; margin-top:0.5rem; line-height:var(--leading-snug);">Multiple Deficiencies (Urban pros)</div>
-                    <div class="stat-bar-container" style="display:block; margin: 1rem 0;"><div class="stat-bar-fill" style="width: 68%; background:#DC2626;"></div></div>
-                    <p style="margin-top:var(--space-xs); font-family:var(--font-mono); font-size:0.75rem; color:var(--text-muted);">(Source: Recent clinical data)</p>
-                </div>
-
-                <!-- Consequences -->
-                <div class="bento-cell" style="grid-column: span 12; background:var(--text-main); color:var(--bg); padding:3rem 2rem;">
-                    <h4 style="font-family:var(--font-mono); font-size:0.85rem; color:#A3A3A3; margin-bottom:1.5rem; letter-spacing:0.1em;">THE CONSEQUENCES</h4>
-                    
-                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:2rem;">
-                        <div>
-                            <h5 style="font-family:var(--font-sans); font-size:1.125rem; font-weight:600; color:#fff; margin-bottom:0.5rem;">Cognitive Impact</h5>
-                            <p style="font-size:0.9rem; color:#ccc; line-height:1.5; margin-bottom:0.5rem;">Iron deficiency reduces cognitive performance by 15-20% in working adults.</p>
-                            <span style="font-family:var(--font-mono); font-size:0.7rem; color:#888;">Am J Clinical Nutrition</span>
-                        </div>
-                        <div>
-                            <h5 style="font-family:var(--font-sans); font-size:1.125rem; font-weight:600; color:#fff; margin-bottom:0.5rem;">Economic Impact</h5>
-                            <p style="font-size:0.9rem; color:#ccc; line-height:1.5; margin-bottom:0.5rem;">Nutritional deficiency costs India an estimated ₹4.5 lakh crore annually in lost productivity.</p>
-                            <span style="font-family:var(--font-mono); font-size:0.7rem; color:#888;">World Bank India Report</span>
-                        </div>
-                        <div>
-                            <h5 style="font-family:var(--font-sans); font-size:1.125rem; font-weight:600; color:#fff; margin-bottom:0.5rem;">Fatigue Burden</h5>
-                            <p style="font-size:0.9rem; color:#ccc; line-height:1.5; margin-bottom:0.5rem;">Chronic fatigue affects 38% of urban working population — directly tied to micronutrient gaps.</p>
-                            <span style="font-family:var(--font-mono); font-size:0.7rem; color:#888;">ASSOCHAM Survey</span>
-                        </div>
-                    </div>
-                    
-                    <div style="margin-top:2.5rem; padding-top:1.5rem; border-top:1px solid #333; text-align:center;">
-                        <span style="font-family:var(--font-serif); font-size:1.5rem; font-style:italic; color:#fff;">"This is a public health crisis hiding in plain sight."</span>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </section>
-
 <!-- ═══════════════════════════════════════════════════════
      LAYER 2: THE BEHAVIORAL PROBLEM
 ════════════════════════════════════════════════════════ -->
@@ -424,9 +438,9 @@
                 <h3>Oxygen Bioinnovations</h3>
                 <p>Precision nutrition for every ambitious Indian.<br><br>India's first honest precision nutrition system. Built on millet, mushrooms, and real science.</p>
                 <div class="footer-socials">
-                    <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
-                    <a href="#" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg></a>
-                    <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                    <a href="https://linkedin.com/company/oxygenbioinnovations" target="_blank" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                    <a href="https://twitter.com/oxygenbio" target="_blank" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg></a>
+                    <a href="https://instagram.com/oxygenbio" target="_blank" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
                 </div>
             </div>
             

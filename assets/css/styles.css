@@ -3512,3 +3512,17 @@ h1.display + .subtext {
 h1.display {
     padding-bottom: 0.5rem;
 }
+
+/* Premium Sub-page Enhancements */
+.premium-card-hover {
+    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+.premium-card-hover:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+.mobile-no-border { }
+@media(max-width: 768px) {
+    .mobile-no-border { border-right: none !important; border-bottom: 1px solid #333; }
+}

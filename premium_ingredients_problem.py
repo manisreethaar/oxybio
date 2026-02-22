@@ -1,149 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+import re
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oxygen Bioinnovations | Precision Nutrition. India's First.</title>
-    <meta name="description"
-        content="Ancient ingredients. Modern science. No compromise. India's first millet and mushroom-based precision nutrition system.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/styles.css">
-</head>
+# ──────────────────────────────────────────────────────────
+# 1. UPGRADE INGREDIENTS.HTML (Lab Formulary UI)
+# ──────────────────────────────────────────────────────────
+with open('e:\\OXYBIO\\ingredients.html', 'r', encoding='utf-8') as f:
+    ing_html = f.read()
 
-<body>
+old_ing_start = ing_html.find('<!-- ═══════════════════════════════════════════════════════\n     INGREDIENTS LIST (Bento Architecture)')
+old_ing_end = ing_html.find('<!-- ═══════════════════════════════════════════════════════\n     FOOTER NOTE (CoA)')
 
-    <!-- ── Navigation ──────────────────────────────────────── -->
-    <header id="header">
-        <div class="container nav-container">
-            <a href="index.html" class="logo" style="font-size:1.2rem; letter-spacing:-0.5px;">Oxygen Bioinnovations</a>
-            <nav class="desktop-nav custom-nav-replaced">
-                <a href="index.html">Home</a>
-                
-                <div class="nav-item">
-                    <a href="about.html">About Us <svg width="12" height="12" viewBox="0 0 24 24" fill="none" class="nav-arrow" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
-                    <div class="mega-dropdown">
-                        <div class="mega-dropdown-inner">
-                            <div class="mega-feature">
-                                <div class="icon-wrap">
-                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
-                                </div>
-                                <h4>Who is Oxygen?</h4>
-                                <p>Building India's first precision nutrition system.</p>
-                            </div>
-                            <div class="mega-links-col">
-                                <a href="about.html#about-vision" class="mega-nav-link">
-                                    <span class="link-title">Vision & Mission</span>
-                                    <span class="link-desc">Why we started and where we are heading.</span>
-                                </a>
-                                <a href="about.html#about-who" class="mega-nav-link">
-                                    <span class="link-title">Founder & Team</span>
-                                    <span class="link-desc">Meet the researchers and scientists behind the brand.</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="nav-item">
-                    <a href="science.html">Our Science <svg width="12" height="12" viewBox="0 0 24 24" fill="none" class="nav-arrow" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
-                    <div class="mega-dropdown">
-                        <div class="mega-dropdown-inner">
-                            <div class="mega-feature">
-                                <div class="icon-wrap">
-                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 2v7.31M14 9.31V2M8.5 2h7M14 9.31l6.5 11.17c.39.66-.08 1.5-.85 1.5H4.35c-.77 0-1.24-.84-.85-1.5L10 9.31M8.5 16.5h7"/></svg>
-                                </div>
-                                <h4>Evidence-Based</h4>
-                                <p>Active forms, verified extracts, and clinical proof.</p>
-                            </div>
-                            <div class="mega-links-col">
-                                <a href="problem.html" class="mega-nav-link">
-                                    <span class="link-title">The Problem</span>
-                                    <span class="link-desc">Understand the nutritional breakdown in urban India.</span>
-                                </a>
-                                <a href="ingredients.html" class="mega-nav-link">
-                                    <span class="link-title">Ingredients Index</span>
-                                    <span class="link-desc">Deep dive into every component of our formulations.</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <a href="blog.html">Blog</a>
-                <a href="careers.html">Careers</a>
-                <a href="contact.html">Contact</a>
-                <a href="index.html#join" class="btn btn-primary" style="margin-left: 1rem;">Join Waitlist</a>
-            </nav>
-            <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </header>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-overlay" id="mobileOverlay"></div>
-    <nav class="mobile-menu" id="mobileMenu">
-        <div class="mobile-menu-header">
-            <a href="index.html" class="logo" style="font-size:1.2rem; letter-spacing:-0.5px;">Oxygen Bioinnovations</a>
-            <button class="mobile-close" id="mobileClose" aria-label="Close">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
-        </div>
-        <a href="index.html" class="menu-link">Home</a>
-        <a href="about.html" class="menu-link">About Us</a>
-        <div class="mobile-submenu">
-            <a href="about.html#about-story" class="menu-link">Our Story</a>
-                <a href="about.html#about-vision" class="menu-link">Vision &amp; Mission</a>
-            <a href="about.html#about-who" class="menu-link">Who We Are</a>
-        </div>
-        <a href="science.html" class="menu-link">Our Science</a>
-        <div class="mobile-submenu">
-            <a href="problem.html" class="menu-link">The Problem</a>
-            <a href="ingredients.html" class="menu-link">Ingredients Index</a>
-        </div>
-        <a href="blog.html" class="menu-link">Blog</a>
-        <a href="careers.html" class="menu-link">Careers</a>
-        <a href="contact.html" class="menu-link">Contact</a>
-        <div class="mobile-cta">
-            <a href="#join" class="btn btn-primary" style="width:100%;justify-content:center;padding:1rem;">Join the
-                Waitlist</a>
-        </div>
-    </nav>
-
-    
-<main>
-
-<!-- ═══════════════════════════════════════════════════════
-     HERO SECTION
-════════════════════════════════════════════════════════ -->
-<section class="structure-section" style="padding-top:140px; border-bottom:none;">
-    <div class="container">
-        <div class="flow-left reveal" style="max-width:900px; margin-bottom:var(--space-xl);">
-            <div class="badge" style="margin-bottom:var(--space-md);">Full Transparency</div>
-            <h1 class="display" style="font-size:var(--text-6xl); line-height:var(--leading-none);">Every ingredient.<br><em>Every reason.</em></h1>
-            <p class="subtext editorial-col" style="margin-top:var(--space-md); font-size:var(--text-xl); line-height:var(--leading-relaxed);">
-                Nothing in Oxygen is there by accident. Nothing is there for label appeal. Everything has peer-reviewed evidence for its inclusion.
-            </p>
-        </div>
-        
-        <div style="font-family:var(--font-mono); font-size:0.85rem; color:var(--text-muted); display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:var(--space-md);">
-            <span>CATEGORIES:</span>
-            <a href="#millet" style="color:var(--text-main); text-decoration:none;">Millet Base</a> ·
-            <a href="#mushroom" style="color:var(--text-main); text-decoration:none;">Mushroom Complex</a> ·
-            <a href="#adaptogens" style="color:var(--text-main); text-decoration:none;">Adaptogens</a> ·
-            <a href="#cognitive" style="color:var(--text-main); text-decoration:none;">Cognitive Stack</a> ·
-            <a href="#performance" style="color:var(--text-main); text-decoration:none;">Performance Stack</a>
-        </div>
-    </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════
+NEW_INGREDIENTS = '''<!-- ═══════════════════════════════════════════════════════
      PREMIUM INGREDIENT FORMULARY
 ════════════════════════════════════════════════════════ -->
 <section class="structure-section" style="background:var(--text-main); color:var(--bg); border:none; padding-bottom:6rem; overflow:hidden; position:relative;">
@@ -259,7 +125,7 @@
                 <div style="background:#111; border:1px solid #333; border-radius:12px; padding:2.5rem; position:relative; overflow:hidden;" class="premium-card-hover">
                     <div style="font-family:var(--font-mono); font-size:0.75rem; color:#888; margin-bottom:1rem; border:1px solid #333; display:inline-block; padding:0.25rem 0.75rem; border-radius:20px;">IMMUNE MODULATION</div>
                     <h3 style="font-family:var(--font-serif); font-size:2rem; color:#fff; margin-bottom:0.5rem;">Reishi (Ganoderma)</h3>
-                    <p style="font-size:1.05rem; line-height:1.6; color:#aaa; margin-bottom:2rem;">The \"Mushroom of Immortality\". Heavy in triterpenes that modulate the immune system and promote deep, restorative calm without acting as a sedative.</p>
+                    <p style="font-size:1.05rem; line-height:1.6; color:#aaa; margin-bottom:2rem;">The \\"Mushroom of Immortality\\". Heavy in triterpenes that modulate the immune system and promote deep, restorative calm without acting as a sedative.</p>
                     
                     <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px dashed #333; padding-top:1.5rem;">
                         <div>
@@ -341,71 +207,144 @@
 
     </div>
 </section>
-<!-- ═══════════════════════════════════════════════════════
-     FOOTER NOTE (CoA)
+'''
+
+if old_ing_start != -1 and old_ing_end != -1:
+    ing_html = ing_html[:old_ing_start] + NEW_INGREDIENTS + ing_html[old_ing_end:]
+    with open('e:\\OXYBIO\\ingredients.html', 'w', encoding='utf-8') as f:
+        f.write(ing_html)
+    print("ingredients.html upgraded to premium dark formulary.")
+else:
+    print("Could not find ingredients boundaries.")
+
+
+# ──────────────────────────────────────────────────────────
+# 2. UPGRADE PROBLEM.HTML (Aesthetic Data Interface)
+# ──────────────────────────────────────────────────────────
+with open('e:\\OXYBIO\\problem.html', 'r', encoding='utf-8') as f:
+    prob_html = f.read()
+
+old_prob_start = prob_html.find('<!-- ═══════════════════════════════════════════════════════\n     LAYER 1: THE MARKET PROBLEM')
+old_prob_end = prob_html.find('<!-- ═══════════════════════════════════════════════════════\n     LAYER 2: THE BEHAVIORAL PROBLEM')
+
+NEW_PROBLEM = '''<!-- ═══════════════════════════════════════════════════════
+     LAYER 1: THE MARKET PROBLEM (Premium Interface)
 ════════════════════════════════════════════════════════ -->
-<section class="structure-section" style="background:var(--text-main); color:var(--bg); border:none;">
-    <div class="container" style="text-align:center; padding:var(--space-md) 0;">
-        <h4 style="font-family:var(--font-mono); font-size:0.85rem; color:#A3A3A3; margin-bottom:1rem; letter-spacing:0.1em;">THE OXYGEN GUARANTEE</h4>
-        <h2 style="font-family:var(--font-serif); font-size:2rem; margin-bottom:1rem; color:#fff;">Full Certificate of Analysis for every batch.</h2>
-        <p style="font-size:1.125rem; line-height:1.6; color:#ccc; max-width:600px; margin:0 auto;">
-            When we launch, every batch will have a publicly available CoA with third-party verified test results. Scan the QR code on any product to see the exact test report for your batch.
-        </p>
-    </div>
-</section>
-
-</main>
-</main>
-</main>
-
+<section class="structure-section" style="background:#0a0a0a; color:#fff; border-top:1px solid #333; padding-top:var(--space-2xl); padding-bottom:var(--space-2xl); overflow:hidden; position:relative;">
     
-    <!-- Site Footer -->
-    <footer class="site-footer">
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <h3>Oxygen Bioinnovations</h3>
-                <p>Precision nutrition for every ambitious Indian.<br><br>India's first honest precision nutrition system. Built on millet, mushrooms, and real science.</p>
-                <div class="footer-socials">
-                    <a href="https://linkedin.com/company/oxygenbioinnovations" target="_blank" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
-                    <a href="https://twitter.com/oxygenbio" target="_blank" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg></a>
-                    <a href="https://instagram.com/oxygenbio" target="_blank" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+    <!-- Radar/Scan Grid Background -->
+    <div style="position:absolute; top:0; left:0; right:0; bottom:0; background-image: linear-gradient(#1a1a1a 1px, transparent 1px), linear-gradient(90deg, #1a1a1a 1px, transparent 1px); background-size: 40px 40px; opacity: 0.3; pointer-events:none;"></div>
+
+    <div class="container reveal" style="position:relative; z-index:2;">
+        
+        <div style="text-align:center; max-width:800px; margin:0 auto 5rem;">
+            <div style="display:inline-flex; align-items:center; gap:0.5rem; background:rgba(220,38,38,0.1); border:1px solid rgba(220,38,38,0.3); color:#ef4444; padding:0.5rem 1rem; border-radius:50px; font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.1em; margin-bottom:1.5rem;">
+                <span style="width:6px; height:6px; background:#ef4444; border-radius:50%; box-shadow:0 0 8px #ef4444;"></span> CRITICAL DIAGNOSTIC
+            </div>
+            <h2 style="font-family:var(--font-serif); font-size:clamp(3rem, 6vw, 4.5rem); line-height:1; letter-spacing:-0.03em; margin-bottom:1.5rem;">India's Hidden Crisis.</h2>
+            <p style="font-size:1.25rem; line-height:1.6; color:#a3a3a3;">These are not estimates. These are empirical measurements from the ICMR, WHO, and the National Family Health Survey. The urban Indian workforce is operating on empty.</p>
+        </div>
+
+        <!-- The Crisis Terminal -->
+        <div style="border:1px solid #333; background:rgba(10,10,10,0.8); backdrop-filter:blur(10px); border-radius:12px; overflow:hidden; box-shadow:0 20px 40px rgba(0,0,0,0.5);">
+            <!-- Terminal Header -->
+            <div style="display:flex; justify-content:space-between; align-items:center; padding:1rem 1.5rem; border-bottom:1px solid #333; background:#111;">
+                <div style="font-family:var(--font-mono); font-size:0.75rem; color:#666;">POPULATION_SCAN_V2.1</div>
+                <div style="display:flex; gap:0.5rem;">
+                    <span style="width:10px; height:10px; border-radius:50%; background:#333;"></span>
+                    <span style="width:10px; height:10px; border-radius:50%; background:#333;"></span>
+                    <span style="width:10px; height:10px; border-radius:50%; background:#dc2626; box-shadow:0 0 10px rgba(220,38,38,0.5);"></span>
+                </div>
+            </div>
+
+            <!-- Terminal Data Grid -->
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); border-bottom:1px solid #333;">
+                
+                <div style="padding:3rem; border-right:1px solid #333; position:relative;" class="mobile-no-border">
+                    <div style="position:absolute; top:2rem; right:2rem; font-family:var(--font-mono); color:#ef4444; opacity:0.3;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                    </div>
+                    <div class="data-num" data-target="85" data-suffix="%" style="font-size:4.5rem; letter-spacing:-0.05em; line-height:1; font-family:var(--font-sans); font-weight:800; color:#ef4444; margin-bottom:0.5rem;">85%</div>
+                    <h4 style="font-family:var(--font-serif); font-size:1.25rem; margin-bottom:0.5rem; color:#fff;">Vitamin D Deficient</h4>
+                    <p style="font-size:0.95rem; line-height:1.5; color:#888;">Urban professional baseline heavily compromised.</p>
+                    <div style="margin-top:2rem; height:2px; background:#222; width:100%; position:relative;">
+                        <div style="position:absolute; top:0; left:0; height:100%; background:#ef4444; width:85%;"></div>
+                    </div>
+                </div>
+
+                <div style="padding:3rem; border-right:1px solid #333; position:relative;" class="mobile-no-border">
+                    <div style="position:absolute; top:2rem; right:2rem; font-family:var(--font-mono); color:#ef4444; opacity:0.3;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+                    </div>
+                    <div class="data-num" data-target="47" data-suffix="%" style="font-size:4.5rem; letter-spacing:-0.05em; line-height:1; font-family:var(--font-sans); font-weight:800; color:#ef4444; margin-bottom:0.5rem;">47%</div>
+                    <h4 style="font-family:var(--font-serif); font-size:1.25rem; margin-bottom:0.5rem; color:#fff;">B12 Depleted</h4>
+                    <p style="font-size:0.95rem; line-height:1.5; color:#888;">Critical for neurological function. Epidemic in vegetarian diets.</p>
+                    <div style="margin-top:2rem; height:2px; background:#222; width:100%; position:relative;">
+                        <div style="position:absolute; top:0; left:0; height:100%; background:#ef4444; width:47%;"></div>
+                    </div>
+                </div>
+
+                <div style="padding:3rem; position:relative;">
+                    <div style="position:absolute; top:2rem; right:2rem; font-family:var(--font-mono); color:#ef4444; opacity:0.3;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                    </div>
+                    <div class="data-num" data-target="53" data-suffix="%" style="font-size:4.5rem; letter-spacing:-0.05em; line-height:1; font-family:var(--font-sans); font-weight:800; color:#ef4444; margin-bottom:0.5rem;">53%</div>
+                    <h4 style="font-family:var(--font-serif); font-size:1.25rem; margin-bottom:0.5rem; color:#fff;">Iron Malnourished</h4>
+                    <p style="font-size:0.95rem; line-height:1.5; color:#888;">Severe among working women. Drops cognitive output by 20%.</p>
+                    <div style="margin-top:2rem; height:2px; background:#222; width:100%; position:relative;">
+                        <div style="position:absolute; top:0; left:0; height:100%; background:#ef4444; width:53%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Terminal Footer / Impact -->
+            <div style="padding:3rem; background:linear-gradient(to right, rgba(220,38,38,0.05), transparent);">
+                <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:2rem;">
+                    <div style="max-width:600px;">
+                        <h4 style="font-family:var(--font-mono); font-size:0.85rem; letter-spacing:0.1em; color:#ef4444; margin-bottom:1rem; text-transform:uppercase;">Extrapolated Economic Impact</h4>
+                        <p style="font-size:1.25rem; line-height:1.6; color:#ccc; margin:0;">
+                            This nutritional gap physically alters brain function, causing chronic fatigue and brain fog. It costs the Indian GDP an estimated <strong>₹4.5 Lakh Crore</strong> annually in lost productivity.
+                        </p>
+                    </div>
+                    <div>
+                        <div style="font-family:var(--font-mono); font-size:0.75rem; color:#888; text-align:right;">
+                            SOURCES VERIFIED<br>
+                            ICMR, NFHS-5, WHO (2022)
+                        </div>
+                    </div>
                 </div>
             </div>
             
-            <div class="footer-column">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="science.html">Our Science</a></li>
-                    <li><a href="ingredients.html">Ingredients</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-column">
-                <h4>Get In Touch</h4>
-                <ul>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="careers.html">Careers</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-column">
-                <h4>Legal</h4>
-                <ul>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="terms.html">Terms & Conditions</a></li>
-                </ul>
-            </div>
         </div>
-    </footer>
-
-    <!-- Mobile Sticky CTA -->
-    <div class="mobile-sticky-cta" id="mobileCta">
-        <a href="#join">Join the Waitlist →</a>
     </div>
+</section>
+'''
 
-    <script src="assets/js/main.js"></script>
-</body>
+if old_prob_start != -1 and old_prob_end != -1:
+    prob_html = prob_html[:old_prob_start] + NEW_PROBLEM + prob_html[old_prob_end:]
+    with open('e:\\OXYBIO\\problem.html', 'w', encoding='utf-8') as f:
+        f.write(prob_html)
+    print("problem.html upgraded to premium diagnostic terminal.")
+else:
+    print("Could not find problem boundaries.")
 
-</html>
+# Finally add a tiny CSS fix for the new premium card hover effect
+css_inject = """
+/* Premium Sub-page Enhancements */
+.premium-card-hover {
+    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+.premium-card-hover:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+.mobile-no-border { }
+@media(max-width: 768px) {
+    .mobile-no-border { border-right: none !important; border-bottom: 1px solid #333; }
+}
+"""
+
+with open('e:\\OXYBIO\\assets\\css\\styles.css', 'a', encoding='cp1252') as f:
+    f.write(css_inject)
+print("CSS updated for premium cards.")
