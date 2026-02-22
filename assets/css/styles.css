@@ -27,7 +27,8 @@
     --font-serif: 'Outfit', system-ui, sans-serif;
     /* Repurposing serif class for our geometric display font */
     --font-sans: 'Inter', system-ui, sans-serif;
-    --font-mono: 'Space Mono', monospace;
+    --font-mono: 'Outfit', system-ui, sans-serif;
+    /* Replaced Space Mono with Outfit for cleaner numbers */
     --ease: cubic-bezier(0.16, 1, 0.3, 1);
 
     /* Strict Spacing System */
@@ -1826,6 +1827,7 @@ a {
     max-width: 600px;
     color: var(--text-muted);
 }
+
 /* ── Structural Layout Engine (Bento Box & Asymmetrical) ─── */
 
 .structure-section {
@@ -1836,7 +1838,8 @@ a {
 .bento-grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    gap: 1px; /* Creates the strict border look */
+    gap: 1px;
+    /* Creates the strict border look */
     background: var(--border);
     border: 1px solid var(--border);
     margin-top: var(--space-lg);
@@ -1874,7 +1877,8 @@ a {
 }
 
 .editorial-col {
-    max-width: 65ch; /* strict readability width */
+    max-width: 65ch;
+    /* strict readability width */
 }
 
 /* Asymmetrical Left Flow */
