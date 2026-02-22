@@ -2795,3 +2795,122 @@ body {
     line-height: 1.5;
 }
 
+
+
+/* =========================================================
+   CORE VALUES — Indexed Editorial Rows (Premium)
+   ========================================================= */
+
+.values-list {
+    border-top: 1px solid var(--border);
+}
+
+.value-row {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    cursor: default;
+    transition: padding 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+}
+
+/* Full-bleed background wipe on hover */
+.value-row::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--text-main);
+    transform: translateX(-101%);
+    transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 0;
+    border-radius: 0;
+}
+
+.value-row:hover::before {
+    transform: translateX(0);
+}
+
+.value-row > * {
+    position: relative;
+    z-index: 1;
+}
+
+.value-index {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    transition: color 0.35s;
+}
+
+.value-row:hover .value-index {
+    color: rgba(255,255,255,0.4);
+}
+
+.value-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.value-name {
+    font-family: var(--font-serif);
+    font-size: var(--text-2xl);
+    font-weight: 800;
+    color: var(--text-main);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    transition: color 0.35s;
+}
+
+.value-row:hover .value-name {
+    color: #ffffff;
+}
+
+.value-desc {
+    font-size: 0.925rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    max-width: 550px;
+    transition: color 0.35s;
+}
+
+.value-row:hover .value-desc {
+    color: rgba(255,255,255,0.6);
+}
+
+.value-tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    padding: 0.4rem 0.85rem;
+    border-radius: 100px;
+    white-space: nowrap;
+    transition: all 0.35s;
+}
+
+.value-row:hover .value-tag {
+    color: rgba(255,255,255,0.7);
+    border-color: rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.07);
+}
+
+@media (max-width: 768px) {
+    .value-row {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    .value-tag {
+        display: none;
+    }
+}
+
