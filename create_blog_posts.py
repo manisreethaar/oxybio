@@ -1,0 +1,132 @@
+import os
+
+# Create base template
+base_template = '''<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title} | Oxygen Bioinnovations</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        .blog-content p {{ margin-bottom: 2rem; font-size: 1.15rem; line-height: 1.8; color: var(--text-main); }}
+        .blog-content h3 {{ font-family: var(--font-serif); font-size: 2rem; margin-top: 3.5rem; margin-bottom: 1.5rem; line-height: 1.3; }}
+        .blog-content blockquote {{ border-left: 4px solid var(--text-main); padding-left: 1.5rem; margin: 3rem 0; font-family: var(--font-serif); font-size: 1.5rem; line-height: 1.4; color: var(--text-muted); font-style: italic; }}
+    </style>
+</head>
+<body>
+    <header id="header" style="background:var(--bg); border-bottom:1px solid var(--border); box-shadow:none;">
+        <div class="container nav-container" style="display:flex; justify-content:space-between; align-items:center;">
+            <a href="index.html" class="logo">Oxygen Bioinnovations</a>
+            <a href="blog.html" class="btn btn-outline" style="border:1px solid var(--border); padding:0.5rem 1rem; font-size:0.85rem;">← Back to Journal</a>
+        </div>
+    </header>
+
+    <main>
+        <article class="structure-section" style="padding-top:140px; padding-bottom:100px;">
+            <div class="container" style="max-width:800px; margin:0 auto;">
+                <div style="font-family:var(--font-mono); font-size:var(--text-xs); color:var(--text-muted); display:flex; gap:1rem; margin-bottom:2rem; text-transform:uppercase;">
+                    <span>{date}</span> · <span>{author}</span> · <span>{read_time}</span>
+                </div>
+                <h1 class="display" style="font-size:clamp(2.5rem, 5vw, 4rem); line-height:1.1; margin-bottom:2rem; letter-spacing:-0.02em;">{heading}</h1>
+                
+                <p style="font-size:1.35rem; line-height:1.6; color:var(--text-main); font-weight:500; margin-bottom:3rem; padding-bottom:2.5rem; border-bottom:1px solid var(--border);">
+                    {lead}
+                </p>
+
+                <div class="blog-content">
+                    {content}
+                </div>
+            </div>
+        </article>
+        
+        <section class="structure-section" style="background:var(--bg-alt); text-align:center;">
+            <div class="container" style="max-width:600px;">
+                <h2 style="font-family:var(--font-serif); font-size:2rem; margin-bottom:1rem;">Follow our journey.</h2>
+                <p style="color:var(--text-muted); margin-bottom:2rem;">One honest update every week. No spam. No marketing.</p>
+                <form onsubmit="event.preventDefault(); alert('Subscribed');" style="display:flex; gap:0.5rem; max-width:400px; margin:0 auto;">
+                    <input type="email" required placeholder="Enter your email" style="flex:1; padding:0.75rem 1rem; border:1px solid var(--border); border-radius:4px;">
+                    <button type="submit" class="btn btn-primary" style="padding:0.75rem 1.5rem;">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer included via basic script or manual if needed. Leaving simple for now. -->
+</body>
+</html>'''
+
+# --- POST 1 ---
+blog1_content = '''<p>It was 3:00 AM on a Tuesday, and I was staring at a spreadsheet that fundamentally broke my understanding of the Indian health market. For weeks, I had been auditing the nutritional profiles of the top-selling protein powders, malt drinks, and daily supplements in the country.</p>
+<p>The numbers didn't make sense. Or rather, they made perfect commercial sense, but devastating biological sense.</p>
+<h3>The Illusion of Nutrition</h3>
+<p>As a science-driven founder, you are taught to look for inefficiencies in markets. But what I found wasn't just an inefficiency; it was a systemic compromise. The largest nutrition brands in India—brands our mothers trusted, brands endorsed by athletes—were overwhelmingly reliant on cheap, synthetic, poorly absorbed nutrient forms.</p>
+<p>Take Magnesium, for example. Over 70% of Indians are deficient. If you look at the back label of a leading health drink, you'll see Magnesium added. What you don't see is that it's Magnesium Oxide—a form with an absorption rate of around 4%. Your body flushes out the rest. You are paying for a label claim, not biological nourishment.</p>
+<blockquote>"We achieved incredible distribution scale in India. We just forgot to distribute actual science."</blockquote>
+<h3>The Turning Point</h3>
+<p>That night, the premise for Oxygen Bioinnovations was born. I didn't want to build another D2C brand playing the marketing arbitrage game on Instagram. I wanted to build a precision nutrition system designed specifically for the unique dietary constraints and genetic predispositions of the Indian population.</p>
+<p>We wouldn't use synthetic folic acid (which 40% of Indians struggle to convert due to MTHFR gene mutations); we would use active Methylfolate. We wouldn't use cheap oxides; we would use expensive, bioavailable bisglycinate chelates. We wouldn't build our foundation on maltodextrin; we would use ancient Indian grains like Finger Millet.</p>
+<p>It sounded like a great thesis. Then I started talking to contract manufacturers, and the real nightmare began.</p>'''
+
+with open('e:\\OXYBIO\\blog-origin.html', 'w', encoding='utf-8') as f:
+    f.write(base_template.format(
+        title="The 3 AM Realization",
+        date="Feb 01, 2026",
+        author="The Founder",
+        read_time="5 min read",
+        heading="The 3 AM Realization: Why India's Health Drink Market is Fundamentally Broken",
+        lead="The exact moment I realized that building a precision nutrition system wasn't just a business idea, but a moral imperative.",
+        content=blog1_content
+    ))
+
+# --- POST 2 ---
+blog2_content = '''<p>When you tell a standard dietary supplement manufacturer in India that you want to use TRAACS® chelated minerals, KSM-66® Ashwagandha, and Liposomal Vitamin C in a single formulation, they usually laugh at you.</p>
+<p>"Sir, the cost per serving will be 8x higher than the market standard," they tell me. "Indian consumers only care about the MRP. Just use Ascorbic Acid and Magnesium Sulfate. No one reads the ingredient list."</p>
+<h3>The Manufacturer Rejection Tour</h3>
+<p>For the first two months of Oxygen's existence, I went on what I now call the 'Manufacturer Rejection Tour'. I visited 14 different third-party manufacturing facilities across three states. Every single one of them pushed back on our formulation.</p>
+<p>They wanted to add maltodextrin as a filler. They wanted to use synthetic colors. They refused to run the low-heat processing required to keep our mushroom extracts bio-active. They were optimized for volume and margin, taking pride in blending cheap powders fast.</p>
+<blockquote>"If you want to build a cheap product, there are a thousand factories ready to serve you. If you want to build a perfect product, you have to build the lab yourself."</blockquote>
+<h3>Finding Refuge at TBI-ACE</h3>
+<p>I realized we couldn't rely on the existing ecosystem. If we wanted to build uncompromised science, we needed to own the research environment.</p>
+<p>That's when we pitched Oxygen to the Technology Business Incubator (TBI) at Adhiyamaan College of Engineering (ACE). We didn't pitch a consumer brand; we pitched a biotech formulation lab aiming to reverse-engineer Indian nutritional deficiencies.</p>
+<p>TBI-ACE understood the vision immediately. They gave us the lab space, the equipment, and the institutional backing we needed to begin primary R&D without being forced to compromise by commercial manufacturers.</p>
+<p>We spent the next six weeks sourcing raw materials from clinical-grade suppliers across the globe, bringing them back to Hosur, and beginning the agonizing process of taste-masking highly bitter active ingredients without using refined sugars. It was brutal, slow, and lonely. But it was ours.</p>'''
+
+with open('e:\\OXYBIO\\blog-bootstrapping.html', 'w', encoding='utf-8') as f:
+    f.write(base_template.format(
+        title="Bootstrapping Science",
+        date="Feb 10, 2026",
+        author="The Founder",
+        read_time="6 min read",
+        heading="Bootstrapping Science: Building an Evidence-Based Startup in a World of Marketing Gimmicks",
+        lead="How we navigated the early days of formulating Oxygen, rejecting cheap ingredients, and why we chose to start at a biotech incubator.",
+        content=blog2_content
+    ))
+
+# --- POST 3 ---
+blog3_content = '''<p>If there is one hill Oxygen Bioinnovations is willing to die on, it is bioavailability. And nothing exposes the hypocrisy of the supplement industry faster than minerals.</p>
+<h3>The Chemistry of Deception</h3>
+<p>Minerals are inorganic elements (like rock or metal). The human body is remarkably bad at absorbing them in their raw, elemental state. If you swallow a piece of iron ore, your body won't absorb it; you'll just excrete it.</p>
+<p>To trick the body into absorbing a mineral, it must be attached (bound) to an organic molecule. This process is called chelation. Different bonds yield wildly different absorption rates.</p>
+<p>90% of the supplements on pharmacy shelves use cheap, weak inorganic bonds—like Sulfates, Oxides, and Carbonates. Why? Because they cost pennies per kilo. When you consume Magnesium Oxide, your body absorbs roughly 4% of it. The remaining 96% travels to your bowels, pulling water with it, which is why cheap magnesium often causes a laxative effect.</p>
+<div style="background:var(--bg-alt); padding:2rem; border-left:4px solid var(--text-main); margin:3rem 0;">
+    <h4 style="font-family:var(--font-mono); text-transform:uppercase; font-size:0.85rem; margin-bottom:1rem; color:var(--text-muted);">The Oxygen Difference</h4>
+    <p style="margin:0; font-size:1.15rem; line-height:1.7;">At Oxygen, we exclusively use Amino Acid Chelates (like Bisglycinate). Here, the mineral is tightly bound to two molecules of the amino acid glycine. The body recognizes it as a protein, actively transporting it across the intestinal wall. The resulting absorption rate? Upwards of 28%—a 7x improvement.</p>
+</div>
+<h3>The Cost of Honesty</h3>
+<p>So why doesn't everyone use amino acid chelates? The math.</p>
+<p>A kilo of Magnesium Oxide costs about ₹150. A kilo of fully reacted Magnesium Bisglycinate Chelate costs upwards of ₹2,500. For a legacy brand operating on 80% gross margins to fund their celebrity TV commercials, that cost difference breaks their entire business model.</p>
+<p>As a startup, choosing the expensive, effective ingredient means our margins are terrifyingly thin right now. We cannot outspend our competitors on marketing. We can only out-formulate them, and trust that when people finally feel a product actually working, they won't go back to the cheap stuff.</p>'''
+
+with open('e:\\OXYBIO\\blog-minerals.html', 'w', encoding='utf-8') as f:
+    f.write(base_template.format(
+        title="The Chelated Mineral Protocol",
+        date="Feb 20, 2026",
+        author="Chief Science Officer",
+        read_time="7 min read",
+        heading="The Anatomy of Absorption: Why 90% of Supplements You Take Are Flushed Away",
+        lead="Chelation isn't a marketing buzzword. It's the fundamental chemistry process that determines whether your body actually uses the minerals you consume.",
+        content=blog3_content
+    ))
+print("Created individual blog pages.")
