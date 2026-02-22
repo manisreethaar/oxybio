@@ -1889,3 +1889,53 @@ a {
     max-width: 800px;
     padding-right: var(--space-xl);
 }
+/* -- Mobile Header & Hamburger Button ---------------------- */
+
+.menu-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 100;
+}
+
+.menu-btn span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--text-main);
+    margin: 5px 0;
+    transition: all 0.3s var(--ease);
+}
+
+@media (max-width: 900px) {
+    .desktop-nav {
+        display: none;
+    }
+    
+    .menu-btn {
+        display: block;
+    }
+}
+
+
+.mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(10, 10, 10, 0.4);
+    backdrop-filter: blur(4px);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.mobile-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
