@@ -4,36 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oxygen Bioinnovations | Precision Nutrition</title>
+    <title>Oxygen Bioinnovations | Precision Nutrition. India's First.</title>
+    <meta name="description"
+        content="Ancient ingredients. Modern science. No compromise. India's first millet and mushroom-based precision nutrition system — built in public.">
 
-    <!-- Preconnect and Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
 
-    <!-- Navigation -->
-    <header id="header">
+    <!-- ── Navigation ──────────────────────────────────────── -->
+    <header id="header" class="on-dark">
         <div class="container nav-container">
-            <a href="index.html" class="logo">OXYGEN<span>.</span></a>
+            <a href="index.html" class="logo light">OXYGEN<span>.</span></a>
 
-            <!-- Desktop Nav -->
             <nav class="desktop-nav">
                 <a href="index.html">Home</a>
-                
+
                 <div class="nav-item has-mega">
-                    <a href="about.html">About Us <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                    <a href="about.html">About Us <svg width="11" height="11" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg></a>
                     <div class="mega-menu">
                         <div class="mega-card">
                             <div class="mega-icon">👥</div>
-                            <h4>Who is Oxygen?</h4>
-                            <p>Building India's first precision nutrition system.</p>
+                            <h4>Who we are</h4>
+                            <p>Building India's first precision nutrition system</p>
                         </div>
                         <div class="mega-links">
                             <a href="about.html#about-vision">Vision & Mission</a>
@@ -43,7 +45,10 @@
                 </div>
 
                 <div class="nav-item has-mega">
-                    <a href="science.html">Our Science <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                    <a href="science.html">Our Science <svg width="11" height="11" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg></a>
                     <div class="mega-menu">
                         <div class="mega-card">
                             <div class="mega-icon">🧪</div>
@@ -60,1063 +65,751 @@
                 <a href="blog.html">Blog</a>
                 <a href="careers.html">Careers</a>
                 <a href="contact.html">Contact</a>
-                <a href="index.html#join" class="btn btn-primary" style="margin-left: 1rem;">Join Waitlist</a>
+                <a href="#join" class="btn btn-primary" style="margin-left:0.5rem;">Join Waitlist</a>
             </nav>
 
-            <!-- Mobile Hamburger -->
             <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
                 <span></span><span></span><span></span>
             </button>
         </div>
     </header>
 
-    <!-- Mobile Drawer Overlay & Menu -->
+    <!-- ── Mobile Menu ──────────────────────────────────────── -->
     <div class="mobile-overlay" id="mobileOverlay"></div>
     <nav class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <a href="index.html" class="logo">OXYGEN<span>.</span></a>
+            <button class="mobile-close" id="mobileClose" aria-label="Close menu">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+
         <a href="index.html" class="menu-link">Home</a>
-        
-        <div style="width:100%;">
-            <a href="about.html" class="menu-link" style="margin-bottom:0;">About Us</a>
-            <div class="mobile-submenu">
-                <a href="about.html#about-vision" class="menu-link">Vision & Mission</a>
-                <a href="about.html#about-founder" class="menu-link">Founder & Team</a>
-            </div>
+
+        <a href="about.html" class="menu-link">About Us</a>
+        <div class="mobile-submenu">
+            <a href="about.html#about-vision" class="menu-link">Vision & Mission</a>
+            <a href="about.html#about-founder" class="menu-link">Founder & Team</a>
         </div>
 
-        <div style="width:100%;">
-            <a href="science.html" class="menu-link" style="margin-bottom:0; margin-top:1rem;">Our Science</a>
-            <div class="mobile-submenu">
-                <a href="problem.html" class="menu-link">The Problem</a>
-                <a href="ingredients.html" class="menu-link">Ingredients Index</a>
-            </div>
+        <a href="science.html" class="menu-link">Our Science</a>
+        <div class="mobile-submenu">
+            <a href="problem.html" class="menu-link">The Problem</a>
+            <a href="ingredients.html" class="menu-link">Ingredients Index</a>
         </div>
 
-        <a href="blog.html" class="menu-link" style="margin-top:1rem;">Blog</a>
+        <a href="blog.html" class="menu-link">Blog</a>
         <a href="careers.html" class="menu-link">Careers</a>
         <a href="contact.html" class="menu-link">Contact</a>
-        <a href="index.html#join" class="btn btn-primary menu-link">Join Waitlist</a>
+
+        <div class="mobile-cta">
+            <a href="#join" class="btn btn-primary" style="width:100%;justify-content:center;padding:1rem;">Join the
+                Waitlist</a>
+        </div>
     </nav>
 
-    <!-- Hero Section -->
     <main>
-        <section class="hero" id="home">
-            <div class="hero-glow"></div>
-            <div class="container hero-content">
-                <div class="badge reveal" style="transition-delay: 0ms;">🌱 In Development &bull; TBI Incubated</div>
 
-                <h1 class="reveal" style="transition-delay: 150ms;">
-                    Ancient Ingredients.<br>
-                    Modern Science.<br>
-                    <span style="color: var(--accent);">No Compromise.</span>
+        <!-- ── HERO SECTION (DARK) ─────────────────────────────── -->
+        <section class="hero-dark" id="home">
+            <div class="hero-mesh" aria-hidden="true"></div>
+            <div class="hero-grid" aria-hidden="true"></div>
+
+            <div class="hero-content-wrap container">
+                <div class="hero-eyebrow reveal" style="transition-delay:0ms;">
+                    <div class="hero-eyebrow-line"></div>
+                    <span class="hero-eyebrow-text">Now in development · TBI, Hosur</span>
+                </div>
+
+                <h1 class="display-headline">
+                    <span class="reveal" style="display:block;transition-delay:80ms;">Nutrition that</span>
+                    <span class="reveal" style="display:block;transition-delay:160ms;"><em>actually</em> works.</span>
+                    <span class="reveal outline-text" style="display:block;transition-delay:240ms;">For India.</span>
                 </h1>
 
-                <p class="subtitle reveal" style="transition-delay: 300ms;">
-                    India is building its first precision nutrition system. Built on Millet, Medicinal Mushrooms, and
-                    decades of scientific research. Designed for ambitious Indians who deserve better than what
-                    currently exists.
+                <p class="hero-sub reveal" style="transition-delay:350ms;">
+                    India's first precision nutrition system built on millet, mushrooms, and adaptogens. Ancient wisdom.
+                    Modern bioavailability science. Zero compromise.
                 </p>
 
-                <div class="hero-cta reveal" style="transition-delay: 450ms;">
-                    <a href="#join" class="btn btn-primary">Join the Waitlist</a>
-                    <a href="#science" class="btn btn-outline">Read the Science</a>
+                <div class="hero-actions reveal" style="transition-delay:450ms;">
+                    <a href="#join" class="btn btn-primary" style="padding:0.9rem 2rem;font-size:1rem;">
+                        Join the Waitlist
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                    <a href="problem.html" class="btn btn-outline-white"
+                        style="padding:0.9rem 2rem;font-size:1rem;">Read the Science</a>
                 </div>
+            </div>
 
-                <div class="trust-checks reveal" style="transition-delay: 600ms;">
-                    <div class="check">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                            stroke-linecap="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                        TBI Incubated Startup
-                    </div>
-                    <div class="check">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                            stroke-linecap="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                        FSSAI Licensing In Progress
-                    </div>
-                    <div class="check">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                            stroke-linecap="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                        100% Indian Ingredients
-                    </div>
+            <!-- Floating stats bottom bar -->
+            <div class="hero-stat-bar">
+                <div class="hero-stat">
+                    <div class="hero-stat-num"><span data-target="73" data-suffix="%">0%</span></div>
+                    <div class="hero-stat-label">Urban Indians are Vitamin D deficient</div>
                 </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num"><span data-target="47" data-suffix="%">0%</span></div>
+                    <div class="hero-stat-label">of Indian women have iron deficiency</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num"><span data-target="28" data-suffix="×">0×</span></div>
+                    <div class="hero-stat-label">better mineral absorption with chelation</div>
+                </div>
+            </div>
+
+            <!-- Scroll indicator -->
+            <div class="hero-scroll-indicator" aria-hidden="true">
+                <div class="scroll-line"></div>
+                <span class="scroll-text">Scroll</span>
             </div>
         </section>
 
-        <!-- Trust Bar -->
-        <div class="trust-bar reveal">
-            <div class="marquee">
-                <!-- Group 1 -->
-                <div class="marquee-item"><span></span> TBI Incubated Startup</div>
-                <div class="marquee-item"><span></span> Science-First Formulation</div>
-                <div class="marquee-item"><span></span> FSSAI Licensing In Progress</div>
-                <div class="marquee-item"><span></span> 100% Indian Ingredients</div>
-                <div class="marquee-item"><span></span> Third-Party Testing Planned</div>
-                <div class="marquee-item"><span></span> Zero Artificial Ingredients</div>
-                <div class="marquee-item"><span></span> Clinical Study Protocol Ready</div>
-                <div class="marquee-item"><span></span> Peer-Reviewed Formulation</div>
-                <!-- Group 2 (Clone for infinite scroll) -->
-                <div class="marquee-item"><span></span> TBI Incubated Startup</div>
-                <div class="marquee-item"><span></span> Science-First Formulation</div>
-                <div class="marquee-item"><span></span> FSSAI Licensing In Progress</div>
-                <div class="marquee-item"><span></span> 100% Indian Ingredients</div>
-                <div class="marquee-item"><span></span> Third-Party Testing Planned</div>
-                <div class="marquee-item"><span></span> Zero Artificial Ingredients</div>
-                <div class="marquee-item"><span></span> Clinical Study Protocol Ready</div>
-                <div class="marquee-item"><span></span> Peer-Reviewed Formulation</div>
+        <!-- ── MARQUEE TICKER ───────────────────────────────────── -->
+        <div class="marquee-section" role="marquee" aria-label="Product claims">
+            <div class="marquee-track">
+                <!-- Duplicate the items for seamless loop -->
+                <span class="marquee-item">Chelated Minerals <span class="marquee-dot"></span></span>
+                <span class="marquee-item">Lion's Mane Extract <span class="marquee-dot"></span></span>
+                <span class="marquee-item">Ragi Millet Base <span class="marquee-dot"></span></span>
+                <span class="marquee-item">MTHFR-Safe Methylfolate <span class="marquee-dot"></span></span>
+                <span class="marquee-item">Clinically Tested Formula <span class="marquee-dot"></span></span>
+                <span class="marquee-item">No Artificial Sweeteners <span class="marquee-dot"></span></span>
+                <span class="marquee-item">FSSAI Compliant <span class="marquee-dot"></span></span>
+                <span class="marquee-item">CoA for every batch <span class="marquee-dot"></span></span>
+                <span class="marquee-item">Reishi & Cordyceps <span class="marquee-dot"></span></span>
+                <span class="marquee-item">KSM-66 Ashwagandha <span class="marquee-dot"></span></span>
+                <!-- Duplicate for loop -->
+                <span class="marquee-item">Chelated Minerals <span class="marquee-dot"></span></span>
+                <span class="marquee-item">Lion's Mane Extract <span class="marquee-dot"></span></span>
+                <span class="marquee-item">Ragi Millet Base <span class="marquee-dot"></span></span>
+                <span class="marquee-item">MTHFR-Safe Methylfolate <span class="marquee-dot"></span></span>
+                <span class="marquee-item">Clinically Tested Formula <span class="marquee-dot"></span></span>
+                <span class="marquee-item">No Artificial Sweeteners <span class="marquee-dot"></span></span>
+                <span class="marquee-item">FSSAI Compliant <span class="marquee-dot"></span></span>
+                <span class="marquee-item">CoA for every batch <span class="marquee-dot"></span></span>
+                <span class="marquee-item">Reishi & Cordyceps <span class="marquee-dot"></span></span>
+                <span class="marquee-item">KSM-66 Ashwagandha <span class="marquee-dot"></span></span>
             </div>
         </div>
 
-        <!-- The Problem Section -->
-        <section id="problem">
+        <!-- ── THE PROBLEM (DARK) ──────────────────────────────── -->
+        <section class="problem-section" id="problem">
             <div class="container">
-                <div class="section-header reveal">
-                    <h2>You are probably nutritionally <span style="color: #E11D48;">deficient.</span></h2>
-                    <p style="font-size: 1.125rem; margin-top: 1rem;">Not because you are careless. Because modern
-                        Indian life makes proper nutrition almost impossible.</p>
+                <div class="section-label on-dark reveal">
+                    <div class="section-label-line"></div>
+                    <span class="section-label-text">The Problem We're Solving</span>
                 </div>
 
-                <div class="stat-grid">
-                    <article class="stat-card reveal">
-                        <div class="stat-number" data-target="73">0</div><span
-                            style="font-size: 2rem; font-weight: 800; color: var(--accent); position: relative; top: -10px;">%</span>
-                        <div class="stat-label">Vitamin D Deficient</div>
-                        <div class="stat-source">Source: ICMR National Nutrition Survey</div>
-                    </article>
-                    <article class="stat-card reveal" style="transition-delay: 100ms;">
-                        <div class="stat-number" data-target="50">0</div><span
-                            style="font-size: 2rem; font-weight: 800; color: var(--accent); position: relative; top: -10px;">%</span>
-                        <div class="stat-label">Skip ≥1 Meal/Day</div>
-                        <div class="stat-source">Source: ASSOCHAM Health Survey</div>
-                    </article>
-                    <article class="stat-card reveal" style="transition-delay: 200ms;">
-                        <div class="stat-number" data-target="68">0</div><span
-                            style="font-size: 2rem; font-weight: 800; color: var(--accent); position: relative; top: -10px;">%</span>
-                        <div class="stat-label">Fail Label Claims</div>
-                        <div class="stat-source">Source: CSE Report 2023</div>
-                    </article>
-                </div>
-
-                <div class="cards-grid">
-                    <article class="problem-card reveal">
-                        <div class="card-icon">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <polyline points="12 6 12 12 16 14"></polyline>
-                            </svg>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-top:2rem;">
+                    <div>
+                        <h2 class="section-headline light reveal" style="transition-delay:100ms;">
+                            India has a nutrition<br><em>crisis nobody admits.</em>
+                        </h2>
+                        <p class="section-sub light reveal" style="transition-delay:200ms;">
+                            The health drink market is worth ₹28,000 crore — and nearly all of it is built on cheap
+                            vitamin forms that your body can barely use. We're fixing that.
+                        </p>
+                        <div class="reveal" style="transition-delay:300ms;margin-top:2rem;">
+                            <a href="problem.html" class="btn btn-outline-white">See The Full Problem</a>
                         </div>
-                        <h3>No time for real nutrition</h3>
-                        <p>The average working professional has 22 minutes for lunch, often at their desk. Students skip
-                            meals before exams. Athletes eat whatever is convenient after training. The food system was
-                            not designed for how Indians actually live.</p>
-                    </article>
-
-                    <article class="problem-card reveal" style="transition-delay: 150ms;">
-                        <div class="card-icon">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                                <line x1="1" y1="1" x2="23" y2="23"></line>
-                            </svg>
-                        </div>
-                        <h3>Existing products deceive you</h3>
-                        <p>Most Indian health drinks are primarily sugar with token doses of vitamins your body cannot
-                            absorb. Cheap synthetic forms, under-dosed actives, misleading labels. The same brand sells
-                            better formulas in foreign markets. You deserve to know this.</p>
-                    </article>
-
-                    <article class="problem-card reveal" style="transition-delay: 300ms;">
-                        <div class="card-icon">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <line x1="2" y1="12" x2="22" y2="12"></line>
-                                <path
-                                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
-                                </path>
-                            </svg>
-                        </div>
-                        <h3>Imported solutions do not fit India</h3>
-                        <p>Products designed for Western nutritional deficiencies miss what Indian bodies need. They do
-                            not understand Ragi, Moringa, or Ashwagandha. They do not understand how Indians eat, work,
-                            or train. India needs an Indian solution.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Solutions / Products Section -->
-        <section id="products" style="background: var(--bg);">
-            <div class="container">
-                <div class="section-header reveal" style="text-align: center; margin: 0 auto 5rem;">
-                    <div class="badge badge-accent" style="margin-bottom: 1rem;">Solutions</div>
-                    <h2>So we built one. Meet Oxygen.</h2>
-                    <p style="font-size: 1.125rem; margin-top: 1rem;">Three precision formulas. Each scientifically
-                        designed for a specific need. All built on the same uncompromising foundation: Indian
-                        ingredients, active nutrient forms, and doses that actually work.</p>
-                </div>
-
-                <div class="product-grid">
-                    <!-- Product 1 -->
-                    <article class="product-card reveal">
-                        <div class="p-head">
-                            <div class="card-icon" style="margin:0;"><svg fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24" stroke-width="2">
-                                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-                                </svg></div>
-                            <span class="p-target">Daily Deficiencies</span>
-                        </div>
-                        <h3>Project VITALITY</h3>
-                        <span class="p-status">Pre-Clinical Optimization</span>
-                        <p class="p-tagline">"For when you cannot eat well but refuse to function sub-optimally. An
-                            everyday nutritional baseline."</p>
-
-                        <ul class="p-benefits">
-                            <li>Covers 50% of your daily nutrient needs</li>
-                            <li>Sustained energy without sugar spikes</li>
-                            <li>Stress adaptation with KSM-66 Ashwagandha</li>
-                        </ul>
-
-                        <div class="p-ingredients">
-                            <span class="p-stack-label">Core Stack</span>
-                            <p style="font-size: 0.85rem; font-weight: 600; color: var(--text-main); margin:0;">Finger
-                                Millet, Ashwagandha KSM-66, Lion's Mane, Moringa, 22 Chelated Nutrients</p>
-                        </div>
-                    </article>
-
-                    <!-- Product 2 -->
-                    <article class="product-card featured reveal" style="transition-delay: 150ms;">
-                        <div class="p-head">
-                            <div class="card-icon" style="margin:0; background: var(--accent); color:#fff;"><svg
-                                    fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                                    <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
-                                    <line x1="16" y1="8" x2="2" y2="22"></line>
-                                    <line x1="17.5" y1="15" x2="9" y2="6.5"></line>
-                                </svg></div>
-                            <span class="p-target">Cognitive Fatigue</span>
-                        </div>
-                        <h3>Project CLARITY</h3>
-                        <span class="p-status">Sensory Trials & Taste Profiling</span>
-                        <p class="p-tagline">"The honest alternative to high-sugar energy drinks. Built for sustained
-                            focus and the dreaded 3PM crash."</p>
-
-                        <ul class="p-benefits">
-                            <li>Clean focus without caffeine crash</li>
-                            <li>Memory and attention support (Lion's Mane)</li>
-                            <li>L-Theanine:Caffeine ratio 2.5:1 (clinically studied)</li>
-                        </ul>
-
-                        <div class="p-ingredients">
-                            <span class="p-stack-label">Core Stack</span>
-                            <p style="font-size: 0.85rem; font-weight: 600; color: var(--text-main); margin:0;">Lion's
-                                Mane, Bacopa Monnieri, L-Theanine, Natural Caffeine, Active B Vitamins</p>
-                        </div>
-                    </article>
-
-                    <!-- Product 3 -->
-                    <article class="product-card reveal" style="transition-delay: 300ms;">
-                        <div class="p-head">
-                            <div class="card-icon" style="margin:0;"><svg fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24" stroke-width="2">
-                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                                </svg></div>
-                            <span class="p-target">Cellular Recovery</span>
-                        </div>
-                        <h3>Project MOMENTUM</h3>
-                        <span class="p-status">Formulation Finalized</span>
-                        <p class="p-tagline">"An athletic recovery matrix built around ATP production and true muscle
-                            repair, rather than synthetic stimulation."</p>
-
-                        <ul class="p-benefits">
-                            <li>Faster muscle recovery (Kokum + Tart Cherry)</li>
-                            <li>ATP production support (Cordyceps militaris)</li>
-                            <li>Strength and endurance (Creatine HCl + Citrulline)</li>
-                        </ul>
-
-                        <div class="p-ingredients">
-                            <span class="p-stack-label">Core Stack</span>
-                            <p style="font-size: 0.85rem; font-weight: 600; color: var(--text-main); margin:0;">
-                                Cordyceps, Creatine HCl, Kokum Extract, L-Citrulline, Electrolytes</p>
-                        </div>
-                    </article>
-                </div>
-
-                <!-- Coming Soon -->
-                <div class="coming-soon reveal">
-                    <div class="coming-soon-content">
-                        <div class="badge badge-accent"
-                            style="margin-bottom: 1rem; background: rgba(255,255,255,0.1); color:#fff;">Coming Soon
-                        </div>
-                        <h4>The Honest Protein Bar</h4>
-                        <p>Real dates, real cashews, real pumpkin seeds. 300mg KSM-66 Ashwagandha in every bar. No fake
-                            protein. No compound chocolate. Coming alongside our drink range.</p>
                     </div>
-                    <div class="tags">
-                        <span class="tag">Dates</span>
-                        <span class="tag">Cashews</span>
-                        <span class="tag">Pumpkin Seeds</span>
-                        <span class="tag">Ashwagandha</span>
-                        <span class="tag">Whey Isolate</span>
+
+                    <div class="problem-grid stagger">
+                        <div class="problem-card">
+                            <span class="problem-number" data-target="73" data-suffix="%">0%</span>
+                            <p class="problem-number-label">Vitamin D Deficiency</p>
+                            <h3 class="problem-title">Urban India is running on empty.</h3>
+                            <p class="problem-body">Despite living under abundant sunlight, 73% of urban Indians are
+                                severely Vitamin D deficient — with cascading effects on immunity, mood, and bone
+                                density.</p>
+                        </div>
+                        <div class="problem-card reveal">
+                            <span class="problem-number" data-target="8" data-suffix="%">0%</span>
+                            <p class="problem-number-label">Inorganic Iron Absorption</p>
+                            <h3 class="problem-title">You swallow it. You don't absorb it.</h3>
+                            <p class="problem-body">Ferrous sulfate — the standard iron in most health drinks — is
+                                absorbed at 8%. Chelated iron bisglycinate absorbs at 58%.</p>
+                        </div>
+                        <div class="problem-card reveal">
+                            <span class="problem-number" data-target="40" data-suffix="%">0%</span>
+                            <p class="problem-number-label">MTHFR Gene Carriers</p>
+                            <h3 class="problem-title">Synthetic folic acid doesn't work for 40% of Indians.</h3>
+                            <p class="problem-body">An MTHFR gene variant prevents folic acid conversion. We use
+                                methylfolate — the form your body actually needs.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Science Section -->
-        <section id="science" class="science-section">
+        <!-- ── THE SYSTEM (LIGHT) ──────────────────────────────── -->
+        <section class="products-section" id="products">
             <div class="container">
-                <div class="section-header reveal" style="text-align: center; margin: 0 auto 4rem;">
-                    <h2>We show our <span style="color: var(--accent);">work.</span></h2>
-                    <p style="font-size: 1.125rem; margin-top: 1rem;">Every formulation decision has a peer-reviewed
-                        reason. Every ingredient has a verified source. Every claim is something we can prove.</p>
+                <div class="section-label reveal">
+                    <div class="section-label-line"></div>
+                    <span class="section-label-text">The RIZE System</span>
                 </div>
 
-                <div class="pillars-grid">
-                    <!-- Pillar 1 -->
-                    <div class="pillar reveal">
-                        <div class="pillar-number">1</div>
-                        <div class="pillar-content">
-                            <h3>Active forms only</h3>
-                            <p>Most products use the cheapest permitted form of each vitamin and mineral. We use:
-                                Methylcobalamin, Pyridoxal-5-Phosphate, 5-MTHF Folate, Albion TRAACS® Chelated Minerals.
-                            </p>
-                            <div class="pillar-highlight">
-                                The difference: 3-4x better absorption. The cost difference per serving: ₹2. The choice
-                                was obvious.
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Pillar 2 -->
-                    <div class="pillar reveal" style="transition-delay: 150ms;">
-                        <div class="pillar-number">2</div>
-                        <div class="pillar-content">
-                            <h3>Verified, not assumed</h3>
-                            <p>Our Lion's Mane extract is verified at minimum 30% β-glucan content using the Megazyme
-                                AOAC method — the gold standard verification method.</p>
-                            <div class="pillar-highlight">
-                                Not marketing weight. Not assumed potency. Verified active compound content. Most brands
-                                do not do this. We consider it non-negotiable.
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Pillar 3 -->
-                    <div class="pillar reveal" style="transition-delay: 300ms;">
-                        <div class="pillar-number">3</div>
-                        <div class="pillar-content">
-                            <h3>Proving it, not just claiming it</h3>
-                            <p>We have designed a clinical study for 135 participants across 8 weeks — before we launch
-                                commercially. Primary outcomes: Biomarkers + cognitive tests.</p>
-                            <div class="pillar-highlight">
-                                Results will be published. Regardless of outcome. Ethics committee approval in progress.
-                            </div>
+                <div
+                    style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:end;margin-top:1.5rem;margin-bottom:4rem;">
+                    <h2 class="section-headline reveal" style="transition-delay:100ms;">
+                        Four ingredient stacks.<br><em>One complete system.</em>
+                    </h2>
+                    <div>
+                        <p class="section-sub reveal" style="transition-delay:200ms;">Every component of RIZE targets a
+                            specific, documented deficiency common in the Indian population. Nothing is in there for
+                            marketing.</p>
+                        <div class="reveal" style="transition-delay:280ms;margin-top:1.5rem;">
+                            <a href="ingredients.html" class="btn btn-outline">Explore Full Ingredients</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Comparison Table -->
-                <div class="comparison-box reveal">
-                    <div class="c-header">
+                <div class="products-grid stagger">
+                    <div class="product-card reveal">
+                        <div class="product-card-header">
+                            <div class="product-card-header-bg"></div>
+                            <div class="product-card-icon">🌾</div>
+                        </div>
+                        <div class="product-card-body">
+                            <h3>Millet Base</h3>
+                            <p>Ragi, Bajra, and Jowar — India's forgotten supergrains — form the bioavailability
+                                scaffold for every other ingredient.</p>
+                            <div class="product-tags">
+                                <span class="product-tag">High Calcium</span>
+                                <span class="product-tag">Low GI</span>
+                                <span class="product-tag">Iron-Dense</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card reveal" style="transition-delay:100ms;">
+                        <div class="product-card-header">
+                            <div class="product-card-header-bg"
+                                style="background:radial-gradient(ellipse at 50% 100%, rgba(163,230,53,0.3) 0%, transparent 70%);">
+                            </div>
+                            <div class="product-card-icon">🍄</div>
+                        </div>
+                        <div class="product-card-body">
+                            <h3>Mushroom Complex</h3>
+                            <p>Lion's Mane, Reishi, and Cordyceps. Hot water extracts, β-glucan standardized. Cognitive,
+                                immune, and cellular support.</p>
+                            <div class="product-tags">
+                                <span class="product-tag">NGF Support</span>
+                                <span class="product-tag">β-Glucan 30%+</span>
+                                <span class="product-tag">Adaptogenic</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card reveal" style="transition-delay:200ms;">
+                        <div class="product-card-header">
+                            <div class="product-card-header-bg"
+                                style="background:radial-gradient(ellipse at 50% 100%, rgba(22,163,74,0.5) 0%, transparent 70%);">
+                            </div>
+                            <div class="product-card-icon">🌿</div>
+                        </div>
+                        <div class="product-card-body">
+                            <h3>Precision Micronutrient Stack</h3>
+                            <p>Chelated minerals (not oxides), methylfolate (not folic acid), methylcobalamin (not
+                                cyanocobalamin). The active forms only.</p>
+                            <div class="product-tags">
+                                <span class="product-tag">Chelated</span>
+                                <span class="product-tag">Methylated</span>
+                                <span class="product-tag">MTHFR-Safe</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── SCIENCE SECTION (DARK) ─────────────────────────── -->
+        <section class="science-section" id="science">
+            <div class="container">
+                <div class="section-label on-dark reveal">
+                    <div class="section-label-line"></div>
+                    <span class="section-label-text">The Bioavailability Argument</span>
+                </div>
+
+                <div class="science-split">
+                    <div>
+                        <h2 class="section-headline light reveal" style="transition-delay:100ms;">
+                            Your supplement is <em>mostly marketing.</em>
+                        </h2>
+                        <p class="section-sub light reveal" style="transition-delay:200ms;">
+                            The difference between a supplement that works and one that doesn't isn't the label. It's
+                            the chemical form of every ingredient — and the research behind it.
+                        </p>
+
+                        <div class="reveal" style="transition-delay:300ms;margin-top:2.5rem;">
+                            <div
+                                style="display:flex;align-items:center;gap:1.5rem;padding:1.5rem;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:16px;">
+                                <div
+                                    style="flex-shrink:0;width:56px;height:56px;background:rgba(163,230,53,0.15);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.75rem;">
+                                    📋</div>
+                                <div>
+                                    <div
+                                        style="font-size:0.8rem;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.1em;font-weight:600;margin-bottom:0.25rem;">
+                                        Our commitment</div>
+                                    <p style="color:rgba(255,255,255,0.75);font-size:0.95rem;line-height:1.5;">Every
+                                        batch comes with a full Certificate of Analysis — third-party verified.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reveal" style="transition-delay:380ms;margin-top:2rem;">
+                            <a href="science.html" class="btn btn-outline-white">See The Full Science</a>
+                        </div>
+                    </div>
+
+                    <div class="science-compare reveal" style="transition-delay:150ms;">
+                        <div
+                            style="margin-bottom:1rem;padding-bottom:1.5rem;border-bottom:1px solid rgba(255,255,255,0.06);">
+                            <div
+                                style="font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:1.25rem;">
+                                Iron Absorption Rate</div>
+                            <div class="compare-bar-wrap" style="margin-bottom:1rem;">
+                                <div class="compare-label">
+                                    <span class="compare-name">RIZE — Iron Bisglycinate (chelated)</span>
+                                    <span class="compare-pct" style="color:var(--accent-lime);">58%</span>
+                                </div>
+                                <div class="compare-bar">
+                                    <div class="compare-fill lime" data-width="58%"></div>
+                                </div>
+                            </div>
+                            <div class="compare-bar-wrap" style="margin-bottom:1rem;">
+                                <div class="compare-label">
+                                    <span class="compare-name">Standard — Ferrous sulfate</span>
+                                    <span class="compare-pct">8%</span>
+                                </div>
+                                <div class="compare-bar">
+                                    <div class="compare-fill dim" data-width="8%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            style="margin-bottom:1rem;padding-bottom:1.5rem;border-bottom:1px solid rgba(255,255,255,0.06);">
+                            <div
+                                style="font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:1.25rem;">
+                                Vitamin B12 Bioavailability</div>
+                            <div class="compare-bar-wrap" style="margin-bottom:1rem;">
+                                <div class="compare-label">
+                                    <span class="compare-name">RIZE — Methylcobalamin</span>
+                                    <span class="compare-pct" style="color:var(--accent-lime);">85%</span>
+                                </div>
+                                <div class="compare-bar">
+                                    <div class="compare-fill lime" data-width="85%"></div>
+                                </div>
+                            </div>
+                            <div class="compare-bar-wrap">
+                                <div class="compare-label">
+                                    <span class="compare-name">Standard — Cyanocobalamin</span>
+                                    <span class="compare-pct">22%</span>
+                                </div>
+                                <div class="compare-bar">
+                                    <div class="compare-fill dim" data-width="22%"></div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div>
-                            <h4>Absorption Difference</h4>
-                            <span style="font-size: 0.9rem; opacity: 0.8;">Standard mineral form (Oxide/Sulfate) =
-                                8%</span>
-                        </div>
-                        <div style="text-align: right;">
-                            <div class="c-stat-big">28%</div>
-                            <span
-                                style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent-light);">3.5x
-                                better absorption</span>
-                        </div>
-                    </div>
-                    <div class="c-table-wrap">
-                        <table class="c-table">
-                            <thead>
-                                <tr>
-                                    <th>Component</th>
-                                    <th>Oxygen Formulations</th>
-                                    <th>Most Brands</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Vitamin B12</td>
-                                    <td class="us">✔ Methylcobalamین</td>
-                                    <td class="them">Cyanocobalamin</td>
-                                </tr>
-                                <tr>
-                                    <td>Minerals</td>
-                                    <td class="us">✔ Chelated (TRAACS®)</td>
-                                    <td class="them">Oxide/Sulfate forms</td>
-                                </tr>
-                                <tr>
-                                    <td>Mushroom extracts</td>
-                                    <td class="us">✔ Verified β-glucan</td>
-                                    <td class="them">Unverified weight</td>
-                                </tr>
-                                <tr>
-                                    <td>Lab reports</td>
-                                    <td class="us">✔ Public CoA</td>
-                                    <td class="them">No transparency</td>
-                                </tr>
-                                <tr>
-                                    <td>Efficacy data</td>
-                                    <td class="us">✔ Clinical study</td>
-                                    <td class="them">No efficacy data</td>
-                                </tr>
-                                <tr>
-                                    <td>Suppliers</td>
-                                    <td class="us">✔ Named sources</td>
-                                    <td class="them">Anonymous suppliers</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-        <!-- Vision & Mission Section -->
-        <section id="about-vision" class="about-section">
-            <div class="container">
-                <div class="about-hero reveal">
-                    <div class="badge badge-accent" style="margin-bottom: 1rem;">Our Vision & Mission</div>
-                    <h2>Why Oxygen exists.</h2>
-                    <p class="subtitle">This is not a corporate origin story. This is the honest account of a problem we
-                        couldn't ignore, a gap nobody was filling, and a decision to build something better.</p>
-                </div>
-
-                <div class="vm-grid">
-                    <!-- Vision -->
-                    <div class="vm-block reveal">
-                        <h3>Building India's First Precision Nutrition System.</h3>
-                        <div class="vm-keywords">
-                            <span class="vm-keyword">Sustainable</span>
-                            <span class="vm-keyword">Indigenous</span>
-                            <span class="vm-keyword">Circular</span>
-                        </div>
-                        <ul class="vm-list">
-                            <li><strong>Sustainable Enterprise</strong> To build an innovation-driven biotechnology
-                                enterprise that prioritizes planetary health alongside human health.</li>
-                            <li><strong>Indigenous Resources</strong> To transform India's rich biological resources
-                                into globally competitive biocosmetic and food products.</li>
-                            <li><strong>Circular Bioeconomy</strong> To operate strictly through advanced biotechnology,
-                                circular bioeconomy principles, and responsible manufacturing.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Mission -->
-                    <div class="vm-block reveal" style="transition-delay: 150ms;">
-                        <h3>To make world-class nutrition accessible to every ambitious Indian.</h3>
-                        <p
-                            style="font-size: 1.1rem; color: var(--text-muted); font-style: italic; margin-bottom: 2rem;">
-                            By combining India's ancient ingredient wisdom with modern nutritional science — and
-                            refusing to compromise on either.</p>
-
-                        <p style="font-size: 1.05rem; color: var(--text-main); margin-bottom: 1rem;">Oxygen exists to
-                            close the gap between what urban Indians need nutritionally and what the market currently
-                            offers them.</p>
-
-                        <div class="mission-quote">
-                            "We believe Indian ingredients are world-class. We believe Indian consumers deserve products
-                            formulated to global scientific standards. We believe honesty about what is in a product is
-                            not a marketing strategy — it is a minimum standard that the industry has failed to meet."
-                        </div>
-
-                        <ul class="vm-list" style="margin-top: 2rem;">
-                            <li><strong>1. Product & Commercial Mission</strong> To develop and commercialize safe,
-                                natural, and sustainable biocosmetic and food products using innovative bioprocessing,
-                                fermentation, and formulation technologies, ensuring financial viability and market
-                                competitiveness.</li>
-                            <li><strong>2. Research & Innovation Mission</strong> To strengthen indigenous biotechnology
-                                innovation by advancing research in bioprocess engineering, microbial fermentation, and
-                                nanotechnology, supported through government grants, academic collaboration, and applied
-                                research programs.</li>
-                            <li><strong>3. Impact & Ecosystem Mission</strong> To create long-term environmental,
-                                social, and economic impact by supporting circular bioeconomy practices, enabling skill
-                                development through student mentorship and internships, generating employment, and
-                                aligning operations with national initiatives such as Make in India and
-                                sustainability-driven growth.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Core Values -->
-                <div class="core-values reveal">
-                    <h3>The principles driving our research</h3>
-                    <div class="values-grid">
-                        <div class="value-card">
-                            <h4>Scientific Rigor</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">Evidence-based, research-driven approach to every
-                                product and process.</p>
-                        </div>
-                        <div class="value-card">
-                            <h4>Sustainability First</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">Circular bioeconomy, minimal waste, maximum
-                                resource utilization.</p>
-                        </div>
-                        <div class="value-card">
-                            <h4>Collaboration</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">Building bridges between academia, industry,
-                                farmers, and consumers.</p>
-                        </div>
-                        <div class="value-card">
-                            <h4>Innovation with Purpose</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">Technology that solves real problems for real
-                                stakeholders.</p>
-                        </div>
-                        <div class="value-card">
-                            <h4>Indigenous Pride</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">Celebrating and valorizing India's biological and
-                                knowledge wealth.</p>
-                        </div>
-                        <div class="value-card">
-                            <h4>Integrity & Transparency</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">Honest communication about capabilities,
-                                challenges, and progress.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Founder & Journey Section -->
-        <section id="about-founder" class="about-section" style="padding-top: 0;">
-            <div class="container">
-                <div class="about-hero reveal" style="margin-bottom: 4rem;">
-                    <div class="badge badge-accent" style="margin-bottom: 1rem;">The People Behind Oxygen</div>
-                    <h2>Built by scientists.</h2>
-                    <p class="subtitle">We aren't nutritionists who became entrepreneurs. We are people who were
-                        frustrated by what existed and decided to fix it properly.</p>
-                </div>
-
-                <!-- Chapter 1 & 2: Founder Profile -->
-                <div class="founder-chapter reveal">
-                    <div class="chapter-label">01 & 02 &mdash; The Origin</div>
-                    <div class="founder-profile">
-                        <div class="founder-image-placeholder">
-                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                <circle cx="12" cy="7" r="4"></circle>
-                            </svg>
-                        </div>
-                        <div class="founder-details">
-                            <h3>Founder</h3>
-                            <span class="founder-role">Chief Science Officer</span>
-
-                            <p
-                                style="font-size: 1.1rem; color: var(--text-main); font-weight: 500; margin-bottom: 1.5rem;">
-                                A pharmaceutical scientist who turned fermentation into food — with the precision of a
-                                lab and the soul of a craft.</p>
-
-                            <p>We spent six months trying to find a daily nutrition product we would actually recommend
-                                to someone we cared about. We could not find one. Either the science was inadequate, or
-                                the ingredients were compromised, or the price was inaccessible, or it was designed for
-                                a Western diet and simply repacked for India.</p>
-
-                            <p>We analyzed blood reports from urban Indians across multiple cities. The pattern was
-                                consistent and alarming. Seven out of ten showed at least one significant deficiency.
-                                Most were health-conscious people. Most were not eating badly by any measure. Most had
-                                no idea they were deficient.</p>
-
-                            <p>The food system was failing people who were trying to do the right thing. <strong>We
-                                    decided the only option was to build it ourselves.</strong></p>
-
-                            <div class="founder-quote">
-                                "I am building Oxygen because I am genuinely angry at what the market currently offers
-                                people who are trying to take their health seriously. I have seen the research. I know
-                                what good nutrition science looks like. And I know that the gap between what is possible
-                                and what is being sold is not technical — it is a choice. We are choosing differently."
+                            <div
+                                style="font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:1.25rem;">
+                                Zinc Absorption</div>
+                            <div class="compare-bar-wrap" style="margin-bottom:1rem;">
+                                <div class="compare-label">
+                                    <span class="compare-name">RIZE — Zinc bisglycinate</span>
+                                    <span class="compare-pct" style="color:var(--accent-lime);">43%</span>
+                                </div>
+                                <div class="compare-bar">
+                                    <div class="compare-fill lime" data-width="43%"></div>
+                                </div>
                             </div>
-
-                            <p
-                                style="font-size: 0.95rem; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-top: 2rem;">
-                                <strong>Operating at intersection of:</strong>
-                                <span class="badge">🔬 Pharmaceutical Bioprocessing</span>
-                                <span class="badge">🧬 Nanoscience</span>
-                                <span class="badge">🌾 Fermented Food</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Chapter 3: Approach -->
-                <div class="founder-chapter reveal">
-                    <div class="chapter-label">03 &mdash; Our Approach</div>
-                    <div class="approach-grid">
-                        <div class="approach-card">
-                            <div class="approach-num">01</div>
-                            <h4>Science Before Marketing</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">We designed the formulation before we designed the
-                                brand. We chose ingredients before we chose colors. We cited our evidence before we
-                                wrote our copy. This is backwards from how most nutrition companies work. We think it is
-                                the only sensible order.</p>
-                        </div>
-                        <div class="approach-card">
-                            <div class="approach-num">02</div>
-                            <h4>India Is Not a Market Segment</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">We did not take a Western formula and add
-                                Ashwagandha to make it Indian. We started from India. From what Indian bodies are
-                                deficient in. From what Indian lifestyles demand. India is not an afterthought — it is
-                                the foundation.</p>
-                        </div>
-                        <div class="approach-card">
-                            <div class="approach-num">03</div>
-                            <h4>Transparency Is Not Optional</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">We will publish our lab reports. We will name our
-                                ingredient suppliers. We will cite the studies behind our claims. We will tell you when
-                                a study is preliminary and when it is robust. This should be standard.</p>
-                        </div>
-                        <div class="approach-card">
-                            <div class="approach-num">04</div>
-                            <h4>Dose Matters As Much As Ingredient</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">Ashwagandha at 50mg is not the same as Ashwagandha
-                                at 300mg. Lion's Mane at 100mg is not what the research studied. We formulate at
-                                clinically relevant doses — not at doses that allow us to put the ingredient on the
-                                label.</p>
-                        </div>
-                        <div class="approach-card">
-                            <div class="approach-num">05</div>
-                            <h4>Bioavailability Is the Real Metric</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">A 100mg dose with 5% absorption delivers 5mg to
-                                your body. A 50mg dose with 35% absorption delivers 17.5mg. The nutrient that reaches
-                                your bloodstream is the only nutrient that matters. We optimize for absorption first.
-                                Always.</p>
-                        </div>
-                        <div class="approach-card" style="border-color: var(--accent);">
-                            <div class="approach-num" style="color: var(--accent);">06</div>
-                            <h4>Clinical Evidence Is Non-Negotiable</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">We designed our clinical study before we
-                                manufactured our first batch. Not because we are required to. But because we believe no
-                                company should sell a health product without evidence that it works.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Chapter 4: Milestone Journey -->
-                <div class="founder-chapter reveal">
-                    <div class="chapter-label">04 &mdash; The Journey So Far</div>
-                    <p style="font-size: 1.1rem; max-width: 700px; margin-bottom: 3rem;">What we have built before we
-                        built anything physical. Most companies build first and think about science second. We spent
-                        months thinking about the science before building anything.</p>
-
-                    <div class="milestone-grid">
-                        <div class="milestone">
-                            <h4>6+ months of nutritional deficiency research <span
-                                    class="milestone-status completed">Completed</span></h4>
-                            <p style="font-size: 0.95rem; max-width: 600px; margin: 0;">Analyzed ICMR, NFHS-5, WHO India
-                                data. Mapped exact deficiency profiles by demographic and lifestyle. Built the evidence
-                                base for product necessity.</p>
-                        </div>
-                        <div class="milestone">
-                            <h4>Complete formulation design <span class="milestone-status completed">Completed</span>
-                            </h4>
-                            <p style="font-size: 0.95rem; max-width: 600px; margin: 0;">Reviewed 200+ peer-reviewed
-                                studies. Designed complete formulas for 3 drinks + 1 bar. Every ingredient
-                                evidence-based. Every dose clinically relevant.</p>
-                        </div>
-                        <div class="milestone">
-                            <h4>Regulatory pathway fully mapped <span class="milestone-status active">In Progress</span>
-                            </h4>
-                            <p style="font-size: 0.95rem; max-width: 600px; margin: 0;">FSSAI compliance audited per
-                                ingredient. Clinical study protocol designed. Ethics committee application in process.
-                                Label compliance framework completed.</p>
-                        </div>
-                        <div class="milestone">
-                            <h4>TBI Incubation secured <span class="milestone-status active">Active</span></h4>
-                            <p style="font-size: 0.95rem; max-width: 600px; margin: 0;">Accepted by Technology Business
-                                Incubator at ACE, Hosur. Prototype development currently underway. Sensory testing
-                                beginning soon.</p>
-                        </div>
-                        <div class="milestone">
-                            <h4>Waitlist growing <span class="milestone-status active">Growing</span></h4>
-                            <p style="font-size: 0.95rem; max-width: 600px; margin: 0;">Before a single product exists —
-                                validation that the demand is real. Real people who believe something better should
-                                exist.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Chapter 5: Invitation -->
-                <div class="invitation-box reveal">
-                    <h2>Join us.</h2>
-                    <p>Oxygen is currently in development. We are not asking you to buy anything. We are asking you to
-                        believe that something better is possible — and to hold us accountable to delivering it. Tell us
-                        what you need from a nutrition product. We are listening. And we are building.</p>
-                    <div class="invitation-ctas">
-                        <a href="#join" class="btn btn-white">Join the Waitlist (Founding Member Pricing)</a>
-                        <a href="mailto:hello@oxygenbio.com" class="btn btn-outline-white">Talk to Us (Ask us
-                            anything)</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Vision & Mission Section -->
-        <section id="about-vision" class="about-section">
-            <div class="container">
-                <div class="about-hero reveal">
-                    <div class="badge badge-accent" style="margin-bottom: 1rem;">Our Vision & Mission</div>
-                    <h2>Why Oxygen exists.</h2>
-                    <p class="subtitle">This is not a corporate origin story. This is the honest account of a problem we
-                        couldn't ignore, a gap nobody was filling, and a decision to build something better.</p>
-                </div>
-
-                <div class="vm-grid">
-                    <!-- Vision -->
-                    <div class="vm-block reveal">
-                        <h3>Building India's First Precision Nutrition System.</h3>
-                        <div class="vm-keywords">
-                            <span class="vm-keyword">Sustainable</span>
-                            <span class="vm-keyword">Indigenous</span>
-                            <span class="vm-keyword">Circular</span>
-                        </div>
-                        <ul class="vm-list">
-                            <li><strong>Sustainable Enterprise</strong> To build an innovation-driven biotechnology
-                                enterprise that prioritizes planetary health alongside human health.</li>
-                            <li><strong>Indigenous Resources</strong> To transform India's rich biological resources
-                                into globally competitive biocosmetic and food products.</li>
-                            <li><strong>Circular Bioeconomy</strong> To operate strictly through advanced biotechnology,
-                                circular bioeconomy principles, and responsible manufacturing.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Mission -->
-                    <div class="vm-block reveal" style="transition-delay: 150ms;">
-                        <h3>To make world-class nutrition accessible to every ambitious Indian.</h3>
-                        <p
-                            style="font-size: 1.1rem; color: var(--text-muted); font-style: italic; margin-bottom: 2rem;">
-                            By combining India's ancient ingredient wisdom with modern nutritional science — and
-                            refusing to compromise on either.</p>
-
-                        <p style="font-size: 1.05rem; color: var(--text-main); margin-bottom: 1rem;">Oxygen exists to
-                            close the gap between what urban Indians need nutritionally and what the market currently
-                            offers them.</p>
-
-                        <div class="mission-quote">
-                            "We believe Indian ingredients are world-class. We believe Indian consumers deserve products
-                            formulated to global scientific standards. We believe honesty about what is in a product is
-                            not a marketing strategy — it is a minimum standard that the industry has failed to meet."
-                        </div>
-
-                        <ul class="vm-list" style="margin-top: 2rem;">
-                            <li><strong>1. Product & Commercial Mission</strong> To develop and commercialize safe,
-                                natural, and sustainable biocosmetic and food products using innovative bioprocessing,
-                                fermentation, and formulation technologies, ensuring financial viability and market
-                                competitiveness.</li>
-                            <li><strong>2. Research & Innovation Mission</strong> To strengthen indigenous biotechnology
-                                innovation by advancing research in bioprocess engineering, microbial fermentation, and
-                                nanotechnology, supported through government grants, academic collaboration, and applied
-                                research programs.</li>
-                            <li><strong>3. Impact & Ecosystem Mission</strong> To create long-term environmental,
-                                social, and economic impact by supporting circular bioeconomy practices, enabling skill
-                                development through student mentorship and internships, generating employment, and
-                                aligning operations with national initiatives such as Make in India and
-                                sustainability-driven growth.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Core Values -->
-                <div class="core-values reveal">
-                    <h3>The principles driving our research</h3>
-                    <div class="values-grid">
-                        <div class="value-card">
-                            <h4>Scientific Rigor</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">Evidence-based, research-driven approach to every
-                                product and process.</p>
-                        </div>
-                        <div class="value-card">
-                            <h4>Sustainability First</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">Circular bioeconomy, minimal waste, maximum
-                                resource utilization.</p>
-                        </div>
-                        <div class="value-card">
-                            <h4>Collaboration</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">Building bridges between academia, industry,
-                                farmers, and consumers.</p>
-                        </div>
-                        <div class="value-card">
-                            <h4>Innovation with Purpose</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">Technology that solves real problems for real
-                                stakeholders.</p>
-                        </div>
-                        <div class="value-card">
-                            <h4>Indigenous Pride</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">Celebrating and valorizing India's biological and
-                                knowledge wealth.</p>
-                        </div>
-                        <div class="value-card">
-                            <h4>Integrity & Transparency</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">Honest communication about capabilities,
-                                challenges, and progress.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Founder & Journey Section -->
-        <section id="about-founder" class="about-section" style="padding-top: 0;">
-            <div class="container">
-                <div class="about-hero reveal" style="margin-bottom: 4rem;">
-                    <div class="badge badge-accent" style="margin-bottom: 1rem;">The People Behind Oxygen</div>
-                    <h2>Built by scientists.</h2>
-                    <p class="subtitle">We aren't nutritionists who became entrepreneurs. We are people who were
-                        frustrated by what existed and decided to fix it properly.</p>
-                </div>
-
-                <!-- Chapter 1 & 2: Founder Profile -->
-                <div class="founder-chapter reveal">
-                    <div class="chapter-label">01 & 02 &mdash; The Origin</div>
-                    <div class="founder-profile">
-                        <div class="founder-image-placeholder">
-                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                <circle cx="12" cy="7" r="4"></circle>
-                            </svg>
-                        </div>
-                        <div class="founder-details">
-                            <h3>Founder</h3>
-                            <span class="founder-role">Chief Science Officer</span>
-
-                            <p
-                                style="font-size: 1.1rem; color: var(--text-main); font-weight: 500; margin-bottom: 1.5rem;">
-                                A pharmaceutical scientist who turned fermentation into food — with the precision of a
-                                lab and the soul of a craft.</p>
-
-                            <p>We spent six months trying to find a daily nutrition product we would actually recommend
-                                to someone we cared about. We could not find one. Either the science was inadequate, or
-                                the ingredients were compromised, or the price was inaccessible, or it was designed for
-                                a Western diet and simply repacked for India.</p>
-
-                            <p>We analyzed blood reports from urban Indians across multiple cities. The pattern was
-                                consistent and alarming. Seven out of ten showed at least one significant deficiency.
-                                Most were health-conscious people. Most were not eating badly by any measure. Most had
-                                no idea they were deficient.</p>
-
-                            <p>The food system was failing people who were trying to do the right thing. <strong>We
-                                    decided the only option was to build it ourselves.</strong></p>
-
-                            <div class="founder-quote">
-                                "I am building Oxygen because I am genuinely angry at what the market currently offers
-                                people who are trying to take their health seriously. I have seen the research. I know
-                                what good nutrition science looks like. And I know that the gap between what is possible
-                                and what is being sold is not technical — it is a choice. We are choosing differently."
+                            <div class="compare-bar-wrap">
+                                <div class="compare-label">
+                                    <span class="compare-name">Standard — Zinc oxide</span>
+                                    <span class="compare-pct">12%</span>
+                                </div>
+                                <div class="compare-bar">
+                                    <div class="compare-fill dim" data-width="12%"></div>
+                                </div>
                             </div>
-
-                            <p
-                                style="font-size: 0.95rem; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-top: 2rem;">
-                                <strong>Operating at intersection of:</strong>
-                                <span class="badge">🔬 Pharmaceutical Bioprocessing</span>
-                                <span class="badge">🧬 Nanoscience</span>
-                                <span class="badge">🌾 Fermented Food</span>
-                            </p>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Chapter 3: Approach -->
-                <div class="founder-chapter reveal">
-                    <div class="chapter-label">03 &mdash; Our Approach</div>
-                    <div class="approach-grid">
-                        <div class="approach-card">
-                            <div class="approach-num">01</div>
-                            <h4>Science Before Marketing</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">We designed the formulation before we designed the
-                                brand. We chose ingredients before we chose colors. We cited our evidence before we
-                                wrote our copy. This is backwards from how most nutrition companies work. We think it is
-                                the only sensible order.</p>
-                        </div>
-                        <div class="approach-card">
-                            <div class="approach-num">02</div>
-                            <h4>India Is Not a Market Segment</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">We did not take a Western formula and add
-                                Ashwagandha to make it Indian. We started from India. From what Indian bodies are
-                                deficient in. From what Indian lifestyles demand. India is not an afterthought — it is
-                                the foundation.</p>
-                        </div>
-                        <div class="approach-card">
-                            <div class="approach-num">03</div>
-                            <h4>Transparency Is Not Optional</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">We will publish our lab reports. We will name our
-                                ingredient suppliers. We will cite the studies behind our claims. We will tell you when
-                                a study is preliminary and when it is robust. This should be standard.</p>
-                        </div>
-                        <div class="approach-card">
-                            <div class="approach-num">04</div>
-                            <h4>Dose Matters As Much As Ingredient</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">Ashwagandha at 50mg is not the same as Ashwagandha
-                                at 300mg. Lion's Mane at 100mg is not what the research studied. We formulate at
-                                clinically relevant doses — not at doses that allow us to put the ingredient on the
-                                label.</p>
-                        </div>
-                        <div class="approach-card">
-                            <div class="approach-num">05</div>
-                            <h4>Bioavailability Is the Real Metric</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">A 100mg dose with 5% absorption delivers 5mg to
-                                your body. A 50mg dose with 35% absorption delivers 17.5mg. The nutrient that reaches
-                                your bloodstream is the only nutrient that matters. We optimize for absorption first.
-                                Always.</p>
-                        </div>
-                        <div class="approach-card" style="border-color: var(--accent);">
-                            <div class="approach-num" style="color: var(--accent);">06</div>
-                            <h4>Clinical Evidence Is Non-Negotiable</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">We designed our clinical study before we
-                                manufactured our first batch. Not because we are required to. But because we believe no
-                                company should sell a health product without evidence that it works.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Chapter 4: Milestone Journey -->
-                <div class="founder-chapter reveal">
-                    <div class="chapter-label">04 &mdash; The Journey So Far</div>
-                    <p style="font-size: 1.1rem; max-width: 700px; margin-bottom: 3rem;">What we have built before we
-                        built anything physical. Most companies build first and think about science second. We spent
-                        months thinking about the science before building anything.</p>
-
-                    <div class="milestone-grid">
-                        <div class="milestone">
-                            <h4>6+ months of nutritional deficiency research <span
-                                    class="milestone-status completed">Completed</span></h4>
-                            <p style="font-size: 0.95rem; max-width: 600px; margin: 0;">Analyzed ICMR, NFHS-5, WHO India
-                                data. Mapped exact deficiency profiles by demographic and lifestyle. Built the evidence
-                                base for product necessity.</p>
-                        </div>
-                        <div class="milestone">
-                            <h4>Complete formulation design <span class="milestone-status completed">Completed</span>
-                            </h4>
-                            <p style="font-size: 0.95rem; max-width: 600px; margin: 0;">Reviewed 200+ peer-reviewed
-                                studies. Designed complete formulas for 3 drinks + 1 bar. Every ingredient
-                                evidence-based. Every dose clinically relevant.</p>
-                        </div>
-                        <div class="milestone">
-                            <h4>Regulatory pathway fully mapped <span class="milestone-status active">In Progress</span>
-                            </h4>
-                            <p style="font-size: 0.95rem; max-width: 600px; margin: 0;">FSSAI compliance audited per
-                                ingredient. Clinical study protocol designed. Ethics committee application in process.
-                                Label compliance framework completed.</p>
-                        </div>
-                        <div class="milestone">
-                            <h4>TBI Incubation secured <span class="milestone-status active">Active</span></h4>
-                            <p style="font-size: 0.95rem; max-width: 600px; margin: 0;">Accepted by Technology Business
-                                Incubator at ACE, Hosur. Prototype development currently underway. Sensory testing
-                                beginning soon.</p>
-                        </div>
-                        <div class="milestone">
-                            <h4>Waitlist growing <span class="milestone-status active">Growing</span></h4>
-                            <p style="font-size: 0.95rem; max-width: 600px; margin: 0;">Before a single product exists —
-                                validation that the demand is real. Real people who believe something better should
-                                exist.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Chapter 5: Invitation -->
-                <div class="invitation-box reveal">
-                    <h2>Join us.</h2>
-                    <p>Oxygen is currently in development. We are not asking you to buy anything. We are asking you to
-                        believe that something better is possible — and to hold us accountable to delivering it. Tell us
-                        what you need from a nutrition product. We are listening. And we are building.</p>
-                    <div class="invitation-ctas">
-                        <a href="#join" class="btn btn-white">Join the Waitlist (Founding Member)</a>
-                        <a href="mailto:hello@oxygenbio.com" class="btn btn-outline-white">Talk to Us (Ask us
-                            anything)</a>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- ── WHY WE EXIST (LIGHT) ───────────────────────────── -->
+        <section style="padding: var(--section-py) 0; background: var(--bg);" id="about">
+            <div class="container">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;">
+                    <!-- Left: big statement -->
+                    <div>
+                        <div class="section-label reveal">
+                            <div class="section-label-line"></div>
+                            <span class="section-label-text">Why Oxygen Exists</span>
+                        </div>
+                        <h2 class="section-headline reveal" style="transition-delay:100ms;margin-top:1.5rem;">
+                            We were tired of<br><em>being lied to by labels.</em>
+                        </h2>
+                        <p class="section-sub reveal" style="transition-delay:200ms;margin-top:1rem;">
+                            Every mainstream health drink in India uses the cheapest, least bioavailable forms of
+                            vitamins and minerals. They look impressive on the label. They don't do much in your body.
+                        </p>
+                        <p class="section-sub reveal" style="transition-delay:280ms;margin-top:1rem;">
+                            Oxygen Bioinnovations exists to be the honest alternative. Built on peer-reviewed science,
+                            tested before launch, and transparent about every ingredient and every supplier.
+                        </p>
+                        <div class="reveal" style="transition-delay:360ms;margin-top:2rem;">
+                            <a href="about.html" class="btn btn-outline">Our Full Story</a>
+                        </div>
+                    </div>
+
+                    <!-- Right: feature grid -->
+                    <div class="feature-grid reveal" style="transition-delay:200ms;">
+                        <div class="feature-cell">
+                            <div class="feature-icon">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <h4>Clinically Tested</h4>
+                            <p>135 participants. 8 weeks. Three arms. We test before we sell.</p>
+                        </div>
+                        <div class="feature-cell">
+                            <div class="feature-icon">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
+                                    <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                                    <line x1="12" y1="22.08" x2="12" y2="12" />
+                                </svg>
+                            </div>
+                            <h4>Millet-Based</h4>
+                            <p>Ragi. Bajra. Jowar. India's original nutrition powerhouses — rediscovered.</p>
+                        </div>
+                        <div class="feature-cell">
+                            <div class="feature-icon">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M12 8v4l3 3" />
+                                </svg>
+                            </div>
+                            <h4>TBI Incubated</h4>
+                            <p>Backed by Technology Business Incubator at ACE, Hosur.</p>
+                        </div>
+                        <div class="feature-cell">
+                            <div class="feature-icon">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                </svg>
+                            </div>
+                            <h4>Fully Transparent</h4>
+                            <p>CoA for every batch. Every. Single. Batch.</p>
+                        </div>
+                        <div class="feature-cell">
+                            <div class="feature-icon">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                                </svg>
+                            </div>
+                            <h4>Precision Dosing</h4>
+                            <p>Every ingredient is at the dose shown to matter in peer-reviewed research.</p>
+                        </div>
+                        <div class="feature-cell">
+                            <div class="feature-icon">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                                    <circle cx="9" cy="7" r="4" />
+                                    <path d="M23 21v-2a4 4 0 00-3-3.87" />
+                                    <path d="M16 3.13a4 4 0 010 7.75" />
+                                </svg>
+                            </div>
+                            <h4>Built In Public</h4>
+                            <p>Weekly blog updates. Clinical study design published. Nothing hidden.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── ROADMAP SECTION ─────────────────────────────────── -->
+        <section class="roadmap-section" id="roadmap">
+            <div class="container">
+                <div class="section-label reveal">
+                    <div class="section-label-line"></div>
+                    <span class="section-label-text">The Build — Our Roadmap</span>
+                </div>
+                <div
+                    style="display:flex;justify-content:space-between;align-items:flex-end;margin-top:1.5rem;flex-wrap:wrap;gap:1rem;">
+                    <h2 class="section-headline reveal" style="transition-delay:100ms;max-width:480px;">
+                        We're building this<br><em>in front of you.</em>
+                    </h2>
+                    <p class="reveal" style="color:var(--text-muted);font-size:0.85rem;transition-delay:200ms;">← Drag
+                        to explore →</p>
+                </div>
+            </div>
+
+            <div class="roadmap-scroll">
+                <div class="roadmap-track">
+                    <div class="roadmap-item">
+                        <div class="roadmap-dot active"></div>
+                        <div class="roadmap-card">
+                            <div class="roadmap-date">Oct 2025</div>
+                            <div class="roadmap-title">Idea & Research Phase</div>
+                            <p class="roadmap-desc">Identified the India nutrition gap. Initial market research and
+                                competitor analysis completed.</p>
+                            <span class="roadmap-status done">Done</span>
+                        </div>
+                    </div>
+                    <div class="roadmap-item">
+                        <div class="roadmap-dot active"></div>
+                        <div class="roadmap-card">
+                            <div class="roadmap-date">Dec 2025</div>
+                            <div class="roadmap-title">TBI Incubation Secured</div>
+                            <p class="roadmap-desc">Accepted into Technology Business Incubator at Adhiyamaan College of
+                                Engineering, Hosur.</p>
+                            <span class="roadmap-status done">Done</span>
+                        </div>
+                    </div>
+                    <div class="roadmap-item">
+                        <div class="roadmap-dot active"></div>
+                        <div class="roadmap-card">
+                            <div class="roadmap-date">Feb 2026</div>
+                            <div class="roadmap-title">Formulation Development</div>
+                            <p class="roadmap-desc">Ingredient sourcing, bioavailability testing, and pilot batch
+                                formulation underway. Label compliance framework completed.</p>
+                            <span class="roadmap-status active">In Progress</span>
+                        </div>
+                    </div>
+                    <div class="roadmap-item">
+                        <div class="roadmap-dot"></div>
+                        <div class="roadmap-card">
+                            <div class="roadmap-date">Q2 2026</div>
+                            <div class="roadmap-title">Clinical Study Begins</div>
+                            <p class="roadmap-desc">135 participants, 8 weeks, three arms. Pre-registered. Published
+                                methodology. Real numbers.</p>
+                            <span class="roadmap-status planned">Planned</span>
+                        </div>
+                    </div>
+                    <div class="roadmap-item">
+                        <div class="roadmap-dot"></div>
+                        <div class="roadmap-card">
+                            <div class="roadmap-date">Q3 2026</div>
+                            <div class="roadmap-title">FSSAI Approval</div>
+                            <p class="roadmap-desc">Regulatory licensing, manufacturing audit, full compliance with
+                                Indian food supplement law.</p>
+                            <span class="roadmap-status planned">Planned</span>
+                        </div>
+                    </div>
+                    <div class="roadmap-item">
+                        <div class="roadmap-dot"></div>
+                        <div class="roadmap-card">
+                            <div class="roadmap-date">Q4 2026</div>
+                            <div class="roadmap-title">Founding Member Launch</div>
+                            <p class="roadmap-desc">First 500 units distributed to waitlist members. Honest feedback
+                                loop. Iterate before full launch.</p>
+                            <span class="roadmap-status planned">Planned</span>
+                        </div>
+                    </div>
+                    <div class="roadmap-item">
+                        <div class="roadmap-dot"></div>
+                        <div class="roadmap-card">
+                            <div class="roadmap-date">2027</div>
+                            <div class="roadmap-title">Full Commercial Launch</div>
+                            <p class="roadmap-desc">D2C website launch, retail partnerships, Series A fundraise.
+                                Building India's most trusted nutrition brand.</p>
+                            <span class="roadmap-status planned">Planned</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── WAITLIST CTA (DARK) ─────────────────────────────── -->
+        <section class="cta-section" id="join">
+            <div class="container cta-inner">
+                <div class="badge badge-dark reveal" style="margin:0 auto 1.5rem;">
+                    Currently in development · TBI, Hosur
+                </div>
+                <h2 class="section-headline light reveal"
+                    style="transition-delay:100ms;font-size:clamp(2.5rem,5vw,5.5rem);">
+                    Be first.<br><em>Join the waitlist.</em>
+                </h2>
+                <p class="section-sub light reveal"
+                    style="transition-delay:200ms;margin:1.5rem auto 0;text-align:center;">
+                    We're not asking you to buy anything. We're asking you to believe something better is possible — and
+                    to hold us accountable to building it.
+                </p>
+
+                <form class="waitlist-form reveal" style="transition-delay:300ms;" action="#" method="POST">
+                    <input type="email" class="waitlist-input" placeholder="your@email.com" required>
+                    <button type="submit" class="btn btn-primary" style="padding:0.9rem 2rem;">
+                        Join Now →
+                    </button>
+                </form>
+
+                <div style="display:flex;gap:2.5rem;justify-content:center;margin-top:3rem;flex-wrap:wrap;"
+                    class="reveal" style="transition-delay:400ms;">
+                    <div style="text-align:center;">
+                        <div style="font-family:var(--font-display);font-size:2rem;font-weight:800;color:#fff;line-height:1;"
+                            class="counter-num" data-target="340" data-suffix="+">0+</div>
+                        <div
+                            style="font-size:0.78rem;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.1em;margin-top:0.25rem;">
+                            On Waitlist</div>
+                    </div>
+                    <div style="width:1px;background:rgba(255,255,255,0.08);flex-shrink:0;"></div>
+                    <div style="text-align:center;">
+                        <div
+                            style="font-family:var(--font-display);font-size:2rem;font-weight:800;color:#fff;line-height:1;">
+                            8</div>
+                        <div
+                            style="font-size:0.78rem;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.1em;margin-top:0.25rem;">
+                            Weeks to Results</div>
+                    </div>
+                    <div style="width:1px;background:rgba(255,255,255,0.08);flex-shrink:0;"></div>
+                    <div style="text-align:center;">
+                        <div
+                            style="font-family:var(--font-display);font-size:2rem;font-weight:800;color:#fff;line-height:1;">
+                            0</div>
+                        <div
+                            style="font-size:0.78rem;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.1em;margin-top:0.25rem;">
+                            Compromise</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── FOOTER ──────────────────────────────────────────── -->
+        <footer id="footer">
+            <div class="container">
+                <div class="footer-main">
+                    <!-- Brand col -->
+                    <div>
+                        <a href="index.html" class="logo">OXYGEN<span>.</span></a>
+                        <p class="footer-tagline">Ancient Ingredients.<br>Modern Science.</p>
+                        <p class="footer-sub">India's first honest precision nutrition system. Built on millet,
+                            mushrooms, and real science. No compromise.</p>
+                        <div class="footer-social">
+                            <a href="#" class="footer-social-btn" aria-label="LinkedIn">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
+                                    <rect x="2" y="9" width="4" height="12" />
+                                    <circle cx="4" cy="4" r="2" />
+                                </svg>
+                            </a>
+                            <a href="#" class="footer-social-btn" aria-label="Twitter">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+                                </svg>
+                            </a>
+                            <a href="#" class="footer-social-btn" aria-label="Instagram">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                                </svg>
+                            </a>
+                        </div>
+                        <div>
+                            <div class="footer-contact-item">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" class="footer-contact-icon">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                                <span class="footer-contact-text">Cabin D, TBI, Adhiyamaan College of Engineering,
+                                    Hosur, TN - 635130</span>
+                            </div>
+                            <div class="footer-contact-item">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" class="footer-contact-icon">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <polyline points="22,6 12,13 2,6" />
+                                </svg>
+                                <span class="footer-contact-text"><a
+                                        href="mailto:info@oxygenbioinnovations.com">info@oxygenbioinnovations.com</a></span>
+                            </div>
+                            <div class="footer-contact-item">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" class="footer-contact-icon">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 13a19.79 19.79 0 01-3.07-8.67A2 2 0 013.64 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 9.91a16 16 0 006.16 6.16l.98-.98a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+                                </svg>
+                                <span class="footer-contact-text">+91 (800) 123-4567</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div>
+                        <div class="footer-col-title">Quick Links</div>
+                        <div class="footer-links">
+                            <a href="about.html">About Us</a>
+                            <a href="science.html">Our Science</a>
+                            <a href="ingredients.html">Ingredients</a>
+                            <a href="problem.html">The Problem</a>
+                            <a href="blog.html">Blog</a>
+                        </div>
+                    </div>
+
+                    <!-- Get In Touch -->
+                    <div>
+                        <div class="footer-col-title">Get In Touch</div>
+                        <div class="footer-links">
+                            <a href="contact.html">Contact Us</a>
+                            <a href="careers.html">Careers</a>
+                            <a href="#join">Join Waitlist</a>
+                        </div>
+                    </div>
+
+                    <!-- Legal -->
+                    <div>
+                        <div class="footer-col-title">Legal</div>
+                        <div class="footer-links">
+                            <a href="privacy.html">Privacy Policy</a>
+                            <a href="terms.html">Terms &amp; Conditions</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p class="footer-copy">&copy; <span id="year"></span> Oxygen Bioinnovations. All rights reserved.
+                    </p>
+                    <p class="footer-copy">Built with science. Delivered with honesty.</p>
+                </div>
+            </div>
+        </footer>
+
     </main>
 
-    <!-- Footer -->
-    <footer id="footer" style="background: var(--bg); border-top: 1px solid var(--border); padding: 4rem 0 0;">
-        <div class="container">
-            <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--border);">
-
-                <!-- Column 1: Brand -->
-                <div>
-                    <a href="index.html" class="logo" style="font-size: 1.5rem; margin-bottom: 0.75rem; display: inline-block;">OXYGEN<span style="color: var(--accent);">.</span></a>
-                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.25rem; font-style: italic;">Precision nutrition for every ambitious Indian.</p>
-                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">India's first honest precision nutrition system. Built on millet, mushrooms, and real science.</p>
-                    <div style="display: flex; gap: 1rem; margin-bottom: 2rem;">
-                        <a href="#" aria-label="LinkedIn" style="color: var(--text-muted); transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                        </a>
-                        <a href="#" aria-label="Twitter" style="color: var(--text-muted); transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
-                        </a>
-                        <a href="#" aria-label="Instagram" style="color: var(--text-muted); transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                        </a>
-                    </div>
-                    <div>
-                        <h4 style="font-size: 0.95rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-main);">Contact Us</h4>
-                        <div style="display: flex; flex-direction: column; gap: 0.6rem;">
-                            <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--accent); flex-shrink: 0; margin-top: 2px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                                <span style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;">Cabin D, Technology Business Incubater,<br>Adhiyamaan College of Engineering Campus, Dr MGR Nagar, Hosur, tamil nadu - 635130</span>
-                            </div>
-                            <div style="display: flex; gap: 0.75rem; align-items: center;">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--accent); flex-shrink: 0;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                                <a href="mailto:info@oxygenbioinnovations.com" style="color: var(--text-muted); font-size: 0.85rem; text-decoration: none;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">info@oxygenbioinnovations.com</a>
-                            </div>
-                            <div style="display: flex; gap: 0.75rem; align-items: center;">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--accent); flex-shrink: 0;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.64 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.98-.98a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                                <span style="color: var(--text-muted); font-size: 0.85rem;">+91 (800) 123-4567</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Column 2: Quick Links -->
-                <div>
-                    <h4 style="font-size: 0.95rem; font-weight: 600; margin-bottom: 1.25rem; color: var(--text-main);">Quick Links</h4>
-                    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-                        <a href="about.html" style="color: var(--text-muted); font-size: 0.9rem; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">About Us</a>
-                        <a href="science.html" style="color: var(--text-muted); font-size: 0.9rem; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Our Science</a>
-                        <a href="ingredients.html" style="color: var(--text-muted); font-size: 0.9rem; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Ingredients</a>
-                        <a href="blog.html" style="color: var(--text-muted); font-size: 0.9rem; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Blog</a>
-                    </div>
-                </div>
-
-                <!-- Column 3: Get In Touch -->
-                <div>
-                    <h4 style="font-size: 0.95rem; font-weight: 600; margin-bottom: 1.25rem; color: var(--text-main);">Get In Touch</h4>
-                    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-                        <a href="contact.html" style="color: var(--text-muted); font-size: 0.9rem; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Contact Us</a>
-                        <a href="careers.html" style="color: var(--text-muted); font-size: 0.9rem; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Careers</a>
-                    </div>
-                </div>
-
-                <!-- Column 4: Legal -->
-                <div>
-                    <h4 style="font-size: 0.95rem; font-weight: 600; margin-bottom: 1.25rem; color: var(--text-main);">Legal</h4>
-                    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-                        <a href="privacy.html" style="color: var(--text-muted); font-size: 0.9rem; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Privacy Policy</a>
-                        <a href="terms.html" style="color: var(--text-muted); font-size: 0.9rem; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">Terms &amp; Conditions</a>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Bottom Bar -->
-            <div style="display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 0; flex-wrap: wrap; gap: 1rem;">
-                <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0;">&copy; <span id="year"></span> Oxygen Bioinnovations. All rights reserved.</p>
-                <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0;">Built with science. Delivered with honesty.</p>
-            </div>
-        </div>
-    </footer>
-
     <!-- Mobile Sticky CTA -->
-    <div class="mobile-sticky-cta" id="mobileCta">
-        <a href="#join" class="btn btn-primary">Join the Waitlist</a>
+    <div class="mobile-sticky-cta" id="mobileCta" style="opacity:0;transform:translateX(-50%) translateY(20px);">
+        <a href="#join">Join the Waitlist →</a>
     </div>
 
-    <!-- Scripts -->
     <script src="assets/js/main.js"></script>
 </body>
 

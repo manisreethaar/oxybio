@@ -1,96 +1,176 @@
-document.addEventListener("DOMContentLoaded", () => {
-            // 1. Dynamic Year
-            document.getElementById('year').textContent = new Date().getFullYear();
+/* ── Main JS – Oxygen Bioinnovations v2 ──────────────────── */
 
-            // 2. Mobile Menu Logic
-            const menuBtn = document.getElementById('menuBtn');
-            const mobileMenu = document.getElementById('mobileMenu');
-            const mobileOverlay = document.getElementById('mobileOverlay');
-            const menuLinks = document.querySelectorAll('.menu-link');
+// ── Cursor Glow (desktop only) ────────────────────────────
+const glow = document.createElement('div');
+glow.classList.add('cursor-glow');
+document.body.appendChild(glow);
 
-            const toggleMenu = () => {
-                menuBtn.classList.toggle('open');
-                mobileMenu.classList.toggle('open');
-                mobileOverlay.classList.toggle('open');
-                document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
-            };
+let glowActive = false;
+document.addEventListener('mousemove', (e) => {
+    glow.style.left = e.clientX + 'px';
+    glow.style.top = e.clientY + 'px';
+    const darkEl = e.target.closest('.hero-dark, .problem-section, .science-section, .cta-section, #footer');
+    if (darkEl && !glowActive) {
+        glow.style.opacity = '1';
+        glowActive = true;
+    } else if (!darkEl && glowActive) {
+        glow.style.opacity = '0';
+        glowActive = false;
+    }
+});
 
-            menuBtn.addEventListener('click', toggleMenu);
-            mobileOverlay.addEventListener('click', toggleMenu);
-            menuLinks.forEach(link => {
-                link.addEventListener('click', toggleMenu);
+// ── Navigation ────────────────────────────────────────────
+const header = document.getElementById('header');
+
+function updateNav() {
+    if (!header) return;
+    const scrolled = window.scrollY > 40;
+
+    // Determine if over dark background
+    const heroEl = document.querySelector('.hero-dark');
+    const onDark = heroEl && window.scrollY < heroEl.offsetHeight - header.offsetHeight;
+
+    header.classList.toggle('scrolled', scrolled);
+    header.classList.toggle('on-dark', !!onDark);
+}
+
+updateNav();
+window.addEventListener('scroll', updateNav, { passive: true });
+
+// ── Mobile Menu ───────────────────────────────────────────
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+const mobileOverlay = document.getElementById('mobileOverlay');
+const mobileClose = document.getElementById('mobileClose');
+
+function openMenu() {
+    mobileMenu?.classList.add('open');
+    mobileOverlay?.classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeMenu() {
+    mobileMenu?.classList.remove('open');
+    mobileOverlay?.classList.remove('open');
+    document.body.style.overflow = '';
+}
+
+menuBtn?.addEventListener('click', openMenu);
+mobileClose?.addEventListener('click', closeMenu);
+mobileOverlay?.addEventListener('click', closeMenu);
+
+// Close on link click
+mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+// ── Scroll Reveal ─────────────────────────────────────────
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+    revealObserver.observe(el);
+});
+
+// ── Counter Animations ────────────────────────────────────
+function animateCounter(el) {
+    const target = parseFloat(el.dataset.target);
+    const suffix = el.dataset.suffix || '';
+    const prefix = el.dataset.prefix || '';
+    const duration = 2000;
+    const decimals = String(target).includes('.') ? String(target).split('.')[1].length : 0;
+    const startTime = performance.now();
+
+    function step(now) {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        // Ease out expo
+        const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+        const current = (target * eased).toFixed(decimals);
+        el.textContent = prefix + current + suffix;
+        if (progress < 1) requestAnimationFrame(step);
+    }
+
+    requestAnimationFrame(step);
+}
+
+const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            counterObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
+
+// ── Comparison Bars (animate on scroll) ───────────────────
+const barObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.compare-fill').forEach(bar => {
+                bar.style.width = bar.dataset.width || '0%';
             });
+            barObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.3 });
 
-            // 3. Scroll Interactions (Header background & Mobile Sticky CTA)
-            const header = document.getElementById('header');
-            const mobileCta = document.getElementById('mobileCta');
-            const footer = document.getElementById('footer');
+document.querySelectorAll('.science-compare').forEach(el => barObserver.observe(el));
 
-            window.addEventListener('scroll', () => {
-                // Sticky Header styling
-                if (window.scrollY > 50) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
+// ── Roadmap Drag-to-Scroll ────────────────────────────────
+const roadmapScroll = document.querySelector('.roadmap-scroll');
+if (roadmapScroll) {
+    let isDown = false, startX, scrollLeft;
 
-                // Mobile CTA Show/Hide (Hide when near footer)
-                if (window.innerWidth < 768) {
-                    const footerRect = footer.getBoundingClientRect();
-                    const viewHeight = window.innerHeight;
+    roadmapScroll.addEventListener('mousedown', e => {
+        isDown = true;
+        roadmapScroll.style.cursor = 'grabbing';
+        startX = e.pageX - roadmapScroll.offsetLeft;
+        scrollLeft = roadmapScroll.scrollLeft;
+    });
 
-                    // Show past hero, hide near footer
-                    if (window.scrollY > 400 && footerRect.top > viewHeight) {
-                        mobileCta.classList.add('visible');
-                    } else {
-                        mobileCta.classList.remove('visible');
-                    }
-                }
-            }, { passive: true });
+    roadmapScroll.addEventListener('mouseleave', () => {
+        isDown = false;
+        roadmapScroll.style.cursor = 'grab';
+    });
 
-            // 4. Intersection Observer for Fade-Up Animations
-            const revealElements = document.querySelectorAll('.reveal');
+    roadmapScroll.addEventListener('mouseup', () => {
+        isDown = false;
+        roadmapScroll.style.cursor = 'grab';
+    });
 
-            const revealSettings = {
-                threshold: 0.15,
-                rootMargin: "0px 0px -50px 0px"
-            };
+    roadmapScroll.addEventListener('mousemove', e => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - roadmapScroll.offsetLeft;
+        roadmapScroll.scrollLeft = scrollLeft - (x - startX) * 1.5;
+    });
+}
 
-            const revealObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                        observer.unobserve(entry.target); // Reveal only once
-                    }
-                });
-            }, revealSettings);
+// ── Footer Year ───────────────────────────────────────────
+document.querySelectorAll('#year').forEach(el => {
+    el.textContent = new Date().getFullYear();
+});
 
-            revealElements.forEach(el => revealObserver.observe(el));
-
-            // 5. Stat Counter Animation
-            const counters = document.querySelectorAll('.stat-number');
-
-            const counterObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const target = entry.target;
-                        const finalValue = parseInt(target.getAttribute('data-target'));
-                        const duration = 2000;
-                        const stepTime = Math.abs(Math.floor(duration / finalValue));
-                        let current = 0;
-
-                        const timer = setInterval(() => {
-                            current += 1;
-                            target.textContent = current;
-                            if (current === finalValue) {
-                                clearInterval(timer);
-                            }
-                        }, stepTime);
-
-                        observer.unobserve(target);
-                    }
-                });
-            }, { threshold: 0.5 });
-
-            counters.forEach(counter => counterObserver.observe(counter));
-        });
+// ── Mobile Sticky CTA (hide/show on scroll) ───────────────
+const mobileCta = document.getElementById('mobileCta');
+if (mobileCta) {
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+        const current = window.scrollY;
+        if (current > 300) {
+            mobileCta.style.opacity = '1';
+            mobileCta.style.transform = 'translateX(-50%) translateY(0)';
+        } else {
+            mobileCta.style.opacity = '0';
+            mobileCta.style.transform = 'translateX(-50%) translateY(20px)';
+        }
+        lastScroll = current;
+    }, { passive: true });
+}
