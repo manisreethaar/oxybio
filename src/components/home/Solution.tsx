@@ -85,90 +85,86 @@ const Solution = () => {
                 </div>
 
                 {/* Product Cards Grid - Vertically stacked on mobile, 3-col on desktop */}
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
+                <div className="flex flex-col gap-12 mt-12">
                     {products.map((product, i) => (
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-50px" }}
-                            transition={{ delay: i * 0.15 }}
-                            key={product.id}
-                            className={`relative group rounded-3xl overflow-hidden glass-card transition-all duration-500 hover:-translate-y-2 ${product.featured ? 'border-cyan-ethereal/40 shadow-[0_0_40px_rgba(102,252,241,0.1)]' : 'border-white/5'}`}
+                            viewport={{ once: true }}
+                            transition={{ delay: i * 0.1 }}
+                            key={i}
+                            className="bg-obsidian border-t-2 border-white pt-8 flex flex-col gap-6"
                         >
-                            {/* Product Card Glow Background */}
-                            <div className={`absolute top-0 inset-x-0 h-40 bg-gradient-to-b ${product.gradient} opacity-20 group-hover:opacity-40 transition-opacity duration-500`} />
-
-                            <div className="p-8 relative z-10 flex flex-col h-full">
-                                <div className="flex justify-between items-start mb-6">
-                                    <div className={`p-3 rounded-xl bg-obsidian border border-white/10 shadow-lg`}>
-                                        {product.icon}
+                            {/* Header Box */}
+                            <div className="flex justify-between items-start flex-wrap gap-4">
+                                <div>
+                                    <div className="font-mono text-sm text-slate-ash/70 tracking-[0.1em] uppercase mb-2">
+                                        0{i + 1} // {product.status}
                                     </div>
-                                    <span className="text-xs font-bold uppercase tracking-wider text-cyan-ethereal bg-cyan-ethereal/10 px-3 py-1 rounded-full">
+                                    <h3 className="font-heading font-bold text-5xl md:text-6xl text-white leading-none m-0">
+                                        {product.name.replace('Project ', '')}
+                                    </h3>
+                                    <div className="font-semibold text-lg mt-2 text-white">
                                         {product.target}
-                                    </span>
-                                </div>
-
-                                <h3 className="text-2xl font-heading font-bold text-white mb-2">{product.name}</h3>
-
-                                <div className="mb-4">
-                                    <span className="text-[10px] uppercase tracking-widest text-slate-ash/50 font-bold block mb-1">Status</span>
-                                    <div className="text-sm font-medium text-white/80 bg-white/5 inline-block px-2 py-1 rounded border border-white/5">
-                                        {product.status}
                                     </div>
                                 </div>
+                            </div>
 
-                                <p className="text-slate-ash text-sm leading-relaxed mb-6 font-medium">
-                                    "{product.tagline}"
-                                </p>
-
-                                <div className="flex-grow">
-                                    <span className="text-[10px] uppercase tracking-widest text-slate-ash/50 font-bold block mb-3">Key Benefits</span>
-                                    <ul className="space-y-2 mb-6">
+                            {/* Content Grid */}
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                                <div>
+                                    <p className="text-xl leading-relaxed text-slate-ash/90 mb-6 font-medium">
+                                        {product.tagline}
+                                    </p>
+                                    <ul className="space-y-4">
                                         {product.benefits.map((benefit, j) => (
-                                            <li key={j} className="flex items-start text-sm text-slate-ash">
-                                                <span className="text-cyan-seafoam mr-2 block mt-0.5">•</span>
+                                            <li key={j} className="flex items-start text-base text-white font-medium">
+                                                <span className="text-white mr-3 block mt-0.5 opacity-70">→</span>
                                                 <span>{benefit}</span>
                                             </li>
                                         ))}
                                     </ul>
                                 </div>
 
-                                <div className="pt-6 border-t border-white/10 mt-auto">
-                                    <span className="text-[10px] uppercase tracking-widest text-slate-ash/50 font-bold block mb-2">Core Stack</span>
-                                    <p className="text-xs text-white/70 leading-relaxed font-medium">
+                                {/* Ingredients Box */}
+                                <div className="bg-charcoal/40 p-8 rounded-2xl border border-white/10 flex flex-col justify-center">
+                                    <div className="font-mono text-sm text-slate-ash/70 tracking-[0.05em] mb-4 uppercase">
+                                        Formulation Stack
+                                    </div>
+                                    <p className="text-lg font-semibold leading-relaxed text-white m-0 tracking-tight">
                                         {product.ingredients}
                                     </p>
                                 </div>
                             </div>
                         </motion.div>
                     ))}
-                </div>
 
-                {/* Sneak Peek / Coming Soon Bar */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="w-full bg-charcoal border border-white/10 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 overflow-hidden relative"
-                >
-                    <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-ethereal/5 rounded-full blur-[80px]" />
-                    <div className="relative z-10 flex-1">
-                        <div className="inline-block px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-bold tracking-wider text-cyan-seafoam mb-4">
-                            COMING SOON
+                    {/* Coming Soon Protein Bar */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.98 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        className="bg-white text-obsidian rounded-[2rem] flex flex-col justify-center items-center text-center p-16 mt-4 shadow-2xl"
+                    >
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-ethereal/5 rounded-full blur-[80px]" />
+                        <div className="relative z-10 flex-1">
+                            <div className="inline-block px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-bold tracking-wider text-cyan-seafoam mb-4">
+                                COMING SOON
+                            </div>
+                            <h4 className="text-xl font-heading font-bold text-white mb-2">The Honest Protein Bar</h4>
+                            <p className="text-slate-ash text-sm leading-relaxed mb-4 md:mb-0 max-w-2xl">
+                                Real dates, real cashews, real pumpkin seeds. 300mg KSM-66 Ashwagandha in every bar. No fake protein. No compound chocolate. Coming alongside our drink range.
+                            </p>
                         </div>
-                        <h4 className="text-xl font-heading font-bold text-white mb-2">The Honest Protein Bar</h4>
-                        <p className="text-slate-ash text-sm leading-relaxed mb-4 md:mb-0 max-w-2xl">
-                            Real dates, real cashews, real pumpkin seeds. 300mg KSM-66 Ashwagandha in every bar. No fake protein. No compound chocolate. Coming alongside our drink range.
-                        </p>
-                    </div>
-                    <div className="relative z-10 w-full md:w-auto flex flex-wrap gap-2 text-xs font-medium text-white/60">
-                        <span className="bg-obsidian px-3 py-1.5 rounded-lg border border-white/5">Dates</span>
-                        <span className="bg-obsidian px-3 py-1.5 rounded-lg border border-white/5">Cashews</span>
-                        <span className="bg-obsidian px-3 py-1.5 rounded-lg border border-white/5">Ashwagandha</span>
-                        <span className="bg-obsidian px-3 py-1.5 rounded-lg border border-white/5">Whey Isolate</span>
-                    </div>
-                </motion.div>
+                        <div className="relative z-10 w-full md:w-auto flex flex-wrap gap-2 text-xs font-medium text-white/60">
+                            <span className="bg-obsidian px-3 py-1.5 rounded-lg border border-white/5">Dates</span>
+                            <span className="bg-obsidian px-3 py-1.5 rounded-lg border border-white/5">Cashews</span>
+                            <span className="bg-obsidian px-3 py-1.5 rounded-lg border border-white/5">Ashwagandha</span>
+                            <span className="bg-obsidian px-3 py-1.5 rounded-lg border border-white/5">Whey Isolate</span>
+                        </div>
+                    </motion.div>
 
+                </div>
             </div>
         </section>
     );

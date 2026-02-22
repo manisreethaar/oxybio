@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { CheckCircle2, ChevronRight, Sparkles } from 'lucide-react';
+import { ChevronRight, Sparkles } from 'lucide-react';
 
 const Hero = () => {
     return (
@@ -67,23 +67,6 @@ const Hero = () => {
                             </button>
                         </motion.div>
 
-                        {/* Trust Signals Under CTA */}
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ duration: 0.6, delay: 0.5 }}
-                            className="flex flex-col sm:flex-row gap-3 text-sm text-slate-ash/80 font-medium"
-                        >
-                            <div className="flex items-center gap-2">
-                                <CheckCircle2 className="w-4 h-4 text-cyan-seafoam" /> TBI Incubated Startup
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <CheckCircle2 className="w-4 h-4 text-cyan-seafoam" /> FSSAI Licensing In Progress
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <CheckCircle2 className="w-4 h-4 text-cyan-seafoam" /> 100% Indian Ingredients
-                            </div>
-                        </motion.div>
                     </div>
 
                     {/* Right Column (Visual) - Hidden on smallest mobile, expands on tablet/desktop */}

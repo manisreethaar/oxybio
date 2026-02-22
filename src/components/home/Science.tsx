@@ -107,7 +107,7 @@ const Science = () => {
                     </div>
 
                     {/* Table */}
-                    <div className="overflow-x-auto">
+                    <div className="w-full">
                         <table className="w-full text-left border-collapse">
                             <thead>
                                 <tr className="bg-obsidian/50 border-b border-white/5 text-slate-ash/70 text-sm uppercase tracking-wider font-semibold">

@@ -194,7 +194,7 @@ for filename in files:
     content = re.sub(r'<!-- Mobile Drawer Overlay & Menu -->.*?</nav>', html_mobile, content, flags=re.DOTALL)
 
     # Logo link
-    content = re.sub(r'<a href="#" class="logo">OXYGEN<span>.</span></a>', r'<a href="index.html" class="logo">OXYGEN<span>.</span></a>', content)
+    content = re.sub(r'<a href="#" class="logo">OXYGEN<span>.</span></a>', r'<a href="index.html" class="logo" style="font-size:1.2rem; letter-spacing:-0.5px;">Oxygen Bioinnovations<span>.</span></a>', content)
 
     # Footer links (let's update these too!)
     footer_old = """<div class="footer-links">
