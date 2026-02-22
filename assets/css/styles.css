@@ -2272,7 +2272,7 @@ body {
 .orbit-ring {
     position: absolute;
     border-radius: 50%;
-    border: 1px dashed rgba(13, 138, 116, 0.2);
+    border: 1px dashed rgba(107, 82, 68, 0.25);
     animation: spin 15s linear infinite;
 }
 .orbit-ring-1 {
@@ -2282,7 +2282,7 @@ body {
 .orbit-ring-2 {
     width: 180px;
     height: 180px;
-    border: 1px solid rgba(13, 138, 116, 0.1);
+    border: 1px solid rgba(107, 82, 68, 0.15);
     animation: spin 10s linear infinite reverse;
 }
 
@@ -2364,8 +2364,8 @@ body {
 
 @keyframes moleculePop {
     0%, 40% { opacity: 0; transform: scale(0); box-shadow: 0 0 0px rgba(13, 138, 116, 0); }
-    45% { opacity: 1; transform: scale(1.1); box-shadow: 0 0 60px rgba(13, 138, 116, 0.6); }
-    50%, 80% { opacity: 1; transform: scale(1); box-shadow: 0 0 30px rgba(13, 138, 116, 0.3); }
+    45% { opacity: 1; transform: scale(1.1); box-shadow: 0 0 80px rgba(107, 82, 68, 0.5); }
+    50%, 80% { opacity: 1; transform: scale(1); box-shadow: 0 0 40px rgba(107, 82, 68, 0.3); }
     85%, 100% { opacity: 0; transform: scale(0); }
 }
 
@@ -2375,7 +2375,7 @@ body {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    border: 2px solid #0D8A74;
+    border: 1.5px solid rgba(107, 82, 68, 0.7);
     opacity: 0;
     animation: pulseExpand 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
