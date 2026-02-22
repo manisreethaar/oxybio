@@ -148,3 +148,92 @@ if (mobileCta && joinSection) {
     }, { passive: true });
 }
 
+
+
+// ── Hash-based Tabbed Navigation ──────────────────────────────
+function handleHashTabs() {
+    const hash = window.location.hash;
+    const visionSec = document.getElementById('about-vision');
+    const founderSec = document.getElementById('about-founder');
+    
+    // Only run if we are on the about page exactly
+    if (!visionSec || !founderSec) return;
+
+    // Reset both to hidden
+    visionSec.style.display = 'none';
+    founderSec.style.display = 'none';
+
+    if (hash === '#about-founder') {
+        founderSec.style.display = 'block';
+        window.scrollTo(0,0);
+        
+        // Re-initialize ScrollSpy when entering this tab
+        setTimeout(initScrollSpy, 100);
+    } else {
+        // Default to vision if empty or #about-vision
+        visionSec.style.display = 'block';
+        window.scrollTo(0,0);
+    }
+}
+
+// Listen for hash changes from clicking the mega-menu
+window.addEventListener('hashchange', handleHashTabs);
+
+// Run on initial load
+document.addEventListener('DOMContentLoaded', () => {
+    handleHashTabs();
+    initScrollSpy();
+});
+
+
+// ── ScrollSpy for About Us Index ──────────────────────────────
+function initScrollSpy() {
+    const chapters = document.querySelectorAll('.chapter-section');
+    const navItems = document.querySelectorAll('.index-nav-item');
+    
+    if (chapters.length === 0 || navItems.length === 0) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Remove active styling from all items
+                navItems.forEach(item => {
+                    item.style.color = 'var(--text-muted)';
+                    item.style.fontWeight = '400';
+                });
+                
+                // Find corresponding nav item
+                const id = entry.target.getAttribute('id');
+                const activeLink = document.querySelector(`.index-nav-item[data-target="${id}"]`);
+                if (activeLink) {
+                    activeLink.style.color = 'var(--text-main)';
+                    activeLink.style.fontWeight = '600';
+                }
+            }
+        });
+    }, {
+        rootMargin: '-20% 0px -60% 0px',
+        threshold: 0.1
+    });
+
+    chapters.forEach(chapter => {
+        observer.observe(chapter);
+    });
+    
+    // Smooth scrolling for the index clicks
+    navItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            const targetId = item.getAttribute('data-target');
+            const targetEl = document.getElementById(targetId);
+            if(targetEl) {
+                const headerOffset = 100;
+                const elementPosition = targetEl.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
+}

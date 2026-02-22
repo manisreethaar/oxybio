@@ -206,17 +206,17 @@
             <div style="position:sticky; top:120px;" class="editorial-col">
                 <div style="font-family:var(--font-mono); font-size:var(--text-sm); line-height:var(--leading-relaxed); color:var(--text-muted); margin-bottom:2rem;">INDEX</div>
                 <ul style="list-style:none; padding:0; margin:0; border-left:1px solid var(--border); padding-left:1.5rem; display:flex; flex-direction:column; gap:1.5rem;">
-                    <li style="font-family:var(--font-serif); font-size:var(--text-xl); line-height:var(--leading-tight); color:var(--text-main);">01. The Hook</li>
-                    <li style="font-family:var(--font-serif); font-size:var(--text-xl); line-height:var(--leading-tight); color:var(--text-muted);">02. The Founder</li>
-                    <li style="font-family:var(--font-serif); font-size:var(--text-xl); line-height:var(--leading-tight); color:var(--text-muted);">03. Our Approach</li>
-                    <li style="font-family:var(--font-serif); font-size:var(--text-xl); line-height:var(--leading-tight); color:var(--text-muted);">04. The Journey</li>
+                    <li class="index-nav-item" data-target="chapter-01" style="font-family:var(--font-serif); font-size:var(--text-xl); line-height:var(--leading-tight); color:var(--text-main); font-weight:600; cursor:pointer; transition:color 0.3s ease;">01. The Hook</li>
+                    <li class="index-nav-item" data-target="chapter-02" style="font-family:var(--font-serif); font-size:var(--text-xl); line-height:var(--leading-tight); color:var(--text-muted); cursor:pointer; transition:color 0.3s ease;">02. The Founder</li>
+                    <li class="index-nav-item" data-target="chapter-03" style="font-family:var(--font-serif); font-size:var(--text-xl); line-height:var(--leading-tight); color:var(--text-muted); cursor:pointer; transition:color 0.3s ease;">03. Our Approach</li>
+                    <li class="index-nav-item" data-target="chapter-04" style="font-family:var(--font-serif); font-size:var(--text-xl); line-height:var(--leading-tight); color:var(--text-muted); cursor:pointer; transition:color 0.3s ease;">04. The Journey</li>
                 </ul>
             </div>
 
             <!-- Main Content Chapters -->
             <div>
                 <!-- Chapter 01 -->
-                <div style="margin-bottom:var(--space-xl);">
+                <div id="chapter-01" class="chapter-section" style="margin-bottom:var(--space-xl);">
                     <div style="font-family:var(--font-mono); color:var(--text-muted); margin-bottom:0.5rem;">CHAPTER 01</div>
                     <h3 class="headline" style="font-size:var(--text-3xl); line-height:var(--leading-tight); margin-bottom:1.5rem;">The Hook</h3>
                     <div class="editorial-col" style="font-size:var(--text-lg); line-height:var(--leading-normal); line-height:1.7; color:var(--text-muted);">
@@ -230,7 +230,7 @@
                 </div>
 
                 <!-- Chapter 02 -->
-                <div style="margin-bottom:var(--space-xl); padding-top:var(--space-xl); border-top:1px dashed var(--border);">
+                <div id="chapter-02" class="chapter-section" style="margin-bottom:var(--space-xl); padding-top:var(--space-xl); border-top:1px dashed var(--border);">
                     <div style="font-family:var(--font-mono); color:var(--text-muted); margin-bottom:0.5rem;">CHAPTER 02</div>
                     <h3 class="headline" style="font-size:var(--text-3xl); line-height:var(--leading-tight); margin-bottom:1.5rem;">The Founder</h3>
                     <div class="editorial-col" style="font-size:var(--text-lg); line-height:var(--leading-normal); line-height:1.7; color:var(--text-muted);">
@@ -256,7 +256,7 @@
                 </div>
 
                 <!-- Chapter 03 -->
-                <div style="margin-bottom:var(--space-xl); padding-top:var(--space-xl); border-top:1px dashed var(--border);">
+                <div id="chapter-03" class="chapter-section" style="margin-bottom:var(--space-xl); padding-top:var(--space-xl); border-top:1px dashed var(--border);">
                     <div style="font-family:var(--font-mono); color:var(--text-muted); margin-bottom:0.5rem;">CHAPTER 03</div>
                     <h3 class="headline" style="font-size:var(--text-3xl); line-height:var(--leading-tight); margin-bottom:1.5rem;">Our Approach</h3>
                     
@@ -295,7 +295,7 @@
                 </div>
 
                 <!-- Chapter 04 -->
-                <div style="padding-top:var(--space-xl); border-top:1px dashed var(--border);">
+                <div id="chapter-04" class="chapter-section" style="padding-top:var(--space-xl); border-top:1px dashed var(--border);">
                     <div style="font-family:var(--font-mono); color:var(--text-muted); margin-bottom:0.5rem;">CHAPTER 04</div>
                     <h3 class="headline" style="font-size:var(--text-3xl); line-height:var(--leading-tight); margin-bottom:1.5rem;">The Journey So Far</h3>
                     <p style="font-size:var(--text-lg); line-height:var(--leading-normal); color:var(--text-muted); margin-bottom:2rem; max-width:600px;">What we have built before we built anything physical. Most companies build first and think about science second. We spent months thinking about the science before building anything.</p>

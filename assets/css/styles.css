@@ -188,22 +188,59 @@ a {
 
 .mega-menu {
     position: absolute;
-    top: calc(100% + 1rem);
+    top: calc(100% + 1.5rem);
     left: 50%;
-    transform: translateX(-50%) translateY(-8px);
-    background: #fff;
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 1.25rem;
-    min-width: 240px;
+    transform: translateX(-50%) translateY(10px) scale(0.98);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 20px;
+    padding: 1.5rem;
+    min-width: 280px;
     display: flex;
-    gap: 1.25rem;
-    box-shadow: var(--shadow-lg);
+    gap: 1.5rem;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.02);
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.25s, transform 0.3s var(--ease), visibility 0.25s;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     pointer-events: none;
 }
+.nav-item:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0) scale(1);
+    pointer-events: auto;
+}
+.mega-card {
+    background: linear-gradient(135deg, var(--bg) 0%, #fff 100%);
+    padding: 1.25rem;
+    border-radius: 12px;
+    min-width: 140px;
+    border: 1px solid rgba(0,0,0,0.04);
+}
+.mega-links a {
+    position: relative;
+    padding-left: 0 !important;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+.mega-links a:hover {
+    transform: translateX(4px);
+    color: var(--text-main);
+}
+.mega-links a::after {
+    content: "→";
+    position: absolute;
+    right: -20px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.2s ease;
+}
+.mega-links a:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
 
 /* Invisible bridge so the mouse doesn't lose hover when crossing the gap */
 .mega-menu::before {
@@ -216,11 +253,60 @@ a {
 }
 
 .nav-item:hover .mega-menu {
+    position: absolute;
+    top: calc(100% + 1.5rem);
+    left: 50%;
+    transform: translateX(-50%) translateY(10px) scale(0.98);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 20px;
+    padding: 1.5rem;
+    min-width: 280px;
+    display: flex;
+    gap: 1.5rem;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.02);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+}
+.nav-item:hover .mega-menu {
     opacity: 1;
     visibility: visible;
-    transform: translateX(-50%) translateY(0);
+    transform: translateX(-50%) translateY(0) scale(1);
     pointer-events: auto;
 }
+.mega-card {
+    background: linear-gradient(135deg, var(--bg) 0%, #fff 100%);
+    padding: 1.25rem;
+    border-radius: 12px;
+    min-width: 140px;
+    border: 1px solid rgba(0,0,0,0.04);
+}
+.mega-links a {
+    position: relative;
+    padding-left: 0 !important;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+.mega-links a:hover {
+    transform: translateX(4px);
+    color: var(--text-main);
+}
+.mega-links a::after {
+    content: "→";
+    position: absolute;
+    right: -20px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.2s ease;
+}
+.mega-links a:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
 
 .mega-card {
     background: var(--bg-alt);
