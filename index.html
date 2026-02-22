@@ -2,20 +2,718 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Oxygen Bioinnovations | Precision Nutrition</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oxygen Bioinnovations | Precision Nutrition. India's First.</title>
+    <meta name="description"
+        content="Ancient ingredients. Modern science. No compromise. India's first millet and mushroom-based precision nutrition system.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+
+    <!-- ── Navigation ──────────────────────────────────────── -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo" style="font-size:1.2rem; letter-spacing:-0.5px;">Oxygen
+                Bioinnovations<span>.</span></a>
+            <nav class="desktop-nav">
+                <a href="index.html">Home</a>
+
+                <div class="nav-item">
+                    <a href="about.html">About Us
+                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-card">
+                            <div class="mega-icon">👥</div>
+                            <h4>Who we are</h4>
+                            <p>Building India's first precision nutrition system</p>
+                        </div>
+                        <div class="mega-links">
+                            <a href="about.html#about-vision">Vision &amp; Mission</a>
+                            <a href="about.html#about-founder">Founder &amp; Team</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-item">
+                    <a href="science.html">Our Science
+                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-card">
+                            <div class="mega-icon">🧪</div>
+                            <h4>Evidence-Based</h4>
+                            <p>Active forms, verified extracts, clinical proof</p>
+                        </div>
+                        <div class="mega-links">
+                            <a href="problem.html">The Problem</a>
+                            <a href="ingredients.html">Ingredients Index</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="blog.html">Blog</a>
+                <a href="careers.html">Careers</a>
+                <a href="contact.html">Contact</a>
+                <a href="#join" class="btn btn-primary" style="margin-left: 0.5rem;">Join Waitlist</a>
+            </nav>
+            <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <nav class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <a href="index.html" class="logo" style="font-size:1.2rem; letter-spacing:-0.5px;">Oxygen
+                Bioinnovations<span>.</span></a>
+            <button class="mobile-close" id="mobileClose" aria-label="Close">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <a href="index.html" class="menu-link">Home</a>
+        <a href="about.html" class="menu-link">About Us</a>
+        <div class="mobile-submenu">
+            <a href="about.html#about-vision" class="menu-link">Vision &amp; Mission</a>
+            <a href="about.html#about-founder" class="menu-link">Founder &amp; Team</a>
+        </div>
+        <a href="science.html" class="menu-link">Our Science</a>
+        <div class="mobile-submenu">
+            <a href="problem.html" class="menu-link">The Problem</a>
+            <a href="ingredients.html" class="menu-link">Ingredients Index</a>
+        </div>
+        <a href="blog.html" class="menu-link">Blog</a>
+        <a href="careers.html" class="menu-link">Careers</a>
+        <a href="contact.html" class="menu-link">Contact</a>
+        <div class="mobile-cta">
+            <a href="#join" class="btn btn-primary" style="width:100%;justify-content:center;padding:1rem;">Join the
+                Waitlist</a>
+        </div>
+    </nav>
+
+
+
+    <main>
+
+        <!-- ═══════════════════════════════════════════════════════
+     HERO SECTION (Strict Asymmetrical Flow)
+════════════════════════════════════════════════════════ -->
+        <section class="structure-section" style="padding-top:140px; border-bottom:none;">
+            <div class="container">
+                <div class="flow-left reveal" style="max-width:900px;">
+                    <div class="badge" style="margin-bottom:var(--space-md);">🌱 Currently in Development • TBI
+                        Incubated • Clinical Study Designed</div>
+                    <h1 class="display" style="font-size:var(--text-6xl); line-height:var(--leading-none);">Ancient
+                        Ingredients.<br>Modern Science.<br><em>No Compromise.</em></h1>
+                    <p class="subtext editorial-col"
+                        style="margin-top:var(--space-md); font-size:var(--text-xl); line-height:var(--leading-relaxed);">
+                        India is building its first precision nutrition system. Built on Millet, Medicinal Mushrooms,
+                        and decades of scientific research. Designed for ambitious Indians who deserve better than what
+                        currently exists.
+                    </p>
+                    <div
+                        style="margin-top:var(--space-md); display:flex; gap:1rem; align-items:center; flex-wrap:wrap;">
+                        <a href="#join" class="btn btn-primary">Join Waitlist</a>
+                        <a href="problem.html" class="btn btn-outline">Read the Science</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════
+     MARQUEE SECTION (Technical)
+════════════════════════════════════════════════════════ -->
+        <div class="container pb-12">
+            <div class="marquee-section"
+                style="border:1px solid var(--border); background:var(--bg-alt); border-radius:12px; padding:1.5rem 0; box-shadow:var(--shadow-md);">
+                <div class="marquee-track"
+                    style="font-family:var(--font-mono); text-transform:uppercase; font-size:0.85rem;">
+                    <span class="marquee-item">TBI Incubated Startup <span class="marquee-dot"></span></span>
+                    <span class="marquee-item">Science-First Formulation <span class="marquee-dot"></span></span>
+                    <span class="marquee-item">FSSAI Licensing In Progress <span class="marquee-dot"></span></span>
+                    <span class="marquee-item">100% Indian Ingredients <span class="marquee-dot"></span></span>
+                    <span class="marquee-item">Third-Party Testing Planned <span class="marquee-dot"></span></span>
+                    <span class="marquee-item">Zero Artificial Ingredients <span class="marquee-dot"></span></span>
+                    <span class="marquee-item">Clinical Study Protocol Ready <span class="marquee-dot"></span></span>
+                    <span class="marquee-item">Peer-Reviewed Formulation <span class="marquee-dot"></span></span>
+                    <!-- Duplicate for infinite scroll -->
+                    <span class="marquee-item">TBI Incubated Startup <span class="marquee-dot"></span></span>
+                    <span class="marquee-item">Science-First Formulation <span class="marquee-dot"></span></span>
+                    <span class="marquee-item">FSSAI Licensing In Progress <span class="marquee-dot"></span></span>
+                    <span class="marquee-item">100% Indian Ingredients <span class="marquee-dot"></span></span>
+                    <span class="marquee-item">Third-Party Testing Planned <span class="marquee-dot"></span></span>
+                    <span class="marquee-item">Zero Artificial Ingredients <span class="marquee-dot"></span></span>
+                    <span class="marquee-item">Clinical Study Protocol Ready <span class="marquee-dot"></span></span>
+                    <span class="marquee-item">Peer-Reviewed Formulation <span class="marquee-dot"></span></span>
+                </div>
+            </div>
+
+            <!-- ═══════════════════════════════════════════════════════
+     PROBLEM SECTION
+════════════════════════════════════════════════════════ -->
+            <section class="structure-section" id="problem">
+                <div class="container">
+                    <div style="display:grid;grid-template-columns:1fr 2fr;gap:var(--space-lg);align-items:start;"
+                        class="mobile-stack">
+                        <div style="position:sticky;top:120px;" class="flow-left reveal">
+                            <div class="section-label">
+                                <div class="section-label-line"></div>
+                                <span class="section-label-text">The Problem</span>
+                            </div>
+                            <h2 class="headline" style="margin-top:var(--space-sm);">You are probably nutritionally
+                                deficient.</h2>
+                            <p class="subtext editorial-col" style="margin-top:var(--space-sm);">Not because you are
+                                careless. Because modern Indian life makes proper nutrition almost impossible.</p>
+                            <div style="margin-top:var(--space-md);">
+                                <a href="problem.html" class="btn btn-outline">Read the Clinical Data</a>
+                            </div>
+                        </div>
+
+                        <!-- Bento Structure for Problem Cards -->
+                        <div class="bento-grid reveal" style="margin-top:0;">
+
+                            <!-- KEY STATISTICS -->
+                            <div class="bento-cell" style="grid-column: span 6;">
+                                <div class="data-num" data-target="73" data-suffix="%"
+                                    style="font-size:var(--text-6xl); line-height:var(--leading-none);">73%</div>
+                                <div class="data-label"
+                                    style="font-size:var(--text-base); font-weight:600; margin-top:0.5rem; line-height:var(--leading-snug);">
+                                    Vitamin D Deficiency in Urban India</div>
+                                <div class="stat-bar-container" style="display:block; margin: 1rem 0;">
+                                    <div class="stat-bar-fill" style="width: 73%;"></div>
+                                </div>
+                                <p class="text-meta">(Source: ICMR National Nutrition Survey, 2022)</p>
+                            </div>
+
+                            <div class="bento-cell" style="grid-column: span 6;">
+                                <div class="data-num" data-target="50" data-suffix="%"
+                                    style="font-size:var(--text-6xl); line-height:var(--leading-none);">50%</div>
+                                <div class="data-label"
+                                    style="font-size:var(--text-base); font-weight:600; margin-top:0.5rem; line-height:var(--leading-snug);">
+                                    Skip at least one primary meal/day</div>
+                                <div class="stat-bar-container" style="display:block; margin: 1rem 0;">
+                                    <div class="stat-bar-fill" style="width: 50%;"></div>
+                                </div>
+                                <p class="text-meta">(Source: ASSOCHAM Health Survey)</p>
+                            </div>
+
+                            <div class="bento-cell" style="grid-column: span 12;">
+                                <div class="data-num" data-target="68" data-suffix="%"
+                                    style="font-size:var(--text-6xl); line-height:var(--leading-none); color:#DC2626;">
+                                    68%</div>
+                                <div class="data-label"
+                                    style="font-size:var(--text-lg); font-weight:600; margin-top:0.5rem; line-height:var(--leading-snug);">
+                                    Indian health drinks fail label claims</div>
+                                <div class="stat-bar-container" style="display:block; margin: 1rem 0;">
+                                    <div class="stat-bar-fill" style="width: 68%; background:#DC2626;"></div>
+                                </div>
+                                <p class="text-meta">(Source: Centre for Science and Environment Report)</p>
+                            </div>
+
+                            <!-- PROBLEM DETAILS -->
+                            <div class="bento-cell" style="grid-column: span 12; background:var(--bg-alt);">
+                                <h4
+                                    style="font-family:var(--font-serif); font-size:var(--text-xl); line-height:var(--leading-relaxed); margin-bottom:0.5rem;">
+                                    01 / No time for real nutrition</h4>
+                                <p style="color:var(--text-muted); line-height:1.6; font-size:0.95rem;">The average
+                                    working professional has 22 minutes for lunch, often at their desk. Students skip
+                                    meals before exams. Athletes eat whatever is convenient after training. The food
+                                    system was not designed for how Indians actually live.</p>
+                            </div>
+
+                            <div class="bento-cell" style="grid-column: span 12; background:var(--bg-alt);">
+                                <h4
+                                    style="font-family:var(--font-serif); font-size:var(--text-xl); line-height:var(--leading-relaxed); margin-bottom:0.5rem;">
+                                    02 / Existing products deceive you</h4>
+                                <p style="color:var(--text-muted); line-height:1.6; font-size:0.95rem;">Most Indian
+                                    health drinks are primarily sugar with token doses of vitamins your body cannot
+                                    absorb. Cheap synthetic forms, under-dosed actives, misleading labels. The same
+                                    brand sells better formulas in foreign markets. You deserve to know this.</p>
+                            </div>
+
+                            <div class="bento-cell" style="grid-column: span 12; background:var(--bg-alt);">
+                                <h4
+                                    style="font-family:var(--font-serif); font-size:var(--text-xl); line-height:var(--leading-relaxed); margin-bottom:0.5rem;">
+                                    03 / Imported solutions do not fit India</h4>
+                                <p style="color:var(--text-muted); line-height:1.6; font-size:0.95rem;">Products
+                                    designed for Western nutritional deficiencies miss what Indian bodies need. They do
+                                    not understand Ragi, Moringa, or Ashwagandha. They do not understand how Indians
+                                    eat, work, or train. India needs an Indian solution.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════
+     SOLUTION / PRODUCTS SECTION
+════════════════════════════════════════════════════════ -->
+            <section class="structure-section" style="background:var(--bg-alt); border-top:1px solid var(--border);">
+                <div class="container reveal">
+                    <div class="section-label">
+                        <div class="section-label-line"></div>
+                        <span class="section-label-text">The Solution</span>
+                    </div>
+                    <div
+                        style="display:flex; justify-content:space-between; align-items:flex-end; gap:2rem; flex-wrap:wrap; margin-bottom:var(--space-md);">
+                        <div style="max-width:800px;">
+                            <h2 class="headline" style="margin-top:var(--space-sm);">So we built one. Meet Oxygen.</h2>
+                            <p class="subtext editorial-col" style="margin-top:var(--space-sm);">Three precision
+                                formulas. Each scientifically designed for a specific need. All built on the same
+                                uncompromising foundation: Indian ingredients, active nutrient forms, and doses that
+                                actually work.</p>
+                        </div>
+                    </div>
+
+                    <div style="display:flex; flex-direction:column; gap:3rem; margin-top:3rem;">
+
+                        <!-- Project Vitality -->
+                        <div style="background:var(--bg); border-top:2px solid var(--text-main); padding-top:2rem; display:flex; flex-direction:column; gap:1.5rem;"
+                            class="mobile-stack-card">
+                            <div
+                                style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem;">
+                                <div>
+                                    <div
+                                        style="font-family:var(--font-mono); font-size:0.8rem; color:var(--text-muted); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.5rem;">
+                                        01 // Pre-Clinical Optimization</div>
+                                    <h3 class="display" style="font-size:var(--text-5xl); line-height:0.9; margin:0;">
+                                        VITALITY</h3>
+                                    <div
+                                        style="font-weight:600; font-size:1.1rem; margin-top:0.5rem; color:var(--text-main);">
+                                        DAILY DEFICIENCIES</div>
+                                </div>
+                            </div>
+
+                            <div style="display:grid; grid-template-columns:1fr; gap:2rem;" class="mobile-stack">
+                                <div
+                                    style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:2rem;">
+                                    <div>
+                                        <p
+                                            style="font-size:var(--text-lg); line-height:1.6; color:var(--text-muted); margin-bottom:1.5rem;">
+                                            For when you cannot eat well but refuse to function sub-optimally. An
+                                            everyday nutritional baseline.</p>
+                                        <ul
+                                            style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.5rem;">
+                                            <li style="display:flex; align-items:flex-start; gap:0.5rem;"><span
+                                                    style="color:var(--text-main);">→</span> <span
+                                                    style="font-weight:500; font-size:0.95rem; color:var(--text-main);">Covers
+                                                    50% of your daily nutrient needs</span></li>
+                                            <li style="display:flex; align-items:flex-start; gap:0.5rem;"><span
+                                                    style="color:var(--text-main);">→</span> <span
+                                                    style="font-weight:500; font-size:0.95rem; color:var(--text-main);">Sustained
+                                                    energy without sugar spikes</span></li>
+                                            <li style="display:flex; align-items:flex-start; gap:0.5rem;"><span
+                                                    style="color:var(--text-main);">→</span> <span
+                                                    style="font-weight:500; font-size:0.95rem; color:var(--text-main);">Stress
+                                                    adaptation with KSM-66 Ashwagandha</span></li>
+                                        </ul>
+                                    </div>
+                                    <div
+                                        style="background:var(--bg-alt); padding:2rem; border-radius:12px; border:1px solid var(--border); display:flex; flex-direction:column; justify-content:center;">
+                                        <div
+                                            style="font-family:var(--font-mono); font-size:0.85rem; color:var(--text-muted); letter-spacing:0.05em; margin-bottom:1rem;">
+                                            FORMULATION STACK</div>
+                                        <p style="font-size:1rem; font-weight:600; line-height:1.5; margin:0;">Finger
+                                            Millet, Ashwagandha KSM-66, Lion's Mane, Moringa, 22 Chelated Nutrients</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project Clarity -->
+                        <div style="background:var(--bg); border-top:2px solid var(--text-main); padding-top:2rem; display:flex; flex-direction:column; gap:1.5rem;"
+                            class="mobile-stack-card">
+                            <div
+                                style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem;">
+                                <div>
+                                    <div
+                                        style="font-family:var(--font-mono); font-size:0.8rem; color:var(--text-muted); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.5rem;">
+                                        02 // Sensory Trials & Taste Profiling</div>
+                                    <h3 class="display" style="font-size:var(--text-5xl); line-height:0.9; margin:0;">
+                                        CLARITY</h3>
+                                    <div
+                                        style="font-weight:600; font-size:1.1rem; margin-top:0.5rem; color:var(--text-main);">
+                                        COGNITIVE FATIGUE</div>
+                                </div>
+                            </div>
+
+                            <div style="display:grid; grid-template-columns:1fr; gap:2rem;" class="mobile-stack">
+                                <div
+                                    style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:2rem;">
+                                    <div>
+                                        <p
+                                            style="font-size:var(--text-lg); line-height:1.6; color:var(--text-muted); margin-bottom:1.5rem;">
+                                            The honest alternative to high-sugar energy drinks. Built for sustained
+                                            focus and the dreaded 3PM crash.</p>
+                                        <ul
+                                            style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.5rem;">
+                                            <li style="display:flex; align-items:flex-start; gap:0.5rem;"><span
+                                                    style="color:var(--text-main);">→</span> <span
+                                                    style="font-weight:500; font-size:0.95rem; color:var(--text-main);">Clean
+                                                    focus without caffeine crash</span></li>
+                                            <li style="display:flex; align-items:flex-start; gap:0.5rem;"><span
+                                                    style="color:var(--text-main);">→</span> <span
+                                                    style="font-weight:500; font-size:0.95rem; color:var(--text-main);">Memory
+                                                    and attention support (Lion's Mane)</span></li>
+                                            <li style="display:flex; align-items:flex-start; gap:0.5rem;"><span
+                                                    style="color:var(--text-main);">→</span> <span
+                                                    style="font-weight:500; font-size:0.95rem; color:var(--text-main);">L-Theanine:Caffeine
+                                                    ratio 2.5:1 (clinically studied)</span></li>
+                                        </ul>
+                                    </div>
+                                    <div
+                                        style="background:var(--bg-alt); padding:2rem; border-radius:12px; border:1px solid var(--border); display:flex; flex-direction:column; justify-content:center;">
+                                        <div
+                                            style="font-family:var(--font-mono); font-size:0.85rem; color:var(--text-muted); letter-spacing:0.05em; margin-bottom:1rem;">
+                                            FORMULATION STACK</div>
+                                        <p style="font-size:1rem; font-weight:600; line-height:1.5; margin:0;">Lion's
+                                            Mane, Bacopa Monnieri, L-Theanine, Natural Caffeine, Active B Vitamins</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project Momentum -->
+                        <div style="background:var(--bg); border-top:2px solid var(--text-main); padding-top:2rem; display:flex; flex-direction:column; gap:1.5rem;"
+                            class="mobile-stack-card">
+                            <div
+                                style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem;">
+                                <div>
+                                    <div
+                                        style="font-family:var(--font-mono); font-size:0.8rem; color:var(--text-main); font-weight:bold; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.5rem; background:#e8e8e4; display:inline-block; padding:0.2rem 0.6rem;">
+                                        03 // Formulation Finalized</div>
+                                    <h3 class="display"
+                                        style="font-size:var(--text-5xl); line-height:0.9; margin:0; margin-top:0.5rem;">
+                                        MOMENTUM</h3>
+                                    <div
+                                        style="font-weight:600; font-size:1.1rem; margin-top:0.5rem; color:var(--text-main);">
+                                        CELLULAR RECOVERY</div>
+                                </div>
+                            </div>
+
+                            <div style="display:grid; grid-template-columns:1fr; gap:2rem;" class="mobile-stack">
+                                <div
+                                    style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:2rem;">
+                                    <div>
+                                        <p
+                                            style="font-size:var(--text-lg); line-height:1.6; color:var(--text-muted); margin-bottom:1.5rem;">
+                                            An athletic recovery matrix built around ATP production and true muscle
+                                            repair, rather than synthetic stimulation.</p>
+                                        <ul
+                                            style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.5rem;">
+                                            <li style="display:flex; align-items:flex-start; gap:0.5rem;"><span
+                                                    style="color:var(--text-main);">→</span> <span
+                                                    style="font-weight:500; font-size:0.95rem; color:var(--text-main);">Faster
+                                                    muscle recovery (Kokum + Tart Cherry)</span></li>
+                                            <li style="display:flex; align-items:flex-start; gap:0.5rem;"><span
+                                                    style="color:var(--text-main);">→</span> <span
+                                                    style="font-weight:500; font-size:0.95rem; color:var(--text-main);">ATP
+                                                    production support (Cordyceps militaris)</span></li>
+                                            <li style="display:flex; align-items:flex-start; gap:0.5rem;"><span
+                                                    style="color:var(--text-main);">→</span> <span
+                                                    style="font-weight:500; font-size:0.95rem; color:var(--text-main);">Strength
+                                                    and endurance (Creatine HCl + Citrulline)</span></li>
+                                        </ul>
+                                    </div>
+                                    <div
+                                        style="background:var(--bg-alt); padding:2rem; border-radius:12px; border:1px solid var(--border); display:flex; flex-direction:column; justify-content:center;">
+                                        <div
+                                            style="font-family:var(--font-mono); font-size:0.85rem; color:var(--text-muted); letter-spacing:0.05em; margin-bottom:1rem;">
+                                            FORMULATION STACK</div>
+                                        <p style="font-size:1rem; font-weight:600; line-height:1.5; margin:0;">
+                                            Cordyceps, Creatine HCl, Kokum Extract, L-Citrulline, Electrolytes</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Protein Bar -->
+                        <div
+                            style="background:var(--text-main); color:var(--bg); border-radius:24px; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:4rem 2rem; margin-top:2rem;">
+                            <div
+                                style="font-family:var(--font-mono); font-size:0.85rem; color:#888; margin-bottom:1rem; letter-spacing:0.1em; text-transform:uppercase; border:1px solid #555; padding:0.3rem 1rem; border-radius:40px;">
+                                Coming Soon</div>
+                            <h3 class="display" style="font-size:var(--text-4xl); margin-bottom:1rem; color:#fff;">The
+                                Honest Protein Bar</h3>
+                            <p
+                                style="font-size:1.125rem; line-height:1.6; color:#ccc; max-width:600px; margin-bottom:0;">
+                                Real dates, real cashews, real pumpkin seeds. 300mg KSM-66 Ashwagandha in every bar. No
+                                fake protein. No compound chocolate. Due alongside our drink range.
+                            </p>
+                        </div>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════
+     SCIENCE & PILLARS SECTION
+════════════════════════════════════════════════════════ -->
+            <section class="structure-section">
+                <div class="container reveal">
+                    <div class="section-label">
+                        <div class="section-label-line"></div>
+                        <span class="section-label-text">The Science</span>
+                    </div>
+                    <div
+                        style="display:flex; justify-content:space-between; align-items:flex-end; gap:2rem; flex-wrap:wrap; margin-bottom:var(--space-md);">
+                        <div style="max-width:800px;">
+                            <h2 class="headline" style="margin-top:var(--space-sm);">We show our work.</h2>
+                            <p class="subtext editorial-col" style="margin-top:var(--space-sm);">Every formulation
+                                decision
+                                has a peer-reviewed reason. Every ingredient has a verified source. Every claim is
+                                something
+                                we can prove.</p>
+                        </div>
+                        <a href="science.html" class="btn btn-outline" style="white-space:nowrap;">View Ingredients
+                            Index</a>
+                    </div>
+
+                    <div class="bento-grid">
+                        <div class="bento-cell"
+                            style="grid-column: span 12; display:grid; grid-template-columns:1fr 1fr 1fr; gap:var(--space-lg);"
+                            class="mobile-stack">
+                            <!-- Pillar 1 -->
+                            <div>
+                                <div
+                                    style="font-family:var(--font-mono); font-size:2rem; color:var(--text-muted); margin-bottom:1rem;">
+                                    01</div>
+                                <h4
+                                    style="font-family:var(--font-serif); font-size:var(--text-xl); line-height:var(--leading-tight); margin-bottom:1rem;">
+                                    Active forms only</h4>
+                                <p
+                                    style="font-size:0.95rem; line-height:1.6; color:var(--text-muted); margin-bottom:1rem;">
+                                    Most products use the cheapest permitted form. We use: Methylcobalamin,
+                                    Pyridoxal-5-Phosphate, 5-MTHF Folate, Albion TRAACS® Chelated Minerals.</p>
+                                <div class="data-num"
+                                    style="font-size:var(--text-xl); line-height:var(--leading-relaxed);">
+                                    3-4x</div>
+                                <p
+                                    style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-muted); margin-top:0.25rem; text-transform:uppercase;">
+                                    Better absorption vs generic.</p>
+                                <p
+                                    style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-main); margin-top:0.5rem; font-weight:700;">
+                                    Cost diff: ₹2/serving</p>
+                            </div>
+
+                            <!-- Pillar 2 -->
+                            <div>
+                                <div
+                                    style="font-family:var(--font-mono); font-size:2rem; color:var(--text-muted); margin-bottom:1rem;">
+                                    02</div>
+                                <h4
+                                    style="font-family:var(--font-serif); font-size:var(--text-xl); line-height:var(--leading-tight); margin-bottom:1rem;">
+                                    Verified, not assumed</h4>
+                                <p
+                                    style="font-size:0.95rem; line-height:1.6; color:var(--text-muted); margin-bottom:1rem;">
+                                    Our Lion's Mane extract is verified using the Megazyme AOAC method — the gold
+                                    standard
+                                    verification method. Not marketing weight. Verified active compound content.</p>
+                                <div class="data-num"
+                                    style="font-size:var(--text-xl); line-height:var(--leading-relaxed);">
+                                    >30%</div>
+                                <p
+                                    style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-muted); margin-top:0.25rem; text-transform:uppercase;">
+                                    β-glucan guaranteed.</p>
+                            </div>
+
+                            <!-- Pillar 3 -->
+                            <div>
+                                <div
+                                    style="font-family:var(--font-mono); font-size:2rem; color:var(--text-muted); margin-bottom:1rem;">
+                                    03</div>
+                                <h4
+                                    style="font-family:var(--font-serif); font-size:var(--text-xl); line-height:var(--leading-tight); margin-bottom:1rem;">
+                                    Proving it, not claiming it</h4>
+                                <p
+                                    style="font-size:0.95rem; line-height:1.6; color:var(--text-muted); margin-bottom:1rem;">
+                                    We have designed a clinical study for 135 participants across 8 weeks — before we
+                                    launch
+                                    commercially. Primary outcomes: Biomarkers + cognitive tests.</p>
+                                <div class="data-num"
+                                    style="font-size:var(--text-xl); line-height:var(--leading-relaxed);">
+                                    135</div>
+                                <p
+                                    style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-muted); margin-top:0.25rem; text-transform:uppercase;">
+                                    clinical study participants.</p>
+                                <p
+                                    style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-main); margin-top:0.5rem; font-weight:700;">
+                                    Results will be published regardless of outcome.</p>
+                            </div>
+                        </div>
+
+                        <!-- Comparison Table Component -->
+                        <div class="bento-cell" style="grid-column: span 12;">
+                            <h4
+                                style="font-family:var(--font-serif); font-size:var(--text-xl); line-height:var(--leading-tight); margin-bottom:1.5rem;">
+                                What We Do vs. What Most Brands Do</h4>
+                            <table style="width:100%; text-align:left; border-collapse:collapse; font-size:0.95rem;">
+                                <thead>
+                                    <tr
+                                        style="border-bottom:1px solid var(--text-main); font-family:var(--font-mono); color:var(--text-muted);">
+                                        <th style="padding:1rem 0; width:30%;">METRIC</th>
+                                        <th style="padding:1rem 0; width:35%; color:var(--text-main);">OXYGEN
+                                            BIOINNOVATIONS
+                                        </th>
+                                        <th style="padding:1rem 0; width:35%;">THE INDUSTRY STANDARD</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom:1px solid var(--border);">
+                                        <td style="padding:1rem 0; font-weight:600;">Vitamin Forms</td>
+                                        <td style="padding:1rem 0; font-weight:600; color:var(--text-main);">Active
+                                            (bioavailable) Forms</td>
+                                        <td style="padding:1rem 0; color:var(--text-muted);">Cheapest Synthetic Forms
+                                        </td>
+                                    </tr>
+                                    <tr style="border-bottom:1px solid var(--border);">
+                                        <td style="padding:1rem 0; font-weight:600;">Vitamin B12</td>
+                                        <td style="padding:1rem 0; font-weight:600; color:var(--text-main);">
+                                            Methylcobalamin
+                                        </td>
+                                        <td style="padding:1rem 0; color:var(--text-muted);">Cyanocobalamin</td>
+                                    </tr>
+                                    <tr style="border-bottom:1px solid var(--border);">
+                                        <td style="padding:1rem 0; font-weight:600;">Minerals</td>
+                                        <td style="padding:1rem 0; font-weight:600; color:var(--text-main);">Chelated
+                                            (TRAACS®) Amino Acid</td>
+                                        <td style="padding:1rem 0; color:var(--text-muted);">Oxide / Sulfate Forms</td>
+                                    </tr>
+                                    <tr style="border-bottom:1px solid var(--border);">
+                                        <td style="padding:1rem 0; font-weight:600;">Mineral Absorption</td>
+                                        <td style="padding:1rem 0; font-weight:600; color:var(--text-main);">~28%
+                                            (Oxygen
+                                            Bioinnovations)</td>
+                                        <td style="padding:1rem 0; color:var(--text-muted);">~8% (Standard)</td>
+                                    </tr>
+                                    <tr style="border-bottom:1px solid var(--border);">
+                                        <td style="padding:1rem 0; font-weight:600;">Mushroom Extracts</td>
+                                        <td style="padding:1rem 0; font-weight:600; color:var(--text-main);">Verified
+                                            β-glucan %</td>
+                                        <td style="padding:1rem 0; color:var(--text-muted);">Unverified weight labels
+                                        </td>
+                                    </tr>
+                                    <tr style="border-bottom:1px solid var(--border);">
+                                        <td style="padding:1rem 0; font-weight:600;">Efficacy Data</td>
+                                        <td style="padding:1rem 0; font-weight:600; color:var(--text-main);">Pre-Launch
+                                            Clinical Study</td>
+                                        <td style="padding:1rem 0; color:var(--text-muted);">Zero Clinical Efficacy Data
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:1rem 0; font-weight:600;">Lab Reports</td>
+                                        <td style="padding:1rem 0; font-weight:600; color:var(--text-main);">Public CoA
+                                            for
+                                            every batch</td>
+                                        <td style="padding:1rem 0; color:var(--text-muted);">No Transparency</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══════════════════════════════════════════════════════
+     CTA SECTION
+════════════════════════════════════════════════════════ -->
+            <section class="structure-section" id="join"
+                style="background:var(--text-main); color:var(--bg); border:none;">
+                <div class="container" style="text-align:center; padding:var(--space-xl) 0;">
+                    <h2 class="display" style="color:var(--bg); font-size:clamp(3rem, 6vw, 5rem);">Stop guessing
+                        with<br>your <em>health.</em></h2>
+                    <p class="subtext" style="color:#A3A3A3; margin:var(--space-md) auto; max-width:600px;">
+                        Join the waitlist to receive access to our clinical study results, formulation deep-dives, and
+                        founding member pricing.
+                    </p>
+                    <form style="display:flex; flex-direction:column; gap:1rem; max-width:400px; margin:0 auto;"
+                        onsubmit="event.preventDefault(); alert('Waitlist strictly joined. Check console log for integration.');">
+                        <input type="email" placeholder="Enter your email address" required
+                            style="width:100%; padding:1rem; border:1px solid #333; background:transparent; color:#fff; font-family:var(--font-sans); font-size:1rem; border-radius:4px; outline:none;">
+                        <select required
+                            style="width:100%; padding:1rem; border:1px solid #333; background:transparent; color:#fff; font-family:var(--font-sans); font-size:1rem; border-radius:4px; outline:none; appearance:none;">
+                            <option value="" disabled selected>Primary Health Goal</option>
+                            <option value="energy">Daily Energy & Focus</option>
+                            <option value="deficiency">Correcting Deficiencies (Vitamin D, B12)</option>
+                            <option value="recovery">Athletic Recovery</option>
+                            <option value="longevity">General Longevity</option>
+                        </select>
+                        <button type="submit" class="btn"
+                            style="background:var(--bg); color:var(--text-main); width:100%; justify-content:center; padding:1.25rem;">Join
+                            the Waitlist</button>
+                    </form>
+                </div>
+            </section>
+
+    </main>
+    </main>
+    </main>
+
+    
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h3>Oxygen Bioinnovations<span>.</span></h3>
+                <p>Precision nutrition for every ambitious Indian.<br><br>India's first honest precision nutrition system. Built on millet, mushrooms, and real science.</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                    <a href="#" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg></a>
+                    <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="science.html">Our Science</a></li>
+                    <li><a href="ingredients.html">Ingredients</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Get In Touch</h4>
+                <ul>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Sticky CTA -->
+    <div class="mobile-sticky-cta" id="mobileCta">
+        <a href="#join">Join the Waitlist →</a>
+    </div>
+
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>

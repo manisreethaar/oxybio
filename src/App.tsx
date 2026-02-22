@@ -11,6 +11,7 @@ function App() {
         <main className="flex-grow pt-20 overflow-hidden">
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="*" element={<Index />} />
           </Routes>
         </main>
         <Footer />
