@@ -1,68 +1,46 @@
-/* ── Main JS – Oxygen Bioinnovations v2 ──────────────────── */
 
-// ── Cursor Glow (desktop only) ────────────────────────────
-const glow = document.createElement('div');
-glow.classList.add('cursor-glow');
-document.body.appendChild(glow);
+/* -- Main JS � Oxygen Bioinnovations v3 (Monochrome) -------- */
 
-let glowActive = false;
-document.addEventListener('mousemove', (e) => {
-    glow.style.left = e.clientX + 'px';
-    glow.style.top = e.clientY + 'px';
-    const darkEl = e.target.closest('.hero-dark, .problem-section, .science-section, .cta-section, #footer');
-    if (darkEl && !glowActive) {
-        glow.style.opacity = '1';
-        glowActive = true;
-    } else if (!darkEl && glowActive) {
-        glow.style.opacity = '0';
-        glowActive = false;
-    }
-});
-
-// ── Navigation ────────────────────────────────────────────
+// -- Navigation --------------------------------------------
 const header = document.getElementById('header');
 
 function updateNav() {
     if (!header) return;
     const scrolled = window.scrollY > 40;
-
-    // Determine if over dark background
-    const heroEl = document.querySelector('.hero-dark');
-    const onDark = heroEl && window.scrollY < heroEl.offsetHeight - header.offsetHeight;
-
     header.classList.toggle('scrolled', scrolled);
-    header.classList.toggle('on-dark', !!onDark);
 }
 
 updateNav();
 window.addEventListener('scroll', updateNav, { passive: true });
 
-// ── Mobile Menu ───────────────────────────────────────────
+// -- Mobile Menu -------------------------------------------
 const menuBtn = document.getElementById('menuBtn');
 const mobileMenu = document.getElementById('mobileMenu');
 const mobileOverlay = document.getElementById('mobileOverlay');
 const mobileClose = document.getElementById('mobileClose');
 
 function openMenu() {
-    mobileMenu?.classList.add('open');
-    mobileOverlay?.classList.add('open');
+    if(mobileMenu) mobileMenu.classList.add('open');
+    if(mobileOverlay) mobileOverlay.classList.add('open');
     document.body.style.overflow = 'hidden';
 }
 
 function closeMenu() {
-    mobileMenu?.classList.remove('open');
-    mobileOverlay?.classList.remove('open');
+    if(mobileMenu) mobileMenu.classList.remove('open');
+    if(mobileOverlay) mobileOverlay.classList.remove('open');
     document.body.style.overflow = '';
 }
 
-menuBtn?.addEventListener('click', openMenu);
-mobileClose?.addEventListener('click', closeMenu);
-mobileOverlay?.addEventListener('click', closeMenu);
+if(menuBtn) menuBtn.addEventListener('click', openMenu);
+if(mobileClose) mobileClose.addEventListener('click', closeMenu);
+if(mobileOverlay) mobileOverlay.addEventListener('click', closeMenu);
 
 // Close on link click
-mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+if(mobileMenu) {
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+}
 
-// ── Scroll Reveal ─────────────────────────────────────────
+// -- Scroll Reveal -----------------------------------------
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -76,7 +54,7 @@ document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => 
     revealObserver.observe(el);
 });
 
-// ── Counter Animations ────────────────────────────────────
+// -- Counter Animations ------------------------------------
 function animateCounter(el) {
     const target = parseFloat(el.dataset.target);
     const suffix = el.dataset.suffix || '';
@@ -88,7 +66,6 @@ function animateCounter(el) {
     function step(now) {
         const elapsed = now - startTime;
         const progress = Math.min(elapsed / duration, 1);
-        // Ease out expo
         const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
         const current = (target * eased).toFixed(decimals);
         el.textContent = prefix + current + suffix;
@@ -101,76 +78,73 @@ function animateCounter(el) {
 const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            animateCounter(entry.target);
-            counterObserver.unobserve(entry.target);
+            const el = entry.target;
+            animateCounter(el);
+            counterObserver.unobserve(el);
         }
     });
 }, { threshold: 0.5 });
 
-document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
-
-// ── Comparison Bars (animate on scroll) ───────────────────
-const barObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.querySelectorAll('.compare-fill').forEach(bar => {
-                bar.style.width = bar.dataset.width || '0%';
-            });
-            barObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.3 });
-
-document.querySelectorAll('.science-compare').forEach(el => barObserver.observe(el));
-
-// ── Roadmap Drag-to-Scroll ────────────────────────────────
-const roadmapScroll = document.querySelector('.roadmap-scroll');
-if (roadmapScroll) {
-    let isDown = false, startX, scrollLeft;
-
-    roadmapScroll.addEventListener('mousedown', e => {
-        isDown = true;
-        roadmapScroll.style.cursor = 'grabbing';
-        startX = e.pageX - roadmapScroll.offsetLeft;
-        scrollLeft = roadmapScroll.scrollLeft;
-    });
-
-    roadmapScroll.addEventListener('mouseleave', () => {
-        isDown = false;
-        roadmapScroll.style.cursor = 'grab';
-    });
-
-    roadmapScroll.addEventListener('mouseup', () => {
-        isDown = false;
-        roadmapScroll.style.cursor = 'grab';
-    });
-
-    roadmapScroll.addEventListener('mousemove', e => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - roadmapScroll.offsetLeft;
-        roadmapScroll.scrollLeft = scrollLeft - (x - startX) * 1.5;
-    });
-}
-
-// ── Footer Year ───────────────────────────────────────────
-document.querySelectorAll('#year').forEach(el => {
-    el.textContent = new Date().getFullYear();
+document.querySelectorAll('[data-target]').forEach(el => {
+    counterObserver.observe(el);
 });
 
-// ── Mobile Sticky CTA (hide/show on scroll) ───────────────
+// -- Roadmap Horizontal Drag Scroll --------------------------
+const roadmap = document.querySelector('.roadmap-scroll');
+let isDown = false;
+let startX;
+let scrollLeft;
+
+if (roadmap) {
+    roadmap.addEventListener('mousedown', (e) => {
+        isDown = true;
+        roadmap.classList.add('active');
+        startX = e.pageX - roadmap.offsetLeft;
+        scrollLeft = roadmap.scrollLeft;
+    });
+    
+    roadmap.addEventListener('mouseleave', () => {
+        isDown = false;
+        roadmap.classList.remove('active');
+    });
+    
+    roadmap.addEventListener('mouseup', () => {
+        isDown = false;
+        roadmap.classList.remove('active');
+    });
+    
+    roadmap.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - roadmap.offsetLeft;
+        const walk = (x - startX) * 2; 
+        roadmap.scrollLeft = scrollLeft - walk;
+    });
+}
+
+// -- Footer Year -------------------------------------------
+const yearEl = document.getElementById('year');
+if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+}
+
+// -- Mobile Sticky CTA -------------------------------------
 const mobileCta = document.getElementById('mobileCta');
-if (mobileCta) {
-    let lastScroll = 0;
+const joinSection = document.getElementById('join');
+
+if (mobileCta && joinSection) {
     window.addEventListener('scroll', () => {
-        const current = window.scrollY;
-        if (current > 300) {
-            mobileCta.style.opacity = '1';
-            mobileCta.style.transform = 'translateX(-50%) translateY(0)';
-        } else {
-            mobileCta.style.opacity = '0';
-            mobileCta.style.transform = 'translateX(-50%) translateY(20px)';
+        if (window.innerWidth > 768) {
+            mobileCta.style.display = 'none';
+            return;
         }
-        lastScroll = current;
+
+        const joinRect = joinSection.getBoundingClientRect();
+        if (window.scrollY > 300 && joinRect.top > window.innerHeight) {
+            mobileCta.style.display = 'block';
+        } else {
+            mobileCta.style.display = 'none';
+        }
     }, { passive: true });
 }
+
