@@ -3503,3 +3503,12 @@ p, li {
     font-size: 0.9rem;
     line-height: 1.75;
 }
+
+/* Fix hero heading tight spacing issue */
+h1.display + p.subtext, 
+h1.display + .subtext {
+    margin-top: 2.5rem !important;
+}
+h1.display {
+    padding-bottom: 0.5rem;
+}
