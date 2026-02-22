@@ -2241,3 +2241,149 @@ body {
     flex-shrink: 0;
     margin-top: 0.25rem;
 }
+
+
+/* --- HERO GRID LAYOUT --- */
+.hero-grid-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+@media (max-width: 900px) {
+    .hero-grid-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* --- O2 MOLECULE COMBINATION ANIMATION --- */
+.hero-animation-wrapper {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+/* Orbiting decorative rings */
+.orbit-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px dashed rgba(13, 138, 116, 0.2);
+    animation: spin 15s linear infinite;
+}
+.orbit-ring-1 {
+    width: 280px;
+    height: 280px;
+}
+.orbit-ring-2 {
+    width: 180px;
+    height: 180px;
+    border: 1px solid rgba(13, 138, 116, 0.1);
+    animation: spin 10s linear infinite reverse;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+/* Individual Oxygen Atoms */
+.atom {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #4ade80, #0D8A74);
+    box-shadow: 0 4px 12px rgba(13, 138, 116, 0.3), inset -4px -4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    color: white;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+/* Atom 1 (Left) */
+.atom-1 {
+    animation: atom1Combine 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Atom 2 (Right) */
+.atom-2 {
+    animation: atom2Combine 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes atom1Combine {
+    0%, 15% { transform: translateX(-90px) rotate(0deg) scale(1); opacity: 1; }
+    30%, 40% { transform: translateX(-15px) rotate(180deg) scale(1); opacity: 1; }
+    45%, 55% { transform: translateX(0px) rotate(270deg) scale(1.5); opacity: 0; }
+    85%, 100% { transform: translateX(-90px) rotate(360deg) scale(1); opacity: 1; filter: blur(0); }
+    86% { filter: blur(4px); }
+    90% { filter: blur(0px); }
+}
+
+@keyframes atom2Combine {
+    0%, 15% { transform: translateX(90px) rotate(0deg) scale(1); opacity: 1; }
+    30%, 40% { transform: translateX(15px) rotate(-180deg) scale(1); opacity: 1; }
+    45%, 55% { transform: translateX(0px) rotate(-270deg) scale(1.5); opacity: 0; }
+    85%, 100% { transform: translateX(90px) rotate(-360deg) scale(1); opacity: 1; filter: blur(0); }
+    86% { filter: blur(4px); }
+    90% { filter: blur(0px); }
+}
+
+/* Combined O2 Molecule */
+.molecule-result {
+    position: absolute;
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #6EE7B7, #0D8A74);
+    box-shadow: 0 0 40px rgba(13, 138, 116, 0.4), inset -6px -6px 16px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-sans);
+    color: white;
+    font-weight: 800;
+    font-size: 2.5rem;
+    letter-spacing: -1px;
+    opacity: 0;
+    transform: scale(0);
+    animation: moleculePop 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.molecule-result sub {
+    font-size: 1.25rem;
+    margin-bottom: -15px;
+    margin-left: 2px;
+}
+
+@keyframes moleculePop {
+    0%, 40% { opacity: 0; transform: scale(0); box-shadow: 0 0 0px rgba(13, 138, 116, 0); }
+    45% { opacity: 1; transform: scale(1.1); box-shadow: 0 0 60px rgba(13, 138, 116, 0.6); }
+    50%, 80% { opacity: 1; transform: scale(1); box-shadow: 0 0 30px rgba(13, 138, 116, 0.3); }
+    85%, 100% { opacity: 0; transform: scale(0); }
+}
+
+/* Pulse ring when combining */
+.pulse-ring {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #0D8A74;
+    opacity: 0;
+    animation: pulseExpand 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes pulseExpand {
+    0%, 43% { opacity: 0; transform: scale(0.8); }
+    45% { opacity: 0.8; transform: scale(1.2); }
+    55% { opacity: 0; transform: scale(2.5); }
+    100% { opacity: 0; transform: scale(3); }
+}
+
