@@ -16,7 +16,7 @@
     --accent-light: #E8E8E4;
     --accent-lime: #A3A3A3;
     --text-main: #0A0A0A;
-    --text-muted: #737373;
+    --text-muted: #4a4a4a;
     --border: #E5E5E5;
     --border-dark: rgba(255, 255, 255, 0.1);
     --card: #FFFFFF;
@@ -42,7 +42,7 @@
     /* --- Strict Fluid Typography Scale --- */
     --text-xs: clamp(0.75rem, 0.7vw, 0.8rem);
     --text-sm: clamp(0.875rem, 0.8vw, 0.95rem);
-    --text-base: clamp(1rem, 1vw, 1.125rem);
+    --text-base: clamp(1.0625rem, 1.1vw, 1.175rem);
     --text-lg: clamp(1.125rem, 1.2vw, 1.25rem);
     --text-xl: clamp(1.25rem, 1.5vw, 1.5rem);
     --text-2xl: clamp(1.5rem, 2vw, 2rem);
@@ -3454,3 +3454,52 @@ body {
     [id="join"] form { max-width: 100% !important; }
 }
 
+
+
+/* =========================================================
+   GLOBAL READABILITY PASS
+   Darker body text, better line-height, consistent sizing
+   ========================================================= */
+
+/* Body paragraphs and list items */
+p, li {
+    font-size: max(var(--text-base), 1rem);
+    line-height: 1.75;
+}
+
+/* Section subtext — use muted but ensure readable */
+.subtext, .editorial-col p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.75;
+}
+
+/* Bento cell text */
+.bento-cell p, .bento-cell span {
+    font-size: 0.95rem;
+    line-height: 1.65;
+}
+
+/* Pillar showcase body text */
+.pillar-showcase-text {
+    font-size: 1rem !important;
+    line-height: 1.7 !important;
+}
+
+/* Vision cell body text */
+.vision-cell p {
+    font-size: 1rem;
+    line-height: 1.72;
+}
+
+/* Chapter body text in about page */
+.chapter-section p {
+    font-size: 1.05rem;
+    line-height: 1.78;
+}
+
+/* Footer body text */
+.footer-brand p {
+    font-size: 0.9rem;
+    line-height: 1.75;
+}
