@@ -35,25 +35,47 @@ const Navbar = () => {
                                 <ChevronDown className="w-3 h-3 group-hover:rotate-180 transition-transform" />
                             </a>
 
-                            <div className="absolute top-[100%] left-1/2 -translate-x-1/2 w-[340px] bg-[#0a0a0c]/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-6 shadow-[0_30px_60px_rgba(0,0,0,0.5),inset_0_0_0_1px_rgba(255,255,255,0.05)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] pointer-events-none group-hover:pointer-events-auto flex gap-6 transform translate-y-2 group-hover:translate-y-0 scale-98 group-hover:scale-100">
+                            <div className="absolute top-[100%] left-1/2 -translate-x-1/2 w-[700px] bg-white rounded-3xl p-3 shadow-[0_40px_100px_rgba(0,0,0,0.3)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] pointer-events-none group-hover:pointer-events-auto flex transform translate-y-3 group-hover:translate-y-0 scale-95 group-hover:scale-100 mt-2">
                                 {/* Hover bridge */}
-                                <div className="absolute -top-6 left-0 w-full h-6" />
+                                <div className="absolute -top-6 left-0 w-full h-8" />
 
-                                <div className="bg-gradient-to-br from-white/5 to-white/10 p-5 rounded-xl border border-white/5 min-w-[140px] flex-shrink-0">
-                                    <div className="text-2xl mb-3">🔬</div>
-                                    <h4 className="text-sm font-bold text-white mb-1">Clinical Proof</h4>
-                                    <p className="text-xs text-slate-ash leading-relaxed">Data-driven formulas.</p>
+                                {/* Left Pane */}
+                                <div className="w-[45%] bg-[#FFF8F0] p-8 rounded-2xl border border-orange-900/5 flex flex-col justify-center relative overflow-hidden group/pane">
+                                    <div className="absolute top-0 right-0 w-40 h-40 bg-orange-500/5 rounded-full blur-3xl -mr-10 -mt-10 transition-transform group-hover/pane:scale-150 duration-700" />
+                                    <div className="mb-5">
+                                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                            <path d="M10 2v6.5l-7 10.5C2.5 19.8 3.2 21 4.5 21h15c1.3 0 2-.8 1.5-2L14 8.5V2" />
+                                            <path d="M8.5 2h7" />
+                                            <path d="M14 6h-4" />
+                                            <path d="M5.5 16h13" />
+                                        </svg>
+                                    </div>
+                                    <h4 className="text-xl font-bold text-obsidian mb-3 tracking-tight">Evidence-Based</h4>
+                                    <p className="text-sm text-slate-600 leading-relaxed font-medium">
+                                        We formulate with clinical precision and indigenous botanical wisdom.
+                                    </p>
                                 </div>
 
-                                <div className="flex flex-col justify-center gap-2">
-                                    <a href="#problem" className="text-sm font-medium text-slate-ash hover:text-white transition-all hover:translate-x-1 group/link">
-                                        The Problem <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all inline-block ml-1">→</span>
+                                {/* Right Pane */}
+                                <div className="w-[55%] p-8 flex flex-col justify-center gap-6">
+                                    <a href="#problem" className="group/link block p-3 -m-3 rounded-xl hover:bg-slate-50 transition-colors">
+                                        <h5 className="text-base font-bold text-obsidian mb-1 flex items-center gap-2 group-hover/link:text-[#0D8A74] transition-colors">
+                                            The Problem
+                                            <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all text-[#0D8A74]">→</span>
+                                        </h5>
+                                        <p className="text-sm text-slate-500 font-medium">
+                                            Understand the nutritional breakdown in urban India.
+                                        </p>
                                     </a>
-                                    <a href="#science" className="text-sm font-medium text-slate-ash hover:text-white transition-all hover:translate-x-1 group/link">
-                                        Absorption <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all inline-block ml-1">→</span>
-                                    </a>
-                                    <a href="#science" className="text-sm font-medium text-slate-ash hover:text-white transition-all hover:translate-x-1 group/link">
-                                        Ingredient Data <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all inline-block ml-1">→</span>
+
+                                    <a href="#ingredients" className="group/link block p-3 -m-3 rounded-xl hover:bg-slate-50 transition-colors">
+                                        <h5 className="text-base font-bold text-obsidian mb-1 flex items-center gap-2 group-hover/link:text-[#0D8A74] transition-colors">
+                                            Ingredients Index
+                                            <span className="opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all text-[#0D8A74]">→</span>
+                                        </h5>
+                                        <p className="text-sm text-slate-500 font-medium">
+                                            Deep dive into every component of our formulations.
+                                        </p>
                                     </a>
                                 </div>
                             </div>
