@@ -170,10 +170,10 @@
                             CHAPTERS</div>
                         <ul
                             style="list-style:none; padding:0; margin:0; border-left:1px solid var(--border); padding-left:1.5rem; display:flex; flex-direction:column; gap:1.5rem;">
-                            <li class="index-nav-item" data-section="chapter-01"
+                            <li class="index-nav-item" data-target="chapter-01"
                                 style="font-family:var(--font-serif); font-size:var(--text-xl); color:var(--text-main); font-weight:600; cursor:pointer; transition:color 0.3s ease;">
                                 01. The Hook</li>
-                            <li class="index-nav-item" data-section="chapter-02"
+                            <li class="index-nav-item" data-target="chapter-02"
                                 style="font-family:var(--font-serif); font-size:var(--text-xl); color:var(--text-muted); cursor:pointer; transition:color 0.3s ease;">
                                 02. The Journey</li>
                         </ul>
@@ -492,10 +492,10 @@
                             CHAPTERS</div>
                         <ul
                             style="list-style:none; padding:0; margin:0; border-left:1px solid var(--border); padding-left:1.5rem; display:flex; flex-direction:column; gap:1.5rem;">
-                            <li class="index-nav-item" data-section="chapter-03"
+                            <li class="index-nav-item" data-target="chapter-03"
                                 style="font-family:var(--font-serif); font-size:var(--text-xl); line-height:var(--leading-tight); color:var(--text-main); font-weight:600; cursor:pointer; transition:color 0.3s ease;">
                                 01. The Founder</li>
-                            <li class="index-nav-item" data-section="chapter-04"
+                            <li class="index-nav-item" data-target="chapter-04"
                                 style="font-family:var(--font-serif); font-size:var(--text-xl); line-height:var(--leading-tight); color:var(--text-muted); cursor:pointer; transition:color 0.3s ease;">
                                 02. Our Approach</li>
                         </ul>
@@ -503,173 +503,64 @@
 
                     <!-- Main Content Chapters -->
                     <div>
-                        <!-- The Founder -->
-                        <id="chapter-03" class="chapter-section"
-                            style="margin-bottom:var(--space-xl); padding-top:var(--space-xl); border-top:1px dashed var(--border);">
-                            <div style="font-family:var(--font-mono); color:var(--text-muted); margin-bottom:0.5rem;">
-                                CHAPTER 03</div>
-                            <h3 class="headline"
-                                style="font-size:var(--text-3xl); line-height:var(--leading-tight); margin-bottom:1.5rem;">
-                                Our Approach</h3>
-
-                            <div class="bento-grid" style="grid-template-columns:1fr 1fr;">
-                                <div class="bento-cell" style="background:var(--bg);">
-                                    <div
-                                        style="font-family:var(--font-mono); font-size:var(--text-2xl); line-height:var(--leading-tight); color:var(--text-muted); margin-bottom:0.5rem;">
-                                        01</div>
-                                    <h4
-                                        style="font-family:var(--font-serif); font-size:var(--text-xl); line-height:var(--leading-tight); margin-bottom:0.5rem;">
-                                        Science Before Marketing</h4>
-                                    <p
-                                        style="font-size:var(--text-base); line-height:var(--leading-relaxed); color:var(--text-muted); line-height:1.5;">
-                                        We designed the formulation before we designed the brand. We chose ingredients
-                                        before we chose colors. We cited our evidence before we wrote our copy. This is
-                                        backwards from how most nutrition companies work. We think it is the only
-                                        sensible order.</p>
+                        <!-- CHAPTER 01: The Founder -->
+                        <div id="chapter-03" class="chapter-section" style="margin-bottom:var(--space-xl);">
+                            <div style="font-family:var(--font-mono); color:var(--text-muted); margin-bottom:0.5rem;">CHAPTER 01</div>
+                            <h3 class="headline" style="font-size:var(--text-3xl); line-height:var(--leading-tight); margin-bottom:1.5rem;">The Founder</h3>
+                            <div class="editorial-col" style="font-size:var(--text-lg); line-height:1.7; color:var(--text-muted);">
+                                <p style="color:var(--text-main); font-weight:600; font-family:var(--font-serif); font-size:var(--text-2xl); line-height:var(--leading-tight); margin-bottom:0.5rem;">Chief Science Officer</p>
+                                <p style="margin-bottom:1.5rem;">A pharmaceutical scientist who turned fermentation into food — with the precision of a lab and the soul of a craft.</p>
+                                <div style="font-family:var(--font-mono); font-size:var(--text-sm); color:var(--text-main); padding:1rem; border:1px solid var(--border); margin-bottom:2rem; background:var(--bg);">
+                                    Operating at the intersection of:<br>
+                                    Pharmaceutical Bioprocessing &times; Nanoscience &times; Fermented Food Science
                                 </div>
-                                <div class="bento-cell" style="background:var(--bg);">
-                                    <div
-                                        style="font-family:var(--font-mono); font-size:var(--text-2xl); line-height:var(--leading-tight); color:var(--text-muted); margin-bottom:0.5rem;">
-                                        02</div>
-                                    <h4
-                                        style="font-family:var(--font-serif); font-size:var(--text-xl); line-height:var(--leading-tight); margin-bottom:0.5rem;">
-                                        India Is Not a Market Segment</h4>
-                                    <p
-                                        style="font-size:var(--text-base); line-height:var(--leading-relaxed); color:var(--text-muted); line-height:1.5;">
-                                        We did not take a Western formula and add Ashwagandha to make it Indian. We
-                                        started from India. From what Indian bodies are deficient in. From what Indian
-                                        ingredients can provide. From what Indian lifestyles demand.</p>
-                                </div>
-                                <div class="bento-cell" style="background:var(--bg);">
-                                    <div
-                                        style="font-family:var(--font-mono); font-size:var(--text-2xl); line-height:var(--leading-tight); color:var(--text-muted); margin-bottom:0.5rem;">
-                                        03</div>
-                                    <h4
-                                        style="font-family:var(--font-serif); font-size:var(--text-xl); line-height:var(--leading-tight); margin-bottom:0.5rem;">
-                                        Transparency Is Not Optional</h4>
-                                    <p
-                                        style="font-size:var(--text-base); line-height:var(--leading-relaxed); color:var(--text-muted); line-height:1.5;">
-                                        We will publish our lab reports. We will name our ingredient suppliers. We will
-                                        cite the studies behind our claims. We will tell you when a study is preliminary
-                                        and when it is robust.</p>
-                                </div>
-                                <div class="bento-cell" style="background:var(--bg);">
-                                    <div
-                                        style="font-family:var(--font-mono); font-size:var(--text-2xl); line-height:var(--leading-tight); color:var(--text-muted); margin-bottom:0.5rem;">
-                                        04</div>
-                                    <h4
-                                        style="font-family:var(--font-serif); font-size:var(--text-xl); line-height:var(--leading-tight); margin-bottom:0.5rem;">
-                                        Dose Matters</h4>
-                                    <p
-                                        style="font-size:var(--text-base); line-height:var(--leading-relaxed); color:var(--text-muted); line-height:1.5;">
-                                        Ashwagandha at 50mg is not the same as Ashwagandha at 300mg. Lion's Mane at
-                                        100mg is not what the research studied. We formulate at clinically relevant
-                                        doses — not at doses that allow us to put the ingredient on the label.</p>
-                                </div>
-                                <div class="bento-cell" style="background:var(--bg);">
-                                    <div
-                                        style="font-family:var(--font-mono); font-size:var(--text-2xl); line-height:var(--leading-tight); color:var(--text-muted); margin-bottom:0.5rem;">
-                                        05</div>
-                                    <h4
-                                        style="font-family:var(--font-serif); font-size:var(--text-xl); line-height:var(--leading-tight); margin-bottom:0.5rem;">
-                                        Bioavailability First</h4>
-                                    <p
-                                        style="font-size:var(--text-base); line-height:var(--leading-relaxed); color:var(--text-muted); line-height:1.5;">
-                                        A 100mg dose with 5% absorption delivers 5mg to your body. A 50mg dose with 35%
-                                        absorption delivers 17.5mg. The nutrient that reaches your bloodstream is the
-                                        only nutrient that matters.</p>
-                                </div>
-                                <div class="bento-cell" style="background:var(--bg);">
-                                    <div
-                                        style="font-family:var(--font-mono); font-size:var(--text-2xl); line-height:var(--leading-tight); color:var(--text-muted); margin-bottom:0.5rem;">
-                                        06</div>
-                                    <h4
-                                        style="font-family:var(--font-serif); font-size:var(--text-xl); line-height:var(--leading-tight); margin-bottom:0.5rem;">
-                                        Clinical Evidence</h4>
-                                    <p
-                                        style="font-size:var(--text-base); line-height:var(--leading-relaxed); color:var(--text-muted); line-height:1.5;">
-                                        We designed our clinical study before we manufactured our first batch. Not
-                                        because we are required to, but because we believe no company should sell a
-                                        health product without evidence that it works.</p>
-                                </div>
+                                <ul style="padding-left:1.5rem; margin-bottom:2rem;">
+                                    <li style="margin-bottom:0.5rem;">Incubated at TBI — Technology Business Incubator, ACE Hosur</li>
+                                    <li>Personally analyzed 200+ peer-reviewed studies for this project</li>
+                                </ul>
+                                <blockquote style="font-family:var(--font-serif); font-size:var(--text-2xl); line-height:1.4; color:var(--bg); background:var(--text-main); padding:2rem; margin:2rem 0; font-style:italic;">
+                                    &ldquo;I am building Oxygen because I am genuinely angry at what the market currently offers people who are trying to take their health seriously. I have seen the research. I know what good nutrition science looks like. And I know that the gap between what is possible and what is being sold is not technical &mdash; it is a choice. We are choosing differently.&rdquo;
+                                </blockquote>
+                                <p style="font-size:var(--text-base); line-height:var(--leading-relaxed);">
+                                    <strong>Responsible for:</strong> Formulation Design, Ingredient Sourcing, Clinical Study Protocol, Science Communication
+                                </p>
                             </div>
                         </div>
 
-                        <!-- Chapter 04 -->
-                        <div id="chapter-04" class="chapter-section"
-                            style="padding-top:var(--space-xl); border-top:1px dashed var(--border);">
-                            <div style="font-family:var(--font-mono); color:var(--text-muted); margin-bottom:0.5rem;">
-                                CHAPTER 04</div>
-                            <h3 class="headline"
-                                style="font-size:var(--text-3xl); line-height:var(--leading-tight); margin-bottom:1.5rem;">
-                                The Journey So Far</h3>
-                            <p
-                                style="font-size:var(--text-lg); line-height:var(--leading-normal); color:var(--text-muted); margin-bottom:2rem; max-width:600px;">
-                                What we have built before we built anything physical. Most companies build first and
-                                think about science second. We spent months thinking about the science before building
-                                anything.</p>
-
-                            <div style="display:flex; flex-direction:column; gap:1.5rem;">
-                                <div style="border-left:2px solid var(--text-main); padding-left:1.5rem;">
-                                    <div
-                                        style="font-family:var(--font-mono); font-size:var(--text-xs); line-height:var(--leading-relaxed); color:var(--text-main); margin-bottom:0.5rem;">
-                                        COMPLETED</div>
-                                    <h4
-                                        style="font-family:var(--font-serif); font-size:var(--text-xl); line-height:var(--leading-tight); margin-bottom:0.5rem;">
-                                        6+ months of nutritional deficiency research</h4>
-                                    <p
-                                        style="font-size:var(--text-base); line-height:var(--leading-relaxed); color:var(--text-muted);">
-                                        Analyzed ICMR, NFHS-5, WHO India data. Mapped exact deficiency profiles by
-                                        demographic and lifestyle. Built the evidence base for product necessity.</p>
+                        <!-- CHAPTER 02: Our Approach -->
+                        <div id="chapter-04" class="chapter-section" style="padding-top:var(--space-xl); border-top:1px dashed var(--border);">
+                            <div style="font-family:var(--font-mono); color:var(--text-muted); margin-bottom:0.5rem;">CHAPTER 02</div>
+                            <h3 class="headline" style="font-size:var(--text-3xl); line-height:var(--leading-tight); margin-bottom:1.5rem;">Our Approach</h3>
+                            <div class="bento-grid" style="grid-template-columns:1fr 1fr;">
+                                <div class="bento-cell" style="background:var(--bg);">
+                                    <div style="font-family:var(--font-mono); font-size:var(--text-2xl); color:var(--text-muted); margin-bottom:0.5rem;">01</div>
+                                    <h4 style="font-family:var(--font-serif); font-size:var(--text-xl); margin-bottom:0.5rem;">Science Before Marketing</h4>
+                                    <p style="font-size:var(--text-base); color:var(--text-muted); line-height:1.5;">We designed the formulation before we designed the brand. We chose ingredients before we chose colors. We cited our evidence before we wrote our copy. This is backwards from how most nutrition companies work. We think it is the only sensible order.</p>
                                 </div>
-                                <div style="border-left:2px solid var(--text-main); padding-left:1.5rem;">
-                                    <div
-                                        style="font-family:var(--font-mono); font-size:var(--text-xs); line-height:var(--leading-relaxed); color:var(--text-main); margin-bottom:0.5rem;">
-                                        COMPLETED</div>
-                                    <h4
-                                        style="font-family:var(--font-serif); font-size:var(--text-xl); line-height:var(--leading-tight); margin-bottom:0.5rem;">
-                                        Complete formulation design</h4>
-                                    <p
-                                        style="font-size:var(--text-base); line-height:var(--leading-relaxed); color:var(--text-muted);">
-                                        Reviewed 200+ peer-reviewed studies. Designed complete formulas for 3 drinks + 1
-                                        bar. Every ingredient evidence-based. Every dose clinically relevant.</p>
+                                <div class="bento-cell" style="background:var(--bg);">
+                                    <div style="font-family:var(--font-mono); font-size:var(--text-2xl); color:var(--text-muted); margin-bottom:0.5rem;">02</div>
+                                    <h4 style="font-family:var(--font-serif); font-size:var(--text-xl); margin-bottom:0.5rem;">India Is Not a Market Segment</h4>
+                                    <p style="font-size:var(--text-base); color:var(--text-muted); line-height:1.5;">We did not take a Western formula and add Ashwagandha to make it Indian. We started from India. From what Indian bodies are deficient in. From what Indian ingredients can provide. From what Indian lifestyles demand.</p>
                                 </div>
-                                <div style="border-left:2px solid var(--border); padding-left:1.5rem;">
-                                    <div
-                                        style="font-family:var(--font-mono); font-size:var(--text-xs); line-height:var(--leading-relaxed); color:var(--text-muted); margin-bottom:0.5rem;">
-                                        IN PROGRESS</div>
-                                    <h4
-                                        style="font-family:var(--font-serif); font-size:var(--text-xl); line-height:var(--leading-tight); margin-bottom:0.5rem;">
-                                        Regulatory pathway fully mapped</h4>
-                                    <p
-                                        style="font-size:var(--text-base); line-height:var(--leading-relaxed); color:var(--text-muted);">
-                                        FSSAI compliance audited per ingredient. Clinical study protocol designed.
-                                        Ethics committee application in process. Label compliance framework completed.
-                                    </p>
+                                <div class="bento-cell" style="background:var(--bg);">
+                                    <div style="font-family:var(--font-mono); font-size:var(--text-2xl); color:var(--text-muted); margin-bottom:0.5rem;">03</div>
+                                    <h4 style="font-family:var(--font-serif); font-size:var(--text-xl); margin-bottom:0.5rem;">Transparency Is Not Optional</h4>
+                                    <p style="font-size:var(--text-base); color:var(--text-muted); line-height:1.5;">We will publish our lab reports. We will name our ingredient suppliers. We will cite the studies behind our claims. We will tell you when a study is preliminary and when it is robust.</p>
                                 </div>
-                                <div style="border-left:2px solid var(--border); padding-left:1.5rem;">
-                                    <div
-                                        style="font-family:var(--font-mono); font-size:var(--text-xs); line-height:var(--leading-relaxed); color:var(--text-muted); margin-bottom:0.5rem;">
-                                        ACTIVE</div>
-                                    <h4
-                                        style="font-family:var(--font-serif); font-size:var(--text-xl); line-height:var(--leading-tight); margin-bottom:0.5rem;">
-                                        TBI Incubation secured</h4>
-                                    <p
-                                        style="font-size:var(--text-base); line-height:var(--leading-relaxed); color:var(--text-muted);">
-                                        Accepted by Technology Business Incubator at ACE, Hosur. Prototype development
-                                        currently underway. Sensory testing beginning soon.</p>
+                                <div class="bento-cell" style="background:var(--bg);">
+                                    <div style="font-family:var(--font-mono); font-size:var(--text-2xl); color:var(--text-muted); margin-bottom:0.5rem;">04</div>
+                                    <h4 style="font-family:var(--font-serif); font-size:var(--text-xl); margin-bottom:0.5rem;">Dose Matters</h4>
+                                    <p style="font-size:var(--text-base); color:var(--text-muted); line-height:1.5;">Ashwagandha at 50mg is not the same as Ashwagandha at 300mg. Lion&rsquo;s Mane at 100mg is not what the research studied. We formulate at clinically relevant doses &mdash; not at doses that allow us to put the ingredient on the label.</p>
                                 </div>
-                                <div style="border-left:2px solid var(--border); padding-left:1.5rem;">
-                                    <div
-                                        style="font-family:var(--font-mono); font-size:var(--text-xs); line-height:var(--leading-relaxed); color:var(--text-muted); margin-bottom:0.5rem;">
-                                        GROWING</div>
-                                    <h4
-                                        style="font-family:var(--font-serif); font-size:var(--text-xl); line-height:var(--leading-tight); margin-bottom:0.5rem;">
-                                        Waitlist growing</h4>
-                                    <p
-                                        style="font-size:var(--text-base); line-height:var(--leading-relaxed); color:var(--text-muted);">
-                                        Before a single product exists — validation that the demand is real. Real people
-                                        who believe something better should exist.</p>
+                                <div class="bento-cell" style="background:var(--bg);">
+                                    <div style="font-family:var(--font-mono); font-size:var(--text-2xl); color:var(--text-muted); margin-bottom:0.5rem;">05</div>
+                                    <h4 style="font-family:var(--font-serif); font-size:var(--text-xl); margin-bottom:0.5rem;">Bioavailability First</h4>
+                                    <p style="font-size:var(--text-base); color:var(--text-muted); line-height:1.5;">A 100mg dose with 5% absorption delivers 5mg to your body. A 50mg dose with 35% absorption delivers 17.5mg. The nutrient that reaches your bloodstream is the only nutrient that matters.</p>
+                                </div>
+                                <div class="bento-cell" style="background:var(--bg);">
+                                    <div style="font-family:var(--font-mono); font-size:var(--text-2xl); color:var(--text-muted); margin-bottom:0.5rem;">06</div>
+                                    <h4 style="font-family:var(--font-serif); font-size:var(--text-xl); margin-bottom:0.5rem;">Clinical Evidence</h4>
+                                    <p style="font-size:var(--text-base); color:var(--text-muted); line-height:1.5;">We designed our clinical study before we manufactured our first batch. Not because we are required to, but because we believe no company should sell a health product without evidence that it works.</p>
                                 </div>
                             </div>
                         </div>
