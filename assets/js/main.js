@@ -85,7 +85,7 @@ const counterObserver = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.5 });
 
-document.querySelectorAll('[data-target]').forEach(el => {
+document.querySelectorAll('[data-target]:not(.index-nav-item)').forEach(el => {
     counterObserver.observe(el);
 });
 
@@ -237,3 +237,4 @@ function initScrollSpy() {
         });
     });
 }
+
