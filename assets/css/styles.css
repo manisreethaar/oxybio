@@ -191,56 +191,22 @@ a {
     top: calc(100% + 1.5rem);
     left: 50%;
     transform: translateX(-50%) translateY(10px) scale(0.98);
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(0,0,0,0.08);
+    background: rgba(10, 10, 12, 0.95);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 20px;
     padding: 1.5rem;
-    min-width: 280px;
+    min-width: 320px;
     display: flex;
     gap: 1.5rem;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.02);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
     opacity: 0;
     visibility: hidden;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     pointer-events: none;
-}
-.nav-item:hover .mega-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(0) scale(1);
-    pointer-events: auto;
-}
-.mega-card {
-    background: linear-gradient(135deg, var(--bg) 0%, #fff 100%);
-    padding: 1.25rem;
-    border-radius: 12px;
-    min-width: 140px;
-    border: 1px solid rgba(0,0,0,0.04);
-}
-.mega-links a {
-    position: relative;
-    padding-left: 0 !important;
-    transition: transform 0.2s ease, color 0.2s ease;
-}
-.mega-links a:hover {
-    transform: translateX(4px);
     color: var(--text-main);
 }
-.mega-links a::after {
-    content: "→";
-    position: absolute;
-    right: -20px;
-    opacity: 0;
-    transform: translateX(-10px);
-    transition: all 0.2s ease;
-}
-.mega-links a:hover::after {
-    opacity: 1;
-    transform: translateX(0);
-}
-
 
 /* Invisible bridge so the mouse doesn't lose hover when crossing the gap */
 .mega-menu::before {
@@ -253,47 +219,60 @@ a {
 }
 
 .nav-item:hover .mega-menu {
-    position: absolute;
-    top: calc(100% + 1.5rem);
-    left: 50%;
-    transform: translateX(-50%) translateY(10px) scale(0.98);
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(0,0,0,0.08);
-    border-radius: 20px;
-    padding: 1.5rem;
-    min-width: 280px;
-    display: flex;
-    gap: 1.5rem;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.02);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    pointer-events: none;
-}
-.nav-item:hover .mega-menu {
     opacity: 1;
     visibility: visible;
     transform: translateX(-50%) translateY(0) scale(1);
     pointer-events: auto;
 }
+
 .mega-card {
-    background: linear-gradient(135deg, var(--bg) 0%, #fff 100%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.08) 100%);
     padding: 1.25rem;
     border-radius: 12px;
     min-width: 140px;
-    border: 1px solid rgba(0,0,0,0.04);
-}
-.mega-links a {
-    position: relative;
-    padding-left: 0 !important;
-    transition: transform 0.2s ease, color 0.2s ease;
-}
-.mega-links a:hover {
-    transform: translateX(4px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     color: var(--text-main);
 }
+
+.mega-card .mega-icon {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.mega-card h4 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 0.2rem;
+}
+
+.mega-card p {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+.mega-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.mega-links a {
+    position: relative;
+    padding: 0.5rem 0.25rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: transform 0.2s ease, color 0.2s ease;
+    color: var(--text-muted);
+}
+
+.mega-links a:hover {
+    transform: translateX(4px);
+    color: #fff;
+}
+
 .mega-links a::after {
     content: "→";
     position: absolute;
@@ -302,56 +281,10 @@ a {
     transform: translateX(-10px);
     transition: all 0.2s ease;
 }
+
 .mega-links a:hover::after {
     opacity: 1;
     transform: translateX(0);
-}
-
-
-.mega-card {
-    background: var(--bg-alt);
-    padding: 0.9rem;
-    border-radius: 10px;
-    min-width: 100px;
-}
-
-.mega-card .mega-icon {
-    font-size: 1.4rem;
-    margin-bottom: 0.35rem;
-}
-
-.mega-card h4 {
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: var(--text-main);
-    margin-bottom: 0.2rem;
-}
-
-.mega-card p {
-    font-size: 0.72rem;
-    color: var(--text-muted);
-    line-height: 1.4;
-}
-
-.mega-links {
-    display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
-    justify-content: center;
-}
-
-.mega-links a {
-    font-size: 0.83rem;
-    font-weight: 500;
-    color: var(--text-muted);
-    padding: 0.45rem 0.65rem;
-    border-radius: 8px;
-    transition: background 0.2s, color 0.2s;
-}
-
-.mega-links a:hover {
-    background: var(--bg-alt);
-    color: var(--accent);
 }
 
 /* ── Buttons ─────────────────────────────────────────────── */
@@ -1985,6 +1918,7 @@ a {
     max-width: 800px;
     padding-right: var(--space-xl);
 }
+
 /* -- Mobile Header & Hamburger Button ---------------------- */
 
 .menu-btn {
@@ -2009,7 +1943,7 @@ a {
     .desktop-nav {
         display: none;
     }
-    
+
     .menu-btn {
         display: block;
     }
@@ -2046,7 +1980,8 @@ a {
     margin-top: 1rem;
     overflow: hidden;
     position: relative;
-    display: none; /* Only show where explicitly needed */
+    display: none;
+    /* Only show where explicitly needed */
 }
 
 .stat-bar-fill {
@@ -2093,7 +2028,7 @@ body {
 
 /* Coordinate markers for Bento Cells */
 .bento-cell::before {
-    content: '+' ;
+    content: '+';
     position: absolute;
     top: -4px;
     left: -4px;
@@ -2102,8 +2037,9 @@ body {
     font-size: 10px;
     pointer-events: none;
 }
+
 .bento-cell::after {
-    content: '+' ;
+    content: '+';
     position: absolute;
     bottom: -4px;
     right: -4px;
