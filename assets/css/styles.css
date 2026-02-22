@@ -2540,3 +2540,258 @@ body {
 
 /* Hide the old mega-menu strictly to ensure no conflicts */
 .custom-nav-replaced .mega-menu { display: none !important; }
+
+
+/* =========================================================
+   GLOBAL DESIGN SYSTEM PATCH v4 — Spacing, Mega Menu, Vision
+   ========================================================= */
+
+/* --- 1. GLOBAL TYPOGRAPHY & LINE-HEIGHT CONSISTENCY ------ */
+/* Shared content spacing across all inner pages */
+.structure-section p,
+.subtext,
+.editorial-col p,
+.bento-cell p {
+    line-height: 1.75;
+}
+
+.structure-section h2,
+.structure-section h3,
+.structure-section h4 {
+    margin-bottom: 0.75rem;
+}
+
+/* Enforce consistent paragraph spacing inside content blocks */
+.content-body p + p {
+    margin-top: 1.75rem;
+}
+
+/* All "flow-left" sections get consistent bottom margin from headings to text */
+.flow-left h1 + p,
+.flow-left h2 + p {
+    margin-top: 1.5rem;
+}
+
+/* Editorial text column: hero-quality spacing across every page */
+.editorial-col {
+    font-size: var(--text-lg);
+    line-height: 1.75;
+    color: var(--text-muted);
+    max-width: 600px;
+}
+
+/* Section-level spacing system */
+.structure-section {
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+    border-bottom: 1px solid var(--border);
+}
+
+/* --- 2. MEGA MENU — MONOCHROME PALETTE FIX -------------- */
+/* Override the old dark glass mega-menu — match the white site palette */
+.mega-menu {
+    background: #ffffff !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: 1px solid var(--border) !important;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.03) !important;
+    color: var(--text-main) !important;
+}
+
+.mega-card {
+    background: var(--bg-alt) !important;
+    border: 1px solid var(--border) !important;
+}
+
+.mega-card h4 {
+    color: var(--text-main) !important;
+}
+
+.mega-card p {
+    color: var(--text-muted) !important;
+}
+
+.mega-links a {
+    color: var(--text-muted) !important;
+}
+
+.mega-links a:hover {
+    color: var(--text-main) !important;
+    transform: translateX(4px);
+}
+
+/* New V3 Dropdown — Monochrome palette match */
+.mega-feature {
+    background: var(--bg-alt) !important;
+    border-right: 1px solid var(--border) !important;
+}
+
+.mega-feature .icon-wrap {
+    background: #ffffff !important;
+    color: var(--text-main) !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06) !important;
+    border: 1px solid var(--border) !important;
+}
+
+.mega-feature h4 {
+    color: var(--text-main) !important;
+    font-family: var(--font-serif) !important;
+}
+
+.mega-feature p {
+    color: var(--text-muted) !important;
+}
+
+.mega-dropdown-inner {
+    border: 1px solid var(--border);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.06), 0 4px 15px rgba(0,0,0,0.03) !important;
+}
+
+.mega-nav-link .link-title {
+    color: var(--text-main) !important;
+}
+
+.mega-nav-link:hover .link-title {
+    color: var(--text-main) !important;
+}
+
+.mega-nav-link .link-title::after {
+    color: var(--text-main) !important;
+}
+
+.mega-nav-link:hover {
+    background: var(--bg-alt) !important;
+    border-color: var(--border) !important;
+}
+
+.mega-nav-link .link-desc {
+    color: var(--text-muted) !important;
+}
+
+/* --- 3. VISION & MISSION — PREMIUM EDITORIAL REDESIGN --- */
+/* The entire vision/mission container becomes a newspaper editorial */
+.vision-premium-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: var(--space-xl);
+}
+
+@media (max-width: 900px) {
+    .vision-premium-grid { grid-template-columns: 1fr; }
+}
+
+.vision-cell {
+    padding: 3rem;
+    border-right: 1px solid var(--border);
+    position: relative;
+}
+
+.vision-cell:last-child {
+    border-right: none;
+}
+
+.vision-cell-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.vision-cell-label::before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 1px;
+    background: var(--text-main);
+}
+
+.vision-cell h3 {
+    font-family: var(--font-serif);
+    font-size: var(--text-3xl);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: var(--text-main);
+    margin-bottom: 1.5rem;
+}
+
+.vision-cell p {
+    font-size: var(--text-base);
+    color: var(--text-muted);
+    line-height: 1.8;
+}
+
+/* Vision sub-pillars bar */
+.vision-pillars {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 2rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.vision-pillar-row {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.25s;
+}
+
+.vision-pillar-row:last-child {
+    border-bottom: none;
+}
+
+.vision-pillar-row:hover {
+    background: var(--bg-alt);
+}
+
+.pillar-index {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    width: 24px;
+    flex-shrink: 0;
+}
+
+.pillar-content h5 {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: var(--text-base);
+    color: var(--text-main);
+    margin-bottom: 0.25rem;
+}
+
+.pillar-content p {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Mission large pull-quote */
+.mission-quote {
+    border-left: 3px solid var(--text-main);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    font-family: var(--font-serif);
+    font-size: var(--text-xl);
+    font-style: italic;
+    color: var(--text-main);
+    line-height: 1.5;
+}
+
