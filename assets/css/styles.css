@@ -3209,3 +3209,95 @@ body {
     .science-cards-grid { grid-template-columns: 1fr; }
 }
 
+
+
+/* =========================================================
+   MOBILE-FIRST RESPONSIVE OVERRIDES — Major Breakpoints
+   ========================================================= */
+
+/* -- Tablet: 768px ---------------------------------------- */
+@media (max-width: 768px) {
+
+    /* Container padding */
+    .container { padding-left: 1.25rem; padding-right: 1.25rem; }
+
+    /* Hero */
+    .hero-inner { grid-template-columns: 1fr !important; gap: 2rem; }
+    .hero-animation-wrapper { display: none; }
+    .display { font-size: clamp(2.2rem, 8vw, 3rem) !important; }
+
+    /* Science Cards */
+    .science-cards-grid { grid-template-columns: 1fr; }
+    .science-header { grid-template-columns: 1fr; gap: 1.5rem; }
+
+    /* Vision/Mission grid */
+    .vision-premium-grid { grid-template-columns: 1fr !important; }
+    .vision-cell { padding: 2rem !important; }
+
+    /* 3 Pillars showcase rows */
+    .pillar-showcase-row {
+        grid-template-columns: 1fr !important;
+        gap: 0.75rem !important;
+        padding: 1.75rem 1.25rem !important;
+    }
+    .pillar-showcase-row::after { display: none !important; }
+    .pillar-showcase-tag { writing-mode: horizontal-tb; transform: none; display: inline-block; }
+
+    /* Core Values indexed list */
+    .value-row { grid-template-columns: 48px 1fr !important; gap: 0.75rem !important; }
+    .value-tag { display: none; }
+    .value-name { font-size: 1.1rem !important; }
+
+    /* Duel comparison table — collapse to stacked rows */
+    [style*="grid-template-columns:1fr 1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Mega menu hide on mobile */
+    .mega-menu { display: none !important; }
+
+    /* Section spacing */
+    .structure-section { padding-top: 3rem; padding-bottom: 3rem; }
+}
+
+/* -- Mobile: 480px ---------------------------------------- */
+@media (max-width: 480px) {
+
+    /* Typography scale down */
+    h1.display, .display { font-size: 2rem !important; }
+    .headline { font-size: 1.6rem !important; }
+    .sc-stat-num { font-size: 2.5rem !important; }
+
+    /* Science cards */
+    .science-card { padding: 1.75rem !important; }
+
+    /* Navbar */
+    .nav-logo { font-size: 0.95rem !important; }
+    .btn-primary { padding: 0.6rem 1rem !important; font-size: 0.8rem !important; }
+
+    /* Pillar showcase */
+    .pillar-showcase-title { font-size: 1.3rem !important; }
+    .vision-cell-label { font-size: 0.6rem !important; }
+
+    /* Value rows */
+    .value-row { gap: 0.5rem !important; padding: 1.25rem 0 !important; }
+    .value-name { font-size: 1rem !important; }
+    .value-desc { font-size: 0.82rem !important; }
+
+    /* Section header split collapse */
+    [style*="grid-template-columns:1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+
+    /* Duel comparison table single column */
+    [style*="grid-template-columns:1fr 1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* -- Comparison duel table — mobile stacked card layout --- */
+@media (max-width: 640px) {
+    .duel-row-grid { grid-template-columns: 1fr !important; }
+}
+
