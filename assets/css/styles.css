@@ -2387,3 +2387,156 @@ body {
     100% { opacity: 0; transform: scale(3); }
 }
 
+
+
+
+/* =========================================================
+   SUPER PREMIUM MEGA DROPDOWN (V3 Override)
+========================================================= */
+
+/* Ensure desktop nav has appropriate stacking context */
+.desktop-nav {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 999;
+}
+
+.desktop-nav .nav-item { 
+    position: relative; 
+    display: flex; 
+    align-items: center; 
+    height: 100%; 
+}
+.desktop-nav .nav-item > a { 
+    display: flex; 
+    align-items: center; 
+    gap: 0.25rem; 
+}
+.desktop-nav .nav-arrow { 
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); 
+}
+.desktop-nav .nav-item:hover .nav-arrow { 
+    transform: rotate(180deg); 
+}
+
+.mega-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px) scale(0.97);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    padding-top: 1.5rem; /* invisible bridge */
+    z-index: 1000;
+}
+.desktop-nav .nav-item:hover .mega-dropdown {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0) scale(1);
+}
+.mega-dropdown-inner {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.08), 0 4px 15px rgba(0,0,0,0.03);
+    border: 1px solid #E5E7EB;
+    display: flex;
+    overflow: hidden;
+    min-width: 650px;
+}
+
+/* Feature Pane (Left Side) */
+.mega-feature {
+    background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+    padding: 2.5rem;
+    width: 42%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid #E5E7EB;
+    text-align: left;
+}
+.mega-feature .icon-wrap {
+    color: #0D8A74;
+    margin-bottom: 1.25rem;
+    background: #ffffff;
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(13, 138, 116, 0.1);
+}
+.mega-feature h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 0.75rem;
+    font-family: var(--font-serif);
+    line-height: 1.2;
+}
+.mega-feature p {
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.6;
+}
+
+/* Links Pane (Right Side) */
+.mega-links-col {
+    padding: 1.5rem;
+    width: 58%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: center;
+}
+.mega-nav-link {
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+    border-radius: 16px;
+    transition: all 0.25s ease;
+    text-decoration: none;
+    border: 1px solid transparent;
+    text-align: left;
+}
+.mega-nav-link:hover {
+    background: #F8FAFC;
+    transform: translateX(6px);
+    border-color: #E2E8F0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+}
+.mega-nav-link .link-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 0.35rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color 0.25s;
+}
+.mega-nav-link:hover .link-title {
+    color: #0D8A74;
+}
+.mega-nav-link .link-title::after {
+    content: "→";
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    color: #0D8A74;
+}
+.mega-nav-link:hover .link-title::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+.mega-nav-link .link-desc {
+    font-size: 0.9rem;
+    color: #64748B;
+    line-height: 1.5;
+}
+
+/* Hide the old mega-menu strictly to ensure no conflicts */
+.custom-nav-replaced .mega-menu { display: none !important; }
