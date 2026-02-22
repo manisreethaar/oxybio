@@ -3301,3 +3301,60 @@ body {
     .duel-row-grid { grid-template-columns: 1fr !important; }
 }
 
+
+
+/* =========================================================
+   NAVBAR — Mobile Critical Fixes
+   ========================================================= */
+@media (max-width: 860px) {
+    /* Hide main nav links, show only logo + CTA */
+    .nav-links { display: none !important; }
+    nav .nav-logo { font-size: 1rem !important; }
+
+    /* Make hero section not overflow horizontally */
+    body { overflow-x: hidden; }
+    .hero-inner,
+    [style*="grid-template-columns:1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Science header stacks vertically */
+    [style*="grid-template-columns:1fr 1fr;"][style*="gap:4rem"] {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+
+    /* Comparison duel table header bar */
+    [style*="grid-template-columns:1fr auto"][style*="align-items:center"] {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Duel rows: 3-col -> 1-col stack on mobile */
+    [style*="grid-template-columns:1fr 1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Section paddings tighter on mobile */
+    [style*="padding: 6rem 0"] { padding: 3rem 0 !important; }
+    [style*="padding-top:var(--space-xl)"] { padding-top: 3rem !important; }
+}
+
+/* =========================================================
+   HAMBURGER MENU — Show on mobile (uses existing JS toggle)
+   ========================================================= */
+@media (max-width: 860px) {
+    .hamburger { display: flex !important; }
+    .mobile-nav-open .nav-links { 
+        display: flex !important; 
+        flex-direction: column;
+        position: fixed;
+        top: 60px; left: 0; right: 0;
+        background: #fff;
+        padding: 1.5rem;
+        border-bottom: 1px solid var(--border);
+        gap: 1.25rem;
+        z-index: 999;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    }
+}
+
