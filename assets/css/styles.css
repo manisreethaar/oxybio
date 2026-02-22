@@ -2914,3 +2914,151 @@ body {
     }
 }
 
+
+
+/* =========================================================
+   3 PILLARS — Showcase Stack Layout (Premium)
+   ========================================================= */
+
+.pillar-showcase-row {
+    display: grid;
+    grid-template-columns: 140px 1fr auto;
+    gap: 3rem;
+    align-items: center;
+    padding: 3rem 2.5rem;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    margin-bottom: 1.25rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pillar-showcase-row:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.07);
+}
+
+/* Ghost number watermark in the background */
+.pillar-showcase-row::after {
+    content: attr(data-num);
+    position: absolute;
+    right: -0.05em;
+    bottom: -0.3em;
+    font-family: var(--font-serif);
+    font-size: 12rem;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--border);
+    pointer-events: none;
+    user-select: none;
+    transition: color 0.4s;
+    letter-spacing: -0.04em;
+}
+
+.p-row-01 { background: #ffffff; }
+.p-row-01[data-num]::after { content: "01"; }
+
+.p-row-02 { background: var(--text-main); }
+.p-row-02[data-num]::after { content: "02"; color: rgba(255,255,255,0.06); }
+
+.p-row-03 { background: var(--bg-alt); }
+.p-row-03[data-num]::after { content: "03"; }
+
+/* Index number front */
+.pillar-showcase-num {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+    align-self: flex-start;
+    margin-top: 0.35rem;
+    transition: color 0.3s;
+}
+
+.pillar-inverted .pillar-showcase-num {
+    color: rgba(255,255,255,0.4);
+}
+
+/* Body */
+.pillar-showcase-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.pillar-showcase-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    transition: color 0.3s;
+}
+
+.pillar-inverted .pillar-showcase-label {
+    color: rgba(255,255,255,0.45);
+}
+
+.pillar-showcase-title {
+    font-family: var(--font-serif);
+    font-size: var(--text-2xl);
+    font-weight: 800;
+    color: var(--text-main);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    transition: color 0.3s;
+    max-width: 480px;
+}
+
+.pillar-inverted .pillar-showcase-title {
+    color: #ffffff;
+}
+
+.pillar-showcase-text {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    line-height: 1.75;
+    max-width: 500px;
+    transition: color 0.3s;
+}
+
+.pillar-inverted .pillar-showcase-text {
+    color: rgba(255,255,255,0.55);
+}
+
+/* Right tag */
+.pillar-showcase-tag {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    padding: 0.5rem 1rem;
+    border-radius: 100px;
+    white-space: nowrap;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    transition: all 0.3s;
+    align-self: center;
+}
+
+.pillar-inverted .pillar-showcase-tag {
+    color: rgba(255,255,255,0.45);
+    border-color: rgba(255,255,255,0.15);
+}
+
+@media (max-width: 768px) {
+    .pillar-showcase-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 2rem 1.5rem;
+    }
+    .pillar-showcase-row::after { display: none; }
+    .pillar-showcase-tag { writing-mode: horizontal-tb; transform: none; }
+}
+
