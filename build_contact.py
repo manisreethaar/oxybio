@@ -1,111 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+import os, re
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oxygen Bioinnovations | Precision Nutrition. India's First.</title>
-    <meta name="description"
-        content="Ancient ingredients. Modern science. No compromise. India's first millet and mushroom-based precision nutrition system.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/styles.css">
-</head>
+contact_path = r'e:\OXYBIO\contact.html'
+with open(contact_path, 'r', encoding='utf-8') as f:
+    idx = f.read()
 
-<body>
+header_m = re.search(r'^.*?(?=<main>)', idx, re.DOTALL)
+footer_m = re.search(r'</main>.*$', idx, re.DOTALL)
 
-    <!-- ── Navigation ──────────────────────────────────────── -->
-    <header id="header">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">OXYGEN<span>.</span></a>
-            <nav class="desktop-nav">
-                <a href="index.html">Home</a>
+HEADER = header_m.group(0)
+FOOTER = footer_m.group(0)
 
-                <div class="nav-item">
-                    <a href="about.html">About Us
-                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.5">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </a>
-                    <div class="mega-menu">
-                        <div class="mega-card">
-                            <div class="mega-icon">👥</div>
-                            <h4>Who we are</h4>
-                            <p>Building India's first precision nutrition system</p>
-                        </div>
-                        <div class="mega-links">
-                            <a href="about.html#about-vision">Vision &amp; Mission</a>
-                            <a href="about.html#about-founder">Founder &amp; Team</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="nav-item">
-                    <a href="science.html">Our Science
-                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.5">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </a>
-                    <div class="mega-menu">
-                        <div class="mega-card">
-                            <div class="mega-icon">🧪</div>
-                            <h4>Evidence-Based</h4>
-                            <p>Active forms, verified extracts, clinical proof</p>
-                        </div>
-                        <div class="mega-links">
-                            <a href="problem.html">The Problem</a>
-                            <a href="ingredients.html">Ingredients Index</a>
-                        </div>
-                    </div>
-                </div>
-
-                <a href="blog.html">Blog</a>
-                <a href="careers.html">Careers</a>
-                <a href="contact.html">Contact</a>
-                <a href="#join" class="btn btn-primary" style="margin-left: 0.5rem;">Join Waitlist</a>
-            </nav>
-            <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </header>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-overlay" id="mobileOverlay"></div>
-    <nav class="mobile-menu" id="mobileMenu">
-        <div class="mobile-menu-header">
-            <a href="index.html" class="logo">OXYGEN<span>.</span></a>
-            <button class="mobile-close" id="mobileClose" aria-label="Close">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
-        </div>
-        <a href="index.html" class="menu-link">Home</a>
-        <a href="about.html" class="menu-link">About Us</a>
-        <div class="mobile-submenu">
-            <a href="about.html#about-vision" class="menu-link">Vision &amp; Mission</a>
-            <a href="about.html#about-founder" class="menu-link">Founder &amp; Team</a>
-        </div>
-        <a href="science.html" class="menu-link">Our Science</a>
-        <div class="mobile-submenu">
-            <a href="problem.html" class="menu-link">The Problem</a>
-            <a href="ingredients.html" class="menu-link">Ingredients Index</a>
-        </div>
-        <a href="blog.html" class="menu-link">Blog</a>
-        <a href="careers.html" class="menu-link">Careers</a>
-        <a href="contact.html" class="menu-link">Contact</a>
-        <div class="mobile-cta">
-            <a href="#join" class="btn btn-primary" style="width:100%;justify-content:center;padding:1rem;">Join the
-                Waitlist</a>
-        </div>
-    </nav>
-
-    
+MAIN_CONTENT = """
 <main>
 
 <!-- ═══════════════════════════════════════════════════════
@@ -229,15 +134,9 @@
 </section>
 
 </main>
-</main>
-</main>
+"""
 
-    <!-- Mobile Sticky CTA -->
-    <div class="mobile-sticky-cta" id="mobileCta">
-        <a href="#join">Join the Waitlist →</a>
-    </div>
+with open(contact_path, 'w', encoding='utf-8') as f:
+    f.write(HEADER + MAIN_CONTENT + FOOTER)
 
-    <script src="assets/js/main.js"></script>
-</body>
-
-</html>
+print("Updated contact.html with precise contact details and inquiry form.")
