@@ -166,7 +166,7 @@
                 </div>
 
                 <!-- Story Chapters: layout override -->
-                <div style="display:grid; grid-template-columns:1fr 2fr; gap:var(--space-xl); align-items:start;"
+                <div style="display:grid; grid-template-columns:1fr 2fr; gap:var(--space-xl); align-items:start; justify-items:start; align-content:start;"
                     class="mobile-stack reveal">
 
                     <!-- Sidebar Index -->
@@ -183,10 +183,24 @@
                                 style="font-family:var(--font-serif); font-size:1.5rem; font-weight:600; cursor:pointer; transition:all 0.3s ease;">
                                 02. The Journey</li>
                         </ul>
+                        
+                        <!-- NEW: Premium Sidebar Data (To fill the empty space) -->
+                        <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); display: flex; flex-direction: column; gap: 1.5rem;" class="mobile-hide">
+                            <div>
+                                <div style="font-family:var(--font-mono); font-size:0.65rem; color:var(--text-muted); letter-spacing:0.1em; margin-bottom:0.25rem; text-transform:uppercase;">Development Timeline</div>
+                                <div style="font-family:var(--font-serif); font-size:1.5rem; color:var(--text-main); font-weight:600; line-height:1;">14 Months</div>
+                                <div style="font-size:0.85rem; color:var(--text-muted); margin-top:0.25rem;">Of R&D before writing a single line of marketing</div>
+                            </div>
+                            <div>
+                                <div style="font-family:var(--font-mono); font-size:0.65rem; color:var(--text-muted); letter-spacing:0.1em; margin-bottom:0.25rem; text-transform:uppercase;">Clinical Data</div>
+                                <div style="font-family:var(--font-serif); font-size:1.5rem; color:var(--text-main); font-weight:600; line-height:1;">200+ Studies</div>
+                                <div style="font-size:0.85rem; color:var(--text-muted); margin-top:0.25rem;">Peer-reviewed nutritional diagnostics analyzed</div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Chapters Content (Light Premium) -->
-                    <div id="story-tab-container" style="display:grid; grid-template-columns:1fr; grid-template-rows:1fr; align-items:start; position:relative;">
+                    <div id="story-tab-container" style="display:grid; grid-template-columns:1fr; grid-template-rows:max-content; align-items:start; justify-items:start; align-content:start; position:relative;">
                         <!-- Chapter 01: The Hook (Clinical Aesthetic) -->
                         <div id="chapter-01" class="chapter-section tab-pane active" style="grid-area: 1 / 1; opacity: 1; visibility: visible; transition: opacity 0.5s ease, visibility 0.5s ease; pointer-events: auto;">
                             <div
@@ -543,7 +557,7 @@
                 </div>
 
                 <!-- Two-col sticky layout -->
-                <div style="display:grid; grid-template-columns:1fr 2fr; gap:var(--space-xl); align-items:start;"
+                <div style="display:grid; grid-template-columns:1fr 2fr; gap:var(--space-xl); align-items:start; justify-items:start; align-content:start;"
                     class="mobile-stack reveal">
 
                     <!-- Sticky Sidebar with progress bar -->
@@ -569,10 +583,24 @@
                                 </div>
                             </div>
                         </div>
+                        
+                        <!-- NEW: Premium Sidebar Data (To fill the empty space) -->
+                        <div style="margin-top: 5rem; position: relative;" class="mobile-hide">
+                            <div style="position:absolute; left:-1.5rem; top:0; bottom:0; width:1px; background:var(--border);"></div>
+                            <div style="background:var(--bg); border:1px solid var(--border); padding: 1.5rem; border-radius: 8px;">
+                                <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:1rem;">
+                                    <div style="width:6px; height:6px; background:#10b981; border-radius:50%;"></div>
+                                    <div style="font-family:var(--font-mono); font-size:0.65rem; color:var(--text-main); letter-spacing:0.1em; text-transform:uppercase;">Operating Standard</div>
+                                </div>
+                                <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6; margin:0;">
+                                    "If a dose is not high enough to trigger an actual biological response, it does not belong in the formula. We do not do label decoration."
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Chapters content -->
-                    <div id="who-tab-container" style="display:grid; grid-template-columns:1fr; grid-template-rows:1fr; align-items:start; position:relative;">
+                    <div id="who-tab-container" style="display:grid; grid-template-columns:1fr; grid-template-rows:max-content; align-items:start; justify-items:start; align-content:start; position:relative;">
 
                         <!-- ═══ CHAPTER 01: THE FOUNDER ═══ -->
                         <div id="chapter-03" class="chapter-section tab-pane active" style="grid-area: 1 / 1; opacity: 1; visibility: visible; transition: opacity 0.5s ease, visibility 0.5s ease; pointer-events: auto;">
