@@ -3595,3 +3595,9 @@ h1.display {
     .desktop-nav { display: none !important; }
     .menu-btn { display: flex !important; }
 }
+
+
+/* =========================================================
+   PREMIUM TYPOGRAPHY ORPHAN PROTECTION
+========================================================= */
+p, h1, h2, h3, h4, blockquote { text-wrap: pretty; }

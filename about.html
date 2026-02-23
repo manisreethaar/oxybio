@@ -157,7 +157,7 @@
                         Origin Protocol</div>
                     <h1 class="display"
                         style="font-size:clamp(4rem, 8vw, 6rem); line-height:0.95; letter-spacing:-0.03em;">Built
-                        from<br><em style="color:var(--text-muted); font-weight:400;">frustration.</em></h1>
+                        from <br><em style="color:var(--text-muted); font-weight:400;">frustration.</em></h1>
                     <p class="editorial-col"
                         style="margin-top:2.5rem; font-size:1.25rem; line-height:1.6; color:var(--text-main);">
                         This is not a corporate origin story. This is the honest account of a problem we couldn't
@@ -166,7 +166,7 @@
                 </div>
 
                 <!-- Story Chapters: layout override -->
-                <div style="display:grid; grid-template-columns:1fr 2fr; gap:var(--space-xl); align-items:start; justify-items:start; align-content:start;"
+                <div style="display:grid; grid-template-columns:1fr 2fr; gap:var(--space-xl); align-items:stretch;"
                     class="mobile-stack reveal">
 
                     <!-- Sidebar Index -->
@@ -195,7 +195,8 @@
                                     Development Timeline</div>
                                 <div
                                     style="font-family:var(--font-serif); font-size:1.5rem; color:var(--text-main); font-weight:600; line-height:1;">
-                                    14 Months</div>
+                                    <span class="count-up" data-target="14" data-suffix=" Months">0</span>
+                                </div>
                                 <div style="font-size:0.85rem; color:var(--text-muted); margin-top:0.25rem;">Of R&D
                                     before writing a single line of marketing</div>
                             </div>
@@ -205,7 +206,8 @@
                                     Clinical Data</div>
                                 <div
                                     style="font-family:var(--font-serif); font-size:1.5rem; color:var(--text-main); font-weight:600; line-height:1;">
-                                    200+ Studies</div>
+                                    <span class="count-up" data-target="200" data-suffix="+ Studies">0</span>
+                                </div>
                                 <div style="font-size:0.85rem; color:var(--text-muted); margin-top:0.25rem;">
                                     Peer-reviewed nutritional diagnostics analyzed</div>
                             </div>
@@ -560,10 +562,11 @@
 
                 <!-- Section Header -->
                 <div class="flow-left reveal" style="max-width:900px; margin-bottom:var(--space-xl);">
-                    <div class="badge" style="margin-bottom:var(--space-md); border-color:var(--text-main);">Who We Are
-                    </div>
+                    <div class="badge"
+                        style="margin-bottom:var(--space-md); border-color:var(--text-main); color:var(--text-main); background:transparent;">
+                        Radical Transparency</div>
                     <h1 class="display" style="font-size:var(--text-6xl); line-height:var(--leading-none);">Built
-                        by<br><em>scientists.</em></h1>
+                        by <br><em>scientists.</em></h1>
                     <p class="subtext editorial-col"
                         style="margin-top:var(--space-md); font-size:var(--text-xl); line-height:1.6;">
                         Not nutritionists who became entrepreneurs. Scientists who were frustrated by what existed and
@@ -572,7 +575,7 @@
                 </div>
 
                 <!-- Two-col sticky layout -->
-                <div style="display:grid; grid-template-columns:1fr 2fr; gap:var(--space-xl); align-items:start; justify-items:start; align-content:start;"
+                <div style="display:grid; grid-template-columns:1fr 2fr; gap:var(--space-xl); align-items:stretch;"
                     class="mobile-stack reveal">
 
                     <!-- Sticky Sidebar with progress bar -->
@@ -1026,8 +1029,50 @@
                     pane.classList.remove('active');
                 }
             });
+
+            // 4. Smooth scroll back to top of context to prevent disorientation
+            const yOffset = -100;
+            const y = context.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
         }
     </script>
+
+    <!-- Premium Number Counter Animation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const animateValue = (obj, start, end, duration) => {
+                let startTimestamp = null;
+                const step = (timestamp) => {
+                    if (!startTimestamp) startTimestamp = timestamp;
+                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                    // Ease out cubic
+                    const easeOut = 1 - Math.pow(1 - progress, 3);
+                    obj.innerHTML = Math.floor(easeOut * (end - start) + start);
+                    if (obj.dataset.suffix) obj.innerHTML += obj.dataset.suffix;
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    }
+                };
+                window.requestAnimationFrame(step);
+            };
+
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = entry.target;
+                        const endVal = parseInt(target.dataset.target, 10);
+                        if (!isNaN(endVal)) {
+                            animateValue(target, 0, endVal, 2000);
+                        }
+                        obs.unobserve(target); // Only animate once
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.count-up').forEach(el => observer.observe(el));
+        });
+    </script>
 </body>
+
 
 </html>
