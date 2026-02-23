@@ -308,13 +308,12 @@
             <!-- ═══════════════════════════════════════════════════════
      SOLUTION / PRODUCTS SECTION (APPLE-STYLE PINNED SCROLL)
 ════════════════════════════════════════════════════════ -->
-            <section id="pinned-solution-wrapper" style="position:relative; height:400vh; background:var(--bg-alt); border-top:1px solid var(--border);">
-                
-                <!-- This sticky container locks to the screen for 400vh of scrolling -->
-                <div class="sticky-product-container" style="position:sticky; top:0; height:100vh; display:flex; flex-direction:column; overflow:hidden;">
-                    
-                    <!-- Fixed Header inside sticky -->
-                    <div class="container" style="padding-top:8vh; flex-shrink:0; position:relative; z-index:10;">
+            
+            <style>
+            #pinned-solution-intro { padding: 8rem 0 4rem; background: var(--bg-alt); border-top: 1px solid var(--border); }
+            </style>
+            <section id="pinned-solution-intro">
+                <div class="container">
                         <div class="section-label">
                             <div class="section-label-line"></div>
                             <span class="section-label-text">The Solution</span>
@@ -322,26 +321,35 @@
                         <div style="display:flex; justify-content:space-between; align-items:flex-end; gap:2rem; flex-wrap:wrap;">
                             <div style="max-width:800px;">
                                 <h2 class="headline" style="margin-top:var(--space-sm);">So we built one. Meet Oxygen.</h2>
-                                <p class="subtext editorial-col" style="margin-top:var(--space-sm);">Three precision formulas. Each scientifically designed for a specific need. All built on the same uncompromising foundation: Indian ingredients, active nutrient forms, and doses that actually work.</p>
+                                <p class="subtext" style="font-size: 1.15rem; line-height: 1.8; color: var(--text-muted); margin-top:var(--space-sm); max-width:800px;">Three precision formulas. Each scientifically designed for a specific need. All built on the same uncompromising foundation: Indian ingredients, active nutrient forms, and doses that actually work.</p>
                             </div>
                         </div>
-                    </div>
+                </div>
+            </section>
+
+            <!-- Added via python to fix spacing -->
+            <section id="pinned-solution-wrapper" style="position:relative; height:250vh; background:var(--bg-alt);">
+                
+                <!-- This sticky container locks to the screen for 400vh of scrolling -->
+                <div class="sticky-product-container" style="position:sticky; top:120px; height:calc(100vh - 120px); display:flex; flex-direction:column; overflow:hidden;">
+                    
+
 
                     <!-- The 3 products layered on top of each other -->
                     <div class="container" style="position:relative; flex-grow:1; display:flex; align-items:center;">
                         
                         <!-- VITALITY -->
                         <div class="apple-slide" id="slide-vitality" style="position:absolute; width:100%; top:50%; transform:translateY(-50%); opacity:1; transition:opacity 0.6s ease, transform 0.6s ease;">
-                            <div style=" display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start;" class="mobile-stack-card">
+                            <div style=" display:grid; grid-template-columns:1.5fr 1fr; gap:4rem; align-items:center;" class="mobile-stack-card">
                             <div>
                                 <div style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1.5rem; display:flex; align-items:center; gap:0.75rem;"><span style="display:inline-block; width:20px; height:1px; background:var(--text-muted);"></span>01 / Pre-Clinical Optimization</div>
                                 <h3 class="display" style="font-size:clamp(3.5rem,7vw,5.5rem); line-height:0.9; letter-spacing:-0.04em; margin:0 0 0.75rem;">VITALITY</h3>
                                 <div style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1.5rem; border:1px solid var(--border); display:inline-block; padding:0.3rem 0.75rem;">Daily Deficiencies</div>
-                                <p style="font-size:var(--text-base); line-height:1.7; color:var(--text-muted); margin-bottom:1.5rem;">For when you cannot eat well but refuse to function sub-optimally. An everyday nutritional baseline.</p>
+                                <p style="font-size:1.1rem; line-height:1.8; color:var(--text-muted); margin-bottom:2rem; max-width:90%;">For when you cannot eat well but refuse to function sub-optimally. An everyday nutritional baseline.</p>
                                 <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.6rem;">
-                                    <li style="display:flex; gap:0.75rem; align-items:flex-start; font-size:0.9rem; color:var(--text-main);"><span style="font-family:var(--font-mono); color:var(--text-muted); flex-shrink:0;">01</span>Covers 50% of your daily nutrient needs</li>
-                                    <li style="display:flex; gap:0.75rem; align-items:flex-start; font-size:0.9rem; color:var(--text-main);"><span style="font-family:var(--font-mono); color:var(--text-muted); flex-shrink:0;">02</span>Sustained energy without sugar spikes</li>
-                                    <li style="display:flex; gap:0.75rem; align-items:flex-start; font-size:0.9rem; color:var(--text-main);"><span style="font-family:var(--font-mono); color:var(--text-muted); flex-shrink:0;">03</span>Stress adaptation with KSM-66 Ashwagandha</li>
+                                    <li style="display:flex; gap:0.75rem; align-items:flex-start; font-size:1rem; color:var(--text-main); line-height:1.6;"><span style="font-family:var(--font-mono); color:var(--text-muted); flex-shrink:0;">01</span>Covers 50% of your daily nutrient needs</li>
+                                    <li style="display:flex; gap:0.75rem; align-items:flex-start; font-size:1rem; color:var(--text-main); line-height:1.6;"><span style="font-family:var(--font-mono); color:var(--text-muted); flex-shrink:0;">02</span>Sustained energy without sugar spikes</li>
+                                    <li style="display:flex; gap:0.75rem; align-items:flex-start; font-size:1rem; color:var(--text-main); line-height:1.6;"><span style="font-family:var(--font-mono); color:var(--text-muted); flex-shrink:0;">03</span>Stress adaptation with KSM-66 Ashwagandha</li>
                                 </ul>
                             </div>
                             <div style="background:var(--text-main); padding:2rem; color:#fff; position:relative; overflow:hidden;">
@@ -356,16 +364,16 @@
                         
                         <!-- CLARITY -->
                         <div class="apple-slide" id="slide-clarity" style="position:absolute; width:100%; top:50%; transform:translateY(-30%); opacity:0; pointer-events:none; transition:opacity 0.6s ease, transform 0.6s ease;">
-                            <div style=" display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start;" class="mobile-stack-card">
+                            <div style=" display:grid; grid-template-columns:1.5fr 1fr; gap:4rem; align-items:center;" class="mobile-stack-card">
                             <div>
                                 <div style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1.5rem; display:flex; align-items:center; gap:0.75rem;"><span style="display:inline-block; width:20px; height:1px; background:var(--text-muted);"></span>02 / Sensory Trials &amp; Taste Profiling</div>
                                 <h3 class="display" style="font-size:clamp(3.5rem,7vw,5.5rem); line-height:0.9; letter-spacing:-0.04em; margin:0 0 0.75rem;">CLARITY</h3>
                                 <div style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1.5rem; border:1px solid var(--border); display:inline-block; padding:0.3rem 0.75rem;">Cognitive Fatigue</div>
-                                <p style="font-size:var(--text-base); line-height:1.7; color:var(--text-muted); margin-bottom:1.5rem;">The honest alternative to high-sugar energy drinks. Built for sustained focus and the dreaded 3 pm crash.</p>
+                                <p style="font-size:1.1rem; line-height:1.8; color:var(--text-muted); margin-bottom:2rem; max-width:90%;">The honest alternative to high-sugar energy drinks. Built for sustained focus and the dreaded 3 pm crash.</p>
                                 <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.6rem;">
-                                    <li style="display:flex; gap:0.75rem; align-items:flex-start; font-size:0.9rem; color:var(--text-main);"><span style="font-family:var(--font-mono); color:var(--text-muted); flex-shrink:0;">01</span>Clean focus without caffeine crash</li>
-                                    <li style="display:flex; gap:0.75rem; align-items:flex-start; font-size:0.9rem; color:var(--text-main);"><span style="font-family:var(--font-mono); color:var(--text-muted); flex-shrink:0;">02</span>Memory and attention support (Lion&rsquo;s Mane)</li>
-                                    <li style="display:flex; gap:0.75rem; align-items:flex-start; font-size:0.9rem; color:var(--text-main);"><span style="font-family:var(--font-mono); color:var(--text-muted); flex-shrink:0;">03</span>L-Theanine:Caffeine ratio 2.5:1 (clinically studied)</li>
+                                    <li style="display:flex; gap:0.75rem; align-items:flex-start; font-size:1rem; color:var(--text-main); line-height:1.6;"><span style="font-family:var(--font-mono); color:var(--text-muted); flex-shrink:0;">01</span>Clean focus without caffeine crash</li>
+                                    <li style="display:flex; gap:0.75rem; align-items:flex-start; font-size:1rem; color:var(--text-main); line-height:1.6;"><span style="font-family:var(--font-mono); color:var(--text-muted); flex-shrink:0;">02</span>Memory and attention support (Lion&rsquo;s Mane)</li>
+                                    <li style="display:flex; gap:0.75rem; align-items:flex-start; font-size:1rem; color:var(--text-main); line-height:1.6;"><span style="font-family:var(--font-mono); color:var(--text-muted); flex-shrink:0;">03</span>L-Theanine:Caffeine ratio 2.5:1 (clinically studied)</li>
                                 </ul>
                             </div>
                             <div style="background:var(--text-main); padding:2rem; color:#fff; position:relative; overflow:hidden;">
@@ -380,16 +388,16 @@
                         
                         <!-- MOMENTUM -->
                         <div class="apple-slide" id="slide-momentum" style="position:absolute; width:100%; top:50%; transform:translateY(-30%); opacity:0; pointer-events:none; transition:opacity 0.6s ease, transform 0.6s ease;">
-                            <div style=" display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start;" class="mobile-stack-card">
+                            <div style=" display:grid; grid-template-columns:1.5fr 1fr; gap:4rem; align-items:center;" class="mobile-stack-card">
                             <div>
                                 <div style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1.5rem; display:flex; align-items:center; gap:0.75rem;"><span style="display:inline-block; width:20px; height:1px; background:var(--text-muted);"></span>03 / Formulation Finalized</div>
                                 <h3 class="display" style="font-size:clamp(3.5rem,7vw,5.5rem); line-height:0.9; letter-spacing:-0.04em; margin:0 0 0.75rem;">MOMENTUM</h3>
                                 <div style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1.5rem; border:1px solid var(--border); display:inline-block; padding:0.3rem 0.75rem;">Cellular Recovery</div>
-                                <p style="font-size:var(--text-base); line-height:1.7; color:var(--text-muted); margin-bottom:1.5rem;">An athletic recovery matrix built around ATP production and true muscle repair, rather than synthetic stimulation.</p>
+                                <p style="font-size:1.1rem; line-height:1.8; color:var(--text-muted); margin-bottom:2rem; max-width:90%;">An athletic recovery matrix built around ATP production and true muscle repair, rather than synthetic stimulation.</p>
                                 <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.6rem;">
-                                    <li style="display:flex; gap:0.75rem; align-items:flex-start; font-size:0.9rem; color:var(--text-main);"><span style="font-family:var(--font-mono); color:var(--text-muted); flex-shrink:0;">01</span>Faster muscle recovery (Kokum + Tart Cherry)</li>
-                                    <li style="display:flex; gap:0.75rem; align-items:flex-start; font-size:0.9rem; color:var(--text-main);"><span style="font-family:var(--font-mono); color:var(--text-muted); flex-shrink:0;">02</span>ATP production support (Cordyceps militaris)</li>
-                                    <li style="display:flex; gap:0.75rem; align-items:flex-start; font-size:0.9rem; color:var(--text-main);"><span style="font-family:var(--font-mono); color:var(--text-muted); flex-shrink:0;">03</span>Strength and endurance (Creatine HCl + Citrulline)</li>
+                                    <li style="display:flex; gap:0.75rem; align-items:flex-start; font-size:1rem; color:var(--text-main); line-height:1.6;"><span style="font-family:var(--font-mono); color:var(--text-muted); flex-shrink:0;">01</span>Faster muscle recovery (Kokum + Tart Cherry)</li>
+                                    <li style="display:flex; gap:0.75rem; align-items:flex-start; font-size:1rem; color:var(--text-main); line-height:1.6;"><span style="font-family:var(--font-mono); color:var(--text-muted); flex-shrink:0;">02</span>ATP production support (Cordyceps militaris)</li>
+                                    <li style="display:flex; gap:0.75rem; align-items:flex-start; font-size:1rem; color:var(--text-main); line-height:1.6;"><span style="font-family:var(--font-mono); color:var(--text-muted); flex-shrink:0;">03</span>Strength and endurance (Creatine HCl + Citrulline)</li>
                                 </ul>
                             </div>
                             <div style="background:var(--text-main); padding:2rem; color:#fff; position:relative; overflow:hidden;">
