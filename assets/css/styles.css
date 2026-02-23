@@ -3586,3 +3586,12 @@ h1.display {
     font-weight: 600;
     letter-spacing: 0.05em;
 }
+
+
+/* =========================================================
+   STRICT MOBILE NAVIGATION OVERRIDE
+========================================================= */
+@media (max-width: 900px) {
+    .desktop-nav { display: none !important; }
+    .menu-btn { display: flex !important; }
+}
