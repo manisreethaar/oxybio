@@ -196,22 +196,36 @@
                     </div>
                 </div>
 
-                <!-- Role Overview -->
-                <div style="margin-bottom:4rem;">
-                    <h4 style="font-family:var(--font-mono); font-size:0.85rem; letter-spacing:0.1em; color:var(--text-main); text-transform:uppercase; margin-bottom:1.5rem; display:flex; align-items:center; gap:0.5rem;">
-                        <span style="width:12px; height:12px; background:var(--text-main); border-radius:50%; display:inline-block;"></span> 01 / Role Overview
-                    </h4>
-                    <p style="font-size:1.15rem; line-height:1.7; color:var(--text-main);">
+                
+                <!-- Premium Interactive Tabs Container to Reduce Vertical length -->
+                <style>
+                @keyframes tabFadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+                .hide-scrollbar::-webkit-scrollbar { display: none; }
+                .tab-link:hover { color:var(--text-main) !important; }
+                </style>
+                
+                <div class="premium-tabs-container" style="display:flex; flex-direction:column; gap:2.5rem; margin-top:1rem;">
+                    
+                    <!-- Scrollable Horizontal Tab Controls -->
+                    <div style="display:flex; overflow-x:auto; gap:2rem; padding-bottom:1rem; border-bottom:1px solid var(--border); scrollbar-width:none; -ms-overflow-style:none;" class="hide-scrollbar">
+                        <button onclick="openCareersTab(event, 'tab-overview')" class="tab-link active" style="background:transparent; border:none; border-bottom:2px solid var(--text-main); color:var(--text-main); padding:0 0 0.5rem 0; font-family:var(--font-mono); font-size:0.85rem; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer; white-space:nowrap; transition:all 0.3s ease; position:relative; top:1px;">01 / Overview</button>
+                        
+                        <button onclick="openCareersTab(event, 'tab-output')" class="tab-link" style="background:transparent; border:none; border-bottom:2px solid transparent; color:var(--text-muted); padding:0 0 0.5rem 0; font-family:var(--font-mono); font-size:0.85rem; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer; white-space:nowrap; transition:all 0.3s ease; position:relative; top:1px;">02 / The Output</button>
+                        
+                        <button onclick="openCareersTab(event, 'tab-profile')" class="tab-link" style="background:transparent; border:none; border-bottom:2px solid transparent; color:var(--text-muted); padding:0 0 0.5rem 0; font-family:var(--font-mono); font-size:0.85rem; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer; white-space:nowrap; transition:all 0.3s ease; position:relative; top:1px;">03 / The Profile</button>
+                        
+                        <button onclick="openCareersTab(event, 'tab-offer')" class="tab-link" style="background:transparent; border:none; border-bottom:2px solid transparent; color:var(--text-muted); padding:0 0 0.5rem 0; font-family:var(--font-mono); font-size:0.85rem; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer; white-space:nowrap; transition:all 0.3s ease; position:relative; top:1px;">04 / The Offer</button>
+                    </div>
+
+                    <!-- Tab Contents (No content removed, just condensed) -->
+                    <div id="tab-overview" class="tab-content" style="display:block; animation:tabFadeIn 0.4s ease;">
+                        <p style="font-size:1.15rem; line-height:1.7; color:var(--text-main);">
                         As a Junior Research Associate / Research Associate, you will contribute to the development, validation, and scale-up of advanced probiotic formulations, functional beverages, nutraceutical systems, and bio-fermented cosmetic products. You will work across R&D, regulatory alignment, pilot production, and commercialization strategy.
                     </p>
-                </div>
-
-                <!-- Key Responsibilities -->
-                <div style="margin-bottom:4rem;">
-                    <h4 style="font-family:var(--font-mono); font-size:0.85rem; letter-spacing:0.1em; color:var(--text-main); text-transform:uppercase; margin-bottom:1.5rem; display:flex; align-items:center; gap:0.5rem;">
-                        <span style="width:12px; height:12px; background:var(--text-main); border-radius:50%; display:inline-block;"></span> 02 / The Output
-                    </h4>
-                    <div style="display:grid; grid-template-columns:1fr; gap:0.75rem;">
+                    </div>
+                    
+                    <div id="tab-output" class="tab-content" style="display:none; animation:tabFadeIn 0.4s ease;">
+                        <div style="display:grid; grid-template-columns:1fr; gap:0.75rem;">
                         <div style="display:flex; gap:1.5rem; align-items:flex-start; padding:1.25rem; border:1px solid var(--border); border-radius:8px; background:var(--bg-alt);">
                             <span style="color:#0D8A74; font-weight:bold; margin-top:2px;">✓</span>
                             <span style="color:var(--text-main); font-size:1.1rem; line-height:1.5;">Design and develop innovative probiotic and functional food formulations grounded in fermentation science.</span>
@@ -245,14 +259,10 @@
                             <span style="color:var(--text-main); font-size:1.1rem; line-height:1.5;">Actively participate in research problem-solving, process refinement, and continuous improvement initiatives.</span>
                         </div>
                     </div>
-                </div>
-
-                <!-- Who We Are Looking For -->
-                <div style="margin-bottom:4rem;">
-                    <h4 style="font-family:var(--font-mono); font-size:0.85rem; letter-spacing:0.1em; color:var(--text-main); text-transform:uppercase; margin-bottom:1.5rem; display:flex; align-items:center; gap:0.5rem;">
-                        <span style="width:12px; height:12px; background:var(--text-main); border-radius:50%; display:inline-block;"></span> 03 / The Profile
-                    </h4>
-                    <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:1.5rem; border-top:1px dashed var(--border); padding-top:2rem;">
+                    </div>
+                    
+                    <div id="tab-profile" class="tab-content" style="display:none; animation:tabFadeIn 0.4s ease;">
+                        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:1.5rem; border-top:1px dashed var(--border); padding-top:2rem;">
                         <li style="display:flex; align-items:baseline; gap:1rem;">
                             <div style="width:6px; height:6px; background:#000; border-radius:50%; flex-shrink:0;"></div>
                             <span style="font-size:1.15rem; line-height:1.6; color:var(--text-muted);"><strong style="color:var(--text-main);">Degree:</strong> B.Tech / B.Sc. / M.Sc. in Food Technology, Biotechnology, Cosmetic Science, or a related discipline.</span>
@@ -274,44 +284,54 @@
                             <span style="font-size:1.15rem; line-height:1.6; color:var(--text-muted);"><strong style="color:var(--text-main);">Ambition:</strong> Self-driven, adaptable, and motivated to take ownership beyond defined job boundaries, aspiring to build long-term leadership roles as the company grows.</span>
                         </li>
                     </ul>
-                </div>
-
-                <!-- What We Offer -->
-                <div style="background:var(--text-main); color:var(--bg); padding:4rem; border-radius:12px; margin-top:2rem;">
-                    <h4 style="font-family:var(--font-mono); font-size:0.85rem; letter-spacing:0.1em; color:#a3a3a3; text-transform:uppercase; margin-bottom:3rem; display:flex; align-items:center; gap:0.5rem; border-bottom:1px solid #333; padding-bottom:1rem;">
-                        <span style="width:12px; height:12px; background:var(--bg); border-radius:50%; display:inline-block;"></span> 04 / The Offer
-                    </h4>
+                    </div>
                     
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:3rem;" class="mobile-stack">
-                        <div>
-                            <h5 style="font-family:var(--font-serif); font-size:1.35rem; color:#fff; margin-bottom:0.75rem;">Deep-Tech Exposure</h5>
-                            <p style="font-size:1rem; color:#aaa; line-height:1.6;">Work on high-impact R&D projects with real commercialization pathways.</p>
+                    <div id="tab-offer" class="tab-content" style="display:none; animation:tabFadeIn 0.4s ease;">
+                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:3rem;" class="mobile-stack"><div>
+                            <h5 style="font-family:var(--font-serif); font-size:1.35rem; color:var(--text-main); margin-bottom:0.75rem;">Deep-Tech Exposure</h5>
+                            <p style="font-size:1rem; color:var(--text-muted); line-height:1.6;">Work on high-impact R&D projects with real commercialization pathways.</p>
                         </div>
                         <div>
-                            <h5 style="font-family:var(--font-serif); font-size:1.35rem; color:#fff; margin-bottom:0.75rem;">Accelerated Career Growth</h5>
-                            <p style="font-size:1rem; color:#aaa; line-height:1.6;">Performance-based responsibility expansion with leadership opportunities.</p>
+                            <h5 style="font-family:var(--font-serif); font-size:1.35rem; color:var(--text-main); margin-bottom:0.75rem;">Accelerated Career Growth</h5>
+                            <p style="font-size:1rem; color:var(--text-muted); line-height:1.6;">Performance-based responsibility expansion with leadership opportunities.</p>
                         </div>
                         <div>
-                            <h5 style="font-family:var(--font-serif); font-size:1.35rem; color:#fff; margin-bottom:0.75rem;">End-to-End Experience</h5>
-                            <p style="font-size:1rem; color:#aaa; line-height:1.6;">From lab-scale concept to regulatory approval and market launch.</p>
+                            <h5 style="font-family:var(--font-serif); font-size:1.35rem; color:var(--text-main); margin-bottom:0.75rem;">End-to-End Experience</h5>
+                            <p style="font-size:1rem; color:var(--text-muted); line-height:1.6;">From lab-scale concept to regulatory approval and market launch.</p>
                         </div>
                         <div>
-                            <h5 style="font-family:var(--font-serif); font-size:1.35rem; color:#fff; margin-bottom:0.75rem;">Innovation & IP Participation</h5>
-                            <p style="font-size:1rem; color:#aaa; line-height:1.6;">Exposure to patent drafting, technology validation, and commercialization.</p>
+                            <h5 style="font-family:var(--font-serif); font-size:1.35rem; color:var(--text-main); margin-bottom:0.75rem;">Innovation & IP Participation</h5>
+                            <p style="font-size:1rem; color:var(--text-muted); line-height:1.6;">Exposure to patent drafting, technology validation, and commercialization.</p>
                         </div>
                         <div>
-                            <h5 style="font-family:var(--font-serif); font-size:1.35rem; color:#fff; margin-bottom:0.75rem;">Founder-Level Mentorship</h5>
-                            <p style="font-size:1rem; color:#aaa; line-height:1.6;">Direct collaboration with leadership in a high-visibility growth environment.</p>
+                            <h5 style="font-family:var(--font-serif); font-size:1.35rem; color:var(--text-main); margin-bottom:0.75rem;">Founder-Level Mentorship</h5>
+                            <p style="font-size:1rem; color:var(--text-muted); line-height:1.6;">Direct collaboration with leadership in a high-visibility growth environment.</p>
                         </div>
                         <div>
-                            <h5 style="font-family:var(--font-serif); font-size:1.35rem; color:#fff; margin-bottom:0.75rem;">Incentive Aligned</h5>
-                            <p style="font-size:1rem; color:#aaa; line-height:1.6;">Competitive compensation structured with capability, contribution, and milestones.</p>
-                        </div>
+                            <h5 style="font-family:var(--font-serif); font-size:1.35rem; color:var(--text-main); margin-bottom:0.75rem;">Incentive Aligned</h5>
+                            <p style="font-size:1rem; color:var(--text-muted); line-height:1.6;">Competitive compensation structured with capability, contribution, and milestones.</p></div>
                     </div>
                 </div>
 
-            </div>
-        </div>
+                <script>
+                function openCareersTab(evt, tabName) {
+                    var i, tabcontent, tablinks;
+                    tabcontent = document.getElementsByClassName("tab-content");
+                    for (i = 0; i < tabcontent.length; i++) {
+                        tabcontent[i].style.display = "none";
+                    }
+                    tablinks = document.getElementsByClassName("tab-link");
+                    for (i = 0; i < tablinks.length; i++) {
+                        tablinks[i].className = tablinks[i].className.replace(" active", "");
+                        tablinks[i].style.borderBottom = "2px solid transparent";
+                        tablinks[i].style.color = "var(--text-muted)";
+                    }
+                    document.getElementById(tabName).style.display = "block";
+                    evt.currentTarget.className += " active";
+                    evt.currentTarget.style.borderBottom = "2px solid var(--text-main)";
+                    evt.currentTarget.style.color = "var(--text-main)";
+                }
+                </script>
 <!-- 
 
         </div>
