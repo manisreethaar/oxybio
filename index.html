@@ -55,7 +55,8 @@
                                 </a>
                                 <a href="about.html#about-who" class="mega-nav-link">
                                     <span class="link-title">Who We Are</span>
-                                    <span class="link-desc">The founder, the science, and our operating principles.</span>
+                                    <span class="link-desc">The founder, the science, and our operating
+                                        principles.</span>
                                 </a>
                             </div>
                         </div>
@@ -122,7 +123,7 @@
         <a href="about.html" class="menu-link">About Us</a>
         <div class="mobile-submenu">
             <a href="about.html#about-story" class="menu-link">Our Story</a>
-                <a href="about.html#about-vision" class="menu-link">Vision &amp; Mission</a>
+            <a href="about.html#about-vision" class="menu-link">Vision &amp; Mission</a>
             <a href="about.html#about-who" class="menu-link">Who We Are</a>
         </div>
         <a href="science.html" class="menu-link">Our Science</a>
@@ -308,116 +309,233 @@
             <!-- ═══════════════════════════════════════════════════════
      SOLUTION / PRODUCTS SECTION (APPLE-STYLE PINNED SCROLL)
 ════════════════════════════════════════════════════════ -->
-            
+
             <style>
-            #pinned-solution-intro { padding: 8rem 0 4rem; background: var(--bg-alt); border-top: 1px solid var(--border); }
+                #pinned-solution-intro {
+                    padding: 4rem 0 0rem;
+                    background: var(--bg-alt);
+                    border-top: 1px solid var(--border);
+                }
             </style>
             <section id="pinned-solution-intro">
                 <div class="container">
-                        <div class="section-label">
-                            <div class="section-label-line"></div>
-                            <span class="section-label-text">The Solution</span>
+                    <div class="section-label">
+                        <div class="section-label-line"></div>
+                        <span class="section-label-text">The Solution</span>
+                    </div>
+                    <div
+                        style="display:flex; justify-content:space-between; align-items:flex-end; gap:2rem; flex-wrap:wrap;">
+                        <div style="max-width:800px;">
+                            <h2 class="headline" style="margin-top:var(--space-sm);">So we built one. Meet Oxygen.</h2>
+                            <p class="subtext"
+                                style="font-size: 1.15rem; line-height: 1.8; color: var(--text-muted); margin-top:var(--space-sm); max-width:800px;">
+                                Three precision formulas. Each scientifically designed for a specific need. All built on
+                                the same uncompromising foundation: Indian ingredients, active nutrient forms, and doses
+                                that actually work.</p>
                         </div>
-                        <div style="display:flex; justify-content:space-between; align-items:flex-end; gap:2rem; flex-wrap:wrap;">
-                            <div style="max-width:800px;">
-                                <h2 class="headline" style="margin-top:var(--space-sm);">So we built one. Meet Oxygen.</h2>
-                                <p class="subtext" style="font-size: 1.15rem; line-height: 1.8; color: var(--text-muted); margin-top:var(--space-sm); max-width:800px;">Three precision formulas. Each scientifically designed for a specific need. All built on the same uncompromising foundation: Indian ingredients, active nutrient forms, and doses that actually work.</p>
-                            </div>
-                        </div>
+                    </div>
                 </div>
             </section>
 
             <!-- Added via python to fix spacing -->
             <section id="pinned-solution-wrapper" style="position:relative; height:250vh; background:var(--bg-alt);">
-                
+
                 <!-- This sticky container locks to the screen for 400vh of scrolling -->
-                <div class="sticky-product-container" style="position:sticky; top:120px; height:calc(100vh - 120px); display:flex; flex-direction:column; overflow:hidden;">
-                    
+                <div class="sticky-product-container"
+                    style="position:sticky; top:120px; min-height: 60vh; max-height:85vh; padding-top:0rem; padding-bottom:2rem; display:flex; flex-direction:column; overflow:hidden;">
 
 
                     <!-- The 3 products layered on top of each other -->
-                    <div class="container" style="position:relative; flex-grow:1; display:flex; align-items:center;">
-                        
+                    <div class="container"
+                        style="position:relative; flex-grow:1; display:flex; align-items:flex-start;">
+
                         <!-- VITALITY -->
-                        <div class="apple-slide" id="slide-vitality" style="position:absolute; width:100%; top:50%; transform:translateY(-50%); opacity:1; transition:opacity 0.6s ease, transform 0.6s ease;">
-                            <div style=" display:grid; grid-template-columns:1.5fr 1fr; gap:4rem; align-items:center;" class="mobile-stack-card">
-                            <div>
-                                <div style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1.5rem; display:flex; align-items:center; gap:0.75rem;"><span style="display:inline-block; width:20px; height:1px; background:var(--text-muted);"></span>01 / Pre-Clinical Optimization</div>
-                                <h3 class="display" style="font-size:clamp(3.5rem,7vw,5.5rem); line-height:0.9; letter-spacing:-0.04em; margin:0 0 0.75rem;">VITALITY</h3>
-                                <div style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1.5rem; border:1px solid var(--border); display:inline-block; padding:0.3rem 0.75rem;">Daily Deficiencies</div>
-                                <p style="font-size:1.1rem; line-height:1.8; color:var(--text-muted); margin-bottom:2rem; max-width:90%;">For when you cannot eat well but refuse to function sub-optimally. An everyday nutritional baseline.</p>
-                                <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.6rem;">
-                                    <li style="display:flex; gap:0.75rem; align-items:flex-start; font-size:1rem; color:var(--text-main); line-height:1.6;"><span style="font-family:var(--font-mono); color:var(--text-muted); flex-shrink:0;">01</span>Covers 50% of your daily nutrient needs</li>
-                                    <li style="display:flex; gap:0.75rem; align-items:flex-start; font-size:1rem; color:var(--text-main); line-height:1.6;"><span style="font-family:var(--font-mono); color:var(--text-muted); flex-shrink:0;">02</span>Sustained energy without sugar spikes</li>
-                                    <li style="display:flex; gap:0.75rem; align-items:flex-start; font-size:1rem; color:var(--text-main); line-height:1.6;"><span style="font-family:var(--font-mono); color:var(--text-muted); flex-shrink:0;">03</span>Stress adaptation with KSM-66 Ashwagandha</li>
-                                </ul>
-                            </div>
-                            <div style="background:var(--text-main); padding:2rem; color:#fff; position:relative; overflow:hidden;">
-                                <div style="position:absolute; right:-1rem; bottom:-1rem; font-family:var(--font-serif); font-size:6rem; font-weight:900; color:rgba(255,255,255,0.05); line-height:1; pointer-events:none;">V</div>
-                                <div style="position:relative;">
-                                    <div style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.15em; color:rgba(255,255,255,0.4); margin-bottom:1rem; text-transform:uppercase;">Formulation Stack</div>
-                                    <p style="font-size:0.95rem; font-weight:600; line-height:1.65; color:#fff; margin:0;">Finger Millet, Ashwagandha KSM-66, Lion&rsquo;s Mane, Moringa, 22 Chelated Nutrients</p>
+                        <div class="apple-slide" id="slide-vitality"
+                            style="position:absolute; width:100%; top:50%; transform:translateY(-50%); opacity:1; transition:opacity 0.6s ease, transform 0.6s ease;">
+                            <div style=" display:grid; grid-template-columns:1.5fr 1fr; gap:4rem; align-items:center;"
+                                class="mobile-stack-card">
+                                <div>
+                                    <div
+                                        style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1.5rem; display:flex; align-items:center; gap:0.75rem;">
+                                        <span
+                                            style="display:inline-block; width:20px; height:1px; background:var(--text-muted);"></span>01
+                                        / Pre-Clinical Optimization</div>
+                                    <h3 class="display"
+                                        style="font-size:clamp(3.5rem,7vw,5.5rem); line-height:0.9; letter-spacing:-0.04em; margin:0 0 0.75rem;">
+                                        VITALITY</h3>
+                                    <div
+                                        style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1.5rem; border:1px solid var(--border); display:inline-block; padding:0.3rem 0.75rem;">
+                                        Daily Deficiencies</div>
+                                    <p
+                                        style="font-size:1.1rem; line-height:1.8; color:var(--text-muted); margin-bottom:2rem; max-width:90%;">
+                                        For when you cannot eat well but refuse to function sub-optimally. An everyday
+                                        nutritional baseline.</p>
+                                    <ul
+                                        style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.6rem;">
+                                        <li
+                                            style="display:flex; gap:0.75rem; align-items:flex-start; font-size:1rem; color:var(--text-main); line-height:1.6;">
+                                            <span
+                                                style="font-family:var(--font-mono); color:var(--text-muted); flex-shrink:0;">01</span>Covers
+                                            50% of your daily nutrient needs</li>
+                                        <li
+                                            style="display:flex; gap:0.75rem; align-items:flex-start; font-size:1rem; color:var(--text-main); line-height:1.6;">
+                                            <span
+                                                style="font-family:var(--font-mono); color:var(--text-muted); flex-shrink:0;">02</span>Sustained
+                                            energy without sugar spikes</li>
+                                        <li
+                                            style="display:flex; gap:0.75rem; align-items:flex-start; font-size:1rem; color:var(--text-main); line-height:1.6;">
+                                            <span
+                                                style="font-family:var(--font-mono); color:var(--text-muted); flex-shrink:0;">03</span>Stress
+                                            adaptation with KSM-66 Ashwagandha</li>
+                                    </ul>
+                                </div>
+                                <div
+                                    style="background:var(--text-main); padding:2rem; color:#fff; position:relative; overflow:hidden;">
+                                    <div
+                                        style="position:absolute; right:-1rem; bottom:-1rem; font-family:var(--font-serif); font-size:6rem; font-weight:900; color:rgba(255,255,255,0.05); line-height:1; pointer-events:none;">
+                                        V</div>
+                                    <div style="position:relative;">
+                                        <div
+                                            style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.15em; color:rgba(255,255,255,0.4); margin-bottom:1rem; text-transform:uppercase;">
+                                            Formulation Stack</div>
+                                        <p
+                                            style="font-size:0.95rem; font-weight:600; line-height:1.65; color:#fff; margin:0;">
+                                            Finger Millet, Ashwagandha KSM-66, Lion&rsquo;s Mane, Moringa, 22 Chelated
+                                            Nutrients</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        </div>
-                        
+
                         <!-- CLARITY -->
-                        <div class="apple-slide" id="slide-clarity" style="position:absolute; width:100%; top:50%; transform:translateY(-30%); opacity:0; pointer-events:none; transition:opacity 0.6s ease, transform 0.6s ease;">
-                            <div style=" display:grid; grid-template-columns:1.5fr 1fr; gap:4rem; align-items:center;" class="mobile-stack-card">
-                            <div>
-                                <div style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1.5rem; display:flex; align-items:center; gap:0.75rem;"><span style="display:inline-block; width:20px; height:1px; background:var(--text-muted);"></span>02 / Sensory Trials &amp; Taste Profiling</div>
-                                <h3 class="display" style="font-size:clamp(3.5rem,7vw,5.5rem); line-height:0.9; letter-spacing:-0.04em; margin:0 0 0.75rem;">CLARITY</h3>
-                                <div style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1.5rem; border:1px solid var(--border); display:inline-block; padding:0.3rem 0.75rem;">Cognitive Fatigue</div>
-                                <p style="font-size:1.1rem; line-height:1.8; color:var(--text-muted); margin-bottom:2rem; max-width:90%;">The honest alternative to high-sugar energy drinks. Built for sustained focus and the dreaded 3 pm crash.</p>
-                                <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.6rem;">
-                                    <li style="display:flex; gap:0.75rem; align-items:flex-start; font-size:1rem; color:var(--text-main); line-height:1.6;"><span style="font-family:var(--font-mono); color:var(--text-muted); flex-shrink:0;">01</span>Clean focus without caffeine crash</li>
-                                    <li style="display:flex; gap:0.75rem; align-items:flex-start; font-size:1rem; color:var(--text-main); line-height:1.6;"><span style="font-family:var(--font-mono); color:var(--text-muted); flex-shrink:0;">02</span>Memory and attention support (Lion&rsquo;s Mane)</li>
-                                    <li style="display:flex; gap:0.75rem; align-items:flex-start; font-size:1rem; color:var(--text-main); line-height:1.6;"><span style="font-family:var(--font-mono); color:var(--text-muted); flex-shrink:0;">03</span>L-Theanine:Caffeine ratio 2.5:1 (clinically studied)</li>
-                                </ul>
-                            </div>
-                            <div style="background:var(--text-main); padding:2rem; color:#fff; position:relative; overflow:hidden;">
-                                <div style="position:absolute; right:-1rem; bottom:-1rem; font-family:var(--font-serif); font-size:6rem; font-weight:900; color:rgba(255,255,255,0.05); line-height:1; pointer-events:none;">C</div>
-                                <div style="position:relative;">
-                                    <div style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.15em; color:rgba(255,255,255,0.4); margin-bottom:1rem; text-transform:uppercase;">Formulation Stack</div>
-                                    <p style="font-size:0.95rem; font-weight:600; line-height:1.65; color:#fff; margin:0;">Lion&rsquo;s Mane, Bacopa Monnieri, L-Theanine, Natural Caffeine, Active B Vitamins</p>
+                        <div class="apple-slide" id="slide-clarity"
+                            style="position:absolute; width:100%; top:50%; transform:translateY(-30%); opacity:0; pointer-events:none; transition:opacity 0.6s ease, transform 0.6s ease;">
+                            <div style=" display:grid; grid-template-columns:1.5fr 1fr; gap:4rem; align-items:center;"
+                                class="mobile-stack-card">
+                                <div>
+                                    <div
+                                        style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1.5rem; display:flex; align-items:center; gap:0.75rem;">
+                                        <span
+                                            style="display:inline-block; width:20px; height:1px; background:var(--text-muted);"></span>02
+                                        / Sensory Trials &amp; Taste Profiling</div>
+                                    <h3 class="display"
+                                        style="font-size:clamp(3.5rem,7vw,5.5rem); line-height:0.9; letter-spacing:-0.04em; margin:0 0 0.75rem;">
+                                        CLARITY</h3>
+                                    <div
+                                        style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1.5rem; border:1px solid var(--border); display:inline-block; padding:0.3rem 0.75rem;">
+                                        Cognitive Fatigue</div>
+                                    <p
+                                        style="font-size:1.1rem; line-height:1.8; color:var(--text-muted); margin-bottom:2rem; max-width:90%;">
+                                        The honest alternative to high-sugar energy drinks. Built for sustained focus
+                                        and the dreaded 3 pm crash.</p>
+                                    <ul
+                                        style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.6rem;">
+                                        <li
+                                            style="display:flex; gap:0.75rem; align-items:flex-start; font-size:1rem; color:var(--text-main); line-height:1.6;">
+                                            <span
+                                                style="font-family:var(--font-mono); color:var(--text-muted); flex-shrink:0;">01</span>Clean
+                                            focus without caffeine crash</li>
+                                        <li
+                                            style="display:flex; gap:0.75rem; align-items:flex-start; font-size:1rem; color:var(--text-main); line-height:1.6;">
+                                            <span
+                                                style="font-family:var(--font-mono); color:var(--text-muted); flex-shrink:0;">02</span>Memory
+                                            and attention support (Lion&rsquo;s Mane)</li>
+                                        <li
+                                            style="display:flex; gap:0.75rem; align-items:flex-start; font-size:1rem; color:var(--text-main); line-height:1.6;">
+                                            <span
+                                                style="font-family:var(--font-mono); color:var(--text-muted); flex-shrink:0;">03</span>L-Theanine:Caffeine
+                                            ratio 2.5:1 (clinically studied)</li>
+                                    </ul>
+                                </div>
+                                <div
+                                    style="background:var(--text-main); padding:2rem; color:#fff; position:relative; overflow:hidden;">
+                                    <div
+                                        style="position:absolute; right:-1rem; bottom:-1rem; font-family:var(--font-serif); font-size:6rem; font-weight:900; color:rgba(255,255,255,0.05); line-height:1; pointer-events:none;">
+                                        C</div>
+                                    <div style="position:relative;">
+                                        <div
+                                            style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.15em; color:rgba(255,255,255,0.4); margin-bottom:1rem; text-transform:uppercase;">
+                                            Formulation Stack</div>
+                                        <p
+                                            style="font-size:0.95rem; font-weight:600; line-height:1.65; color:#fff; margin:0;">
+                                            Lion&rsquo;s Mane, Bacopa Monnieri, L-Theanine, Natural Caffeine, Active B
+                                            Vitamins</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        </div>
-                        
+
                         <!-- MOMENTUM -->
-                        <div class="apple-slide" id="slide-momentum" style="position:absolute; width:100%; top:50%; transform:translateY(-30%); opacity:0; pointer-events:none; transition:opacity 0.6s ease, transform 0.6s ease;">
-                            <div style=" display:grid; grid-template-columns:1.5fr 1fr; gap:4rem; align-items:center;" class="mobile-stack-card">
-                            <div>
-                                <div style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1.5rem; display:flex; align-items:center; gap:0.75rem;"><span style="display:inline-block; width:20px; height:1px; background:var(--text-muted);"></span>03 / Formulation Finalized</div>
-                                <h3 class="display" style="font-size:clamp(3.5rem,7vw,5.5rem); line-height:0.9; letter-spacing:-0.04em; margin:0 0 0.75rem;">MOMENTUM</h3>
-                                <div style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1.5rem; border:1px solid var(--border); display:inline-block; padding:0.3rem 0.75rem;">Cellular Recovery</div>
-                                <p style="font-size:1.1rem; line-height:1.8; color:var(--text-muted); margin-bottom:2rem; max-width:90%;">An athletic recovery matrix built around ATP production and true muscle repair, rather than synthetic stimulation.</p>
-                                <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.6rem;">
-                                    <li style="display:flex; gap:0.75rem; align-items:flex-start; font-size:1rem; color:var(--text-main); line-height:1.6;"><span style="font-family:var(--font-mono); color:var(--text-muted); flex-shrink:0;">01</span>Faster muscle recovery (Kokum + Tart Cherry)</li>
-                                    <li style="display:flex; gap:0.75rem; align-items:flex-start; font-size:1rem; color:var(--text-main); line-height:1.6;"><span style="font-family:var(--font-mono); color:var(--text-muted); flex-shrink:0;">02</span>ATP production support (Cordyceps militaris)</li>
-                                    <li style="display:flex; gap:0.75rem; align-items:flex-start; font-size:1rem; color:var(--text-main); line-height:1.6;"><span style="font-family:var(--font-mono); color:var(--text-muted); flex-shrink:0;">03</span>Strength and endurance (Creatine HCl + Citrulline)</li>
-                                </ul>
-                            </div>
-                            <div style="background:var(--text-main); padding:2rem; color:#fff; position:relative; overflow:hidden;">
-                                <div style="position:absolute; right:-1rem; bottom:-1rem; font-family:var(--font-serif); font-size:6rem; font-weight:900; color:rgba(255,255,255,0.05); line-height:1; pointer-events:none;">M</div>
-                                <div style="position:relative;">
-                                    <div style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.15em; color:rgba(255,255,255,0.4); margin-bottom:1rem; text-transform:uppercase;">Formulation Stack</div>
-                                    <p style="font-size:0.95rem; font-weight:600; line-height:1.65; color:#fff; margin:0;">Cordyceps, Creatine HCl, Kokum Extract, L-Citrulline, Electrolytes</p>
+                        <div class="apple-slide" id="slide-momentum"
+                            style="position:absolute; width:100%; top:50%; transform:translateY(-30%); opacity:0; pointer-events:none; transition:opacity 0.6s ease, transform 0.6s ease;">
+                            <div style=" display:grid; grid-template-columns:1.5fr 1fr; gap:4rem; align-items:center;"
+                                class="mobile-stack-card">
+                                <div>
+                                    <div
+                                        style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1.5rem; display:flex; align-items:center; gap:0.75rem;">
+                                        <span
+                                            style="display:inline-block; width:20px; height:1px; background:var(--text-muted);"></span>03
+                                        / Formulation Finalized</div>
+                                    <h3 class="display"
+                                        style="font-size:clamp(3.5rem,7vw,5.5rem); line-height:0.9; letter-spacing:-0.04em; margin:0 0 0.75rem;">
+                                        MOMENTUM</h3>
+                                    <div
+                                        style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1.5rem; border:1px solid var(--border); display:inline-block; padding:0.3rem 0.75rem;">
+                                        Cellular Recovery</div>
+                                    <p
+                                        style="font-size:1.1rem; line-height:1.8; color:var(--text-muted); margin-bottom:2rem; max-width:90%;">
+                                        An athletic recovery matrix built around ATP production and true muscle repair,
+                                        rather than synthetic stimulation.</p>
+                                    <ul
+                                        style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.6rem;">
+                                        <li
+                                            style="display:flex; gap:0.75rem; align-items:flex-start; font-size:1rem; color:var(--text-main); line-height:1.6;">
+                                            <span
+                                                style="font-family:var(--font-mono); color:var(--text-muted); flex-shrink:0;">01</span>Faster
+                                            muscle recovery (Kokum + Tart Cherry)</li>
+                                        <li
+                                            style="display:flex; gap:0.75rem; align-items:flex-start; font-size:1rem; color:var(--text-main); line-height:1.6;">
+                                            <span
+                                                style="font-family:var(--font-mono); color:var(--text-muted); flex-shrink:0;">02</span>ATP
+                                            production support (Cordyceps militaris)</li>
+                                        <li
+                                            style="display:flex; gap:0.75rem; align-items:flex-start; font-size:1rem; color:var(--text-main); line-height:1.6;">
+                                            <span
+                                                style="font-family:var(--font-mono); color:var(--text-muted); flex-shrink:0;">03</span>Strength
+                                            and endurance (Creatine HCl + Citrulline)</li>
+                                    </ul>
+                                </div>
+                                <div
+                                    style="background:var(--text-main); padding:2rem; color:#fff; position:relative; overflow:hidden;">
+                                    <div
+                                        style="position:absolute; right:-1rem; bottom:-1rem; font-family:var(--font-serif); font-size:6rem; font-weight:900; color:rgba(255,255,255,0.05); line-height:1; pointer-events:none;">
+                                        M</div>
+                                    <div style="position:relative;">
+                                        <div
+                                            style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.15em; color:rgba(255,255,255,0.4); margin-bottom:1rem; text-transform:uppercase;">
+                                            Formulation Stack</div>
+                                        <p
+                                            style="font-size:0.95rem; font-weight:600; line-height:1.65; color:#fff; margin:0;">
+                                            Cordyceps, Creatine HCl, Kokum Extract, L-Citrulline, Electrolytes</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         </div>
 
                     </div>
-                    
+
                     <!-- Scroll progress indicator -->
                     <div class="container" style="padding-bottom:5vh; flex-shrink:0;">
                         <div style="display:flex; gap:1rem; align-items:center;">
-                            <div class="scroll-dot active" style="width:40px; height:4px; background:var(--text-main); border-radius:4px; transition:0.3s; opacity:1;"></div>
-                            <div class="scroll-dot" style="width:40px; height:4px; background:var(--text-main); border-radius:4px; transition:0.3s; opacity:0.2;"></div>
-                            <div class="scroll-dot" style="width:40px; height:4px; background:var(--text-main); border-radius:4px; transition:0.3s; opacity:0.2;"></div>
+                            <div class="scroll-dot active"
+                                style="width:40px; height:4px; background:var(--text-main); border-radius:4px; transition:0.3s; opacity:1;">
+                            </div>
+                            <div class="scroll-dot"
+                                style="width:40px; height:4px; background:var(--text-main); border-radius:4px; transition:0.3s; opacity:0.2;">
+                            </div>
+                            <div class="scroll-dot"
+                                style="width:40px; height:4px; background:var(--text-main); border-radius:4px; transition:0.3s; opacity:0.2;">
+                            </div>
                         </div>
                     </div>
 
@@ -432,6 +550,7 @@
                         min-height: 100vh;
                         position: relative !important;
                     }
+
                     .apple-slide {
                         position: relative !important;
                         opacity: 1 !important;
@@ -442,10 +561,15 @@
                         border-bottom: 1px solid var(--border);
                         top: auto !important;
                     }
+
                     #pinned-solution-wrapper {
-                        height: auto !important; /* Disable scroll spy on mobile, revert to stack for better UX */
+                        height: auto !important;
+                        /* Disable scroll spy on mobile, revert to stack for better UX */
                     }
-                    .scroll-dot { display: none !important; }
+
+                    .scroll-dot {
+                        display: none !important;
+                    }
                 }
             </style>
 
@@ -460,28 +584,28 @@
                     ];
                     const dots = document.querySelectorAll('.scroll-dot');
 
-                    if(!wrapper || window.innerWidth <= 768) return; // Disable on mobile where vertical space is too tight
+                    if (!wrapper || window.innerWidth <= 768) return; // Disable on mobile where vertical space is too tight
 
                     window.addEventListener('scroll', () => {
                         const rect = wrapper.getBoundingClientRect();
                         const scrollProgress = -rect.top / (rect.height - window.innerHeight);
-                        
+
                         // We are scrolling through the 400vh wrapper
                         // 0 to 0.33: Slide 1
                         // 0.33 to 0.66: Slide 2
                         // 0.66 to 1: Slide 3
 
                         let activeIndex = 0;
-                        if(scrollProgress >= 0.33 && scrollProgress < 0.66) activeIndex = 1;
-                        if(scrollProgress >= 0.66) activeIndex = 2;
-                        
+                        if (scrollProgress >= 0.33 && scrollProgress < 0.66) activeIndex = 1;
+                        if (scrollProgress >= 0.66) activeIndex = 2;
+
                         // If we are before the section, lock it to slide 1
-                        if(scrollProgress < 0) activeIndex = 0;
+                        if (scrollProgress < 0) activeIndex = 0;
                         // If we are past the section, lock it to slide 3
-                        if(scrollProgress > 1) activeIndex = 2;
+                        if (scrollProgress > 1) activeIndex = 2;
 
                         slides.forEach((slide, index) => {
-                            if(index === activeIndex) {
+                            if (index === activeIndex) {
                                 slide.style.opacity = '1';
                                 slide.style.transform = 'translateY(-50%)';
                                 slide.style.pointerEvents = 'auto';
@@ -508,77 +632,128 @@
             <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
      SCIENCE & PILLARS SECTION â€” Premium Redesign v2
 â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
-            <section style="padding: 6rem 0; border-bottom:1px solid var(--border);">
+            <section style="padding: 4rem 0; border-bottom:1px solid var(--border);">
                 <div class="container">
 
                     <!-- Split header -->
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:end; margin-bottom:4rem;">
+                    <div
+                        style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:end; margin-bottom:2rem;">
                         <div>
                             <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1.5rem;">
                                 <div style="width:24px; height:1px; background:var(--text-main);"></div>
-                                <span style="font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-muted);">The Science</span>
+                                <span
+                                    style="font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-muted);">The
+                                    Science</span>
                             </div>
-                            <h2 style="font-family:var(--font-serif); font-size:clamp(2.5rem,5vw,3.75rem); font-weight:900; line-height:1.0; letter-spacing:-0.04em; color:var(--text-main);">We show<br><em>our work.</em></h2>
+                            <h2
+                                style="font-family:var(--font-serif); font-size:clamp(2.5rem,5vw,3.75rem); font-weight:900; line-height:1.0; letter-spacing:-0.04em; color:var(--text-main);">
+                                We show<br><em>our work.</em></h2>
                         </div>
                         <div style="padding-bottom:0.5rem;">
-                            <p style="font-size:1.05rem; line-height:1.75; color:var(--text-muted); margin-bottom:2rem; max-width:460px;">Every formulation decision has a peer-reviewed reason. Every ingredient has a verified source. Every claim is something we can prove.</p>
-                            <a href="science.html" style="display:inline-flex; align-items:center; gap:0.5rem; font-family:var(--font-mono); font-size:0.8rem; letter-spacing:0.1em; border:1px solid var(--border); padding:0.75rem 1.5rem; border-radius:100px; color:var(--text-main); text-decoration:none; transition:all 0.25s;">View Ingredients Index &rarr;</a>
+                            <p
+                                style="font-size:1.05rem; line-height:1.75; color:var(--text-muted); margin-bottom:2rem; max-width:460px;">
+                                Every formulation decision has a peer-reviewed reason. Every ingredient has a verified
+                                source. Every claim is something we can prove.</p>
+                            <a href="science.html"
+                                style="display:inline-flex; align-items:center; gap:0.5rem; font-family:var(--font-mono); font-size:0.8rem; letter-spacing:0.1em; border:1px solid var(--border); padding:0.75rem 1.5rem; border-radius:100px; color:var(--text-main); text-decoration:none; transition:all 0.25s;">View
+                                Ingredients Index &rarr;</a>
                         </div>
                     </div>
 
                     <!-- 3 Science Cards -->
-                    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; margin-bottom:4rem;">
+                    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; margin-bottom:2rem;">
 
                         <!-- Card 01 -->
-                        <div style="background:#ffffff; border:1px solid var(--border); border-radius:24px; padding:2.5rem; display:flex; flex-direction:column; gap:1.25rem;">
+                        <div
+                            style="background:#ffffff; border:1px solid var(--border); border-radius:24px; padding:2.5rem; display:flex; flex-direction:column; gap:1.25rem;">
                             <div style="display:flex; justify-content:space-between; align-items:center;">
-                                <span style="font-family:var(--font-mono); font-size:0.72rem; font-weight:700; letter-spacing:0.12em; color:var(--text-muted);">01</span>
-                                <span style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; border:1px solid var(--border); border-radius:100px; padding:0.3rem 0.75rem; color:var(--text-muted);">Formulation</span>
+                                <span
+                                    style="font-family:var(--font-mono); font-size:0.72rem; font-weight:700; letter-spacing:0.12em; color:var(--text-muted);">01</span>
+                                <span
+                                    style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; border:1px solid var(--border); border-radius:100px; padding:0.3rem 0.75rem; color:var(--text-muted);">Formulation</span>
                             </div>
-                            <h3 style="font-family:var(--font-serif); font-size:1.6rem; font-weight:800; color:var(--text-main); line-height:1.15; letter-spacing:-0.02em;">Active forms<br>only.</h3>
-                            <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.75; flex-grow:1;">Most products use the cheapest permitted form. We use Methylcobalamin, Pyridoxal-5-Phosphate, 5-MTHF Folate, and Albion TRAACS&reg; Chelated Minerals &mdash; the forms your body actually absorbs.</p>
+                            <h3
+                                style="font-family:var(--font-serif); font-size:1.6rem; font-weight:800; color:var(--text-main); line-height:1.15; letter-spacing:-0.02em;">
+                                Active forms<br>only.</h3>
+                            <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.75; flex-grow:1;">Most
+                                products use the cheapest permitted form. We use Methylcobalamin, Pyridoxal-5-Phosphate,
+                                5-MTHF Folate, and Albion TRAACS&reg; Chelated Minerals &mdash; the forms your body
+                                actually absorbs.</p>
                             <div style="padding-top:1.5rem; border-top:1px solid var(--border);">
-                                <div style="font-family:var(--font-serif); font-size:3.5rem; font-weight:900; color:var(--text-main); line-height:1; letter-spacing:-0.04em;">3&ndash;4&times;</div>
-                                <div style="font-family:var(--font-mono); font-size:0.68rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--text-muted); margin-top:0.5rem;">Better absorption vs generic</div>
+                                <div
+                                    style="font-family:var(--font-serif); font-size:3.5rem; font-weight:900; color:var(--text-main); line-height:1; letter-spacing:-0.04em;">
+                                    3&ndash;4&times;</div>
+                                <div
+                                    style="font-family:var(--font-mono); font-size:0.68rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--text-muted); margin-top:0.5rem;">
+                                    Better absorption vs generic</div>
                             </div>
-                            <div style="font-family:var(--font-mono); font-size:0.72rem; color:var(--text-muted); border-top:1px solid var(--border); padding-top:1rem;">Cost diff: only â‚¹2/serving</div>
+                            <div
+                                style="font-family:var(--font-mono); font-size:0.72rem; color:var(--text-muted); border-top:1px solid var(--border); padding-top:1rem;">
+                                Cost diff: only â‚¹2/serving</div>
                         </div>
 
                         <!-- Card 02 â€” Inverted Black -->
-                        <div style="background:var(--text-main); border-radius:24px; padding:2.5rem; display:flex; flex-direction:column; gap:1.25rem;">
+                        <div
+                            style="background:var(--text-main); border-radius:24px; padding:2.5rem; display:flex; flex-direction:column; gap:1.25rem;">
                             <div style="display:flex; justify-content:space-between; align-items:center;">
-                                <span style="font-family:var(--font-mono); font-size:0.72rem; font-weight:700; letter-spacing:0.12em; color:rgba(255,255,255,0.35);">02</span>
-                                <span style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; border:1px solid rgba(255,255,255,0.15); border-radius:100px; padding:0.3rem 0.75rem; color:rgba(255,255,255,0.5);">Verification</span>
+                                <span
+                                    style="font-family:var(--font-mono); font-size:0.72rem; font-weight:700; letter-spacing:0.12em; color:rgba(255,255,255,0.35);">02</span>
+                                <span
+                                    style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; border:1px solid rgba(255,255,255,0.15); border-radius:100px; padding:0.3rem 0.75rem; color:rgba(255,255,255,0.5);">Verification</span>
                             </div>
-                            <h3 style="font-family:var(--font-serif); font-size:1.6rem; font-weight:800; color:#ffffff; line-height:1.15; letter-spacing:-0.02em;">Verified,<br>not assumed.</h3>
-                            <p style="font-size:0.9rem; color:rgba(255,255,255,0.6); line-height:1.75; flex-grow:1;">Our Lion's Mane extract is verified using the Megazyme AOAC method &mdash; the gold standard for active compound content. Not marketing weight. Third-party certified.</p>
+                            <h3
+                                style="font-family:var(--font-serif); font-size:1.6rem; font-weight:800; color:#ffffff; line-height:1.15; letter-spacing:-0.02em;">
+                                Verified,<br>not assumed.</h3>
+                            <p style="font-size:0.9rem; color:rgba(255,255,255,0.6); line-height:1.75; flex-grow:1;">Our
+                                Lion's Mane extract is verified using the Megazyme AOAC method &mdash; the gold standard
+                                for active compound content. Not marketing weight. Third-party certified.</p>
                             <div style="padding-top:1.5rem; border-top:1px solid rgba(255,255,255,0.1);">
-                                <div style="font-family:var(--font-serif); font-size:3.5rem; font-weight:900; color:#ffffff; line-height:1; letter-spacing:-0.04em;">&gt;30%</div>
-                                <div style="font-family:var(--font-mono); font-size:0.68rem; text-transform:uppercase; letter-spacing:0.12em; color:rgba(255,255,255,0.4); margin-top:0.5rem;">&beta;-glucan content guaranteed</div>
+                                <div
+                                    style="font-family:var(--font-serif); font-size:3.5rem; font-weight:900; color:#ffffff; line-height:1; letter-spacing:-0.04em;">
+                                    &gt;30%</div>
+                                <div
+                                    style="font-family:var(--font-mono); font-size:0.68rem; text-transform:uppercase; letter-spacing:0.12em; color:rgba(255,255,255,0.4); margin-top:0.5rem;">
+                                    &beta;-glucan content guaranteed</div>
                             </div>
-                            <div style="font-family:var(--font-mono); font-size:0.72rem; color:rgba(255,255,255,0.35); border-top:1px solid rgba(255,255,255,0.1); padding-top:1rem;">AOAC Method &middot; Megazyme Certified</div>
+                            <div
+                                style="font-family:var(--font-mono); font-size:0.72rem; color:rgba(255,255,255,0.35); border-top:1px solid rgba(255,255,255,0.1); padding-top:1rem;">
+                                AOAC Method &middot; Megazyme Certified</div>
                         </div>
 
                         <!-- Card 03 -->
-                        <div style="background:var(--bg-alt); border:1px solid var(--border); border-radius:24px; padding:2.5rem; display:flex; flex-direction:column; gap:1.25rem;">
+                        <div
+                            style="background:var(--bg-alt); border:1px solid var(--border); border-radius:24px; padding:2.5rem; display:flex; flex-direction:column; gap:1.25rem;">
                             <div style="display:flex; justify-content:space-between; align-items:center;">
-                                <span style="font-family:var(--font-mono); font-size:0.72rem; font-weight:700; letter-spacing:0.12em; color:var(--text-muted);">03</span>
-                                <span style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; border:1px solid var(--border); border-radius:100px; padding:0.3rem 0.75rem; color:var(--text-muted);">Clinical</span>
+                                <span
+                                    style="font-family:var(--font-mono); font-size:0.72rem; font-weight:700; letter-spacing:0.12em; color:var(--text-muted);">03</span>
+                                <span
+                                    style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; border:1px solid var(--border); border-radius:100px; padding:0.3rem 0.75rem; color:var(--text-muted);">Clinical</span>
                             </div>
-                            <h3 style="font-family:var(--font-serif); font-size:1.6rem; font-weight:800; color:var(--text-main); line-height:1.15; letter-spacing:-0.02em;">Proving it,<br>not claiming it.</h3>
-                            <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.75; flex-grow:1;">We designed a clinical study for 135 participants across 8 weeks &mdash; before we launch commercially. Primary outcomes: Biomarkers and cognitive tests. All results published.</p>
+                            <h3
+                                style="font-family:var(--font-serif); font-size:1.6rem; font-weight:800; color:var(--text-main); line-height:1.15; letter-spacing:-0.02em;">
+                                Proving it,<br>not claiming it.</h3>
+                            <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.75; flex-grow:1;">We
+                                designed a clinical study for 135 participants across 8 weeks &mdash; before we launch
+                                commercially. Primary outcomes: Biomarkers and cognitive tests. All results published.
+                            </p>
                             <div style="padding-top:1.5rem; border-top:1px solid var(--border);">
-                                <div style="font-family:var(--font-serif); font-size:3.5rem; font-weight:900; color:var(--text-main); line-height:1; letter-spacing:-0.04em;">135</div>
-                                <div style="font-family:var(--font-mono); font-size:0.68rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--text-muted); margin-top:0.5rem;">Clinical study participants</div>
+                                <div
+                                    style="font-family:var(--font-serif); font-size:3.5rem; font-weight:900; color:var(--text-main); line-height:1; letter-spacing:-0.04em;">
+                                    135</div>
+                                <div
+                                    style="font-family:var(--font-mono); font-size:0.68rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--text-muted); margin-top:0.5rem;">
+                                    Clinical study participants</div>
                             </div>
-                            <div style="font-family:var(--font-mono); font-size:0.72rem; color:var(--text-muted); border-top:1px solid var(--border); padding-top:1rem;">Results published regardless of outcome</div>
+                            <div
+                                style="font-family:var(--font-mono); font-size:0.72rem; color:var(--text-muted); border-top:1px solid var(--border); padding-top:1rem;">
+                                Results published regardless of outcome</div>
                         </div>
 
                     </div>
                 </div>
             </section>
 
-        
+
 
             <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
      DUEL COMPARISON â€” Premium "Verdict" Section
@@ -586,47 +761,72 @@
             <section style="padding:0; overflow:hidden; border-bottom:1px solid var(--border); background:var(--bg);">
 
                 <!-- Section header â€” integrated, no jarring black bar -->
-                <div class="container" style="padding-top:4rem; padding-bottom:2.5rem;">
-                    <div style="display:flex; justify-content:space-between; align-items:flex-end; gap:2rem; flex-wrap:wrap; border-bottom:1px solid var(--border); padding-bottom:2rem;">
+                <div class="container" style="padding-top:2rem; padding-bottom:1.5rem;">
+                    <div
+                        style="display:flex; justify-content:space-between; align-items:flex-end; gap:2rem; flex-wrap:wrap; border-bottom:1px solid var(--border); padding-bottom:2rem;">
                         <div>
-                            <div style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1rem;">Transparency Report</div>
-                            <h2 style="font-family:var(--font-serif); font-size:clamp(1.75rem,3.5vw,2.75rem); font-weight:900; color:var(--text-main); line-height:1.1; letter-spacing:-0.03em;">Oxygen vs. the market.<br><em style="font-weight:400; color:var(--text-muted);">You deserve to see the difference.</em></h2>
+                            <div
+                                style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1rem;">
+                                Transparency Report</div>
+                            <h2
+                                style="font-family:var(--font-serif); font-size:clamp(1.75rem,3.5vw,2.75rem); font-weight:900; color:var(--text-main); line-height:1.1; letter-spacing:-0.03em;">
+                                Oxygen vs. the market.<br><em style="font-weight:400; color:var(--text-muted);">You
+                                    deserve to see the difference.</em></h2>
                         </div>
-                        <div style="text-align:right; display:flex; flex-direction:column; gap:0.25rem; align-items:flex-end; flex-shrink:0;">
-                            <div style="font-family:var(--font-serif); font-size:3.5rem; font-weight:900; color:var(--text-main); line-height:1;">7</div>
-                            <div style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted);">Verified Standards</div>
+                        <div
+                            style="text-align:right; display:flex; flex-direction:column; gap:0.25rem; align-items:flex-end; flex-shrink:0;">
+                            <div
+                                style="font-family:var(--font-serif); font-size:3.5rem; font-weight:900; color:var(--text-main); line-height:1;">
+                                7</div>
+                            <div
+                                style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted);">
+                                Verified Standards</div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Column labels -->
                 <div class="container">
-                    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; border-left:1px solid var(--border); border-right:1px solid var(--border);">
-                        <div style="padding:1rem 1.5rem; border-right:1px solid var(--border); background:var(--bg-alt);">
-                            <span style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-muted);">Category</span>
+                    <div
+                        style="display:grid; grid-template-columns:1fr 1fr 1fr; border-left:1px solid var(--border); border-right:1px solid var(--border);">
+                        <div
+                            style="padding:1rem 1.5rem; border-right:1px solid var(--border); background:var(--bg-alt);">
+                            <span
+                                style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-muted);">Category</span>
                         </div>
                         <div style="padding:1rem 1.5rem; border-right:1px solid var(--border); background:#1a1a1a;">
-                            <span style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.75); font-weight:700;">âœ¦ Oxygen Bioinnovations</span>
+                            <span
+                                style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.75); font-weight:700;">âœ¦
+                                Oxygen Bioinnovations</span>
                         </div>
                         <div style="padding:1rem 1.5rem; background:var(--bg-alt);">
-                            <span style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-muted);">Industry Standard</span>
+                            <span
+                                style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-muted);">Industry
+                                Standard</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Duel Rows -->
-                <div class="container" style="border:1px solid var(--border); border-top:none; border-radius:0 0 20px 20px; overflow:hidden;">
+                <div class="container"
+                    style="border:1px solid var(--border); border-top:none; border-radius:0 0 20px 20px; overflow:hidden;">
 
                     <!-- Row 1 -->
-                    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; border-bottom:1px solid var(--border);">
-                        <div style="padding:1.5rem; border-right:1px solid var(--border); display:flex; align-items:center;">
+                    <div
+                        style="display:grid; grid-template-columns:1fr 1fr 1fr; border-bottom:1px solid var(--border);">
+                        <div
+                            style="padding:1.5rem; border-right:1px solid var(--border); display:flex; align-items:center;">
                             <div>
-                                <div style="font-size:0.85rem; font-weight:700; color:var(--text-main); margin-bottom:0.2rem;">Vitamin Forms</div>
+                                <div
+                                    style="font-size:0.85rem; font-weight:700; color:var(--text-main); margin-bottom:0.2rem;">
+                                    Vitamin Forms</div>
                             </div>
                         </div>
-                        <div style="padding:1.5rem; border-right:1px solid var(--border); background:#fafafa; display:flex; align-items:center; gap:0.75rem;">
+                        <div
+                            style="padding:1.5rem; border-right:1px solid var(--border); background:#fafafa; display:flex; align-items:center; gap:0.75rem;">
                             <span style="font-size:1rem; color:#16a34a; flex-shrink:0;">âœ“</span>
-                            <span style="font-size:0.9rem; font-weight:700; color:var(--text-main);">Active (bioavailable) Forms</span>
+                            <span style="font-size:0.9rem; font-weight:700; color:var(--text-main);">Active
+                                (bioavailable) Forms</span>
                         </div>
                         <div style="padding:1.5rem; display:flex; align-items:center; gap:0.75rem;">
                             <span style="font-size:1rem; color:var(--text-muted); flex-shrink:0;">âœ—</span>
@@ -635,13 +835,17 @@
                     </div>
 
                     <!-- Row 2 -->
-                    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; border-bottom:1px solid var(--border); background:var(--bg-alt);">
-                        <div style="padding:1.5rem; border-right:1px solid var(--border); display:flex; align-items:center;">
+                    <div
+                        style="display:grid; grid-template-columns:1fr 1fr 1fr; border-bottom:1px solid var(--border); background:var(--bg-alt);">
+                        <div
+                            style="padding:1.5rem; border-right:1px solid var(--border); display:flex; align-items:center;">
                             <div style="font-size:0.85rem; font-weight:700; color:var(--text-main);">Vitamin B12</div>
                         </div>
-                        <div style="padding:1.5rem; border-right:1px solid var(--border); background:#fafafa; display:flex; align-items:center; gap:0.75rem;">
+                        <div
+                            style="padding:1.5rem; border-right:1px solid var(--border); background:#fafafa; display:flex; align-items:center; gap:0.75rem;">
                             <span style="font-size:1rem; color:#16a34a; flex-shrink:0;">âœ“</span>
-                            <span style="font-size:0.9rem; font-weight:700; color:var(--text-main);">Methylcobalamin</span>
+                            <span
+                                style="font-size:0.9rem; font-weight:700; color:var(--text-main);">Methylcobalamin</span>
                         </div>
                         <div style="padding:1.5rem; display:flex; align-items:center; gap:0.75rem;">
                             <span style="font-size:1rem; color:var(--text-muted); flex-shrink:0;">âœ—</span>
@@ -650,13 +854,17 @@
                     </div>
 
                     <!-- Row 3 -->
-                    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; border-bottom:1px solid var(--border);">
-                        <div style="padding:1.5rem; border-right:1px solid var(--border); display:flex; align-items:center;">
+                    <div
+                        style="display:grid; grid-template-columns:1fr 1fr 1fr; border-bottom:1px solid var(--border);">
+                        <div
+                            style="padding:1.5rem; border-right:1px solid var(--border); display:flex; align-items:center;">
                             <div style="font-size:0.85rem; font-weight:700; color:var(--text-main);">Minerals</div>
                         </div>
-                        <div style="padding:1.5rem; border-right:1px solid var(--border); background:#fafafa; display:flex; align-items:center; gap:0.75rem;">
+                        <div
+                            style="padding:1.5rem; border-right:1px solid var(--border); background:#fafafa; display:flex; align-items:center; gap:0.75rem;">
                             <span style="font-size:1rem; color:#16a34a; flex-shrink:0;">âœ“</span>
-                            <span style="font-size:0.9rem; font-weight:700; color:var(--text-main);">Chelated TRAACSÂ® Amino Acid</span>
+                            <span style="font-size:0.9rem; font-weight:700; color:var(--text-main);">Chelated TRAACSÂ®
+                                Amino Acid</span>
                         </div>
                         <div style="padding:1.5rem; display:flex; align-items:center; gap:0.75rem;">
                             <span style="font-size:1rem; color:var(--text-muted); flex-shrink:0;">âœ—</span>
@@ -665,13 +873,18 @@
                     </div>
 
                     <!-- Row 4 -->
-                    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; border-bottom:1px solid var(--border); background:var(--bg-alt);">
-                        <div style="padding:1.5rem; border-right:1px solid var(--border); display:flex; align-items:center;">
-                            <div style="font-size:0.85rem; font-weight:700; color:var(--text-main);">Mineral Absorption</div>
+                    <div
+                        style="display:grid; grid-template-columns:1fr 1fr 1fr; border-bottom:1px solid var(--border); background:var(--bg-alt);">
+                        <div
+                            style="padding:1.5rem; border-right:1px solid var(--border); display:flex; align-items:center;">
+                            <div style="font-size:0.85rem; font-weight:700; color:var(--text-main);">Mineral Absorption
+                            </div>
                         </div>
-                        <div style="padding:1.5rem; border-right:1px solid var(--border); background:#fafafa; display:flex; align-items:center; gap:0.75rem;">
+                        <div
+                            style="padding:1.5rem; border-right:1px solid var(--border); background:#fafafa; display:flex; align-items:center; gap:0.75rem;">
                             <span style="font-size:1rem; color:#16a34a; flex-shrink:0;">âœ“</span>
-                            <span style="font-size:0.9rem; font-weight:700; color:var(--text-main);">~28% Absorbed</span>
+                            <span style="font-size:0.9rem; font-weight:700; color:var(--text-main);">~28%
+                                Absorbed</span>
                         </div>
                         <div style="padding:1.5rem; display:flex; align-items:center; gap:0.75rem;">
                             <span style="font-size:1rem; color:var(--text-muted); flex-shrink:0;">âœ—</span>
@@ -680,13 +893,18 @@
                     </div>
 
                     <!-- Row 5 -->
-                    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; border-bottom:1px solid var(--border);">
-                        <div style="padding:1.5rem; border-right:1px solid var(--border); display:flex; align-items:center;">
-                            <div style="font-size:0.85rem; font-weight:700; color:var(--text-main);">Mushroom Extracts</div>
+                    <div
+                        style="display:grid; grid-template-columns:1fr 1fr 1fr; border-bottom:1px solid var(--border);">
+                        <div
+                            style="padding:1.5rem; border-right:1px solid var(--border); display:flex; align-items:center;">
+                            <div style="font-size:0.85rem; font-weight:700; color:var(--text-main);">Mushroom Extracts
+                            </div>
                         </div>
-                        <div style="padding:1.5rem; border-right:1px solid var(--border); background:#fafafa; display:flex; align-items:center; gap:0.75rem;">
+                        <div
+                            style="padding:1.5rem; border-right:1px solid var(--border); background:#fafafa; display:flex; align-items:center; gap:0.75rem;">
                             <span style="font-size:1rem; color:#16a34a; flex-shrink:0;">âœ“</span>
-                            <span style="font-size:0.9rem; font-weight:700; color:var(--text-main);">Verified Î²-glucan %</span>
+                            <span style="font-size:0.9rem; font-weight:700; color:var(--text-main);">Verified Î²-glucan
+                                %</span>
                         </div>
                         <div style="padding:1.5rem; display:flex; align-items:center; gap:0.75rem;">
                             <span style="font-size:1rem; color:var(--text-muted); flex-shrink:0;">âœ—</span>
@@ -695,13 +913,17 @@
                     </div>
 
                     <!-- Row 6 -->
-                    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; border-bottom:1px solid var(--border); background:var(--bg-alt);">
-                        <div style="padding:1.5rem; border-right:1px solid var(--border); display:flex; align-items:center;">
+                    <div
+                        style="display:grid; grid-template-columns:1fr 1fr 1fr; border-bottom:1px solid var(--border); background:var(--bg-alt);">
+                        <div
+                            style="padding:1.5rem; border-right:1px solid var(--border); display:flex; align-items:center;">
                             <div style="font-size:0.85rem; font-weight:700; color:var(--text-main);">Efficacy Data</div>
                         </div>
-                        <div style="padding:1.5rem; border-right:1px solid var(--border); background:#fafafa; display:flex; align-items:center; gap:0.75rem;">
+                        <div
+                            style="padding:1.5rem; border-right:1px solid var(--border); background:#fafafa; display:flex; align-items:center; gap:0.75rem;">
                             <span style="font-size:1rem; color:#16a34a; flex-shrink:0;">âœ“</span>
-                            <span style="font-size:0.9rem; font-weight:700; color:var(--text-main);">Pre-Launch Clinical Study</span>
+                            <span style="font-size:0.9rem; font-weight:700; color:var(--text-main);">Pre-Launch Clinical
+                                Study</span>
                         </div>
                         <div style="padding:1.5rem; display:flex; align-items:center; gap:0.75rem;">
                             <span style="font-size:1rem; color:var(--text-muted); flex-shrink:0;">âœ—</span>
@@ -711,12 +933,15 @@
 
                     <!-- Row 7 â€” Last, no border -->
                     <div style="display:grid; grid-template-columns:1fr 1fr 1fr;">
-                        <div style="padding:1.5rem; border-right:1px solid var(--border); display:flex; align-items:center;">
+                        <div
+                            style="padding:1.5rem; border-right:1px solid var(--border); display:flex; align-items:center;">
                             <div style="font-size:0.85rem; font-weight:700; color:var(--text-main);">Lab Reports</div>
                         </div>
-                        <div style="padding:1.5rem; border-right:1px solid var(--border); background:#fafafa; display:flex; align-items:center; gap:0.75rem;">
+                        <div
+                            style="padding:1.5rem; border-right:1px solid var(--border); background:#fafafa; display:flex; align-items:center; gap:0.75rem;">
                             <span style="font-size:1rem; color:#16a34a; flex-shrink:0;">âœ“</span>
-                            <span style="font-size:0.9rem; font-weight:700; color:var(--text-main);">Public CoA every batch</span>
+                            <span style="font-size:0.9rem; font-weight:700; color:var(--text-main);">Public CoA every
+                                batch</span>
                         </div>
                         <div style="padding:1.5rem; display:flex; align-items:center; gap:0.75rem;">
                             <span style="font-size:1rem; color:var(--text-muted); flex-shrink:0;">âœ—</span>
@@ -728,35 +953,36 @@
 
             </section>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+            <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
      CTA SECTION
 â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
-        <section class="structure-section" id="join" style="background:var(--text-main); color:var(--bg); border:none;">
-            <div class="container" style="text-align:center; padding:var(--space-xl) 0;">
-                <h2 class="display" style="color:var(--bg); font-size:clamp(3rem, 6vw, 5rem);">Stop guessing
-                    with<br>your <em>health.</em></h2>
-                <p class="subtext" style="color:#A3A3A3; margin:var(--space-md) auto; max-width:600px;">
-                    Join the waitlist to receive access to our clinical study results, formulation deep-dives, and
-                    founding member pricing.
-                </p>
-                <form style="display:flex; flex-direction:column; gap:1rem; max-width:400px; margin:0 auto;"
-                    onsubmit="event.preventDefault(); alert('Waitlist strictly joined. Check console log for integration.');">
-                    <input type="email" placeholder="Enter your email address" required
-                        style="width:100%; padding:1rem; border:1px solid #333; background:transparent; color:#fff; font-family:var(--font-sans); font-size:1rem; border-radius:4px; outline:none;">
-                    <select required
-                        style="width:100%; padding:1rem; border:1px solid #333; background:transparent; color:#fff; font-family:var(--font-sans); font-size:1rem; border-radius:4px; outline:none; appearance:none;">
-                        <option value="" disabled selected>Primary Health Goal</option>
-                        <option value="energy">Daily Energy & Focus</option>
-                        <option value="deficiency">Correcting Deficiencies (Vitamin D, B12)</option>
-                        <option value="recovery">Athletic Recovery</option>
-                        <option value="longevity">General Longevity</option>
-                    </select>
-                    <button type="submit" class="btn"
-                        style="background:var(--bg); color:var(--text-main); width:100%; justify-content:center; padding:1.25rem;">Join
-                        the Waitlist</button>
-                </form>
-            </div>
-        </section>
+            <section class="structure-section" id="join"
+                style="background:var(--text-main); color:var(--bg); border:none;">
+                <div class="container" style="text-align:center; padding:var(--space-xl) 0;">
+                    <h2 class="display" style="color:var(--bg); font-size:clamp(3rem, 6vw, 5rem);">Stop guessing
+                        with<br>your <em>health.</em></h2>
+                    <p class="subtext" style="color:#A3A3A3; margin:var(--space-md) auto; max-width:600px;">
+                        Join the waitlist to receive access to our clinical study results, formulation deep-dives, and
+                        founding member pricing.
+                    </p>
+                    <form style="display:flex; flex-direction:column; gap:1rem; max-width:400px; margin:0 auto;"
+                        onsubmit="event.preventDefault(); alert('Waitlist strictly joined. Check console log for integration.');">
+                        <input type="email" placeholder="Enter your email address" required
+                            style="width:100%; padding:1rem; border:1px solid #333; background:transparent; color:#fff; font-family:var(--font-sans); font-size:1rem; border-radius:4px; outline:none;">
+                        <select required
+                            style="width:100%; padding:1rem; border:1px solid #333; background:transparent; color:#fff; font-family:var(--font-sans); font-size:1rem; border-radius:4px; outline:none; appearance:none;">
+                            <option value="" disabled selected>Primary Health Goal</option>
+                            <option value="energy">Daily Energy & Focus</option>
+                            <option value="deficiency">Correcting Deficiencies (Vitamin D, B12)</option>
+                            <option value="recovery">Athletic Recovery</option>
+                            <option value="longevity">General Longevity</option>
+                        </select>
+                        <button type="submit" class="btn"
+                            style="background:var(--bg); color:var(--text-main); width:100%; justify-content:center; padding:1.25rem;">Join
+                            the Waitlist</button>
+                    </form>
+                </div>
+            </section>
 
     </main>
     </main>
@@ -771,21 +997,22 @@
                 <p>Precision nutrition for every ambitious Indian.<br><br>India's first honest precision nutrition
                     system. Built on millet, mushrooms, and real science.</p>
                 <div class="footer-socials">
-                    <a href="https://linkedin.com/company/oxygenbioinnovations" target="_blank" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    <a href="https://linkedin.com/company/oxygenbioinnovations" target="_blank"
+                        aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2">
                             <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
                             </path>
                             <rect x="2" y="9" width="4" height="12"></rect>
                             <circle cx="4" cy="4" r="2"></circle>
                         </svg></a>
-                    <a href="https://twitter.com/oxygenbio" target="_blank" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2">
+                    <a href="https://twitter.com/oxygenbio" target="_blank" aria-label="Twitter"><svg width="18"
+                            height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path
                                 d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z">
                             </path>
                         </svg></a>
-                    <a href="https://instagram.com/oxygenbio" target="_blank" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2">
+                    <a href="https://instagram.com/oxygenbio" target="_blank" aria-label="Instagram"><svg width="18"
+                            height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                             <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
