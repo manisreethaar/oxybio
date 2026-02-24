@@ -11,7 +11,21 @@ const Navbar = () => {
                 <div className="flex justify-between items-center h-20">
                     <div className="flex-shrink-0 flex items-center">
                         <span className="font-heading font-extrabold text-2xl tracking-tighter text-white flex items-center">
-                            Oxygen <span className="font-['Quicksand'] tracking-normal font-bold ml-1.5 opacity-90 pb-0.5">Bioinnovations</span><span className="text-cyan-ethereal">.</span>
+                            Oxygen <span className="font-['Quicksand'] tracking-normal font-bold ml-1.5 opacity-90 pb-0.5 flex items-center">
+                                <svg viewBox="0 0 100 130" className="h-[1.15em] w-auto -mb-[0.15em] mr-[0.02em] shrink-0" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <path id="b-path" d="M 25 25 Q 25 0 45 0 L 60 0 C 90 0 92 60 55 60 C 105 55 105 130 60 130 L 45 130 Q 25 130 25 105 Z M 48 20 C 35 20 35 45 48 45 C 60 45 60 20 48 20 Z" fillRule="evenodd" />
+                                        <clipPath id="b-clip"><use href="#b-path" /></clipPath>
+                                    </defs>
+                                    <g clipPath="url(#b-clip)">
+                                        <rect width="100%" height="100%" fill="#0a2e5c" />
+                                        <ellipse cx="60" cy="10" rx="90" ry="100" fill="#1460aa" />
+                                        <ellipse cx="40" cy="-20" rx="90" ry="90" fill="#2096d2" />
+                                        <ellipse cx="20" cy="-40" rx="80" ry="80" fill="#3ac4e7" />
+                                    </g>
+                                </svg>
+                                ioinnovations
+                            </span><span className="text-cyan-ethereal">.</span>
                         </span>
                     </div>
 
