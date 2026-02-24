@@ -12,9 +12,7 @@ const Navbar = () => {
                     <div className="flex-shrink-0 flex items-center">
                         <span className="font-heading font-extrabold text-2xl tracking-tighter text-white flex items-center">
                             Oxygen <span className="font-['Quicksand'] tracking-normal font-bold ml-1.5 opacity-90 pb-0.5 flex items-center">
-                                <svg viewBox="0 0 100 140" className="h-[1.15em] w-auto inline-block align-[-16%] mr-0 shrink-0" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fillRule="evenodd" d="M 25 0 C 55 0, 85 0, 85 30 C 85 50, 70 58, 55 60 C 85 62, 100 85, 95 115 C 90 140, 55 140, 25 140 C 10 140, 0 130, 0 115 L 0 25 C 0 10, 10 0, 25 0 Z M 40 28 C 25 28, 25 52, 40 52 C 55 52, 55 28, 40 28 Z" />
-                                </svg>ioinnovations
+                                <img src="/assets/images/logo-b.svg" className="h-[1.1em] w-auto inline-block align-[-17%] mr-0 shrink-0" alt="B" />ioinnovations
                             </span><span className="text-cyan-ethereal">.</span>
                         </span>
                     </div>
