@@ -12,7 +12,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/styles.css?v=3">
+    <link rel="stylesheet" href="assets/css/styles.css?v=4">
 </head>
 
 <body>
@@ -677,10 +677,11 @@
                     </div>
                 </div>
 
-                <!-- Column labels -->
-                <div class="container">
-                    <div
-                        style="display:grid; grid-template-columns:1fr 1fr 1fr; border-left:1px solid var(--border); border-right:1px solid var(--border);">
+                <!-- Column labels and Table Wrapper -->
+                <div class="container" style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 6rem; padding-bottom: 1rem;">
+                    <div style="min-width: 650px;">
+                        <div
+                            style="display:grid; grid-template-columns:1fr 1fr 1fr; border-left:1px solid var(--border); border-right:1px solid var(--border); border-top:1px solid var(--border); border-radius: 20px 20px 0 0; overflow:hidden;">
                         <div
                             style="padding:1rem 1.5rem; border-right:1px solid var(--border); background:var(--bg-alt);">
                             <span
@@ -700,8 +701,7 @@
                 </div>
 
                 <!-- Duel Rows -->
-                <div class="container"
-                    style="border:1px solid var(--border); border-top:none; border-radius:0 0 20px 20px; overflow:hidden; margin-bottom: 6rem;">
+                <div style="border:1px solid var(--border); border-top:none; border-radius:0 0 20px 20px; overflow:hidden;">
 
                     <!-- Row 1 -->
                     <div
@@ -842,6 +842,8 @@
                     </div>
 
                 </div>
+            </div> <!-- End scrolling min-width wrapper -->
+        </div> <!-- End container wrapper -->
 
             </section>
 

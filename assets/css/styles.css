@@ -2543,7 +2543,7 @@ body {
 
 
 /* =========================================================
-   GLOBAL DESIGN SYSTEM PATCH v4 — Spacing, Mega Menu, Vision
+   GLOBAL DESIGN SYSTEM PATCH v4  Spacing, Mega Menu, Vision
    ========================================================= */
 
 /* --- 1. GLOBAL TYPOGRAPHY & LINE-HEIGHT CONSISTENCY ------ */
@@ -2587,8 +2587,8 @@ body {
     border-bottom: 1px solid var(--border);
 }
 
-/* --- 2. MEGA MENU — MONOCHROME PALETTE FIX -------------- */
-/* Override the old dark glass mega-menu — match the white site palette */
+/* --- 2. MEGA MENU  MONOCHROME PALETTE FIX -------------- */
+/* Override the old dark glass mega-menu  match the white site palette */
 .mega-menu {
     background: #ffffff !important;
     backdrop-filter: none !important;
@@ -2620,7 +2620,7 @@ body {
     transform: translateX(4px);
 }
 
-/* New V3 Dropdown — Monochrome palette match */
+/* New V3 Dropdown  Monochrome palette match */
 .mega-feature {
     background: var(--bg-alt) !important;
     border-right: 1px solid var(--border) !important;
@@ -2668,7 +2668,7 @@ body {
     color: var(--text-muted) !important;
 }
 
-/* --- 3. VISION & MISSION — PREMIUM EDITORIAL REDESIGN --- */
+/* --- 3. VISION & MISSION  PREMIUM EDITORIAL REDESIGN --- */
 /* The entire vision/mission container becomes a newspaper editorial */
 .vision-premium-grid {
     display: grid;
@@ -2798,7 +2798,7 @@ body {
 
 
 /* =========================================================
-   CORE VALUES — Indexed Editorial Rows (Premium)
+   CORE VALUES  Indexed Editorial Rows (Premium)
    ========================================================= */
 
 .values-list {
@@ -2917,7 +2917,7 @@ body {
 
 
 /* =========================================================
-   3 PILLARS — Showcase Stack Layout (Premium)
+   3 PILLARS  Showcase Stack Layout (Premium)
    ========================================================= */
 
 .pillar-showcase-row {
@@ -3065,7 +3065,7 @@ body {
 
 
 /* =========================================================
-   SCIENCE SHOWCASE — Premium Card Layout
+   SCIENCE SHOWCASE  Premium Card Layout
    ========================================================= */
 
 .science-showcase-section {
@@ -3165,7 +3165,7 @@ body {
     flex-grow: 1;
 }
 
-/* Stat block — the BIG number */
+/* Stat block  the BIG number */
 .sc-stat-block {
     margin-top: auto;
     padding-top: 1.5rem;
@@ -3212,7 +3212,7 @@ body {
 
 
 /* =========================================================
-   MOBILE-FIRST RESPONSIVE OVERRIDES — Major Breakpoints
+   MOBILE-FIRST RESPONSIVE OVERRIDES  Major Breakpoints
    ========================================================= */
 
 /* -- Tablet: 768px ---------------------------------------- */
@@ -3248,7 +3248,7 @@ body {
     .value-tag { display: none; }
     .value-name { font-size: 1.1rem !important; }
 
-    /* Duel comparison table — collapse to stacked rows */
+    /* Duel comparison table  collapse to stacked rows */
     [style*="grid-template-columns:1fr 1fr 1fr"] {
         grid-template-columns: 1fr !important;
     }
@@ -3296,7 +3296,7 @@ body {
     }
 }
 
-/* -- Comparison duel table — mobile stacked card layout --- */
+/* -- Comparison duel table  mobile stacked card layout --- */
 @media (max-width: 640px) {
     .duel-row-grid { grid-template-columns: 1fr !important; }
 }
@@ -3304,7 +3304,7 @@ body {
 
 
 /* =========================================================
-   NAVBAR — Mobile Critical Fixes
+   NAVBAR  Mobile Critical Fixes
    ========================================================= */
 @media (max-width: 860px) {
     /* Hide main nav links, show only logo + CTA */
@@ -3340,7 +3340,7 @@ body {
 }
 
 /* =========================================================
-   HAMBURGER MENU — Show on mobile (uses existing JS toggle)
+   HAMBURGER MENU  Show on mobile (uses existing JS toggle)
    ========================================================= */
 @media (max-width: 860px) {
     .hamburger { display: flex !important; }
@@ -3361,7 +3361,7 @@ body {
 
 
 /* =========================================================
-   AUDIT FIX — Mobile Elongation & Overflow Pass
+   AUDIT FIX  Mobile Elongation & Overflow Pass
    ========================================================= */
 
 /* Remove sticky positioning on mobile (causes elongated problem section) */
@@ -3386,7 +3386,7 @@ body {
     /* Bento cells: all full width */
     [class*="bento-cell"] { grid-column: span 12 !important; }
 
-    /* Products section — auto-fit min 300 too wide on mobile */
+    /* Products section  auto-fit min 300 too wide on mobile */
     [style*="minmax(300px"] { grid-template-columns: 1fr !important; }
 
     /* Duel section header padding too large */
@@ -3467,7 +3467,7 @@ p, li {
     line-height: 1.75;
 }
 
-/* Section subtext — use muted but ensure readable */
+/* Section subtext  use muted but ensure readable */
 .subtext, .editorial-col p {
     color: var(--text-muted);
     font-size: 1.05rem;
@@ -3637,5 +3637,27 @@ p, h1, h2, h3, h4, blockquote { text-wrap: pretty; }
     .flow-left {
         max-width: 100% !important;
         padding-right: 1rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* 4. Global Mobile Typography & Spacing Fixes */
+    /* User requested justification alignment, better spacing, and unpacking of dense text */
+    p, .subtext, .editorial-col, .editorial-col p {
+        text-align: justify !important;
+        text-justify: inter-word !important;
+        hyphens: auto !important;
+        -webkit-hyphens: auto !important;
+        -ms-hyphens: auto !important;
+        margin-bottom: 1.75rem !important; /* Increase vertical breathing room */
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+    }
+
+    /* 5. Improve list spacing for readability */
+    ul li, ol li {
+        margin-bottom: 1.25rem !important;
+        text-align: left !important; /* Lists shouldn't be fully justified */
     }
 }
