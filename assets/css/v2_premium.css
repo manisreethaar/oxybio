@@ -159,7 +159,8 @@
     display: inline-block;
     overflow: hidden;
     vertical-align: top;
-    perspective: 800px; /* required for rotateX animation to render correctly */
+    perspective: 800px;
+    /* required for rotateX animation to render correctly */
 }
 
 .char {
@@ -168,7 +169,7 @@
     transform: translateY(100%) rotateX(-90deg);
     transform-origin: bottom center;
     will-change: transform, opacity;
-    animation: textSpinUp 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation: textSpinUp 0.6s cubic-bezier(0.19, 1, 0.22, 1) forwards;
 }
 
 @keyframes textSpinUp {
@@ -182,20 +183,23 @@
         transform: translateY(0) rotateX(0);
     }
 }
+
 /* 5. CINEMATIC SCROLL SVG MASKS */
 .v2-draw-path {
     fill: none;
-    stroke: var(--accent); /* Oxygen brand green */
+    stroke: var(--accent);
+    /* Oxygen brand green */
     stroke-width: 2;
     /* JS will calculate and apply stroke-dasharray & offset */
-    transition: stroke-dashoffset 0.1s linear; 
+    transition: stroke-dashoffset 0.1s linear;
 }
 
 /* 6. PARALLAX IMAGE MASKS */
 .v2-parallax-container {
     overflow: hidden;
     position: relative;
-    border-radius: 20px; /* Mathematical precision masks */
+    border-radius: 20px;
+    /* Mathematical precision masks */
     width: 100%;
     height: 100%;
 }
@@ -204,31 +208,34 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transform: scale(1.1); /* Give room for parallax */
+    transform: scale(1.1);
+    /* Give room for parallax */
     transform-origin: center center;
     will-change: transform;
 }
 
 /* 7. MOBILE PERFORMANCE OVERRIDES */
 @media (max-width: 768px) {
+
     /* Simplify text reveal animation for mobile to prevent staggered 3D transform lag */
     .char {
         transform: translateY(20px);
         transform-origin: center;
         animation: textFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
-    
+
     @keyframes textFadeUp {
         0% {
             opacity: 0;
             transform: translateY(20px);
         }
+
         100% {
             opacity: 1;
             transform: translateY(0);
         }
     }
-    
+
     /* Completely kill the canvas node network on small devices to guarantee 60fps scrolling */
     #biology-mesh {
         display: none !important;

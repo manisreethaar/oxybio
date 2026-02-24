@@ -149,18 +149,28 @@
      HERO SECTION
 ════════════════════════════════════════════════════════ -->
         <section class="structure-section"
-            style="padding-top:clamp(160px, 20vh, 200px); padding-bottom:var(--space-2xl); border-bottom:none;">
-            <div class="container">
-                <div class="flow-left reveal" style="max-width:900px;">
-                    <div class="page-hero-badge">Development Journal & Research</div>
-                    <h1 class="display" style="font-size:var(--text-6xl); line-height:var(--leading-none);">The
-                        Oxygen<br><em>Blog.</em></h1>
+            style="padding-top:clamp(160px, 20vh, 200px); padding-bottom:100px; background:var(--bg); border-bottom:1px solid var(--border); position:relative; overflow:hidden;">
+            <div class="container" style="position:relative; z-index:2;">
+                <div class="flow-left reveal" style="max-width:1000px;">
+                    <div class="page-hero-badge" style="margin-top:2rem;">Development Journal & Research</div>
+                    <h1 class="display"
+                        style="font-size:var(--text-6xl); line-height:0.9; letter-spacing:-0.03em; margin-bottom:2rem;">
+                        The Oxygen<br><em style="color:var(--text-muted); font-weight:400;">Blog.</em>
+                    </h1>
                     <p class="subtext editorial-col"
-                        style="margin-top:2rem; font-size:var(--text-xl); line-height:var(--leading-tight);">
+                        style="font-size:clamp(1.25rem, 2vw, 1.5rem); line-height:1.6; color:var(--text-main); max-width:800px;">
                         Science deep-dives, ingredient breakdowns, and honest updates from the lab. Building India's
                         first precision nutrition system — in public.
                     </p>
                 </div>
+            </div>
+
+            <!-- Abstract background elements (matching Careers page) -->
+            <div
+                style="position:absolute; right:-10%; top:20%; width:600px; height:600px; border-radius:50%; border:1px dashed var(--border); opacity:0.5; pointer-events:none; z-index:1;">
+            </div>
+            <div
+                style="position:absolute; right:5%; top:40%; width:300px; height:300px; border-radius:50%; border:1px solid var(--border); opacity:0.3; pointer-events:none; z-index:1;">
             </div>
         </section>
 
@@ -531,8 +541,8 @@
             background: #0a0a0a;
             /* Deep dark vault */
             border-radius: 20px;
-            padding:var(--space-lg) 3rem;
-            margin-top:var(--space-lg);
+            padding: var(--space-lg) 3rem;
+            margin-top: var(--space-lg);
             border: 1px solid #222;
             overflow: hidden;
             display: grid;

@@ -48,7 +48,7 @@ function initMagneticButtons() {
         let hover = false;
 
         // mouseenter now merged into the render loop trigger above
-        item.addEventListener('mouseenter_legacy_removed', () => {});
+        item.addEventListener('mouseenter_legacy_removed', () => { });
 
         item.addEventListener('mousemove', (e) => {
             const rect = item.getBoundingClientRect();
@@ -139,7 +139,7 @@ function initTextReveal() {
                     charInner.className = 'char';
                     charInner.innerText = word[i];
                     // Stagger the animation timing based on character index
-                    charInner.style.animationDelay = `${charIndex * 0.03}s`;
+                    charInner.style.animationDelay = `${charIndex * 0.02}s`;
 
                     charWrap.appendChild(charInner);
                     wordWrap.appendChild(charWrap);
