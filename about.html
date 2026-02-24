@@ -247,294 +247,297 @@
 
 
         <!-- Story Chapters: layout override -->
-        <div style="display:grid; grid-template-columns:1fr 2fr; gap:var(--space-xl); align-items:stretch;"
-            class="mobile-stack reveal">
+        <div class="container">
+            <div style="display:grid; grid-template-columns:220px 1fr; gap:var(--space-xl); align-items:start; max-width:100%;"
+                class="mobile-stack reveal">
 
-            <!-- Sidebar Index -->
-            <div style="position:sticky; top:120px;" class="editorial-col">
-                <div
-                    style="font-family:var(--font-mono); font-size:var(--text-xs); letter-spacing:0.1em; color:var(--text-muted); margin-bottom:2rem; text-transform:uppercase;">
-                    THE ARCHIVES</div>
-                <ul
-                    style="list-style:none; padding:0; margin:0; border-left:1px solid var(--border); padding-left:1.5rem; display:flex; flex-direction:column; gap:1.5rem;">
-                    <li class="index-nav-item active-tab" data-target="chapter-01"
-                        onclick="switchTab('story', 'chapter-01')"
-                        style="font-family:var(--font-serif); font-size:1.5rem; font-weight:600; cursor:pointer; transition:all 0.3s ease;">
-                        01. The Hook</li>
-                    <li class="index-nav-item" data-target="chapter-02" onclick="switchTab('story', 'chapter-02')"
-                        style="font-family:var(--font-serif); font-size:1.5rem; font-weight:600; cursor:pointer; transition:all 0.3s ease;">
-                        02. The Journey</li>
-                </ul>
-
-                <!-- NEW: Premium Sidebar Data (To fill the empty space) -->
-                <div style="margin-top:var(--space-lg); padding-top: 2rem; border-top: 1px solid var(--border); display: flex; flex-direction: column; gap: 1.5rem;"
-                    class="mobile-hide">
-                    <div>
-                        <div
-                            style="font-family:var(--font-mono); font-size:0.65rem; color:var(--text-muted); letter-spacing:0.1em; margin-bottom:0.25rem; text-transform:uppercase;">
-                            Development Timeline</div>
-                        <div
-                            style="font-family:var(--font-serif); font-size:1.5rem; color:var(--text-main); font-weight:600; line-height:1;">
-                            <span class="count-up" data-target="14" data-suffix=" Months">0</span>
-                        </div>
-                        <div style="font-size:0.85rem; color:var(--text-muted); margin-top:0.25rem;">Of R&D
-                            before writing a single line of marketing</div>
-                    </div>
-                    <div>
-                        <div
-                            style="font-family:var(--font-mono); font-size:0.65rem; color:var(--text-muted); letter-spacing:0.1em; margin-bottom:0.25rem; text-transform:uppercase;">
-                            Clinical Data</div>
-                        <div
-                            style="font-family:var(--font-serif); font-size:1.5rem; color:var(--text-main); font-weight:600; line-height:1;">
-                            <span class="count-up" data-target="200" data-suffix="+ Studies">0</span>
-                        </div>
-                        <div style="font-size:0.85rem; color:var(--text-muted); margin-top:0.25rem;">
-                            Peer-reviewed nutritional diagnostics analyzed</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Chapters Content (Light Premium) -->
-            <div id="story-tab-container"
-                style="display:grid; grid-template-columns:1fr; grid-template-rows:max-content; align-items:start; justify-items:start; align-content:start; position:relative;">
-                <!-- Chapter 01: The Hook (Clinical Aesthetic) -->
-                <div id="chapter-01" class="chapter-section tab-pane active"
-                    style="grid-area: 1 / 1; opacity: 1; visibility: visible; transition: opacity 0.5s ease, visibility 0.5s ease; pointer-events: auto;">
+                <!-- Sidebar Index -->
+                <div style="position:sticky; top:120px;" class="editorial-col">
                     <div
-                        style="display:inline-flex; align-items:center; gap:0.5rem; font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.1em; color:var(--text-main); margin-bottom:1.5rem; border:1px solid var(--border); padding:0.4rem 0.8rem; border-radius:50px; background:var(--bg);">
-                        <span style="width:6px; height:6px; background:#ef4444; border-radius:50%;"></span>
-                        CHAPTER 01
-                    </div>
-                    <h3 class="headline"
-                        style="font-size:3rem; line-height:var(--leading-tight); margin-bottom:1.5rem; color:var(--text-main);">
-                        The Hook</h3>
+                        style="font-family:var(--font-mono); font-size:var(--text-xs); letter-spacing:0.1em; color:var(--text-muted); margin-bottom:2rem; text-transform:uppercase;">
+                        THE ARCHIVES</div>
+                    <ul
+                        style="list-style:none; padding:0; margin:0; border-left:1px solid var(--border); padding-left:1.5rem; display:flex; flex-direction:column; gap:1.5rem;">
+                        <li class="index-nav-item active-tab" data-target="chapter-01"
+                            onclick="switchTab('story', 'chapter-01')"
+                            style="font-family:var(--font-serif); font-size:1.5rem; font-weight:600; cursor:pointer; transition:all 0.3s ease;">
+                            01. The Hook</li>
+                        <li class="index-nav-item" data-target="chapter-02" onclick="switchTab('story', 'chapter-02')"
+                            style="font-family:var(--font-serif); font-size:1.5rem; font-weight:600; cursor:pointer; transition:all 0.3s ease;">
+                            02. The Journey</li>
+                    </ul>
 
-                    <div class="editorial-col" style="font-size:1.15rem; line-height:1.7; color:var(--text-muted);">
-                        <p style="margin-bottom:2rem;">We spent six months trying to find a daily nutrition
-                            product we would actually recommend to someone we cared about. We could not find
-                            one. Either the science was inadequate, or the ingredients were compromised, or the
-                            price was inaccessible, or it was designed for a Western diet and simply repacked
-                            for India.</p>
-
-                        <!-- Premium Research Result Block -->
-                        <div
-                            style="background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:3rem; margin:3rem 0; position:relative; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.03);">
-                            <div style="position:absolute; top:2rem; right:2rem; color:var(--border);">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="1">
-                                    <circle cx="12" cy="12" r="10"></circle>
-                                    <line x1="12" y1="16" x2="12" y2="12"></line>
-                                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                                </svg>
+                    <!-- NEW: Premium Sidebar Data (To fill the empty space) -->
+                    <div style="margin-top:var(--space-lg); padding-top: 2rem; border-top: 1px solid var(--border); display: flex; flex-direction: column; gap: 1.5rem;"
+                        class="mobile-hide">
+                        <div>
+                            <div
+                                style="font-family:var(--font-mono); font-size:0.65rem; color:var(--text-muted); letter-spacing:0.1em; margin-bottom:0.25rem; text-transform:uppercase;">
+                                Development Timeline</div>
+                            <div
+                                style="font-family:var(--font-serif); font-size:1.5rem; color:var(--text-main); font-weight:600; line-height:1;">
+                                <span class="count-up" data-target="14" data-suffix=" Months">0</span>
                             </div>
-                            <h4
-                                style="font-family:var(--font-mono); font-size:0.85rem; letter-spacing:0.1em; text-transform:uppercase; color:#ef4444; margin-bottom:1rem;">
-                                Diagnostic Result //</h4>
-                            <p
-                                style="font-family:var(--font-serif); font-size:1.5rem; line-height:1.6; color:var(--text-main); margin-bottom:0;">
-                                We analyzed extensive clinical data from ICMR, NFHS-5, and WHO India. The
-                                patterns across urban demographics were consistent and alarming: the vast
-                                majority of health-conscious individuals exhibit at least one critical
-                                nutritional deficiency without realizing it.
-                            </p>
+                            <div style="font-size:0.85rem; color:var(--text-muted); margin-top:0.25rem;">Of R&D
+                                before writing a single line of marketing</div>
                         </div>
-
-                        <div style="border-left:2px solid var(--text-main); padding-left:1.5rem;">
-                            <p
-                                style="color:var(--text-main); font-size:1.35rem; font-family:var(--font-serif); font-style:italic; margin-bottom:0;">
-                                The food system was failing people who were trying to do the right thing.<br>
-                                "We decided the only option was to build it ourselves."
-                            </p>
+                        <div>
+                            <div
+                                style="font-family:var(--font-mono); font-size:0.65rem; color:var(--text-muted); letter-spacing:0.1em; margin-bottom:0.25rem; text-transform:uppercase;">
+                                Clinical Data</div>
+                            <div
+                                style="font-family:var(--font-serif); font-size:1.5rem; color:var(--text-main); font-weight:600; line-height:1;">
+                                <span class="count-up" data-target="200" data-suffix="+ Studies">0</span>
+                            </div>
+                            <div style="font-size:0.85rem; color:var(--text-muted); margin-top:0.25rem;">
+                                Peer-reviewed nutritional diagnostics analyzed</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Chapter 02: The Journey — MISSION CONTROL DASHBOARD -->
-                <div id="chapter-02" class="chapter-section tab-pane"
-                    style="grid-area: 1 / 1; opacity: 0; visibility: hidden; transition: opacity 0.5s ease, visibility 0.5s ease; pointer-events: none;">
-                    <div
-                        style="display:inline-flex; align-items:center; gap:0.5rem; font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.1em; color:var(--text-main); margin-bottom:1.5rem; border:1px solid var(--border); padding:0.4rem 0.8rem; border-radius:50px; background:var(--bg);">
-                        <span style="width:6px; height:6px; background:var(--text-main); border-radius:50%;"></span>
-                        CHAPTER 02
-                    </div>
-                    <h3 class="headline"
-                        style="font-size:3rem; line-height:var(--leading-tight); margin-bottom:1.5rem; color:var(--text-main);">
-                        The Journey So Far</h3>
-                    <p
-                        style="font-size:1.15rem; line-height:1.7; color:var(--text-muted); margin-bottom:var(--space-lg); max-width:600px;">
-                        What we have built before we built anything physical. Most companies build first and
-                        think about science second. We spent months thinking about the science before building
-                        anything.
-                    </p>
-
-                    <!-- HORIZONTAL PHASE STEPPER -->
-                    <div class="phase-stepper">
-
-                        <!-- Step indicators row -->
-                        <div class="phase-track">
-                            <div class="phase-line">
-                                <div class="phase-line-fill"></div>
-                            </div>
-                            <button class="phase-node phase-node-done is-active" data-phase="1" aria-label="Phase 1">
-                                <span class="phase-node-num">01</span>
-                                <span class="phase-node-label">Research</span>
-                            </button>
-                            <button class="phase-node phase-node-done" data-phase="2" aria-label="Phase 2">
-                                <span class="phase-node-num">02</span>
-                                <span class="phase-node-label">Formulation</span>
-                            </button>
-                            <button class="phase-node phase-node-active" data-phase="3" aria-label="Phase 3">
-                                <span class="phase-node-num">03</span>
-                                <span class="phase-node-label">Incubation</span>
-                            </button>
-                            <button class="phase-node phase-node-pending" data-phase="4" aria-label="Phase 4">
-                                <span class="phase-node-num">04</span>
-                                <span class="phase-node-label">Prototype</span>
-                            </button>
-                            <button class="phase-node phase-node-pending" data-phase="5" aria-label="Phase 5">
-                                <span class="phase-node-num">05</span>
-                                <span class="phase-node-label">Validation</span>
-                            </button>
-                            <button class="phase-node phase-node-pending" data-phase="6" aria-label="Phase 6">
-                                <span class="phase-node-num">06</span>
-                                <span class="phase-node-label">Launch</span>
-                            </button>
+                <!-- Chapters Content (Light Premium) -->
+                <div id="story-tab-container"
+                    style="display:grid; grid-template-columns:1fr; grid-template-rows:max-content; align-items:start; justify-items:start; align-content:start; position:relative;">
+                    <!-- Chapter 01: The Hook (Clinical Aesthetic) -->
+                    <div id="chapter-01" class="chapter-section tab-pane active"
+                        style="grid-area: 1 / 1; opacity: 1; visibility: visible; transition: opacity 0.5s ease, visibility 0.5s ease; pointer-events: auto;">
+                        <div
+                            style="display:inline-flex; align-items:center; gap:0.5rem; font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.1em; color:var(--text-main); margin-bottom:1.5rem; border:1px solid var(--border); padding:0.4rem 0.8rem; border-radius:50px; background:var(--bg);">
+                            <span style="width:6px; height:6px; background:#ef4444; border-radius:50%;"></span>
+                            CHAPTER 01
                         </div>
+                        <h3 class="headline"
+                            style="font-size:3rem; line-height:var(--leading-tight); margin-bottom:1.5rem; color:var(--text-main);">
+                            The Hook</h3>
 
-                        <!-- Detail panels (only one visible at a time) -->
-                        <div class="phase-details">
+                        <div class="editorial-col" style="font-size:1.15rem; line-height:1.7; color:var(--text-muted);">
+                            <p style="margin-bottom:2rem;">We spent six months trying to find a daily nutrition
+                                product we would actually recommend to someone we cared about. We could not find
+                                one. Either the science was inadequate, or the ingredients were compromised, or the
+                                price was inaccessible, or it was designed for a Western diet and simply repacked
+                                for India.</p>
 
-                            <!-- Phase 1: Research — COMPLETED -->
-                            <div class="phase-detail is-visible" data-detail="1">
-                                <div class="phase-detail-badge phase-badge-green">COMPLETED</div>
-                                <h4 class="phase-detail-title">Problem Analysis &amp; Nutritional Research</h4>
-                                <p class="phase-detail-text">Systematically analyzed ICMR, NFHS-5, and WHO India
-                                    datasets. Mapped exact deficiency profiles across urban demographic
-                                    segments. Built the scientific evidence base that defines the problem our
-                                    products solve.</p>
-                                <div class="phase-detail-stat"><span class="phase-stat-num">200+</span>
-                                    peer-reviewed studies reviewed</div>
-                            </div>
-
-                            <!-- Phase 2: Formulation — COMPLETED -->
-                            <div class="phase-detail" data-detail="2">
-                                <div class="phase-detail-badge phase-badge-green">COMPLETED</div>
-                                <h4 class="phase-detail-title">Theoretical Formulation Design</h4>
-                                <p class="phase-detail-text">Designed complete evidence-based formulations for 3
-                                    functional beverages and 1 nutrition bar. Every ingredient selected from
-                                    peer-reviewed literature. Every dose set at clinically relevant thresholds —
-                                    not label decoration doses.</p>
-                                <div class="phase-detail-stat"><span class="phase-stat-num">3 + 1</span>
-                                    products formulation-designed</div>
-                            </div>
-
-                            <!-- Phase 3: TBI Incubation — ACTIVE -->
-                            <div class="phase-detail" data-detail="3">
-                                <div class="phase-detail-badge phase-badge-blue">WHERE WE ARE NOW</div>
-                                <h4 class="phase-detail-title">TBI Incubation at ACE, Hosur</h4>
-                                <p class="phase-detail-text">Accepted by the Technology Business Incubator at
-                                    Adhiyamaan College of Engineering, Hosur. Currently establishing lab access,
-                                    sourcing ingredient suppliers, and laying the operational groundwork for
-                                    prototype development.</p>
-                                <div class="phase-detail-bar">
-                                    <div class="phase-detail-bar-fill phase-bar-blue" style="width:35%"></div>
+                            <!-- Premium Research Result Block -->
+                            <div
+                                style="background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:3rem; margin:3rem 0; position:relative; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.03);">
+                                <div style="position:absolute; top:2rem; right:2rem; color:var(--border);">
+                                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="1">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                                    </svg>
                                 </div>
+                                <h4
+                                    style="font-family:var(--font-mono); font-size:0.85rem; letter-spacing:0.1em; text-transform:uppercase; color:#ef4444; margin-bottom:1rem;">
+                                    Diagnostic Result //</h4>
+                                <p
+                                    style="font-family:var(--font-serif); font-size:1.5rem; line-height:1.6; color:var(--text-main); margin-bottom:0;">
+                                    We analyzed extensive clinical data from ICMR, NFHS-5, and WHO India. The
+                                    patterns across urban demographics were consistent and alarming: the vast
+                                    majority of health-conscious individuals exhibit at least one critical
+                                    nutritional deficiency without realizing it.
+                                </p>
                             </div>
 
-                            <!-- Phase 4: Prototype — NEXT -->
-                            <div class="phase-detail" data-detail="4">
-                                <div class="phase-detail-badge phase-badge-grey">UP NEXT</div>
-                                <h4 class="phase-detail-title">Prototype Development</h4>
-                                <p class="phase-detail-text">Lab-scale formulation batches will be developed at
-                                    the TBI facility. This is where the theoretical formulations meet real
-                                    ingredients, real equipment, and real taste. Multiple iterations expected
-                                    per product.</p>
-                                <div class="phase-detail-bar">
-                                    <div class="phase-detail-bar-fill phase-bar-grey" style="width:0%"></div>
-                                </div>
+                            <div style="border-left:2px solid var(--text-main); padding-left:1.5rem;">
+                                <p
+                                    style="color:var(--text-main); font-size:1.35rem; font-family:var(--font-serif); font-style:italic; margin-bottom:0;">
+                                    The food system was failing people who were trying to do the right thing.<br>
+                                    "We decided the only option was to build it ourselves."
+                                </p>
                             </div>
-
-                            <!-- Phase 5: Testing & Validation — FUTURE -->
-                            <div class="phase-detail" data-detail="5">
-                                <div class="phase-detail-badge phase-badge-grey">FUTURE</div>
-                                <h4 class="phase-detail-title">Testing, Validation &amp; Clinical Study</h4>
-                                <p class="phase-detail-text">Sensory evaluation, shelf-life studies, FSSAI
-                                    compliance testing, and a planned 135-participant, 8-week clinical
-                                    validation study — all completed before any product goes to market. Results
-                                    published regardless of outcome.</p>
-                                <div class="phase-detail-bar">
-                                    <div class="phase-detail-bar-fill phase-bar-grey" style="width:0%"></div>
-                                </div>
-                            </div>
-
-                            <!-- Phase 6: Scale-up & Launch — FUTURE -->
-                            <div class="phase-detail" data-detail="6">
-                                <div class="phase-detail-badge phase-badge-grey">FUTURE</div>
-                                <h4 class="phase-detail-title">Scale-up &amp; Commercial Launch</h4>
-                                <p class="phase-detail-text">Manufacturing scale-up, regulated commercial
-                                    production, and market launch. Distribution built around transparency — with
-                                    every formulation decision, every test result, and every ingredient source
-                                    available for public review.</p>
-                                <div class="phase-detail-bar">
-                                    <div class="phase-detail-bar-fill phase-bar-grey" style="width:0%"></div>
-                                </div>
-                            </div>
-
                         </div>
-
                     </div>
 
-                    <!-- Phase stepper interactivity -->
-                    <script>
-                        (function () {
-                            var nodes = document.querySelectorAll('.phase-node');
-                            var details = document.querySelectorAll('.phase-detail');
-                            var current = 0;
-                            var autoTimer = null;
+                    <!-- Chapter 02: The Journey — MISSION CONTROL DASHBOARD -->
+                    <div id="chapter-02" class="chapter-section tab-pane"
+                        style="grid-area: 1 / 1; opacity: 0; visibility: hidden; transition: opacity 0.5s ease, visibility 0.5s ease; pointer-events: none;">
+                        <div
+                            style="display:inline-flex; align-items:center; gap:0.5rem; font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.1em; color:var(--text-main); margin-bottom:1.5rem; border:1px solid var(--border); padding:0.4rem 0.8rem; border-radius:50px; background:var(--bg);">
+                            <span style="width:6px; height:6px; background:var(--text-main); border-radius:50%;"></span>
+                            CHAPTER 02
+                        </div>
+                        <h3 class="headline"
+                            style="font-size:3rem; line-height:var(--leading-tight); margin-bottom:1.5rem; color:var(--text-main);">
+                            The Journey So Far</h3>
+                        <p
+                            style="font-size:1.15rem; line-height:1.7; color:var(--text-muted); margin-bottom:var(--space-lg); max-width:600px;">
+                            What we have built before we built anything physical. Most companies build first and
+                            think about science second. We spent months thinking about the science before building
+                            anything.
+                        </p>
 
-                            function showPhase(idx) {
-                                nodes.forEach(function (n) { n.classList.remove('is-active'); });
-                                details.forEach(function (d) { d.classList.remove('is-visible'); });
-                                nodes[idx].classList.add('is-active');
-                                details[idx].classList.add('is-visible');
-                                current = idx;
-                            }
+                        <!-- HORIZONTAL PHASE STEPPER -->
+                        <div class="phase-stepper">
 
-                            function startAuto() {
-                                autoTimer = setInterval(function () {
-                                    current = (current + 1) % nodes.length;
-                                    showPhase(current);
-                                }, 3000);
-                            }
+                            <!-- Step indicators row -->
+                            <div class="phase-track">
+                                <div class="phase-line">
+                                    <div class="phase-line-fill"></div>
+                                </div>
+                                <button class="phase-node phase-node-done is-active" data-phase="1"
+                                    aria-label="Phase 1">
+                                    <span class="phase-node-num">01</span>
+                                    <span class="phase-node-label">Research</span>
+                                </button>
+                                <button class="phase-node phase-node-done" data-phase="2" aria-label="Phase 2">
+                                    <span class="phase-node-num">02</span>
+                                    <span class="phase-node-label">Formulation</span>
+                                </button>
+                                <button class="phase-node phase-node-active" data-phase="3" aria-label="Phase 3">
+                                    <span class="phase-node-num">03</span>
+                                    <span class="phase-node-label">Incubation</span>
+                                </button>
+                                <button class="phase-node phase-node-pending" data-phase="4" aria-label="Phase 4">
+                                    <span class="phase-node-num">04</span>
+                                    <span class="phase-node-label">Prototype</span>
+                                </button>
+                                <button class="phase-node phase-node-pending" data-phase="5" aria-label="Phase 5">
+                                    <span class="phase-node-num">05</span>
+                                    <span class="phase-node-label">Validation</span>
+                                </button>
+                                <button class="phase-node phase-node-pending" data-phase="6" aria-label="Phase 6">
+                                    <span class="phase-node-num">06</span>
+                                    <span class="phase-node-label">Launch</span>
+                                </button>
+                            </div>
 
-                            function stopAuto() {
-                                clearInterval(autoTimer);
-                            }
+                            <!-- Detail panels (only one visible at a time) -->
+                            <div class="phase-details">
 
-                            // Click handler
-                            nodes.forEach(function (btn, idx) {
-                                btn.addEventListener('click', function () {
-                                    stopAuto();
-                                    showPhase(idx);
-                                    startAuto(); // restart timer from this point
+                                <!-- Phase 1: Research — COMPLETED -->
+                                <div class="phase-detail is-visible" data-detail="1">
+                                    <div class="phase-detail-badge phase-badge-green">COMPLETED</div>
+                                    <h4 class="phase-detail-title">Problem Analysis &amp; Nutritional Research</h4>
+                                    <p class="phase-detail-text">Systematically analyzed ICMR, NFHS-5, and WHO India
+                                        datasets. Mapped exact deficiency profiles across urban demographic
+                                        segments. Built the scientific evidence base that defines the problem our
+                                        products solve.</p>
+                                    <div class="phase-detail-stat"><span class="phase-stat-num">200+</span>
+                                        peer-reviewed studies reviewed</div>
+                                </div>
+
+                                <!-- Phase 2: Formulation — COMPLETED -->
+                                <div class="phase-detail" data-detail="2">
+                                    <div class="phase-detail-badge phase-badge-green">COMPLETED</div>
+                                    <h4 class="phase-detail-title">Theoretical Formulation Design</h4>
+                                    <p class="phase-detail-text">Designed complete evidence-based formulations for 3
+                                        functional beverages and 1 nutrition bar. Every ingredient selected from
+                                        peer-reviewed literature. Every dose set at clinically relevant thresholds —
+                                        not label decoration doses.</p>
+                                    <div class="phase-detail-stat"><span class="phase-stat-num">3 + 1</span>
+                                        products formulation-designed</div>
+                                </div>
+
+                                <!-- Phase 3: TBI Incubation — ACTIVE -->
+                                <div class="phase-detail" data-detail="3">
+                                    <div class="phase-detail-badge phase-badge-blue">WHERE WE ARE NOW</div>
+                                    <h4 class="phase-detail-title">TBI Incubation at ACE, Hosur</h4>
+                                    <p class="phase-detail-text">Accepted by the Technology Business Incubator at
+                                        Adhiyamaan College of Engineering, Hosur. Currently establishing lab access,
+                                        sourcing ingredient suppliers, and laying the operational groundwork for
+                                        prototype development.</p>
+                                    <div class="phase-detail-bar">
+                                        <div class="phase-detail-bar-fill phase-bar-blue" style="width:35%"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Phase 4: Prototype — NEXT -->
+                                <div class="phase-detail" data-detail="4">
+                                    <div class="phase-detail-badge phase-badge-grey">UP NEXT</div>
+                                    <h4 class="phase-detail-title">Prototype Development</h4>
+                                    <p class="phase-detail-text">Lab-scale formulation batches will be developed at
+                                        the TBI facility. This is where the theoretical formulations meet real
+                                        ingredients, real equipment, and real taste. Multiple iterations expected
+                                        per product.</p>
+                                    <div class="phase-detail-bar">
+                                        <div class="phase-detail-bar-fill phase-bar-grey" style="width:0%"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Phase 5: Testing & Validation — FUTURE -->
+                                <div class="phase-detail" data-detail="5">
+                                    <div class="phase-detail-badge phase-badge-grey">FUTURE</div>
+                                    <h4 class="phase-detail-title">Testing, Validation &amp; Clinical Study</h4>
+                                    <p class="phase-detail-text">Sensory evaluation, shelf-life studies, FSSAI
+                                        compliance testing, and a planned 135-participant, 8-week clinical
+                                        validation study — all completed before any product goes to market. Results
+                                        published regardless of outcome.</p>
+                                    <div class="phase-detail-bar">
+                                        <div class="phase-detail-bar-fill phase-bar-grey" style="width:0%"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Phase 6: Scale-up & Launch — FUTURE -->
+                                <div class="phase-detail" data-detail="6">
+                                    <div class="phase-detail-badge phase-badge-grey">FUTURE</div>
+                                    <h4 class="phase-detail-title">Scale-up &amp; Commercial Launch</h4>
+                                    <p class="phase-detail-text">Manufacturing scale-up, regulated commercial
+                                        production, and market launch. Distribution built around transparency — with
+                                        every formulation decision, every test result, and every ingredient source
+                                        available for public review.</p>
+                                    <div class="phase-detail-bar">
+                                        <div class="phase-detail-bar-fill phase-bar-grey" style="width:0%"></div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Phase stepper interactivity -->
+                        <script>
+                            (function () {
+                                var nodes = document.querySelectorAll('.phase-node');
+                                var details = document.querySelectorAll('.phase-detail');
+                                var current = 0;
+                                var autoTimer = null;
+
+                                function showPhase(idx) {
+                                    nodes.forEach(function (n) { n.classList.remove('is-active'); });
+                                    details.forEach(function (d) { d.classList.remove('is-visible'); });
+                                    nodes[idx].classList.add('is-active');
+                                    details[idx].classList.add('is-visible');
+                                    current = idx;
+                                }
+
+                                function startAuto() {
+                                    autoTimer = setInterval(function () {
+                                        current = (current + 1) % nodes.length;
+                                        showPhase(current);
+                                    }, 3000);
+                                }
+
+                                function stopAuto() {
+                                    clearInterval(autoTimer);
+                                }
+
+                                // Click handler
+                                nodes.forEach(function (btn, idx) {
+                                    btn.addEventListener('click', function () {
+                                        stopAuto();
+                                        showPhase(idx);
+                                        startAuto(); // restart timer from this point
+                                    });
                                 });
-                            });
 
-                            // Pause on hover
-                            var stepper = document.querySelector('.phase-stepper');
-                            if (stepper) {
-                                stepper.addEventListener('mouseenter', stopAuto);
-                                stepper.addEventListener('mouseleave', startAuto);
-                            }
+                                // Pause on hover
+                                var stepper = document.querySelector('.phase-stepper');
+                                if (stepper) {
+                                    stepper.addEventListener('mouseenter', stopAuto);
+                                    stepper.addEventListener('mouseleave', startAuto);
+                                }
 
-                            showPhase(0);
-                            startAuto();
-                        })();
-                    </script>
+                                showPhase(0);
+                                startAuto();
+                            })();
+                        </script>
+                    </div>
                 </div>
             </div>
-        </div>
 
+        </div>
         </div>
         </section>
         <section class="structure-section" id="about-vision"
