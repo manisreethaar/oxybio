@@ -2333,12 +2333,12 @@ body {
 /* --- O2 MOLECULE COMBINATION ANIMATION --- */
 .hero-animation-wrapper {
     position: relative;
-    width: 320px;
-    height: 320px;
+    width: 340px;
+    height: 340px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
+    margin: -60px auto 0;
 }
 
 /* Orbiting decorative rings */
@@ -4183,4 +4183,70 @@ p, h1, h2, h3, h4, blockquote { text-wrap: pretty; }
         font-size: 1.1rem !important;
         line-height: 1.5 !important;
     }
+}
+
+/* ═══════════════════════════════════════════════════════
+   NAV LOGO  —  O₂ | Bioinnovations
+   ═══════════════════════════════════════════════════════ */
+.nav-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+    text-decoration: none !important;
+    line-height: 1;
+    letter-spacing: 0;
+}
+.nav-logo:hover { text-decoration: none !important; }
+
+/* "O₂" — bold, chemical monogram */
+.logo-o2 {
+    font-family: var(--font-sans);
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--text-main);
+    letter-spacing: -0.02em;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0;
+}
+.logo-o2 sub {
+    font-size: 0.6em;
+    font-weight: 700;
+    vertical-align: sub;
+    font-family: var(--font-mono);
+    letter-spacing: 0;
+    margin-left: 0.05em;
+}
+
+/* Thin vertical separator */
+.logo-pipe {
+    display: inline-block;
+    width: 1px;
+    height: 16px;
+    background: currentColor;
+    opacity: 0.25;
+    margin: 0 0.55rem;
+    vertical-align: middle;
+    transition: opacity 0.25s;
+}
+
+/* "Bioinnovations" — light, tracked */
+.logo-bio {
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: 1.1rem;
+    letter-spacing: 0.04em;
+    color: var(--text-main);
+    opacity: 0.65;
+    transition: opacity 0.25s;
+}
+
+/* Hover: bio wakes up, pipe solidifies */
+.nav-logo:hover .logo-bio  { opacity: 1; }
+.nav-logo:hover .logo-pipe { opacity: 0.6; }
+
+@media (max-width: 768px) {
+    .logo-o2  { font-size: 0.95rem; }
+    .logo-bio { font-size: 0.95rem; }
+    .logo-pipe { height: 13px; margin: 0 0.4rem; }
 }
