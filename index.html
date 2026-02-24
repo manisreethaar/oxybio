@@ -12,7 +12,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/v2_premium.css?v=3">
+    <link rel="stylesheet" href="assets/css/v2_premium.css?v=4">
     <link rel="stylesheet" href="assets/css/styles.css?v=12">
 </head>
 
@@ -712,7 +712,10 @@ Modern Science.</h1>
                 <div class="container" style="padding-top:2rem; padding-bottom:1.5rem;">
                     <div
                         style="display:flex; justify-content:space-between; align-items:flex-end; gap:2rem; flex-wrap:wrap; border-bottom:1px solid var(--border); padding-bottom:2rem;">
-                        <div>
+                        <div style="position:relative;">
+                            <svg class="v2-timeline-svg" style="position:absolute; left:-40px; top:10px; height:150%; z-index:-1; overflow:visible;" preserveAspectRatio="none">
+                                <path class="v2-draw-path" d="M 0 0 L 0 300" stroke-linecap="round" />
+                            </svg>
                             <div
                                 style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1rem;">
                                 Transparency Report</div>
@@ -954,8 +957,9 @@ Modern Science.</h1>
 
     <script src="assets/js/main.js"></script>
 
-    <script src="assets/js/v2_canvas.js?v=3"></script>
-    <script src="assets/js/v2_premium.js?v=3"></script>
+    <script src="assets/js/v2_scroll.js"></script>
+    <script src="assets/js/v2_canvas.js?v=4"></script>
+    <script src="assets/js/v2_premium.js?v=4"></script>
     <!-- Mobile Apple-style Scroll Animation -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {

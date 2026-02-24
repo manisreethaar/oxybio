@@ -181,3 +181,29 @@
         transform: translateY(0) rotateX(0);
     }
 }
+/* 5. CINEMATIC SCROLL SVG MASKS */
+.v2-draw-path {
+    fill: none;
+    stroke: var(--accent); /* Oxygen brand green */
+    stroke-width: 2;
+    /* JS will calculate and apply stroke-dasharray & offset */
+    transition: stroke-dashoffset 0.1s linear; 
+}
+
+/* 6. PARALLAX IMAGE MASKS */
+.v2-parallax-container {
+    overflow: hidden;
+    position: relative;
+    border-radius: 20px; /* Mathematical precision masks */
+    width: 100%;
+    height: 100%;
+}
+
+.v2-parallax-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.1); /* Give room for parallax */
+    transform-origin: center center;
+    will-change: transform;
+}
