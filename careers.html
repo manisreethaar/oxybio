@@ -433,7 +433,7 @@
                     </div>
 
                     <!-- ====== RIGHT DETAILS (CONTENT PANES) ====== -->
-                    <div style="padding-top:var(--space-sm); padding-bottom:var(--space-2xl);">
+                    <div style="padding-top:var(--space-sm);">
                         <!-- Editorial Intro: Remains Static across tabs -->
                         <div
                             style="margin-bottom:var(--space-lg); padding-bottom:4rem; border-bottom:1px solid var(--border);">
@@ -451,7 +451,7 @@
                         </div>
 
                         <!-- Tab Contents Region (Replaces the long scroll) -->
-                        <div class="premium-tabs-container" style="position:relative; min-height:700px;">
+                        <div class="premium-tabs-container" style="position:relative;">
 
                             <div id="tab-overview" class="tab-content"
                                 style="display:block; animation:tabFadeIn 0.4s ease;">
@@ -677,12 +677,18 @@
                                 tabcontent = document.getElementsByClassName("tab-content");
                                 for (i = 0; i < tabcontent.length; i++) {
                                     tabcontent[i].style.display = "none";
+                                    tabcontent[i].style.animation = "none";
                                 }
                                 tablinks = document.getElementsByClassName("tab-link");
                                 for (i = 0; i < tablinks.length; i++) {
                                     tablinks[i].className = tablinks[i].className.replace(" active", "");
                                 }
-                                document.getElementById(tabName).style.display = "block";
+                                var activeTab = document.getElementById(tabName);
+                                activeTab.style.display = "block";
+                                // Trigger reflow to restart animation on every click
+                                void activeTab.offsetWidth;
+                                activeTab.style.animation = "tabFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards";
+
                                 evt.currentTarget.className += " active";
                             }
                         </script>
