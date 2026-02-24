@@ -4485,3 +4485,129 @@ p, h1, h2, h3, h4, blockquote { text-wrap: pretty; }
         font-size: 3rem;
     }
 }
+
+/* ═══════════════════════════════════════════════════════
+   SOLUTION CARDS — HOVER EFFECTS + ANIMATIONS
+   ═══════════════════════════════════════════════════════ */
+
+/* Staggered reveal on scroll */
+.solution-card {
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Shimmer sweep on hover */
+.solution-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.07),
+        transparent
+    );
+    transition: none;
+    pointer-events: none;
+    z-index: 1;
+}
+.solution-card:hover::after {
+    left: 150%;
+    transition: left 0.7s ease;
+}
+
+/* Card 01 (white) — lift + shadow */
+.solution-card-light:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 48px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.04);
+}
+
+/* Card 02 (dark) — lift + green glow */
+.solution-card-dark:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 48px rgba(13,138,116,0.2), 0 4px 12px rgba(0,0,0,0.3);
+}
+.solution-card-dark::after {
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.04),
+        transparent
+    );
+}
+
+/* Card 03 (alt) — lift + warm shadow */
+.solution-card-alt:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 48px rgba(107,82,68,0.1), 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Stagger entrance delays */
+.solution-card:nth-child(1) { transition-delay: 0s; }
+.solution-card:nth-child(2) { transition-delay: 0.1s; }
+.solution-card:nth-child(3) { transition-delay: 0.2s; }
+
+/* Bottom badge — the "proof point" at the bottom of each card */
+.card-proof-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    border-top: 1px solid var(--border);
+    padding-top: 1rem;
+    color: var(--text-muted);
+}
+
+.card-proof-badge-dark {
+    border-top-color: rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.35);
+}
+
+/* Proof badge icon dot */
+.proof-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #0D8A74;
+    display: inline-block;
+    animation: proofPulse 2s ease-in-out infinite;
+}
+
+@keyframes proofPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.3); }
+}
+
+/* Bottom stat number — animated counter effect */
+.solution-stat-num {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    position: relative;
+}
+
+/* Glow pulse behind the big number on hover */
+.solution-card:hover .solution-stat-num::after {
+    content: attr(data-value);
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: inherit;
+    filter: blur(12px);
+    opacity: 0.3;
+    animation: numGlow 1.5s ease-in-out infinite;
+}
+
+@keyframes numGlow {
+    0%, 100% { opacity: 0.15; }
+    50% { opacity: 0.4; }
+}
