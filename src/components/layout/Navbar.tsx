@@ -10,11 +10,9 @@ const Navbar = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-20">
                     <div className="flex-shrink-0 flex items-center">
-                        <span className="font-heading font-extrabold text-2xl tracking-tighter text-white flex items-center">
-                            Oxygen <span className="font-['Quicksand'] tracking-normal font-bold ml-1.5 opacity-90 pb-0.5 flex items-center">
-                                <img src="/assets/images/logo-b.svg" className="h-[1.1em] w-auto inline-block align-[-17%] mr-0 shrink-0" alt="B" />ioinnovations
-                            </span><span className="text-cyan-ethereal">.</span>
-                        </span>
+                        <a href="/">
+                            <img src="/assets/images/logo-full.png" alt="Oxygen Bioinnovations" className="h-9 w-auto block" />
+                        </a>
                     </div>
 
                     <div className="md:hidden flex items-center">
