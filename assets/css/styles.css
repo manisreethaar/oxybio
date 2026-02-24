@@ -3634,7 +3634,7 @@ p, h1, h2, h3, h4, blockquote { text-wrap: pretty; }
     
     /* 2. Overrule massive inline hero paddings that cause global white-space */
     section.structure-section[style*="padding-top"] { 
-        padding-top: 5rem !important; 
+        /* REMOVED: padding-top: 5rem !important; (Was clipping badges) */ 
         padding-bottom: 4rem !important; 
     }
     .hero-grid-layout { 
