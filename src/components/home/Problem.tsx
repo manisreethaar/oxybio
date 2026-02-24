@@ -38,8 +38,8 @@ const Problem = () => {
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.5, ease: [0.25, 1, 0.5, 1] }}
+                        viewport={{ once: true}}
+                        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                         className="text-3xl md:text-5xl font-heading font-extrabold text-white mb-6"
                     >
                         You are probably <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400">nutritionally deficient.</span>
@@ -47,8 +47,8 @@ const Problem = () => {
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 1, 0.5, 1] }}
+                        viewport={{ once: true}}
+                        transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
                         className="text-lg text-slate-ash leading-relaxed"
                     >
                         Not because you are careless. Because modern Indian life makes proper nutrition almost impossible.
@@ -61,8 +61,8 @@ const Problem = () => {
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-50px" }}
-                            transition={{ duration: 0.5, delay: i * 0.1, ease: [0.25, 1, 0.5, 1] }}
+                            viewport={{ once: true}}
+                            transition={{ duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
                             key={i}
                             className="border-l-2 border-cyan-ethereal/50 pl-6 py-2"
                         >
@@ -79,8 +79,8 @@ const Problem = () => {
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-50px" }}
-                            transition={{ duration: 0.5, delay: 0.2 + (i * 0.1), ease: [0.25, 1, 0.5, 1] }}
+                            viewport={{ once: true}}
+                            transition={{ duration: 0.5, delay: 0.2 + (i * 0.1), ease: [0.22, 1, 0.36, 1] }}
                             key={i}
                             className="glass-card p-8 group hover:bg-charcoal transition-colors duration-300"
                         >

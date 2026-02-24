@@ -29,8 +29,7 @@ const TrustBar = () => {
                             transition={{
                                 repeat: Infinity,
                                 ease: "linear",
-                                duration: 25,
-                            }}
+                                duration: 25}}
                         >
                             {scrollItems.map((item, index) => (
                                 <div

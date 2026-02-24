@@ -59,16 +59,16 @@ const Solution = () => {
                 <div className="text-center mb-20">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
-                        viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
+                        viewport={{ once: true}}
+                        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                         className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-charcoal border border-white/10 mb-6 shadow-[0_0_30px_rgba(102,252,241,0.15)]"
                     >
                         <Beaker className="w-8 h-8 text-cyan-ethereal" />
                     </motion.div>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
-                        viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.6, delay: 0.1, ease: [0.25, 1, 0.5, 1] }}
+                        viewport={{ once: true}}
+                        transition={{ duration: 0.4, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
                         className="text-3xl md:text-5xl font-heading font-extrabold text-white mb-6"
                     >
                         So we built one. Meet <span className="text-cyan-ethereal">Oxygen.</span>
@@ -76,8 +76,8 @@ const Solution = () => {
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 1, 0.5, 1] }}
+                        viewport={{ once: true}}
+                        transition={{ duration: 0.4, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
                         className="text-lg text-slate-ash leading-relaxed max-w-3xl mx-auto"
                     >
                         Three precision formulas. Each scientifically designed for a specific need. All built on the same uncompromising foundation: Indian ingredients, active nutrient forms, and doses that actually work.
@@ -90,8 +90,8 @@ const Solution = () => {
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-50px" }}
-                            transition={{ duration: 0.6, delay: i * 0.1, ease: [0.25, 1, 0.5, 1] }}
+                            viewport={{ once: true}}
+                            transition={{ duration: 0.4, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
                             key={i}
                             className="bg-obsidian border-t-2 border-white pt-8 flex flex-col gap-6"
                         >
@@ -143,8 +143,8 @@ const Solution = () => {
                     <motion.div
                         initial={{ opacity: 0, scale: 0.98 }}
                         whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true, margin: "-50px" }}
-                        transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 1, 0.5, 1] }}
+                        viewport={{ once: true}}
+                        transition={{ duration: 0.4, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
                         className="bg-white text-obsidian rounded-[2rem] flex flex-col justify-center items-center text-center p-16 mt-4 shadow-2xl premium-transition hover:transform hover:scale-[1.01]"
                     >
                         <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-ethereal/5 rounded-full blur-[80px]" />
