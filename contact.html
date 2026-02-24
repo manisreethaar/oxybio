@@ -10,8 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/styles.css?v=24">
-    <link rel="stylesheet" href="assets/css/v2_premium.css?v=24">
+    <link rel="stylesheet" href="assets/css/styles.css?v=26">
+    <link rel="stylesheet" href="assets/css/v2_premium.css?v=26">
 </head>
 
 <body>
@@ -127,11 +127,11 @@
 <!-- ═══════════════════════════════════════════════════════
      HERO SECTION
 ════════════════════════════════════════════════════════ -->
-<section class="structure-section" style="padding-top:180px; border-bottom:1px solid var(--border);">
+<section class="structure-section" style="padding-top:clamp(120px, 15vh, 180px); border-bottom:1px solid var(--border);">
     <div class="container">
         <div class="flow-left reveal" style="max-width:900px; margin-bottom:var(--space-md);">
             <div class="page-hero-badge">Partnerships & Inquiries</div>
-            <h1 class="display" style="font-size:clamp(4rem, 8vw, 6rem); line-height:0.95; letter-spacing:-0.03em;">Get in<br><em>Touch.</em></h1>
+            <h1 class="display" style="font-size:var(--text-6xl); line-height:0.95; letter-spacing:-0.03em;">Get in<br><em>Touch.</em></h1>
             <p class="subtext editorial-col" style="margin-top:2.5rem; font-size:1.25rem; line-height:1.6;">
                 Whether you're an investor, researcher, or potential partner, we'd love to hear from you. Let's explore how we can collaborate.
             </p>
@@ -148,7 +148,7 @@
         <div style="background:var(--bg); border:1px solid var(--border); border-radius:16px; overflow:hidden; box-shadow:0 20px 40px rgba(0,0,0,0.04); display:grid; grid-template-columns:1fr 1.5fr;" class="mobile-stack-card">
             
             <!-- Left Info Panel (Dark Mode) -->
-            <div style="background:var(--text-main); color:var(--bg); padding:var(--space-lg) display:flex; flex-direction:column; justify-content:space-between; position:relative; overflow:hidden;">
+            <div style="background:var(--text-main); color:var(--bg); padding:var(--space-lg); display:flex; flex-direction:column; justify-content:space-between; position:relative; overflow:hidden;">
                 
                 <!-- Abstract Background -->
                 <div style="position:absolute; bottom:-10%; right:-10%; width:300px; height:300px; background:radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%); pointer-events:none;"></div>
@@ -182,7 +182,7 @@
             </div>
 
             <!-- Right Form Panel -->
-            <div style="padding:var(--space-lg) background:#fff;">
+            <div style="padding:var(--space-lg); background:#fff;">
                 <h3 style="font-family:var(--font-serif); font-size:2rem; color:var(--text-main); margin-bottom:0.5rem;">Send an Inquiry.</h3>
                 <p style="font-size:1rem; color:var(--text-muted); margin-bottom:3rem;">Fill out the brief form below and we will route your inquiry to the correct team member.</p>
                 
