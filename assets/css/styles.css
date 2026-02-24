@@ -3886,3 +3886,13 @@ p, h1, h2, h3, h4, blockquote { text-wrap: pretty; }
         transform: translateY(0) scale(1) !important;
     }
 }
+
+
+/* 7. Fix align for Transparency Report stats on Mobile */
+@media (max-width: 768px) {
+    .mobile-left-align {
+        text-align: left !important;
+        align-items: flex-start !important;
+        margin-top: 1rem !important;
+    }
+}
