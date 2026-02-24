@@ -3863,3 +3863,26 @@ p, h1, h2, h3, h4, blockquote { text-wrap: pretty; }
         line-height: 1.4 !important;
     }
 }
+
+/* ─────────────────────────────────────────────────────────
+   Mobile Apple-Style Reveal Animation for Products
+───────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    /* Disable sticky vertical stacking which ruins mobile height/scroll constraints */
+    .apple-slide {
+        position: relative !important;
+        top: 0 !important;
+        margin-bottom: 2rem !important;
+        border-radius: 20px !important;
+        border: 1px solid var(--border) !important;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.03) !important;
+        /* Start state for the JS animation */
+        opacity: 0;
+        transform: translateY(40px) scale(0.97);
+        transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+    .apple-slide.is-revealed {
+        opacity: 1 !important;
+        transform: translateY(0) scale(1) !important;
+    }
+}
