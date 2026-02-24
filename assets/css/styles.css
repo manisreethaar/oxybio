@@ -97,7 +97,6 @@ body {
     font-family: var(--font-sans);
     background: var(--bg);
     color: var(--text-main);
-    ;
 }
 
 img {
@@ -643,7 +642,7 @@ a {
 }
 
 .marquee-track:hover {
-    /* animation-play-state: paused; */
+    /* /* removed: animation-play-state paused */ */
 }
 
 @keyframes marquee {
@@ -3277,7 +3276,7 @@ body {
     .mega-menu { display: none !important; }
 
     /* Section spacing */
-    .structure-section { padding-top: 3rem; padding-bottom: 3rem; }
+    /* structure-section padding consolidated below */
 }
 
 /* -- Mobile: 480px ---------------------------------------- */
@@ -3452,7 +3451,7 @@ body {
     }
 
     /* Overflow guard */
-    body, main, section { max-width: 100vw; ; }
+    body, main, section { max-width: 100vw; }
     .container { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
 }
 
@@ -3994,7 +3993,7 @@ p, h1, h2, h3, h4, blockquote { text-wrap: pretty; }
         opacity: 0;
         transform: translateY(30px);
         animation: fadeUpMobile 0.8s forwards;
-        /* animation-play-state: paused; */ /* Will trigger via JS or pseudo class if possible, else just let them run */
+        /* /* removed: animation-play-state paused */ */ /* Will trigger via JS or pseudo class if possible, else just let them run */
     }
     
     @keyframes fadeUpMobile {
@@ -4097,4 +4096,21 @@ p, h1, h2, h3, h4, blockquote { text-wrap: pretty; }
 
 @media (max-width: 1024px) {
     .desktop-nav, .custom-nav-replaced { display: none !important; }
+}
+
+/* =====================================================
+   DEFINITIVE MOBILE OVERRIDES
+   This block has final authority - do not add more below
+   ===================================================== */
+@media (max-width: 768px) {
+    section.structure-section[style*="padding-top"] {
+        padding-top: 100px !important;
+    }
+    .display, h1.display {
+        font-size: clamp(1.8rem, 9vw, 2.8rem) !important;
+        line-height: 1.05 !important;
+        word-break: break-word !important;
+    }
+    body { overflow-x: hidden !important; }
+    img { max-width: 100% !important; height: auto !important; }
 }
