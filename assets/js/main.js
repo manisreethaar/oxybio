@@ -1,5 +1,5 @@
 
-/* -- Main JS � Oxygen Bioinnovations v3 (Monochrome) -------- */
+/* -- Main JS  Oxygen Bioinnovations v3 (Monochrome) -------- */
 
 // -- Navigation --------------------------------------------
 const header = document.getElementById('header');
@@ -150,7 +150,7 @@ if (mobileCta && joinSection) {
 
 
 
-// ── Hash-based Tabbed Navigation ──────────────────────────────
+// ── Hash-based Tabbed Navigation ──────────────────────────
 function handleHashTabs() {
     const hash = window.location.hash;
     const visionSec = document.getElementById('about-vision');
@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// ── ScrollSpy for About Us Index ──────────────────────────────
+// ── ScrollSpy for About Us ────────────────────────────────
 function initScrollSpy() {
     const chapters = document.querySelectorAll('.chapter-section');
     const navItems = document.querySelectorAll('.index-nav-item');

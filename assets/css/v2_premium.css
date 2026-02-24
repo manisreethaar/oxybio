@@ -159,6 +159,7 @@
     display: inline-block;
     overflow: hidden;
     vertical-align: top;
+    perspective: 800px; /* required for rotateX animation to render correctly */
 }
 
 .char {

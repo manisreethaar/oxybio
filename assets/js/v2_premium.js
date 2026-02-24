@@ -47,11 +47,8 @@ function initMagneticButtons() {
         // Is mouse hovering?
         let hover = false;
 
-        item.addEventListener('mouseenter', () => {
-            hover = true;
-            item.style.transition = 'background 0.4s ease, color 0.4s ease, box-shadow 0.4s ease'; // Remove transform transition to let JS control it
-            if (content) content.style.transition = 'none';
-        });
+        // mouseenter now merged into the render loop trigger above
+        item.addEventListener('mouseenter_legacy_removed', () => {});
 
         item.addEventListener('mousemove', (e) => {
             const rect = item.getBoundingClientRect();
@@ -84,26 +81,24 @@ function initMagneticButtons() {
             cy = 0;
         });
 
-        // The animation loop predicting smooth physics using Linear Interpolation (Lerp)
+        // The animation loop - only runs while hover is active (performance fix)
+        let rafId = null;
         function render() {
-            if (hover) {
-                // Lerp formula: current = current + (target - current) * ease
-                cx += (x - cx) * 0.15;
-                cy += (y - cy) * 0.15;
-
-                // Move the whole button container
-                item.style.transform = `translate(${cx}px, ${cy}px) scale(1.05)`;
-
-                // Move the inner content slightly differently for 3D parallax
-                if (content) {
-                    content.style.transform = `translate(${cx * 0.5}px, ${cy * 0.5}px)`;
-                }
+            if (!hover) { rafId = null; return; } // Exit loop when mouse leaves
+            cx += (x - cx) * 0.15;
+            cy += (y - cy) * 0.15;
+            item.style.transform = `translate(${cx}px, ${cy}px) scale(1.05)`;
+            if (content) {
+                content.style.transform = `translate(${cx * 0.5}px, ${cy * 0.5}px)`;
             }
-            requestAnimationFrame(render);
+            rafId = requestAnimationFrame(render);
         }
 
-        // Start the loop
-        requestAnimationFrame(render);
+        // Start the loop only on mouseenter (not immediately)
+        // The previous code started it immediately for every button, wasting CPU
+        item.addEventListener('mouseenter', () => {
+            if (!rafId) rafId = requestAnimationFrame(render);
+        });
     });
 }
 
