@@ -1153,19 +1153,22 @@
         function switchTab(group, targetId) {
             if (window.innerWidth <= 768) return; // Disable tab logic on mobile stacking
 
-            // 1. Identify context container based on group
-            const containerId = group === 'story' ? 'about-story' : 'about-who';
-            const context = document.getElementById(containerId);
-            if (!context) return;
-
-            // 2. Clear active state from sidebar items in this section
-            const navItems = context.querySelectorAll('.index-nav-item');
+            // 1. Clear active state from sidebar items in this section group
+            const navItems = document.querySelectorAll('.index-nav-item');
             navItems.forEach(item => {
-                item.classList.remove('active-tab');
-                if (item.getAttribute('data-target') === targetId) {
-                    item.classList.add('active-tab');
+                const onclickAttr = item.getAttribute('onclick') || '';
+                if (onclickAttr.includes(`'${group}'`)) {
+                    item.classList.remove('active-tab');
+                    if (item.getAttribute('data-target') === targetId) {
+                        item.classList.add('active-tab');
+                    }
                 }
             });
+
+            // 2. Identify content container based on group
+            const containerId = group === 'story' ? 'story-tab-container' : 'who-tab-container';
+            const context = document.getElementById(containerId);
+            if (!context) return;
 
             // 3. Fade out all panes in this container, fade in the target
             const panes = context.querySelectorAll('.tab-pane');
@@ -1184,7 +1187,7 @@
             });
 
             // 4. Smooth scroll back to top of context to prevent disorientation
-            const yOffset = -100;
+            const yOffset = -150;
             const y = context.getBoundingClientRect().top + window.pageYOffset + yOffset;
             window.scrollTo({ top: y, behavior: 'smooth' });
         }
