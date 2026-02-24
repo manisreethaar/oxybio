@@ -643,7 +643,7 @@ a {
 }
 
 .marquee-track:hover {
-    animation-play-state: paused;
+    /* animation-play-state: paused; */
 }
 
 @keyframes marquee {
@@ -3994,7 +3994,7 @@ p, h1, h2, h3, h4, blockquote { text-wrap: pretty; }
         opacity: 0;
         transform: translateY(30px);
         animation: fadeUpMobile 0.8s forwards;
-        animation-play-state: paused; /* Will trigger via JS or pseudo class if possible, else just let them run */
+        /* animation-play-state: paused; */ /* Will trigger via JS or pseudo class if possible, else just let them run */
     }
     
     @keyframes fadeUpMobile {
@@ -4094,3 +4094,7 @@ p, h1, h2, h3, h4, blockquote { text-wrap: pretty; }
 }
 
 /* Cache bust trigger v22 */
+
+@media (max-width: 1024px) {
+    .desktop-nav, .custom-nav-replaced { display: none !important; }
+}
