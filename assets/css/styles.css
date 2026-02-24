@@ -3661,3 +3661,18 @@ p, h1, h2, h3, h4, blockquote { text-wrap: pretty; }
         text-align: left !important; /* Lists shouldn't be fully justified */
     }
 }
+
+
+/* 6. Fix Badge Alignment on wrapped text */
+@media (max-width: 768px) {
+    .badge {
+        align-items: flex-start !important;
+        text-align: left !important;
+        line-height: 1.4 !important;
+        padding: 0.6rem 1rem !important;
+    }
+    .badge::before {
+        margin-top: 0.45rem !important;
+        flex-shrink: 0 !important;
+    }
+}
