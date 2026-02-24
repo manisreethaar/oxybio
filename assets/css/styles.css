@@ -3717,15 +3717,23 @@ p, h1, h2, h3, h4, blockquote { text-wrap: pretty; }
 
     /* 4. Global Mobile Typography & Spacing Fixes */
     /* User requested justification alignment, better spacing, and unpacking of dense text */
-    p, .subtext, .editorial-col, .editorial-col p {
+    p, .editorial-col, .editorial-col p {
         text-align: justify !important;
         text-justify: inter-word !important;
         hyphens: auto !important;
         -webkit-hyphens: auto !important;
         -ms-hyphens: auto !important;
-        margin-bottom: 1.75rem !important; /* Increase vertical breathing room */
+        margin-bottom: 1.75rem !important;
         padding-left: 0.5rem !important;
         padding-right: 0.5rem !important;
+    }
+    
+    /* Exception for short hero text — never justify short blurbs or titles */
+    .subtext, .page-hero-badge {
+        text-align: left !important; /* or natural alignment */
+        text-justify: auto !important;
+        hyphens: none !important;
+        letter-spacing: normal !important;
     }
 
     /* 5. Improve list spacing for readability */
