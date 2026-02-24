@@ -17,7 +17,7 @@ const Hero = () => {
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6 }}
+                            transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
                             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-md"
                         >
                             <Sparkles className="w-4 h-4 text-cyan-ethereal" />
@@ -30,7 +30,7 @@ const Hero = () => {
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.1 }}
+                            transition={{ duration: 0.6, delay: 0.1, ease: [0.25, 1, 0.5, 1] }}
                         >
                             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-heading font-extrabold tracking-tight text-white leading-[1.1] mb-6">
                                 Ancient Ingredients.<br />
@@ -45,7 +45,7 @@ const Hero = () => {
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.2 }}
+                            transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 1, 0.5, 1] }}
                             className="text-lg md:text-xl text-slate-ash leading-relaxed max-w-2xl mb-10"
                         >
                             India is building its first precision nutrition system. Built on Millet, Medicinal Mushrooms, and decades of scientific research. Designed for ambitious Indians who deserve better than what currently exists.
@@ -55,7 +55,7 @@ const Hero = () => {
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.3 }}
+                            transition={{ duration: 0.6, delay: 0.3, ease: [0.25, 1, 0.5, 1] }}
                             className="flex flex-col sm:flex-row gap-4 mb-12 w-full sm:w-auto"
                         >
                             <button className="w-full sm:w-auto group relative flex items-center justify-center gap-2 bg-cyan-ethereal text-obsidian font-bold text-lg px-8 py-4 rounded-xl shadow-[0_0_20px_rgba(102,252,241,0.4)] hover:shadow-[0_0_30px_rgba(102,252,241,0.6)] hover:bg-white transition-all duration-300">
@@ -73,7 +73,7 @@ const Hero = () => {
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 1, delay: 0.2 }}
+                        transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 1, 0.5, 1] }}
                         className="flex-1 w-full hidden md:flex justify-center"
                     >
                         <div className="relative w-full max-w-md aspect-square">

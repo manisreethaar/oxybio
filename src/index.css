@@ -12,8 +12,14 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-obsidian text-slate-ash antialiased selection:bg-cyan-ethereal selection:text-obsidian;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1,
@@ -29,5 +35,18 @@
 @layer utilities {
   .glass-card {
     @apply bg-charcoal/80 backdrop-blur-md border border-white/5 rounded-2xl;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform, box-shadow;
+  }
+  
+  .glass-card:hover {
+    @apply border-white/15;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px -12px rgba(102, 252, 241, 0.15);
+  }
+
+  .premium-transition {
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform, opacity;
   }
 }

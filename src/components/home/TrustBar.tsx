@@ -24,7 +24,7 @@ const TrustBar = () => {
 
                     <div className="flex w-[300%] sm:w-[200%] md:w-[150%]">
                         <motion.div
-                            className="flex whitespace-nowrap items-center"
+                            className="flex whitespace-nowrap items-center will-change-transform"
                             animate={{ x: ["0%", "-33.33%"] }}
                             transition={{
                                 repeat: Infinity,

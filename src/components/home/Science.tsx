@@ -45,8 +45,8 @@ const Science = () => {
                 <div className="text-center mb-20">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
                         className="text-4xl md:text-6xl font-heading font-extrabold text-white mb-6"
                     >
                         We show our <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-seafoam to-cyan-ethereal">work.</span>
@@ -54,8 +54,8 @@ const Science = () => {
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.1 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.6, delay: 0.1, ease: [0.25, 1, 0.5, 1] }}
                         className="text-lg md:text-xl text-slate-ash leading-relaxed max-w-3xl mx-auto"
                     >
                         Every formulation decision has a peer-reviewed reason. Every ingredient has a verified source. Every claim is something we can prove.
@@ -68,8 +68,8 @@ const Science = () => {
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: i * 0.15 }}
+                            viewport={{ once: true, margin: "-50px" }}
+                            transition={{ duration: 0.6, delay: i * 0.15, ease: [0.25, 1, 0.5, 1] }}
                             key={i}
                             className="bg-charcoal/40 border border-white/5 p-8 rounded-3xl hover:border-cyan-ethereal/30 transition-colors"
                         >
@@ -91,7 +91,8 @@ const Science = () => {
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 1, 0.5, 1] }}
                     className="bg-charcoal rounded-3xl border border-white/10 overflow-hidden shadow-2xl"
                 >
                     {/* Top Banner highlight */}
