@@ -402,23 +402,22 @@
 
                             <!-- Phase stepper interactivity -->
                             <script>
-                            (function() {
-                                document.querySelectorAll('.phase-node').forEach(function(btn) {
-                                    btn.addEventListener('click', function() {
-                                        var phase = this.getAttribute('data-phase');
-                                        document.querySelectorAll('.phase-node').forEach(function(n) { n.classList.remove('is-active'); });
-                                        btn.classList.add('is-active');
-                                        document.querySelectorAll('.phase-detail').forEach(function(d) { d.classList.remove('is-visible'); });
-                                        document.querySelector('.phase-detail[data-detail="' + phase + '"]').classList.add('is-visible');
+                                (function () {
+                                    document.querySelectorAll('.phase-node').forEach(function (btn) {
+                                        btn.addEventListener('click', function () {
+                                            var phase = this.getAttribute('data-phase');
+                                            document.querySelectorAll('.phase-node').forEach(function (n) { n.classList.remove('is-active'); });
+                                            btn.classList.add('is-active');
+                                            document.querySelectorAll('.phase-detail').forEach(function (d) { d.classList.remove('is-visible'); });
+                                            document.querySelector('.phase-detail[data-detail="' + phase + '"]').classList.add('is-visible');
+                                        });
                                     });
-                                });
-                            })();
+                                })();
                             </script>
                         </div>
                     </div>
                 </div>
 
-            </div>
             </div>
         </section>
         <section class="structure-section" id="about-vision"
@@ -900,9 +899,6 @@
                 </div>
 
             </div>
-            </div>
-
-            </div>
         </section>
 
 
@@ -1044,7 +1040,7 @@
             navItems.forEach(item => {
                 item.classList.remove('active-tab');
                 if (item.getAttribute('data-target') === targetId) {
-               ist.add('active-tab');
+                    ist.add('active-tab');
                 }
             });
 
@@ -1082,28 +1078,28 @@
                     // Ease out cubic
                     const easeOut = 1 - Math.pow(1 - progress, 3);
        .innerHTML = Math.floor(easeOut * (end - start) + start);
-                    if (obj.dataset.suffix) obj.innerHTML += obj.dataset.suffix;
-                    if (progress < 1) {
-                        window.requestAnimationFrame(step);
-                    }
-                };
+            if (obj.dataset.suffix) obj.innerHTML += obj.dataset.suffix;
+            if (progress < 1) {
                 window.requestAnimationFrame(step);
+            }
+        };
+        window.requestAnimationFrame(step);
             };
 
-            const observer = new IntersectionObserver((entries, obs) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const target = entry.target;
-                        const endVal = parseInt(target.dataset.target, 10);
-                        if (!isNaN(endVal)) {
-                            animateValue(target, 0, endVal, 2000);
-                        }
-                        obs.unobserve(target); // Only animate once
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = entry.target;
+                    const endVal = parseInt(target.dataset.target, 10);
+                    if (!isNaN(endVal)) {
+                        animateValue(target, 0, endVal, 2000);
                     }
-                });
-            }, { threshold: 0.1 });
+                    obs.unobserve(target); // Only animate once
+                }
+            });
+        }, { threshold: 0.1 });
 
-            document.querySelectorAll('.count-up').forEach(el => observer.observe(el));
+        document.querySelectorAll('.count-up').forEach(el => observer.observe(el));
         });
     </script>
 
@@ -1122,7 +1118,8 @@
                 const observerOptions = {
                     root: null,
                     rootMargin: '0px 0px -5% 0px',
-                    thred: 0.           };
+                    thred: 0.
+                };
 
                 let delay = 0;
                 let lastIntersectTime = 0;
