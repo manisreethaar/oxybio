@@ -12,19 +12,24 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/styles.css?v=9">
+    <link rel="stylesheet" href="assets/css/styles.css?v=10">
 
     <style>
-        /* Mobile Fade-up Animations for About Sections */
+        /* Mobile Premium Fade-up Animations for About Sections */
         @media (max-width: 768px) {
             .mobile-fade-up {
                 opacity: 0;
-                transform: translateY(30px);
-                transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+                transform: translateY(50px) scale(0.97);
+                filter: blur(5px);
+                will-change: transform, opacity, filter;
+                transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), 
+                            transform 1.2s cubic-bezier(0.19, 1, 0.22, 1),
+                            filter 1s cubic-bezier(0.22, 1, 0.36, 1);
             }
             .mobile-fade-up.is-revealed {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateY(0) scale(1);
+                filter: blur(0);
             }
         }
     </style>
@@ -1107,10 +1112,23 @@
                     threshold: 0.1
                 };
 
+                let delay = 0;
+                let lastIntersectTime = 0;
                 const fadeObserver = new IntersectionObserver((entries, observer) => {
+                    const now = Date.now();
+                    if(now - lastIntersectTime > 100) { delay = 0; }
+                    
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
+                            entry.target.style.transitionDelay = `${delay}ms`;
+                            
+                            // Force reflow
+                            void entry.target.offsetWidth;
+                            
                             entry.target.classList.add('is-revealed');
+                            delay += 150;
+                            lastIntersectTime = now;
+                            observer.unobserve(entry.target);
                         }
                     });
                 }, observerOptions);

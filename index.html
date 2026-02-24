@@ -12,7 +12,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/styles.css?v=9">
+    <link rel="stylesheet" href="assets/css/styles.css?v=10">
 </head>
 
 <body>
@@ -959,18 +959,20 @@
                     threshold: 0.1
                 };
 
+                let delay = 0;
+                let lastIntersectTime = 0;
                 const slideObserver = new IntersectionObserver((entries, observer) => {
+                    const now = Date.now();
+                    if(now - lastIntersectTime > 100) { delay = 0; }
+                    
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
+                            entry.target.style.transitionDelay = `${delay}ms`;
+                            void entry.target.offsetWidth;
                             entry.target.classList.add('is-revealed');
-                            // Optional: unobserve after reveal if you only want it to happen once
-                            // observer.unobserve(entry.target); 
-                        } else {
-                            // Let it hide again when scrolled past so it re-animates on scroll up/down
-                            const rect = entry.target.getBoundingClientRect();
-                            if (rect.top > 0) { // Only reset if it went off the bottom
-                                entry.target.classList.remove('is-revealed');
-                            }
+                            delay += 200;
+                            lastIntersectTime = now;
+                            observer.unobserve(entry.target);
                         }
                     });
                 }, observerOptions);
