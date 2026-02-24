@@ -403,15 +403,16 @@
                             <!-- Phase stepper interactivity -->
                             <script>
                             (function() {
-                                document.querySelectorAll('.phase-node').forEach(btn => {
+                                document.querySelectorAll('.phase-node').forEach(function(btn) {
                                     btn.addEventListener('click', function() {
-                                        const phase = this.dataset.phase;
-                                        // Toggle active node
-                                        document.querySelectorAll('.phase-node').forEach(n => n.classList.remove('is-active'));
-                                        this.classList.add('is-active');
-                                        t                                l
-                                                                        .querySelectorAll('.phase-detail').forEach(d => d.classList.remove('is-visible'                                                                    document.querySe                                    se-detail[data-detail="' + phase + '"]').classList.add('is-visible');                                                             });
-                                                                                        })();
+                                        var phase = this.getAttribute('data-phase');
+                                        document.querySelectorAll('.phase-node').forEach(function(n) { n.classList.remove('is-active'); });
+                                        btn.classList.add('is-active');
+                                        document.querySelectorAll('.phase-detail').forEach(function(d) { d.classList.remove('is-visible'); });
+                                        document.querySelector('.phase-detail[data-detail="' + phase + '"]').classList.add('is-visible');
+                                    });
+                                });
+                            })();
                             </script>
                         </div>
                     </div>
