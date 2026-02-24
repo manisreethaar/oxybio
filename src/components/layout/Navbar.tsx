@@ -10,8 +10,8 @@ const Navbar = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-20">
                     <div className="flex-shrink-0 flex items-center">
-                        <span className="font-heading font-extrabold text-2xl tracking-tighter text-white">
-                            Oxygen Bioinnovations<span className="text-cyan-ethereal">.</span>
+                        <span className="font-heading font-extrabold text-2xl tracking-tighter text-white flex items-center">
+                            Oxygen <span className="font-['Quicksand'] tracking-normal font-bold ml-1.5 opacity-90 pb-0.5">Bioinnovations</span><span className="text-cyan-ethereal">.</span>
                         </span>
                     </div>
 
