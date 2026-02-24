@@ -207,3 +207,30 @@
     transform-origin: center center;
     will-change: transform;
 }
+
+/* 7. MOBILE PERFORMANCE OVERRIDES */
+@media (max-width: 768px) {
+    /* Simplify text reveal animation for mobile to prevent staggered 3D transform lag */
+    .char {
+        transform: translateY(20px);
+        transform-origin: center;
+        animation: textFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    
+    @keyframes textFadeUp {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    /* Completely kill the canvas node network on small devices to guarantee 60fps scrolling */
+    #biology-mesh {
+        display: none !important;
+        visibility: hidden !important;
+    }
+}

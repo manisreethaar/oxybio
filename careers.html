@@ -257,12 +257,23 @@
 
                                     /* Mobile fallback for tabs */
                                     @media (max-width: 768px) {
-                                        .side-tab-container {
-                                            display: flex;
-                                            overflow-x: auto;
-                                            margin-bottom: 0rem;
-                                            padding-bottom: 1rem;
+                                        .side-tab-container { display: none !important; }
+
+                                        .tab-content {
+                                            display: block !important;
+                                            opacity: 1 !important;
+                                            visibility: visible !important;
+                                            animation: none !important;
+                                            margin-bottom: 4rem;
+                                            padding-bottom: 3rem;
+                                            border-bottom: 1px dashed var(--border);
                                         }
+                                        .tab-content:last-child {
+                                            border-bottom: none;
+                                            padding-bottom: 0;
+                                            margin-bottom: 0;
+                                        }
+
 
                                         .side-tab {
                                             border-left: none !important;
