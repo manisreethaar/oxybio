@@ -22,12 +22,14 @@ const mobileClose = document.getElementById('mobileClose');
 function openMenu() {
     if(mobileMenu) mobileMenu.classList.add('open');
     if(mobileOverlay) mobileOverlay.classList.add('open');
+    if(menuBtn) menuBtn.classList.add('is-open');
     document.body.style.overflow = 'hidden';
 }
 
 function closeMenu() {
     if(mobileMenu) mobileMenu.classList.remove('open');
     if(mobileOverlay) mobileOverlay.classList.remove('open');
+    if(menuBtn) menuBtn.classList.remove('is-open');
     document.body.style.overflow = '';
 }
 

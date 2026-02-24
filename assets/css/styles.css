@@ -1416,21 +1416,75 @@ a {
 .menu-btn {
     display: none;
     flex-direction: column;
-    gap: 5px;
-    padding: 8px;
+    align-items: flex-end; /* right-align for asymmetric look */
+    gap: 6px;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
     background: none;
-    border: none;
+    border: 1.5px solid var(--border);
+    border-radius: 50%;
     cursor: pointer;
     color: var(--text-main);
+    position: relative;
+    transition: border-color 0.3s, transform 0.3s;
+    justify-content: center;
 }
 
+/* Ripple ring on hover */
+.menu-btn::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 1px solid var(--text-main);
+    opacity: 0;
+    transform: scale(0.85);
+    transition: opacity 0.35s, transform 0.35s;
+    pointer-events: none;
+}
+
+.menu-btn:hover {
+    border-color: var(--text-main);
+}
+
+.menu-btn:hover::after {
+    opacity: 0.2;
+    transform: scale(1);
+}
+
+/* TWO asymmetric lines — top line longer, bottom line shorter */
 .menu-btn span {
     display: block;
-    width: 24px;
-    height: 2px;
+    height: 1.5px;
     background: currentColor;
     border-radius: 2px;
-    transition: transform 0.3s, opacity 0.3s;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.3s,
+                width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.menu-btn span:nth-child(1) {
+    width: 20px; /* long line */
+}
+
+.menu-btn span:nth-child(2) {
+    width: 12px; /* short line — asymmetric premium touch */
+}
+
+.menu-btn span:nth-child(3) {
+    display: none; /* hide 3rd line — we only need 2 */
+}
+
+/* OPEN STATE — morphs into a slim X */
+.menu-btn.is-open span:nth-child(1) {
+    width: 18px;
+    transform: translateY(7.5px) rotate(45deg);
+}
+
+.menu-btn.is-open span:nth-child(2) {
+    width: 18px; /* equalize for X symmetry */
+    transform: translateY(-7.5px) rotate(-45deg);
 }
 
 .mobile-overlay {
