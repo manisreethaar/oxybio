@@ -57,27 +57,27 @@ const Solution = () => {
 
                 {/* Header */}
                 <div className="text-center mb-20">
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        viewport={{ once: true}}
-                        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                    <div
+                        
+                        
+                        
                         className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-charcoal border border-white/10 mb-6 shadow-[0_0_30px_rgba(102,252,241,0.15)]"
                     >
                         <Beaker className="w-8 h-8 text-cyan-ethereal" />
-                    </motion.div>
+                    </div>
                     <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        viewport={{ once: true}}
-                        transition={{ duration: 0.4, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+                        
+                        
+                        
                         className="text-3xl md:text-5xl font-heading font-extrabold text-white mb-6"
                     >
                         So we built one. Meet <span className="text-cyan-ethereal">Oxygen.</span>
                     </motion.h2>
                     <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true}}
-                        transition={{ duration: 0.4, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                        
+                        
+                        
+                        
                         className="text-lg text-slate-ash leading-relaxed max-w-3xl mx-auto"
                     >
                         Three precision formulas. Each scientifically designed for a specific need. All built on the same uncompromising foundation: Indian ingredients, active nutrient forms, and doses that actually work.
@@ -87,11 +87,11 @@ const Solution = () => {
                 {/* Product Cards Grid - Vertically stacked on mobile, 3-col on desktop */}
                 <div className="flex flex-col gap-12 mt-12">
                     {products.map((product, i) => (
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true}}
-                            transition={{ duration: 0.4, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                        <div
+                            
+                            
+                            
+                            
                             key={i}
                             className="bg-obsidian border-t-2 border-white pt-8 flex flex-col gap-6"
                         >
@@ -136,18 +136,18 @@ const Solution = () => {
                                     </p>
                                 </div>
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
 
                     {/* Coming Soon Protein Bar */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.98 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true}}
-                        transition={{ duration: 0.4, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                    <div
+                        
+                        
+                        
+                        
                         className="bg-white text-obsidian rounded-[2rem] flex flex-col justify-center items-center text-center p-16 mt-4 shadow-2xl premium-transition hover:transform hover:scale-[1.01]"
                     >
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-ethereal/5 rounded-full blur-[80px]" />
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-ethereal/5 rounded-full blur-sm" />
                         <div className="relative z-10 flex-1">
                             <div className="inline-block px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-bold tracking-wider text-cyan-seafoam mb-4">
                                 COMING SOON
@@ -163,7 +163,7 @@ const Solution = () => {
                             <span className="bg-obsidian px-3 py-1.5 rounded-lg border border-white/5">Ashwagandha</span>
                             <span className="bg-obsidian px-3 py-1.5 rounded-lg border border-white/5">Whey Isolate</span>
                         </div>
-                    </motion.div>
+                    </div>
 
                 </div>
             </div>

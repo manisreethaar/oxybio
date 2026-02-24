@@ -44,18 +44,18 @@ const Science = () => {
                 {/* Header */}
                 <div className="text-center mb-20">
                     <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        viewport={{ once: true}}
-                        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                        
+                        
+                        
                         className="text-4xl md:text-6xl font-heading font-extrabold text-white mb-6"
                     >
                         We show our <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-seafoam to-cyan-ethereal">work.</span>
                     </motion.h2>
                     <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true}}
-                        transition={{ duration: 0.4, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+                        
+                        
+                        
+                        
                         className="text-lg md:text-xl text-slate-ash leading-relaxed max-w-3xl mx-auto"
                     >
                         Every formulation decision has a peer-reviewed reason. Every ingredient has a verified source. Every claim is something we can prove.
@@ -65,11 +65,11 @@ const Science = () => {
                 {/* 3 Pillars Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
                     {pillars.map((pillar, i) => (
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true}}
-                            transition={{ duration: 0.4, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
+                        <div
+                            
+                            
+                            
+                            
                             key={i}
                             className="bg-charcoal/40 border border-white/5 p-8 rounded-3xl hover:border-cyan-ethereal/30 transition-colors"
                         >
@@ -83,16 +83,16 @@ const Science = () => {
                             <div className="bg-cyan-ethereal/10 border border-cyan-ethereal/20 text-cyan-ethereal px-4 py-3 rounded-lg text-sm font-semibold">
                                 {pillar.highlight}
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
 
                 {/* Data Comparison Section */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true}}
-                    transition={{ duration: 0.5, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                <div
+                    
+                    
+                    
+                    
                     className="bg-charcoal rounded-3xl border border-white/10 overflow-hidden shadow-2xl"
                 >
                     {/* Top Banner highlight */}
@@ -132,7 +132,7 @@ const Science = () => {
                             </tbody>
                         </table>
                     </div>
-                </motion.div>
+                </div>
 
             </div>
         </section>

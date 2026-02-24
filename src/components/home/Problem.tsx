@@ -29,26 +29,26 @@ const Problem = () => {
     return (
         <section id="problem" className="w-full py-20 md:py-32 relative bg-obsidian">
             {/* Subtle Background Elements */}
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-cyan-seafoam/5 rounded-full blur-[100px] pointer-events-none" />
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-cyan-seafoam/5 rounded-full blur-sm pointer-events-none" />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
                 {/* Header Section */}
                 <div className="text-center md:text-left mb-20 max-w-3xl">
                     <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true}}
-                        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                        
+                        
+                        
+                        
                         className="text-3xl md:text-5xl font-heading font-extrabold text-white mb-6"
                     >
                         You are probably <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400">nutritionally deficient.</span>
                     </motion.h2>
                     <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true}}
-                        transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+                        
+                        
+                        
+                        
                         className="text-lg text-slate-ash leading-relaxed"
                     >
                         Not because you are careless. Because modern Indian life makes proper nutrition almost impossible.
@@ -58,29 +58,29 @@ const Problem = () => {
                 {/* Big Stats Row */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
                     {stats.map((stat, i) => (
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true}}
-                            transition={{ duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                        <div
+                            
+                            
+                            
+                            
                             key={i}
                             className="border-l-2 border-cyan-ethereal/50 pl-6 py-2"
                         >
                             <div className="text-5xl font-heading font-bold text-white mb-2">{stat.value}</div>
                             <div className="text-lg font-medium text-cyan-seafoam mb-1">{stat.label}</div>
                             <div className="text-xs text-slate-ash/60">Source: {stat.source}</div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
 
                 {/* 3 Problems Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
                     {cards.map((card, i) => (
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true}}
-                            transition={{ duration: 0.5, delay: 0.2 + (i * 0.1), ease: [0.22, 1, 0.36, 1] }}
+                        <div
+                            
+                            
+                            
+                            
                             key={i}
                             className="glass-card p-8 group hover:bg-charcoal transition-colors duration-300"
                         >
@@ -91,7 +91,7 @@ const Problem = () => {
                             <p className="text-slate-ash/90 leading-relaxed text-sm md:text-base">
                                 {card.description}
                             </p>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
 

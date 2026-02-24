@@ -23,13 +23,10 @@ const TrustBar = () => {
                     <div className="absolute right-0 top-0 bottom-0 w-16 z-10 bg-gradient-to-l from-charcoal/80 to-transparent pointer-events-none" />
 
                     <div className="flex w-[300%] sm:w-[200%] md:w-[150%]">
-                        <motion.div
-                            className="flex whitespace-nowrap items-center will-change-transform"
-                            animate={{ x: ["0%", "-33.33%"] }}
-                            transition={{
-                                repeat: Infinity,
-                                ease: "linear",
-                                duration: 25}}
+                        <div
+                            className="flex whitespace-nowrap items-center animate-[marquee_25s_linear_infinite]"
+                            
+                            
                         >
                             {scrollItems.map((item, index) => (
                                 <div
@@ -42,7 +39,7 @@ const TrustBar = () => {
                                     </span>
                                 </div>
                             ))}
-                        </motion.div>
+                        </div>
                     </div>
                 </div>
             </div>

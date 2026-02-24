@@ -5,7 +5,7 @@ const Hero = () => {
     return (
         <section className="relative w-full pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden flex justify-center">
             {/* Background Glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-ethereal/20 rounded-full blur-[120px] opacity-50 pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-ethereal/20 rounded-full blur-sm opacity-50 pointer-events-none" />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
                 <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
@@ -83,7 +83,7 @@ const Hero = () => {
                             <div className="absolute inset-8 rounded-full border border-white/5 animate-[spin_10s_linear_infinite]" />
 
                             <div className="absolute inset-0 flex items-center justify-center">
-                                <div className="w-40 h-40 rounded-full bg-gradient-to-br from-cyan-ethereal via-cyan-seafoam to-obsidian blur-2xl opacity-40 animate-pulse" />
+                                <div className="w-40 h-40 rounded-full bg-gradient-to-br from-cyan-ethereal via-cyan-seafoam to-obsidian blur-sm opacity-40 animate-pulse" />
                                 <div className="absolute w-32 h-32 rounded-full glass-card flex items-center justify-center shadow-2xl">
                                     <span className="font-heading font-bold text-4xl text-white">O<span className="text-cyan-ethereal">2</span></span>
                                 </div>
