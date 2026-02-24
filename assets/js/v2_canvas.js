@@ -18,13 +18,13 @@ function initBiologyMesh() {
 
     // Config
     const config = {
-        particleCount: window.innerWidth > 768 ? 80 : 40, // Fewer on mobile
+        particleCount: window.innerWidth > 768 ? 80 : 25, // Fewer on mobile
         baseRadius: 2,
-        connectionDistance: window.innerWidth > 768 ? 150 : 100,
+        connectionDistance: window.innerWidth > 768 ? 150 : 80,
         mouseRepelRadius: 150,
         mouseRepelStrength: 0.05,
         speed: 0.3,
-        color: 'rgba(22, 163, 74, 0.4)' // Oxygen Green
+        color: 'rgba(0, 0, 0, 0.4)' // Deep Black for contrast
     };
 
     let particles = [];
@@ -96,7 +96,7 @@ function initBiologyMesh() {
                 if (distance < config.connectionDistance) {
                     const opacity = 1 - (distance / config.connectionDistance);
                     ctx.beginPath();
-                    ctx.strokeStyle = `rgba(22, 163, 74, ${opacity * 0.3})`;
+                    ctx.strokeStyle = `rgba(0, 0, 0, ${opacity * 0.25})`; // Darker strokes
                     ctx.lineWidth = 1;
                     ctx.moveTo(particles[i].x, particles[i].y);
                     ctx.lineTo(particles[j].x, particles[j].y);

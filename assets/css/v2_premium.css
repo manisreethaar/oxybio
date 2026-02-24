@@ -16,24 +16,57 @@
     width: 200%;
     height: 200%;
     background: transparent url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
-    opacity: 0.03; /* Ultra subtle, just enough to break solid colors */
+    opacity: 0.03;
+    /* Ultra subtle, just enough to break solid colors */
     pointer-events: none;
     z-index: 9999;
     animation: noisePattern 8s steps(10) infinite;
 }
 
 @keyframes noisePattern {
-    0% { transform: translate(0,0); }
-    10% { transform: translate(-5%,-5%); }
-    20% { transform: translate(-10%,5%); }
-    30% { transform: translate(5%,-10%); }
-    40% { transform: translate(-5%,15%); }
-    50% { transform: translate(-10%,5%); }
-    60% { transform: translate(15%,0); }
-    70% { transform: translate(0,10%); }
-    80% { transform: translate(-15%,0); }
-    90% { transform: translate(10%,5%); }
-    100% { transform: translate(5%,0); }
+    0% {
+        transform: translate(0, 0);
+    }
+
+    10% {
+        transform: translate(-5%, -5%);
+    }
+
+    20% {
+        transform: translate(-10%, 5%);
+    }
+
+    30% {
+        transform: translate(5%, -10%);
+    }
+
+    40% {
+        transform: translate(-5%, 15%);
+    }
+
+    50% {
+        transform: translate(-10%, 5%);
+    }
+
+    60% {
+        transform: translate(15%, 0);
+    }
+
+    70% {
+        transform: translate(0, 10%);
+    }
+
+    80% {
+        transform: translate(-15%, 0);
+    }
+
+    90% {
+        transform: translate(10%, 5%);
+    }
+
+    100% {
+        transform: translate(5%, 0);
+    }
 }
 
 /* 2. AMBIENT GLOWS
@@ -43,7 +76,7 @@
     position: absolute;
     width: 60vw;
     height: 60vw;
-    background: radial-gradient(circle, rgba(22, 163, 74, 0.04) 0%, rgba(22, 163, 74, 0) 70%);
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.04) 0%, rgba(0, 0, 0, 0) 70%);
     border-radius: 50%;
     filter: blur(60px);
     pointer-events: none;
@@ -60,13 +93,21 @@
     bottom: -10%;
     left: -10%;
     animation-delay: -7.5s;
-    background: radial-gradient(circle, rgba(22, 163, 74, 0.03) 0%, rgba(22, 163, 74, 0) 70%);
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.03) 0%, rgba(0, 0, 0, 0) 70%);
 }
 
 @keyframes floatGlow {
-    0% { transform: translate(0, 0) scale(1); }
-    50% { transform: translate(-5%, 5%) scale(1.1); }
-    100% { transform: translate(5%, -5%) scale(0.9); }
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(-5%, 5%) scale(1.1);
+    }
+
+    100% {
+        transform: translate(5%, -5%) scale(0.9);
+    }
 }
 
 /* 3. MAGNETIC BUTTON BASE CSS
@@ -130,6 +171,13 @@
 }
 
 @keyframes textSpinUp {
-    0% { opacity: 0; transform: translateY(100%) rotateX(-90deg); }
-    100% { opacity: 1; transform: translateY(0) rotateX(0); }
+    0% {
+        opacity: 0;
+        transform: translateY(100%) rotateX(-90deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) rotateX(0);
+    }
 }
