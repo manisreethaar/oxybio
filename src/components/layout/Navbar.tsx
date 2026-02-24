@@ -12,16 +12,18 @@ const Navbar = () => {
                     <div className="flex-shrink-0 flex items-center">
                         <span className="font-heading font-extrabold text-2xl tracking-tighter text-white flex items-center">
                             Oxygen <span className="font-['Quicksand'] tracking-normal font-bold ml-1.5 opacity-90 pb-0.5 flex items-center">
-                                <svg viewBox="0 0 100 130" className="h-[1.15em] w-auto -mb-[0.15em] mr-[0.02em] shrink-0" xmlns="http://www.w3.org/2000/svg">
+                                <svg viewBox="0 0 100 140" className="h-[1.15em] w-auto -mt-[0.1em] mr-[0.02em] shrink-0 inline-block" xmlns="http://www.w3.org/2000/svg">
                                     <defs>
-                                        <path id="b-path" d="M 25 25 Q 25 0 45 0 L 60 0 C 90 0 92 60 55 60 C 105 55 105 130 60 130 L 45 130 Q 25 130 25 105 Z M 48 20 C 35 20 35 45 48 45 C 60 45 60 20 48 20 Z" fillRule="evenodd" />
-                                        <clipPath id="b-clip"><use href="#b-path" /></clipPath>
+                                        <clipPath id="custom-b-wave">
+                                            <path d="M 25 0 C 55 0, 85 0, 85 30 C 85 50, 70 58, 55 60 C 85 62, 100 85, 95 115 C 90 140, 55 140, 25 140 C 10 140, 0 130, 0 115 L 0 25 C 0 10, 10 0, 25 0 Z M 40 28 C 25 28, 25 52, 40 52 C 55 52, 55 28, 40 28 Z" fillRule="evenodd" />
+                                        </clipPath>
                                     </defs>
-                                    <g clipPath="url(#b-clip)">
-                                        <rect width="100%" height="100%" fill="#0a2e5c" />
-                                        <ellipse cx="60" cy="10" rx="90" ry="100" fill="#1460aa" />
-                                        <ellipse cx="40" cy="-20" rx="90" ry="90" fill="#2096d2" />
-                                        <ellipse cx="20" cy="-40" rx="80" ry="80" fill="#3ac4e7" />
+                                    <g clipPath="url(#custom-b-wave)">
+                                        <rect x="-10" y="-10" width="120" height="160" fill="#0A1E4A" />
+                                        <path d="M -10 100 Q 30 70, 110 120 L 110 150 L -10 150 Z" fill="#1465AD" />
+                                        <path d="M -10 65 Q 40 45, 110 90 L 110 150 L -10 150 Z" fill="#1F8EC8" />
+                                        <path d="M -10 30 Q 50 10, 110 60 L 110 150 L -10 150 Z" fill="#2EBAED" />
+                                        <path d="M -10 -10 Q 60 -10, 110 30 L 110 0 L -10 0 Z" fill="#42D3FF" />
                                     </g>
                                 </svg>
                                 ioinnovations
