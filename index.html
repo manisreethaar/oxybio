@@ -12,8 +12,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/v2_premium.css?v=36">
-    <link rel="stylesheet" href="assets/css/styles.css?v=36">
+    <link rel="stylesheet" href="assets/css/v2_premium.css?v=37">
+    <link rel="stylesheet" href="assets/css/styles.css?v=37">
 </head>
 
 <body>
@@ -256,98 +256,65 @@
             <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
      PROBLEM SECTION
 â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
-            <section class="structure-section" id="problem">
-                <div class="container">
-                    <div style="display:grid;grid-template-columns:1fr 2fr;gap:var(--space-2xl);align-items:center;"
-                        class="mobile-stack">
-                        <div class="flow-left reveal">
-                            <div class="section-label">
-                                <div class="section-label-line"></div>
-                                <span class="section-label-text">The Problem</span>
-                            </div>
-                            <h2 class="headline" style="margin-top:var(--space-sm);">You are probably nutritionally
-                                deficient.</h2>
-                            <p class="subtext editorial-col" style="margin-top:var(--space-sm);">Not because you are
-                                careless. Because modern Indian life makes proper nutrition almost impossible.</p>
-                            <div style="margin-top:var(--space-md);">
-                                <a href="problem.html" class="btn btn-outline">Read the Clinical Data</a>
-                            </div>
+            <!-- ═══════════════════════════════════════════════════
+                 PROBLEM SECTION — DARK CINEMATIC PANEL
+            ═══════════════════════════════════════════════════ -->
+            <section id="problem" class="problem-dark-panel">
+                
+                <!-- TOP ROW: Three oversized stat counters -->
+                <div class="container reveal">
+                    <div class="problem-stats-row">
+                        <div class="problem-stat-card">
+                            <div class="problem-stat-num" data-target="73" data-suffix="%">73%</div>
+                            <div class="problem-stat-label">Vitamin D Deficiency in Urban India</div>
+                            <div class="problem-stat-source">Source: ICMR National Nutrition Survey, 2022</div>
                         </div>
-
-                        <!-- Bento Structure for Problem Cards -->
-                        <div class="bento-grid reveal" style="margin-top:0;">
-
-                            <!-- KEY STATISTICS -->
-                            <div class="bento-cell" style="grid-column: span 6;">
-                                <div class="data-num" data-target="73" data-suffix="%"
-                                    style="font-size:var(--text-6xl); line-height:var(--leading-none);">73%</div>
-                                <div class="data-label"
-                                    style="font-size:var(--text-base); font-weight:600; margin-top:0.5rem; line-height:var(--leading-snug);">
-                                    Vitamin D Deficiency in Urban India</div>
-                                <div class="stat-bar-container" style="display:block; margin: 1rem 0;">
-                                    <div class="stat-bar-fill" style="width: 73%;"></div>
-                                </div>
-                                <p class="text-meta">(Source: ICMR National Nutrition Survey, 2022)</p>
-                            </div>
-
-                            <div class="bento-cell" style="grid-column: span 6;">
-                                <div class="data-num" data-target="50" data-suffix="%"
-                                    style="font-size:var(--text-6xl); line-height:var(--leading-none);">50%</div>
-                                <div class="data-label"
-                                    style="font-size:var(--text-base); font-weight:600; margin-top:0.5rem; line-height:var(--leading-snug);">
-                                    Skip at least one primary meal/day</div>
-                                <div class="stat-bar-container" style="display:block; margin: 1rem 0;">
-                                    <div class="stat-bar-fill" style="width: 50%;"></div>
-                                </div>
-                                <p class="text-meta">(Source: ASSOCHAM Health Survey)</p>
-                            </div>
-
-                            <div class="bento-cell" style="grid-column: span 12;">
-                                <div class="data-num" data-target="68" data-suffix="%"
-                                    style="font-size:var(--text-6xl); line-height:var(--leading-none); color:#DC2626;">
-                                    68%</div>
-                                <div class="data-label"
-                                    style="font-size:var(--text-lg); font-weight:600; margin-top:0.5rem; line-height:var(--leading-snug);">
-                                    Indian health drinks fail label claims</div>
-                                <div class="stat-bar-container" style="display:block; margin: 1rem 0;">
-                                    <div class="stat-bar-fill" style="width: 68%; background:#DC2626;"></div>
-                                </div>
-                                <p class="text-meta">(Source: Centre for Science and Environment Report)</p>
-                            </div>
-
-                            <!-- PROBLEM DETAILS -->
-                            <div class="bento-cell" style="grid-column: span 12; background:var(--bg-alt);">
-                                <h4
-                                    style="font-family:var(--font-serif); font-size:var(--text-xl); line-height:var(--leading-relaxed); margin-bottom:0.5rem;">
-                                    01 / No time for real nutrition</h4>
-                                <p style="color:var(--text-muted); line-height:1.6; font-size:0.95rem;">The average
-                                    working professional has 22 minutes for lunch, often at their desk. Students skip
-                                    meals before exams. Athletes eat whatever is convenient after training. The food
-                                    system was not designed for how Indians actually live.</p>
-                            </div>
-
-                            <div class="bento-cell" style="grid-column: span 12; background:var(--bg-alt);">
-                                <h4
-                                    style="font-family:var(--font-serif); font-size:var(--text-xl); line-height:var(--leading-relaxed); margin-bottom:0.5rem;">
-                                    02 / Existing products deceive you</h4>
-                                <p style="color:var(--text-muted); line-height:1.6; font-size:0.95rem;">Most Indian
-                                    health drinks are primarily sugar with token doses of vitamins your body cannot
-                                    absorb. Cheap synthetic forms, under-dosed actives, misleading labels. The same
-                                    brand sells better formulas in foreign markets. You deserve to know this.</p>
-                            </div>
-
-                            <div class="bento-cell" style="grid-column: span 12; background:var(--bg-alt);">
-                                <h4
-                                    style="font-family:var(--font-serif); font-size:var(--text-xl); line-height:var(--leading-relaxed); margin-bottom:0.5rem;">
-                                    03 / Imported solutions do not fit India</h4>
-                                <p style="color:var(--text-muted); line-height:1.6; font-size:0.95rem;">Products
-                                    designed for Western nutritional deficiencies miss what Indian bodies need. They do
-                                    not understand Ragi, Moringa, or Ashwagandha. They do not understand how Indians
-                                    eat, work, or train. India needs an Indian solution.</p>
-                            </div>
+                        <div class="problem-stat-card">
+                            <div class="problem-stat-num" data-target="50" data-suffix="%">50%</div>
+                            <div class="problem-stat-label">Skip at least one primary meal/day</div>
+                            <div class="problem-stat-source">Source: ASSOCHAM Health Survey</div>
+                        </div>
+                        <div class="problem-stat-card problem-stat-danger">
+                            <div class="problem-stat-num" data-target="68" data-suffix="%">68%</div>
+                            <div class="problem-stat-label">Indian health drinks fail label claims</div>
+                            <div class="problem-stat-source">Source: Centre for Science and Environment Report</div>
                         </div>
                     </div>
                 </div>
+
+                <!-- CENTER: dramatic heading + subtext -->
+                <div class="container reveal">
+                    <div class="problem-headline-block">
+                        <div class="problem-label-tag">The Problem</div>
+                        <h2 class="problem-main-title">You are probably<br>nutritionally deficient.</h2>
+                        <p class="problem-subtext">Not because you are careless. Because modern Indian life makes proper nutrition almost impossible.</p>
+                        <a href="problem.html" class="problem-cta">Read the Clinical Data
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- BOTTOM: Three vertical problem panels -->
+                <div class="container reveal">
+                    <div class="problem-panels">
+                        <div class="problem-panel">
+                            <div class="problem-panel-num">01</div>
+                            <h4 class="problem-panel-title">No time for real nutrition</h4>
+                            <p class="problem-panel-text">The average working professional has 22 minutes for lunch, often at their desk. Students skip meals before exams. Athletes eat whatever is convenient after training. The food system was not designed for how Indians actually live.</p>
+                        </div>
+                        <div class="problem-panel">
+                            <div class="problem-panel-num">02</div>
+                            <h4 class="problem-panel-title">Existing products deceive you</h4>
+                            <p class="problem-panel-text">Most Indian health drinks are primarily sugar with token doses of vitamins your body cannot absorb. Cheap synthetic forms, under-dosed actives, misleading labels. The same brand sells better formulas in foreign markets. You deserve to know this.</p>
+                        </div>
+                        <div class="problem-panel">
+                            <div class="problem-panel-num">03</div>
+                            <h4 class="problem-panel-title">Imported solutions do not fit India</h4>
+                            <p class="problem-panel-text">Products designed for Western nutritional deficiencies miss what Indian bodies need. They do not understand Ragi, Moringa, or Ashwagandha. They do not understand how Indians eat, work, or train. India needs an Indian solution.</p>
+                        </div>
+                    </div>
+                </div>
+
             </section>
 
             <!-- ═══════════════════════════════════════════════════════
@@ -960,8 +927,8 @@
     <script src="assets/js/main.js"></script>
 
     <script src="assets/js/v2_scroll.js"></script>
-    <script src="assets/js/v2_canvas.js?v=36"></script>
-    <script src="assets/js/v2_premium.js?v=36"></script>
+    <script src="assets/js/v2_canvas.js?v=37"></script>
+    <script src="assets/js/v2_premium.js?v=37"></script>
     <!-- Mobile Apple-style Scroll Animation -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
