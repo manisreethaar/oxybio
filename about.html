@@ -12,8 +12,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/styles.css?v=40">
-    <link rel="stylesheet" href="assets/css/v2_premium.css?v=40">
+    <link rel="stylesheet" href="assets/css/styles.css?v=41">
+    <link rel="stylesheet" href="assets/css/v2_premium.css?v=41">
 
     <style>
         /* Mobile Premium Fade-up Animations for About Sections */
@@ -315,101 +315,104 @@
                                 anything.
                             </p>
 
-                            <!-- MISSION CONTROL DASHBOARD -->
-                            <div class="mc-dashboard">
+                            <!-- HORIZONTAL PHASE STEPPER -->
+                            <div class="phase-stepper">
 
-                                <!-- Progress bar across top -->
-                                <div class="mc-progress-track">
-                                    <div class="mc-progress-fill" style="width: 55%;"></div>
-                                    <div class="mc-progress-label">MISSION PROGRESS — 55% TO LAUNCH</div>
+                                <!-- Step indicators row -->
+                                <div class="phase-track">
+                                    <div class="phase-line">
+                                        <div class="phase-line-fill"></div>
+                                    </div>
+                                    <button class="phase-node phase-node-done is-active" data-phase="1"
+                                        aria-label="Phase 1">
+                                        <span class="phase-node-num">01</span>
+                                        <span class="phase-node-label">Research</span>
+                                    </button>
+                                    <button class="phase-node phase-node-done" data-phase="2" aria-label="Phase 2">
+                                        <span class="phase-node-num">02</span>
+                                        <span class="phase-node-label">Formulation</span>
+                                    </button>
+                                    <button class="phase-node phase-node-wip" data-phase="3" aria-label="Phase 3">
+                                        <span class="phase-node-num">03</span>
+                                        <span class="phase-node-label">Regulatory</span>
+                                    </button>
+                                    <button class="phase-node phase-node-active" data-phase="4" aria-label="Phase 4">
+                                        <span class="phase-node-num">04</span>
+                                        <span class="phase-node-label">Incubation</span>
+                                    </button>
+                                    <button class="phase-node phase-node-pending" data-phase="5" aria-label="Phase 5">
+                                        <span class="phase-node-num">05</span>
+                                        <span class="phase-node-label">Growth</span>
+                                    </button>
                                 </div>
 
-                                <!-- Dashboard Grid -->
-                                <div class="mc-grid">
-
-                                    <!-- Phase 1: COMPLETED -->
-                                    <div class="mc-card mc-complete">
-                                        <div class="mc-card-header">
-                                            <div class="mc-status-dot mc-dot-green"></div>
-                                            <span class="mc-phase">PHASE 01</span>
-                                            <span class="mc-badge mc-badge-green">COMPLETE</span>
-                                        </div>
-                                        <h4 class="mc-title">6+ months of nutritional deficiency research</h4>
-                                        <p class="mc-desc">Analyzed ICMR, NFHS-5, WHO India data. Mapped exact
+                                <!-- Detail panels (only one visible at a time) -->
+                                <div class="phase-details">
+                                    <div class="phase-detail is-visible" data-detail="1">
+                                        <div class="phase-detail-badge phase-badge-green">COMPLETED</div>
+                                        <h4 class="phase-detail-title">6+ months of nutritional deficiency research</h4>
+                                        <p class="phase-detail-text">Analyzed ICMR, NFHS-5, WHO India data. Mapped exact
                                             deficiency profiles by demographic and lifestyle. Built the evidence base
                                             for product necessity.</p>
-                                        <div class="mc-metric">
-                                            <span class="mc-metric-num">200+</span>
-                                            <span class="mc-metric-label">Studies Reviewed</span>
+                                        <div class="phase-detail-stat"><span class="phase-stat-num">200+</span> studies
+                                            reviewed</div>
+                                    </div>
+                                    <div class="phase-detail" data-detail="2">
+                                        <div class="phase-detail-badge phase-badge-green">COMPLETED</div>
+                                        <h4 class="phase-detail-title">Complete formulation design</h4>
+                                        <p class="phase-detail-text">Reviewed 200+ peer-reviewed studies. Designed
+                                            complete formulas for 3 drinks + 1 bar. Every ingredient evidence-based.
+                                            Every dose clinically relevant.</p>
+                                        <div class="phase-detail-stat"><span class="phase-stat-num">3+1</span> products
+                                            designed</div>
+                                    </div>
+                                    <div class="phase-detail" data-detail="3">
+                                        <div class="phase-detail-badge phase-badge-amber">IN PROGRESS</div>
+                                        <h4 class="phase-detail-title">Regulatory pathway fully mapped</h4>
+                                        <p class="phase-detail-text">FSSAI compliance audited per ingredient. Clinical
+                                            study protocol designed. Ethics committee application in process. Label
+                                            compliance framework completed.</p>
+                                        <div class="phase-detail-bar">
+                                            <div class="phase-detail-bar-fill" style="width:70%"></div>
                                         </div>
                                     </div>
-
-                                    <!-- Phase 2: COMPLETED -->
-                                    <div class="mc-card mc-complete">
-                                        <div class="mc-card-header">
-                                            <div class="mc-status-dot mc-dot-green"></div>
-                                            <span class="mc-phase">PHASE 02</span>
-                                            <span class="mc-badge mc-badge-green">COMPLETE</span>
-                                        </div>
-                                        <h4 class="mc-title">Complete formulation design</h4>
-                                        <p class="mc-desc">Reviewed 200+ peer-reviewed studies. Designed complete
-                                            formulas for 3 drinks + 1 bar. Every ingredient evidence-based. Every dose
-                                            clinically relevant.</p>
-                                        <div class="mc-metric">
-                                            <span class="mc-metric-num">3+1</span>
-                                            <span class="mc-metric-label">Products Designed</span>
+                                    <div class="phase-detail" data-detail="4">
+                                        <div class="phase-detail-badge phase-badge-blue">ACTIVE STAGE</div>
+                                        <h4 class="phase-detail-title">TBI Incubation secured</h4>
+                                        <p class="phase-detail-text">Accepted by Technology Business Incubator at ACE,
+                                            Hosur. Prototype development currently underway. Sensory testing beginning
+                                            soon.</p>
+                                        <div class="phase-detail-bar">
+                                            <div class="phase-detail-bar-fill phase-bar-blue" style="width:40%"></div>
                                         </div>
                                     </div>
-
-                                    <!-- Phase 3: IN PROGRESS -->
-                                    <div class="mc-card mc-progress">
-                                        <div class="mc-card-header">
-                                            <div class="mc-status-dot mc-dot-amber"></div>
-                                            <span class="mc-phase">PHASE 03</span>
-                                            <span class="mc-badge mc-badge-amber">IN PROGRESS</span>
-                                        </div>
-                                        <h4 class="mc-title">Regulatory pathway fully mapped</h4>
-                                        <p class="mc-desc">FSSAI compliance audited per ingredient. Clinical study
-                                            protocol designed. Ethics committee application in process. Label compliance
-                                            framework completed.</p>
-                                        <div class="mc-mini-bar">
-                                            <div class="mc-mini-fill" style="width:70%;"></div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Phase 4: ACTIVE -->
-                                    <div class="mc-card mc-active">
-                                        <div class="mc-card-header">
-                                            <div class="mc-status-dot mc-dot-blue"></div>
-                                            <span class="mc-phase">PHASE 04</span>
-                                            <span class="mc-badge mc-badge-blue">ACTIVE</span>
-                                        </div>
-                                        <h4 class="mc-title">TBI Incubation secured</h4>
-                                        <p class="mc-desc">Accepted by Technology Business Incubator at ACE, Hosur.
-                                            Prototype development currently underway. Sensory testing beginning soon.
+                                    <div class="phase-detail" data-detail="5">
+                                        <div class="phase-detail-badge phase-badge-grey">GROWING</div>
+                                        <h4 class="phase-detail-title">Waitlist growth</h4>
+                                        <p class="phase-detail-text">Before a single product exists — validation that
+                                            the demand is real. Real people who believe something better should exist.
                                         </p>
-                                        <div class="mc-mini-bar">
-                                            <div class="mc-mini-fill mc-fill-blue" style="width:40%;"></div>
+                                        <div class="phase-detail-bar">
+                                            <div class="phase-detail-bar-fill phase-bar-grey" style="width:20%"></div>
                                         </div>
                                     </div>
-
-                                    <!-- Phase 5: GROWING -->
-                                    <div class="mc-card mc-growing">
-                                        <div class="mc-card-header">
-                                            <div class="mc-status-dot mc-dot-grey"></div>
-                                            <span class="mc-phase">PHASE 05</span>
-                                            <span class="mc-badge mc-badge-grey">GROWING</span>
-                                        </div>
-                                        <h4 class="mc-title">Waitlist growth</h4>
-                                        <p class="mc-desc">Before a single product exists — validation that the demand
-                                            is real. Real people who believe something better should exist.</p>
-                                        <div class="mc-mini-bar">
-                                            <div class="mc-mini-fill mc-fill-grey" style="width:20%;"></div>
-                                        </div>
-                                    </div>
-
                                 </div>
+
                             </div>
+
+                            <!-- Phase stepper interactivity -->
+                            <script>
+                            (function() {
+                                document.querySelectorAll('.phase-node').forEach(btn => {
+                                    btn.addEventListener('click', function() {
+                                        const phase = this.dataset.phase;
+                                        // Toggle active node
+                                        document.querySelectorAll('.phase-node').forEach(n => n.classList.remove('is-active'));
+                                        this.classList.add('is-active');
+                                        t                                l
+                                                                        .querySelectorAll('.phase-detail').forEach(d => d.classList.remove('is-visible'                                                                    document.querySe                                    se-detail[data-detail="' + phase + '"]').classList.add('is-visible');                                                             });
+                                                                                        })();
+                            </script>
                         </div>
                     </div>
                 </div>
@@ -1040,7 +1043,7 @@
             navItems.forEach(item => {
                 item.classList.remove('active-tab');
                 if (item.getAttribute('data-target') === targetId) {
-                    item.classList.add('active-tab');
+               ist.add('active-tab');
                 }
             });
 
@@ -1077,7 +1080,7 @@
                     const progress = Math.min((timestamp - startTimestamp) / duration, 1);
                     // Ease out cubic
                     const easeOut = 1 - Math.pow(1 - progress, 3);
-                    obj.innerHTML = Math.floor(easeOut * (end - start) + start);
+       .innerHTML = Math.floor(easeOut * (end - start) + start);
                     if (obj.dataset.suffix) obj.innerHTML += obj.dataset.suffix;
                     if (progress < 1) {
                         window.requestAnimationFrame(step);
@@ -1118,8 +1121,7 @@
                 const observerOptions = {
                     root: null,
                     rootMargin: '0px 0px -5% 0px',
-                    threshold: 0.1
-                };
+                    thred: 0.           };
 
                 let delay = 0;
                 let lastIntersectTime = 0;
