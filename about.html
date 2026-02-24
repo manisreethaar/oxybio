@@ -12,7 +12,23 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/styles.css?v=8">
+    <link rel="stylesheet" href="assets/css/styles.css?v=9">
+
+    <style>
+        /* Mobile Fade-up Animations for About Sections */
+        @media (max-width: 768px) {
+            .mobile-fade-up {
+                opacity: 0;
+                transform: translateY(30px);
+                transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+            .mobile-fade-up.is-revealed {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+
 </head>
 
 <body>
@@ -1072,7 +1088,41 @@
             document.querySelectorAll('.count-up').forEach(el => observer.observe(el));
         });
     </script>
+
+    <!-- Mobile Apple-style Fade Up Animation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.innerWidth <= 768) {
+                // Select elements that need the premium fade up
+                const animatedElements = document.querySelectorAll('.vision-cell, .vision-pillar-row, .chapter-section h3, .chapter-section p, .development-timeline, .clinical-data, div[style*="max-width:320px"]');
+                
+                // Add the base class to them
+                animatedElements.forEach(el => {
+                    el.classList.add('mobile-fade-up');
+                });
+
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '0px 0px -5% 0px',
+                    threshold: 0.1
+                };
+
+                const fadeObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-revealed');
+                        }
+                    });
+                }, observerOptions);
+
+                animatedElements.forEach(el => {
+                    fadeObserver.observe(el);
+                });
+            }
+        });
+    </script>
 </body>
+
 
 
 </html>
