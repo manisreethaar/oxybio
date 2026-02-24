@@ -158,18 +158,60 @@
 
 
     <main>
-        <section class="structure-section"
+        <section class="hero-section"
             style="padding-top:clamp(160px, 20vh, 200px); padding-bottom:100px; background:var(--bg); border-bottom:1px solid var(--border); position:relative; overflow:hidden;">
             <div class="container">
-                <div class="flow-left reveal" style="max-width:900px;">
-                    <div class="page-hero-badge">Formulation Science</div>
-                    <h1 class="display" style="font-size:var(--text-6xl); line-height:0.9; letter-spacing:-0.03em;">The
-                        Science<br><em>Behind Oxygen.</em></h1>
-                    <p class="subtext editorial-col"
-                        style="margin-top:2rem; font-size:clamp(1.25rem, 2vw, 1.5rem); line-height:1.6; color:var(--text-main); max-width:800px;">
-                        Every formulation decision has a reason. Every reason has a reference. Every reference is
-                        available to you.
-                    </p>
+                <div style="display:grid; grid-template-columns:1.1fr 0.9fr; gap:var(--space-lg); align-items:center;"
+                    class="mobile-stack">
+
+                    <!-- Left: Main Copy -->
+                    <div class="flow-left reveal">
+                        <div class="page-hero-badge">Formulation Science</div>
+                        <h1 class="display"
+                            style="font-size:var(--text-6xl); line-height:0.9; letter-spacing:-0.03em; font-family:var(--font-serif);">
+                            The Science<br><em>Behind Oxygen.</em></h1>
+                        <p class="subtext editorial-col"
+                            style="margin-top:2rem; font-size:clamp(1.1rem, 2vw, 1.35rem); line-height:1.65; color:var(--text-muted); max-width:560px;">
+                            Every formulation decision has a reason. Every reason has a reference. Every reference is
+                            available to you.
+                        </p>
+                    </div>
+
+                    <!-- Right: Formulation Principles -->
+                    <div class="reveal"
+                        style="display:flex; flex-direction:column; gap:1px; border:1px solid var(--border); border-radius:12px; overflow:hidden; background:var(--border);">
+                        <div style="background:var(--bg); padding:1.75rem 2rem;">
+                            <div
+                                style="font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.5rem;">
+                                Principle 01</div>
+                            <div
+                                style="font-family:var(--font-serif); font-size:1.15rem; font-weight:700; color:var(--text-main); margin-bottom:0.35rem;">
+                                Active Forms Only</div>
+                            <div style="font-size:0.88rem; color:var(--text-muted); line-height:1.5;">We use
+                                bioavailable, clinically-studied forms — not cheap oxide alternatives.</div>
+                        </div>
+                        <div style="background:var(--bg); padding:1.75rem 2rem;">
+                            <div
+                                style="font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.5rem;">
+                                Principle 02</div>
+                            <div
+                                style="font-family:var(--font-serif); font-size:1.15rem; font-weight:700; color:var(--text-main); margin-bottom:0.35rem;">
+                                Verified Extraction</div>
+                            <div style="font-size:0.88rem; color:var(--text-muted); line-height:1.5;">Every adaptogen
+                                standardised to its active compound percentage, not just weight.</div>
+                        </div>
+                        <div style="background:var(--bg); padding:1.75rem 2rem;">
+                            <div
+                                style="font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.5rem;">
+                                Principle 03</div>
+                            <div
+                                style="font-family:var(--font-serif); font-size:1.15rem; font-weight:700; color:var(--text-main); margin-bottom:0.35rem;">
+                                Clinical Dosing</div>
+                            <div style="font-size:0.88rem; color:var(--text-muted); line-height:1.5;">Every dose matches
+                                the minimum effective threshold found in peer-reviewed trials.</div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
