@@ -4168,3 +4168,11 @@ p, h1, h2, h3, h4, blockquote { text-wrap: pretty; }
     body { overflow-x: hidden !important; }
     img { max-width: 100% !important; height: auto !important; }
 }
+
+/* Careers page: tighten the pull quote on mobile */
+@media (max-width: 768px) {
+    .careers-pull-quote {
+        font-size: 1.1rem !important;
+        line-height: 1.5 !important;
+    }
+}
