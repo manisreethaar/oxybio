@@ -5560,7 +5560,7 @@ blockquote {
 .phase-node-active .phase-node-num {
     border-color: #0D8A74;
     color: #0D8A74;
-    background: rgba(13, 138, 116, 0.05);
+    background: var(--bg);
 }
 
 .phase-node-pending .phase-node-num {
@@ -5569,11 +5569,11 @@ blockquote {
     opacity: 0.5;
 }
 
-/* Active (selected) state — premium glowing ring + scale */
 .phase-node.is-active .phase-node-num {
     transform: scale(1.25);
     border-color: #0D8A74;
-    box-shadow: 0 0 0 6px rgba(13, 138, 116, 0.15);
+    box-shadow: 0 0 0 6px rgba(13, 138, 116, 0.15), inset 0 0 20px rgba(13, 138, 116, 0.08);
+    /* glowing ring + subtle internal tint */
     color: #0D8A74;
 }
 
