@@ -13,6 +13,47 @@ function updateNav() {
 updateNav();
 window.addEventListener('scroll', updateNav, { passive: true });
 
+// -- Active Navigation Link Highlight -------------------------
+document.addEventListener('DOMContentLoaded', () => {
+    let currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    if (currentPath === '') currentPath = 'index.html';
+
+    // Map sub-pages to their parent nav items
+    const routeMap = {
+        'problem.html': 'science.html',
+        'ingredients.html': 'science.html',
+        'blog-origin.html': 'blog.html',
+        'blog-bootstrapping.html': 'blog.html',
+        'blog-minerals.html': 'blog.html',
+        'blog.html': 'blog.html',
+        'about.html': 'about.html',
+        'science.html': 'science.html',
+        'careers.html': 'careers.html',
+        'contact.html': 'contact.html',
+        'index.html': 'index.html'
+    };
+
+    const targetUrl = routeMap[currentPath] || currentPath;
+
+    // Desktop Nav
+    const desktopLinks = document.querySelectorAll('.desktop-nav > a, .desktop-nav .nav-item > a');
+    desktopLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === targetUrl) {
+            link.classList.add('nav-active');
+        }
+    });
+
+    // Mobile Menu
+    const mobileLinks = document.querySelectorAll('.mobile-menu .menu-link');
+    mobileLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === targetUrl) {
+            link.classList.add('nav-active');
+        }
+    });
+});
+
 // -- Mobile Menu -------------------------------------------
 const menuBtn = document.getElementById('menuBtn');
 const mobileMenu = document.getElementById('mobileMenu');
@@ -20,25 +61,25 @@ const mobileOverlay = document.getElementById('mobileOverlay');
 const mobileClose = document.getElementById('mobileClose');
 
 function openMenu() {
-    if(mobileMenu) mobileMenu.classList.add('open');
-    if(mobileOverlay) mobileOverlay.classList.add('open');
-    if(menuBtn) menuBtn.classList.add('is-open');
+    if (mobileMenu) mobileMenu.classList.add('open');
+    if (mobileOverlay) mobileOverlay.classList.add('open');
+    if (menuBtn) menuBtn.classList.add('is-open');
     document.body.style.overflow = 'hidden';
 }
 
 function closeMenu() {
-    if(mobileMenu) mobileMenu.classList.remove('open');
-    if(mobileOverlay) mobileOverlay.classList.remove('open');
-    if(menuBtn) menuBtn.classList.remove('is-open');
+    if (mobileMenu) mobileMenu.classList.remove('open');
+    if (mobileOverlay) mobileOverlay.classList.remove('open');
+    if (menuBtn) menuBtn.classList.remove('is-open');
     document.body.style.overflow = '';
 }
 
-if(menuBtn) menuBtn.addEventListener('click', openMenu);
-if(mobileClose) mobileClose.addEventListener('click', closeMenu);
-if(mobileOverlay) mobileOverlay.addEventListener('click', closeMenu);
+if (menuBtn) menuBtn.addEventListener('click', openMenu);
+if (mobileClose) mobileClose.addEventListener('click', closeMenu);
+if (mobileOverlay) mobileOverlay.addEventListener('click', closeMenu);
 
 // Close on link click
-if(mobileMenu) {
+if (mobileMenu) {
     mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
 }
 
@@ -104,22 +145,22 @@ if (roadmap) {
         startX = e.pageX - roadmap.offsetLeft;
         scrollLeft = roadmap.scrollLeft;
     });
-    
+
     roadmap.addEventListener('mouseleave', () => {
         isDown = false;
         roadmap.classList.remove('active');
     });
-    
+
     roadmap.addEventListener('mouseup', () => {
         isDown = false;
         roadmap.classList.remove('active');
     });
-    
+
     roadmap.addEventListener('mousemove', (e) => {
         if (!isDown) return;
         e.preventDefault();
         const x = e.pageX - roadmap.offsetLeft;
-        const walk = (x - startX) * 2; 
+        const walk = (x - startX) * 2;
         roadmap.scrollLeft = scrollLeft - walk;
     });
 }
@@ -157,7 +198,7 @@ function handleHashTabs() {
     const hash = window.location.hash;
     const visionSec = document.getElementById('about-vision');
     const founderSec = document.getElementById('about-founder');
-    
+
     // Only run if we are on the about page exactly
     if (!visionSec || !founderSec) return;
 
@@ -167,14 +208,14 @@ function handleHashTabs() {
 
     if (hash === '#about-founder') {
         founderSec.style.display = 'block';
-        window.scrollTo(0,0);
-        
+        window.scrollTo(0, 0);
+
         // Re-initialize ScrollSpy when entering this tab
         setTimeout(initScrollSpy, 100);
     } else {
         // Default to vision if empty or #about-vision
         visionSec.style.display = 'block';
-        window.scrollTo(0,0);
+        window.scrollTo(0, 0);
     }
 }
 
@@ -192,7 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function initScrollSpy() {
     const chapters = document.querySelectorAll('.chapter-section');
     const navItems = document.querySelectorAll('.index-nav-item');
-    
+
     if (chapters.length === 0 || navItems.length === 0) return;
 
     const observer = new IntersectionObserver((entries) => {
@@ -203,7 +244,7 @@ function initScrollSpy() {
                     item.style.color = 'var(--text-muted)';
                     item.style.fontWeight = '400';
                 });
-                
+
                 // Find corresponding nav item
                 const id = entry.target.getAttribute('id');
                 const activeLink = document.querySelector(`.index-nav-item[data-target="${id}"]`);
@@ -221,13 +262,13 @@ function initScrollSpy() {
     chapters.forEach(chapter => {
         observer.observe(chapter);
     });
-    
+
     // Smooth scrolling for the index clicks
     navItems.forEach(item => {
         item.addEventListener('click', (e) => {
             const targetId = item.getAttribute('data-target');
             const targetEl = document.getElementById(targetId);
-            if(targetEl) {
+            if (targetEl) {
                 const headerOffset = 100;
                 const elementPosition = targetEl.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;

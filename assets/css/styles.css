@@ -198,7 +198,38 @@ a {
 }
 
 .nav-item>a svg {
-    transition: transform 0.3s;
+    transition: transform 0.2s;
+}
+
+/* ── Innovative Active Navigation Link Highlight ── */
+.desktop-nav>a.nav-active,
+.desktop-nav .nav-item>a.nav-active,
+.mobile-menu .menu-link.nav-active {
+    font-weight: 800 !important;
+    background: linear-gradient(110deg,
+            var(--text-main) 0%,
+            var(--text-main) 40%,
+            #a8a8a8 50%,
+            var(--text-main) 60%,
+            var(--text-main) 100%);
+    background-size: 250% auto;
+    color: transparent !important;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: premiumTextShine 4s linear infinite;
+    letter-spacing: -0.01em;
+}
+
+/* Ensure SVG icons remain visible when text is transparent */
+.nav-item>a.nav-active svg {
+    stroke: var(--text-main);
+    color: var(--text-main);
+}
+
+@keyframes premiumTextShine {
+    to {
+        background-position: -250% center;
+    }
 }
 
 .nav-item:hover>a svg {
