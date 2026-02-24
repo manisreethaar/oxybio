@@ -2,2598 +2,2598 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oxygen Bioinnovations | Precision Nutrition</title>
-
-    <!-- Preconnect and Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500&display=swap"
-        rel="stylesheet">
-
-    <style>
-        /* CSS Variables & Theming */
-        :root {
-            /* Typography */
-            --font-heading: 'Playfair Display', Georgia, serif;
-            --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-
-            /* Color Palette: Warm Off-White / Electric Teal */
-            --bg: #FAF9F6;
-            --nav-bg: rgba(250, 249, 246, 0.85);
-            --card-bg: #FFFFFF;
-            --text-main: #1C1917;
-            --text-muted: #57534E;
-            --accent: #0D9488;
-            /* Electric Teal */
-            --accent-hover: #0F766E;
-            --accent-light: #CCFBF1;
-            --accent-glow: rgba(13, 148, 136, 0.15);
-            --border: #E7E5E4;
-            --gradient-teal: linear-gradient(135deg, #14B8A6, #0D9488);
-
-            /* Utilities */
-            --radius: 20px;
-            --transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-            --shadow-cards: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
-            --shadow-hover: 0 25px 50px -12px rgba(13, 148, 136, 0.2);
-        }
-
-        @media (prefers-color-scheme: dark) {
-            /* If you wanted a dark mode, variables could flip here, but user asked for light background commit */
-        }
-
-        /* Reset & Base Styles */
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: var(--font-body);
-            background-color: var(--bg);
-            color: var(--text-main);
-            line-height: 1.6;
-            /* Mobile readability */
-            font-size: 16px;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        ul,
-        ol {
-            list-style: none;
-        }
-
-        /* Typography scale */
-        h1,
-        h2,
-        h3,
-        h4 {
-            font-family: var(--font-heading);
-            font-weight: 700;
-            line-height: 1.1;
-            color: var(--text-main);
-        }
-
-        h1 {
-            font-size: clamp(2.5rem, 8vw, 5rem);
-            letter-spacing: -0.02em;
-        }
-
-        h2 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            letter-spacing: -0.01em;
-        }
-
-        h3 {
-            font-size: clamp(1.25rem, 3vw, 1.75rem);
-        }
-
-        p {
-            margin-bottom: 1rem;
-            color: var(--text-muted);
-        }
-
-        /* Layout & Containers */
-        .container {
-            width: 100%;
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-            /* 24px padding on mobile */
-        }
-
-        section {
-            padding: 5rem 0;
-        }
-
-        /* Components */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 56px;
-            /* Large tap target */
-            padding: 0 2rem;
-            border-radius: 100px;
-            font-weight: 600;
-            font-size: 1.125rem;
-            cursor: pointer;
-            transition: all var(--transition);
-            border: 2px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-primary {
-            background: var(--gradient-teal);
-            color: #fff;
-            box-shadow: 0 4px 14px 0 rgba(13, 148, 136, 0.39);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(13, 148, 136, 0.4);
-        }
-
-        /* Shimmer effect */
-        .btn-primary::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 50%;
-            height: 100%;
-            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 100%);
-            transform: skewX(-20deg);
-            transition: left 0.7s ease;
-        }
-
-        .btn-primary:hover::after {
-            left: 150%;
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--text-main);
-            border-color: var(--border);
-        }
-
-        .btn-outline:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-        }
-
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.5rem 1rem;
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 100px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--text-muted);
-        }
-
-        .badge-accent {
-            background: var(--accent-light);
-            color: var(--accent-hover);
-            border-color: transparent;
-        }
-
-        /* Animations core */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .reveal {
-                transition: none;
-                opacity: 1;
-                transform: none;
-            }
-        }
-
-        /* --- SPECIFIC SECTIONS --- */
-
-        /* Navigation */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 100;
-            background: transparent;
-            transition: background 0.3s, box-shadow 0.3s;
-        }
-
-        header.scrolled {
-            background: var(--nav-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 80px;
-        }
-
-        .logo {
-            font-family: var(--font-heading);
-            font-weight: 800;
-            font-size: 1.5rem;
-            letter-spacing: -0.02em;
-        }
-
-        .logo span {
-            color: var(--accent);
-        }
-
-        .desktop-nav {
-            display: none;
-        }
-
-        /* Hamburger */
-        .menu-btn {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 48px;
-            height: 48px;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            z-index: 101;
-        }
-
-        .menu-btn span {
-            display: block;
-            width: 24px;
-            height: 2px;
-            background: var(--text-main);
-            margin: 3px 0;
-            transition: 0.3s;
-        }
-
-        .menu-btn.open span:nth-child(1) {
-            transform: translateY(8px) rotate(45deg);
-        }
-
-        .menu-btn.open span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .menu-btn.open span:nth-child(3) {
-            transform: translateY(-8px) rotate(-45deg);
-        }
-
-        /* Mobile Menu Drawer */
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 85%;
-            max-width: 400px;
-            height: 100vh;
-            background: var(--card-bg);
-            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
-            padding: 100px 2rem 2rem;
-            transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            z-index: 99;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .mobile-menu.open {
-            right: 0;
-        }
-
-        .mobile-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.4);
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s;
-            z-index: 98;
-            backdrop-filter: blur(4px);
-        }
-
-        .mobile-overlay.open {
-            opacity: 1;
-            pointer-events: all;
-        }
-
-        .mobile-menu a {
-            font-family: var(--font-heading);
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--text-main);
-            display: block;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 1rem;
-        }
-
-        .mobile-menu .btn {
-            margin-top: auto;
-        }
-
-        /* Desktop overrides */
-        @media (min-width: 768px) {
-            .menu-btn {
-                display: none;
-            }
-
-            .desktop-nav {
-                display: flex;
-                align-items: center;
-                gap: 2rem;
-            }
-
-            .desktop-nav a {
-                font-weight: 500;
-                font-size: 0.95rem;
-                transition: color 0.2s;
-            }
-
-            .desktop-nav a:hover {
-                color: var(--accent);
-            }
-
-            .desktop-nav .btn {
-                min-height: 48px;
-                padding: 0 1.5rem;
-                font-size: 0.95rem;
-            }
-
-            section {
-                padding: 8rem 0;
-            }
-        }
-
-        /* Hero Section */
-        .hero {
-            position: relative;
-            padding-top: 140px;
-            /* offset for nav */
-            padding-bottom:var(--space-lg);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-        }
-
-        /* Subtle Grain Overlay */
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-            opacity: 0.03;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        /* Radial Glow */
-        .hero-glow {
-            position: absolute;
-            top: -10%;
-            right: -10%;
-            width: 60vw;
-            height: 60vw;
-            background: radial-gradient(circle, var(--accent-glow) 0%, rgba(250, 249, 246, 0) 70%);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .hero .container {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-content {
-            max-width: 800px;
-        }
-
-        .hero .badge {
-            margin-bottom: 1.5rem;
-        }
-
-        .hero p.subtitle {
-            font-size: clamp(1.125rem, 3vw, 1.35rem);
-            margin: 1.5rem 0 2.5rem;
-            color: var(--text-muted);
-            max-width: 650px;
-        }
-
-        .hero-cta {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-bottom: 3rem;
-        }
-
-        @media (min-width: 640px) {
-            .hero-cta {
-                flex-direction: row;
-            }
-        }
-
-        .trust-checks {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: var(--text-main);
-        }
-
-        .trust-checks .check {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .trust-checks .check svg {
-            width: 18px;
-            height: 18px;
-            color: var(--accent);
-        }
-
-        @media (min-width: 640px) {
-            .trust-checks {
-                flex-direction: row;
-                gap: 1.5rem;
-            }
-        }
-
-        /* Trust Bar Marquee */
-        .trust-bar {
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-            background: var(--card-bg);
-            padding: 1.5rem 0;
-            overflow: hidden;
-            display: flex;
-            white-space: nowrap;
-            position: relative;
-        }
-
-        .trust-bar::before,
-        .trust-bar::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            width: 50px;
-            height: 100%;
-            z-index: 2;
-        }
-
-        .trust-bar::before {
-            left: 0;
-            background: linear-gradient(to right, var(--card-bg), transparent);
-        }
-
-        .trust-bar::after {
-            right: 0;
-            background: linear-gradient(to left, var(--card-bg), transparent);
-        }
-
-        .marquee {
-            display: flex;
-            animation: scroll 30s linear infinite;
-        }
-
-        .marquee-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0 2rem;
-            font-weight: 700;
-            font-family: var(--font-heading);
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--text-muted);
-        }
-
-        .marquee-item span {
-            display: inline-block;
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--accent);
-        }
-
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-
-        /* Problem Section */
-        .section-header {
-            margin-bottom:var(--space-lg);
-            max-width: 700px;
-        }
-
-        .stat-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            margin-bottom:var(--space-lg);
-        }
-
-        @media (min-width: 768px) {
-            .stat-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        .stat-card {
-            border-left: 3px solid var(--accent);
-            padding-left: 1.5rem;
-        }
-
-        .stat-number {
-            font-family: var(--font-heading);
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: var(--accent);
-            line-height: 1;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 1.125rem;
-            font-weight: 600;
-            color: var(--text-main);
-            margin-bottom: 0.25rem;
-        }
-
-        .stat-source {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-        }
-
-        .cards-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-        }
-
-        @media (min-width: 768px) {
-            .cards-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        .problem-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 2.5rem 2rem;
-            box-shadow: var(--shadow-cards);
-            transition: all var(--transition);
-            height: 100%;
-        }
-
-        .problem-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--accent-light);
-        }
-
-        .card-icon {
-            width: 56px;
-            height: 56px;
-            background: var(--accent-light);
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            color: var(--accent);
-        }
-
-        .card-icon svg {
-            width: 28px;
-            height: 28px;
-        }
-
-        /* Solutions / Products Section */
-        .product-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-        }
-
-        @media (min-width: 1024px) {
-            .product-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        .product-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 2.5rem 2rem;
-            box-shadow: var(--shadow-cards);
-            transition: all var(--transition);
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-
-        .product-card.featured {
-            border-color: var(--accent);
-            box-shadow: 0 10px 30px -5px rgba(13, 148, 136, 0.15);
-        }
-
-        .product-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 6px;
-            background: var(--bg);
-            transition: background var(--transition);
-        }
-
-        .product-card:hover::before {
-            background: var(--gradient-teal);
-        }
-
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .p-head {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 2rem;
-        }
-
-        .p-target {
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            color: var(--accent);
-            letter-spacing: 0.05em;
-        }
-
-        .product-card h3 {
-            margin-bottom: 0.5rem;
-        }
-
-        .p-status {
-            display: inline-block;
-            font-size: 0.75rem;
-            font-weight: 600;
-            background: #F3F4F6;
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-            margin-bottom: 1.5rem;
-        }
-
-        .p-tagline {
-            font-style: italic;
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-        }
-
-        .p-benefits {
-            flex-grow: 1;
-            margin-bottom: 2rem;
-        }
-
-        .p-benefits li {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.75rem;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        .p-benefits li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-weight: bold;
-        }
-
-        .p-ingredients {
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--border);
-        }
-
-        .p-stack-label {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-weight: 700;
-            color: var(--text-muted);
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        /* Coming Soon Bar */
-        .coming-soon {
-            margin-top: 3rem;
-            background: var(--text-main);
-            color: #fff;
-            border-radius: var(--radius);
-            padding: 2.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        @media (min-width: 768px) {
-            .coming-soon {
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-between;
-            }
-        }
-
-        .coming-soon-content {
-            max-width: 600px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .coming-soon-content h4 {
-            color: #fff;
-            margin-bottom: 1rem;
-        }
-
-        .coming-soon p {
-            color: #D1D5DB;
-            margin-bottom: 0;
-        }
-
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .tag {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 0.5rem 1rem;
-            border-radius: 100px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-
-        /* Science Section / Clip Path Divider */
-        .science-section {
-            background: var(--card-bg);
-            position: relative;
-            padding-top:var(--space-2xl);
-        }
-
-        .science-section::before {
-            content: '';
-            position: absolute;
-            top: -50px;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background: var(--card-bg);
-            clip-path: polygon(0 50px, 100% 0, 100% 100%, 0% 100%);
-        }
-
-        .pillars-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 3rem;
-            margin-bottom: 5rem;
-        }
-
-        @media (min-width: 768px) {
-            .pillars-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 2rem;
-            }
-        }
-
-        .pillar {
-            position: relative;
-        }
-
-        .pillar-number {
-            font-family: var(--font-heading);
-            font-size: 5rem;
-            font-weight: 800;
-            color: var(--bg);
-            position: absolute;
-            top: -30px;
-            left: -10px;
-            z-index: 0;
-            line-height: 1;
-        }
-
-        .pillar-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .pillar-content h3 {
-            margin: 1rem 0;
-        }
-
-        .pillar-highlight {
-            background: var(--accent-light);
-            color: var(--accent-hover);
-            padding: 1rem;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            margin-top: 1.5rem;
-        }
-
-        /* Comparison Table */
-        .comparison-box {
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            overflow: hidden;
-            background: var(--bg);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .c-header {
-            background: var(--text-main);
-            color: #fff;
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        @media (min-width: 768px) {
-            .c-header {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-            }
-        }
-
-        .c-header h4 {
-            color: #fff;
-            margin-bottom: 0.25rem;
-        }
-
-        .c-stat-big {
-            font-family: var(--font-heading);
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--accent-light);
-            line-height: 1;
-        }
-
-        .c-table-wrap {
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .c-table {
-            width: 100%;
-            min-width: 600px;
-            border-collapse: collapse;
-            background: #fff;
-        }
-
-        .c-table th,
-        .c-table td {
-            padding: 1.25rem 1.5rem;
-            text-align: left;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .c-table th {
-            background: var(--bg);
-            font-family: var(--font-heading);
-            font-weight: 700;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--text-muted);
-        }
-
-        .c-table td {
-            font-size: 0.95rem;
-            font-weight: 500;
-        }
-
-        .c-table td.us {
-            background: var(--accent-light);
-            color: var(--accent-hover);
-            font-weight: 700;
-        }
-
-        .c-table td.them {
-            color: var(--text-muted);
-        }
-
-        .c-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--text-main);
-            color: #fff;
-            padding:var(--space-lg) 0 2rem;
-            text-align: center;
-        }
-
-        footer .logo {
-            margin-bottom: 1.5rem;
-            display: block;
-        }
-
-        footer p {
-            color: #9CA3AF;
-            max-width: 400px;
-            margin: 0 auto 2rem;
-            font-size: 0.9rem;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .footer-links a {
-            color: #D1D5DB;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: color 0.2s;
-        }
-
-        .footer-links a:hover {
-            color: #fff;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 2rem;
-            font-size: 0.8rem;
-            color: #6B7280;
-        }
-
-        /* Mobile Sticky CTA */
-        .mobile-sticky-cta {
-            position: fixed;
-            bottom: 24px;
-            left: 24px;
-            right: 24px;
-            z-index: 90;
-            display: flex;
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s;
-            opacity: 0;
-            pointer-events: none;
-            transform: translateY(20px);
-        }
-
-        .mobile-sticky-cta.visible {
-            opacity: 1;
-            pointer-events: all;
-            transform: translateY(0);
-        }
-
-        .mobile-sticky-cta .btn {
-            width: 100%;
-            box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.5);
-        }
-
-        @media (min-width: 768px) {
-            .mobile-sticky-cta {
-                display: none;
-            }
-        }
-
-        /* Form base styles for touch */
-        input,
-        textarea,
-        select {
-            font-size: 16px;
-            /* prevents iOS zoom */
-            font-family: var(--font-body);
-        }
-
-        /* About Us Sections */
-        .about-section {
-            background: var(--bg);
-            padding-top: 5rem;
-            padding-bottom: 5rem;
-        }
-
-        .about-hero {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 5rem;
-        }
-
-        .about-hero h2 {
-            margin: 1rem 0;
-            font-size: clamp(2.5rem, 6vw, 4rem);
-        }
-
-        .about-hero .subtitle {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            line-height: 1.7;
-        }
-
-        /* Vision & Mission Grid */
-        .vm-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap:var(--space-lg);
-            margin-bottom:var(--space-xl);
-        }
-
-        @media (min-width: 992px) {
-            .vm-grid {
-                grid-template-columns: 1fr 1.2fr;
-                gap: 5rem;
-                align-items: start;
-            }
-        }
-
-        .vm-block h3 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: var(--text-main);
-        }
-
-        .vm-keywords {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            margin-bottom: 2rem;
-        }
-
-        .vm-keyword {
-            background: var(--accent-glow);
-            color: var(--accent-hover);
-            padding: 0.4rem 1rem;
-            border-radius: 100px;
-            font-weight: 600;
-            font-size: 0.85rem;
-        }
-
-        .vm-list li {
-            margin-bottom: 1.5rem;
-            font-size: 1.05rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .vm-list li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 10px;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--accent);
-        }
-
-        .vm-list li strong {
-            color: var(--accent);
-            display: block;
-            margin-bottom: 0.25rem;
-            font-family: var(--font-heading);
-            font-size: 1.2rem;
-        }
-
-        .mission-quote {
-            font-size: 1.35rem;
-            font-style: italic;
-            border-left: 4px solid var(--accent);
-            padding-left: 1.5rem;
-            margin: 2.5rem 0;
-            color: var(--text-main);
-            font-family: var(--font-heading);
-            line-height: 1.4;
-        }
-
-        .core-values {
-            background: var(--card-bg);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-cards);
-            padding:var(--space-lg) 2rem;
-            margin-bottom:var(--space-xl);
-            border: 1px solid var(--border);
-        }
-
-        .core-values h3 {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2.5rem;
-        }
-
-        .values-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-        }
-
-        @media (min-width: 768px) {
-            .values-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .values-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        .value-card {
-            padding: 1.5rem;
-            border-top: 2px solid var(--accent-light);
-            background: var(--bg);
-            border-radius: 0 0 12px 12px;
-            transition: all var(--transition);
-        }
-
-        .value-card:hover {
-            border-top-color: var(--accent);
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .value-card h4 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-main);
-        }
-
-        /* Founder Section */
-        .founder-chapter {
-            margin-bottom:var(--space-xl);
-        }
-
-        .chapter-label {
-            font-family: var(--font-heading);
-            font-weight: 700;
-            color: var(--accent);
-            font-size: 1.25rem;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .chapter-label::after {
-            content: '';
-            flex-grow: 1;
-            height: 1px;
-            background: var(--border);
-        }
-
-        .founder-profile {
-            display: grid;
-            gap: 3rem;
-        }
-
-        @media (min-width: 768px) {
-            .founder-profile {
-                grid-template-columns: 1fr 2fr;
-                align-items: start;
-            }
-        }
-
-        .founder-image-placeholder {
-            aspect-ratio: 3/4;
-            background: var(--card-bg);
-            border-radius: var(--radius);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--shadow-cards);
-            border: 1px solid var(--border);
-            position: relative;
-            overflow: hidden;
-            color: var(--accent);
-        }
-
-        .founder-image-placeholder::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, var(--accent-glow), transparent);
-        }
-
-        .founder-details h3 {
-            font-size: 2.5rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .founder-role {
-            font-weight: 600;
-            color: var(--accent);
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            display: inline-block;
-            background: var(--accent-light);
-            padding: 0.25rem 1rem;
-            border-radius: 100px;
-        }
-
-        .founder-quote {
-            background: var(--card-bg);
-            padding: 2.5rem;
-            border-radius: 16px;
-            border-left: 4px solid var(--accent);
-            font-size: 1.15rem;
-            line-height: 1.8;
-            font-style: italic;
-            box-shadow: var(--shadow-sm);
-            margin: 2.5rem 0;
-        }
-
-        .milestone-grid {
-            border-left: 2px solid var(--border);
-            margin-left: 1rem;
-            padding-left: 2rem;
-            position: relative;
-        }
-
-        .milestone {
-            position: relative;
-            margin-bottom: 3.5rem;
-        }
-
-        .milestone:last-child {
-            margin-bottom: 0;
-        }
-
-        .milestone::before {
-            content: '';
-            position: absolute;
-            left: -2.6rem;
-            top: 0;
-            width: 1rem;
-            height: 1rem;
-            background: var(--accent);
-            border-radius: 50%;
-            border: 4px solid var(--bg);
-            transition: all 0.3s;
-        }
-
-        .milestone:hover::before {
-            transform: scale(1.3);
-            box-shadow: 0 0 10px var(--accent-glow);
-        }
-
-        .milestone h4 {
-            font-size: 1.25rem;
-            margin-bottom: 0.75rem;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .milestone-status {
-            font-size: 0.7rem;
-            padding: 0.25rem 0.75rem;
-            border-radius: 100px;
-            background: var(--card-bg);
-            color: var(--text-muted);
-            font-family: var(--font-body);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            border: 1px solid var(--border);
-            font-weight: 700;
-        }
-
-        .milestone-status.completed {
-            background: var(--accent-light);
-            color: var(--accent-hover);
-            border-color: transparent;
-        }
-
-        .milestone-status.active {
-            background: #DBEAFE;
-            color: #1D4ED8;
-            border-color: transparent;
-        }
-
-        .approach-grid {
-            display: grid;
-            gap: 2rem;
-            grid-template-columns: 1fr;
-        }
-
-        @media (min-width: 768px) {
-            .approach-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        .approach-card {
-            background: var(--card-bg);
-            padding: 2.5rem 2rem;
-            border-radius: var(--radius);
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow-sm);
-            transition: all var(--transition);
-        }
-
-        .approach-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-cards);
-            border-color: var(--accent-light);
-        }
-
-        .approach-num {
-            font-family: var(--font-heading);
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: var(--accent-glow);
-            line-height: 1;
-            margin-bottom: 1rem;
-        }
-
-        .approach-card h4 {
-            font-size: 1.35rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Invitation CTA */
-        .invitation-box {
-            background: var(--gradient-teal);
-            border-radius: var(--radius);
-            padding: 5rem 2rem;
-            color: #fff;
-            text-align: center;
-            box-shadow: var(--shadow-hover);
-            margin-top: 5rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .invitation-box::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-            opacity: 0.1;
-            pointer-events: none;
-            border-radius: var(--radius);
-        }
-
-        .invitation-box>* {
-            position: relative;
-            z-index: 2;
-        }
-
-        .invitation-box h2 {
-            color: #fff;
-            margin-bottom: 1.5rem;
-        }
-
-        .invitation-box p {
-            color: rgba(255, 255, 255, 0.9);
-            max-width: 600px;
-            margin: 0 auto 3rem;
-            font-size: 1.15rem;
-        }
-
-        .invitation-ctas {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            justify-content: center;
-            align-items: center;
-        }
-
-        @media (min-width: 640px) {
-            .invitation-ctas {
-                flex-direction: row;
-            }
-        }
-
-        .btn-white {
-            background: #fff;
-            color: var(--accent);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn-white:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .btn-outline-white {
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            color: #fff;
-            background: transparent;
-        }
-
-        .btn-outline-white:hover {
-            border-color: #fff;
-            background: rgba(255, 255, 255, 0.1);
-        }
-    </style>
-    <link rel="stylesheet" href="assets/css/v2_premium.css?v=42">
-
-    <!-- Google Structured Data (Organization) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Oxygen Bioinnovations",
-      "url": "https://oxygenbioinnovations.com/",
-      "logo": "https://oxygenbioinnovations.com/assets/images/logo-dark.png",
-      "description": "India's first precision nutrition system grounded in biotechnology, indigenous ingredients, and an unbreakable commitment to evidence."
-    }
-    </script>
-    <link rel="stylesheet" href="assets/css/transitions.css">
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Oxygen Bioinnovations | Precision Nutrition</title>
+
+ <!-- Preconnect and Google Fonts -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link
+ href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500&display=swap"
+ rel="stylesheet">
+
+ <style>
+ /* CSS Variables & Theming */
+ :root {
+ /* Typography */
+ --font-heading: 'Playfair Display', Georgia, serif;
+ --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+ /* Color Palette: Warm Off-White / Electric Teal */
+ --bg: #FAF9F6;
+ --nav-bg: rgba(250, 249, 246, 0.85);
+ --card-bg: #FFFFFF;
+ --text-main: #1C1917;
+ --text-muted: #57534E;
+ --accent: #0D9488;
+ /* Electric Teal */
+ --accent-hover: #0F766E;
+ --accent-light: #CCFBF1;
+ --accent-glow: rgba(13, 148, 136, 0.15);
+ --border: #E7E5E4;
+ --gradient-teal: linear-gradient(135deg, #14B8A6, #0D9488);
+
+ /* Utilities */
+ --radius: 20px;
+ --transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+ --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+ --shadow-cards: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+ --shadow-hover: 0 25px 50px -12px rgba(13, 148, 136, 0.2);
+ }
+
+ @media (prefers-color-scheme: dark) {
+ /* If you wanted a dark mode, variables could flip here, but user asked for light background commit */
+ }
+
+ /* Reset & Base Styles */
+ *,
+ *::before,
+ *::after {
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+ }
+
+ html {
+ scroll-behavior: smooth;
+ }
+
+ body {
+ font-family: var(--font-body);
+ background-color: var(--bg);
+ color: var(--text-main);
+ line-height: 1.6;
+ /* Mobile readability */
+ font-size: 16px;
+ overflow-x: hidden;
+ -webkit-font-smoothing: antialiased;
+ }
+
+ img {
+ max-width: 100%;
+ height: auto;
+ display: block;
+ }
+
+ a {
+ text-decoration: none;
+ color: inherit;
+ }
+
+ ul,
+ ol {
+ list-style: none;
+ }
+
+ /* Typography scale */
+ h1,
+ h2,
+ h3,
+ h4 {
+ font-family: var(--font-heading);
+ font-weight: 700;
+ line-height: 1.1;
+ color: var(--text-main);
+ }
+
+ h1 {
+ font-size: clamp(2.5rem, 8vw, 5rem);
+ letter-spacing: -0.02em;
+ }
+
+ h2 {
+ font-size: clamp(2rem, 5vw, 3.5rem);
+ letter-spacing: -0.01em;
+ }
+
+ h3 {
+ font-size: clamp(1.25rem, 3vw, 1.75rem);
+ }
+
+ p {
+ margin-bottom: 1rem;
+ color: var(--text-muted);
+ }
+
+ /* Layout & Containers */
+ .container {
+ width: 100%;
+ max-width: 1280px;
+ margin: 0 auto;
+ padding: 0 1.5rem;
+ /* 24px padding on mobile */
+ }
+
+ section {
+ padding: 5rem 0;
+ }
+
+ /* Components */
+ .btn {
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+ min-height: 56px;
+ /* Large tap target */
+ padding: 0 2rem;
+ border-radius: 100px;
+ font-weight: 600;
+ font-size: 1.125rem;
+ cursor: pointer;
+ transition: all var(--transition);
+ border: 2px solid transparent;
+ position: relative;
+ overflow: hidden;
+ }
+
+ .btn-primary {
+ background: var(--gradient-teal);
+ color: #fff;
+ box-shadow: 0 4px 14px 0 rgba(13, 148, 136, 0.39);
+ }
+
+ .btn-primary:hover {
+ transform: translateY(-2px);
+ box-shadow: 0 6px 20px rgba(13, 148, 136, 0.4);
+ }
+
+ /* Shimmer effect */
+ .btn-primary::after {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: -100%;
+ width: 50%;
+ height: 100%;
+ background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 100%);
+ transform: skewX(-20deg);
+ transition: left 0.7s ease;
+ }
+
+ .btn-primary:hover::after {
+ left: 150%;
+ }
+
+ .btn-outline {
+ background: transparent;
+ color: var(--text-main);
+ border-color: var(--border);
+ }
+
+ .btn-outline:hover {
+ border-color: var(--accent);
+ color: var(--accent);
+ }
+
+ .badge {
+ display: inline-flex;
+ align-items: center;
+ padding: 0.5rem 1rem;
+ background: var(--card-bg);
+ border: 1px solid var(--border);
+ border-radius: 100px;
+ font-size: 0.75rem;
+ font-weight: 700;
+ text-transform: uppercase;
+ letter-spacing: 0.05em;
+ color: var(--text-muted);
+ }
+
+ .badge-accent {
+ background: var(--accent-light);
+ color: var(--accent-hover);
+ border-color: transparent;
+ }
+
+ /* Animations core */
+ .reveal {
+ opacity: 0;
+ transform: translateY(30px);
+ transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+ }
+
+ .reveal.active {
+ opacity: 1;
+ transform: translateY(0);
+ }
+
+ @media (prefers-reduced-motion: reduce) {
+ .reveal {
+ transition: none;
+ opacity: 1;
+ transform: none;
+ }
+ }
+
+ /* --- SPECIFIC SECTIONS --- */
+
+ /* Navigation */
+ header {
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ z-index: 100;
+ background: transparent;
+ transition: background 0.3s, box-shadow 0.3s;
+ }
+
+ header.scrolled {
+ background: var(--nav-bg);
+ backdrop-filter: blur(12px);
+ -webkit-backdrop-filter: blur(12px);
+ box-shadow: var(--shadow-sm);
+ }
+
+ .nav-container {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ height: 80px;
+ }
+
+ .logo {
+ font-family: var(--font-heading);
+ font-weight: 800;
+ font-size: 1.5rem;
+ letter-spacing: -0.02em;
+ }
+
+ .logo span {
+ color: var(--accent);
+ }
+
+ .desktop-nav {
+ display: none;
+ }
+
+ /* Hamburger */
+ .menu-btn {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ width: 48px;
+ height: 48px;
+ background: transparent;
+ border: none;
+ cursor: pointer;
+ z-index: 101;
+ }
+
+ .menu-btn span {
+ display: block;
+ width: 24px;
+ height: 2px;
+ background: var(--text-main);
+ margin: 3px 0;
+ transition: 0.3s;
+ }
+
+ .menu-btn.open span:nth-child(1) {
+ transform: translateY(8px) rotate(45deg);
+ }
+
+ .menu-btn.open span:nth-child(2) {
+ opacity: 0;
+ }
+
+ .menu-btn.open span:nth-child(3) {
+ transform: translateY(-8px) rotate(-45deg);
+ }
+
+ /* Mobile Menu Drawer */
+ .mobile-menu {
+ position: fixed;
+ top: 0;
+ right: -100%;
+ width: 85%;
+ max-width: 400px;
+ height: 100vh;
+ background: var(--card-bg);
+ box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+ padding: 100px 2rem 2rem;
+ transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+ z-index: 99;
+ display: flex;
+ flex-direction: column;
+ gap: 2rem;
+ }
+
+ .mobile-menu.open {
+ right: 0;
+ }
+
+ .mobile-overlay {
+ position: fixed;
+ inset: 0;
+ background: rgba(0, 0, 0, 0.4);
+ opacity: 0;
+ pointer-events: none;
+ transition: opacity 0.3s;
+ z-index: 98;
+ backdrop-filter: blur(4px);
+ }
+
+ .mobile-overlay.open {
+ opacity: 1;
+ pointer-events: all;
+ }
+
+ .mobile-menu a {
+ font-family: var(--font-heading);
+ font-size: 1.75rem;
+ font-weight: 700;
+ color: var(--text-main);
+ display: block;
+ border-bottom: 1px solid var(--border);
+ padding-bottom: 1rem;
+ }
+
+ .mobile-menu .btn {
+ margin-top: auto;
+ }
+
+ /* Desktop overrides */
+ @media (min-width: 768px) {
+ .menu-btn {
+ display: none;
+ }
+
+ .desktop-nav {
+ display: flex;
+ align-items: center;
+ gap: 2rem;
+ }
+
+ .desktop-nav a {
+ font-weight: 500;
+ font-size: 0.95rem;
+ transition: color 0.2s;
+ }
+
+ .desktop-nav a:hover {
+ color: var(--accent);
+ }
+
+ .desktop-nav .btn {
+ min-height: 48px;
+ padding: 0 1.5rem;
+ font-size: 0.95rem;
+ }
+
+ section {
+ padding: 8rem 0;
+ }
+ }
+
+ /* Hero Section */
+ .hero {
+ position: relative;
+ padding-top: 140px;
+ /* offset for nav */
+ padding-bottom:var(--space-lg);
+ min-height: 100vh;
+ display: flex;
+ align-items: center;
+ overflow: hidden;
+ }
+
+ /* Subtle Grain Overlay */
+ .hero::before {
+ content: '';
+ position: absolute;
+ inset: 0;
+ background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+ opacity: 0.03;
+ pointer-events: none;
+ z-index: 1;
+ }
+
+ /* Radial Glow */
+ .hero-glow {
+ position: absolute;
+ top: -10%;
+ right: -10%;
+ width: 60vw;
+ height: 60vw;
+ background: radial-gradient(circle, var(--accent-glow) 0%, rgba(250, 249, 246, 0) 70%);
+ border-radius: 50%;
+ pointer-events: none;
+ z-index: 0;
+ }
+
+ .hero .container {
+ position: relative;
+ z-index: 2;
+ }
+
+ .hero-content {
+ max-width: 800px;
+ }
+
+ .hero .badge {
+ margin-bottom: 1.5rem;
+ }
+
+ .hero p.subtitle {
+ font-size: clamp(1.125rem, 3vw, 1.35rem);
+ margin: 1.5rem 0 2.5rem;
+ color: var(--text-muted);
+ max-width: 650px;
+ }
+
+ .hero-cta {
+ display: flex;
+ flex-direction: column;
+ gap: 1rem;
+ margin-bottom: 3rem;
+ }
+
+ @media (min-width: 640px) {
+ .hero-cta {
+ flex-direction: row;
+ }
+ }
+
+ .trust-checks {
+ display: flex;
+ flex-direction: column;
+ gap: 0.75rem;
+ font-size: 0.875rem;
+ font-weight: 600;
+ color: var(--text-main);
+ }
+
+ .trust-checks .check {
+ display: flex;
+ align-items: center;
+ gap: 0.5rem;
+ }
+
+ .trust-checks .check svg {
+ width: 18px;
+ height: 18px;
+ color: var(--accent);
+ }
+
+ @media (min-width: 640px) {
+ .trust-checks {
+ flex-direction: row;
+ gap: 1.5rem;
+ }
+ }
+
+ /* Trust Bar Marquee */
+ .trust-bar {
+ border-top: 1px solid var(--border);
+ border-bottom: 1px solid var(--border);
+ background: var(--card-bg);
+ padding: 1.5rem 0;
+ overflow: hidden;
+ display: flex;
+ white-space: nowrap;
+ position: relative;
+ }
+
+ .trust-bar::before,
+ .trust-bar::after {
+ content: '';
+ position: absolute;
+ top: 0;
+ width: 50px;
+ height: 100%;
+ z-index: 2;
+ }
+
+ .trust-bar::before {
+ left: 0;
+ background: linear-gradient(to right, var(--card-bg), transparent);
+ }
+
+ .trust-bar::after {
+ right: 0;
+ background: linear-gradient(to left, var(--card-bg), transparent);
+ }
+
+ .marquee {
+ display: flex;
+ animation: scroll 30s linear infinite;
+ }
+
+ .marquee-item {
+ display: flex;
+ align-items: center;
+ gap: 0.75rem;
+ padding: 0 2rem;
+ font-weight: 700;
+ font-family: var(--font-heading);
+ font-size: 1rem;
+ text-transform: uppercase;
+ letter-spacing: 0.05em;
+ color: var(--text-muted);
+ }
+
+ .marquee-item span {
+ display: inline-block;
+ width: 6px;
+ height: 6px;
+ border-radius: 50%;
+ background: var(--accent);
+ }
+
+ @keyframes scroll {
+ 0% {
+ transform: translateX(0);
+ }
+
+ 100% {
+ transform: translateX(-50%);
+ }
+ }
+
+ /* Problem Section */
+ .section-header {
+ margin-bottom:var(--space-lg);
+ max-width: 700px;
+ }
+
+ .stat-grid {
+ display: grid;
+ grid-template-columns: 1fr;
+ gap: 2rem;
+ margin-bottom:var(--space-lg);
+ }
+
+ @media (min-width: 768px) {
+ .stat-grid {
+ grid-template-columns: repeat(3, 1fr);
+ }
+ }
+
+ .stat-card {
+ border-left: 3px solid var(--accent);
+ padding-left: 1.5rem;
+ }
+
+ .stat-number {
+ font-family: var(--font-heading);
+ font-size: 3.5rem;
+ font-weight: 800;
+ color: var(--accent);
+ line-height: 1;
+ margin-bottom: 0.5rem;
+ }
+
+ .stat-label {
+ font-size: 1.125rem;
+ font-weight: 600;
+ color: var(--text-main);
+ margin-bottom: 0.25rem;
+ }
+
+ .stat-source {
+ font-size: 0.75rem;
+ color: var(--text-muted);
+ }
+
+ .cards-grid {
+ display: grid;
+ grid-template-columns: 1fr;
+ gap: 2rem;
+ }
+
+ @media (min-width: 768px) {
+ .cards-grid {
+ grid-template-columns: repeat(3, 1fr);
+ }
+ }
+
+ .problem-card {
+ background: var(--card-bg);
+ border: 1px solid var(--border);
+ border-radius: var(--radius);
+ padding: 2.5rem 2rem;
+ box-shadow: var(--shadow-cards);
+ transition: all var(--transition);
+ height: 100%;
+ }
+
+ .problem-card:hover {
+ transform: translateY(-8px);
+ box-shadow: var(--shadow-hover);
+ border-color: var(--accent-light);
+ }
+
+ .card-icon {
+ width: 56px;
+ height: 56px;
+ background: var(--accent-light);
+ border-radius: 14px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ margin-bottom: 1.5rem;
+ color: var(--accent);
+ }
+
+ .card-icon svg {
+ width: 28px;
+ height: 28px;
+ }
+
+ /* Solutions / Products Section */
+ .product-grid {
+ display: grid;
+ grid-template-columns: 1fr;
+ gap: 2rem;
+ }
+
+ @media (min-width: 1024px) {
+ .product-grid {
+ grid-template-columns: repeat(3, 1fr);
+ }
+ }
+
+ .product-card {
+ background: var(--card-bg);
+ border: 1px solid var(--border);
+ border-radius: var(--radius);
+ padding: 2.5rem 2rem;
+ box-shadow: var(--shadow-cards);
+ transition: all var(--transition);
+ position: relative;
+ overflow: hidden;
+ display: flex;
+ flex-direction: column;
+ height: 100%;
+ }
+
+ .product-card.featured {
+ border-color: var(--accent);
+ box-shadow: 0 10px 30px -5px rgba(13, 148, 136, 0.15);
+ }
+
+ .product-card::before {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 6px;
+ background: var(--bg);
+ transition: background var(--transition);
+ }
+
+ .product-card:hover::before {
+ background: var(--gradient-teal);
+ }
+
+ .product-card:hover {
+ transform: translateY(-8px);
+ box-shadow: var(--shadow-hover);
+ }
+
+ .p-head {
+ display: flex;
+ justify-content: space-between;
+ align-items: flex-start;
+ margin-bottom: 2rem;
+ }
+
+ .p-target {
+ font-size: 0.75rem;
+ font-weight: 700;
+ text-transform: uppercase;
+ color: var(--accent);
+ letter-spacing: 0.05em;
+ }
+
+ .product-card h3 {
+ margin-bottom: 0.5rem;
+ }
+
+ .p-status {
+ display: inline-block;
+ font-size: 0.75rem;
+ font-weight: 600;
+ background: #F3F4F6;
+ padding: 0.25rem 0.5rem;
+ border-radius: 4px;
+ margin-bottom: 1.5rem;
+ }
+
+ .p-tagline {
+ font-style: italic;
+ color: var(--text-muted);
+ margin-bottom: 1.5rem;
+ font-size: 0.95rem;
+ }
+
+ .p-benefits {
+ flex-grow: 1;
+ margin-bottom: 2rem;
+ }
+
+ .p-benefits li {
+ position: relative;
+ padding-left: 1.5rem;
+ margin-bottom: 0.75rem;
+ font-size: 0.9rem;
+ font-weight: 500;
+ }
+
+ .p-benefits li::before {
+ content: '→';
+ position: absolute;
+ left: 0;
+ color: var(--accent);
+ font-weight: bold;
+ }
+
+ .p-ingredients {
+ padding-top: 1.5rem;
+ border-top: 1px solid var(--border);
+ }
+
+ .p-stack-label {
+ font-size: 0.7rem;
+ text-transform: uppercase;
+ letter-spacing: 0.05em;
+ font-weight: 700;
+ color: var(--text-muted);
+ margin-bottom: 0.5rem;
+ display: block;
+ }
+
+ /* Coming Soon Bar */
+ .coming-soon {
+ margin-top: 3rem;
+ background: var(--text-main);
+ color: #fff;
+ border-radius: var(--radius);
+ padding: 2.5rem;
+ display: flex;
+ flex-direction: column;
+ gap: 1.5rem;
+ position: relative;
+ overflow: hidden;
+ }
+
+ @media (min-width: 768px) {
+ .coming-soon {
+ flex-direction: row;
+ align-items: center;
+ justify-content: space-between;
+ }
+ }
+
+ .coming-soon-content {
+ max-width: 600px;
+ position: relative;
+ z-index: 2;
+ }
+
+ .coming-soon-content h4 {
+ color: #fff;
+ margin-bottom: 1rem;
+ }
+
+ .coming-soon p {
+ color: #D1D5DB;
+ margin-bottom: 0;
+ }
+
+ .tags {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 0.5rem;
+ position: relative;
+ z-index: 2;
+ }
+
+ .tag {
+ background: rgba(255, 255, 255, 0.1);
+ padding: 0.5rem 1rem;
+ border-radius: 100px;
+ font-size: 0.8rem;
+ font-weight: 500;
+ }
+
+ /* Science Section / Clip Path Divider */
+ .science-section {
+ background: var(--card-bg);
+ position: relative;
+ padding-top:var(--space-2xl);
+ }
+
+ .science-section::before {
+ content: '';
+ position: absolute;
+ top: -50px;
+ left: 0;
+ width: 100%;
+ height: 100px;
+ background: var(--card-bg);
+ clip-path: polygon(0 50px, 100% 0, 100% 100%, 0% 100%);
+ }
+
+ .pillars-grid {
+ display: grid;
+ grid-template-columns: 1fr;
+ gap: 3rem;
+ margin-bottom: 5rem;
+ }
+
+ @media (min-width: 768px) {
+ .pillars-grid {
+ grid-template-columns: repeat(3, 1fr);
+ gap: 2rem;
+ }
+ }
+
+ .pillar {
+ position: relative;
+ }
+
+ .pillar-number {
+ font-family: var(--font-heading);
+ font-size: 5rem;
+ font-weight: 800;
+ color: var(--bg);
+ position: absolute;
+ top: -30px;
+ left: -10px;
+ z-index: 0;
+ line-height: 1;
+ }
+
+ .pillar-content {
+ position: relative;
+ z-index: 1;
+ }
+
+ .pillar-content h3 {
+ margin: 1rem 0;
+ }
+
+ .pillar-highlight {
+ background: var(--accent-light);
+ color: var(--accent-hover);
+ padding: 1rem;
+ border-radius: 8px;
+ font-weight: 700;
+ font-size: 0.9rem;
+ margin-top: 1.5rem;
+ }
+
+ /* Comparison Table */
+ .comparison-box {
+ border: 1px solid var(--border);
+ border-radius: var(--radius);
+ overflow: hidden;
+ background: var(--bg);
+ box-shadow: var(--shadow-sm);
+ }
+
+ .c-header {
+ background: var(--text-main);
+ color: #fff;
+ padding: 2rem;
+ display: flex;
+ flex-direction: column;
+ gap: 1rem;
+ }
+
+ @media (min-width: 768px) {
+ .c-header {
+ flex-direction: row;
+ justify-content: space-between;
+ align-items: center;
+ }
+ }
+
+ .c-header h4 {
+ color: #fff;
+ margin-bottom: 0.25rem;
+ }
+
+ .c-stat-big {
+ font-family: var(--font-heading);
+ font-size: 2.5rem;
+ font-weight: 800;
+ color: var(--accent-light);
+ line-height: 1;
+ }
+
+ .c-table-wrap {
+ overflow-x: auto;
+ -webkit-overflow-scrolling: touch;
+ }
+
+ .c-table {
+ width: 100%;
+ min-width: 600px;
+ border-collapse: collapse;
+ background: #fff;
+ }
+
+ .c-table th,
+ .c-table td {
+ padding: 1.25rem 1.5rem;
+ text-align: left;
+ border-bottom: 1px solid var(--border);
+ }
+
+ .c-table th {
+ background: var(--bg);
+ font-family: var(--font-heading);
+ font-weight: 700;
+ font-size: 0.85rem;
+ text-transform: uppercase;
+ letter-spacing: 0.05em;
+ color: var(--text-muted);
+ }
+
+ .c-table td {
+ font-size: 0.95rem;
+ font-weight: 500;
+ }
+
+ .c-table td.us {
+ background: var(--accent-light);
+ color: var(--accent-hover);
+ font-weight: 700;
+ }
+
+ .c-table td.them {
+ color: var(--text-muted);
+ }
+
+ .c-table tr:last-child td {
+ border-bottom: none;
+ }
+
+ /* Footer */
+ footer {
+ background: var(--text-main);
+ color: #fff;
+ padding:var(--space-lg) 0 2rem;
+ text-align: center;
+ }
+
+ footer .logo {
+ margin-bottom: 1.5rem;
+ display: block;
+ }
+
+ footer p {
+ color: #9CA3AF;
+ max-width: 400px;
+ margin: 0 auto 2rem;
+ font-size: 0.9rem;
+ }
+
+ .footer-links {
+ display: flex;
+ justify-content: center;
+ gap: 2rem;
+ margin-bottom: 3rem;
+ }
+
+ .footer-links a {
+ color: #D1D5DB;
+ font-weight: 500;
+ font-size: 0.9rem;
+ transition: color 0.2s;
+ }
+
+ .footer-links a:hover {
+ color: #fff;
+ }
+
+ .footer-bottom {
+ border-top: 1px solid rgba(255, 255, 255, 0.1);
+ padding-top: 2rem;
+ font-size: 0.8rem;
+ color: #6B7280;
+ }
+
+ /* Mobile Sticky CTA */
+ .mobile-sticky-cta {
+ position: fixed;
+ bottom: 24px;
+ left: 24px;
+ right: 24px;
+ z-index: 90;
+ display: flex;
+ transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s;
+ opacity: 0;
+ pointer-events: none;
+ transform: translateY(20px);
+ }
+
+ .mobile-sticky-cta.visible {
+ opacity: 1;
+ pointer-events: all;
+ transform: translateY(0);
+ }
+
+ .mobile-sticky-cta .btn {
+ width: 100%;
+ box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.5);
+ }
+
+ @media (min-width: 768px) {
+ .mobile-sticky-cta {
+ display: none;
+ }
+ }
+
+ /* Form base styles for touch */
+ input,
+ textarea,
+ select {
+ font-size: 16px;
+ /* prevents iOS zoom */
+ font-family: var(--font-body);
+ }
+
+ /* About Us Sections */
+ .about-section {
+ background: var(--bg);
+ padding-top: 5rem;
+ padding-bottom: 5rem;
+ }
+
+ .about-hero {
+ text-align: center;
+ max-width: 800px;
+ margin: 0 auto 5rem;
+ }
+
+ .about-hero h2 {
+ margin: 1rem 0;
+ font-size: clamp(2.5rem, 6vw, 4rem);
+ }
+
+ .about-hero .subtitle {
+ font-size: 1.25rem;
+ color: var(--text-muted);
+ line-height: 1.7;
+ }
+
+ /* Vision & Mission Grid */
+ .vm-grid {
+ display: grid;
+ grid-template-columns: 1fr;
+ gap:var(--space-lg);
+ margin-bottom:var(--space-xl);
+ }
+
+ @media (min-width: 992px) {
+ .vm-grid {
+ grid-template-columns: 1fr 1.2fr;
+ gap: 5rem;
+ align-items: start;
+ }
+ }
+
+ .vm-block h3 {
+ font-size: 2rem;
+ margin-bottom: 1.5rem;
+ color: var(--text-main);
+ }
+
+ .vm-keywords {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 0.75rem;
+ margin-bottom: 2rem;
+ }
+
+ .vm-keyword {
+ background: var(--accent-glow);
+ color: var(--accent-hover);
+ padding: 0.4rem 1rem;
+ border-radius: 100px;
+ font-weight: 600;
+ font-size: 0.85rem;
+ }
+
+ .vm-list li {
+ margin-bottom: 1.5rem;
+ font-size: 1.05rem;
+ padding-left: 1.5rem;
+ position: relative;
+ }
+
+ .vm-list li::before {
+ content: '';
+ position: absolute;
+ left: 0;
+ top: 10px;
+ width: 8px;
+ height: 8px;
+ border-radius: 50%;
+ background: var(--accent);
+ }
+
+ .vm-list li strong {
+ color: var(--accent);
+ display: block;
+ margin-bottom: 0.25rem;
+ font-family: var(--font-heading);
+ font-size: 1.2rem;
+ }
+
+ .mission-quote {
+ font-size: 1.35rem;
+ font-style: italic;
+ border-left: 4px solid var(--accent);
+ padding-left: 1.5rem;
+ margin: 2.5rem 0;
+ color: var(--text-main);
+ font-family: var(--font-heading);
+ line-height: 1.4;
+ }
+
+ .core-values {
+ background: var(--card-bg);
+ border-radius: var(--radius);
+ box-shadow: var(--shadow-cards);
+ padding:var(--space-lg) 2rem;
+ margin-bottom:var(--space-xl);
+ border: 1px solid var(--border);
+ }
+
+ .core-values h3 {
+ text-align: center;
+ margin-bottom: 3rem;
+ font-size: 2.5rem;
+ }
+
+ .values-grid {
+ display: grid;
+ grid-template-columns: 1fr;
+ gap: 2rem;
+ }
+
+ @media (min-width: 768px) {
+ .values-grid {
+ grid-template-columns: repeat(2, 1fr);
+ }
+ }
+
+ @media (min-width: 1024px) {
+ .values-grid {
+ grid-template-columns: repeat(3, 1fr);
+ }
+ }
+
+ .value-card {
+ padding: 1.5rem;
+ border-top: 2px solid var(--accent-light);
+ background: var(--bg);
+ border-radius: 0 0 12px 12px;
+ transition: all var(--transition);
+ }
+
+ .value-card:hover {
+ border-top-color: var(--accent);
+ transform: translateY(-4px);
+ box-shadow: var(--shadow-sm);
+ }
+
+ .value-card h4 {
+ font-size: 1.1rem;
+ margin-bottom: 0.5rem;
+ color: var(--text-main);
+ }
+
+ /* Founder Section */
+ .founder-chapter {
+ margin-bottom:var(--space-xl);
+ }
+
+ .chapter-label {
+ font-family: var(--font-heading);
+ font-weight: 700;
+ color: var(--accent);
+ font-size: 1.25rem;
+ margin-bottom: 1.5rem;
+ text-transform: uppercase;
+ letter-spacing: 0.1em;
+ display: flex;
+ align-items: center;
+ gap: 1rem;
+ }
+
+ .chapter-label::after {
+ content: '';
+ flex-grow: 1;
+ height: 1px;
+ background: var(--border);
+ }
+
+ .founder-profile {
+ display: grid;
+ gap: 3rem;
+ }
+
+ @media (min-width: 768px) {
+ .founder-profile {
+ grid-template-columns: 1fr 2fr;
+ align-items: start;
+ }
+ }
+
+ .founder-image-placeholder {
+ aspect-ratio: 3/4;
+ background: var(--card-bg);
+ border-radius: var(--radius);
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ box-shadow: var(--shadow-cards);
+ border: 1px solid var(--border);
+ position: relative;
+ overflow: hidden;
+ color: var(--accent);
+ }
+
+ .founder-image-placeholder::after {
+ content: '';
+ position: absolute;
+ inset: 0;
+ background: linear-gradient(to top, var(--accent-glow), transparent);
+ }
+
+ .founder-details h3 {
+ font-size: 2.5rem;
+ margin-bottom: 0.25rem;
+ }
+
+ .founder-role {
+ font-weight: 600;
+ color: var(--accent);
+ font-size: 1.1rem;
+ margin-bottom: 1.5rem;
+ display: inline-block;
+ background: var(--accent-light);
+ padding: 0.25rem 1rem;
+ border-radius: 100px;
+ }
+
+ .founder-quote {
+ background: var(--card-bg);
+ padding: 2.5rem;
+ border-radius: 16px;
+ border-left: 4px solid var(--accent);
+ font-size: 1.15rem;
+ line-height: 1.8;
+ font-style: italic;
+ box-shadow: var(--shadow-sm);
+ margin: 2.5rem 0;
+ }
+
+ .milestone-grid {
+ border-left: 2px solid var(--border);
+ margin-left: 1rem;
+ padding-left: 2rem;
+ position: relative;
+ }
+
+ .milestone {
+ position: relative;
+ margin-bottom: 3.5rem;
+ }
+
+ .milestone:last-child {
+ margin-bottom: 0;
+ }
+
+ .milestone::before {
+ content: '';
+ position: absolute;
+ left: -2.6rem;
+ top: 0;
+ width: 1rem;
+ height: 1rem;
+ background: var(--accent);
+ border-radius: 50%;
+ border: 4px solid var(--bg);
+ transition: all 0.3s;
+ }
+
+ .milestone:hover::before {
+ transform: scale(1.3);
+ box-shadow: 0 0 10px var(--accent-glow);
+ }
+
+ .milestone h4 {
+ font-size: 1.25rem;
+ margin-bottom: 0.75rem;
+ display: flex;
+ flex-wrap: wrap;
+ align-items: center;
+ gap: 0.75rem;
+ }
+
+ .milestone-status {
+ font-size: 0.7rem;
+ padding: 0.25rem 0.75rem;
+ border-radius: 100px;
+ background: var(--card-bg);
+ color: var(--text-muted);
+ font-family: var(--font-body);
+ text-transform: uppercase;
+ letter-spacing: 0.05em;
+ border: 1px solid var(--border);
+ font-weight: 700;
+ }
+
+ .milestone-status.completed {
+ background: var(--accent-light);
+ color: var(--accent-hover);
+ border-color: transparent;
+ }
+
+ .milestone-status.active {
+ background: #DBEAFE;
+ color: #1D4ED8;
+ border-color: transparent;
+ }
+
+ .approach-grid {
+ display: grid;
+ gap: 2rem;
+ grid-template-columns: 1fr;
+ }
+
+ @media (min-width: 768px) {
+ .approach-grid {
+ grid-template-columns: repeat(2, 1fr);
+ }
+ }
+
+ .approach-card {
+ background: var(--card-bg);
+ padding: 2.5rem 2rem;
+ border-radius: var(--radius);
+ border: 1px solid var(--border);
+ box-shadow: var(--shadow-sm);
+ transition: all var(--transition);
+ }
+
+ .approach-card:hover {
+ transform: translateY(-5px);
+ box-shadow: var(--shadow-cards);
+ border-color: var(--accent-light);
+ }
+
+ .approach-num {
+ font-family: var(--font-heading);
+ font-size: 3.5rem;
+ font-weight: 800;
+ color: var(--accent-glow);
+ line-height: 1;
+ margin-bottom: 1rem;
+ }
+
+ .approach-card h4 {
+ font-size: 1.35rem;
+ margin-bottom: 1rem;
+ }
+
+ /* Invitation CTA */
+ .invitation-box {
+ background: var(--gradient-teal);
+ border-radius: var(--radius);
+ padding: 5rem 2rem;
+ color: #fff;
+ text-align: center;
+ box-shadow: var(--shadow-hover);
+ margin-top: 5rem;
+ position: relative;
+ z-index: 2;
+ }
+
+ .invitation-box::before {
+ content: '';
+ position: absolute;
+ inset: 0;
+ background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+ opacity: 0.1;
+ pointer-events: none;
+ border-radius: var(--radius);
+ }
+
+ .invitation-box>* {
+ position: relative;
+ z-index: 2;
+ }
+
+ .invitation-box h2 {
+ color: #fff;
+ margin-bottom: 1.5rem;
+ }
+
+ .invitation-box p {
+ color: rgba(255, 255, 255, 0.9);
+ max-width: 600px;
+ margin: 0 auto 3rem;
+ font-size: 1.15rem;
+ }
+
+ .invitation-ctas {
+ display: flex;
+ flex-direction: column;
+ gap: 1rem;
+ justify-content: center;
+ align-items: center;
+ }
+
+ @media (min-width: 640px) {
+ .invitation-ctas {
+ flex-direction: row;
+ }
+ }
+
+ .btn-white {
+ background: #fff;
+ color: var(--accent);
+ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+ }
+
+ .btn-white:hover {
+ transform: translateY(-2px);
+ box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+ }
+
+ .btn-outline-white {
+ border: 2px solid rgba(255, 255, 255, 0.3);
+ color: #fff;
+ background: transparent;
+ }
+
+ .btn-outline-white:hover {
+ border-color: #fff;
+ background: rgba(255, 255, 255, 0.1);
+ }
+ </style>
+ <link rel="stylesheet" href="assets/css/v2_premium.css?v=42">
+
+ <!-- Google Structured Data (Organization) -->
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "name": "Oxygen Bioinnovations",
+ "url": "https://oxygenbioinnovations.com/",
+ "logo": "https://oxygenbioinnovations.com/assets/images/logo-full.png",
+ "description": "India's first precision nutrition system grounded in biotechnology, indigenous ingredients, and an unbreakable commitment to evidence."
+ }
+ </script>
+ <link rel="stylesheet" href="assets/css/transitions.css">
 </head>
 
 <body>
 
-    <!-- Navigation -->
-    <header id="header">
-        <div class="container nav-container">
-            <a href="#" class="logo">OXYGEN<span>.</span></a>
-
-            <!-- Desktop Nav -->
-            <nav class="desktop-nav">
-                <a href="#about-vision">About Us</a>
-                <a href="#problem">The Problem</a>
-                <a href="#products">Formulas</a>
-                <a href="#science">Science</a>
-                <a href="#join" class="btn btn-primary magnetic-btn">Join Waitlist</a>
-            </nav>
-
-            <!-- Mobile Hamburger -->
-            <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </header>
-
-    <!-- Mobile Drawer Overlay & Menu -->
-    <div class="mobile-overlay" id="mobileOverlay"></div>
-    <nav class="mobile-menu" id="mobileMenu">
-        <a href="#about-vision" class="menu-link">About Us</a>
-        <a href="#problem" class="menu-link">The Problem</a>
-        <a href="#products" class="menu-link">Formulas</a>
-        <a href="#science" class="menu-link">Science</a>
-        <a href="#join" class="btn btn-primary menu-link">Join Waitlist</a>
-    </nav>
-
-    <!-- Hero Section -->
-    <main>
-        <section class="hero" id="home">
-            <div class="hero-glow"></div>
-            <div class="container hero-content">
-                <div class="badge reveal" style="transition-delay: 0ms;">🌱 In Development &bull; TBI Incubated</div>
-
-                <h1 class="reveal" style="transition-delay: 150ms;">
-                    Ancient Ingredients.<br>
-                    Modern Science.<br>
-                    <span style="color: var(--accent);">No Compromise.</span>
-                </h1>
-
-                <p class="subtitle reveal" style="transition-delay: 300ms;">
-                    India is building its first precision nutrition system. Built on Millet, Medicinal Mushrooms, and
-                    decades of scientific research. Designed for ambitious Indians who deserve better than what
-                    currently exists.
-                </p>
-
-                <div class="hero-cta reveal" style="transition-delay: 450ms;">
-                    <a href="#join" class="btn btn-primary magnetic-btn">Join the Waitlist</a>
-                    <a href="#science" class="btn btn-outline magnetic-btn">Read the Science</a>
-                </div>
-
-                <div class="trust-checks reveal" style="transition-delay: 600ms;">
-                    <div class="check">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                            stroke-linecap="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                        TBI Incubated Startup
-                    </div>
-                    <div class="check">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                            stroke-linecap="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                        FSSAI Licensing In Progress
-                    </div>
-                    <div class="check">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                            stroke-linecap="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                        100% Indian Ingredients
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Trust Bar -->
-        <div class="trust-bar reveal">
-            <div class="marquee">
-                <!-- Group 1 -->
-                <div class="marquee-item"><span></span> TBI Incubated Startup</div>
-                <div class="marquee-item"><span></span> Science-First Formulation</div>
-                <div class="marquee-item"><span></span> FSSAI Licensing In Progress</div>
-                <div class="marquee-item"><span></span> 100% Indian Ingredients</div>
-                <div class="marquee-item"><span></span> Third-Party Testing Planned</div>
-                <div class="marquee-item"><span></span> Zero Artificial Ingredients</div>
-                <div class="marquee-item"><span></span> Clinical Study Protocol Ready</div>
-                <div class="marquee-item"><span></span> Peer-Reviewed Formulation</div>
-                <!-- Group 2 (Clone for infinite scroll) -->
-                <div class="marquee-item"><span></span> TBI Incubated Startup</div>
-                <div class="marquee-item"><span></span> Science-First Formulation</div>
-                <div class="marquee-item"><span></span> FSSAI Licensing In Progress</div>
-                <div class="marquee-item"><span></span> 100% Indian Ingredients</div>
-                <div class="marquee-item"><span></span> Third-Party Testing Planned</div>
-                <div class="marquee-item"><span></span> Zero Artificial Ingredients</div>
-                <div class="marquee-item"><span></span> Clinical Study Protocol Ready</div>
-                <div class="marquee-item"><span></span> Peer-Reviewed Formulation</div>
-            </div>
-        </div>
-
-        <!-- The Problem Section -->
-        <section id="problem">
-            <div class="container">
-                <div class="section-header reveal">
-                    <h2>You are probably nutritionally <span style="color: #E11D48;">deficient.</span></h2>
-                    <p style="font-size: 1.125rem; margin-top: 1rem;">Not because you are careless. Because modern
-                        Indian life makes proper nutrition almost impossible.</p>
-                </div>
-
-                <div class="stat-grid">
-                    <article class="stat-card reveal">
-                        <div class="stat-number" data-target="73">0</div><span
-                            style="font-size: 2rem; font-weight: 800; color: var(--accent); position: relative; top: -10px;">%</span>
-                        <div class="stat-label">Vitamin D Deficient</div>
-                        <div class="stat-source">Source: ICMR National Nutrition Survey</div>
-                    </article>
-                    <article class="stat-card reveal" style="transition-delay: 100ms;">
-                        <div class="stat-number" data-target="50">0</div><span
-                            style="font-size: 2rem; font-weight: 800; color: var(--accent); position: relative; top: -10px;">%</span>
-                        <div class="stat-label">Skip ≥1 Meal/Day</div>
-                        <div class="stat-source">Source: ASSOCHAM Health Survey</div>
-                    </article>
-                    <article class="stat-card reveal" style="transition-delay: 200ms;">
-                        <div class="stat-number" data-target="68">0</div><span
-                            style="font-size: 2rem; font-weight: 800; color: var(--accent); position: relative; top: -10px;">%</span>
-                        <div class="stat-label">Fail Label Claims</div>
-                        <div class="stat-source">Source: CSE Report 2023</div>
-                    </article>
-                </div>
-
-                <div class="cards-grid">
-                    <article class="problem-card reveal">
-                        <div class="card-icon">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <polyline points="12 6 12 12 16 14"></polyline>
-                            </svg>
-                        </div>
-                        <h3>No time for real nutrition</h3>
-                        <p>The average working professional has 22 minutes for lunch, often at their desk. Students skip
-                            meals before exams. Athletes eat whatever is convenient after training. The food system was
-                            not designed for how Indians actually live.</p>
-                    </article>
-
-                    <article class="problem-card reveal" style="transition-delay: 150ms;">
-                        <div class="card-icon">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                                <line x1="1" y1="1" x2="23" y2="23"></line>
-                            </svg>
-                        </div>
-                        <h3>Existing products deceive you</h3>
-                        <p>Most Indian health drinks are primarily sugar with token doses of vitamins your body cannot
-                            absorb. Cheap synthetic forms, under-dosed actives, misleading labels. The same brand sells
-                            better formulas in foreign markets. You deserve to know this.</p>
-                    </article>
-
-                    <article class="problem-card reveal" style="transition-delay: 300ms;">
-                        <div class="card-icon">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <line x1="2" y1="12" x2="22" y2="12"></line>
-                                <path
-                                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
-                                </path>
-                            </svg>
-                        </div>
-                        <h3>Imported solutions do not fit India</h3>
-                        <p>Products designed for Western nutritional deficiencies miss what Indian bodies need. They do
-                            not understand Ragi, Moringa, or Ashwagandha. They do not understand how Indians eat, work,
-                            or train. India needs an Indian solution.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Solutions / Products Section -->
-        <section id="products" style="background: var(--bg);">
-            <div class="container">
-                <div class="section-header reveal" style="text-align: center; margin: 0 auto 5rem;">
-                    <div class="badge badge-accent" style="margin-bottom: 1rem;">Solutions</div>
-                    <h2>So we built one. Meet Oxygen.</h2>
-                    <p style="font-size: 1.125rem; margin-top: 1rem;">Three precision formulas. Each scientifically
-                        designed for a specific need. All built on the same uncompromising foundation: Indian
-                        ingredients, active nutrient forms, and doses that actually work.</p>
-                </div>
-
-                <div class="product-grid">
-                    <!-- Product 1 -->
-                    <article class="product-card reveal">
-                        <div class="p-head">
-                            <div class="card-icon" style="margin:0;"><svg fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24" stroke-width="2">
-                                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-                                </svg></div>
-                            <span class="p-target">Daily Deficiencies</span>
-                        </div>
-                        <h3>Project VITALITY</h3>
-                        <span class="p-status">Pre-Clinical Optimization</span>
-                        <p class="p-tagline">"For when you cannot eat well but refuse to function sub-optimally. An
-                            everyday nutritional baseline."</p>
-
-                        <ul class="p-benefits">
-                            <li>Covers 50% of your daily nutrient needs</li>
-                            <li>Sustained energy without sugar spikes</li>
-                            <li>Stress adaptation with KSM-66 Ashwagandha</li>
-                        </ul>
-
-                        <div class="p-ingredients">
-                            <span class="p-stack-label">Core Stack</span>
-                            <p style="font-size: 0.85rem; font-weight: 600; color: var(--text-main); margin:0;">Finger
-                                Millet, Ashwagandha KSM-66, Lion's Mane, Moringa, 22 Chelated Nutrients</p>
-                        </div>
-                    </article>
-
-                    <!-- Product 2 -->
-                    <article class="product-card featured reveal" style="transition-delay: 150ms;">
-                        <div class="p-head">
-                            <div class="card-icon" style="margin:0; background: var(--accent); color:#fff;"><svg
-                                    fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                                    <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
-                                    <line x1="16" y1="8" x2="2" y2="22"></line>
-                                    <line x1="17.5" y1="15" x2="9" y2="6.5"></line>
-                                </svg></div>
-                            <span class="p-target">Cognitive Fatigue</span>
-                        </div>
-                        <h3>Project CLARITY</h3>
-                        <span class="p-status">Sensory Trials & Taste Profiling</span>
-                        <p class="p-tagline">"The honest alternative to high-sugar energy drinks. Built for sustained
-                            focus and the dreaded 3PM crash."</p>
-
-                        <ul class="p-benefits">
-                            <li>Clean focus without caffeine crash</li>
-                            <li>Memory and attention support (Lion's Mane)</li>
-                            <li>L-Theanine:Caffeine ratio 2.5:1 (clinically studied)</li>
-                        </ul>
-
-                        <div class="p-ingredients">
-                            <span class="p-stack-label">Core Stack</span>
-                            <p style="font-size: 0.85rem; font-weight: 600; color: var(--text-main); margin:0;">Lion's
-                                Mane, Bacopa Monnieri, L-Theanine, Natural Caffeine, Active B Vitamins</p>
-                        </div>
-                    </article>
-
-                    <!-- Product 3 -->
-                    <article class="product-card reveal" style="transition-delay: 300ms;">
-                        <div class="p-head">
-                            <div class="card-icon" style="margin:0;"><svg fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24" stroke-width="2">
-                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                                </svg></div>
-                            <span class="p-target">Cellular Recovery</span>
-                        </div>
-                        <h3>Project MOMENTUM</h3>
-                        <span class="p-status">Formulation Finalized</span>
-                        <p class="p-tagline">"An athletic recovery matrix built around ATP production and true muscle
-                            repair, rather than synthetic stimulation."</p>
-
-                        <ul class="p-benefits">
-                            <li>Faster muscle recovery (Kokum + Tart Cherry)</li>
-                            <li>ATP production support (Cordyceps militaris)</li>
-                            <li>Strength and endurance (Creatine HCl + Citrulline)</li>
-                        </ul>
-
-                        <div class="p-ingredients">
-                            <span class="p-stack-label">Core Stack</span>
-                            <p style="font-size: 0.85rem; font-weight: 600; color: var(--text-main); margin:0;">
-                                Cordyceps, Creatine HCl, Kokum Extract, L-Citrulline, Electrolytes</p>
-                        </div>
-                    </article>
-                </div>
-
-                <!-- Coming Soon -->
-                <div class="coming-soon reveal">
-                    <div class="coming-soon-content">
-                        <div class="badge badge-accent"
-                            style="margin-bottom: 1rem; background: rgba(255,255,255,0.1); color:#fff;">Coming Soon
-                        </div>
-                        <h4>The Honest Protein Bar</h4>
-                        <p>Real dates, real cashews, real pumpkin seeds. 300mg KSM-66 Ashwagandha in every bar. No fake
-                            protein. No compound chocolate. Coming alongside our drink range.</p>
-                    </div>
-                    <div class="tags">
-                        <span class="tag">Dates</span>
-                        <span class="tag">Cashews</span>
-                        <span class="tag">Pumpkin Seeds</span>
-                        <span class="tag">Ashwagandha</span>
-                        <span class="tag">Whey Isolate</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Science Section -->
-        <section id="science" class="science-section">
-            <div class="container">
-                <div class="section-header reveal" style="text-align: center; margin: 0 auto 4rem;">
-                    <h2>We show our <span style="color: var(--accent);">work.</span></h2>
-                    <p style="font-size: 1.125rem; margin-top: 1rem;">Every formulation decision has a peer-reviewed
-                        reason. Every ingredient has a verified source. Every claim is something we can prove.</p>
-                </div>
-
-                <div class="pillars-grid">
-                    <!-- Pillar 1 -->
-                    <div class="pillar reveal">
-                        <div class="pillar-number">1</div>
-                        <div class="pillar-content">
-                            <h3>Active forms only</h3>
-                            <p>Most products use the cheapest permitted form of each vitamin and mineral. We use:
-                                Methylcobalamin, Pyridoxal-5-Phosphate, 5-MTHF Folate, Albion TRAACS® Chelated Minerals.
-                            </p>
-                            <div class="pillar-highlight">
-                                The difference: 3-4x better absorption. The cost difference per serving: ₹2. The choice
-                                was obvious.
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Pillar 2 -->
-                    <div class="pillar reveal" style="transition-delay: 150ms;">
-                        <div class="pillar-number">2</div>
-                        <div class="pillar-content">
-                            <h3>Verified, not assumed</h3>
-                            <p>Our Lion's Mane extract is verified at minimum 30% β-glucan content using the Megazyme
-                                AOAC method — the gold standard verification method.</p>
-                            <div class="pillar-highlight">
-                                Not marketing weight. Not assumed potency. Verified active compound content. Most brands
-                                do not do this. We consider it non-negotiable.
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Pillar 3 -->
-                    <div class="pillar reveal" style="transition-delay: 300ms;">
-                        <div class="pillar-number">3</div>
-                        <div class="pillar-content">
-                            <h3>Proving it, not just claiming it</h3>
-                            <p>We have designed a clinical study for 135 participants across 8 weeks — before we launch
-                                commercially. Primary outcomes: Biomarkers + cognitive tests.</p>
-                            <div class="pillar-highlight">
-                                Results will be published. Regardless of outcome. Ethics committee approval in progress.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Comparison Table -->
-                <div class="comparison-box reveal">
-                    <div class="c-header">
-                        <div>
-                            <h4>Absorption Difference</h4>
-                            <span style="font-size: 0.9rem; opacity: 0.8;">Standard mineral form (Oxide/Sulfate) =
-                                8%</span>
-                        </div>
-                        <div style="text-align: right;">
-                            <div class="c-stat-big">28%</div>
-                            <span
-                                style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent-light);">3.5x
-                                better absorption</span>
-                        </div>
-                    </div>
-                    <div class="c-table-wrap">
-                        <table class="c-table">
-                            <thead>
-                                <tr>
-                                    <th>Component</th>
-                                    <th>Oxygen Formulations</th>
-                                    <th>Most Brands</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Vitamin B12</td>
-                                    <td class="us">✔ Methylcobalamین</td>
-                                    <td class="them">Cyanocobalamin</td>
-                                </tr>
-                                <tr>
-                                    <td>Minerals</td>
-                                    <td class="us">✔ Chelated (TRAACS®)</td>
-                                    <td class="them">Oxide/Sulfate forms</td>
-                                </tr>
-                                <tr>
-                                    <td>Mushroom extracts</td>
-                                    <td class="us">✔ Verified β-glucan</td>
-                                    <td class="them">Unverified weight</td>
-                                </tr>
-                                <tr>
-                                    <td>Lab reports</td>
-                                    <td class="us">✔ Public CoA</td>
-                                    <td class="them">No transparency</td>
-                                </tr>
-                                <tr>
-                                    <td>Efficacy data</td>
-                                    <td class="us">✔ Clinical study</td>
-                                    <td class="them">No efficacy data</td>
-                                </tr>
-                                <tr>
-                                    <td>Suppliers</td>
-                                    <td class="us">✔ Named sources</td>
-                                    <td class="them">Anonymous suppliers</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-        <!-- Vision & Mission Section -->
-        <section id="about-vision" class="about-section">
-            <div class="container">
-                <div class="about-hero reveal">
-                    <div class="badge badge-accent" style="margin-bottom: 1rem;">Our Vision & Mission</div>
-                    <h2>Why Oxygen exists.</h2>
-                    <p class="subtitle">This is not a corporate origin story. This is the honest account of a problem we
-                        couldn't ignore, a gap nobody was filling, and a decision to build something better.</p>
-                </div>
-
-                <div class="vm-grid">
-                    <!-- Vision -->
-                    <div class="vm-block reveal">
-                        <h3>Building India's First Precision Nutrition System.</h3>
-                        <div class="vm-keywords">
-                            <span class="vm-keyword">Sustainable</span>
-                            <span class="vm-keyword">Indigenous</span>
-                            <span class="vm-keyword">Circular</span>
-                        </div>
-                        <ul class="vm-list">
-                            <li><strong>Sustainable Enterprise</strong> To build an innovation-driven biotechnology
-                                enterprise that prioritizes planetary health alongside human health.</li>
-                            <li><strong>Indigenous Resources</strong> To transform India's rich biological resources
-                                into globally competitive biocosmetic and food products.</li>
-                            <li><strong>Circular Bioeconomy</strong> To operate strictly through advanced biotechnology,
-                                circular bioeconomy principles, and responsible manufacturing.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Mission -->
-                    <div class="vm-block reveal" style="transition-delay: 150ms;">
-                        <h3>To make world-class nutrition accessible to every ambitious Indian.</h3>
-                        <p
-                            style="font-size: 1.1rem; color: var(--text-muted); font-style: italic; margin-bottom: 2rem;">
-                            By combining India's ancient ingredient wisdom with modern nutritional science — and
-                            refusing to compromise on either.</p>
-
-                        <p style="font-size: 1.05rem; color: var(--text-main); margin-bottom: 1rem;">Oxygen exists to
-                            close the gap between what urban Indians need nutritionally and what the market currently
-                            offers them.</p>
-
-                        <div class="mission-quote">
-                            "We believe Indian ingredients are world-class. We believe Indian consumers deserve products
-                            formulated to global scientific standards. We believe honesty about what is in a product is
-                            not a marketing strategy — it is a minimum standard that the industry has failed to meet."
-                        </div>
-
-                        <ul class="vm-list" style="margin-top: 2rem;">
-                            <li><strong>1. Product & Commercial Mission</strong> To develop and commercialize safe,
-                                natural, and sustainable biocosmetic and food products using innovative bioprocessing,
-                                fermentation, and formulation technologies, ensuring financial viability and market
-                                competitiveness.</li>
-                            <li><strong>2. Research & Innovation Mission</strong> To strengthen indigenous biotechnology
-                                innovation by advancing research in bioprocess engineering, microbial fermentation, and
-                                nanotechnology, supported through government grants, academic collaboration, and applied
-                                research programs.</li>
-                            <li><strong>3. Impact & Ecosystem Mission</strong> To create long-term environmental,
-                                social, and economic impact by supporting circular bioeconomy practices, enabling skill
-                                development through student mentorship and internships, generating employment, and
-                                aligning operations with national initiatives such as Make in India and
-                                sustainability-driven growth.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Core Values -->
-                <div class="core-values reveal">
-                    <h3>The principles driving our research</h3>
-                    <div class="values-grid">
-                        <div class="value-card">
-                            <h4>Scientific Rigor</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">Evidence-based, research-driven approach to every
-                                product and process.</p>
-                        </div>
-                        <div class="value-card">
-                            <h4>Sustainability First</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">Circular bioeconomy, minimal waste, maximum
-                                resource utilization.</p>
-                        </div>
-                        <div class="value-card">
-                            <h4>Collaboration</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">Building bridges between academia, industry,
-                                farmers, and consumers.</p>
-                        </div>
-                        <div class="value-card">
-                            <h4>Innovation with Purpose</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">Technology that solves real problems for real
-                                stakeholders.</p>
-                        </div>
-                        <div class="value-card">
-                            <h4>Indigenous Pride</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">Celebrating and valorizing India's biological and
-                                knowledge wealth.</p>
-                        </div>
-                        <div class="value-card">
-                            <h4>Integrity & Transparency</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">Honest communication about capabilities,
-                                challenges, and progress.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Founder & Journey Section -->
-        <section id="about-founder" class="about-section" style="padding-top: 0;">
-            <div class="container">
-                <div class="about-hero reveal" style="margin-bottom:var(--space-lg);">
-                    <div class="badge badge-accent" style="margin-bottom: 1rem;">The People Behind Oxygen</div>
-                    <h2>Built by scientists.</h2>
-                    <p class="subtitle">We aren't nutritionists who became entrepreneurs. We are people who were
-                        frustrated by what existed and decided to fix it properly.</p>
-                </div>
-
-                <!-- Chapter 1 & 2: Founder Profile -->
-                <div class="founder-chapter reveal">
-                    <div class="chapter-label">01 & 02 &mdash; The Origin</div>
-                    <div class="founder-profile">
-                        <div class="founder-image-placeholder">
-                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                <circle cx="12" cy="7" r="4"></circle>
-                            </svg>
-                        </div>
-                        <div class="founder-details">
-                            <h3>Founder</h3>
-                            <span class="founder-role">Chief Science Officer</span>
-
-                            <p
-                                style="font-size: 1.1rem; color: var(--text-main); font-weight: 500; margin-bottom: 1.5rem;">
-                                A pharmaceutical scientist who turned fermentation into food — with the precision of a
-                                lab and the soul of a craft.</p>
-
-                            <p>We spent six months trying to find a daily nutrition product we would actually recommend
-                                to someone we cared about. We could not find one. Either the science was inadequate, or
-                                the ingredients were compromised, or the price was inaccessible, or it was designed for
-                                a Western diet and simply repacked for India.</p>
-
-                            <p>We analyzed blood reports from urban Indians across multiple cities. The pattern was
-                                consistent and alarming. Seven out of ten showed at least one significant deficiency.
-                                Most were health-conscious people. Most were not eating badly by any measure. Most had
-                                no idea they were deficient.</p>
-
-                            <p>The food system was failing people who were trying to do the right thing. <strong>We
-                                    decided the only option was to build it ourselves.</strong></p>
-
-                            <div class="founder-quote">
-                                "I am building Oxygen because I am genuinely angry at what the market currently offers
-                                people who are trying to take their health seriously. I have seen the research. I know
-                                what good nutrition science looks like. And I know that the gap between what is possible
-                                and what is being sold is not technical — it is a choice. We are choosing differently."
-                            </div>
-
-                            <p
-                                style="font-size: 0.95rem; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-top: 2rem;">
-                                <strong>Operating at intersection of:</strong>
-                                <span class="badge">🔬 Pharmaceutical Bioprocessing</span>
-                                <span class="badge">🧬 Nanoscience</span>
-                                <span class="badge">🌾 Fermented Food</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Chapter 3: Approach -->
-                <div class="founder-chapter reveal">
-                    <div class="chapter-label">03 &mdash; Our Approach</div>
-                    <div class="approach-grid">
-                        <div class="approach-card">
-                            <div class="approach-num">01</div>
-                            <h4>Science Before Marketing</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">We designed the formulation before we designed the
-                                brand. We chose ingredients before we chose colors. We cited our evidence before we
-                                wrote our copy. This is backwards from how most nutrition companies work. We think it is
-                                the only sensible order.</p>
-                        </div>
-                        <div class="approach-card">
-                            <div class="approach-num">02</div>
-                            <h4>India Is Not a Market Segment</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">We did not take a Western formula and add
-                                Ashwagandha to make it Indian. We started from India. From what Indian bodies are
-                                deficient in. From what Indian lifestyles demand. India is not an afterthought — it is
-                                the foundation.</p>
-                        </div>
-                        <div class="approach-card">
-                            <div class="approach-num">03</div>
-                            <h4>Transparency Is Not Optional</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">We will publish our lab reports. We will name our
-                                ingredient suppliers. We will cite the studies behind our claims. We will tell you when
-                                a study is preliminary and when it is robust. This should be standard.</p>
-                        </div>
-                        <div class="approach-card">
-                            <div class="approach-num">04</div>
-                            <h4>Dose Matters As Much As Ingredient</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">Ashwagandha at 50mg is not the same as Ashwagandha
-                                at 300mg. Lion's Mane at 100mg is not what the research studied. We formulate at
-                                clinically relevant doses — not at doses that allow us to put the ingredient on the
-                                label.</p>
-                        </div>
-                        <div class="approach-card">
-                            <div class="approach-num">05</div>
-                            <h4>Bioavailability Is the Real Metric</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">A 100mg dose with 5% absorption delivers 5mg to
-                                your body. A 50mg dose with 35% absorption delivers 17.5mg. The nutrient that reaches
-                                your bloodstream is the only nutrient that matters. We optimize for absorption first.
-                                Always.</p>
-                        </div>
-                        <div class="approach-card" style="border-color: var(--accent);">
-                            <div class="approach-num" style="color: var(--accent);">06</div>
-                            <h4>Clinical Evidence Is Non-Negotiable</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">We designed our clinical study before we
-                                manufactured our first batch. Not because we are required to. But because we believe no
-                                company should sell a health product without evidence that it works.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Chapter 4: Milestone Journey -->
-                <div class="founder-chapter reveal">
-                    <div class="chapter-label">04 &mdash; The Journey So Far</div>
-                    <p style="font-size: 1.1rem; max-width: 700px; margin-bottom: 3rem;">What we have built before we
-                        built anything physical. Most companies build first and think about science second. We spent
-                        months thinking about the science before building anything.</p>
-
-                    <div class="milestone-grid">
-                        <div class="milestone">
-                            <h4>6+ months of nutritional deficiency research <span
-                                    class="milestone-status completed">Completed</span></h4>
-                            <p style="font-size: 0.95rem; max-width: 600px; margin: 0;">Analyzed ICMR, NFHS-5, WHO India
-                                data. Mapped exact deficiency profiles by demographic and lifestyle. Built the evidence
-                                base for product necessity.</p>
-                        </div>
-                        <div class="milestone">
-                            <h4>Complete formulation design <span class="milestone-status completed">Completed</span>
-                            </h4>
-                            <p style="font-size: 0.95rem; max-width: 600px; margin: 0;">Reviewed 200+ peer-reviewed
-                                studies. Designed complete formulas for 3 drinks + 1 bar. Every ingredient
-                                evidence-based. Every dose clinically relevant.</p>
-                        </div>
-                        <div class="milestone">
-                            <h4>Regulatory pathway fully mapped <span class="milestone-status active">In Progress</span>
-                            </h4>
-                            <p style="font-size: 0.95rem; max-width: 600px; margin: 0;">FSSAI compliance audited per
-                                ingredient. Clinical study protocol designed. Ethics committee application in process.
-                                Label compliance framework completed.</p>
-                        </div>
-                        <div class="milestone">
-                            <h4>TBI Incubation secured <span class="milestone-status active">Active</span></h4>
-                            <p style="font-size: 0.95rem; max-width: 600px; margin: 0;">Accepted by Technology Business
-                                Incubator at ACE, Hosur. Prototype development currently underway. Sensory testing
-                                beginning soon.</p>
-                        </div>
-                        <div class="milestone">
-                            <h4>Waitlist growing <span class="milestone-status active">Growing</span></h4>
-                            <p style="font-size: 0.95rem; max-width: 600px; margin: 0;">Before a single product exists —
-                                validation that the demand is real. Real people who believe something better should
-                                exist.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Chapter 5: Invitation -->
-                <div class="invitation-box reveal">
-                    <h2>Join us.</h2>
-                    <p>Oxygen is currently in development. We are not asking you to buy anything. We are asking you to
-                        believe that something better is possible — and to hold us accountable to delivering it. Tell us
-                        what you need from a nutrition product. We are listening. And we are building.</p>
-                    <div class="invitation-ctas">
-                        <a href="#join" class="btn btn-white">Join the Waitlist (Founding Member Pricing)</a>
-                        <a href="mailto:hello@oxygenbio.com" class="btn btn-outline-white">Talk to Us (Ask us
-                            anything)</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Vision & Mission Section -->
-        <section id="about-vision" class="about-section">
-            <div class="container">
-                <div class="about-hero reveal">
-                    <div class="badge badge-accent" style="margin-bottom: 1rem;">Our Vision & Mission</div>
-                    <h2>Why Oxygen exists.</h2>
-                    <p class="subtitle">This is not a corporate origin story. This is the honest account of a problem we
-                        couldn't ignore, a gap nobody was filling, and a decision to build something better.</p>
-                </div>
-
-                <div class="vm-grid">
-                    <!-- Vision -->
-                    <div class="vm-block reveal">
-                        <h3>Building India's First Precision Nutrition System.</h3>
-                        <div class="vm-keywords">
-                            <span class="vm-keyword">Sustainable</span>
-                            <span class="vm-keyword">Indigenous</span>
-                            <span class="vm-keyword">Circular</span>
-                        </div>
-                        <ul class="vm-list">
-                            <li><strong>Sustainable Enterprise</strong> To build an innovation-driven biotechnology
-                                enterprise that prioritizes planetary health alongside human health.</li>
-                            <li><strong>Indigenous Resources</strong> To transform India's rich biological resources
-                                into globally competitive biocosmetic and food products.</li>
-                            <li><strong>Circular Bioeconomy</strong> To operate strictly through advanced biotechnology,
-                                circular bioeconomy principles, and responsible manufacturing.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Mission -->
-                    <div class="vm-block reveal" style="transition-delay: 150ms;">
-                        <h3>To make world-class nutrition accessible to every ambitious Indian.</h3>
-                        <p
-                            style="font-size: 1.1rem; color: var(--text-muted); font-style: italic; margin-bottom: 2rem;">
-                            By combining India's ancient ingredient wisdom with modern nutritional science — and
-                            refusing to compromise on either.</p>
-
-                        <p style="font-size: 1.05rem; color: var(--text-main); margin-bottom: 1rem;">Oxygen exists to
-                            close the gap between what urban Indians need nutritionally and what the market currently
-                            offers them.</p>
-
-                        <div class="mission-quote">
-                            "We believe Indian ingredients are world-class. We believe Indian consumers deserve products
-                            formulated to global scientific standards. We believe honesty about what is in a product is
-                            not a marketing strategy — it is a minimum standard that the industry has failed to meet."
-                        </div>
-
-                        <ul class="vm-list" style="margin-top: 2rem;">
-                            <li><strong>1. Product & Commercial Mission</strong> To develop and commercialize safe,
-                                natural, and sustainable biocosmetic and food products using innovative bioprocessing,
-                                fermentation, and formulation technologies, ensuring financial viability and market
-                                competitiveness.</li>
-                            <li><strong>2. Research & Innovation Mission</strong> To strengthen indigenous biotechnology
-                                innovation by advancing research in bioprocess engineering, microbial fermentation, and
-                                nanotechnology, supported through government grants, academic collaboration, and applied
-                                research programs.</li>
-                            <li><strong>3. Impact & Ecosystem Mission</strong> To create long-term environmental,
-                                social, and economic impact by supporting circular bioeconomy practices, enabling skill
-                                development through student mentorship and internships, generating employment, and
-                                aligning operations with national initiatives such as Make in India and
-                                sustainability-driven growth.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Core Values -->
-                <div class="core-values reveal">
-                    <h3>The principles driving our research</h3>
-                    <div class="values-grid">
-                        <div class="value-card">
-                            <h4>Scientific Rigor</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">Evidence-based, research-driven approach to every
-                                product and process.</p>
-                        </div>
-                        <div class="value-card">
-                            <h4>Sustainability First</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">Circular bioeconomy, minimal waste, maximum
-                                resource utilization.</p>
-                        </div>
-                        <div class="value-card">
-                            <h4>Collaboration</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">Building bridges between academia, industry,
-                                farmers, and consumers.</p>
-                        </div>
-                        <div class="value-card">
-                            <h4>Innovation with Purpose</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">Technology that solves real problems for real
-                                stakeholders.</p>
-                        </div>
-                        <div class="value-card">
-                            <h4>Indigenous Pride</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">Celebrating and valorizing India's biological and
-                                knowledge wealth.</p>
-                        </div>
-                        <div class="value-card">
-                            <h4>Integrity & Transparency</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">Honest communication about capabilities,
-                                challenges, and progress.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Founder & Journey Section -->
-        <section id="about-founder" class="about-section" style="padding-top: 0;">
-            <div class="container">
-                <div class="about-hero reveal" style="margin-bottom:var(--space-lg);">
-                    <div class="badge badge-accent" style="margin-bottom: 1rem;">The People Behind Oxygen</div>
-                    <h2>Built by scientists.</h2>
-                    <p class="subtitle">We aren't nutritionists who became entrepreneurs. We are people who were
-                        frustrated by what existed and decided to fix it properly.</p>
-                </div>
-
-                <!-- Chapter 1 & 2: Founder Profile -->
-                <div class="founder-chapter reveal">
-                    <div class="chapter-label">01 & 02 &mdash; The Origin</div>
-                    <div class="founder-profile">
-                        <div class="founder-image-placeholder">
-                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                <circle cx="12" cy="7" r="4"></circle>
-                            </svg>
-                        </div>
-                        <div class="founder-details">
-                            <h3>Founder</h3>
-                            <span class="founder-role">Chief Science Officer</span>
-
-                            <p
-                                style="font-size: 1.1rem; color: var(--text-main); font-weight: 500; margin-bottom: 1.5rem;">
-                                A pharmaceutical scientist who turned fermentation into food — with the precision of a
-                                lab and the soul of a craft.</p>
-
-                            <p>We spent six months trying to find a daily nutrition product we would actually recommend
-                                to someone we cared about. We could not find one. Either the science was inadequate, or
-                                the ingredients were compromised, or the price was inaccessible, or it was designed for
-                                a Western diet and simply repacked for India.</p>
-
-                            <p>We analyzed blood reports from urban Indians across multiple cities. The pattern was
-                                consistent and alarming. Seven out of ten showed at least one significant deficiency.
-                                Most were health-conscious people. Most were not eating badly by any measure. Most had
-                                no idea they were deficient.</p>
-
-                            <p>The food system was failing people who were trying to do the right thing. <strong>We
-                                    decided the only option was to build it ourselves.</strong></p>
-
-                            <div class="founder-quote">
-                                "I am building Oxygen because I am genuinely angry at what the market currently offers
-                                people who are trying to take their health seriously. I have seen the research. I know
-                                what good nutrition science looks like. And I know that the gap between what is possible
-                                and what is being sold is not technical — it is a choice. We are choosing differently."
-                            </div>
-
-                            <p
-                                style="font-size: 0.95rem; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-top: 2rem;">
-                                <strong>Operating at intersection of:</strong>
-                                <span class="badge">🔬 Pharmaceutical Bioprocessing</span>
-                                <span class="badge">🧬 Nanoscience</span>
-                                <span class="badge">🌾 Fermented Food</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Chapter 3: Approach -->
-                <div class="founder-chapter reveal">
-                    <div class="chapter-label">03 &mdash; Our Approach</div>
-                    <div class="approach-grid">
-                        <div class="approach-card">
-                            <div class="approach-num">01</div>
-                            <h4>Science Before Marketing</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">We designed the formulation before we designed the
-                                brand. We chose ingredients before we chose colors. We cited our evidence before we
-                                wrote our copy. This is backwards from how most nutrition companies work. We think it is
-                                the only sensible order.</p>
-                        </div>
-                        <div class="approach-card">
-                            <div class="approach-num">02</div>
-                            <h4>India Is Not a Market Segment</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">We did not take a Western formula and add
-                                Ashwagandha to make it Indian. We started from India. From what Indian bodies are
-                                deficient in. From what Indian lifestyles demand. India is not an afterthought — it is
-                                the foundation.</p>
-                        </div>
-                        <div class="approach-card">
-                            <div class="approach-num">03</div>
-                            <h4>Transparency Is Not Optional</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">We will publish our lab reports. We will name our
-                                ingredient suppliers. We will cite the studies behind our claims. We will tell you when
-                                a study is preliminary and when it is robust. This should be standard.</p>
-                        </div>
-                        <div class="approach-card">
-                            <div class="approach-num">04</div>
-                            <h4>Dose Matters As Much As Ingredient</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">Ashwagandha at 50mg is not the same as Ashwagandha
-                                at 300mg. Lion's Mane at 100mg is not what the research studied. We formulate at
-                                clinically relevant doses — not at doses that allow us to put the ingredient on the
-                                label.</p>
-                        </div>
-                        <div class="approach-card">
-                            <div class="approach-num">05</div>
-                            <h4>Bioavailability Is the Real Metric</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">A 100mg dose with 5% absorption delivers 5mg to
-                                your body. A 50mg dose with 35% absorption delivers 17.5mg. The nutrient that reaches
-                                your bloodstream is the only nutrient that matters. We optimize for absorption first.
-                                Always.</p>
-                        </div>
-                        <div class="approach-card" style="border-color: var(--accent);">
-                            <div class="approach-num" style="color: var(--accent);">06</div>
-                            <h4>Clinical Evidence Is Non-Negotiable</h4>
-                            <p style="font-size: 0.95rem; margin: 0;">We designed our clinical study before we
-                                manufactured our first batch. Not because we are required to. But because we believe no
-                                company should sell a health product without evidence that it works.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Chapter 4: Milestone Journey -->
-                <div class="founder-chapter reveal">
-                    <div class="chapter-label">04 &mdash; The Journey So Far</div>
-                    <p style="font-size: 1.1rem; max-width: 700px; margin-bottom: 3rem;">What we have built before we
-                        built anything physical. Most companies build first and think about science second. We spent
-                        months thinking about the science before building anything.</p>
-
-                    <div class="milestone-grid">
-                        <div class="milestone">
-                            <h4>6+ months of nutritional deficiency research <span
-                                    class="milestone-status completed">Completed</span></h4>
-                            <p style="font-size: 0.95rem; max-width: 600px; margin: 0;">Analyzed ICMR, NFHS-5, WHO India
-                                data. Mapped exact deficiency profiles by demographic and lifestyle. Built the evidence
-                                base for product necessity.</p>
-                        </div>
-                        <div class="milestone">
-                            <h4>Complete formulation design <span class="milestone-status completed">Completed</span>
-                            </h4>
-                            <p style="font-size: 0.95rem; max-width: 600px; margin: 0;">Reviewed 200+ peer-reviewed
-                                studies. Designed complete formulas for 3 drinks + 1 bar. Every ingredient
-                                evidence-based. Every dose clinically relevant.</p>
-                        </div>
-                        <div class="milestone">
-                            <h4>Regulatory pathway fully mapped <span class="milestone-status active">In Progress</span>
-                            </h4>
-                            <p style="font-size: 0.95rem; max-width: 600px; margin: 0;">FSSAI compliance audited per
-                                ingredient. Clinical study protocol designed. Ethics committee application in process.
-                                Label compliance framework completed.</p>
-                        </div>
-                        <div class="milestone">
-                            <h4>TBI Incubation secured <span class="milestone-status active">Active</span></h4>
-                            <p style="font-size: 0.95rem; max-width: 600px; margin: 0;">Accepted by Technology Business
-                                Incubator at ACE, Hosur. Prototype development currently underway. Sensory testing
-                                beginning soon.</p>
-                        </div>
-                        <div class="milestone">
-                            <h4>Waitlist growing <span class="milestone-status active">Growing</span></h4>
-                            <p style="font-size: 0.95rem; max-width: 600px; margin: 0;">Before a single product exists —
-                                validation that the demand is real. Real people who believe something better should
-                                exist.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Chapter 5: Invitation -->
-                <div class="invitation-box reveal">
-                    <h2>Join us.</h2>
-                    <p>Oxygen is currently in development. We are not asking you to buy anything. We are asking you to
-                        believe that something better is possible — and to hold us accountable to delivering it. Tell us
-                        what you need from a nutrition product. We are listening. And we are building.</p>
-                    <div class="invitation-ctas">
-                        <a href="#join" class="btn btn-white">Join the Waitlist (Founding Member)</a>
-                        <a href="mailto:hello@oxygenbio.com" class="btn btn-outline-white">Talk to Us (Ask us
-                            anything)</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer id="footer">
-        <div class="container">
-            <a href="#" class="logo" style="font-size: 2rem; color: #fff;">OXYGEN<span
-                    style="color: var(--accent);">.</span></a>
-            <p>Ancient Ingredients. Modern Science. No Compromise. India's first precision nutrition system.</p>
-
-            <div class="footer-links">
-                <a href="#about-vision">About Us</a>
-                <a href="#problem">The Problem</a>
-                <a href="#products">Formulas</a>
-                <a href="#science">Science</a>
-                <a href="mailto:hello@oxygenbio.com">Contact</a>
-            </div>
-
-            <div class="footer-bottom">
-                &copy; <span id="year"></span> Oxygen Bioinnovations. All rights reserved.
-            </div>
-        </div>
-    </footer>
-
-    <!-- Mobile Sticky CTA -->
-    <div class="mobile-sticky-cta" id="mobileCta">
-        <a href="#join" class="btn btn-primary magnetic-btn">Join the Waitlist</a>
-    </div>
-
-    <!-- Scripts -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            // 1. Dynamic Year
-            document.getElementById('year').textContent = new Date().getFullYear();
-
-            // 2. Mobile Menu Logic
-            const menuBtn = document.getElementById('menuBtn');
-            const mobileMenu = document.getElementById('mobileMenu');
-            const mobileOverlay = document.getElementById('mobileOverlay');
-            const menuLinks = document.querySelectorAll('.menu-link');
-
-            const toggleMenu = () => {
-                menuBtn.classList.toggle('open');
-                mobileMenu.classList.toggle('open');
-                mobileOverlay.classList.toggle('open');
-                document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
-            };
-
-            menuBtn.addEventListener('click', toggleMenu);
-            mobileOverlay.addEventListener('click', toggleMenu);
-            menuLinks.forEach(link => {
-                link.addEventListener('click', toggleMenu);
-            });
-
-            // 3. Scroll Interactions (Header background & Mobile Sticky CTA)
-            const header = document.getElementById('header');
-            const mobileCta = document.getElementById('mobileCta');
-            const footer = document.getElementById('footer');
-
-            window.addEventListener('scroll', () => {
-                // Sticky Header styling
-                if (window.scrollY > 50) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-
-                // Mobile CTA Show/Hide (Hide when near footer)
-                if (window.innerWidth < 768) {
-                    const footerRect = footer.getBoundingClientRect();
-                    const viewHeight = window.innerHeight;
-
-                    // Show past hero, hide near footer
-                    if (window.scrollY > 400 && footerRect.top > viewHeight) {
-                        mobileCta.classList.add('visible');
-                    } else {
-                        mobileCta.classList.remove('visible');
-                    }
-                }
-            }, { passive: true });
-
-            // 4. Intersection Observer for Fade-Up Animations
-            const revealElements = document.querySelectorAll('.reveal');
-
-            const revealSettings = {
-                threshold: 0.15,
-                rootMargin: "0px 0px -50px 0px"
-            };
-
-            const revealObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                        observer.unobserve(entry.target); // Reveal only once
-                    }
-                });
-            }, revealSettings);
-
-            revealElements.forEach(el => revealObserver.observe(el));
-
-            // 5. Stat Counter Animation
-            const counters = document.querySelectorAll('.stat-number');
-
-            const counterObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const target = entry.target;
-                        const finalValue = parseInt(target.getAttribute('data-target'));
-                        const duration = 2000;
-                        const stepTime = Math.abs(Math.floor(duration / finalValue));
-                        let current = 0;
-
-                        const timer = setInterval(() => {
-                            current += 1;
-                            target.textContent = current;
-                            if (current === finalValue) {
-                                clearInterval(timer);
-                            }
-                        }, stepTime);
-
-                        observer.unobserve(target);
-                    }
-                });
-            }, { threshold: 0.5 });
-
-            counters.forEach(counter => counterObserver.observe(counter));
-        });
-    </script>
-    <script src="assets/js/page-transitions.js"></script>
+ <!-- Navigation -->
+ <header id="header">
+ <div class="container nav-container">
+ <a href="#" class="logo">OXYGEN<span>.</span></a>
+
+ <!-- Desktop Nav -->
+ <nav class="desktop-nav">
+ <a href="#about-vision">About Us</a>
+ <a href="#problem">The Problem</a>
+ <a href="#products">Formulas</a>
+ <a href="#science">Science</a>
+ <a href="#join" class="btn btn-primary magnetic-btn">Join Waitlist</a>
+ </nav>
+
+ <!-- Mobile Hamburger -->
+ <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
+ <span></span><span></span><span></span>
+ </button>
+ </div>
+ </header>
+
+ <!-- Mobile Drawer Overlay & Menu -->
+ <div class="mobile-overlay" id="mobileOverlay"></div>
+ <nav class="mobile-menu" id="mobileMenu">
+ <a href="#about-vision" class="menu-link">About Us</a>
+ <a href="#problem" class="menu-link">The Problem</a>
+ <a href="#products" class="menu-link">Formulas</a>
+ <a href="#science" class="menu-link">Science</a>
+ <a href="#join" class="btn btn-primary menu-link">Join Waitlist</a>
+ </nav>
+
+ <!-- Hero Section -->
+ <main>
+ <section class="hero" id="home">
+ <div class="hero-glow"></div>
+ <div class="container hero-content">
+ <div class="badge reveal" style="transition-delay: 0ms;">🌱 In Development &bull; TBI Incubated</div>
+
+ <h1 class="reveal" style="transition-delay: 150ms;">
+ Ancient Ingredients.<br>
+ Modern Science.<br>
+ <span style="color: var(--accent);">No Compromise.</span>
+ </h1>
+
+ <p class="subtitle reveal" style="transition-delay: 300ms;">
+ India is building its first precision nutrition system. Built on Millet, Medicinal Mushrooms, and
+ decades of scientific research. Designed for ambitious Indians who deserve better than what
+ currently exists.
+ </p>
+
+ <div class="hero-cta reveal" style="transition-delay: 450ms;">
+ <a href="#join" class="btn btn-primary magnetic-btn">Join the Waitlist</a>
+ <a href="#science" class="btn btn-outline magnetic-btn">Read the Science</a>
+ </div>
+
+ <div class="trust-checks reveal" style="transition-delay: 600ms;">
+ <div class="check">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+ stroke-linecap="round">
+ <polyline points="20 6 9 17 4 12"></polyline>
+ </svg>
+ TBI Incubated Startup
+ </div>
+ <div class="check">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+ stroke-linecap="round">
+ <polyline points="20 6 9 17 4 12"></polyline>
+ </svg>
+ FSSAI Licensing In Progress
+ </div>
+ <div class="check">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+ stroke-linecap="round">
+ <polyline points="20 6 9 17 4 12"></polyline>
+ </svg>
+ 100% Indian Ingredients
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- Trust Bar -->
+ <div class="trust-bar reveal">
+ <div class="marquee">
+ <!-- Group 1 -->
+ <div class="marquee-item"><span></span> TBI Incubated Startup</div>
+ <div class="marquee-item"><span></span> Science-First Formulation</div>
+ <div class="marquee-item"><span></span> FSSAI Licensing In Progress</div>
+ <div class="marquee-item"><span></span> 100% Indian Ingredients</div>
+ <div class="marquee-item"><span></span> Third-Party Testing Planned</div>
+ <div class="marquee-item"><span></span> Zero Artificial Ingredients</div>
+ <div class="marquee-item"><span></span> Clinical Study Protocol Ready</div>
+ <div class="marquee-item"><span></span> Peer-Reviewed Formulation</div>
+ <!-- Group 2 (Clone for infinite scroll) -->
+ <div class="marquee-item"><span></span> TBI Incubated Startup</div>
+ <div class="marquee-item"><span></span> Science-First Formulation</div>
+ <div class="marquee-item"><span></span> FSSAI Licensing In Progress</div>
+ <div class="marquee-item"><span></span> 100% Indian Ingredients</div>
+ <div class="marquee-item"><span></span> Third-Party Testing Planned</div>
+ <div class="marquee-item"><span></span> Zero Artificial Ingredients</div>
+ <div class="marquee-item"><span></span> Clinical Study Protocol Ready</div>
+ <div class="marquee-item"><span></span> Peer-Reviewed Formulation</div>
+ </div>
+ </div>
+
+ <!-- The Problem Section -->
+ <section id="problem">
+ <div class="container">
+ <div class="section-header reveal">
+ <h2>You are probably nutritionally <span style="color: #E11D48;">deficient.</span></h2>
+ <p style="font-size: 1.125rem; margin-top: 1rem;">Not because you are careless. Because modern
+ Indian life makes proper nutrition almost impossible.</p>
+ </div>
+
+ <div class="stat-grid">
+ <article class="stat-card reveal">
+ <div class="stat-number" data-target="73">0</div><span
+ style="font-size: 2rem; font-weight: 800; color: var(--accent); position: relative; top: -10px;">%</span>
+ <div class="stat-label">Vitamin D Deficient</div>
+ <div class="stat-source">Source: ICMR National Nutrition Survey</div>
+ </article>
+ <article class="stat-card reveal" style="transition-delay: 100ms;">
+ <div class="stat-number" data-target="50">0</div><span
+ style="font-size: 2rem; font-weight: 800; color: var(--accent); position: relative; top: -10px;">%</span>
+ <div class="stat-label">Skip ≥1 Meal/Day</div>
+ <div class="stat-source">Source: ASSOCHAM Health Survey</div>
+ </article>
+ <article class="stat-card reveal" style="transition-delay: 200ms;">
+ <div class="stat-number" data-target="68">0</div><span
+ style="font-size: 2rem; font-weight: 800; color: var(--accent); position: relative; top: -10px;">%</span>
+ <div class="stat-label">Fail Label Claims</div>
+ <div class="stat-source">Source: CSE Report 2023</div>
+ </article>
+ </div>
+
+ <div class="cards-grid">
+ <article class="problem-card reveal">
+ <div class="card-icon">
+ <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+ <circle cx="12" cy="12" r="10"></circle>
+ <polyline points="12 6 12 12 16 14"></polyline>
+ </svg>
+ </div>
+ <h3>No time for real nutrition</h3>
+ <p>The average working professional has 22 minutes for lunch, often at their desk. Students skip
+ meals before exams. Athletes eat whatever is convenient after training. The food system was
+ not designed for how Indians actually live.</p>
+ </article>
+
+ <article class="problem-card reveal" style="transition-delay: 150ms;">
+ <div class="card-icon">
+ <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+ <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+ <line x1="1" y1="1" x2="23" y2="23"></line>
+ </svg>
+ </div>
+ <h3>Existing products deceive you</h3>
+ <p>Most Indian health drinks are primarily sugar with token doses of vitamins your body cannot
+ absorb. Cheap synthetic forms, under-dosed actives, misleading labels. The same brand sells
+ better formulas in foreign markets. You deserve to know this.</p>
+ </article>
+
+ <article class="problem-card reveal" style="transition-delay: 300ms;">
+ <div class="card-icon">
+ <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+ <circle cx="12" cy="12" r="10"></circle>
+ <line x1="2" y1="12" x2="22" y2="12"></line>
+ <path
+ d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+ </path>
+ </svg>
+ </div>
+ <h3>Imported solutions do not fit India</h3>
+ <p>Products designed for Western nutritional deficiencies miss what Indian bodies need. They do
+ not understand Ragi, Moringa, or Ashwagandha. They do not understand how Indians eat, work,
+ or train. India needs an Indian solution.</p>
+ </article>
+ </div>
+ </div>
+ </section>
+
+ <!-- Solutions / Products Section -->
+ <section id="products" style="background: var(--bg);">
+ <div class="container">
+ <div class="section-header reveal" style="text-align: center; margin: 0 auto 5rem;">
+ <div class="badge badge-accent" style="margin-bottom: 1rem;">Solutions</div>
+ <h2>So we built one. Meet Oxygen.</h2>
+ <p style="font-size: 1.125rem; margin-top: 1rem;">Three precision formulas. Each scientifically
+ designed for a specific need. All built on the same uncompromising foundation: Indian
+ ingredients, active nutrient forms, and doses that actually work.</p>
+ </div>
+
+ <div class="product-grid">
+ <!-- Product 1 -->
+ <article class="product-card reveal">
+ <div class="p-head">
+ <div class="card-icon" style="margin:0;"><svg fill="none" stroke="currentColor"
+ viewBox="0 0 24 24" stroke-width="2">
+ <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+ </svg></div>
+ <span class="p-target">Daily Deficiencies</span>
+ </div>
+ <h3>Project VITALITY</h3>
+ <span class="p-status">Pre-Clinical Optimization</span>
+ <p class="p-tagline">"For when you cannot eat well but refuse to function sub-optimally. An
+ everyday nutritional baseline."</p>
+
+ <ul class="p-benefits">
+ <li>Covers 50% of your daily nutrient needs</li>
+ <li>Sustained energy without sugar spikes</li>
+ <li>Stress adaptation with KSM-66 Ashwagandha</li>
+ </ul>
+
+ <div class="p-ingredients">
+ <span class="p-stack-label">Core Stack</span>
+ <p style="font-size: 0.85rem; font-weight: 600; color: var(--text-main); margin:0;">Finger
+ Millet, Ashwagandha KSM-66, Lion's Mane, Moringa, 22 Chelated Nutrients</p>
+ </div>
+ </article>
+
+ <!-- Product 2 -->
+ <article class="product-card featured reveal" style="transition-delay: 150ms;">
+ <div class="p-head">
+ <div class="card-icon" style="margin:0; background: var(--accent); color:#fff;"><svg
+ fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+ <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
+ <line x1="16" y1="8" x2="2" y2="22"></line>
+ <line x1="17.5" y1="15" x2="9" y2="6.5"></line>
+ </svg></div>
+ <span class="p-target">Cognitive Fatigue</span>
+ </div>
+ <h3>Project CLARITY</h3>
+ <span class="p-status">Sensory Trials & Taste Profiling</span>
+ <p class="p-tagline">"The honest alternative to high-sugar energy drinks. Built for sustained
+ focus and the dreaded 3PM crash."</p>
+
+ <ul class="p-benefits">
+ <li>Clean focus without caffeine crash</li>
+ <li>Memory and attention support (Lion's Mane)</li>
+ <li>L-Theanine:Caffeine ratio 2.5:1 (clinically studied)</li>
+ </ul>
+
+ <div class="p-ingredients">
+ <span class="p-stack-label">Core Stack</span>
+ <p style="font-size: 0.85rem; font-weight: 600; color: var(--text-main); margin:0;">Lion's
+ Mane, Bacopa Monnieri, L-Theanine, Natural Caffeine, Active B Vitamins</p>
+ </div>
+ </article>
+
+ <!-- Product 3 -->
+ <article class="product-card reveal" style="transition-delay: 300ms;">
+ <div class="p-head">
+ <div class="card-icon" style="margin:0;"><svg fill="none" stroke="currentColor"
+ viewBox="0 0 24 24" stroke-width="2">
+ <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+ </svg></div>
+ <span class="p-target">Cellular Recovery</span>
+ </div>
+ <h3>Project MOMENTUM</h3>
+ <span class="p-status">Formulation Finalized</span>
+ <p class="p-tagline">"An athletic recovery matrix built around ATP production and true muscle
+ repair, rather than synthetic stimulation."</p>
+
+ <ul class="p-benefits">
+ <li>Faster muscle recovery (Kokum + Tart Cherry)</li>
+ <li>ATP production support (Cordyceps militaris)</li>
+ <li>Strength and endurance (Creatine HCl + Citrulline)</li>
+ </ul>
+
+ <div class="p-ingredients">
+ <span class="p-stack-label">Core Stack</span>
+ <p style="font-size: 0.85rem; font-weight: 600; color: var(--text-main); margin:0;">
+ Cordyceps, Creatine HCl, Kokum Extract, L-Citrulline, Electrolytes</p>
+ </div>
+ </article>
+ </div>
+
+ <!-- Coming Soon -->
+ <div class="coming-soon reveal">
+ <div class="coming-soon-content">
+ <div class="badge badge-accent"
+ style="margin-bottom: 1rem; background: rgba(255,255,255,0.1); color:#fff;">Coming Soon
+ </div>
+ <h4>The Honest Protein Bar</h4>
+ <p>Real dates, real cashews, real pumpkin seeds. 300mg KSM-66 Ashwagandha in every bar. No fake
+ protein. No compound chocolate. Coming alongside our drink range.</p>
+ </div>
+ <div class="tags">
+ <span class="tag">Dates</span>
+ <span class="tag">Cashews</span>
+ <span class="tag">Pumpkin Seeds</span>
+ <span class="tag">Ashwagandha</span>
+ <span class="tag">Whey Isolate</span>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- Science Section -->
+ <section id="science" class="science-section">
+ <div class="container">
+ <div class="section-header reveal" style="text-align: center; margin: 0 auto 4rem;">
+ <h2>We show our <span style="color: var(--accent);">work.</span></h2>
+ <p style="font-size: 1.125rem; margin-top: 1rem;">Every formulation decision has a peer-reviewed
+ reason. Every ingredient has a verified source. Every claim is something we can prove.</p>
+ </div>
+
+ <div class="pillars-grid">
+ <!-- Pillar 1 -->
+ <div class="pillar reveal">
+ <div class="pillar-number">1</div>
+ <div class="pillar-content">
+ <h3>Active forms only</h3>
+ <p>Most products use the cheapest permitted form of each vitamin and mineral. We use:
+ Methylcobalamin, Pyridoxal-5-Phosphate, 5-MTHF Folate, Albion TRAACS® Chelated Minerals.
+ </p>
+ <div class="pillar-highlight">
+ The difference: 3-4x better absorption. The cost difference per serving: ₹2. The choice
+ was obvious.
+ </div>
+ </div>
+ </div>
+ <!-- Pillar 2 -->
+ <div class="pillar reveal" style="transition-delay: 150ms;">
+ <div class="pillar-number">2</div>
+ <div class="pillar-content">
+ <h3>Verified, not assumed</h3>
+ <p>Our Lion's Mane extract is verified at minimum 30% β-glucan content using the Megazyme
+ AOAC method — the gold standard verification method.</p>
+ <div class="pillar-highlight">
+ Not marketing weight. Not assumed potency. Verified active compound content. Most brands
+ do not do this. We consider it non-negotiable.
+ </div>
+ </div>
+ </div>
+ <!-- Pillar 3 -->
+ <div class="pillar reveal" style="transition-delay: 300ms;">
+ <div class="pillar-number">3</div>
+ <div class="pillar-content">
+ <h3>Proving it, not just claiming it</h3>
+ <p>We have designed a clinical study for 135 participants across 8 weeks — before we launch
+ commercially. Primary outcomes: Biomarkers + cognitive tests.</p>
+ <div class="pillar-highlight">
+ Results will be published. Regardless of outcome. Ethics committee approval in progress.
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <!-- Comparison Table -->
+ <div class="comparison-box reveal">
+ <div class="c-header">
+ <div>
+ <h4>Absorption Difference</h4>
+ <span style="font-size: 0.9rem; opacity: 0.8;">Standard mineral form (Oxide/Sulfate) =
+ 8%</span>
+ </div>
+ <div style="text-align: right;">
+ <div class="c-stat-big">28%</div>
+ <span
+ style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent-light);">3.5x
+ better absorption</span>
+ </div>
+ </div>
+ <div class="c-table-wrap">
+ <table class="c-table">
+ <thead>
+ <tr>
+ <th>Component</th>
+ <th>Oxygen Formulations</th>
+ <th>Most Brands</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td>Vitamin B12</td>
+ <td class="us">✔ Methylcobalamین</td>
+ <td class="them">Cyanocobalamin</td>
+ </tr>
+ <tr>
+ <td>Minerals</td>
+ <td class="us">✔ Chelated (TRAACS®)</td>
+ <td class="them">Oxide/Sulfate forms</td>
+ </tr>
+ <tr>
+ <td>Mushroom extracts</td>
+ <td class="us">✔ Verified β-glucan</td>
+ <td class="them">Unverified weight</td>
+ </tr>
+ <tr>
+ <td>Lab reports</td>
+ <td class="us">✔ Public CoA</td>
+ <td class="them">No transparency</td>
+ </tr>
+ <tr>
+ <td>Efficacy data</td>
+ <td class="us">✔ Clinical study</td>
+ <td class="them">No efficacy data</td>
+ </tr>
+ <tr>
+ <td>Suppliers</td>
+ <td class="us">✔ Named sources</td>
+ <td class="them">Anonymous suppliers</td>
+ </tr>
+ </tbody>
+ </table>
+ </div>
+ </div>
+
+ </div>
+ </section>
+ <!-- Vision & Mission Section -->
+ <section id="about-vision" class="about-section">
+ <div class="container">
+ <div class="about-hero reveal">
+ <div class="badge badge-accent" style="margin-bottom: 1rem;">Our Vision & Mission</div>
+ <h2>Why Oxygen exists.</h2>
+ <p class="subtitle">This is not a corporate origin story. This is the honest account of a problem we
+ couldn't ignore, a gap nobody was filling, and a decision to build something better.</p>
+ </div>
+
+ <div class="vm-grid">
+ <!-- Vision -->
+ <div class="vm-block reveal">
+ <h3>Building India's First Precision Nutrition System.</h3>
+ <div class="vm-keywords">
+ <span class="vm-keyword">Sustainable</span>
+ <span class="vm-keyword">Indigenous</span>
+ <span class="vm-keyword">Circular</span>
+ </div>
+ <ul class="vm-list">
+ <li><strong>Sustainable Enterprise</strong> To build an innovation-driven biotechnology
+ enterprise that prioritizes planetary health alongside human health.</li>
+ <li><strong>Indigenous Resources</strong> To transform India's rich biological resources
+ into globally competitive biocosmetic and food products.</li>
+ <li><strong>Circular Bioeconomy</strong> To operate strictly through advanced biotechnology,
+ circular bioeconomy principles, and responsible manufacturing.</li>
+ </ul>
+ </div>
+
+ <!-- Mission -->
+ <div class="vm-block reveal" style="transition-delay: 150ms;">
+ <h3>To make world-class nutrition accessible to every ambitious Indian.</h3>
+ <p
+ style="font-size: 1.1rem; color: var(--text-muted); font-style: italic; margin-bottom: 2rem;">
+ By combining India's ancient ingredient wisdom with modern nutritional science — and
+ refusing to compromise on either.</p>
+
+ <p style="font-size: 1.05rem; color: var(--text-main); margin-bottom: 1rem;">Oxygen exists to
+ close the gap between what urban Indians need nutritionally and what the market currently
+ offers them.</p>
+
+ <div class="mission-quote">
+ "We believe Indian ingredients are world-class. We believe Indian consumers deserve products
+ formulated to global scientific standards. We believe honesty about what is in a product is
+ not a marketing strategy — it is a minimum standard that the industry has failed to meet."
+ </div>
+
+ <ul class="vm-list" style="margin-top: 2rem;">
+ <li><strong>1. Product & Commercial Mission</strong> To develop and commercialize safe,
+ natural, and sustainable biocosmetic and food products using innovative bioprocessing,
+ fermentation, and formulation technologies, ensuring financial viability and market
+ competitiveness.</li>
+ <li><strong>2. Research & Innovation Mission</strong> To strengthen indigenous biotechnology
+ innovation by advancing research in bioprocess engineering, microbial fermentation, and
+ nanotechnology, supported through government grants, academic collaboration, and applied
+ research programs.</li>
+ <li><strong>3. Impact & Ecosystem Mission</strong> To create long-term environmental,
+ social, and economic impact by supporting circular bioeconomy practices, enabling skill
+ development through student mentorship and internships, generating employment, and
+ aligning operations with national initiatives such as Make in India and
+ sustainability-driven growth.</li>
+ </ul>
+ </div>
+ </div>
+
+ <!-- Core Values -->
+ <div class="core-values reveal">
+ <h3>The principles driving our research</h3>
+ <div class="values-grid">
+ <div class="value-card">
+ <h4>Scientific Rigor</h4>
+ <p style="font-size: 0.95rem; margin: 0;">Evidence-based, research-driven approach to every
+ product and process.</p>
+ </div>
+ <div class="value-card">
+ <h4>Sustainability First</h4>
+ <p style="font-size: 0.95rem; margin: 0;">Circular bioeconomy, minimal waste, maximum
+ resource utilization.</p>
+ </div>
+ <div class="value-card">
+ <h4>Collaboration</h4>
+ <p style="font-size: 0.95rem; margin: 0;">Building bridges between academia, industry,
+ farmers, and consumers.</p>
+ </div>
+ <div class="value-card">
+ <h4>Innovation with Purpose</h4>
+ <p style="font-size: 0.95rem; margin: 0;">Technology that solves real problems for real
+ stakeholders.</p>
+ </div>
+ <div class="value-card">
+ <h4>Indigenous Pride</h4>
+ <p style="font-size: 0.95rem; margin: 0;">Celebrating and valorizing India's biological and
+ knowledge wealth.</p>
+ </div>
+ <div class="value-card">
+ <h4>Integrity & Transparency</h4>
+ <p style="font-size: 0.95rem; margin: 0;">Honest communication about capabilities,
+ challenges, and progress.</p>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- Founder & Journey Section -->
+ <section id="about-founder" class="about-section" style="padding-top: 0;">
+ <div class="container">
+ <div class="about-hero reveal" style="margin-bottom:var(--space-lg);">
+ <div class="badge badge-accent" style="margin-bottom: 1rem;">The People Behind Oxygen</div>
+ <h2>Built by scientists.</h2>
+ <p class="subtitle">We aren't nutritionists who became entrepreneurs. We are people who were
+ frustrated by what existed and decided to fix it properly.</p>
+ </div>
+
+ <!-- Chapter 1 & 2: Founder Profile -->
+ <div class="founder-chapter reveal">
+ <div class="chapter-label">01 & 02 &mdash; The Origin</div>
+ <div class="founder-profile">
+ <div class="founder-image-placeholder">
+ <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+ stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+ <circle cx="12" cy="7" r="4"></circle>
+ </svg>
+ </div>
+ <div class="founder-details">
+ <h3>Founder</h3>
+ <span class="founder-role">Chief Science Officer</span>
+
+ <p
+ style="font-size: 1.1rem; color: var(--text-main); font-weight: 500; margin-bottom: 1.5rem;">
+ A pharmaceutical scientist who turned fermentation into food — with the precision of a
+ lab and the soul of a craft.</p>
+
+ <p>We spent six months trying to find a daily nutrition product we would actually recommend
+ to someone we cared about. We could not find one. Either the science was inadequate, or
+ the ingredients were compromised, or the price was inaccessible, or it was designed for
+ a Western diet and simply repacked for India.</p>
+
+ <p>We analyzed blood reports from urban Indians across multiple cities. The pattern was
+ consistent and alarming. Seven out of ten showed at least one significant deficiency.
+ Most were health-conscious people. Most were not eating badly by any measure. Most had
+ no idea they were deficient.</p>
+
+ <p>The food system was failing people who were trying to do the right thing. <strong>We
+ decided the only option was to build it ourselves.</strong></p>
+
+ <div class="founder-quote">
+ "I am building Oxygen because I am genuinely angry at what the market currently offers
+ people who are trying to take their health seriously. I have seen the research. I know
+ what good nutrition science looks like. And I know that the gap between what is possible
+ and what is being sold is not technical — it is a choice. We are choosing differently."
+ </div>
+
+ <p
+ style="font-size: 0.95rem; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-top: 2rem;">
+ <strong>Operating at intersection of:</strong>
+ <span class="badge">🔬 Pharmaceutical Bioprocessing</span>
+ <span class="badge">🧬 Nanoscience</span>
+ <span class="badge">🌾 Fermented Food</span>
+ </p>
+ </div>
+ </div>
+ </div>
+
+ <!-- Chapter 3: Approach -->
+ <div class="founder-chapter reveal">
+ <div class="chapter-label">03 &mdash; Our Approach</div>
+ <div class="approach-grid">
+ <div class="approach-card">
+ <div class="approach-num">01</div>
+ <h4>Science Before Marketing</h4>
+ <p style="font-size: 0.95rem; margin: 0;">We designed the formulation before we designed the
+ brand. We chose ingredients before we chose colors. We cited our evidence before we
+ wrote our copy. This is backwards from how most nutrition companies work. We think it is
+ the only sensible order.</p>
+ </div>
+ <div class="approach-card">
+ <div class="approach-num">02</div>
+ <h4>India Is Not a Market Segment</h4>
+ <p style="font-size: 0.95rem; margin: 0;">We did not take a Western formula and add
+ Ashwagandha to make it Indian. We started from India. From what Indian bodies are
+ deficient in. From what Indian lifestyles demand. India is not an afterthought — it is
+ the foundation.</p>
+ </div>
+ <div class="approach-card">
+ <div class="approach-num">03</div>
+ <h4>Transparency Is Not Optional</h4>
+ <p style="font-size: 0.95rem; margin: 0;">We will publish our lab reports. We will name our
+ ingredient suppliers. We will cite the studies behind our claims. We will tell you when
+ a study is preliminary and when it is robust. This should be standard.</p>
+ </div>
+ <div class="approach-card">
+ <div class="approach-num">04</div>
+ <h4>Dose Matters As Much As Ingredient</h4>
+ <p style="font-size: 0.95rem; margin: 0;">Ashwagandha at 50mg is not the same as Ashwagandha
+ at 300mg. Lion's Mane at 100mg is not what the research studied. We formulate at
+ clinically relevant doses — not at doses that allow us to put the ingredient on the
+ label.</p>
+ </div>
+ <div class="approach-card">
+ <div class="approach-num">05</div>
+ <h4>Bioavailability Is the Real Metric</h4>
+ <p style="font-size: 0.95rem; margin: 0;">A 100mg dose with 5% absorption delivers 5mg to
+ your body. A 50mg dose with 35% absorption delivers 17.5mg. The nutrient that reaches
+ your bloodstream is the only nutrient that matters. We optimize for absorption first.
+ Always.</p>
+ </div>
+ <div class="approach-card" style="border-color: var(--accent);">
+ <div class="approach-num" style="color: var(--accent);">06</div>
+ <h4>Clinical Evidence Is Non-Negotiable</h4>
+ <p style="font-size: 0.95rem; margin: 0;">We designed our clinical study before we
+ manufactured our first batch. Not because we are required to. But because we believe no
+ company should sell a health product without evidence that it works.</p>
+ </div>
+ </div>
+ </div>
+
+ <!-- Chapter 4: Milestone Journey -->
+ <div class="founder-chapter reveal">
+ <div class="chapter-label">04 &mdash; The Journey So Far</div>
+ <p style="font-size: 1.1rem; max-width: 700px; margin-bottom: 3rem;">What we have built before we
+ built anything physical. Most companies build first and think about science second. We spent
+ months thinking about the science before building anything.</p>
+
+ <div class="milestone-grid">
+ <div class="milestone">
+ <h4>6+ months of nutritional deficiency research <span
+ class="milestone-status completed">Completed</span></h4>
+ <p style="font-size: 0.95rem; max-width: 600px; margin: 0;">Analyzed ICMR, NFHS-5, WHO India
+ data. Mapped exact deficiency profiles by demographic and lifestyle. Built the evidence
+ base for product necessity.</p>
+ </div>
+ <div class="milestone">
+ <h4>Complete formulation design <span class="milestone-status completed">Completed</span>
+ </h4>
+ <p style="font-size: 0.95rem; max-width: 600px; margin: 0;">Reviewed 200+ peer-reviewed
+ studies. Designed complete formulas for 3 drinks + 1 bar. Every ingredient
+ evidence-based. Every dose clinically relevant.</p>
+ </div>
+ <div class="milestone">
+ <h4>Regulatory pathway fully mapped <span class="milestone-status active">In Progress</span>
+ </h4>
+ <p style="font-size: 0.95rem; max-width: 600px; margin: 0;">FSSAI compliance audited per
+ ingredient. Clinical study protocol designed. Ethics committee application in process.
+ Label compliance framework completed.</p>
+ </div>
+ <div class="milestone">
+ <h4>TBI Incubation secured <span class="milestone-status active">Active</span></h4>
+ <p style="font-size: 0.95rem; max-width: 600px; margin: 0;">Accepted by Technology Business
+ Incubator at ACE, Hosur. Prototype development currently underway. Sensory testing
+ beginning soon.</p>
+ </div>
+ <div class="milestone">
+ <h4>Waitlist growing <span class="milestone-status active">Growing</span></h4>
+ <p style="font-size: 0.95rem; max-width: 600px; margin: 0;">Before a single product exists —
+ validation that the demand is real. Real people who believe something better should
+ exist.</p>
+ </div>
+ </div>
+ </div>
+
+ <!-- Chapter 5: Invitation -->
+ <div class="invitation-box reveal">
+ <h2>Join us.</h2>
+ <p>Oxygen is currently in development. We are not asking you to buy anything. We are asking you to
+ believe that something better is possible — and to hold us accountable to delivering it. Tell us
+ what you need from a nutrition product. We are listening. And we are building.</p>
+ <div class="invitation-ctas">
+ <a href="#join" class="btn btn-white">Join the Waitlist (Founding Member Pricing)</a>
+ <a href="mailto:hello@oxygenbio.com" class="btn btn-outline-white">Talk to Us (Ask us
+ anything)</a>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- Vision & Mission Section -->
+ <section id="about-vision" class="about-section">
+ <div class="container">
+ <div class="about-hero reveal">
+ <div class="badge badge-accent" style="margin-bottom: 1rem;">Our Vision & Mission</div>
+ <h2>Why Oxygen exists.</h2>
+ <p class="subtitle">This is not a corporate origin story. This is the honest account of a problem we
+ couldn't ignore, a gap nobody was filling, and a decision to build something better.</p>
+ </div>
+
+ <div class="vm-grid">
+ <!-- Vision -->
+ <div class="vm-block reveal">
+ <h3>Building India's First Precision Nutrition System.</h3>
+ <div class="vm-keywords">
+ <span class="vm-keyword">Sustainable</span>
+ <span class="vm-keyword">Indigenous</span>
+ <span class="vm-keyword">Circular</span>
+ </div>
+ <ul class="vm-list">
+ <li><strong>Sustainable Enterprise</strong> To build an innovation-driven biotechnology
+ enterprise that prioritizes planetary health alongside human health.</li>
+ <li><strong>Indigenous Resources</strong> To transform India's rich biological resources
+ into globally competitive biocosmetic and food products.</li>
+ <li><strong>Circular Bioeconomy</strong> To operate strictly through advanced biotechnology,
+ circular bioeconomy principles, and responsible manufacturing.</li>
+ </ul>
+ </div>
+
+ <!-- Mission -->
+ <div class="vm-block reveal" style="transition-delay: 150ms;">
+ <h3>To make world-class nutrition accessible to every ambitious Indian.</h3>
+ <p
+ style="font-size: 1.1rem; color: var(--text-muted); font-style: italic; margin-bottom: 2rem;">
+ By combining India's ancient ingredient wisdom with modern nutritional science — and
+ refusing to compromise on either.</p>
+
+ <p style="font-size: 1.05rem; color: var(--text-main); margin-bottom: 1rem;">Oxygen exists to
+ close the gap between what urban Indians need nutritionally and what the market currently
+ offers them.</p>
+
+ <div class="mission-quote">
+ "We believe Indian ingredients are world-class. We believe Indian consumers deserve products
+ formulated to global scientific standards. We believe honesty about what is in a product is
+ not a marketing strategy — it is a minimum standard that the industry has failed to meet."
+ </div>
+
+ <ul class="vm-list" style="margin-top: 2rem;">
+ <li><strong>1. Product & Commercial Mission</strong> To develop and commercialize safe,
+ natural, and sustainable biocosmetic and food products using innovative bioprocessing,
+ fermentation, and formulation technologies, ensuring financial viability and market
+ competitiveness.</li>
+ <li><strong>2. Research & Innovation Mission</strong> To strengthen indigenous biotechnology
+ innovation by advancing research in bioprocess engineering, microbial fermentation, and
+ nanotechnology, supported through government grants, academic collaboration, and applied
+ research programs.</li>
+ <li><strong>3. Impact & Ecosystem Mission</strong> To create long-term environmental,
+ social, and economic impact by supporting circular bioeconomy practices, enabling skill
+ development through student mentorship and internships, generating employment, and
+ aligning operations with national initiatives such as Make in India and
+ sustainability-driven growth.</li>
+ </ul>
+ </div>
+ </div>
+
+ <!-- Core Values -->
+ <div class="core-values reveal">
+ <h3>The principles driving our research</h3>
+ <div class="values-grid">
+ <div class="value-card">
+ <h4>Scientific Rigor</h4>
+ <p style="font-size: 0.95rem; margin: 0;">Evidence-based, research-driven approach to every
+ product and process.</p>
+ </div>
+ <div class="value-card">
+ <h4>Sustainability First</h4>
+ <p style="font-size: 0.95rem; margin: 0;">Circular bioeconomy, minimal waste, maximum
+ resource utilization.</p>
+ </div>
+ <div class="value-card">
+ <h4>Collaboration</h4>
+ <p style="font-size: 0.95rem; margin: 0;">Building bridges between academia, industry,
+ farmers, and consumers.</p>
+ </div>
+ <div class="value-card">
+ <h4>Innovation with Purpose</h4>
+ <p style="font-size: 0.95rem; margin: 0;">Technology that solves real problems for real
+ stakeholders.</p>
+ </div>
+ <div class="value-card">
+ <h4>Indigenous Pride</h4>
+ <p style="font-size: 0.95rem; margin: 0;">Celebrating and valorizing India's biological and
+ knowledge wealth.</p>
+ </div>
+ <div class="value-card">
+ <h4>Integrity & Transparency</h4>
+ <p style="font-size: 0.95rem; margin: 0;">Honest communication about capabilities,
+ challenges, and progress.</p>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- Founder & Journey Section -->
+ <section id="about-founder" class="about-section" style="padding-top: 0;">
+ <div class="container">
+ <div class="about-hero reveal" style="margin-bottom:var(--space-lg);">
+ <div class="badge badge-accent" style="margin-bottom: 1rem;">The People Behind Oxygen</div>
+ <h2>Built by scientists.</h2>
+ <p class="subtitle">We aren't nutritionists who became entrepreneurs. We are people who were
+ frustrated by what existed and decided to fix it properly.</p>
+ </div>
+
+ <!-- Chapter 1 & 2: Founder Profile -->
+ <div class="founder-chapter reveal">
+ <div class="chapter-label">01 & 02 &mdash; The Origin</div>
+ <div class="founder-profile">
+ <div class="founder-image-placeholder">
+ <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+ stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+ <circle cx="12" cy="7" r="4"></circle>
+ </svg>
+ </div>
+ <div class="founder-details">
+ <h3>Founder</h3>
+ <span class="founder-role">Chief Science Officer</span>
+
+ <p
+ style="font-size: 1.1rem; color: var(--text-main); font-weight: 500; margin-bottom: 1.5rem;">
+ A pharmaceutical scientist who turned fermentation into food — with the precision of a
+ lab and the soul of a craft.</p>
+
+ <p>We spent six months trying to find a daily nutrition product we would actually recommend
+ to someone we cared about. We could not find one. Either the science was inadequate, or
+ the ingredients were compromised, or the price was inaccessible, or it was designed for
+ a Western diet and simply repacked for India.</p>
+
+ <p>We analyzed blood reports from urban Indians across multiple cities. The pattern was
+ consistent and alarming. Seven out of ten showed at least one significant deficiency.
+ Most were health-conscious people. Most were not eating badly by any measure. Most had
+ no idea they were deficient.</p>
+
+ <p>The food system was failing people who were trying to do the right thing. <strong>We
+ decided the only option was to build it ourselves.</strong></p>
+
+ <div class="founder-quote">
+ "I am building Oxygen because I am genuinely angry at what the market currently offers
+ people who are trying to take their health seriously. I have seen the research. I know
+ what good nutrition science looks like. And I know that the gap between what is possible
+ and what is being sold is not technical — it is a choice. We are choosing differently."
+ </div>
+
+ <p
+ style="font-size: 0.95rem; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-top: 2rem;">
+ <strong>Operating at intersection of:</strong>
+ <span class="badge">🔬 Pharmaceutical Bioprocessing</span>
+ <span class="badge">🧬 Nanoscience</span>
+ <span class="badge">🌾 Fermented Food</span>
+ </p>
+ </div>
+ </div>
+ </div>
+
+ <!-- Chapter 3: Approach -->
+ <div class="founder-chapter reveal">
+ <div class="chapter-label">03 &mdash; Our Approach</div>
+ <div class="approach-grid">
+ <div class="approach-card">
+ <div class="approach-num">01</div>
+ <h4>Science Before Marketing</h4>
+ <p style="font-size: 0.95rem; margin: 0;">We designed the formulation before we designed the
+ brand. We chose ingredients before we chose colors. We cited our evidence before we
+ wrote our copy. This is backwards from how most nutrition companies work. We think it is
+ the only sensible order.</p>
+ </div>
+ <div class="approach-card">
+ <div class="approach-num">02</div>
+ <h4>India Is Not a Market Segment</h4>
+ <p style="font-size: 0.95rem; margin: 0;">We did not take a Western formula and add
+ Ashwagandha to make it Indian. We started from India. From what Indian bodies are
+ deficient in. From what Indian lifestyles demand. India is not an afterthought — it is
+ the foundation.</p>
+ </div>
+ <div class="approach-card">
+ <div class="approach-num">03</div>
+ <h4>Transparency Is Not Optional</h4>
+ <p style="font-size: 0.95rem; margin: 0;">We will publish our lab reports. We will name our
+ ingredient suppliers. We will cite the studies behind our claims. We will tell you when
+ a study is preliminary and when it is robust. This should be standard.</p>
+ </div>
+ <div class="approach-card">
+ <div class="approach-num">04</div>
+ <h4>Dose Matters As Much As Ingredient</h4>
+ <p style="font-size: 0.95rem; margin: 0;">Ashwagandha at 50mg is not the same as Ashwagandha
+ at 300mg. Lion's Mane at 100mg is not what the research studied. We formulate at
+ clinically relevant doses — not at doses that allow us to put the ingredient on the
+ label.</p>
+ </div>
+ <div class="approach-card">
+ <div class="approach-num">05</div>
+ <h4>Bioavailability Is the Real Metric</h4>
+ <p style="font-size: 0.95rem; margin: 0;">A 100mg dose with 5% absorption delivers 5mg to
+ your body. A 50mg dose with 35% absorption delivers 17.5mg. The nutrient that reaches
+ your bloodstream is the only nutrient that matters. We optimize for absorption first.
+ Always.</p>
+ </div>
+ <div class="approach-card" style="border-color: var(--accent);">
+ <div class="approach-num" style="color: var(--accent);">06</div>
+ <h4>Clinical Evidence Is Non-Negotiable</h4>
+ <p style="font-size: 0.95rem; margin: 0;">We designed our clinical study before we
+ manufactured our first batch. Not because we are required to. But because we believe no
+ company should sell a health product without evidence that it works.</p>
+ </div>
+ </div>
+ </div>
+
+ <!-- Chapter 4: Milestone Journey -->
+ <div class="founder-chapter reveal">
+ <div class="chapter-label">04 &mdash; The Journey So Far</div>
+ <p style="font-size: 1.1rem; max-width: 700px; margin-bottom: 3rem;">What we have built before we
+ built anything physical. Most companies build first and think about science second. We spent
+ months thinking about the science before building anything.</p>
+
+ <div class="milestone-grid">
+ <div class="milestone">
+ <h4>6+ months of nutritional deficiency research <span
+ class="milestone-status completed">Completed</span></h4>
+ <p style="font-size: 0.95rem; max-width: 600px; margin: 0;">Analyzed ICMR, NFHS-5, WHO India
+ data. Mapped exact deficiency profiles by demographic and lifestyle. Built the evidence
+ base for product necessity.</p>
+ </div>
+ <div class="milestone">
+ <h4>Complete formulation design <span class="milestone-status completed">Completed</span>
+ </h4>
+ <p style="font-size: 0.95rem; max-width: 600px; margin: 0;">Reviewed 200+ peer-reviewed
+ studies. Designed complete formulas for 3 drinks + 1 bar. Every ingredient
+ evidence-based. Every dose clinically relevant.</p>
+ </div>
+ <div class="milestone">
+ <h4>Regulatory pathway fully mapped <span class="milestone-status active">In Progress</span>
+ </h4>
+ <p style="font-size: 0.95rem; max-width: 600px; margin: 0;">FSSAI compliance audited per
+ ingredient. Clinical study protocol designed. Ethics committee application in process.
+ Label compliance framework completed.</p>
+ </div>
+ <div class="milestone">
+ <h4>TBI Incubation secured <span class="milestone-status active">Active</span></h4>
+ <p style="font-size: 0.95rem; max-width: 600px; margin: 0;">Accepted by Technology Business
+ Incubator at ACE, Hosur. Prototype development currently underway. Sensory testing
+ beginning soon.</p>
+ </div>
+ <div class="milestone">
+ <h4>Waitlist growing <span class="milestone-status active">Growing</span></h4>
+ <p style="font-size: 0.95rem; max-width: 600px; margin: 0;">Before a single product exists —
+ validation that the demand is real. Real people who believe something better should
+ exist.</p>
+ </div>
+ </div>
+ </div>
+
+ <!-- Chapter 5: Invitation -->
+ <div class="invitation-box reveal">
+ <h2>Join us.</h2>
+ <p>Oxygen is currently in development. We are not asking you to buy anything. We are asking you to
+ believe that something better is possible — and to hold us accountable to delivering it. Tell us
+ what you need from a nutrition product. We are listening. And we are building.</p>
+ <div class="invitation-ctas">
+ <a href="#join" class="btn btn-white">Join the Waitlist (Founding Member)</a>
+ <a href="mailto:hello@oxygenbio.com" class="btn btn-outline-white">Talk to Us (Ask us
+ anything)</a>
+ </div>
+ </div>
+ </div>
+ </section>
+ </main>
+
+ <!-- Footer -->
+ <footer id="footer">
+ <div class="container">
+ <a href="#" class="logo" style="font-size: 2rem; color: #fff;">OXYGEN<span
+ style="color: var(--accent);">.</span></a>
+ <p>Ancient Ingredients. Modern Science. No Compromise. India's first precision nutrition system.</p>
+
+ <div class="footer-links">
+ <a href="#about-vision">About Us</a>
+ <a href="#problem">The Problem</a>
+ <a href="#products">Formulas</a>
+ <a href="#science">Science</a>
+ <a href="mailto:hello@oxygenbio.com">Contact</a>
+ </div>
+
+ <div class="footer-bottom">
+ &copy; <span id="year"></span> Oxygen Bioinnovations. All rights reserved.
+ </div>
+ </div>
+ </footer>
+
+ <!-- Mobile Sticky CTA -->
+ <div class="mobile-sticky-cta" id="mobileCta">
+ <a href="#join" class="btn btn-primary magnetic-btn">Join the Waitlist</a>
+ </div>
+
+ <!-- Scripts -->
+ <script>
+ document.addEventListener("DOMContentLoaded", () => {
+ // 1. Dynamic Year
+ document.getElementById('year').textContent = new Date().getFullYear();
+
+ // 2. Mobile Menu Logic
+ const menuBtn = document.getElementById('menuBtn');
+ const mobileMenu = document.getElementById('mobileMenu');
+ const mobileOverlay = document.getElementById('mobileOverlay');
+ const menuLinks = document.querySelectorAll('.menu-link');
+
+ const toggleMenu = () => {
+ menuBtn.classList.toggle('open');
+ mobileMenu.classList.toggle('open');
+ mobileOverlay.classList.toggle('open');
+ document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+ };
+
+ menuBtn.addEventListener('click', toggleMenu);
+ mobileOverlay.addEventListener('click', toggleMenu);
+ menuLinks.forEach(link => {
+ link.addEventListener('click', toggleMenu);
+ });
+
+ // 3. Scroll Interactions (Header background & Mobile Sticky CTA)
+ const header = document.getElementById('header');
+ const mobileCta = document.getElementById('mobileCta');
+ const footer = document.getElementById('footer');
+
+ window.addEventListener('scroll', () => {
+ // Sticky Header styling
+ if (window.scrollY > 50) {
+ header.classList.add('scrolled');
+ } else {
+ header.classList.remove('scrolled');
+ }
+
+ // Mobile CTA Show/Hide (Hide when near footer)
+ if (window.innerWidth < 768) {
+ const footerRect = footer.getBoundingClientRect();
+ const viewHeight = window.innerHeight;
+
+ // Show past hero, hide near footer
+ if (window.scrollY > 400 && footerRect.top > viewHeight) {
+ mobileCta.classList.add('visible');
+ } else {
+ mobileCta.classList.remove('visible');
+ }
+ }
+ }, { passive: true });
+
+ // 4. Intersection Observer for Fade-Up Animations
+ const revealElements = document.querySelectorAll('.reveal');
+
+ const revealSettings = {
+ threshold: 0.15,
+ rootMargin: "0px 0px -50px 0px"
+ };
+
+ const revealObserver = new IntersectionObserver((entries, observer) => {
+ entries.forEach(entry => {
+ if (entry.isIntersecting) {
+ entry.target.classList.add('active');
+ observer.unobserve(entry.target); // Reveal only once
+ }
+ });
+ }, revealSettings);
+
+ revealElements.forEach(el => revealObserver.observe(el));
+
+ // 5. Stat Counter Animation
+ const counters = document.querySelectorAll('.stat-number');
+
+ const counterObserver = new IntersectionObserver((entries, observer) => {
+ entries.forEach(entry => {
+ if (entry.isIntersecting) {
+ const target = entry.target;
+ const finalValue = parseInt(target.getAttribute('data-target'));
+ const duration = 2000;
+ const stepTime = Math.abs(Math.floor(duration / finalValue));
+ let current = 0;
+
+ const timer = setInterval(() => {
+ current += 1;
+ target.textContent = current;
+ if (current === finalValue) {
+ clearInterval(timer);
+ }
+ }, stepTime);
+
+ observer.unobserve(target);
+ }
+ });
+ }, { threshold: 0.5 });
+
+ counters.forEach(counter => counterObserver.observe(counter));
+ });
+ </script>
+ <script src="assets/js/page-transitions.js"></script>
 </body>
 
 </html>
