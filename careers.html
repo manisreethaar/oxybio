@@ -12,7 +12,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/styles.css?v=17">
+    <link rel="stylesheet" href="assets/css/styles.css?v=18">
 </head>
 
 <body>
@@ -146,11 +146,11 @@
      PREMIUM HERO SECTION
 ════════════════════════════════════════════════════════ -->
         <section class="structure-section"
-            style="padding-top:160px; padding-bottom:100px; background:var(--bg); border-bottom:1px solid var(--border); position:relative; overflow:hidden;">
+            style="padding-top:200px; padding-bottom:100px; background:var(--bg); border-bottom:1px solid var(--border); position:relative; overflow:hidden;">
             <div class="container" style="position:relative; z-index:2;">
                 <div class="flow-left reveal" style="max-width:1000px;">
                     <div class="badge"
-                        style="margin-bottom:var(--space-lg); border-color:var(--text-main); color:var(--text-main); background:transparent;">
+                        style="margin-top:2rem; margin-bottom:var(--space-lg); border-color:var(--text-main); color:var(--text-main); background:transparent;">
                         Join Our Mission</div>
                     <h1 class="display"
                         style="font-size:clamp(3.5rem, 8vw, 6.5rem); line-height:0.9; letter-spacing:-0.03em; margin-bottom:2rem;">
@@ -257,7 +257,9 @@
 
                                     /* PREMIUM MOBILE STACKING CARDS (DECK EFFECT) */
                                     @media (max-width: 768px) {
-                                        .side-tab-container { display: none !important; }
+                                        .side-tab-container {
+                                            display: none !important;
+                                        }
 
                                         .premium-tabs-container {
                                             position: relative;
@@ -269,49 +271,67 @@
                                             opacity: 1 !important;
                                             visibility: visible !important;
                                             animation: none !important;
-                                            
+
                                             position: sticky !important;
                                             background: var(--bg-alt);
                                             border: 1px solid var(--border);
                                             border-radius: 24px;
                                             padding: 2.5rem 1.5rem;
-                                            box-shadow: 0 -20px 40px rgba(0,0,0,0.06);
-                                            margin-bottom: 100vh; /* Extremely tall margin ensures the card scrolls fully before the next one hits */
+                                            box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.06);
+                                            margin-bottom: 2rem;
                                         }
-                                        
+
                                         .tab-content:last-child {
                                             margin-bottom: 0;
                                         }
 
                                         /* Stagger the sticky positioning so headers stack visibly like a deck */
-                                        #tab-overview { top: 90px !important; z-index: 10; }
-                                        #tab-output { top: 105px !important; z-index: 20; background: #ffffff; }
-                                        #tab-profile { top: 120px !important; z-index: 30; background: var(--bg-alt); }
-                                        #tab-offer { top: 135px !important; z-index: 40; background: #ffffff; }
+                                        #tab-overview {
+                                            top: 90px !important;
+                                            z-index: 10;
+                                        }
+
+                                        #tab-output {
+                                            top: 105px !important;
+                                            z-index: 20;
+                                            background: #ffffff;
+                                        }
+
+                                        #tab-profile {
+                                            top: 120px !important;
+                                            z-index: 30;
+                                            background: var(--bg-alt);
+                                        }
+
+                                        #tab-offer {
+                                            top: 135px !important;
+                                            z-index: 40;
+                                            background: #ffffff;
+                                        }
 
                                         .left-sticky-col>div {
                                             min-height: auto !important;
                                             position: relative !important;
                                         }
-                                        
+
                                         /* High-end typography adjustments */
                                         .tab-content h4 {
                                             font-size: 1.15rem;
                                             padding-bottom: 1.25rem;
-                                            border-bottom: 1px solid rgba(0,0,0,0.06);
+                                            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
                                             margin-bottom: 1.75rem;
                                             color: var(--text-main);
                                             display: flex;
                                             align-items: center;
                                             justify-content: space-between;
                                         }
-                                        
+
                                         .tab-content h4::after {
                                             content: '↓';
                                             font-family: var(--font-mono);
                                             font-size: 0.85rem;
                                             opacity: 0.3;
-                                            background: rgba(0,0,0,0.05);
+                                            background: rgba(0, 0, 0, 0.05);
                                             border-radius: 50px;
                                             width: 24px;
                                             height: 24px;
