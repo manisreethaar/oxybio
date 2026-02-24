@@ -4055,3 +4055,20 @@ p, h1, h2, h3, h4, blockquote { text-wrap: pretty; }
         padding: 1.5rem !important;
     }
 }
+
+/* --- UNIFIED PREMIUM HERO BADGE --- */
+.page-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-main);
+    border: 1px solid var(--text-main);
+    padding: 0.4rem 0.8rem;
+    border-radius: 50px;
+    background: transparent;
+    margin-bottom: 2rem;
+}
