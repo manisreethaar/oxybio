@@ -12,14 +12,8 @@ const Navbar = () => {
                     <div className="flex-shrink-0 flex items-center">
                         <span className="font-heading font-extrabold text-2xl tracking-tighter text-white flex items-center">
                             Oxygen <span className="font-['Quicksand'] tracking-normal font-bold ml-1.5 opacity-90 pb-0.5 flex items-center">
-                                <svg viewBox="0 0 120 150" className="h-[1.15em] w-auto inline-block -mt-[0.15em] mr-[1px] text-white" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <defs>
-                                        <mask id="b-cutout">
-                                            <rect width="120" height="150" fill="white" />
-                                            <path d="M 5 105 A 35 35 0 0 0 50 145" stroke="black" strokeWidth={8} strokeLinecap="round" fill="none" />
-                                        </mask>
-                                    </defs>
-                                    <path mask="url(#b-cutout)" d="M 25 10 L 60 10 C 80 10, 95 20, 95 40 C 95 55, 80 65, 65 65 C 55 65, 50 60, 50 55 C 50 50, 55 48, 60 48 C 70 48, 70 30, 55 30 C 40 30, 35 45, 45 60 C 55 75, 65 75, 80 75 C 110 75, 120 110, 95 130 C 85 140, 65 140, 45 140 L 25 140 A 10 10 0 0 1 15 130 L 15 20 A 10 10 0 0 1 25 10 Z" />
+                                <svg viewBox="0 0 100 140" className="h-[1.15em] w-auto inline-block align-[-16%] mr-0 shrink-0" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fillRule="evenodd" d="M 25 0 C 55 0, 85 0, 85 30 C 85 50, 70 58, 55 60 C 85 62, 100 85, 95 115 C 90 140, 55 140, 25 140 C 10 140, 0 130, 0 115 L 0 25 C 0 10, 10 0, 25 0 Z M 40 28 C 25 28, 25 52, 40 52 C 55 52, 55 28, 40 28 Z" />
                                 </svg>ioinnovations
                             </span><span className="text-cyan-ethereal">.</span>
                         </span>
