@@ -110,3 +110,26 @@
     pointer-events: none;
     transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+/* 4. TEXT STAGGER REVEAL
+   Splits text into characters/words that spin/fade up sequentially.
+*/
+.text-reveal-wrapper {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+}
+
+.char {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(100%) rotateX(-90deg);
+    transform-origin: bottom center;
+    will-change: transform, opacity;
+    animation: textSpinUp 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+@keyframes textSpinUp {
+    0% { opacity: 0; transform: translateY(100%) rotateX(-90deg); }
+    100% { opacity: 1; transform: translateY(0) rotateX(0); }
+}

@@ -103,3 +103,67 @@ function initMagneticButtons() {
         requestAnimationFrame(render);
     });
 }
+
+/**
+ * 3. ADVANCED TEXT REVEAL
+ * Splits target elements into individually animatable character spans
+ * with calculated mathematical stagger delays.
+ */
+document.addEventListener('DOMContentLoaded', () => {
+    initTextReveal();
+});
+
+function initTextReveal() {
+    const splitTargets = document.querySelectorAll('.v2-split-text');
+    
+    splitTargets.forEach(target => {
+        const text = target.innerText;
+        target.innerHTML = '';
+        
+        let charIndex = 0;
+        
+        // Handle breaks separately to preserve layout
+        const lines = text.split('\n');
+        
+        lines.forEach((line, lIndex) => {
+            const words = line.split(' ');
+            
+            words.forEach((word, wIndex) => {
+                const wordWrap = document.createElement('span');
+                wordWrap.style.display = 'inline-block';
+                wordWrap.style.whiteSpace = 'nowrap';
+                
+                for(let i = 0; i < word.length; i++) {
+                    const charWrap = document.createElement('span');
+                    charWrap.className = 'text-reveal-wrapper';
+                    
+                    const charInner = document.createElement('span');
+                    charInner.className = 'char';
+                    charInner.innerText = word[i];
+                    // Stagger the animation timing based on character index
+                    charInner.style.animationDelay = `${charIndex * 0.03}s`;
+                    
+                    charWrap.appendChild(charInner);
+                    wordWrap.appendChild(charWrap);
+                    charIndex++;
+                }
+                
+                target.appendChild(wordWrap);
+                // Add space after word if not the last
+                if(wIndex < words.length - 1) {
+                    const space = document.createElement('span');
+                    space.innerHTML = '&nbsp;';
+                    target.appendChild(space);
+                }
+            });
+            
+            // Add line break if not the last line
+            if(lIndex < lines.length - 1) {
+                target.appendChild(document.createElement('br'));
+            }
+        });
+        
+        // Remove the invisible placeholder class
+        target.style.opacity = 1;
+    });
+}
