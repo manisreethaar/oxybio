@@ -5466,10 +5466,11 @@ blockquote {
 }
 
 /* ═══════════════════════════════════════════════════════
-   PHASE STEPPER — Horizontal clickable journey
+   PHASE STEPPER — Premium Horizontal Pipeline
    ═══════════════════════════════════════════════════════ */
 .phase-stepper {
     position: relative;
+    padding-top: 1rem;
 }
 
 /* ── Track: horizontal row of nodes ── */
@@ -5478,27 +5479,32 @@ blockquote {
     justify-content: space-between;
     align-items: flex-start;
     position: relative;
-    padding: 0 0.5rem;
-    margin-bottom: 2rem;
+    padding: 0 1rem;
+    margin-bottom: 3rem;
 }
 
 /* Connecting line behind nodes */
 .phase-line {
     position: absolute;
-    top: 20px;
-    left: 30px;
-    right: 30px;
+    top: 22px;
+    left: 40px;
+    right: 40px;
     height: 2px;
-    background: var(--border);
+    background: rgba(0, 0, 0, 0.08);
+    /* Subtle unfilled line */
     z-index: 0;
+    border-radius: 2px;
 }
 
 .phase-line-fill {
     height: 100%;
     width: 45%;
-    background: var(--text-main);
+    background: #0D8A74;
+    /* Brand Green */
     border-radius: 2px;
-    transition: width 0.6s ease;
+    transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 0 10px rgba(13, 138, 116, 0.5);
+    /* Premium glow */
 }
 
 /* ── Individual node button ── */
@@ -5506,7 +5512,7 @@ blockquote {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.75rem;
     background: none;
     border: none;
     cursor: pointer;
@@ -5517,99 +5523,82 @@ blockquote {
 }
 
 .phase-node-num {
-    width: 40px;
-    height: 40px;
+    width: 46px;
+    height: 46px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: var(--font-mono);
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.05em;
-    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-    border: 2px solid var(--border);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 2px solid rgba(0, 0, 0, 0.1);
     background: var(--bg);
     color: var(--text-muted);
 }
 
 .phase-node-label {
     font-family: var(--font-mono);
-    font-size: 0.6rem;
-    letter-spacing: 0.1em;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--text-muted);
-    transition: color 0.3s ease;
+    transition: all 0.4s ease;
     white-space: nowrap;
+    opacity: 0.6;
 }
 
 /* Status variants */
 .phase-node-done .phase-node-num {
-    background: var(--text-main);
-    border-color: var(--text-main);
-    color: var(--bg);
-}
-
-.phase-node-wip .phase-node-num {
-    border-color: var(--text-main);
-    color: var(--text-main);
-    opacity: 0.65;
+    background: #0D8A74;
+    border-color: #0D8A74;
+    color: #fff;
 }
 
 .phase-node-active .phase-node-num {
-    border-color: var(--text-main);
-    color: var(--text-main);
-    opacity: 0.45;
+    border-color: #0D8A74;
+    color: #0D8A74;
+    background: rgba(13, 138, 116, 0.05);
 }
 
 .phase-node-pending .phase-node-num {
-    border-color: var(--border);
+    border-color: rgba(0, 0, 0, 0.1);
     color: var(--text-muted);
     opacity: 0.5;
 }
 
-@keyframes phaseGlow {
-
-    0%,
-    100% {
-        box-shadow: 0 0 0px transparent;
-    }
-
-    50% {
-        box-shadow: 0 0 12px rgba(59, 130, 246, 0.3);
-    }
-}
-
-.phase-node-wip .phase-node-num {
-    animation-name: phaseGlowAmber;
-}
-
-@keyframes phaseGlowAmber {
-
-    0%,
-    100% {
-        box-shadow: 0 0 0px transparent;
-    }
-
-    50% {
-        box-shadow: 0 0 12px rgba(245, 158, 11, 0.3);
-    }
-}
-
-/* Active (selected) state — ring + scale */
+/* Active (selected) state — premium glowing ring + scale */
 .phase-node.is-active .phase-node-num {
-    transform: scale(1.2);
-    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1);
+    transform: scale(1.25);
+    border-color: #0D8A74;
+    box-shadow: 0 0 0 6px rgba(13, 138, 116, 0.15);
+    color: #0D8A74;
+}
+
+/* When a done node is actively selected */
+.phase-node-done.is-active .phase-node-num {
+    color: #fff;
+    background: #0D8A74;
 }
 
 .phase-node.is-active .phase-node-label {
-    color: var(--text-main);
-    font-weight: 600;
+    color: #0D8A74;
+    font-weight: 700;
+    opacity: 1;
+    transform: translateY(2px);
 }
 
-/* Hover */
+/* Hover Effects */
 .phase-node:hover .phase-node-num {
-    transform: scale(1.1);
+    transform: scale(1.15);
+    box-shadow: 0 0 0 4px rgba(13, 138, 116, 0.08);
+}
+
+.phase-node.is-active:hover .phase-node-num {
+    transform: scale(1.25);
+    /* Maintain active scale */
 }
 
 /* ── Detail panel area ── */
