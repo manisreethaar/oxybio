@@ -229,11 +229,21 @@
 
                 <!-- RIGHTSIDE ANIMATION -->
                 <div class="hero-animation-wrapper reveal"
-                    style="transition-delay: 0.2s; position:relative; width:100%; height:100%; min-height:400px; display:flex; align-items:center; justify-content:center;">
+                    style="transition-delay: 0.2s; position:relative; width:100%; height:100%; min-height:400px; display:flex; align-items:center; justify-content:center; overflow:hidden;">
+                    <style>
+                        spline-viewer {
+                            background: transparent !important;
+                        }
+
+                        spline-viewer::part(canvas) {
+                            background: transparent !important;
+                        }
+                    </style>
                     <script type="module"
                         src="https://unpkg.com/@splinetool/viewer@1.9.72/build/spline-viewer.js"></script>
                     <spline-viewer url="https://prod.spline.design/5Sa8LrbgEQ4mx6X5/scene.splinecode"
-                        style="width:100%; height:100%; border:none; mix-blend-mode: multiply; background: transparent;"></spline-viewer>
+                        style="width:120%; height:120%; border:none; background:transparent;"
+                        disable-zoom="true"></spline-viewer>
                 </div>
             </div>
         </section>
