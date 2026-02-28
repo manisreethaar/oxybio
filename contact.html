@@ -289,25 +289,27 @@
                         <p style="font-size:1rem; color:var(--text-muted); margin-bottom:3rem;">Fill out the brief form
                             below and we will route your inquiry to the correct team member.</p>
 
-                        <form style="display:flex; flex-direction:column; gap:2rem;"
-                            onsubmit="event.preventDefault(); alert('Message submitted successfully.');">
+                        <form id="contactForm" style="display:flex; flex-direction:column; gap:2rem;"
+                            action="https://docs.google.com/forms/d/e/1FAIpQLScndz1l9JCdS_CpWdZ9uJtzTojDwTi0eY1ZoSHakaPrmgMJQg/formResponse"
+                            method="POST" target="hidden_iframe">
 
                             <div style="display:grid; grid-template-columns:1fr 1fr; gap:2rem;" class="mobile-stack">
                                 <div style="display:flex; flex-direction:column; gap:0.5rem;">
                                     <label class="contact-label">Full Name *</label>
-                                    <input type="text" required class="premium-input"
+                                    <input type="text" name="entry.1633920210" required class="premium-input"
                                         placeholder="e.g. Dr. Ashok Kumar">
                                 </div>
                                 <div style="display:flex; flex-direction:column; gap:0.5rem;">
                                     <label class="contact-label">Email Address *</label>
-                                    <input type="email" required class="premium-input" placeholder="ashok@example.com">
+                                    <input type="email" name="entry.227649005" required class="premium-input"
+                                        placeholder="ashok@example.com">
                                 </div>
                             </div>
 
                             <div style="display:grid; grid-template-columns:1fr 1fr; gap:2rem;" class="mobile-stack">
                                 <div style="display:flex; flex-direction:column; gap:0.5rem;">
                                     <label class="contact-label">Inquiry Type *</label>
-                                    <select required class="premium-input">
+                                    <select name="entry.790080973" required class="premium-input">
                                         <option value="" disabled selected>Select a topic...</option>
                                         <option value="Investor/VC">Investment & VC</option>
                                         <option value="Researcher/Academic">Academic/Clinical Research</option>
@@ -318,22 +320,70 @@
                                 </div>
                                 <div style="display:flex; flex-direction:column; gap:0.5rem;">
                                     <label class="contact-label">Company / Institution</label>
-                                    <input type="text" class="premium-input" placeholder="Optional">
+                                    <input type="text" name="entry.1770822543" class="premium-input"
+                                        placeholder="Optional">
                                 </div>
                             </div>
 
                             <div style="display:flex; flex-direction:column; gap:0.5rem;">
                                 <label class="contact-label">Message *</label>
-                                <textarea rows="5" required class="premium-input"
+                                <textarea rows="5" name="entry.1846923513" required class="premium-input"
                                     placeholder="How can we help you?"></textarea>
                             </div>
 
-                            <div style="margin-top:1rem;">
-                                <button type="submit" class="btn btn-primary magnetic-btn"
-                                    style="padding:1.2rem 3rem; font-size:1rem; width:100%; justify-content:center;">Submit
-                                    Inquiry</button>
+                            <div style="margin-top:1rem; position:relative;">
+                                <button type="submit" id="submitBtn" class="btn btn-primary magnetic-btn"
+                                    style="padding:1.2rem 3rem; font-size:1rem; width:100%; justify-content:center; transition: all 0.3s ease;">
+                                    <span id="submitBtnText">Submit Inquiry</span>
+                                </button>
+                                <div id="formSuccessMessage"
+                                    style="display:none; text-align:center; padding-top:1rem; color: #10B981; font-weight: 500;">
+                                    ✓ Message sent successfully. We will be in touch soon.
+                                </div>
                             </div>
                         </form>
+
+                        <!-- Hidden iframe to prevent page reload on Google Forms submission -->
+                        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
+                            onload="if(submitted) { formSuccess(); }"></iframe>
+
+                        <script>
+                            var submitted = false;
+
+                            document.getElementById('contactForm').addEventListener('submit', function () {
+                                submitted = true;
+                                const btn = document.getElementById('submitBtn');
+                                const btnText = document.getElementById('submitBtnText');
+
+                                // Show loading state
+                                btnText.innerText = 'Sending...';
+                                btn.style.opacity = '0.7';
+                                btn.style.pointerEvents = 'none';
+                            });
+
+                            function formSuccess() {
+                                // Reset form
+                                document.getElementById('contactForm').reset();
+
+                                // Show success UI
+                                const btn = document.getElementById('submitBtn');
+                                const btnText = document.getElementById('submitBtnText');
+                                const successMsg = document.getElementById('formSuccessMessage');
+
+                                btnText.innerText = 'Submit Inquiry';
+                                btn.style.opacity = '1';
+                                btn.style.pointerEvents = 'auto';
+
+                                successMsg.style.display = 'block';
+
+                                // Hide success message after 5 seconds
+                                setTimeout(function () {
+                                    successMsg.style.display = 'none';
+                                }, 5000);
+
+                                submitted = false;
+                            }
+                        </script>
                     </div>
 
                 </div>
@@ -348,7 +398,9 @@
     <footer class="site-footer">
         <div class="container footer-grid">
             <div class="footer-brand">
-                <a href="index.html" style="display:inline-block; margin-bottom:1rem;"><img src="assets/images/logo-full.png" alt="Oxygen Bioinnovations" style="height:36px; width:auto; display:block;"></a>
+                <a href="index.html" style="display:inline-block; margin-bottom:1rem;"><img
+                        src="assets/images/logo-full.png" alt="Oxygen Bioinnovations"
+                        style="height:36px; width:auto; display:block;"></a>
                 <p>Precision nutrition for every ambitious Indian.<br><br>India's first honest precision nutrition
                     system. Built on millet, mushrooms, and real science.</p>
                 <div class="footer-socials">
