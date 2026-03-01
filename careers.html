@@ -26,17 +26,6 @@
  }
  </script>
     <link rel="stylesheet" href="assets/css/transitions.css">
-
-    <!-- Vercel Analytics -->
-    <script>
-      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-    </script>
-    <script defer src="/_vercel/insights/script.js"></script>
-    <!-- Vercel Speed Insights -->
-    <script>
-      window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
-    </script>
-    <script defer src="/_vercel/speed-insights/script.js"></script>
 </head>
 
 <body>
@@ -168,210 +157,886 @@
 
     <main>
 
-    <!-- PREMIUM HERO SECTION -->
-    <section class="hero-section" style="padding-top:clamp(160px, 20vh, 200px); padding-bottom:60px; background:var(--bg); position:relative; overflow:hidden; border-bottom:1px solid var(--border);">
-        <div class="container reveal">
-            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-                <div class="page-hero-badge" style="margin-bottom: 2rem; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border: 1px solid var(--border); border-radius: 50px; font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: var(--text-muted);">
-                    <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--accent-mid);"></span>
-                    Our Culture & Philosophy
+        <!-- ═══════════════════════════════════════════════════════
+ PREMIUM HERO SECTION
+════════════════════════════════════════════════════════ -->
+
+        <section class="hero-section"
+            style="padding-top:clamp(160px, 20vh, 200px); padding-bottom:60px; background:var(--bg); border-bottom:1px solid var(--border); position:relative; overflow:hidden;">
+            <div class="container">
+                <div style="display:grid; grid-template-columns:1.1fr 0.9fr; gap:var(--space-lg); align-items:center;"
+                    class="mobile-stack">
+
+                    <!-- Left: Main Copy -->
+                    <div class="flow-left reveal">
+                        <div class="page-hero-badge">Join Our Mission</div>
+                        <h1 class="display"
+                            style="font-size:var(--text-6xl); line-height:0.9; letter-spacing:-0.03em; font-family:var(--font-serif);">
+                            A Biotech Startup.<br><em>Challenging the<br>Status Quo.</em></h1>
+                        <p class="subtext editorial-col"
+                            style="margin-top:2rem; font-size:clamp(1.1rem, 2vw, 1.35rem); line-height:1.65; color:var(--text-muted); max-width:560px;">
+                            Looking for formulation scientists, fermentation engineers, and clinical researchers to
+                            build India's first evidence-based precision nutrition system.
+                        </p>
+                    </div>
+
+                    <!-- Right: Role Snapshot Card -->
+                    <div class="reveal"
+                        style="border:1px solid var(--border); border-radius:12px; overflow:hidden; background:var(--bg);">
+                        <div style="background:var(--text-main); color:var(--bg); padding:1.5rem 2rem;">
+                            <div
+                                style="font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; opacity:0.6; margin-bottom:0.5rem;">
+                                Open Position</div>
+                            <div style="font-family:var(--font-serif); font-size:1.4rem; font-weight:700;">Research
+                                Associate</div>
+                        </div>
+                        <div style="display:flex; flex-direction:column; gap:1px; background:var(--border);">
+                            <div
+                                style="background:var(--bg); padding:1.1rem 2rem; display:flex; justify-content:space-between; align-items:center;">
+                                <span
+                                    style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted);">Type</span>
+                                <span
+                                    style="font-size:0.9rem; font-weight:600; color:var(--text-main);">Full-Time</span>
+                            </div>
+                            <div
+                                style="background:var(--bg); padding:1.1rem 2rem; display:flex; justify-content:space-between; align-items:center;">
+                                <span
+                                    style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted);">Experience</span>
+                                <span style="font-size:0.9rem; font-weight:600; color:var(--text-main);">0–1 Year</span>
+                            </div>
+                            <div
+                                style="background:var(--bg); padding:1.1rem 2rem; display:flex; justify-content:space-between; align-items:center;">
+                                <span
+                                    style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted);">Salary</span>
+                                <span style="font-size:0.9rem; font-weight:600; color:#0D8A74;">₹18K – 25K/mo</span>
+                            </div>
+                            <div
+                                style="background:var(--bg); padding:1.1rem 2rem; display:flex; justify-content:space-between; align-items:center;">
+                                <span
+                                    style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted);">Location</span>
+                                <span style="font-size:0.9rem; font-weight:600; color:var(--text-main);">Hosur,
+                                    TN</span>
+                            </div>
+                            <div
+                                style="background:var(--bg); padding:1.1rem 2rem; display:flex; justify-content:space-between; align-items:center;">
+                                <span
+                                    style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted);">Mode</span>
+                                <span style="font-size:0.9rem; font-weight:600; color:var(--text-main);">On-Site</span>
+                            </div>
+                            <div style="background:var(--bg); padding:1.25rem 2rem;">
+                                <a href="#position" class="btn btn-primary"
+                                    style="width:100%; justify-content:center; font-size:0.9rem;">View Full Role ↓</a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                <h1 class="display" style="font-size:clamp(3.5rem, 6vw, 5.5rem); line-height:1.1; letter-spacing:-0.03em; margin-bottom: 1.5rem; font-family:var(--font-serif); font-weight:900;">
-                    Life at Oxygen <br><em>Bioinnovations.</em>
-                </h1>
-                <p class="subtext" style="margin: 0 auto 2.5rem auto; font-size:clamp(1.1rem, 2vw, 1.35rem); line-height:1.65; color:var(--text-muted);">
-                    We believe people do their best work when they feel respected, trusted, and fairly treated. Here's exactly what we offer — no fine print.
-                </p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- HEADLINE STATEMENT -->
-    <section style="padding: 5rem 0; background: var(--bg); border-bottom: 1px solid var(--border);">
-        <div class="container reveal">
-            <h2 style="font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 3rem); text-align: center; max-width: 900px; margin: 0 auto; line-height: 1.3; color: var(--text-main); font-weight: 700; letter-spacing: -0.02em;">
-                We ask and solve problems never been asked before. That takes curious, energetic, healthy people. <em>So we take care of ours.</em>
-            </h2>
-        </div>
-    </section>
+        <!-- ═══════════════════════════════════════════════════════
+ PREMIUM CURRENT OPENINGS
+════════════════════════════════════════════════════════ -->
+        <section id="position" class="structure-section" style="background:var(--bg-alt); padding:6rem 0 8rem 0;">
+            <div class="container reveal">
 
-    <!-- LEAVE AT A GLANCE (3-COLUMN GRID) -->
-    <section style="padding: 6rem 0; background: var(--bg-alt);">
-        <div class="container reveal">
-            <div style="margin-bottom:4rem; border-bottom:1px solid var(--border); padding-bottom:2rem; text-align: center;">
-                <div style="font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1.5rem;">The Specifics</div>
-                <h2 style="font-family:var(--font-serif); font-size:clamp(2.5rem, 5vw, 4.5rem); font-weight:900; color:var(--text-main); line-height:1; letter-spacing:-0.03em;">Leave at a Glance.</h2>
+                <div style="margin-bottom:4rem; border-bottom:1px solid var(--border); padding-bottom:2rem;">
+                    <div
+                        style="font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1.5rem;">
+                        Open Positions</div>
+                    <h2
+                        style="font-family:var(--font-serif); font-size:clamp(3rem,6vw,5rem); font-weight:900; color:var(--text-main); line-height:1; letter-spacing:-0.03em;">
+                        Roles at the bench.</h2>
+                </div>
+
+                <!-- Open Editorial Layout -->
+                <div style="display:grid; grid-template-columns:350px 1fr; gap:var(--space-2xl); align-items:start;"
+                    class="mobile-stack">
+
+                    <!-- ====== LEFT STICKY SIDEBAR (MINIMALIST ARCHITECTURE) ====== -->
+                    <div style="position:relative; border-right:1px solid var(--border); padding-right:var(--space-xl); padding-bottom:var(--space-2xl);"
+                        class="left-sticky-col">
+                        <div style="position:sticky; top:120px;">
+
+                            <div>
+                                <div
+                                    style="display:inline-flex; align-items:center; gap:0.5rem; margin-bottom:1.5rem; margin-top:0.5rem; padding:0.4rem 0.8rem; background:rgba(13, 138, 116, 0.1); border-radius:50px;">
+                                    <span
+                                        style="width:6px; height:6px; border-radius:50%; background:#0D8A74; box-shadow:0 0 8px #0D8A74;"></span>
+                                    <span
+                                        style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; color:#0D8A74; font-weight:600;">Actively
+                                        Recruiting</span>
+                                </div>
+                                <h3 class="display"
+                                    style="font-size:clamp(2.5rem, 4vw, 3rem); line-height:1.1; letter-spacing:-0.02em; margin-bottom:1.5rem; margin-top:0;">
+                                    Research<br>Associate</h3>
+                                <div
+                                    style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-main); border:1px solid var(--border); background:var(--bg); border-radius:50px; display:inline-block; padding:0.4rem 1rem; margin-bottom:3rem;">
+                                    Bio / Food Tech</div>
+
+                                <!-- Premium Interactive Left-Nav Tabs -->
+                                <style>
+                                    .side-tab {
+                                        box-sizing: border-box;
+                                        display: block;
+                                        width: 100%;
+                                        text-align: left;
+                                        background: transparent;
+                                        border: none;
+                                        border-left: 2px solid transparent;
+                                        color: var(--text-muted);
+                                        padding: 1rem 1.5rem;
+                                        font-family: var(--font-mono);
+                                        font-size: 0.85rem;
+                                        letter-spacing: 0.1em;
+                                        text-transform: uppercase;
+                                        cursor: pointer;
+                                        transition: all 0.3s ease;
+                                        margin-bottom: 0.5rem;
+                                        outline: none;
+                                    }
+
+                                    .side-tab:hover {
+                                        color: var(--text-main);
+                                        background: rgba(0, 0, 0, 0.02);
+                                    }
+
+                                    .side-tab.active {
+                                        border-left: 2px solid var(--text-main);
+                                        color: var(--text-main);
+                                        font-weight: 600;
+                                        background: rgba(0, 0, 0, 0.03);
+                                    }
+
+                                    /* PREMIUM MOBILE STACKING CARDS (DECK EFFECT) */
+                                    @media (max-width: 768px) {
+                                        .side-tab-container {
+                                            display: none !important;
+                                        }
+
+                                        .premium-tabs-container {
+                                            position: relative;
+                                            padding-bottom: var(--space-lg);
+                                        }
+
+                                        .tab-content {
+                                            display: block !important;
+                                            opacity: 1 !important;
+                                            visibility: visible !important;
+                                            animation: none !important;
+
+                                            position: sticky !important;
+                                            background: var(--bg-alt);
+                                            border: 1px solid var(--border);
+                                            border-radius: 24px;
+                                            padding: 2.5rem 1.5rem;
+                                            box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.06);
+                                            margin-bottom: 2rem;
+                                        }
+
+                                        .tab-content:last-child {
+                                            margin-bottom: 0;
+                                        }
+
+                                        /* Stagger the sticky positioning so headers stack visibly like a deck */
+                                        #tab-overview {
+                                            top: 90px !important;
+                                            z-index: 10;
+                                        }
+
+                                        #tab-output {
+                                            top: 105px !important;
+                                            z-index: 20;
+                                            background: #ffffff;
+                                        }
+
+                                        #tab-profile {
+                                            top: 120px !important;
+                                            z-index: 30;
+                                            background: var(--bg-alt);
+                                        }
+
+                                        #tab-offer {
+                                            top: 135px !important;
+                                            z-index: 40;
+                                            background: #ffffff;
+                                        }
+
+                                        .left-sticky-col>div {
+                                            min-height: auto !important;
+                                            position: relative !important;
+                                        }
+
+                                        /* High-end typography adjustments */
+                                        .tab-content h4 {
+                                            font-size: 1.15rem;
+                                            padding-bottom: 1.25rem;
+                                            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+                                            margin-bottom: 1.75rem;
+                                            color: var(--text-main);
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: space-between;
+                                        }
+
+                                        .tab-content h4::after {
+                                            content: '↓';
+                                            font-family: var(--font-mono);
+                                            font-size: 0.85rem;
+                                            opacity: 0.3;
+                                            background: rgba(0, 0, 0, 0.05);
+                                            border-radius: 50px;
+                                            width: 24px;
+                                            height: 24px;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                        }
+                                    }
+
+                                    @keyframes tabFadeIn {
+                                        from {
+                                            opacity: 0;
+                                            transform: translateY(10px);
+                                        }
+
+                                        to {
+                                            opacity: 1;
+                                            transform: translateY(0);
+                                        }
+                                    }
+                                </style>
+
+                                <div class="side-tab-container"
+                                    style="border-top:1px solid var(--border); padding-top:2rem; margin-top:2rem;">
+                                    <button onclick="openCareersTab(event, 'tab-overview')"
+                                        class="side-tab tab-link active">01 / Overview</button>
+                                    <button onclick="openCareersTab(event, 'tab-output')" class="side-tab tab-link">02 /
+                                        Validation</button>
+                                    <button onclick="openCareersTab(event, 'tab-profile')" class="side-tab tab-link">03
+                                        / The Profile</button>
+                                    <button onclick="openCareersTab(event, 'tab-offer')" class="side-tab tab-link">04 /
+                                        The Offer</button>
+                                </div>
+                            </div>
+
+                            <div style="margin-top:2.5rem; padding-top:2.5rem; border-top:1px solid var(--border);">
+                                <a href="mailto:careers@oxygenbioinnovations.com?subject=Application%20for%20Research%20Associate"
+                                    class="btn btn-primary"
+                                    style="padding:1.2rem; width:100%; justify-content:center; border-radius:8px;">Apply
+                                    via Email →</a>
+                                <p
+                                    style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-muted); text-align:center; margin-top:1.5rem; margin-bottom:0;">
+                                    careers@oxygenbioinnovations.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ====== RIGHT DETAILS (CONTENT PANES) ====== -->
+                    <div style="padding-top:var(--space-sm);">
+                        <!-- Editorial Intro: Remains Static across tabs -->
+                        <div
+                            style="margin-bottom:var(--space-lg); padding-bottom:4rem; border-bottom:1px solid var(--border);">
+                            <p
+                                style="font-size:clamp(1rem, 3vw, 1.5rem); line-height:1.6; color:var(--text-main); margin-bottom:2rem; font-weight:500; letter-spacing:-0.01em;">
+                                We are seeking ambitious and research-driven individuals who aspire to build—not just
+                                join—a company.
+                            </p>
+                            <div
+                                style="padding:2rem; background:var(--bg-alt); border-left:4px solid var(--text-main); font-family:var(--font-serif); font-style:italic; font-size:clamp(1rem, 2.5vw, 1.25rem); color:var(--text-main);">
+                                "This is not a routine laboratory role. It is a high-ownership position within a
+                                performance-driven startup ecosystem, where scientific rigor meets entrepreneurial
+                                execution."
+                            </div>
+                        </div>
+
+                        <!-- Tab Contents Region (Replaces the long scroll) -->
+                        <div class="premium-tabs-container" style="position:relative;">
+
+                            <div id="tab-overview" class="tab-content"
+                                style="display:block; animation:tabFadeIn 0.4s ease;">
+                                <h4
+                                    style="font-family:var(--font-mono); font-size:0.85rem; letter-spacing:0.1em; color:var(--text-main); text-transform:uppercase; margin-bottom:2rem;">
+                                    01 / Overview</h4>
+
+                                <div style="display:grid; grid-template-columns:1fr; gap:var(--space-md);">
+                                    <div
+                                        style="background:rgba(13, 138, 116, 0.03); padding:3rem; border-radius:12px; border:1px solid rgba(13, 138, 116, 0.2);">
+                                        <div
+                                            style="display:inline-flex; align-items:center; gap:0.5rem; margin-bottom:1.5rem; padding:0.4rem 0.8rem; background:#0D8A74; border-radius:50px;">
+                                            <span
+                                                style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; color:#fff; font-weight:600;">The
+                                                Directive</span>
+                                        </div>
+                                        <h5
+                                            style="font-family:var(--font-serif); font-size:clamp(1.5rem, 3vw, 2.25rem); color:var(--text-main); margin-bottom:1rem; letter-spacing:-0.02em; line-height:1.2;">
+                                            Drive the end-to-end development, validation, and scale-up of advanced
+                                            probiotic formulations.
+                                        </h5>
+                                    </div>
+                                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:var(--space-md);"
+                                        class="mobile-stack">
+                                        <div
+                                            style="background:var(--text-main); color:var(--bg); padding:2.5rem; border-radius:12px; border-top:4px solid #0D8A74;">
+                                            <h5
+                                                style="font-family:var(--font-mono); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.1em; color:rgba(255,255,255,0.6); margin-bottom:1rem;">
+                                                Cross-Functional Scope</h5>
+                                            <p style="font-size:1.1rem; line-height:1.6; margin:0; color:#fff;">
+                                                Collaborate seamlessly across R&D, regulatory alignment, pilot
+                                                production, and commercialization strategy.</p>
+                                        </div>
+                                        <div
+                                            style="background:var(--bg-alt); padding:2.5rem; border-radius:12px; border:1px solid var(--border);">
+                                            <h5
+                                                style="font-family:var(--font-mono); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--text-muted); margin-bottom:1rem;">
+                                                Target Applications</h5>
+                                            <p
+                                                style="font-size:1.1rem; line-height:1.6; margin:0; color:var(--text-main);">
+                                                Innovate across functional beverages, cutting-edge nutraceutical
+                                                systems, and bio-fermented topical cosmetics.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="tab-output" class="tab-content"
+                                style="display:none; animation:tabFadeIn 0.4s ease;">
+                                <h4
+                                    style="font-family:var(--font-mono); font-size:0.85rem; letter-spacing:0.1em; color:var(--text-main); text-transform:uppercase; margin-bottom:1.5rem;">
+                                    02 / Validation Output</h4>
+                                <div
+                                    style="position:relative; padding-left:2rem; border-left:2px solid rgba(13, 138, 116, 0.2); display:flex; flex-direction:column; gap:2.5rem; margin-top:2rem;">
+
+                                    <!-- Pipeline Item 1 -->
+                                    <div style="position:relative;">
+                                        <div
+                                            style="position:absolute; left:-2.65rem; top:0.25rem; width:12px; height:12px; background:#0D8A74; border:2px solid var(--bg); border-radius:50%; box-shadow:0 0 0 2px rgba(13, 138, 116, 0.2);">
+                                        </div>
+                                        <span
+                                            style="font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.15em; color:#0D8A74; text-transform:uppercase; font-weight:600; display:block; margin-bottom:0.5rem;">Phase
+                                            01 // Formulation</span>
+                                        <p style="font-size:1.1rem; line-height:1.5; color:var(--text-main); margin:0;">
+                                            Design and develop innovative probiotic and functional food formulations
+                                            grounded in fermentation science.</p>
+                                    </div>
+
+                                    <!-- Pipeline Item 2 -->
+                                    <div style="position:relative;">
+                                        <div
+                                            style="position:absolute; left:-2.65rem; top:0.25rem; width:12px; height:12px; background:#0D8A74; border:2px solid var(--bg); border-radius:50%; box-shadow:0 0 0 2px rgba(13, 138, 116, 0.2);">
+                                        </div>
+                                        <span
+                                            style="font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.15em; color:#0D8A74; text-transform:uppercase; font-weight:600; display:block; margin-bottom:0.5rem;">Phase
+                                            02 // Cosmetics R&D</span>
+                                        <p style="font-size:1.1rem; line-height:1.5; color:var(--text-main); margin:0;">
+                                            Develop and optimize bio-fermented cosmetic and skincare systems with focus
+                                            on raw material efficacy.</p>
+                                    </div>
+
+                                    <!-- Pipeline Item 3 -->
+                                    <div style="position:relative;">
+                                        <div
+                                            style="position:absolute; left:-2.65rem; top:0.25rem; width:12px; height:12px; background:#0D8A74; border:2px solid var(--bg); border-radius:50%; box-shadow:0 0 0 2px rgba(13, 138, 116, 0.2);">
+                                        </div>
+                                        <span
+                                            style="font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.15em; color:#0D8A74; text-transform:uppercase; font-weight:600; display:block; margin-bottom:0.5rem;">Phase
+                                            03 // Validation</span>
+                                        <p style="font-size:1.1rem; line-height:1.5; color:var(--text-main); margin:0;">
+                                            Execute laboratory-scale fermentation studies, structure sensory
+                                            evaluations, and conduct shelf-life/stability analytics.</p>
+                                    </div>
+
+                                    <!-- Pipeline Item 4 -->
+                                    <div style="position:relative;">
+                                        <div
+                                            style="position:absolute; left:-2.65rem; top:0.25rem; width:12px; height:12px; background:#0D8A74; border:2px solid var(--bg); border-radius:50%; box-shadow:0 0 0 2px rgba(13, 138, 116, 0.2);">
+                                        </div>
+                                        <span
+                                            style="font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.15em; color:#0D8A74; text-transform:uppercase; font-weight:600; display:block; margin-bottom:0.5rem;">Phase
+                                            04 // Scale & IP</span>
+                                        <p style="font-size:1.1rem; line-height:1.5; color:var(--text-main); margin:0;">
+                                            Support pilot-scale technology transfer, maintain strict FSSAI/CDSCO
+                                            regulatory documentation, and contribute to IP dossiers.</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div id="tab-profile" class="tab-content"
+                                style="display:none; animation:tabFadeIn 0.4s ease;">
+                                <h4
+                                    style="font-family:var(--font-mono); font-size:0.85rem; letter-spacing:0.1em; color:var(--text-main); text-transform:uppercase; margin-bottom:1.5rem;">
+                                    03 / The Profile Requirements</h4>
+                                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1px; background:var(--border); border:1px solid var(--border); border-radius:12px; overflow:hidden;"
+                                    class="premium-matrix">
+                                    <div style="background:var(--bg); padding:2.5rem; transition:background 0.3s ease;"
+                                        onmouseover="this.style.background='var(--bg-alt)'"
+                                        onmouseout="this.style.background='var(--bg)'">
+                                        <div
+                                            style="font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.15em; color:var(--text-muted); text-transform:uppercase; margin-bottom:1rem; display:flex; align-items:center; gap:0.5rem;">
+                                            <span
+                                                style="width:6px; height:6px; background:#0D8A74; border-radius:50%; display:inline-block;"></span>
+                                            Degree Base
+                                        </div>
+                                        <p
+                                            style="font-size:1.05rem; line-height:1.6; color:var(--text-main); margin:0;">
+                                            B.Tech / B.Sc. / M.Sc. in Food Technology, Biotechnology, Cosmetic Science,
+                                            or a related discipline.</p>
+                                    </div>
+                                    <div style="background:var(--bg); padding:2.5rem; transition:background 0.3s ease;"
+                                        onmouseover="this.style.background='var(--bg-alt)'"
+                                        onmouseout="this.style.background='var(--bg)'">
+                                        <div
+                                            style="font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.15em; color:var(--text-muted); text-transform:uppercase; margin-bottom:1rem; display:flex; align-items:center; gap:0.5rem;">
+                                            <span
+                                                style="width:6px; height:6px; background:#0D8A74; border-radius:50%; display:inline-block;"></span>
+                                            Foundation
+                                        </div>
+                                        <p
+                                            style="font-size:1.05rem; line-height:1.6; color:var(--text-main); margin:0;">
+                                            Strong rigorous core in microbial fermentation, food process engineering, or
+                                            advanced emulsion chemistry.</p>
+                                    </div>
+                                    <div style="background:var(--bg); padding:2.5rem; transition:background 0.3s ease;"
+                                        onmouseover="this.style.background='var(--bg-alt)'"
+                                        onmouseout="this.style.background='var(--bg)'">
+                                        <div
+                                            style="font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.15em; color:var(--text-muted); text-transform:uppercase; margin-bottom:1rem; display:flex; align-items:center; gap:0.5rem;">
+                                            <span
+                                                style="width:6px; height:6px; background:#0D8A74; border-radius:50%; display:inline-block;"></span>
+                                            The Mindset
+                                        </div>
+                                        <p
+                                            style="font-size:1.05rem; line-height:1.6; color:var(--text-main); margin:0;">
+                                            High-agency analytical thinker with an uncompromising discipline for
+                                            scientific documentation and integrity.</p>
+                                    </div>
+                                    <div style="background:#0D8A74; padding:2.5rem; color:#fff;">
+                                        <div
+                                            style="font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.15em; color:rgba(255,255,255,0.7); text-transform:uppercase; margin-bottom:1rem; display:flex; align-items:center; gap:0.5rem;">
+                                            <span
+                                                style="width:6px; height:6px; background:#fff; border-radius:50%; display:inline-block; box-shadow:0 0 8px rgba(255,255,255,0.5);"></span>
+                                            The Ambition
+                                        </div>
+                                        <p style="font-size:1.05rem; line-height:1.6; color:#fff; margin:0;">Self-driven
+                                            and adaptable. Motivated to take ownership beyond defined boundaries and
+                                            build long-term leadership roles.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="tab-offer" class="tab-content"
+                                style="display:none; animation:tabFadeIn 0.4s ease;">
+                                <h4
+                                    style="font-family:var(--font-mono); font-size:0.85rem; letter-spacing:0.1em; color:var(--text-main); text-transform:uppercase; margin-bottom:1.5rem;">
+                                    04 / Value Proposition</h4>
+                                <style>
+                                    .val-prop-row {
+                                        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+                                        cursor: default;
+                                    }
+
+                                    .val-prop-row:hover {
+                                        transform: translateX(12px);
+                                    }
+
+                                    .val-prop-num {
+                                        transition: all 0.4s ease;
+                                        font-family: var(--font-serif);
+                                        font-size: 4rem;
+                                        font-weight: 900;
+                                        color: var(--bg-alt);
+                                        text-shadow: -1px -1px 0 var(--border), 1px -1px 0 var(--border), -1px 1px 0 var(--border), 1px 1px 0 var(--border);
+                                        line-height: 1;
+                                    }
+
+                                    .val-prop-row:hover .val-prop-num {
+                                        color: #0D8A74;
+                                        text-shadow: none;
+                                        transform: scale(1.05) translateX(5px);
+                                    }
+                                </style>
+                                <div style="display:flex; flex-direction:column; gap:0;">
+                                    <div style="padding:1.5rem 0; border-bottom:1px solid var(--border); display:grid; grid-template-columns:auto 1fr; gap:2.5rem; align-items:center;"
+                                        class="mobile-stack val-prop-row">
+                                        <div class="val-prop-num">
+                                            01</div>
+                                        <div>
+                                            <h5
+                                                style="font-family:var(--font-serif); font-size:1.5rem; color:var(--text-main); margin-bottom:0.5rem; letter-spacing:-0.01em;">
+                                                Full Life-cycle Exposure</h5>
+                                            <p
+                                                style="font-size:1.1rem; color:var(--text-muted); line-height:1.6; margin:0;">
+                                                Work on high-impact R&D projects with real commercialization pathways,
+                                                from lab-scale concept to market launch.</p>
+                                        </div>
+                                    </div>
+                                    <div style="padding:2rem 0; border-bottom:1px solid var(--border); display:grid; grid-template-columns:auto 1fr; gap:2.5rem; align-items:center;"
+                                        class="mobile-stack val-prop-row">
+                                        <div class="val-prop-num">
+                                            02</div>
+                                        <div>
+                                            <h5
+                                                style="font-family:var(--font-serif); font-size:1.5rem; color:var(--text-main); margin-bottom:0.5rem; letter-spacing:-0.01em;">
+                                                Innovation & IP Genesis</h5>
+                                            <p
+                                                style="font-size:1.1rem; color:var(--text-muted); line-height:1.6; margin:0;">
+                                                Rare early exposure to patent drafting, complex technology validation,
+                                                and the intellectual property lifecycle.</p>
+                                        </div>
+                                    </div>
+                                    <div style="padding:2rem 0; border-bottom:1px solid var(--border); display:grid; grid-template-columns:auto 1fr; gap:2.5rem; align-items:center;"
+                                        class="mobile-stack val-prop-row">
+                                        <div class="val-prop-num">
+                                            03</div>
+                                        <div>
+                                            <h5
+                                                style="font-family:var(--font-serif); font-size:1.5rem; color:var(--text-main); margin-bottom:0.5rem; letter-spacing:-0.01em;">
+                                                Founder-Level Mentorship</h5>
+                                            <p
+                                                style="font-size:1.1rem; color:var(--text-muted); line-height:1.6; margin:0;">
+                                                Direct, unstructured collaboration with leadership in a high-visibility
+                                                growth environment. We train leaders, not just scientists.</p>
+                                        </div>
+                                    </div>
+                                    <div style="padding:2rem 0; display:grid; grid-template-columns:auto 1fr; gap:2.5rem; align-items:center;"
+                                        class="mobile-stack val-prop-row">
+                                        <div class="val-prop-num">
+                                            04</div>
+                                        <div>
+                                            <h5
+                                                style="font-family:var(--font-serif); font-size:1.5rem; color:var(--text-main); margin-bottom:0.5rem; letter-spacing:-0.01em;">
+                                                Aggressive Upward Incentive</h5>
+                                            <p
+                                                style="font-size:1.1rem; color:var(--text-muted); line-height:1.6; margin:0;">
+                                                Competitive compensation structured dynamically with your expanding
+                                                capability, contribution, and milestone achievements.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <script>
+                            function openCareersTab(evt, tabName) {
+                                var i, tabcontent, tablinks;
+                                tabcontent = document.getElementsByClassName("tab-content");
+                                for (i = 0; i < tabcontent.length; i++) {
+                                    tabcontent[i].style.display = "none";
+                                    tabcontent[i].style.animation = "none";
+                                }
+                                tablinks = document.getElementsByClassName("tab-link");
+                                for (i = 0; i < tablinks.length; i++) {
+                                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                                }
+                                var activeTab = document.getElementById(tabName);
+                                activeTab.style.display = "block";
+                                // Trigger reflow to restart animation on every click
+                                void activeTab.offsetWidth;
+                                activeTab.style.animation = "tabFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards";
+
+                                evt.currentTarget.className += " active";
+                            }
+                        </script>
+
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:1.5rem;" class="mobile-stack">
-                
-                <!-- Card 1 -->
-                <div style="background:var(--bg); padding:2.5rem; border-radius:16px; border:1px solid var(--border); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 48px rgba(0,0,0,0.06)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
-                    <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(10, 10, 10, 0.04); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--text-main)" stroke-width="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        <!-- ═══════════════════════════════════════════════════════
+ PREMIUM INTERNSHIP PORTAL
+════════════════════════════════════════════════════════ -->
+        <section class="structure-section"
+            style="background:var(--text-main); color:var(--bg); border-top:1px solid var(--border); padding:var(--space-2xl) 0;">
+            <div class="container reveal">
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:var(--space-lg); align-items:center;"
+                    class="mobile-stack">
+
+                    <!-- Pitch col -->
+                    <div class="flow-left">
+                        <div
+                            style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-bottom:1rem;">
+                            Incubator Program</div>
+                        <h2
+                            style="font-family:var(--font-serif); font-size:clamp(2.5rem, 5vw, 4rem); font-weight:900; color:#fff; line-height:1.1; letter-spacing:-0.02em; margin-bottom:1.5rem;">
+                            Student<br><em style="font-weight:400; color:rgba(255,255,255,0.6);">Internships.</em></h2>
+
+                        <p
+                            style="font-size:1.15rem; line-height:1.7; color:rgba(255,255,255,0.7); margin-bottom:2rem; max-width:500px;">
+                            Open to final year B.Tech / B.Sc students. You will not be making coffee. You will be
+                            assigned to live R&D projects alongside our founding team, working with raw materials and
+                            conducting literature reviews that directly impact our formulation pipeline.
+                        </p>
+
+                        <div
+                            style="padding-top:2rem; border-top:1px solid rgba(255,255,255,0.1); width:100%; max-width:400px;">
+                            <span
+                                style="font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase; color:rgba(255,255,255,0.4); display:block; margin-bottom:0.5rem;">Or
+                                email your CV to:</span>
+                            <a href="mailto:careers@oxygenbioinnovations.com"
+                                style="color:#fff; font-size:1.1rem; text-decoration:none; font-weight:600; border-bottom:1px solid #fff; padding-bottom:2px;">careers@oxygenbioinnovations.com</a>
+                        </div>
                     </div>
-                    <h3 style="font-family:var(--font-serif); font-size:1.5rem; font-weight:700; color:var(--text-main); margin-bottom:0.75rem;">Casual Leave</h3>
-                    <p style="font-size:1.05rem; line-height:1.6; color:var(--text-muted); margin:0;">
-                        8 days per year. For life's personal moments — errands, family, rest. Pro-rated from your joining month. Half-day and 1-hour short permission also available.
-                    </p>
-                </div>
 
-                <!-- Card 2 -->
-                <div style="background:var(--bg); padding:2.5rem; border-radius:16px; border:1px solid var(--border); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 48px rgba(0,0,0,0.06)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
-                    <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(10, 10, 10, 0.04); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--text-main)" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    <!-- Form col -->
+                    <div style="background:var(--bg); padding:3rem; border-radius:12px; position:relative;">
+                        <h3
+                            style="font-family:var(--font-serif); font-size:1.75rem; color:var(--text-main); margin-bottom:2rem;">
+                            Apply for Intake</h3>
+
+                        <form onsubmit="event.preventDefault(); alert('Application submitted successfully.');"
+                            style="display:flex; flex-direction:column; gap:1.5rem;">
+
+                            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;" class="mobile-stack">
+                                <div style="display:flex; flex-direction:column; gap:0.5rem;">
+                                    <label
+                                        style="font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase; color:var(--text-muted);">Full
+                                        Name *</label>
+                                    <input type="text" required
+                                        style="padding:1rem; border:1px solid #e5e5e5; background:#fafafa; border-radius:4px; font-family:var(--font-sans); outline:none;">
+                                </div>
+                                <div style="display:flex; flex-direction:column; gap:0.5rem;">
+                                    <label
+                                        style="font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase; color:var(--text-muted);">Year
+                                        of Passing *</label>
+                                    <input type="text" required
+                                        style="padding:1rem; border:1px solid #e5e5e5; background:#fafafa; border-radius:4px; font-family:var(--font-sans); outline:none;">
+                                </div>
+                            </div>
+
+                            <div style="display:flex; flex-direction:column; gap:0.5rem;">
+                                <label
+                                    style="font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase; color:var(--text-muted);">College
+                                    / University *</label>
+                                <input type="text" required
+                                    style="padding:1rem; border:1px solid #e5e5e5; background:#fafafa; border-radius:4px; font-family:var(--font-sans); outline:none;">
+                            </div>
+
+                            <div style="display:flex; flex-direction:column; gap:0.5rem;">
+                                <label
+                                    style="font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase; color:var(--text-muted);">Major
+                                    / Degree Specialization *</label>
+                                <input type="text" required placeholder="e.g. B.Tech Biotechnology"
+                                    style="padding:1rem; border:1px solid #e5e5e5; background:#fafafa; border-radius:4px; font-family:var(--font-sans); outline:none;">
+                            </div>
+
+                            <div style="display:flex; flex-direction:column; gap:0.5rem;">
+                                <label
+                                    style="font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase; color:var(--text-muted);">Why
+                                    Oxygen Bioinnovations? (Brief) *</label>
+                                <textarea required rows="4"
+                                    style="padding:1rem; border:1px solid #e5e5e5; background:#fafafa; border-radius:4px; font-family:var(--font-sans); resize:vertical; outline:none;"></textarea>
+                            </div>
+
+                            <div style="display:flex; flex-direction:column; gap:0.5rem;">
+                                <label
+                                    style="font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase; color:var(--text-muted);">Portfolio
+                                    / LinkedIn / Resume Link</label>
+                                <input type="url" placeholder="https://"
+                                    style="padding:1rem; border:1px solid #e5e5e5; background:#fafafa; border-radius:4px; font-family:var(--font-sans); outline:none;">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary"
+                                style="margin-top:1rem; padding:1.25rem; font-size:1.1rem; justify-content:center;">Submit
+                                Application</button>
+
+                        </form>
                     </div>
-                    <h3 style="font-family:var(--font-serif); font-size:1.5rem; font-weight:700; color:var(--text-main); margin-bottom:0.75rem;">Sick Leave</h3>
-                    <p style="font-size:1.05rem; line-height:1.6; color:var(--text-muted); margin:0;">
-                        8 days per year. Because health comes first. No certificate needed for 1–2 days. Pro-rated from your joining month.
-                    </p>
-                </div>
 
-                <!-- Card 3 -->
-                <div style="background:var(--bg); padding:2.5rem; border-radius:16px; border:1px solid var(--border); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 48px rgba(0,0,0,0.06)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
-                    <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(10, 10, 10, 0.04); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--text-main)" stroke-width="1.5"><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M10 21v-2a4 4 0 0 0-4-4H4a4 4 0 0 0-4 4v2"/></svg>
-                    </div>
-                    <h3 style="font-family:var(--font-serif); font-size:1.5rem; font-weight:700; color:var(--text-main); margin-bottom:0.75rem;">Maternity Leave</h3>
-                    <p style="font-size:1.05rem; line-height:1.6; color:var(--text-muted); margin:0;">
-                        26 weeks, fully paid. As guaranteed by Indian law. Your job, seniority, and salary are protected throughout.
-                    </p>
                 </div>
-
-                <!-- Card 4 -->
-                <div style="background:var(--bg); padding:2.5rem; border-radius:16px; border:1px solid var(--border); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 48px rgba(0,0,0,0.06)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
-                    <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(10, 10, 10, 0.04); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--text-main)" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                    </div>
-                    <h3 style="font-family:var(--font-serif); font-size:1.5rem; font-weight:700; color:var(--text-main); margin-bottom:0.75rem;">Paternity Leave</h3>
-                    <p style="font-size:1.05rem; line-height:1.6; color:var(--text-muted); margin:0;">
-                        5 days paid leave on the birth or adoption of your child. Because this moment matters for fathers too.
-                    </p>
-                </div>
-
-                <!-- Card 5 -->
-                <div style="background:var(--bg); padding:2.5rem; border-radius:16px; border:1px solid var(--border); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 48px rgba(0,0,0,0.06)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
-                    <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(10, 10, 10, 0.04); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--text-main)" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                    </div>
-                    <h3 style="font-family:var(--font-serif); font-size:1.5rem; font-weight:700; color:var(--text-main); margin-bottom:0.75rem;">Public Holidays</h3>
-                    <p style="font-size:1.05rem; line-height:1.6; color:var(--text-muted); margin:0;">
-                        All Tamil Nadu Government notified public holidays — typically 14 to 16 days per year. Final list shared every January.
-                    </p>
-                </div>
-
-                <!-- Card 6 -->
-                <div style="background:var(--bg); padding:2.5rem; border-radius:16px; border:1px solid var(--border); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 48px rgba(0,0,0,0.06)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
-                    <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(10, 10, 10, 0.04); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--text-main)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-                    </div>
-                    <h3 style="font-family:var(--font-serif); font-size:1.5rem; font-weight:700; color:var(--text-main); margin-bottom:0.75rem;">Loss of Pay</h3>
-                    <p style="font-size:1.05rem; line-height:1.6; color:var(--text-muted); margin:0;">
-                        If you ever exhaust your leave, LOP applies at a daily rate of your monthly gross divided by working days that month. Transparent, fair, no surprises.
-                    </p>
-                </div>
-
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ON CYCLE LEAVE (Spotlight section) -->
-    <section style="padding: 6rem 0; background: var(--bg);">
-        <div class="container reveal">
-            <div style="background: #0D8A74; border-radius: 24px; padding: clamp(3rem, 5vw, 5rem); position: relative; overflow: hidden; color: #fff; box-shadow: 0 24px 64px rgba(13, 138, 116, 0.2);">
-                <!-- Decorative element hover effects-->
-                <div style="position: absolute; right: -5%; top: -10%; width: 45%; aspect-ratio: 1/1; border-radius: 50%; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 70%); pointer-events: none;"></div>
-                <div style="position: absolute; left: -10%; bottom: -20%; width: 40%; aspect-ratio: 1/1; border-radius: 50%; background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0) 70%); pointer-events: none;"></div>
-                
-                <div style="max-width: 840px; position: relative; z-index: 2;">
-                    <div style="display:inline-flex; align-items:center; gap:0.5rem; margin-bottom:2rem; padding:0.5rem 1rem; background:rgba(255, 255, 255, 0.15); border-radius:50px; border: 1px solid rgba(255,255,255,0.1);">
-                        <span style="width:6px; height:6px; border-radius:50%; background:#fff; box-shadow:0 0 8px rgba(255,255,255,0.8);"></span>
-                        <span style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:#fff; font-weight:600;">Spotlight // Our Policy</span>
+    
+        <!-- ==============================================
+             LIFE AT OXYGEN (FOOTER/BOTTOM SECTION)
+             ============================================== -->
+
+        <!-- PREMIUM HERO SECTION -->
+        <section class="hero-section" style="padding-top:120px; padding-bottom:60px; background:var(--bg); position:relative; overflow:hidden; border-bottom:1px solid var(--border); border-top:1px solid var(--border);">
+            <div class="container reveal">
+                <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <div class="page-hero-badge" style="margin-bottom: 2rem; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border: 1px solid var(--border); border-radius: 50px; font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: var(--text-muted);">
+                        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--accent-mid);"></span>
+                        Our Culture & Philosophy
                     </div>
+                    <h2 class="display" style="font-size:clamp(3.5rem, 6vw, 5.5rem); line-height:1.1; letter-spacing:-0.03em; margin-bottom: 1.5rem; font-family:var(--font-serif); font-weight:900;">
+                        Life at Oxygen <br><em>Bioinnovations.</em>
+                    </h2>
+                    <p class="subtext" style="margin: 0 auto 2.5rem auto; font-size:clamp(1.1rem, 2vw, 1.35rem); line-height:1.65; color:var(--text-muted);">
+                        We believe people do their best work when they feel respected, trusted, and fairly treated. Here's exactly what we offer — no fine print.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-                    <h2 style="font-family:var(--font-serif); font-size:clamp(2.5rem, 5vw, 4rem); font-weight:900; line-height:1.1; margin-bottom:2rem; letter-spacing:-0.03em;">A note on<br><em>Cycle Leave.</em></h2>
+        <!-- HEADLINE STATEMENT -->
+        <section style="padding: 5rem 0; background: var(--bg); border-bottom: 1px solid var(--border);">
+            <div class="container reveal">
+                <h2 style="font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 3rem); text-align: center; max-width: 900px; margin: 0 auto; line-height: 1.3; color: var(--text-main); font-weight: 700; letter-spacing: -0.02em;">
+                    We ask and solve problems never been asked before. That takes curious, energetic, healthy people. <em>So we take care of ours.</em>
+                </h2>
+            </div>
+        </section>
+
+        <!-- LEAVE AT A GLANCE (3-COLUMN GRID) -->
+        <section style="padding: 6rem 0; background: var(--bg-alt);">
+            <div class="container reveal">
+                <div style="margin-bottom:4rem; border-bottom:1px solid var(--border); padding-bottom:2rem; text-align: center;">
+                    <div style="font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1.5rem;">The Specifics</div>
+                    <h2 style="font-family:var(--font-serif); font-size:clamp(2.5rem, 5vw, 4.5rem); font-weight:900; color:var(--text-main); line-height:1; letter-spacing:-0.03em;">Leave at a Glance.</h2>
+                </div>
+
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:1.5rem;" class="mobile-stack">
                     
-                    <div style="font-size: clamp(1.1rem, 2vw, 1.3rem); line-height: 1.75; color: rgba(255,255,255,0.9); display: flex; flex-direction: column; gap: 1.5rem;">
-                        <p>We introduced Cycle Leave because we believe menstrual health is not a personal problem to be hidden — it is a workplace reality to be respected.</p>
-                        <p style="font-size: clamp(1.2rem, 2vw, 1.45rem); font-weight: 500; color: #fff; padding-left: 1.5rem; border-left: 3px solid rgba(255,255,255,0.3);">Every female team member at Oxygen Bioinnovations gets 1 day off per month, no questions asked. No medical certificate. No awkward conversation. Just a simple message to say you need the day.</p>
-                        <p>No colleague, manager, or anyone at this company is permitted to question, discourage, or comment on this leave. It is your right, and we mean that.</p>
-                        <p>We are a science company. We believe in evidence. And the evidence is clear — supporting menstrual health improves wellbeing, productivity, and trust. <em>This is not charity. It is good sense.</em></p>
+                    <!-- Card 1 -->
+                    <div style="background:var(--bg); padding:2.5rem; border-radius:16px; border:1px solid var(--border); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 48px rgba(0,0,0,0.06)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                        <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(10, 10, 10, 0.04); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--text-main)" stroke-width="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </div>
+                        <h3 style="font-family:var(--font-serif); font-size:1.5rem; font-weight:700; color:var(--text-main); margin-bottom:0.75rem;">Casual Leave</h3>
+                        <p style="font-size:1.05rem; line-height:1.6; color:var(--text-muted); margin:0;">
+                            8 days per year. For life's personal moments — errands, family, rest. Pro-rated from your joining month. Half-day and 1-hour short permission also available.
+                        </p>
                     </div>
+
+                    <!-- Card 2 -->
+                    <div style="background:var(--bg); padding:2.5rem; border-radius:16px; border:1px solid var(--border); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 48px rgba(0,0,0,0.06)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                        <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(10, 10, 10, 0.04); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--text-main)" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                        </div>
+                        <h3 style="font-family:var(--font-serif); font-size:1.5rem; font-weight:700; color:var(--text-main); margin-bottom:0.75rem;">Sick Leave</h3>
+                        <p style="font-size:1.05rem; line-height:1.6; color:var(--text-muted); margin:0;">
+                            8 days per year. Because health comes first. No certificate needed for 1–2 days. Pro-rated from your joining month.
+                        </p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div style="background:var(--bg); padding:2.5rem; border-radius:16px; border:1px solid var(--border); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 48px rgba(0,0,0,0.06)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                        <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(10, 10, 10, 0.04); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--text-main)" stroke-width="1.5"><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M10 21v-2a4 4 0 0 0-4-4H4a4 4 0 0 0-4 4v2"/></svg>
+                        </div>
+                        <h3 style="font-family:var(--font-serif); font-size:1.5rem; font-weight:700; color:var(--text-main); margin-bottom:0.75rem;">Maternity Leave</h3>
+                        <p style="font-size:1.05rem; line-height:1.6; color:var(--text-muted); margin:0;">
+                            26 weeks, fully paid. As guaranteed by Indian law. Your job, seniority, and salary are protected throughout.
+                        </p>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div style="background:var(--bg); padding:2.5rem; border-radius:16px; border:1px solid var(--border); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 48px rgba(0,0,0,0.06)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                        <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(10, 10, 10, 0.04); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--text-main)" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <h3 style="font-family:var(--font-serif); font-size:1.5rem; font-weight:700; color:var(--text-main); margin-bottom:0.75rem;">Paternity Leave</h3>
+                        <p style="font-size:1.05rem; line-height:1.6; color:var(--text-muted); margin:0;">
+                            5 days paid leave on the birth or adoption of your child. Because this moment matters for fathers too.
+                        </p>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div style="background:var(--bg); padding:2.5rem; border-radius:16px; border:1px solid var(--border); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 48px rgba(0,0,0,0.06)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                        <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(10, 10, 10, 0.04); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--text-main)" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </div>
+                        <h3 style="font-family:var(--font-serif); font-size:1.5rem; font-weight:700; color:var(--text-main); margin-bottom:0.75rem;">Public Holidays</h3>
+                        <p style="font-size:1.05rem; line-height:1.6; color:var(--text-muted); margin:0;">
+                            All Tamil Nadu Government notified public holidays — typically 14 to 16 days per year. Final list shared every January.
+                        </p>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div style="background:var(--bg); padding:2.5rem; border-radius:16px; border:1px solid var(--border); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 48px rgba(0,0,0,0.06)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                        <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(10, 10, 10, 0.04); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--text-main)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                        </div>
+                        <h3 style="font-family:var(--font-serif); font-size:1.5rem; font-weight:700; color:var(--text-main); margin-bottom:0.75rem;">Loss of Pay</h3>
+                        <p style="font-size:1.05rem; line-height:1.6; color:var(--text-muted); margin:0;">
+                            If you ever exhaust your leave, LOP applies at a daily rate of your monthly gross divided by working days that month. Transparent, fair, no surprises.
+                        </p>
+                    </div>
+
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- HONEST NOTE & WORKING HOURS (2 Column split on desktop) -->
-    <section style="padding: 6rem 0; background: var(--bg-alt); border-top: 1px solid var(--border);">
-        <div class="container reveal">
-            <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: var(--space-xl); align-items: start;" class="mobile-stack">
-                
-                <!-- Honest Note -->
-                <div>
-                    <h3 style="font-family:var(--font-serif); font-size:clamp(2rem, 3vw, 2.75rem); font-weight:800; color:var(--text-main); margin-bottom:2rem; letter-spacing:-0.02em; line-height:1.2;">An honest note on where we are.</h3>
-                    <div style="font-size: 1.1rem; line-height: 1.7; color: var(--text-muted); display: flex; flex-direction: column; gap: 1.25rem;">
-                        <p>We will be upfront with you.</p>
-                        <p>We are an early-stage startup. Our salaries are competitive for our stage — not comparable to large pharma companies yet. Earned Leave (EL / Privilege Leave) is not in our policy today — we will add it as we grow, and we will give you 30 days' notice when we do.</p>
-                        <p>What we can offer right now that most companies cannot: direct access to the founder, real ownership of your work, your name on research outputs, and a front-row seat to building something from scratch.</p>
-                        <p style="font-weight: 600; color: var(--text-main);">If that excites you — we'd love to meet you.</p>
-                    </div>
-                </div>
-
-                <!-- Working Hours -->
-                <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 3rem; box-shadow: 0 4px 24px rgba(0,0,0,0.02);">
-                    <div style="margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 2px solid rgba(0,0,0,0.04);">
-                        <div style="display: flex; align-items: center; gap: 1rem;">
-                            <span style="background: var(--bg-alt); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-main)" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                            </span>
-                            <h4 style="font-family:var(--font-serif); font-size:1.5rem; font-weight:800; color:var(--text-main); margin:0;">Working Hours</h4>
-                        </div>
-                    </div>
+        <!-- ON CYCLE LEAVE (Spotlight section) -->
+        <section style="padding: 6rem 0; background: var(--bg);">
+            <div class="container reveal">
+                <div style="background: #0D8A74; border-radius: 24px; padding: clamp(3rem, 5vw, 5rem); position: relative; overflow: hidden; color: #fff; box-shadow: 0 24px 64px rgba(13, 138, 116, 0.2);">
+                    <div style="position: absolute; right: -5%; top: -10%; width: 45%; aspect-ratio: 1/1; border-radius: 50%; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 70%); pointer-events: none;"></div>
+                    <div style="position: absolute; left: -10%; bottom: -20%; width: 40%; aspect-ratio: 1/1; border-radius: 50%; background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0) 70%); pointer-events: none;"></div>
                     
-                    <div style="display: flex; flex-direction: column; gap: 2rem;">
-                        <div>
-                            <div style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.5rem;">Schedule</div>
-                            <div style="font-size:1.15rem; font-weight:600; color:var(--text-main);">Mon to Sat, 9 AM – 6 PM</div>
-                            <div style="font-size:0.95rem; color:var(--text-muted); margin-top:0.3rem;">With a 1-hour lunch break.</div>
+                    <div style="max-width: 840px; position: relative; z-index: 2;">
+                        <div style="display:inline-flex; align-items:center; gap:0.5rem; margin-bottom:2rem; padding:0.5rem 1rem; background:rgba(255, 255, 255, 0.15); border-radius:50px; border: 1px solid rgba(255,255,255,0.1);">
+                            <span style="width:6px; height:6px; border-radius:50%; background:#fff; box-shadow:0 0 8px rgba(255,255,255,0.8);"></span>
+                            <span style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:#fff; font-weight:600;">Spotlight // Our Policy</span>
                         </div>
 
-                        <div>
-                            <div style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.5rem;">Location</div>
-                            <div style="font-size:1.15rem; font-weight:600; color:var(--text-main);">On-Site / Hosur</div>
-                            <div style="font-size:0.95rem; color:var(--text-muted); margin-top:0.3rem; line-height:1.5;">Lab-based work requires on-site presence at TBI, Adhiyamaan College of Engineering.</div>
-                        </div>
-
-                        <div>
-                            <div style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.5rem;">Flexibility</div>
-                            <div style="font-size:0.95rem; color:var(--text-muted); line-height:1.5;">Flexible arrangements available for specific roles — discussed at the time of offer.</div>
+                        <h2 style="font-family:var(--font-serif); font-size:clamp(2.5rem, 5vw, 4rem); font-weight:900; line-height:1.1; margin-bottom:2rem; letter-spacing:-0.03em;">A note on<br><em>Cycle Leave.</em></h2>
+                        
+                        <div style="font-size: clamp(1.1rem, 2vw, 1.3rem); line-height: 1.75; color: rgba(255,255,255,0.9); display: flex; flex-direction: column; gap: 1.5rem;">
+                            <p>We introduced Cycle Leave because we believe menstrual health is not a personal problem to be hidden — it is a workplace reality to be respected.</p>
+                            <p style="font-size: clamp(1.2rem, 2vw, 1.45rem); font-weight: 500; color: #fff; padding-left: 1.5rem; border-left: 3px solid rgba(255,255,255,0.3);">Every female team member at Oxygen Bioinnovations gets 1 day off per month, no questions asked. No medical certificate. No awkward conversation. Just a simple message to say you need the day.</p>
+                            <p>No colleague, manager, or anyone at this company is permitted to question, discourage, or comment on this leave. It is your right, and we mean that.</p>
+                            <p>We are a science company. We believe in evidence. And the evidence is clear — supporting menstrual health improves wellbeing, productivity, and trust. <em>This is not charity. It is good sense.</em></p>
                         </div>
                     </div>
                 </div>
-
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CALL TO ACTION -->
-    <section style="padding: 8rem 0; background: var(--text-main); color: var(--bg); text-align: center;">
-        <div class="container reveal">
-            <h2 style="font-family:var(--font-serif); font-size:clamp(3rem, 5vw, 4.5rem); font-weight:800; color:#fff; line-height:1.1; letter-spacing:-0.03em; margin-bottom:1.5rem;">Ready to join?</h2>
-            <p style="font-size:clamp(1.1rem, 2vw, 1.25rem); line-height:1.6; color:rgba(255,255,255,0.7); max-width:600px; margin:0 auto 3rem auto;">
-                Got questions? Read our <a href="faq.html" style="color: #fff; text-decoration: underline; text-underline-offset: 4px;">FAQ</a>. Or write to us with your application.
-            </p>
-            
-            <a href="mailto:info@oxygenbioinnovations.com?subject=Application%20–%20[Role]%20–%20[Your Name]" class="btn btn-primary" style="background: #fff; color: var(--text-main); padding: 1.25rem 2.5rem; font-size: 1.1rem; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4)); filter: none; box-shadow: 0 4px 12px rgba(0,0,0,0.4);">
-                info@oxygenbioinnovations.com &nbsp;&rarr;
-            </a>
-            
-            <div style="margin-top: 2rem; font-family: var(--font-mono); font-size: 0.85rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.05em;">
-                Subject line: Application – [Role] – [Your Name]
+        <!-- HONEST NOTE & WORKING HOURS -->
+        <section style="padding: 6rem 0; background: var(--bg-alt); border-top: 1px solid var(--border);">
+            <div class="container reveal">
+                <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: var(--space-xl); align-items: start;" class="mobile-stack">
+                    
+                    <div>
+                        <h3 style="font-family:var(--font-serif); font-size:clamp(2rem, 3vw, 2.75rem); font-weight:800; color:var(--text-main); margin-bottom:2rem; letter-spacing:-0.02em; line-height:1.2;">An honest note on where we are.</h3>
+                        <div style="font-size: 1.1rem; line-height: 1.7; color: var(--text-muted); display: flex; flex-direction: column; gap: 1.25rem;">
+                            <p>We will be upfront with you.</p>
+                            <p>We are an early-stage startup. Our salaries are competitive for our stage — not comparable to large pharma companies yet. Earned Leave (EL / Privilege Leave) is not in our policy today — we will add it as we grow, and we will give you 30 days' notice when we do.</p>
+                            <p>What we can offer right now that most companies cannot: direct access to the founder, real ownership of your work, your name on research outputs, and a front-row seat to building something from scratch.</p>
+                            <p style="font-weight: 600; color: var(--text-main);">If that excites you — we'd love to meet you.</p>
+                        </div>
+                    </div>
+
+                    <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 3rem; box-shadow: 0 4px 24px rgba(0,0,0,0.02);">
+                        <div style="margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 2px solid rgba(0,0,0,0.04);">
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <span style="background: var(--bg-alt); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-main)" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                </span>
+                                <h4 style="font-family:var(--font-serif); font-size:1.5rem; font-weight:800; color:var(--text-main); margin:0;">Working Hours</h4>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 2rem;">
+                            <div>
+                                <div style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.5rem;">Schedule</div>
+                                <div style="font-size:1.15rem; font-weight:600; color:var(--text-main);">Mon to Sat, 9 AM – 6 PM</div>
+                                <div style="font-size:0.95rem; color:var(--text-muted); margin-top:0.3rem;">With a 1-hour lunch break.</div>
+                            </div>
+
+                            <div>
+                                <div style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.5rem;">Location</div>
+                                <div style="font-size:1.15rem; font-weight:600; color:var(--text-main);">On-Site / Hosur</div>
+                                <div style="font-size:0.95rem; color:var(--text-muted); margin-top:0.3rem; line-height:1.5;">Lab-based work requires on-site presence at TBI, Adhiyamaan College of Engineering.</div>
+                            </div>
+
+                            <div>
+                                <div style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.5rem;">Flexibility</div>
+                                <div style="font-size:0.95rem; color:var(--text-muted); line-height:1.5;">Flexible arrangements available for specific roles — discussed at the time of offer.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
 </main>
+
 
     <!-- Site Footer -->
     <footer class="site-footer">
