@@ -1,0 +1,440 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life at Oxygen | Bioinnovations</title>
+    <meta name="description"
+        content="India's first precision nutrition system grounded in biotechnology, indigenous ingredients, and an unbreakable commitment to evidence.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css?v=42">
+
+    <!-- Google Structured Data (Organization) -->
+    <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "name": "Oxygen Bioinnovations",
+ "url": "https://oxygenbioinnovations.com/",
+ "logo": "https://oxygenbioinnovations.com/assets/images/logo-full.png",
+ "description": "India's first precision nutrition system grounded in biotechnology, indigenous ingredients, and an unbreakable commitment to evidence."
+ }
+ </script>
+    <link rel="stylesheet" href="assets/css/transitions.css">
+</head>
+
+<body>
+
+    <!-- ── Navigation ──────────────────────────────────────── -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo"><img src="assets/images/logo-full.png" alt="Oxygen Bioinnovations"
+                    style="height:36px; width:auto; display:block;"></a>
+            <nav class="desktop-nav custom-nav-replaced">
+                <a href="index.html">Home</a>
+
+                <div class="nav-item">
+                    <a href="about.html">About Us <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                            class="nav-arrow" stroke="currentColor" stroke-width="2.5">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg></a>
+                    <div class="mega-dropdown">
+                        <div class="mega-dropdown-inner">
+                            <div class="mega-feature">
+                                <div class="icon-wrap">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <path d="M12 16v-4"></path>
+                                        <path d="M12 8h.01"></path>
+                                    </svg>
+                                </div>
+                                <h4>Who is Oxygen?</h4>
+                                <p>Building India's first precision nutrition system.</p>
+                            </div>
+                            <div class="mega-links-col">
+                                <a href="about.html#about-story" class="mega-nav-link">
+                                    <span class="link-title">Our Story</span>
+                                    <span class="link-desc">Why we started and what we built before launch.</span>
+                                </a>
+                                <a href="about.html#about-vision" class="mega-nav-link">
+                                    <span class="link-title">Vision &amp; Mission</span>
+                                    <span class="link-desc">The strategic framework and three pillars guiding us.</span>
+                                </a>
+                                <a href="about.html#about-who" class="mega-nav-link">
+                                    <span class="link-title">Who We Are</span>
+                                    <span class="link-desc">The founder, the science, and our operating
+                                        principles.</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-item">
+                    <a href="science.html">Our Science <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                            class="nav-arrow" stroke="currentColor" stroke-width="2.5">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg></a>
+                    <div class="mega-dropdown">
+                        <div class="mega-dropdown-inner">
+                            <div class="mega-feature">
+                                <div class="icon-wrap">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M10 2v7.31M14 9.31V2M8.5 2h7M14 9.31l6.5 11.17c.39.66-.08 1.5-.85 1.5H4.35c-.77 0-1.24-.84-.85-1.5L10 9.31M8.5 16.5h7" />
+                                    </svg>
+                                </div>
+                                <h4>Evidence-Based</h4>
+                                <p>Active forms, verified extracts, and clinical proof.</p>
+                            </div>
+                            <div class="mega-links-col">
+                                <a href="problem.html" class="mega-nav-link">
+                                    <span class="link-title">The Problem</span>
+                                    <span class="link-desc">Understand the nutritional breakdown in urban India.</span>
+                                </a>
+                                <a href="ingredients.html" class="mega-nav-link">
+                                    <span class="link-title">Ingredients Index</span>
+                                    <span class="link-desc">Deep dive into every component of our formulations.</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="blog.html">Blog</a>
+                <a href="careers.html">Careers</a>
+                <a href="contact.html">Contact</a>
+                <a href="index.html#join" class="btn btn-primary" style="margin-left: 1rem;">Join Waitlist</a>
+            </nav>
+            <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <nav class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <a href="index.html" class="nav-logo"><img src="assets/images/logo-full.png" alt="Oxygen Bioinnovations"
+                    style="height:36px; width:auto; display:block;"></a>
+            <button class="mobile-close" id="mobileClose" aria-label="Close">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <a href="index.html" class="menu-link">Home</a>
+        <a href="about.html" class="menu-link">About Us</a>
+        <div class="mobile-submenu">
+            <a href="about.html#about-story" class="menu-link">Our Story</a>
+            <a href="about.html#about-vision" class="menu-link">Vision &amp; Mission</a>
+            <a href="about.html#about-who" class="menu-link">Who We Are</a>
+        </div>
+        <a href="science.html" class="menu-link">Our Science</a>
+        <div class="mobile-submenu">
+            <a href="problem.html" class="menu-link">The Problem</a>
+            <a href="ingredients.html" class="menu-link">Ingredients Index</a>
+        </div>
+        <a href="blog.html" class="menu-link">Blog</a>
+        <a href="careers.html" class="menu-link">Careers</a>
+        <a href="contact.html" class="menu-link">Contact</a>
+        <div class="mobile-cta">
+            <a href="#join" class="btn btn-primary" style="width:100%;justify-content:center;padding:1rem;">Join the
+                Waitlist</a>
+        </div>
+    </nav>
+
+
+
+    
+    <main>
+
+        <!-- PREMIUM HERO SECTION -->
+        <section class="hero-section" style="padding-top:clamp(160px, 20vh, 200px); padding-bottom:60px; background:var(--bg); position:relative; overflow:hidden; border-bottom:1px solid var(--border);">
+            <div class="container reveal">
+                <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <div class="page-hero-badge" style="margin-bottom: 2rem; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border: 1px solid var(--border); border-radius: 50px; font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: var(--text-muted);">
+                        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--accent-mid);"></span>
+                        Our Culture & Philosophy
+                    </div>
+                    <h1 class="display" style="font-size:clamp(3.5rem, 6vw, 5.5rem); line-height:1.1; letter-spacing:-0.03em; margin-bottom: 1.5rem; font-family:var(--font-serif); font-weight:900;">
+                        Life at Oxygen <br><em>Bioinnovations.</em>
+                    </h1>
+                    <p class="subtext" style="margin: 0 auto 2.5rem auto; font-size:clamp(1.1rem, 2vw, 1.35rem); line-height:1.65; color:var(--text-muted);">
+                        We believe people do their best work when they feel respected, trusted, and fairly treated. Here's exactly what we offer — no fine print.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- HEADLINE STATEMENT -->
+        <section style="padding: 5rem 0; background: var(--bg); border-bottom: 1px solid var(--border);">
+            <div class="container reveal">
+                <h2 style="font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 3rem); text-align: center; max-width: 900px; margin: 0 auto; line-height: 1.3; color: var(--text-main); font-weight: 700; letter-spacing: -0.02em;">
+                    We ask and solve problems never been asked before. That takes curious, energetic, healthy people. <em>So we take care of ours.</em>
+                </h2>
+            </div>
+        </section>
+
+        <!-- LEAVE AT A GLANCE (3-COLUMN GRID) -->
+        <section style="padding: 6rem 0; background: var(--bg-alt);">
+            <div class="container reveal">
+                <div style="margin-bottom:4rem; border-bottom:1px solid var(--border); padding-bottom:2rem; text-align: center;">
+                    <div style="font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1.5rem;">The Specifics</div>
+                    <h2 style="font-family:var(--font-serif); font-size:clamp(2.5rem, 5vw, 4.5rem); font-weight:900; color:var(--text-main); line-height:1; letter-spacing:-0.03em;">Leave at a Glance.</h2>
+                </div>
+
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:1.5rem;" class="mobile-stack">
+                    
+                    <!-- Card 1 -->
+                    <div style="background:var(--bg); padding:2.5rem; border-radius:16px; border:1px solid var(--border); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 48px rgba(0,0,0,0.06)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                        <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(10, 10, 10, 0.04); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--text-main)" stroke-width="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </div>
+                        <h3 style="font-family:var(--font-serif); font-size:1.5rem; font-weight:700; color:var(--text-main); margin-bottom:0.75rem;">Casual Leave</h3>
+                        <p style="font-size:1.05rem; line-height:1.6; color:var(--text-muted); margin:0;">
+                            8 days per year. For life's personal moments — errands, family, rest. Pro-rated from your joining month. Half-day and 1-hour short permission also available.
+                        </p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div style="background:var(--bg); padding:2.5rem; border-radius:16px; border:1px solid var(--border); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 48px rgba(0,0,0,0.06)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                        <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(10, 10, 10, 0.04); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--text-main)" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                        </div>
+                        <h3 style="font-family:var(--font-serif); font-size:1.5rem; font-weight:700; color:var(--text-main); margin-bottom:0.75rem;">Sick Leave</h3>
+                        <p style="font-size:1.05rem; line-height:1.6; color:var(--text-muted); margin:0;">
+                            8 days per year. Because health comes first. No certificate needed for 1–2 days. Pro-rated from your joining month.
+                        </p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div style="background:var(--bg); padding:2.5rem; border-radius:16px; border:1px solid var(--border); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 48px rgba(0,0,0,0.06)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                        <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(10, 10, 10, 0.04); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--text-main)" stroke-width="1.5"><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M10 21v-2a4 4 0 0 0-4-4H4a4 4 0 0 0-4 4v2"/></svg>
+                        </div>
+                        <h3 style="font-family:var(--font-serif); font-size:1.5rem; font-weight:700; color:var(--text-main); margin-bottom:0.75rem;">Maternity Leave</h3>
+                        <p style="font-size:1.05rem; line-height:1.6; color:var(--text-muted); margin:0;">
+                            26 weeks, fully paid. As guaranteed by Indian law. Your job, seniority, and salary are protected throughout.
+                        </p>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div style="background:var(--bg); padding:2.5rem; border-radius:16px; border:1px solid var(--border); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 48px rgba(0,0,0,0.06)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                        <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(10, 10, 10, 0.04); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--text-main)" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <h3 style="font-family:var(--font-serif); font-size:1.5rem; font-weight:700; color:var(--text-main); margin-bottom:0.75rem;">Paternity Leave</h3>
+                        <p style="font-size:1.05rem; line-height:1.6; color:var(--text-muted); margin:0;">
+                            5 days paid leave on the birth or adoption of your child. Because this moment matters for fathers too.
+                        </p>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div style="background:var(--bg); padding:2.5rem; border-radius:16px; border:1px solid var(--border); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 48px rgba(0,0,0,0.06)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                        <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(10, 10, 10, 0.04); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--text-main)" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </div>
+                        <h3 style="font-family:var(--font-serif); font-size:1.5rem; font-weight:700; color:var(--text-main); margin-bottom:0.75rem;">Public Holidays</h3>
+                        <p style="font-size:1.05rem; line-height:1.6; color:var(--text-muted); margin:0;">
+                            All Tamil Nadu Government notified public holidays — typically 14 to 16 days per year. Final list shared every January.
+                        </p>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div style="background:var(--bg); padding:2.5rem; border-radius:16px; border:1px solid var(--border); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 48px rgba(0,0,0,0.06)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                        <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(10, 10, 10, 0.04); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--text-main)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                        </div>
+                        <h3 style="font-family:var(--font-serif); font-size:1.5rem; font-weight:700; color:var(--text-main); margin-bottom:0.75rem;">Loss of Pay</h3>
+                        <p style="font-size:1.05rem; line-height:1.6; color:var(--text-muted); margin:0;">
+                            If you ever exhaust your leave, LOP applies at a daily rate of your monthly gross divided by working days that month. Transparent, fair, no surprises.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ON CYCLE LEAVE (Spotlight section) -->
+        <section style="padding: 6rem 0; background: var(--bg);">
+            <div class="container reveal">
+                <div style="background: #0D8A74; border-radius: 24px; padding: clamp(3rem, 5vw, 5rem); position: relative; overflow: hidden; color: #fff; box-shadow: 0 24px 64px rgba(13, 138, 116, 0.2);">
+                    <!-- Decorative element hover effects-->
+                    <div style="position: absolute; right: -5%; top: -10%; width: 45%; aspect-ratio: 1/1; border-radius: 50%; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 70%); pointer-events: none;"></div>
+                    <div style="position: absolute; left: -10%; bottom: -20%; width: 40%; aspect-ratio: 1/1; border-radius: 50%; background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0) 70%); pointer-events: none;"></div>
+                    
+                    <div style="max-width: 840px; position: relative; z-index: 2;">
+                        <div style="display:inline-flex; align-items:center; gap:0.5rem; margin-bottom:2rem; padding:0.5rem 1rem; background:rgba(255, 255, 255, 0.15); border-radius:50px; border: 1px solid rgba(255,255,255,0.1);">
+                            <span style="width:6px; height:6px; border-radius:50%; background:#fff; box-shadow:0 0 8px rgba(255,255,255,0.8);"></span>
+                            <span style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:#fff; font-weight:600;">Spotlight // Our Policy</span>
+                        </div>
+
+                        <h2 style="font-family:var(--font-serif); font-size:clamp(2.5rem, 5vw, 4rem); font-weight:900; line-height:1.1; margin-bottom:2rem; letter-spacing:-0.03em;">A note on<br><em>Cycle Leave.</em></h2>
+                        
+                        <div style="font-size: clamp(1.1rem, 2vw, 1.3rem); line-height: 1.75; color: rgba(255,255,255,0.9); display: flex; flex-direction: column; gap: 1.5rem;">
+                            <p>We introduced Cycle Leave because we believe menstrual health is not a personal problem to be hidden — it is a workplace reality to be respected.</p>
+                            <p style="font-size: clamp(1.2rem, 2vw, 1.45rem); font-weight: 500; color: #fff; padding-left: 1.5rem; border-left: 3px solid rgba(255,255,255,0.3);">Every female team member at Oxygen Bioinnovations gets 1 day off per month, no questions asked. No medical certificate. No awkward conversation. Just a simple message to say you need the day.</p>
+                            <p>No colleague, manager, or anyone at this company is permitted to question, discourage, or comment on this leave. It is your right, and we mean that.</p>
+                            <p>We are a science company. We believe in evidence. And the evidence is clear — supporting menstrual health improves wellbeing, productivity, and trust. <em>This is not charity. It is good sense.</em></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HONEST NOTE & WORKING HOURS -->
+        <section style="padding: 6rem 0; background: var(--bg-alt); border-top: 1px solid var(--border);">
+            <div class="container reveal">
+                <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: var(--space-xl); align-items: start;" class="mobile-stack">
+                    
+                    <!-- Honest Note -->
+                    <div>
+                        <h3 style="font-family:var(--font-serif); font-size:clamp(2rem, 3vw, 2.75rem); font-weight:800; color:var(--text-main); margin-bottom:2rem; letter-spacing:-0.02em; line-height:1.2;">An honest note on where we are.</h3>
+                        <div style="font-size: 1.1rem; line-height: 1.7; color: var(--text-muted); display: flex; flex-direction: column; gap: 1.25rem;">
+                            <p>We will be upfront with you.</p>
+                            <p>We are an early-stage startup. Our salaries are competitive for our stage — not comparable to large pharma companies yet. Earned Leave (EL / Privilege Leave) is not in our policy today — we will add it as we grow, and we will give you 30 days' notice when we do.</p>
+                            <p>What we can offer right now that most companies cannot: direct access to the founder, real ownership of your work, your name on research outputs, and a front-row seat to building something from scratch.</p>
+                            <p style="font-weight: 600; color: var(--text-main);">If that excites you — we'd love to meet you.</p>
+                        </div>
+                    </div>
+
+                    <!-- Working Hours -->
+                    <div style="background: var(--bg); border: 1px solid var(--border); border-radius: 20px; padding: 3rem; box-shadow: 0 4px 24px rgba(0,0,0,0.02);">
+                        <div style="margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 2px solid rgba(0,0,0,0.04);">
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <span style="background: var(--bg-alt); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-main)" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                </span>
+                                <h4 style="font-family:var(--font-serif); font-size:1.5rem; font-weight:800; color:var(--text-main); margin:0;">Working Hours</h4>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 2rem;">
+                            <div>
+                                <div style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.5rem;">Schedule</div>
+                                <div style="font-size:1.15rem; font-weight:600; color:var(--text-main);">Mon to Sat, 9 AM – 6 PM</div>
+                                <div style="font-size:0.95rem; color:var(--text-muted); margin-top:0.3rem;">With a 1-hour lunch break.</div>
+                            </div>
+
+                            <div>
+                                <div style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.5rem;">Location</div>
+                                <div style="font-size:1.15rem; font-weight:600; color:var(--text-main);">On-Site / Hosur</div>
+                                <div style="font-size:0.95rem; color:var(--text-muted); margin-top:0.3rem; line-height:1.5;">Lab-based work requires on-site presence at TBI, Adhiyamaan College of Engineering.</div>
+                            </div>
+
+                            <div>
+                                <div style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.5rem;">Flexibility</div>
+                                <div style="font-size:0.95rem; color:var(--text-muted); line-height:1.5;">Flexible arrangements available for specific roles — discussed at the time of offer.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CALL TO ACTION -->
+        <section style="padding: 8rem 0; background: var(--text-main); color: var(--bg); text-align: center;">
+            <div class="container reveal">
+                <h2 style="font-family:var(--font-serif); font-size:clamp(3rem, 5vw, 4.5rem); font-weight:800; color:#fff; line-height:1.1; letter-spacing:-0.03em; margin-bottom:1.5rem;">Ready to join?</h2>
+                <p style="font-size:clamp(1.1rem, 2vw, 1.25rem); line-height:1.6; color:rgba(255,255,255,0.7); max-width:600px; margin:0 auto 3rem auto;">
+                    Got questions? Read our <a href="faq.html" style="color: #fff; text-decoration: underline; text-underline-offset: 4px;">FAQ</a>. Or view our <a href="careers.html" style="color: #fff; text-decoration: underline; text-underline-offset: 4px;">Careers</a> portal to apply.
+                </p>
+                
+                <a href="careers.html" class="btn btn-primary" style="background: #fff; color: var(--text-main); padding: 1.25rem 2.5rem; font-size: 1.1rem; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4)); filter: none; box-shadow: 0 4px 12px rgba(0,0,0,0.4);">
+                    View Open Roles &nbsp;&rarr;
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" style="display:inline-block; margin-bottom:1rem;"><img src="assets/images/logo-full.png" alt="Oxygen Bioinnovations" style="height:36px; width:auto; display:block;"></a>
+                <p>Precision nutrition for every ambitious Indian.<br><br>India's first honest precision nutrition
+                    system. Built on millet, mushrooms, and real science.</p>
+                <div class="footer-socials">
+                    <a href="https://linkedin.com/company/oxygenbioinnovations" target="_blank"
+                        aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg></a>
+                    <a href="https://twitter.com/oxygenbio" target="_blank" aria-label="Twitter"><svg width="18"
+                            height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z">
+                            </path>
+                        </svg></a>
+                    <a href="https://instagram.com/oxygenbio" target="_blank" aria-label="Instagram"><svg width="18"
+                            height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg></a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="science.html">Our Science</a></li>
+                    <li><a href="ingredients.html">Ingredients</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Get In Touch</h4>
+                <ul>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="life.html">Life at Oxygen</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                </ul>
+            </div>
+        
+            <div class="footer-column">
+                <h4>FAQ</h4>
+                <ul>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Sticky CTA -->
+    <div class="mobile-sticky-cta" id="mobileCta">
+        <a href="#join">Join the Waitlist →</a>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/page-transitions.js"></script>
+</body>
+
+</html>
