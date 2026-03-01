@@ -1,5 +1,3 @@
-import { motion } from 'framer-motion';
-
 const TrustBar = () => {
     const items = [
         "TBI Incubated Startup",
