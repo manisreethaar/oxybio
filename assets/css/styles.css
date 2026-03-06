@@ -5736,3 +5736,12 @@ blockquote {
         top: 17px;
     }
 }
+
+/* Responsive Logo Fix added via Python */
+@media (max-width: 768px) {
+    .nav-logo { max-width: 65vw; overflow: hidden; white-space: nowrap; }
+    .nav-logo img { height: 28px !important; }
+    .nav-logo span { font-size: 1rem !important; }
+    /* Ensure hamburger menu isn't pushed out */
+    .nav-container { flex-wrap: nowrap !important; }
+}
