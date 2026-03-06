@@ -8,8 +8,11 @@ const Footer = () => {
                     {/* Left Column: Brand & Contact */}
                     <div className="md:col-span-5 flex flex-col space-y-10">
                         <div>
-                            <a href="/" className="block">
-                                <img src="/assets/images/logo-full.png" alt="Oxygen Bioinnovations" className="h-9 w-auto block" />
+                            <a href="/" className="flex items-center gap-3 no-underline group">
+                                <img src="/assets/images/logo-full.png" alt="Oxygen Bioinnovations Logo" className="h-9 w-auto block group-hover:scale-105 transition-transform" />
+                                <span className="font-heading font-extrabold text-2xl tracking-tighter text-obsidian">
+                                    Oxygen <span className="text-[#0D8A74]">Bioinnovations</span>
+                                </span>
                             </a>
                             <p className="text-slate-500 italic text-sm mt-4">
                                 Precision nutrition for every ambitious Indian.

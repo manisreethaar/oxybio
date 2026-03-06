@@ -673,8 +673,7 @@ a {
 }
 
 .marquee-track:hover {
-    /* /* removed: animation-play-state paused */
-    */
+    /* removed: animation-play-state paused */
 }
 
 @keyframes marquee {
@@ -4536,8 +4535,7 @@ blockquote {
         opacity: 0;
         transform: translateY(30px);
         animation: fadeUpMobile 0.8s forwards;
-        /* /* removed: animation-play-state paused */
-        */
+        /* removed: animation-play-state paused */
         /* Will trigger via JS or pseudo class if possible, else just let them run */
     }
 
