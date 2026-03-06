@@ -2,7 +2,7 @@
 
 const TrustBar = () => {
     const items = [
-        "TBI Incubated Startup",
+        "Incubated in TBI - DETI@ACE",
         "Science-First Formulation",
         "FSSAI Licensing In Progress",
         "100% Indian Ingredients",

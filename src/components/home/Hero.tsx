@@ -22,7 +22,7 @@ const Hero = () => {
                         >
                             <Sparkles className="w-4 h-4 text-cyan-ethereal" />
                             <span className="text-xs font-semibold tracking-wide text-white/90">
-                                🌱 In Development &bull; TBI Incubated &bull; Clinical Study Designed
+                                🌱 In Development &bull; Incubated in TBI - DETI@ACE &bull; Clinical Study Designed
                             </span>
                         </motion.div>
 
