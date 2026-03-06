@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+
 
 const TrustBar = () => {
     const items = [
@@ -25,8 +25,8 @@ const TrustBar = () => {
                     <div className="flex w-[300%] sm:w-[200%] md:w-[150%]">
                         <div
                             className="flex whitespace-nowrap items-center animate-[marquee_25s_linear_infinite]"
-                            
-                            
+
+
                         >
                             {scrollItems.map((item, index) => (
                                 <div

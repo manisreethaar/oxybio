@@ -8,10 +8,9 @@ const Footer = () => {
                     {/* Left Column: Brand & Contact */}
                     <div className="md:col-span-5 flex flex-col space-y-10">
                         <div>
-                            <span className="font-heading font-extrabold text-2xl tracking-tighter text-obsidian flex items-center gap-2">
-                                <div className="w-6 h-6 rounded-full bg-[#0D8A74] flex items-center justify-center text-white text-[10px]">O2</div>
-                                Oxygen <span className="text-[#0D8A74]">BioInnovations</span>
-                            </span>
+                            <a href="/" className="block">
+                                <img src="/assets/images/logo-full.png" alt="Oxygen Bioinnovations" className="h-9 w-auto block" />
+                            </a>
                             <p className="text-slate-500 italic text-sm mt-4">
                                 Precision nutrition for every ambitious Indian.
                             </p>
@@ -79,6 +78,11 @@ const Footer = () => {
                             <li><a href="#terms" className="text-sm font-medium text-slate-500 hover:text-[#0D8A74] transition-colors">Terms & Conditions</a></li>
                         </ul>
                     </div>
+                </div>
+
+                {/* CIN & Copyright */}
+                <div className="mt-16 pt-8 border-t border-slate-200 text-center text-sm text-slate-500">
+                    &copy; 2026 Oxygen Bioinnovations Private Limited with CIN: U72100TZ2026PTC038160. All rights reserved.
                 </div>
             </div>
         </footer>
