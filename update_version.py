@@ -1,5 +1,5 @@
 import glob
-import os
+import re
 
 html_files = glob.glob(r'e:\OXYBIO\*.html')
 for filepath in html_files:
@@ -13,8 +13,8 @@ for filepath in html_files:
             continue
             
     if content:
-        content = content.replace('logo-full.png?v=3', 'logo-full.png?v=4')
+        content = content.replace('logo-full.png?v=4', 'logo-full.png?v=5')
         with open(filepath, 'w', encoding='utf-8') as f:
             f.write(content)
 
-print("Updated logo version to ?v=4.")
+print("Updated logo version to ?v=5.")
