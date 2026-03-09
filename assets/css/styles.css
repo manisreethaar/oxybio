@@ -3681,10 +3681,7 @@ body {
         font-size: 1rem !important;
     }
 
-    /* Make hero section not overflow horizontally */
-    body {
-        ;
-    }
+    /* Removed empty body style block */
 
     .hero-inner,
     [style*="grid-template-columns:1fr 1fr"] {
