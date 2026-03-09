@@ -39,7 +39,7 @@ const Footer = () => {
                             <div className="flex flex-col space-y-4">
                                 <div className="flex items-start gap-3 text-slate-600 text-sm font-medium">
                                     <MapPin className="w-5 h-5 text-[#0D8A74] flex-shrink-0 mt-0.5" />
-                                    <span>Cabin D, TBI, DETI @ ACE,<br />
+                                    <span>Cabin D, DETI@ACE - TBI,<br />
                                     Adhiyamaan College of Engineering Campus, Dr<br />MGR Nagar, Hosur, tamil nadu - 635130</span>
                                 </div>
                                 <div className="flex items-center gap-3 text-slate-600 text-sm font-medium">

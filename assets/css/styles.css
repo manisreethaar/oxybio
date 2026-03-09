@@ -5739,37 +5739,43 @@ blockquote {
 
 /* Responsive Logo Fix added via Python */
 @media (max-width: 768px) {
+
     /* Limit the logo wrapper width but allow it to shrink */
-    .nav-logo { 
-        max-width: 70vw; 
-        overflow: hidden; 
-        white-space: nowrap; 
-        flex-shrink: 1; 
+    .nav-logo {
+        max-width: calc(100vw - 80px);
+        overflow: visible;
+        white-space: normal;
+        flex-shrink: 1;
         min-width: 0;
     }
+
     /* Keep the image native */
-    .nav-logo img { 
-        height: 28px !important; 
-        flex-shrink: 0; 
+    .nav-logo img {
+        height: 28px !important;
+        flex-shrink: 0;
     }
-    /* Let the text truncate smoothly */
-    .nav-logo > span { 
-        font-size: 1.1rem !important; 
-        overflow: hidden; 
-        text-overflow: ellipsis; 
-        display: inline-block; 
-        vertical-align: middle; 
-        max-width: calc(100% - 40px);
+
+    /* Let the text scale smoothly without truncating */
+    .nav-logo>span {
+        font-size: clamp(0.75rem, 4.5vw, 1.05rem) !important;
+        overflow: visible;
+        text-overflow: clip;
+        display: inline-block;
+        vertical-align: middle;
+        max-width: none;
+        line-height: 1.1;
     }
+
     /* Force hamburger to never shrink or hide */
-    .menu-btn { 
-        display: flex !important; 
-        flex-shrink: 0 !important; 
+    .menu-btn {
+        display: flex !important;
+        flex-shrink: 0 !important;
         transform: scale(0.9);
     }
-    .nav-container { 
-        flex-wrap: nowrap !important; 
-        justify-content: space-between !important; 
+
+    .nav-container {
+        flex-wrap: nowrap !important;
+        justify-content: space-between !important;
         width: 100%;
     }
 }
@@ -5781,18 +5787,30 @@ blockquote {
     max-width: 100% !important;
     object-fit: contain;
 }
+
 .footer-brand span {
     font-size: 1.25rem !important;
 }
 
 @media (max-width: 768px) {
-    .footer-brand { text-align: left; }
-    .footer-brand > a { flex-wrap: nowrap; max-width: 100%; overflow: hidden; }
-    .footer-brand img { height: 28px !important; }
-    .footer-brand span { 
-        font-size: 1.1rem !important; 
-        text-overflow: ellipsis; 
-        overflow: hidden; 
-        white-space: nowrap; 
+    .footer-brand {
+        text-align: left;
+    }
+
+    .footer-brand>a {
+        flex-wrap: nowrap;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .footer-brand img {
+        height: 28px !important;
+    }
+
+    .footer-brand span {
+        font-size: 1.1rem !important;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
     }
 }
