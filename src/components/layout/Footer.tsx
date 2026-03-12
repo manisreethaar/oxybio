@@ -22,7 +22,7 @@ const Footer = () => {
                             </p>
 
                             <div className="flex gap-4 mt-6">
-                                <a href="#" className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-500 hover:border-[#0D8A74] hover:text-[#0D8A74] transition-colors">
+                                <a href="https://www.linkedin.com/company/oxygen-bioinnovations" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-500 hover:border-[#0D8A74] hover:text-[#0D8A74] transition-colors">
                                     <Linkedin className="w-4 h-4" />
                                 </a>
                                 <a href="#" className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-500 hover:border-[#0D8A74] hover:text-[#0D8A74] transition-colors">
@@ -40,7 +40,7 @@ const Footer = () => {
                                 <div className="flex items-start gap-3 text-slate-600 text-sm font-medium">
                                     <MapPin className="w-5 h-5 text-[#0D8A74] flex-shrink-0 mt-0.5" />
                                     <span>Cabin D, DETI@ACE - TBI,<br />
-                                    Adhiyamaan College of Engineering Campus, Dr<br />MGR Nagar, Hosur, tamil nadu - 635130</span>
+                                        Adhiyamaan College of Engineering Campus, Dr<br />MGR Nagar, Hosur, tamil nadu - 635130</span>
                                 </div>
                                 <div className="flex items-center gap-3 text-slate-600 text-sm font-medium">
                                     <Mail className="w-5 h-5 text-[#0D8A74] flex-shrink-0" />
