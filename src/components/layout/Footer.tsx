@@ -15,10 +15,10 @@ const Footer = () => {
                                 </span>
                             </a>
                             <p className="text-slate-500 italic text-sm mt-4">
-                                Radically bioavailable nutrition for every ambitious Indian.
+                                Advanced functional foods for every ambitious Indian.
                             </p>
                             <p className="text-slate-600 text-sm mt-4 max-w-sm leading-relaxed font-medium">
-                                India's first honest clinical nutrition system. Built on active forms, verified extracts, and real science.
+                                India's first bio-fermented nutrition system. Built on active millets, medicinal mushrooms, and real food science.
                             </p>
 
                             <div className="flex gap-4 mt-6">
