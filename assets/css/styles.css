@@ -4662,7 +4662,7 @@ blockquote {
     }
 
     body {
-        overflow-x: hidden !important;
+        overflow-x: clip !important;
     }
 
     img {
