@@ -5815,9 +5815,29 @@ blockquote {
 }
 
 /* OVERRIDE FOR STICKY SCROLL */
-html, body {
+html,
+body {
     overflow-x: clip !important;
     overflow-y: auto !important;
 }
 
-.structure-section { overflow: clip !important; }
+.structure-section {
+    overflow: clip !important;
+}
+
+/* HERO PADDING OVERRIDE - reduce gap between nav and core text */
+.page-hero {
+    padding-top: clamp(40px, 8vh, 80px) !important;
+}
+
+/* O2 ANIMATION: Bottom-mounted hero animation visibility fix */
+.hero-animation-wrapper.bottom-mounted {
+    position: relative !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: flex !important;
+    justify-content: center !important;
+    transform: scale(1.2) !important;
+    margin-top: 5rem !important;
+    z-index: 2 !important;
+}

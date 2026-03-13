@@ -1,0 +1,22 @@
+/* Page Transitions - Smooth Fade */
+
+/* Entry state: page starts invisible */
+body.page-transitioning {
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+/* Active state: fully visible */
+body {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+/* Outgoing page transition */
+.page-exit {
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
