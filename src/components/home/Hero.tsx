@@ -48,7 +48,7 @@ const Hero = () => {
                             transition={{ duration: 0.4, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
                             className="text-lg md:text-xl text-slate-ash leading-relaxed max-w-2xl mb-10"
                         >
-                            India is building its first precision nutrition system. Built on Millet, Medicinal Mushrooms, and decades of scientific research. Designed for ambitious Indians who deserve better than what currently exists.
+                            India is building its first functional food system. Built on Millet, Medicinal Mushrooms, and decades of scientific research. Designed for ambitious Indians who deserve better than what currently exists.
                         </motion.p>
 
                         {/* CTAs (Vertically stacked on mobile, row on desktop) */}
