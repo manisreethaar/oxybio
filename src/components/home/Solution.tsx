@@ -28,7 +28,7 @@ const Solution = () => {
             benefits: [
                 "Clean focus without caffeine crash",
                 "Memory and attention support (Lion's Mane)",
-                "L-Theanine:Caffeine ratio 2.5:1 (clinically studied)"
+                "L-Theanine:Caffeine ratio 2.5:1 (scientifically proven)"
             ],
             ingredients: "Lion's Mane, Bacopa Monnieri, L-Theanine, Natural Caffeine, Active B Vitamins",
             gradient: "from-cyan-900 to-cyan-500", // Ethereal cyan core

@@ -8,7 +8,7 @@ const TrustBar = () => {
         "100% Indian Ingredients",
         "Third-Party Testing Planned",
         "Zero Artificial Ingredients",
-        "Clinical Study Protocol Ready",
+        "Validation Study Protocol Ready",
         "Peer-Reviewed Formulation"
     ];
 

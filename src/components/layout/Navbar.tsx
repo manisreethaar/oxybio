@@ -55,7 +55,7 @@ const Navbar = () => {
                                     </div>
                                     <h4 className="text-xl font-bold text-obsidian mb-3 tracking-tight">Evidence-Based</h4>
                                     <p className="text-sm text-slate-600 leading-relaxed font-medium">
-                                        We formulate with clinical precision and indigenous botanical wisdom.
+                                        We formulate with scientific precision and indigenous botanical wisdom.
                                     </p>
                                 </div>
 

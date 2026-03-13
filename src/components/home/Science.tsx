@@ -18,7 +18,7 @@ const Science = () => {
         {
             icon: <Microscope className="w-8 h-8 text-cyan-ethereal" />,
             title: "Proving it, not just claiming it",
-            description: "We have designed a clinical study for 135 participants across 8 weeks. Primary outcomes: Biomarkers + cognitive tests.",
+            description: "We have designed a validation study for 135 participants across 8 weeks. Primary outcomes: Biomarkers + cognitive tests.",
             highlight: "Results will be published. Regardless of outcome."
         }
     ];
@@ -28,7 +28,7 @@ const Science = () => {
         { label: "Minerals", us: "Chelated (TRAACS®)", them: "Oxide/Sulfate forms" },
         { label: "Mushroom extracts", us: "Verified β-glucan", them: "Unverified weight" },
         { label: "Lab reports", us: "Public CoA", them: "No transparency" },
-        { label: "Efficacy data", us: "Clinical study", them: "No efficacy data" },
+        { label: "Efficacy data", us: "Efficacy study", them: "No efficacy data" },
         { label: "Suppliers", us: "Named sources", them: "Anonymous suppliers" }
     ];
 
