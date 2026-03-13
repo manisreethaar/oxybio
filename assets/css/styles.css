@@ -137,6 +137,8 @@ a {
 
 .nav-container {
     display: flex;
+    padding-left: clamp(1rem, 3vw, 2rem);
+    padding-right: clamp(1rem, 3vw, 2rem);
     align-items: center;
     justify-content: space-between;
     padding-top: 1rem;
