@@ -5814,15 +5814,49 @@ blockquote {
     }
 }
 
-/* OVERRIDE FOR STICKY SCROLL */
-html,
-body {
+/* ======= SCROLL & LAYOUT OVERRIDES ======= */
+
+/* Allow horizontal clip without disrupting vertical-sticky */
+html, body {
     overflow-x: clip !important;
     overflow-y: auto !important;
 }
 
-.structure-section {
-    overflow: clip !important;
+/* HERO PADDING - tighten gap between nav and core text */
+.page-hero {
+    padding-top: clamp(40px, 8vh, 80px) !important;
+}
+
+/* APPLE STICKY SCROLL: match sticky top to actual nav height (~70px) */
+.apple-slide {
+    top: 72px !important;
+}
+
+/* O2 ANIMATION visibility fix */
+.hero-animation-wrapper.bottom-mounted {
+    position: relative !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: flex !important;
+    justify-content: center !important;
+    transform: scale(1.15) !important;
+    margin-top: 4rem !important;
+    z-index: 2 !important;
+}
+
+/* SMOOTH REVEAL ANIMATIONS - remove jarring transforms */
+.reveal {
+    transition: opacity 0.7s ease, transform 0.7s ease !important;
+}
+
+@keyframes cardReveal {
+    0%   { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes tamilReveal {
+    0%   { opacity: 0; transform: translateY(16px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
 /* HERO PADDING OVERRIDE - reduce gap between nav and core text */
