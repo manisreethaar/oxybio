@@ -5828,7 +5828,7 @@ html, body {
 }
 
 /* APPLE STICKY SCROLL: match sticky top to actual nav height (~70px) */
-.apple-slide {
+#solution-cards .apple-slide {
     top: 72px !important;
 }
 
