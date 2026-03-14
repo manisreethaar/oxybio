@@ -5814,64 +5814,65 @@ blockquote {
     }
 }
 
-/* ======= SCROLL & LAYOUT OVERRIDES ======= */
+/* ======= FINAL OVERRIDE BLOCK — do not add below this ======= */
 
-/* Allow horizontal clip without disrupting vertical-sticky */
+/* Prevent horizontal scroll without breaking position:sticky */
 html, body {
     overflow-x: clip !important;
-    overflow-y: auto !important;
 }
 
-/* HERO PADDING - tighten gap between nav and core text */
+/* Hero section: tight padding so tags show below nav */
 .page-hero {
-    padding-top: clamp(40px, 8vh, 80px) !important;
+    padding-top: clamp(90px, 12vh, 120px) !important;
 }
 
-/* APPLE STICKY SCROLL: match sticky top to actual nav height (~70px) */
+/* Apple sticky scroll: correct offset for ~72px fixed nav */
 #solution-cards .apple-slide {
     top: 72px !important;
 }
 
-/* O2 ANIMATION visibility fix */
+/* O2 animation: always visible, centered below hero content */
 .hero-animation-wrapper.bottom-mounted {
     position: relative !important;
     opacity: 1 !important;
     visibility: visible !important;
     display: flex !important;
     justify-content: center !important;
-    transform: scale(1.15) !important;
-    margin-top: 4rem !important;
+    transform: scale(1.1) !important;
+    margin-top: 3rem !important;
     z-index: 2 !important;
 }
 
-/* SMOOTH REVEAL ANIMATIONS - remove jarring transforms */
-.reveal {
-    transition: opacity 0.7s ease, transform 0.7s ease !important;
-}
-
-@keyframes cardReveal {
-    0%   { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes tamilReveal {
-    0%   { opacity: 0; transform: translateY(16px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-
-/* HERO PADDING OVERRIDE - reduce gap between nav and core text */
-.page-hero {
-    padding-top: clamp(40px, 8vh, 80px) !important;
-}
-
-/* O2 ANIMATION: Bottom-mounted hero animation visibility fix */
-.hero-animation-wrapper.bottom-mounted {
-    position: relative !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    display: flex !important;
-    justify-content: center !important;
-    transform: scale(1.2) !important;
-    margin-top: 5rem !important;
-    z-index: 2 !important;
+/* Mobile: solution cards scroll vertically, not sticky */
+@media (max-width: 768px) {
+    #solution-cards .apple-slide {
+        position: relative !important;
+        top: 0 !important;
+        min-height: auto !important;
+        padding: 2rem 0 !important;
+    }
+    #solution-cards {
+        padding-bottom: 2rem !important;
+    }
+    .tamil-card-wrapper {
+        padding: 1.5rem !important;
+        border-radius: 20px !important;
+    }
+    .tamil-hero-text {
+        font-size: clamp(2.5rem, 12vw, 4rem) !important;
+    }
+    .hero-animation-wrapper.bottom-mounted {
+        transform: scale(0.85) !important;
+        margin-top: 1.5rem !important;
+    }
+    /* Science cards stack vertically on mobile */
+    [style*="grid-template-columns:repeat(3,1fr)"] {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+    /* Mobile-stack-card already handled but ensure grid is vertical */
+    .mobile-stack-card {
+        grid-template-columns: 1fr !important;
+    }
 }
