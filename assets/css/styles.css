@@ -5925,6 +5925,9 @@ html, body {
 
     .tamil-hero-text {
         font-size: clamp(2.5rem, 12vw, 4rem) !important;
+        line-height: 1.4 !important;
+        padding-top: 0.2em !important;
+        padding-bottom: 0.2em !important;
     }
 
     /* O2 animation: smaller on mobile */
