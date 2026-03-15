@@ -5814,6 +5814,70 @@ blockquote {
     }
 }
 
+
+/* ======= MOBILE GRID STACKING — prevents broken layouts ======= */
+@media (max-width: 768px) {
+
+    /* All inline-style grids with multiple columns: force single column */
+    [style*="grid-template-columns:1.1fr"][style*="0.9fr"],
+    [style*="grid-template-columns: 1.1fr"][style*="0.9fr"],
+    [style*="grid-template-columns:1.5fr"][style*="1fr"],
+    [style*="grid-template-columns: 1.5fr"][style*="1fr"],
+    [style*="grid-template-columns:1fr 1.5fr"],
+    [style*="grid-template-columns:350px"],
+    [style*="grid-template-columns:220px"] {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1.5rem !important;
+    }
+
+    /* Standard 2-col and 3-col class-based grids */
+    .grid-2col, .two-col, .split-layout,
+    [class*="grid"][style*="grid-template-columns:1fr 1fr"],
+    [class*="grid"][style*="grid-template-columns: 1fr 1fr"] {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1.5rem !important;
+    }
+
+    /* Careers: full-width form/description */
+    .col-form, .col-info {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Blog: card grid — 1 column */
+    .blog-grid, .article-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Structure section: reduce padding on mobile */
+    .structure-section {
+        padding-left: clamp(1rem, 5vw, 2rem) !important;
+        padding-right: clamp(1rem, 5vw, 2rem) !important;
+    }
+
+    /* General: any display-font heading that's too big on mobile */
+    .display {
+        font-size: clamp(2.5rem, 10vw, 4rem) !important;
+        letter-spacing: -0.03em !important;
+    }
+
+    /* Headlines */
+    .headline {
+        font-size: clamp(1.8rem, 8vw, 2.5rem) !important;
+    }
+
+    /* Reduce oversized stat numbers on mobile */
+    [style*="font-size:6rem"],
+    [style*="font-size: 6rem"],
+    [style*="font-size:5rem"],
+    [style*="font-size: 5rem"] {
+        font-size: 3rem !important;
+    }
+}
+
+
 /* ======= FINAL OVERRIDE BLOCK — do not add below this ======= */
 
 /* Prevent horizontal scroll without breaking position:sticky */
