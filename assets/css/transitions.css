@@ -1,22 +1,31 @@
-/* Page Transitions - Smooth Fade */
+/**
+ * PAGE TRANSITIONS — CSS-first approach
+ * body starts invisible so there is NEVER a flash of unformatted content.
+ * JS adds .page-ready class to fade in after everything loads.
+ */
 
-/* Entry state: page starts invisible */
-body.page-transitioning {
-    opacity: 0;
-    transform: translateY(6px);
-    transition: opacity 0.35s ease, transform 0.35s ease;
-}
-
-/* Active state: fully visible */
+/* Start invisible — JS will add .page-ready to fade in */
 body {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.35s ease, transform 0.35s ease;
+    opacity: 0;
+    transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Outgoing page transition */
-.page-exit {
+/* Triggered by JS when page is ready */
+body.page-ready {
+    opacity: 1;
+}
+
+/* Exit animation triggered before navigation */
+body.page-exit {
     opacity: 0;
-    transform: translateY(-6px);
-    transition: opacity 0.25s ease, transform 0.25s ease;
+    transition: opacity 0.2s cubic-bezier(0.4, 0, 1, 1);
+}
+
+/* Fallback: if JS fails, still show the page after 1s */
+@keyframes forceVisible {
+    to { opacity: 1; }
+}
+
+body.page-ready-fallback {
+    animation: forceVisible 0.1s 1s forwards;
 }
