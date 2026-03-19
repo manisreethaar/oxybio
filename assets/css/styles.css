@@ -4440,6 +4440,13 @@ blockquote {
 }
 
 
+/* Hide sticky spacer on mobile - slides are not sticky on small screens */
+@media (max-width: 768px) {
+    .sticky-spacer {
+        display: none !important;
+    }
+}
+
 /* 7. Fix align for Transparency Report stats on Mobile */
 @media (max-width: 768px) {
     .mobile-left-align {
