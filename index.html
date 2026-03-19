@@ -406,15 +406,66 @@
             width: 100%;
         }
 
+        /* Biological Culture Animation replacing synthetic O2 */
+        .hero-biological-wrapper {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+        }
+
+        .bio-spore.core-spore {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background: var(--text-main);
+            border-radius: 50%;
+            box-shadow: 0 0 20px var(--text-main);
+            animation: bioPulseCore 4s ease-in-out infinite;
+            z-index: 10;
+        }
+
+        .bio-aura {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(13, 138, 116, 0.4);
+            animation: bioAuraPulse 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+
+        .bio-aura-1 {
+            width: 80px;
+            height: 80px;
+            animation-delay: 0s;
+        }
+
+        .bio-aura-2 {
+            width: 120px;
+            height: 120px;
+            animation-delay: 3s;
+            border: 1px dashed rgba(13, 138, 116, 0.2);
+        }
+
+        @keyframes bioPulseCore {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.3); opacity: 1; box-shadow: 0 0 30px rgba(13, 138, 116, 0.8); }
+        }
+
+        @keyframes bioAuraPulse {
+            0% { transform: scale(0.5); opacity: 0.8; border-width: 2px; }
+            100% { transform: scale(3); opacity: 0; border-width: 0px; }
+        }
+
         @media (max-width: 768px) {
             .tamil-card-wrapper {
                 padding: 2rem 1.5rem;
                 border-radius: 24px;
             }
-            .hero-animation-wrapper.bottom-mounted {
+            .hero-biological-wrapper.bottom-mounted {
                 transform: scale(0.85);
-                margin-top: 2rem;
-                margin-bottom: 0rem;
+                margin-top: 1rem;
             }
         }
         </style>
@@ -473,15 +524,11 @@
 
                 </div>
 
-                <!-- BOTTOM MOUNTED O2 ANIMATION -->
-                <div class="hero-animation-wrapper bottom-mounted reveal" style="transition-delay: 0.6s;">
-                    <div class="orbit-ring orbit-ring-1"></div>
-                    <div class="orbit-ring orbit-ring-2"></div>
-                    <div class="orbit-ring orbit-ring-3"></div>
-                    <div class="pulse-ring"></div>
-                    <div class="atom atom-1">O</div>
-                    <div class="atom atom-2">O</div>
-                    <div class="molecule-result">O<sub>2</sub></div>
+                <!-- BOTTOM MOUNTED BIOLOGICAL CULTURE ANIMATION -->
+                <div class="hero-biological-wrapper bottom-mounted reveal" style="transition-delay: 0.6s; margin-top:3rem;">
+                    <div class="bio-spore core-spore"></div>
+                    <div class="bio-aura bio-aura-1"></div>
+                    <div class="bio-aura bio-aura-2"></div>
                 </div>
 
             </div>
@@ -590,6 +637,7 @@
                 </div>
 
             </div>
+        </div>
 
 
 
@@ -611,27 +659,27 @@
                 <div class="container reveal">
                     <div class="problem-stats-row">
                         <div class="problem-stat-card">
-                            <div class="problem-stat-label" style="font-size: 1.5rem; color: #fff; margin-bottom: 0.5rem;">Endogenous Decline</div>
-                            <div class="problem-stat-source" style="font-size: 1rem; color: var(--text-muted); line-height: 1.6;">Indian baseline physiological targets reflect widespread micronutrient and metabolic deterioration.</div>
+                            <div class="problem-stat-label" style="font-size: 1.5rem; color: #fff; margin-bottom: 0.5rem;">The Exhaustion Epidemic</div>
+                            <div class="problem-stat-source" style="font-size: 1rem; color: var(--text-muted); line-height: 1.6;">Professionals and students operating on negative energy reserves, fighting brain fog, driven by severe but invisible nutrient depletion.</div>
                         </div>
                         <div class="problem-stat-card">
-                            <div class="problem-stat-label" style="font-size: 1.5rem; color: #fff; margin-bottom: 0.5rem;">The Isolation Error</div>
-                            <div class="problem-stat-source" style="font-size: 1rem; color: var(--text-muted); line-height: 1.6;">Isolated synthetic forms frequently underperform whole-food matrices in achieving target serum concentrations — particularly for fat-soluble vitamins and trace minerals.</div>
+                            <div class="problem-stat-label" style="font-size: 1.5rem; color: #fff; margin-bottom: 0.5rem;">The Target Market Trap</div>
+                            <div class="problem-stat-source" style="font-size: 1rem; color: var(--text-muted); line-height: 1.6;">The industry calls you a "target demographic" to sell you premium wellness fluff and fake promises that never move the needle.</div>
                         </div>
                         <div class="problem-stat-card problem-stat-danger">
-                            <div class="problem-stat-label" style="font-size: 1.5rem; color: #fff; margin-bottom: 0.5rem;">Mitochondrial Deficit</div>
-                            <div class="problem-stat-source" style="font-size: 1rem; color: var(--text-muted); line-height: 1.6;">Accelerated cellular fatigue observed across high-output cognitive and physical protocols.</div>
+                            <div class="problem-stat-label" style="font-size: 1.5rem; color: #fff; margin-bottom: 0.5rem;">The Synthetic Illusion</div>
+                            <div class="problem-stat-source" style="font-size: 1rem; color: var(--text-muted); line-height: 1.6;">Swallowing cheap, isolated synthetic vitamins that our bodies cannot recognize, absorb, or utilize. Label decoration instead of health.</div>
                         </div>
                     </div>
                 </div>
 
                 <!-- CENTER: dramatic heading + subtext -->
                 <div class="container reveal">
-                    <div class="problem-headline-block">
-                        <div class="problem-label-tag">The Baseline Pathologies</div>
-                        <h2 class="problem-main-title">Identifying the<br>Biological Deficits.</h2>
-                        <p class="problem-subtext">Our lab does not formulate for demographic segments. We engineer solutions exclusively targeted at scientifically established absorption and systemic deficits.</p>
-                        <a href="problem.html" class="problem-cta">Read the Clinical Targets
+                    <div class="problem-headline-block" style="max-width:800px; margin:0 auto;">
+                        <div class="problem-label-tag">The Brutal Reality</div>
+                        <h2 class="problem-main-title">Modern lifestyle is breaking our biology.</h2>
+                        <p class="problem-subtext" style="font-size: 1.15rem; color:var(--text-muted);">We skip breakfast. We run on adrenaline and coffee. We buy supplements based on marketing confidence, and we wonder why we never actually get better. We forgot what our grandmothers knew.</p>
+                        <a href="about.html" class="problem-cta">Read Our Full Manifesto
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <line x1="5" y1="12" x2="19" y2="12"></line>
                                 <polyline points="12 5 19 12 12 19"></polyline>
@@ -645,18 +693,18 @@
                     <div class="problem-panels">
                         <div class="problem-panel">
                             <div class="problem-panel-num">01</div>
-                            <h4 class="problem-panel-title">Pathology of Depletion</h4>
-                            <p class="problem-panel-text">Evaluating physiological endpoints affected by modern metabolic disruptions, prioritizing cognitive endurance and muscular kinematic recovery over generalized wellness paradigms.</p>
+                            <h4 class="problem-panel-title">Forgotten Biology</h4>
+                            <p class="problem-panel-text">There is an ancient Tamil quote, "Unnave marundhu" (food is medicine), but we have completely forgotten it. We replaced traditional logic with chemical isolates.</p>
                         </div>
                         <div class="problem-panel">
                             <div class="problem-panel-num">02</div>
                             <h4 class="problem-panel-title">The Absorption Dilemma</h4>
-                            <p class="problem-panel-text">Documenting the systemic failure of generic exogenous isolates (e.g., standard ferrous sulfate) due to heavy gastrointestinal disruption and poor intracellular transport mechanics.</p>
+                            <p class="problem-panel-text">Standard iron or zinc supplements cause severe stomach disruption because they don't dissolve. Your body battles them instead of absorbing them.</p>
                         </div>
                         <div class="problem-panel">
                             <div class="problem-panel-num">03</div>
-                            <h4 class="problem-panel-title">Engineering Hybrids</h4>
-                            <p class="problem-panel-text">Testing novel methodologies—specifically the integration of medicinal fungi with sprouted/fermented ancient millet structures—to bypass standard absorption bottlenecks.</p>
+                            <h4 class="problem-panel-title">Engineering the Fix</h4>
+                            <p class="problem-panel-text">We are building solutions using fundamentally powerful substrates like mushrooms and millets—unlocking them through biotechnology to fix the absorption gap.</p>
                         </div>
                     </div>
                 </div>
@@ -744,10 +792,10 @@
                                     EXP_01</h3>
                                 <div
                                     style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1.5rem; border:1px solid var(--border); display:inline-block; padding:0.3rem 0.75rem;">
-                                    Cognitive Rhythm Target</div>
+                                    The Cognitive Protocol</div>
                                 <p
                                     style="font-size:1.1rem; line-height:1.8; color:var(--text-muted); margin-bottom:2rem; max-width:90%;">
-                                    A multi-compound substrate evaluated for extended cognitive endurance and the mitigation of acute adrenaline depletion.</p>
+                                    Lion's Mane mushroom and L-Theanine formulated to rebuild cognitive endurance, clear brain fog, and prevent the afternoon adrenaline crash.</p>
                                 <ul
                                     style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.6rem;">
                                     <li
@@ -813,10 +861,10 @@
                                     EXP_02</h3>
                                 <div
                                     style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1.5rem; border:1px solid var(--border); display:inline-block; padding:0.3rem 0.75rem;">
-                                    Baseline Micronutrient Target</div>
+                                    The Core Baseline Protocol</div>
                                 <p
                                     style="font-size:1.1rem; line-height:1.8; color:var(--text-muted); margin-bottom:2rem; max-width:90%;">
-                                    Engineered to resolve ubiquitous baseline micronutrient deficits identified in urban Indian populations.</p>
+                                    Fermented ancient millets binding high-absorption Vitamin D3, K2, and Iron Bisglycinate to fix the invisible deficiencies causing chronic fatigue.</p>
                                 <ul
                                     style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.6rem;">
                                     <li
@@ -884,12 +932,12 @@
                                 <div
                                     style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1.5rem; border:1px solid var(--border); display:inline-block; padding:0.3rem 0.75rem;">
 
-                                    Kinematic Recovery Target</div>
+                                    The Kinematic Protocol</div>
 
                                 <p
                                     style="font-size:1.1rem; line-height:1.8; color:var(--text-muted); margin-bottom:2rem; max-width:90%;">
 
-                                    A post-exertion physiological intervention intended to accelerate mitochondrial ATP synthesis and muscular hypertrophy.</p>
+                                    Cordyceps and fermented performance matrices designed to force rapid muscular oxygenation and eliminate delayed onset muscle soreness.</p>
 
                                 <ul
                                     style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.6rem;">
@@ -1514,10 +1562,6 @@
             </section>
 
 
-
-    </main>
-
-    </main>
 
     </main>
 
