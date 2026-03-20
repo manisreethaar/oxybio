@@ -34,12 +34,16 @@
 
         var href = link.getAttribute('href');
 
-        // Skip: anchors, mail, tel, external sites, new tabs
+        // Skip: pure anchors, mail, tel, external sites, new tabs
         if (!href) return;
         if (href.startsWith('#')) return;
         if (href.startsWith('mailto:') || href.startsWith('tel:')) return;
         if (link.target === '_blank') return;
         if (href.startsWith('http') && !href.includes(window.location.hostname)) return;
+
+        // Skip: cross-page hash links (e.g. about.html#about-story)
+        // Let the browser handle these natively so anchor scroll works correctly
+        if (href.includes('#')) return;
 
         e.preventDefault();
 
