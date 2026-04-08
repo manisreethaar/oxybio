@@ -1,4 +1,5 @@
 {
-  "buildCommand": "echo \"No build required for pure HTML/CSS\"",
+  "installCommand": "echo \"No install required\"",
+  "buildCommand": "echo \"No build required — pure static HTML/CSS site\"",
   "outputDirectory": "."
 }
