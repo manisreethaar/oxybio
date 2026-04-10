@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --color-obsidian: #0B0C10;
+  --color-charcoal: #1F2833;
+  --color-cyan-ethereal: #66FCF1;
+  --color-cyan-seafoam: #45A29E;
+  --color-slate-ash: #C5C6C7;
+
+  --font-sans: 'Inter', 'Roboto', sans-serif;
+  --font-heading: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-obsidian text-slate-ash antialiased selection:bg-cyan-ethereal selection:text-obsidian;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading text-white;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-charcoal/80 backdrop-blur-md border border-white/5 rounded-2xl;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    
+  }
+  
+  .glass-card:hover {
+    @apply border-white/15;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px -12px rgba(102, 252, 241, 0.15);
+  }
+
+  .premium-transition {
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    
+  }
+}
+@layer utilities {
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-33.33%); }
+  }
+}
