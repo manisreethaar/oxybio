@@ -1910,16 +1910,18 @@ a {
 /* Lab Journal Grid (Science) */
 .lab-grid {
     display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: 2.5rem;
+    grid-template-columns: 280px 1fr;
+    gap: 3rem;
     border-top: 2px solid var(--text-main);
     padding-top: 1.5rem;
     margin-top: 1.5rem;
+    align-items: start;
 }
 
 .lab-sidebar {
     position: sticky;
-    top: 120px;
+    top: 100px;
+    min-width: 0;
 }
 
 .lab-sidebar-num {
@@ -1930,20 +1932,26 @@ a {
 }
 
 .lab-content-block {
+    min-width: 0;
+    overflow-wrap: break-word;
     margin-bottom: 1.5rem;
     padding-bottom: 1.5rem;
     border-bottom: 1px solid var(--border);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
     .lab-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 1.5rem;
     }
 
     .lab-sidebar {
         position: relative;
         top: 0;
+    }
+
+    .lab-sidebar h2 {
+        font-size: 1.5rem !important;
     }
 }
 
