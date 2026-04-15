@@ -342,357 +342,882 @@
 
 
 
+    <style>
+    /* ── SCIENCE PAGE PREMIUM STYLES ─────────────────────── */
+
+    /* Canvas hero */
+    #sci-canvas {
+        position: absolute; inset: 0; width: 100%; height: 100%;
+        pointer-events: none; z-index: 0;
+    }
+
+    /* Scroll progress bar */
+    #sci-progress {
+        position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+        background: linear-gradient(90deg,#0D8A74,#34d399);
+        z-index: 9999; transition: width 0.1s linear;
+    }
+
+    /* Hero section */
+    .sci-hero {
+        position: relative; min-height: 100svh;
+        background: #050f0d; overflow: hidden;
+        display: flex; align-items: center;
+        padding-top: clamp(80px,10vh,100px);
+    }
+    .sci-hero-inner {
+        position: relative; z-index: 2; width: 100%;
+    }
+    .sci-eyebrow {
+        font-family: var(--font-mono); font-size: 0.7rem;
+        letter-spacing: 0.25em; text-transform: uppercase;
+        color: #0D8A74; margin-bottom: 2rem;
+        display: flex; align-items: center; gap: 1rem;
+        opacity: 0; animation: fadeSlideUp 0.8s 0.2s forwards;
+    }
+    .sci-eyebrow::before {
+        content: ''; display: block; width: 40px; height: 1px;
+        background: #0D8A74;
+    }
+    .sci-h1 {
+        font-family: var(--font-serif);
+        font-size: clamp(3.5rem, 8vw, 8rem);
+        font-weight: 900; line-height: 0.9;
+        letter-spacing: -0.04em; color: #fff;
+        margin-bottom: 2.5rem;
+        opacity: 0; animation: fadeSlideUp 0.9s 0.35s forwards;
+    }
+    .sci-h1 em { color: #0D8A74; font-style: italic; }
+    .sci-h1 .line2 { display: block; padding-left: clamp(2rem,8vw,10rem); }
+    .sci-sub {
+        font-size: clamp(1rem, 1.5vw, 1.2rem); line-height: 1.7;
+        color: rgba(255,255,255,0.55); max-width: 500px;
+        opacity: 0; animation: fadeSlideUp 0.9s 0.5s forwards;
+    }
+    .sci-hero-badge {
+        display: inline-flex; align-items: center; gap: 0.5rem;
+        border: 1px solid rgba(13,138,116,0.4);
+        border-radius: 50px; padding: 0.5rem 1.25rem;
+        font-family: var(--font-mono); font-size: 0.65rem;
+        letter-spacing: 0.15em; color: #0D8A74;
+        margin-top: 3rem; background: rgba(13,138,116,0.06);
+        opacity: 0; animation: fadeSlideUp 0.9s 0.65s forwards;
+    }
+    .sci-hero-badge span {
+        width: 6px; height: 6px; border-radius: 50%;
+        background: #0D8A74;
+        box-shadow: 0 0 8px #0D8A74;
+        animation: pulse-glow 2s ease-in-out infinite;
+    }
+
+    /* Right panel floating card */
+    .sci-hero-card {
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 16px; overflow: hidden;
+        background: rgba(255,255,255,0.03);
+        backdrop-filter: blur(20px);
+        opacity: 0; animation: fadeSlideLeft 1s 0.6s forwards;
+    }
+    .sci-principle-row {
+        padding: 1.5rem 2rem;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+        transition: background 0.3s ease;
+        cursor: default;
+    }
+    .sci-principle-row:hover { background: rgba(13,138,116,0.06); }
+    .sci-principle-row:last-child { border-bottom: none; }
+    .sci-pnum {
+        font-family: var(--font-mono); font-size: 0.58rem;
+        letter-spacing: 0.2em; text-transform: uppercase;
+        color: rgba(255,255,255,0.3); margin-bottom: 0.4rem;
+    }
+    .sci-ptitle {
+        font-family: var(--font-serif); font-size: 1.1rem;
+        font-weight: 700; color: #fff; margin-bottom: 0.3rem;
+    }
+    .sci-pdesc {
+        font-size: 0.82rem; color: rgba(255,255,255,0.4); line-height: 1.5;
+    }
+    .sci-pbar {
+        height: 2px; background: rgba(255,255,255,0.06);
+        border-radius: 2px; margin-top: 0.8rem; overflow: hidden;
+    }
+    .sci-pbar-fill {
+        height: 100%; background: linear-gradient(90deg,#0D8A74,#34d399);
+        border-radius: 2px; width: 0%;
+        transition: width 1.5s cubic-bezier(0.16,1,0.3,1);
+    }
+
+    /* Scroll-down cue */
+    .sci-scroll-cue {
+        position: absolute; bottom: 2.5rem; left: 50%;
+        transform: translateX(-50%); z-index: 2;
+        display: flex; flex-direction: column; align-items: center;
+        gap: 0.5rem; opacity: 0; animation: fadeIn 1s 1.5s forwards;
+    }
+    .sci-scroll-cue span {
+        font-family: var(--font-mono); font-size: 0.6rem;
+        letter-spacing: 0.2em; text-transform: uppercase;
+        color: rgba(255,255,255,0.3);
+    }
+    .sci-scroll-line {
+        width: 1px; height: 50px;
+        background: linear-gradient(to bottom, rgba(13,138,116,0.8), transparent);
+        animation: scrollPulse 1.8s ease-in-out infinite;
+    }
+
+    /* Metrics counter strip */
+    .sci-metrics {
+        background: #050f0d; padding: 0;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .sci-metrics-row {
+        display: grid; grid-template-columns: repeat(3,1fr);
+    }
+    .sci-metric-cell {
+        padding: clamp(2rem,5vw,3.5rem) clamp(1.5rem,4vw,3rem);
+        border-right: 1px solid rgba(255,255,255,0.06);
+        position: relative; overflow: hidden;
+        opacity: 0; transform: translateY(20px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .sci-metric-cell.in-view { opacity: 1; transform: translateY(0); }
+    .sci-metric-cell:last-child { border-right: none; }
+    .sci-metric-cell::after {
+        content: ''; position: absolute; bottom: 0; left: 0;
+        width: 100%; height: 2px;
+        background: linear-gradient(90deg,#0D8A74,transparent);
+        transform: scaleX(0); transform-origin: left;
+        transition: transform 0.8s cubic-bezier(0.16,1,0.3,1) 0.2s;
+    }
+    .sci-metric-cell.in-view::after { transform: scaleX(1); }
+    .sci-metric-num {
+        font-family: var(--font-serif);
+        font-size: clamp(3rem,6vw,5.5rem);
+        font-weight: 900; line-height: 1;
+        color: #fff; letter-spacing: -0.04em;
+    }
+    .sci-metric-num .accent { color: #0D8A74; }
+    .sci-metric-label {
+        font-family: var(--font-mono); font-size: 0.65rem;
+        letter-spacing: 0.15em; text-transform: uppercase;
+        color: rgba(255,255,255,0.35); margin-top: 0.5rem;
+    }
+    .sci-metric-desc {
+        font-size: 0.85rem; color: rgba(255,255,255,0.25);
+        line-height: 1.5; margin-top: 0.5rem;
+    }
+
+    /* Section title rows */
+    .sci-section-label {
+        font-family: var(--font-mono); font-size: 0.65rem;
+        letter-spacing: 0.2em; text-transform: uppercase;
+        color: var(--text-muted); display: flex;
+        align-items: center; gap: 1rem; margin-bottom: 1rem;
+    }
+    .sci-section-label::after {
+        content: ''; flex: 1; height: 1px;
+        background: var(--border);
+    }
+
+    /* Methodology editorial panel */
+    .sci-panel {
+        padding: clamp(4rem, 8vw, 7rem) 0;
+        border-bottom: 1px solid var(--border);
+        opacity: 0; transform: translateY(40px);
+        transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1),
+                    transform 0.9s cubic-bezier(0.16,1,0.3,1);
+    }
+    .sci-panel.in-view { opacity: 1; transform: translateY(0); }
+
+    .sci-panel-layout {
+        display: grid;
+        grid-template-columns: 260px 1fr;
+        gap: 4rem; align-items: start;
+    }
+    .sci-panel-index {
+        font-family: var(--font-serif);
+        font-size: clamp(6rem,10vw,9rem);
+        font-weight: 900; line-height: 1; letter-spacing: -0.06em;
+        color: var(--border); user-select: none;
+        transition: color 0.4s ease;
+    }
+    .sci-panel:hover .sci-panel-index { color: rgba(13,138,116,0.2); }
+    .sci-panel-tag {
+        font-family: var(--font-mono); font-size: 0.6rem;
+        letter-spacing: 0.2em; text-transform: uppercase;
+        color: var(--text-muted);
+        margin-bottom: 0.75rem;
+    }
+    .sci-panel-h2 {
+        font-family: var(--font-serif);
+        font-size: clamp(1.8rem, 3vw, 2.5rem);
+        font-weight: 900; line-height: 1.1;
+        letter-spacing: -0.02em; color: var(--text-main);
+        margin-bottom: 2rem;
+    }
+    .sci-panel-body {
+        font-size: 1.05rem; line-height: 1.75;
+        color: var(--text-muted); margin-bottom: 1.25rem;
+    }
+    .sci-panel-body strong { color: var(--text-main); font-weight: 600; }
+
+    /* Status pill */
+    .sci-status {
+        display: inline-flex; align-items: center; gap: 0.5rem;
+        padding: 0.35rem 0.9rem; border-radius: 50px;
+        font-family: var(--font-mono); font-size: 0.65rem;
+        letter-spacing: 0.12em; font-weight: 700;
+        margin-top: 0.5rem; text-transform: uppercase;
+    }
+    .sci-status-dot {
+        width: 5px; height: 5px; border-radius: 50%;
+    }
+    .sci-status.published {
+        background: rgba(13,138,116,0.1); color: #0D8A74;
+        border: 1px solid rgba(13,138,116,0.3);
+    }
+    .sci-status.published .sci-status-dot { background: #0D8A74; box-shadow: 0 0 6px #0D8A74; }
+    .sci-status.plausible {
+        background: rgba(234,179,8,0.1); color: #ca8a04;
+        border: 1px solid rgba(234,179,8,0.3);
+    }
+    .sci-status.plausible .sci-status-dot { background: #eab308; box-shadow: 0 0 6px #eab308; }
+
+    /* Accent card inside panel */
+    .sci-accent-card {
+        margin-top: 2rem; padding: 2rem;
+        border-left: 3px solid #0D8A74;
+        background: rgba(13,138,116,0.04);
+        border-radius: 0 12px 12px 0;
+        font-size: 1rem; color: var(--text-muted); line-height: 1.7;
+    }
+    .sci-accent-card strong { color: var(--text-main); }
+
+    /* Phase 0 Matrix — dark full-bleed */
+    .sci-matrix {
+        background: #050f0d; padding: clamp(5rem,10vw,9rem) 0;
+        position: relative; overflow: hidden;
+    }
+    .sci-matrix-grid {
+        display: grid; grid-template-columns: repeat(3,1fr);
+        gap: 1px; background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.06);
+        border-radius: 16px; overflow: hidden;
+        margin-top: 4rem;
+    }
+    .sci-matrix-cell {
+        background: #050f0d; padding: 3rem 2.5rem;
+        position: relative; overflow: hidden;
+        opacity: 0; transform: translateY(30px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .sci-matrix-cell.in-view { opacity: 1; transform: translateY(0); }
+    .sci-matrix-cell:hover { background: rgba(255,255,255,0.015); }
+    .sci-matrix-top {
+        display: flex; align-items: center; gap: 0.75rem;
+        margin-bottom: 1.5rem;
+    }
+    .sci-matrix-badge {
+        font-family: var(--font-mono); font-size: 0.55rem;
+        letter-spacing: 0.15em; text-transform: uppercase;
+        padding: 0.3rem 0.65rem; border-radius: 4px;
+        font-weight: 700; color: #fff;
+    }
+    .sci-matrix-badge.pub { background: #0D8A74; }
+    .sci-matrix-badge.pla { background: #eab308; }
+    .sci-matrix-badge.pln { background: #f97316; }
+    .sci-matrix-num {
+        font-family: var(--font-mono); font-size: 0.65rem;
+        color: rgba(255,255,255,0.2); letter-spacing: 0.1em;
+        margin-left: auto;
+    }
+    .sci-matrix-h3 {
+        font-family: var(--font-serif); font-size: 1.35rem;
+        font-weight: 700; color: #fff; margin-bottom: 0.75rem;
+        line-height: 1.2;
+    }
+    .sci-matrix-p {
+        font-size: 0.88rem; color: rgba(255,255,255,0.4);
+        line-height: 1.65;
+    }
+    .sci-matrix-glow {
+        position: absolute; bottom: -40px; right: -40px;
+        width: 120px; height: 120px; border-radius: 50%;
+        opacity: 0; transition: opacity 0.4s ease;
+        pointer-events: none;
+    }
+    .sci-matrix-cell:hover .sci-matrix-glow { opacity: 0.15; }
+    .sci-matrix-glow.pub { background: radial-gradient(circle,#0D8A74,transparent 70%); }
+    .sci-matrix-glow.pla { background: radial-gradient(circle,#eab308,transparent 70%); }
+    .sci-matrix-glow.pln { background: radial-gradient(circle,#f97316,transparent 70%); }
+
+    /* Literature section */
+    .sci-lit-card {
+        padding: 1.75rem 2rem;
+        border: 1px solid var(--border);
+        border-radius: 12px; background: var(--bg);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        opacity: 0; transform: translateY(20px);
+    }
+    .sci-lit-card.in-view { opacity: 1; transform: translateY(0); }
+    .sci-lit-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        border-color: rgba(13,138,116,0.35);
+    }
+    .sci-lit-title {
+        font-weight: 600; color: var(--text-main);
+        font-size: 0.95rem; margin-bottom: 0.6rem;
+        display: flex; align-items: flex-start; gap: 0.75rem;
+    }
+    .sci-lit-icon {
+        flex-shrink: 0; width: 28px; height: 28px;
+        border-radius: 6px; background: rgba(13,138,116,0.1);
+        display: flex; align-items: center; justify-content: center;
+        color: #0D8A74; font-size: 0.8rem; margin-top: 0.1rem;
+    }
+    .sci-lit-ref {
+        font-size: 0.82rem; color: var(--text-muted); line-height: 1.55;
+        padding-left: 2.5rem;
+    }
+
+    /* CTA block */
+    .sci-cta-block {
+        text-align: center; padding: clamp(4rem,8vw,7rem) 0;
+        border-top: 1px solid var(--border);
+    }
+
+    /* ── ANIMATIONS ──────────────────────────────────────── */
+    @keyframes fadeSlideUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeSlideLeft {
+        from { opacity: 0; transform: translateX(30px); }
+        to   { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; } to { opacity: 1; }
+    }
+    @keyframes scrollPulse {
+        0%,100% { opacity: 0.3; transform: scaleY(1); }
+        50%      { opacity: 1;   transform: scaleY(1.15); }
+    }
+    @keyframes pulse-glow {
+        0%,100% { box-shadow: 0 0 8px #0D8A74; }
+        50%      { box-shadow: 0 0 18px #0D8A74; }
+    }
+
+    /* ── RESPONSIVE ──────────────────────────────────────── */
+    @media (max-width: 768px) {
+        .sci-h1 .line2 { padding-left: 0; }
+        .sci-panel-layout { grid-template-columns: 1fr; gap: 1.5rem; }
+        .sci-panel-index { font-size: 4rem; }
+        .sci-metrics-row { grid-template-columns: 1fr; }
+        .sci-metric-cell { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+        .sci-metric-cell:last-child { border-bottom: none; }
+        .sci-matrix-grid { grid-template-columns: 1fr; }
+        .sci-hero-card { display: none; }
+    }
+    </style>
+
+    <!-- Scroll progress indicator -->
+    <div id="sci-progress"></div>
+
     <main>
 
-        <section class="hero-section"
-
-            style="padding-top:clamp(80px, 10vh, 100px); padding-bottom:60px; background:var(--bg); border-bottom:1px solid var(--border); position:relative; overflow:hidden;">
-
-            <div class="container">
-
-                <div style="display:grid; grid-template-columns:1.1fr 0.9fr; gap:var(--space-lg); align-items:center;"
-
-                    class="mobile-stack">
-
-
-
-                    <!-- Left: Main Copy -->
-
-                    <div class="flow-left reveal">
-
-                        <div class="page-hero-badge">Nutritional Architecture</div>
-
-                        <h1 class="display"
-
-                            style="font-size:var(--text-6xl); line-height:0.9; letter-spacing:-0.03em; font-family:var(--font-serif);">
-
-                            Advanced<br><em>Functional Foods.</em></h1>
-
-                        <p class="subtext editorial-col"
-
-                            style="margin-top:2rem; font-size:clamp(1.1rem, 2vw, 1.35rem); line-height:1.65; color:var(--text-muted); max-width:560px;">
-
-                            We engineer nutritional tools rooted in indigenous biology. No synthetic fillers, no unsupported health claims. Just transparent, verifiable food science.
-                        </p>
-
-                    </div>
-
-
-
-                    <!-- Right: Formulation Principles -->
-
-                    <div class="reveal"
-
-                        style="display:flex; flex-direction:column; gap:1px; border:1px solid var(--border); border-radius:12px; overflow:hidden; background:var(--border);">
-
-                        <div style="background:var(--bg); padding:1.75rem 2rem;">
-
-                            <div
-
-                                style="font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.5rem;">
-
-                                Principle 01</div>
-
-                            <div
-
-                                style="font-family:var(--font-serif); font-size:1.15rem; font-weight:700; color:var(--text-main); margin-bottom:0.35rem;">
-
-                                Bioavailability First</div>
-
-                            <div style="font-size:0.88rem; color:var(--text-muted); line-height:1.5;">Nutrients mean nothing if you can't absorb them. We formulate using mechanisms like fermentation to unlock native bioavailability.</div>
-
-                        </div>
-
-                        <div style="background:var(--bg); padding:1.75rem 2rem;">
-
-                            <div
-
-                                style="font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.5rem;">
-
-                                Principle 02</div>
-
-                            <div
-
-                                style="font-family:var(--font-serif); font-size:1.15rem; font-weight:700; color:var(--text-main); margin-bottom:0.35rem;">
-
-                                Verified Botanicals</div>
-
-                            <div style="font-size:0.88rem; color:var(--text-muted); line-height:1.5;">A "mushroom powder" label isn't enough. We source specific functional extracts standardized to their active compounds.</div>
-
-                        </div>
-
-                        <div style="background:var(--bg); padding:1.75rem 2rem;">
-
-                            <div
-
-                                style="font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.5rem;">
-
-                                Principle 03</div>
-
-                            <div
-
-                                style="font-family:var(--font-serif); font-size:1.15rem; font-weight:700; color:var(--text-main); margin-bottom:0.35rem;">
-
-                                Synergistic Nutrition</div>
-
-                            <div style="font-size:0.88rem; color:var(--text-muted); line-height:1.5;">Nutrients don't act in isolation. We investigate how fermentation creates a food matrix where functional compounds are delivered in their biologically coherent form.</div>
-
-                        </div>
-
-                    </div>
-
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <section style="background:var(--bg-alt); padding:var(--space-xl) 0;">
-
-            <div class="container">
-
-                <!-- Core Methodology: Fermentation Platform -->
-                <div class="lab-grid" style="margin-bottom: 2rem;">
-
-                    <div class="lab-sidebar">
-
-                        <span class="lab-sidebar-num">CORE METHODOLOGY</span>
-
-                        <h2
-                            style="font-size:1.85rem; font-family:var(--font-serif); margin-top:1rem; line-height:1.2; word-wrap:break-word;">
-
-                            Fermentation &<br>Phytic Acid Reduction</h2>
-
-                    </div>
-
-                    <div class="lab-content-block">
-
-                        <p style="font-size:1.125rem; line-height:1.7; color:var(--text-main); margin-bottom:1.5rem;">
-
-                            Traditional Indian grains like finger millet (Ragi) and Karuppu Kavuni black rice are nutritional powerhouses. However, they naturally contain high levels of <strong>phytic acid</strong>, an anti-nutrient that binds to essential minerals (Iron, Calcium, Zinc), preventing the body from absorbing them. This is why raw &ldquo;superfood&rdquo; grain mixtures often fail to correct deficiencies.
-
-                        </p>
-
-                        <p style="font-size:1.125rem; line-height:1.7; color:var(--text-muted); margin-bottom:1.25rem;">
-
-                            We bridge traditional food wisdom with modern biochemistry through <strong>controlled lactic acid fermentation</strong>.
-                            Our fermentation protocol enzymatically degrades phytic acid, effectively &ldquo;unlocking&rdquo; the native minerals and creating a highly bioavailable substrate matrix that we then fortify with functional mushroom extracts.
-
-                        </p>
-
-                        <p style="font-size:1.125rem; line-height:1.7; color:var(--text-muted); margin-bottom:1.25rem;">
-                            Natural acidification during LAB fermentation also improves overall digestibility and reduces anti-nutritional factors across the grain matrix.
-                        </p>
-
-                        <div style="display:inline-flex; align-items:center; gap:0.5rem; background:rgba(13,138,116,0.08); border:1px solid rgba(13,138,116,0.25); color:#0D8A74; padding:0.35rem 0.85rem; border-radius:50px; font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.1em; margin-top:0.5rem;">&#9632; PUBLISHED &mdash; established nutritional biochemistry</div>
-
-                    </div>
-
-                </div>
-
-                <!-- Structural Divider -->
-                <div style="width: 100%; height: 1px; background: var(--border); margin: 2rem 0;"></div>
-
-                <!-- CLARITY / Cognitive -->
-
-                <div class="lab-grid">
-
-                    <div class="lab-sidebar">
-
-                        <span class="lab-sidebar-num">CLARITY / COGNITIVE</span>
-
-                        <h2 style="font-size:2rem; font-family:var(--font-serif); margin-top:1rem;">
-
-                            Nootropic<br>Standardization</h2>
-
-                    </div>
-
-                    <div class="lab-content-block">
-
-                        <p style="font-size:1.125rem; line-height:1.7; color:var(--text-main); margin-bottom:1.5rem;">
-
-                            A &ldquo;mushroom powder&rdquo; label is nutritionally meaningless. Without standardising the specific active molecular compounds, you are simply eating expensive mushroom-flavoured flour.
-
-                        </p>
-
-                        <p style="font-size:1.125rem; line-height:1.7; color:var(--text-muted); margin-bottom:1.25rem;">
-
-                            Our cognitive protocol uses <strong>Lion&rsquo;s Mane</strong> extracted via a <strong>hot-water extraction</strong> method, standardised specifically for <strong>Hericenones and Erinacines</strong> &mdash; the specific secondary metabolites shown in nutritional literature to cross the blood-brain barrier and support Nerve Growth Factor (NGF) pathways.
-
-                        </p>
-
-                        <div style="display:inline-flex; align-items:center; gap:0.5rem; background:rgba(13,138,116,0.08); border:1px solid rgba(13,138,116,0.25); color:#0D8A74; padding:0.35rem 0.85rem; border-radius:50px; font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.1em; margin-top:0.5rem;">&#9679; PLAUSIBLE &mdash; reasonable nutritional literature basis</div>
-
-                    </div>
-
-                </div>
-
-                <!-- MOMENTUM / Performance -->
-
-                <div class="lab-grid">
-
-                    <div class="lab-sidebar">
-
-                        <span class="lab-sidebar-num">MOMENTUM / ENDURANCE</span>
-
-                        <h2 style="font-size:2rem; font-family:var(--font-serif); margin-top:1rem;">
-
-                            ATP Synthesis &<br>Cellular Energy</h2>
-
-                    </div>
-
-                    <div class="lab-content-block">
-
-                        <p style="font-size:1.125rem; line-height:1.7; color:var(--text-main); margin-bottom:1.5rem;">
-
-                            Conventional sports recovery products rely on high-sugar bases and synthetic stimulants that spike, then crash, central nervous system activity. We are investigating a different pathway: cellular energy production rather than central stimulation.
-
-                        </p>
-
-                        <p style="font-size:1.125rem; line-height:1.7; color:var(--text-muted); margin-bottom:1.25rem;">
-
-                            Our endurance protocol investigates <strong>Cordyceps militaris</strong> extracts standardised for <strong>Cordycepin</strong>. Nutritional biochemistry literature indicates this nucleoside analog structurally supports ATP (cellular energy) production pathways during physical exertion.
-
-                        </p>
-
-                        <div style="display:inline-flex; align-items:center; gap:0.5rem; background:rgba(13,138,116,0.08); border:1px solid rgba(13,138,116,0.25); color:#0D8A74; padding:0.35rem 0.85rem; border-radius:50px; font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.1em; margin-top:0.5rem;">&#9679; PLAUSIBLE &mdash; mechanism supported by nutritional literature</div>
-
-                    </div>
-
-                </div>
-
-                <!-- Structural Divider -->
-                <div style="width: 100%; height: 1px; background: var(--border); margin: 2rem 0;"></div>
-
-                <!-- VITALITY / Immune Resilience -->
-
-                <div class="lab-grid">
-
-                    <div class="lab-sidebar">
-
-                        <span class="lab-sidebar-num">VITALITY / IMMUNE</span>
-
-                        <h2 style="font-size:2rem; font-family:var(--font-serif); margin-top:1rem;">
-
-                            Beta-Glucan<br>Immune Modulation</h2>
-
-                    </div>
-
-                    <div class="lab-content-block">
-
-                        <p style="font-size:1.125rem; line-height:1.7; color:var(--text-main); margin-bottom:1.5rem;">
-
-                            Reishi (<em>Ganoderma lucidum</em>) is one of the most studied functional mushrooms in nutritional biochemistry. Its key bioactive fraction &mdash; beta-glucans &mdash; are polysaccharides documented in nutritional literature to interact with immune-pathway receptors, specifically macrophage activity and NK-cell signalling.
-
-                        </p>
-
-                        <p style="font-size:1.125rem; line-height:1.7; color:var(--text-muted); margin-bottom:1.25rem;">
-
-                            Our immune-resilience protocol pairs <strong>Reishi hot-water extract</strong> &mdash; standardised for beta-glucan content &mdash; with a fermented Ragi and Karuppu Kavuni grain base. The fermented base provides a bioavailable mineral substrate; the Reishi extract provides the functional layer.
-
-                        </p>
-
-                        <div style="display:inline-flex; align-items:center; gap:0.5rem; background:rgba(13,138,116,0.08); border:1px solid rgba(13,138,116,0.25); color:#0D8A74; padding:0.35rem 0.85rem; border-radius:50px; font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.1em; margin-top:0.5rem;">&#9679; PLAUSIBLE &mdash; mechanism supported by nutritional literature</div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Structural Divider -->
-                <div style="width: 100%; height: 1px; background: var(--border); margin: 2rem 0;"></div>
-
-                <!-- Literature Review Section -->
-                <div style="max-width: 800px; margin: 0 auto; padding-top: 0;">
-                    <div style="text-align: center; margin-bottom: 3rem;">
-                        <span style="font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted);">The Proof</span>
-                        <h2 style="font-family:var(--font-serif); font-size:2.5rem; color:var(--text-main); margin-top: 1rem;">Nutritional Literature</h2>
-                        <p style="color:var(--text-muted); line-height:1.6; margin-top: 1rem;">We do not make medical or drug claims. Our functional food components are selected based on publicly available, peer-reviewed nutritional biochemistry.</p>
-                    </div>
-
-                    <div style="display:flex; flex-direction:column; gap: 1rem;">
-                        <div style="padding: 1.5rem; border: 1px solid var(--border); border-radius: 8px; background: var(--bg);">
-                            <div style="font-weight: 600; color: var(--text-main); margin-bottom: 0.5rem;">Lactic Acid Fermentation & Phytic Acid Reduction</div>
-                            <div style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">Coulibaly, A., et al. (2011). "Phytic acid in cereal grains: structure, healthy or harmful ways to reduce phytic acid in cereal grains and their effects on nutritional quality." <em>American Journal of Plant Nutrition and Fertilization Technology</em>.</div>
-                        </div>
-
-                        <div style="padding: 1.5rem; border: 1px solid var(--border); border-radius: 8px; background: var(--bg);">
-                            <div style="font-weight: 600; color: var(--text-main); margin-bottom: 0.5rem;">Hericium erinaceus (Lion's Mane) & Cognitive Function</div>
-                            <div style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">Mori, K., et al. (2009). "Improving effects of the mushroom Yamabushitake (Hericium erinaceus) on mild cognitive impairment: a double-blind placebo-controlled clinical trial." <em>Phytotherapy Research</em>.</div>
-                        </div>
-
-                        <div style="padding: 1.5rem; border: 1px solid var(--border); border-radius: 8px; background: var(--bg);">
-                            <div style="font-weight: 600; color: var(--text-main); margin-bottom: 0.5rem;">Cordycepin & ATP Synthesis</div>
-                            <div style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">Tuli, H. S., et al. (2014). "Pharmacological and therapeutic potential of Cordyceps with special reference to Cordycepin." <em>3 Biotech</em>.</div>
-                        </div>
-
-                        <div style="padding: 1.5rem; border: 1px solid var(--border); border-radius: 8px; background: var(--bg);">
-                            <div style="font-weight: 600; color: var(--text-main); margin-bottom: 0.5rem;">Ganoderma lucidum (Reishi) &amp; Beta-Glucan Immunomodulation</div>
-                            <div style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">Boh, B., et al. (2007). "Ganoderma lucidum and its pharmaceutically active compounds." <em>Biotechnology Annual Review</em>.</div>
-                        </div>
+    <!-- ═══════════════════════════════════════════
+         HERO — Dark editorial, canvas particles
+    ═══════════════════════════════════════════ -->
+    <section class="sci-hero">
+        <canvas id="sci-canvas"></canvas>
+
+        <div class="container sci-hero-inner">
+            <div style="display:grid; grid-template-columns:1fr 420px; gap:4rem; align-items:center;" class="mobile-stack">
+
+                <!-- Left: Copy -->
+                <div>
+                    <div class="sci-eyebrow">Nutritional Architecture &mdash; Phase 0 R&amp;D</div>
+                    <h1 class="sci-h1">
+                        Advanced<br>
+                        <em>Functional</em>
+                        <span class="line2">Foods.</span>
+                    </h1>
+                    <p class="sci-sub">
+                        We engineer nutritional tools rooted in indigenous biology.
+                        No synthetic fillers, no unsupported health claims.
+                        Just transparent, verifiable food science.
+                    </p>
+                    <div class="sci-hero-badge">
+                        <span></span>
+                        Active R&amp;D — DETI@ACE TBI, Hosur
                     </div>
                 </div>
 
-                <div style="text-align:center; padding-top:var(--space-2xl);">
-
-                    <a href="ingredients.html" class="btn btn-outline " style="border-radius:0;">View Full Ingredient Index</a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    
-<!-- NEW METHODOLOGY LAYERS -->
-<section style="padding: 4rem 0; background: var(--bg); border-top: 1px solid var(--border);">
-    <div class="container">
-        <div style="max-width:800px; margin:0 auto;">
-            <div style="font-family:var(--font-mono); font-size:0.8rem; color:var(--text-main); margin-bottom:1rem; letter-spacing:0.05em; border-bottom:1px solid var(--border); padding-bottom:0.5rem; display:inline-block;">R&amp;D FRAMEWORK</div>
-            <h2 style="font-family:var(--font-serif); font-size:2.5rem; color:var(--text-main); margin-bottom:2rem; line-height:1.2;">The Phase 0 Validation Matrix.</h2>
-            
-            <div style="display:flex; flex-direction:column; gap:2rem;">
-                
-                <div style="border-left: 3px solid #0D8A74; padding-left:1.5rem;">
-                    <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.5rem;">
-                        <span style="background:#0D8A74; color:#fff; font-family:var(--font-mono); font-size:0.6rem; padding:0.25rem 0.5rem; border-radius:4px; font-weight:700; letter-spacing:0.1em;">PUBLISHED</span>
-                        <h4 style="font-family:var(--font-serif); font-size:1.4rem; color:var(--text-main); margin:0;">Layer 01 / Fermented Base</h4>
+                <!-- Right: floating principles card -->
+                <div class="sci-hero-card">
+                    <div style="padding:1.25rem 2rem; border-bottom:1px solid rgba(255,255,255,0.06); background:rgba(13,138,116,0.08);">
+                        <div style="font-family:var(--font-mono); font-size:0.58rem; letter-spacing:0.2em; text-transform:uppercase; color:#0D8A74;">Formulation Principles</div>
                     </div>
-                    <p style="font-size:0.95rem; color:var(--text-muted); line-height:1.6; margin:0;">Utilizing Ragi &amp; Karuppu Kavuni. Published literature confirms fermentation significantly reduces phytic acid, inherently increasing the bioavailability of indigenous minerals.</p>
+                    <div class="sci-principle-row">
+                        <div class="sci-pnum">Principle 01</div>
+                        <div class="sci-ptitle">Bioavailability First</div>
+                        <div class="sci-pdesc">Nutrients mean nothing if you can&rsquo;t absorb them. We use fermentation to unlock native bioavailability.</div>
+                        <div class="sci-pbar"><div class="sci-pbar-fill" data-width="85"></div></div>
+                    </div>
+                    <div class="sci-principle-row">
+                        <div class="sci-pnum">Principle 02</div>
+                        <div class="sci-ptitle">Verified Botanicals</div>
+                        <div class="sci-pdesc">We source specific extracts standardized to their active molecular compounds — not generic powders.</div>
+                        <div class="sci-pbar"><div class="sci-pbar-fill" data-width="70"></div></div>
+                    </div>
+                    <div class="sci-principle-row">
+                        <div class="sci-pnum">Principle 03</div>
+                        <div class="sci-ptitle">Synergistic Nutrition</div>
+                        <div class="sci-pdesc">Fermentation creates a food matrix where compounds are delivered in their biologically coherent form.</div>
+                        <div class="sci-pbar"><div class="sci-pbar-fill" data-width="60"></div></div>
+                    </div>
                 </div>
 
-                <div style="border-left: 3px solid #eab308; padding-left:1.5rem;">
-                    <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.5rem;">
-                        <span style="background:#eab308; color:#fff; font-family:var(--font-mono); font-size:0.6rem; padding:0.25rem 0.5rem; border-radius:4px; font-weight:700; letter-spacing:0.1em;">PLAUSIBLE</span>
-                        <h4 style="font-family:var(--font-serif); font-size:1.4rem; color:var(--text-main); margin:0;">Layer 02 / GABA Biosynthesis</h4>
-                    </div>
-                    <p style="font-size:0.95rem; color:var(--text-muted); line-height:1.6; margin:0;">Leveraging GAD-active *Levilactobacillus brevis*. We are actively validating the endogenous synthesis of Gamma-aminobutyric acid during the 48-hour fermentation cycle.</p>
-                </div>
-
-                <div style="border-left: 3px solid #f97316; padding-left:1.5rem;">
-                    <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.5rem;">
-                        <span style="background:#f97316; color:#fff; font-family:var(--font-mono); font-size:0.6rem; padding:0.25rem 0.5rem; border-radius:4px; font-weight:700; letter-spacing:0.1em;">PLANNED</span>
-                        <h4 style="font-family:var(--font-serif); font-size:1.4rem; color:var(--text-main); margin:0;">Layer 03 / Species-Specific Extracts</h4>
-                    </div>
-                    <p style="font-size:0.95rem; color:var(--text-muted); line-height:1.6; margin:0;">Hot-water extraction of fruiting bodies (Lion's Mane, Cordyceps, Reishi). Investigating the synergistic suspension of beta-glucans and hericenones within the fermented matrix.</p>
-                </div>
-                
             </div>
         </div>
-    </div>
-</section>
+
+        <!-- Scroll cue -->
+        <div class="sci-scroll-cue">
+            <span>Scroll</span>
+            <div class="sci-scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         METRICS COUNTER STRIP — dark continuation
+    ═══════════════════════════════════════════ -->
+    <section class="sci-metrics">
+        <div class="sci-metrics-row">
+            <div class="sci-metric-cell" style="transition-delay:0s;">
+                <div class="sci-metric-num"><span class="counter" data-target="60">0</span><span class="accent">%</span></div>
+                <div class="sci-metric-label">Phytic Acid Reduction</div>
+                <div class="sci-metric-desc">Target reduction in anti-nutrient levels via controlled LAB fermentation</div>
+            </div>
+            <div class="sci-metric-cell" style="transition-delay:0.15s;">
+                <div class="sci-metric-num"><span class="counter" data-target="48">0</span><span class="accent">hr</span></div>
+                <div class="sci-metric-label">Fermentation Cycle</div>
+                <div class="sci-metric-desc">Duration of our controlled Levilactobacillus brevis fermentation window</div>
+            </div>
+            <div class="sci-metric-cell" style="transition-delay:0.3s;">
+                <div class="sci-metric-num"><span class="counter" data-target="3">0</span><span class="accent"> layers</span></div>
+                <div class="sci-metric-label">Validation Matrix</div>
+                <div class="sci-metric-desc">Fermented base → GABA biosynthesis → species-specific extracts</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         METHODOLOGY PANELS — white/light sections
+    ═══════════════════════════════════════════ -->
+    <section style="background:var(--bg); padding: clamp(4rem,8vw,7rem) 0 0;">
+        <div class="container">
+            <div class="sci-section-label">Methodology</div>
+            <h2 style="font-family:var(--font-serif); font-size:clamp(2rem,4vw,3rem); font-weight:900; letter-spacing:-0.03em; color:var(--text-main); margin-bottom:0;">
+                The Science Behind<br>Every Layer.
+            </h2>
+        </div>
+
+        <!-- 01 — Fermentation -->
+        <div class="sci-panel" id="panel-01">
+            <div class="container">
+                <div class="sci-panel-layout">
+                    <div>
+                        <div class="sci-panel-index" aria-hidden="true">01</div>
+                    </div>
+                    <div>
+                        <div class="sci-panel-tag">Core Methodology / Fermentation Platform</div>
+                        <h2 class="sci-panel-h2">Fermentation &amp;<br>Phytic Acid Reduction</h2>
+                        <p class="sci-panel-body">
+                            Traditional Indian grains like finger millet (Ragi) and Karuppu Kavuni black rice are nutritional powerhouses. However, they naturally contain high levels of <strong>phytic acid</strong>, an anti-nutrient that binds to essential minerals (Iron, Calcium, Zinc), preventing the body from absorbing them. This is why raw &ldquo;superfood&rdquo; grain mixtures often fail to correct deficiencies.
+                        </p>
+                        <p class="sci-panel-body">
+                            We bridge traditional food wisdom with modern biochemistry through <strong>controlled lactic acid fermentation</strong>. Our fermentation protocol enzymatically degrades phytic acid, unlocking native minerals and creating a highly bioavailable substrate matrix we then fortify with functional mushroom extracts.
+                        </p>
+                        <div class="sci-accent-card">
+                            Natural acidification during LAB fermentation also improves overall digestibility and reduces anti-nutritional factors across the entire grain matrix.
+                        </div>
+                        <div style="margin-top:1.5rem;">
+                            <span class="sci-status published">
+                                <span class="sci-status-dot"></span>
+                                Published &mdash; established nutritional biochemistry
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 02 — Nootropic -->
+        <div class="sci-panel" id="panel-02" style="background:var(--bg-alt);">
+            <div class="container">
+                <div class="sci-panel-layout">
+                    <div>
+                        <div class="sci-panel-index" aria-hidden="true">02</div>
+                        <div style="font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-top:0.5rem;">Clarity / Cognitive</div>
+                    </div>
+                    <div>
+                        <div class="sci-panel-tag">Nootropic Standardization</div>
+                        <h2 class="sci-panel-h2">Lion&rsquo;s Mane &amp;<br>NGF Pathways</h2>
+                        <p class="sci-panel-body">
+                            A &ldquo;mushroom powder&rdquo; label is nutritionally meaningless. Without standardising the specific active molecular compounds, you are simply eating expensive mushroom-flavoured flour.
+                        </p>
+                        <p class="sci-panel-body">
+                            Our cognitive protocol uses <strong>Lion&rsquo;s Mane</strong> extracted via <strong>hot-water extraction</strong>, standardised specifically for <strong>Hericenones and Erinacines</strong> &mdash; the secondary metabolites shown in nutritional literature to cross the blood-brain barrier and support Nerve Growth Factor (NGF) pathways.
+                        </p>
+                        <div style="margin-top:1.5rem;">
+                            <span class="sci-status plausible">
+                                <span class="sci-status-dot"></span>
+                                Plausible &mdash; reasonable nutritional literature basis
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 03 — ATP / Endurance -->
+        <div class="sci-panel" id="panel-03">
+            <div class="container">
+                <div class="sci-panel-layout">
+                    <div>
+                        <div class="sci-panel-index" aria-hidden="true">03</div>
+                        <div style="font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-top:0.5rem;">Momentum / Endurance</div>
+                    </div>
+                    <div>
+                        <div class="sci-panel-tag">ATP Synthesis &amp; Cellular Energy</div>
+                        <h2 class="sci-panel-h2">Cordyceps &amp;<br>Mitochondrial Fuel</h2>
+                        <p class="sci-panel-body">
+                            Conventional sports recovery products rely on high-sugar bases and synthetic stimulants that spike, then crash, central nervous system activity. We are investigating a different pathway: cellular energy production rather than central stimulation.
+                        </p>
+                        <p class="sci-panel-body">
+                            Our endurance protocol investigates <strong>Cordyceps militaris</strong> extracts standardised for <strong>Cordycepin</strong>. Nutritional biochemistry literature indicates this nucleoside analog structurally supports ATP production pathways during physical exertion.
+                        </p>
+                        <div style="margin-top:1.5rem;">
+                            <span class="sci-status plausible">
+                                <span class="sci-status-dot"></span>
+                                Plausible &mdash; mechanism supported by nutritional literature
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 04 — Immune -->
+        <div class="sci-panel" id="panel-04" style="background:var(--bg-alt);">
+            <div class="container">
+                <div class="sci-panel-layout">
+                    <div>
+                        <div class="sci-panel-index" aria-hidden="true">04</div>
+                        <div style="font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-top:0.5rem;">Vitality / Immune</div>
+                    </div>
+                    <div>
+                        <div class="sci-panel-tag">Beta-Glucan Immune Modulation</div>
+                        <h2 class="sci-panel-h2">Reishi &amp;<br>Immune Resilience</h2>
+                        <p class="sci-panel-body">
+                            Reishi (<em>Ganoderma lucidum</em>) is one of the most studied functional mushrooms in nutritional biochemistry. Its key bioactive fraction &mdash; beta-glucans &mdash; are polysaccharides documented in nutritional literature to interact with immune-pathway receptors, specifically macrophage activity and NK-cell signalling.
+                        </p>
+                        <p class="sci-panel-body">
+                            Our immune-resilience protocol pairs <strong>Reishi hot-water extract</strong> &mdash; standardised for beta-glucan content &mdash; with a fermented Ragi and Karuppu Kavuni grain base. The fermented base provides a bioavailable mineral substrate; the Reishi extract provides the functional layer.
+                        </p>
+                        <div style="margin-top:1.5rem;">
+                            <span class="sci-status plausible">
+                                <span class="sci-status-dot"></span>
+                                Plausible &mdash; mechanism supported by nutritional literature
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         PHASE 0 VALIDATION MATRIX — full-bleed dark
+    ═══════════════════════════════════════════ -->
+    <section class="sci-matrix">
+        <div class="container">
+            <div class="sci-section-label" style="color:rgba(255,255,255,0.25);">
+                <span style="color:rgba(255,255,255,0.25)">R&amp;D Framework</span>
+            </div>
+            <h2 style="font-family:var(--font-serif); font-size:clamp(2rem,4vw,3.5rem); font-weight:900; letter-spacing:-0.04em; color:#fff; margin-bottom:0; line-height:1.1;">
+                The Phase 0<br>
+                <em style="color:#0D8A74;">Validation Matrix.</em>
+            </h2>
+            <p style="font-size:1rem; color:rgba(255,255,255,0.35); max-width:500px; line-height:1.65; margin-top:1.25rem;">
+                Every claim on this site is tagged as Published, Plausible, or Planned. This is our research transparency protocol.
+            </p>
+
+            <div class="sci-matrix-grid">
+
+                <div class="sci-matrix-cell" style="transition-delay:0s;">
+                    <div class="sci-matrix-top">
+                        <span class="sci-matrix-badge pub">Published</span>
+                        <span class="sci-matrix-num">Layer 01</span>
+                    </div>
+                    <h3 class="sci-matrix-h3">Fermented Base</h3>
+                    <p class="sci-matrix-p">
+                        Utilizing Ragi &amp; Karuppu Kavuni. Published literature confirms fermentation significantly reduces phytic acid, inherently increasing the bioavailability of indigenous minerals.
+                    </p>
+                    <div class="sci-matrix-glow pub"></div>
+                </div>
+
+                <div class="sci-matrix-cell" style="transition-delay:0.15s; border-left: 1px solid rgba(255,255,255,0.06);">
+                    <div class="sci-matrix-top">
+                        <span class="sci-matrix-badge pla">Plausible</span>
+                        <span class="sci-matrix-num">Layer 02</span>
+                    </div>
+                    <h3 class="sci-matrix-h3">GABA Biosynthesis</h3>
+                    <p class="sci-matrix-p">
+                        Leveraging GAD-active <em>Levilactobacillus brevis</em>. We are actively validating the endogenous synthesis of Gamma-aminobutyric acid during the 48-hour fermentation cycle.
+                    </p>
+                    <div class="sci-matrix-glow pla"></div>
+                </div>
+
+                <div class="sci-matrix-cell" style="transition-delay:0.3s; border-left: 1px solid rgba(255,255,255,0.06);">
+                    <div class="sci-matrix-top">
+                        <span class="sci-matrix-badge pln">Planned</span>
+                        <span class="sci-matrix-num">Layer 03</span>
+                    </div>
+                    <h3 class="sci-matrix-h3">Species-Specific Extracts</h3>
+                    <p class="sci-matrix-p">
+                        Hot-water extraction of fruiting bodies (Lion&rsquo;s Mane, Cordyceps, Reishi). Investigating synergistic suspension of beta-glucans and hericenones within the fermented matrix.
+                    </p>
+                    <div class="sci-matrix-glow pln"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         LITERATURE — glassmorphism cards
+    ═══════════════════════════════════════════ -->
+    <section style="background:var(--bg); padding: clamp(5rem,8vw,8rem) 0 0;">
+        <div class="container">
+            <div class="sci-section-label">The Proof</div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start; margin-bottom:4rem;" class="mobile-stack">
+                <div>
+                    <h2 style="font-family:var(--font-serif); font-size:clamp(2rem,3.5vw,3rem); font-weight:900; letter-spacing:-0.03em; color:var(--text-main); line-height:1.1; margin:0;">
+                        Nutritional<br>Literature
+                    </h2>
+                </div>
+                <div>
+                    <p style="font-size:1rem; line-height:1.75; color:var(--text-muted); margin:0; padding-top:0.5rem;">
+                        We do not make medical or drug claims. Our functional food components are selected based on publicly available, peer-reviewed nutritional biochemistry. Every compound on this page has a citation.
+                    </p>
+                </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem; margin-bottom:1.25rem;" class="mobile-stack">
+
+                <div class="sci-lit-card" style="transition-delay:0s;">
+                    <div class="sci-lit-title">
+                        <div class="sci-lit-icon">🌾</div>
+                        Lactic Acid Fermentation &amp; Phytic Acid Reduction
+                    </div>
+                    <div class="sci-lit-ref">
+                        Coulibaly, A., et al. (2011). &ldquo;Phytic acid in cereal grains: structure, healthy or harmful ways to reduce phytic acid in cereal grains and their effects on nutritional quality.&rdquo; <em>American Journal of Plant Nutrition and Fertilization Technology</em>.
+                    </div>
+                </div>
+
+                <div class="sci-lit-card" style="transition-delay:0.1s;">
+                    <div class="sci-lit-title">
+                        <div class="sci-lit-icon">🧠</div>
+                        Hericium erinaceus (Lion&rsquo;s Mane) &amp; Cognitive Function
+                    </div>
+                    <div class="sci-lit-ref">
+                        Mori, K., et al. (2009). &ldquo;Improving effects of the mushroom Yamabushitake (<em>Hericium erinaceus</em>) on mild cognitive impairment: a double-blind placebo-controlled clinical trial.&rdquo; <em>Phytotherapy Research</em>.
+                    </div>
+                </div>
+
+                <div class="sci-lit-card" style="transition-delay:0.2s;">
+                    <div class="sci-lit-title">
+                        <div class="sci-lit-icon">⚡</div>
+                        Cordycepin &amp; ATP Synthesis
+                    </div>
+                    <div class="sci-lit-ref">
+                        Tuli, H. S., et al. (2014). &ldquo;Pharmacological and therapeutic potential of Cordyceps with special reference to Cordycepin.&rdquo; <em>3 Biotech</em>.
+                    </div>
+                </div>
+
+                <div class="sci-lit-card" style="transition-delay:0.3s;">
+                    <div class="sci-lit-title">
+                        <div class="sci-lit-icon">🛡️</div>
+                        Ganoderma lucidum (Reishi) &amp; Beta-Glucan Immunomodulation
+                    </div>
+                    <div class="sci-lit-ref">
+                        Boh, B., et al. (2007). &ldquo;Ganoderma lucidum and its pharmaceutically active compounds.&rdquo; <em>Biotechnology Annual Review</em>.
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CTA -->
+            <div class="sci-cta-block">
+                <p style="font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1.5rem;">Go deeper</p>
+                <a href="ingredients.html" class="btn btn-outline" style="border-radius:0; font-size:1rem; padding:1.1rem 2.5rem;">View Full Ingredient Index &rarr;</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SCIENCE PAGE — JAVASCRIPT
+    ═══════════════════════════════════════════ -->
+    <script>
+    (function() {
+
+        /* ── 1. Canvas particle network ─────────────────── */
+        const canvas = document.getElementById('sci-canvas');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            let W, H, particles = [];
+
+            function resize() {
+                W = canvas.width  = canvas.offsetWidth;
+                H = canvas.height = canvas.offsetHeight;
+            }
+            resize();
+            window.addEventListener('resize', resize);
+
+            function Particle() {
+                this.x = Math.random() * W;
+                this.y = Math.random() * H;
+                this.vx = (Math.random() - 0.5) * 0.35;
+                this.vy = (Math.random() - 0.5) * 0.35;
+                this.r  = Math.random() * 1.5 + 0.5;
+            }
+            for (let i = 0; i < 80; i++) particles.push(new Particle());
+
+            function draw() {
+                ctx.clearRect(0, 0, W, H);
+                /* draw connections */
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const d  = Math.sqrt(dx*dx + dy*dy);
+                        if (d < 130) {
+                            ctx.beginPath();
+                            ctx.strokeStyle = `rgba(13,138,116,${0.12 * (1 - d/130)})`;
+                            ctx.lineWidth = 0.6;
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+                /* draw dots */
+                particles.forEach(p => {
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+                    ctx.fillStyle = 'rgba(13,138,116,0.45)';
+                    ctx.fill();
+                    p.x += p.vx; p.y += p.vy;
+                    if (p.x < 0 || p.x > W) p.vx *= -1;
+                    if (p.y < 0 || p.y > H) p.vy *= -1;
+                });
+                requestAnimationFrame(draw);
+            }
+            draw();
+        }
+
+        /* ── 2. Scroll progress bar ─────────────────────── */
+        const prog = document.getElementById('sci-progress');
+        window.addEventListener('scroll', function() {
+            const s = document.documentElement.scrollTop;
+            const h = document.documentElement.scrollHeight - window.innerHeight;
+            prog.style.width = (s / h * 100) + '%';
+        }, { passive: true });
+
+        /* ── 3. Intersection Observer for in-view classes ─ */
+        const io = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('in-view');
+                    io.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll(
+            '.sci-metric-cell, .sci-panel, .sci-matrix-cell, .sci-lit-card'
+        ).forEach(el => io.observe(el));
+
+        /* ── 4. Animated counters ───────────────────────── */
+        const counterIO = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (!e.isIntersecting) return;
+                const el = e.target;
+                const target = +el.dataset.target;
+                const dur = 1600;
+                const step = target / (dur / 16);
+                let cur = 0;
+                const tick = () => {
+                    cur = Math.min(cur + step, target);
+                    el.textContent = Math.round(cur);
+                    if (cur < target) requestAnimationFrame(tick);
+                };
+                tick();
+                counterIO.unobserve(el);
+            });
+        }, { threshold: 0.5 });
+        document.querySelectorAll('.counter').forEach(el => counterIO.observe(el));
+
+        /* ── 5. Progress bar fills on scroll into view ──── */
+        const barIO = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (!e.isIntersecting) return;
+                e.target.querySelectorAll('.sci-pbar-fill').forEach(bar => {
+                    setTimeout(() => {
+                        bar.style.width = bar.dataset.width + '%';
+                    }, 400);
+                });
+                barIO.unobserve(e.target);
+            });
+        }, { threshold: 0.5 });
+        document.querySelectorAll('.sci-hero-card').forEach(el => barIO.observe(el));
+
+        /* ── 6. Magnetic panel index hover ─────────────── */
+        document.querySelectorAll('.sci-panel').forEach(panel => {
+            panel.addEventListener('mousemove', e => {
+                const rect = panel.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const idx = panel.querySelector('.sci-panel-index');
+                if (idx) {
+                    const mx = (x / rect.width  - 0.5) * 8;
+                    const my = (y / rect.height - 0.5) * 8;
+                    idx.style.transform = `translate(${mx}px, ${my}px)`;
+                }
+            });
+            panel.addEventListener('mouseleave', () => {
+                const idx = panel.querySelector('.sci-panel-index');
+                if (idx) idx.style.transform = '';
+            });
+        });
+
+    })();
+    </script>
+
+        
+
+
+
+
+
+
 
 </main>
-
-
-
-
-
-
 
 
 
