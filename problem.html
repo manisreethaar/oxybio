@@ -346,9 +346,193 @@
 
 
 
-        <section class="hero-section"
+    <style>
+    /* Problem Premium Hero */
+    .prob-hero {
+        position: relative; min-height: 90svh;
+        background: #050f0d; overflow: hidden;
+        display: flex; align-items: center;
+        padding-top: clamp(80px,10vh,100px);
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    #prob-canvas {
+        position: absolute; inset: 0; width: 100%; height: 100%;
+        pointer-events: none; z-index: 0;
+    }
+    .prob-hero-inner {
+        position: relative; z-index: 2; width: 100%;
+    }
+    .prob-eyebrow {
+        font-family: var(--font-mono); font-size: 0.7rem;
+        letter-spacing: 0.25em; text-transform: uppercase;
+        color: #eab308; margin-bottom: 2rem;
+        display: flex; align-items: center; gap: 1rem;
+        opacity: 0; animation: fadeSlideUp 0.8s 0.2s forwards;
+    }
+    .prob-eyebrow::before {
+        content: ''; display: block; width: 40px; height: 1px;
+        background: #eab308;
+    }
+    .prob-h1 {
+        font-family: var(--font-serif);
+        font-size: clamp(3.5rem, 8vw, 8rem);
+        font-weight: 900; line-height: 0.9;
+        letter-spacing: -0.04em; color: #fff;
+        margin-bottom: 2rem;
+        opacity: 0; animation: fadeSlideUp 0.9s 0.35s forwards;
+    }
+    .prob-sub {
+        font-size: clamp(1.1rem, 1.8vw, 1.35rem); line-height: 1.65;
+        color: rgba(255,255,255,0.55); max-width: 580px;
+        opacity: 0; animation: fadeSlideUp 0.9s 0.5s forwards;
+    }
+    .prob-sub strong { color: #fff; }
 
-            style="padding-top:clamp(90px, 12vh, 120px); padding-bottom:100px; background:var(--bg); border-bottom:1px solid var(--border); position:relative; overflow:hidden;">
+    /* Glassmorphism Exploration Guide */
+    .prob-guide {
+        display: flex; flex-direction: column; gap: 1px;
+        background: rgba(255,255,255,0.06); border-radius: 12px;
+        border: 1px solid rgba(255,255,255,0.06); overflow: hidden;
+        opacity: 0; animation: fadeSlideLeft 1s 0.6s forwards;
+    }
+    .prob-guide-header {
+        padding: 1.25rem 2rem; background: rgba(234,179,8,0.08); /* Yellow tint */
+        display: flex; align-items: center; gap: 0.75rem;
+    }
+    .prob-guide-header span.dot {
+        width: 6px; height: 6px; border-radius: 50%; background: #eab308;
+        box-shadow: 0 0 8px #eab308; animation: pulse-glow-yellow 2s infinite;
+    }
+    .prob-guide-header span.text {
+        font-family: var(--font-mono); font-size: 0.65rem;
+        letter-spacing: 0.2em; text-transform: uppercase; color: #eab308;
+    }
+    .prob-guide-link {
+        text-decoration: none; padding: 1.5rem 2rem;
+        background: #050f0d; display: flex; align-items: center; gap: 1.5rem;
+        transition: background 0.3s ease;
+    }
+    .prob-guide-link:hover { background: rgba(234,179,8,0.05); }
+    .prob-guide-link .num {
+        font-family: var(--font-mono); font-size: 1.5rem; color: rgba(255,255,255,0.15);
+        font-weight: 700; width: 40px; transition: color 0.3s;
+    }
+    .prob-guide-link:hover .num { color: #eab308; }
+    .prob-guide-label { font-size: 0.95rem; font-weight: 600; color: #fff; margin-bottom: 0.35rem; }
+    .prob-guide-desc { font-size: 0.8rem; color: rgba(255,255,255,0.4); line-height: 1.5; }
+
+    @keyframes fadeSlideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeSlideLeft { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes pulse-glow-yellow { 0%,100% { box-shadow: 0 0 8px #eab308; } 50% { box-shadow: 0 0 16px #eab308; } }
+    </style>
+
+        <section class="prob-hero">
+            <canvas id="prob-canvas"></canvas>
+            <div class="container prob-hero-inner">
+                <div style="display:grid; grid-template-columns:1.1fr 0.9fr; gap:4rem; align-items:center;" class="mobile-stack">
+
+                    <!-- Left: Main Copy -->
+                    <div>
+                        <div class="prob-eyebrow">Formulation Science</div>
+                        <h1 class="prob-h1">The Science<br><em style="color:#eab308; font-style:italic;">Behind Oxygen.</em></h1>
+                        <p class="prob-sub">
+                            We engineer functional foods designed around <strong>traditional millet fermentation</strong> bioavailability science and <strong>medicinal mushrooms</strong> — formulated for high bioavailability and targeted toward memory, athletic recovery, and on-the-go professionals.
+                        </p>
+                    </div>
+
+                    <!-- Right: Exploration Guide -->
+                    <div>
+                        <div class="prob-guide">
+                            <div class="prob-guide-header">
+                                <span class="dot"></span>
+                                <span class="text">Exploration Guide</span>
+                            </div>
+                            <a href="#layer-01" class="prob-guide-link">
+                                <div class="num">01</div>
+                                <div>
+                                    <div class="prob-guide-label">The Nutritional Baseline</div>
+                                    <div class="prob-guide-desc">Evaluating the exact physiological deficits mapping our target formulas.</div>
+                                </div>
+                            </a>
+                            <a href="#layer-02" class="prob-guide-link">
+                                <div class="num">02</div>
+                                <div>
+                                    <div class="prob-guide-label">The Absorption Dilemma</div>
+                                    <div class="prob-guide-desc">The breakdown of synthetic isolates and gastrointestinal rejection.</div>
+                                </div>
+                            </a>
+                            <a href="#layer-03" class="prob-guide-link">
+                                <div class="num">03</div>
+                                <div>
+                                    <div class="prob-guide-label">The Engineering Mandate</div>
+                                    <div class="prob-guide-desc">Our active hypotheses, targets, and formulation methodologies.</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+            <!-- Canvas Script just for problem page -->
+            <script>
+            (function(){
+                const canvas = document.getElementById('prob-canvas');
+                if(!canvas) return;
+                const ctx = canvas.getContext('2d');
+                let W, H, particles = [];
+                function init() {
+                    W = canvas.width = canvas.offsetWidth;
+                    H = canvas.height = canvas.offsetHeight;
+                }
+                init();
+                window.addEventListener('resize', init);
+                class P {
+                    constructor() {
+                        this.x = Math.random() * W;
+                        this.y = Math.random() * H;
+                        this.vx = (Math.random() - 0.5) * 0.4;
+                        this.vy = -(Math.random() * 0.5 + 0.2); // drifting up
+                        this.size = Math.random() * 2 + 1;
+                        this.opacity = Math.random() * 0.5 + 0.1;
+                    }
+                    update() {
+                        this.x += this.vx; this.y += this.vy;
+                        if(this.y < 0) { this.y = H; this.x = Math.random() * W; }
+                    }
+                    draw() {
+                        ctx.beginPath();
+                        ctx.arc(this.x, this.y, this.size, 0, Math.PI*2);
+                        ctx.fillStyle = `rgba(234, 179, 8, ${this.opacity})`;
+                        ctx.fill();
+                    }
+                }
+                for(let i=0; i<60; i++) particles.push(new P());
+                function loop() {
+                    ctx.clearRect(0,0,W,H);
+                    for(let i=0; i<particles.length; i++){
+                        particles[i].update();
+                        particles[i].draw();
+                        // faint lines mimicking breaking bonds
+                        for(let j=i+1; j<particles.length; j++){
+                            let dx = particles[i].x - particles[j].x;
+                            let dy = particles[i].y - particles[j].y;
+                            let dist = Math.sqrt(dx*dx+dy*dy);
+                            if(dist < 100) {
+                                ctx.beginPath();
+                                ctx.strokeStyle = `rgba(234, 179, 8, ${0.08 * (1 - dist/100)})`;
+                                ctx.moveTo(particles[i].x, particles[i].y);
+                                ctx.lineTo(particles[j].x, particles[j].y);
+                                ctx.stroke();
+                            }
+                        }
+                    }
+                    requestAnimationFrame(loop);
+                }
+                loop();
+            })();
+            </script>
+        </section>
 
             <div class="container">
 
