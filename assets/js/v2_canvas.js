@@ -91,9 +91,10 @@ function initBiologyMesh() {
             for (let j = i + 1; j < particles.length; j++) {
                 const dx = particles[i].x - particles[j].x;
                 const dy = particles[i].y - particles[j].y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
+                const distSq = dx * dx + dy * dy;
 
-                if (distance < config.connectionDistance) {
+                if (distSq < config.connectionDistance * config.connectionDistance) {
+                    const distance = Math.sqrt(distSq);
                     const opacity = 1 - (distance / config.connectionDistance);
                     ctx.beginPath();
                     ctx.strokeStyle = `rgba(0, 0, 0, ${opacity * 0.25})`; // Darker strokes
@@ -106,7 +107,14 @@ function initBiologyMesh() {
         }
     }
 
-    function animate() {
+    let lastTime = 0;
+    const interval = 1000 / 30; // 30fps
+
+    function animate(timestamp) {
+        rafId = requestAnimationFrame(animate);
+        if (timestamp - lastTime < interval) return;
+        lastTime = timestamp;
+
         ctx.clearRect(0, 0, width, height);
 
         for (let i = 0; i < particles.length; i++) {
@@ -115,7 +123,6 @@ function initBiologyMesh() {
         }
 
         drawConnections();
-        requestAnimationFrame(animate);
     }
 
     // Event Listeners
