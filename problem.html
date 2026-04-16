@@ -350,10 +350,10 @@
     /* Problem Premium Hero */
     .prob-hero {
         position: relative; min-height: 90svh;
-        background: #050f0d; overflow: hidden;
+        background: var(--bg); overflow: hidden;
         display: flex; align-items: center;
         padding-top: clamp(80px,10vh,100px);
-        border-bottom: 1px solid rgba(255,255,255,0.06);
+        border-bottom: 1px solid var(--border);
     }
     #prob-canvas {
         position: absolute; inset: 0; width: 100%; height: 100%;
@@ -377,22 +377,22 @@
         font-family: var(--font-serif);
         font-size: clamp(3.5rem, 8vw, 8rem);
         font-weight: 900; line-height: 0.9;
-        letter-spacing: -0.04em; color: #fff;
+        letter-spacing: -0.04em; color: var(--text-main);
         margin-bottom: 2rem;
         opacity: 0; animation: fadeSlideUp 0.9s 0.35s forwards;
     }
     .prob-sub {
         font-size: clamp(1.1rem, 1.8vw, 1.35rem); line-height: 1.65;
-        color: rgba(255,255,255,0.55); max-width: 580px;
+        color: var(--text-muted); max-width: 580px;
         opacity: 0; animation: fadeSlideUp 0.9s 0.5s forwards;
     }
-    .prob-sub strong { color: #fff; }
+    .prob-sub strong { color: var(--text-main); }
 
     /* Glassmorphism Exploration Guide */
     .prob-guide {
         display: flex; flex-direction: column; gap: 1px;
-        background: rgba(255,255,255,0.06); border-radius: 12px;
-        border: 1px solid rgba(255,255,255,0.06); overflow: hidden;
+        background: var(--bg-alt); border-radius: 12px;
+        border: 1px solid var(--border); overflow: hidden;
         opacity: 0; animation: fadeSlideLeft 1s 0.6s forwards;
     }
     .prob-guide-header {
@@ -409,17 +409,17 @@
     }
     .prob-guide-link {
         text-decoration: none; padding: 1.5rem 2rem;
-        background: #050f0d; display: flex; align-items: center; gap: 1.5rem;
+        background: var(--bg); display: flex; align-items: center; gap: 1.5rem;
         transition: background 0.3s ease;
     }
     .prob-guide-link:hover { background: rgba(234,179,8,0.05); }
     .prob-guide-link .num {
-        font-family: var(--font-mono); font-size: 1.5rem; color: rgba(255,255,255,0.15);
+        font-family: var(--font-mono); font-size: 1.5rem; color: var(--text-muted);
         font-weight: 700; width: 40px; transition: color 0.3s;
     }
     .prob-guide-link:hover .num { color: #eab308; }
-    .prob-guide-label { font-size: 0.95rem; font-weight: 600; color: #fff; margin-bottom: 0.35rem; }
-    .prob-guide-desc { font-size: 0.8rem; color: rgba(255,255,255,0.4); line-height: 1.5; }
+    .prob-guide-label { font-size: 0.95rem; font-weight: 600; color: var(--text-main); margin-bottom: 0.35rem; }
+    .prob-guide-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; }
 
     @keyframes fadeSlideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes fadeSlideLeft { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
@@ -983,7 +983,7 @@
 
                                 <h3
 
-                                    style="font-family:var(--font-serif); font-size:2rem; margin-bottom:1rem; color:#fff;">
+                                    style="font-family:var(--font-serif); font-size:2rem; margin-bottom:1rem; color: var(--text-main);">
 
                                     01 / The Bioavailability Problem</h3>
 

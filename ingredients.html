@@ -346,10 +346,10 @@
     /* Ingredients Premium Hero */
     .ing-hero {
         position: relative; min-height: 85svh;
-        background: #050f0d; overflow: hidden;
+        background: var(--bg); overflow: hidden;
         display: flex; align-items: center;
         padding-top: clamp(80px,10vh,100px);
-        border-bottom: 1px solid rgba(255,255,255,0.06);
+        border-bottom: 1px solid var(--border);
     }
     .ing-hero::after {
         content: ''; position: absolute; inset: 0;
@@ -371,13 +371,13 @@
         font-family: var(--font-serif);
         font-size: clamp(3.5rem, 7vw, 7rem);
         font-weight: 900; line-height: 0.9;
-        letter-spacing: -0.04em; color: #fff;
+        letter-spacing: -0.04em; color: var(--text-main);
         margin-bottom: 1.5rem;
         opacity: 0; animation: fadeSlideUp 0.9s 0.35s forwards;
     }
     .ing-sub {
         font-size: clamp(1.1rem, 1.8vw, 1.35rem); line-height: 1.65;
-        color: rgba(255,255,255,0.55); max-width: 600px;
+        color: var(--text-muted); max-width: 600px;
         margin-bottom: 3rem;
         opacity: 0; animation: fadeSlideUp 0.9s 0.5s forwards;
     }
@@ -385,21 +385,21 @@
     /* Hover-based Lab Catalog Strip */
     .ing-catalog {
         display: flex; flex-direction: column; gap: 1px;
-        background: rgba(255,255,255,0.06); border-radius: 12px;
-        border: 1px solid rgba(255,255,255,0.06); overflow: hidden;
+        background: var(--bg-alt); border-radius: 12px;
+        border: 1px solid var(--border); overflow: hidden;
         max-width: 480px;
         opacity: 0; animation: fadeSlideLeft 1s 0.6s forwards;
     }
     .ing-catalog-item {
         display: flex; justify-content: space-between; align-items: center;
-        padding: 1.25rem 2rem; background: #050f0d;
+        padding: 1.25rem 2rem; background: var(--bg);
         transition: background 0.3s ease;
     }
     .ing-catalog-item:hover { background: rgba(13,138,116,0.05); }
     .ing-catalog-label {
         font-family: var(--font-mono); font-size: 0.65rem;
         letter-spacing: 0.2em; text-transform: uppercase;
-        color: rgba(255,255,255,0.4);
+        color: var(--text-muted);
     }
     .ing-catalog-val {
         font-family: var(--font-mono); font-size: 0.9rem;
@@ -472,7 +472,7 @@
 
             <div
 
-                style="position:absolute; top:10%; left:-10%; width:600px; height:600px; background:radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%); pointer-events:none;">
+                style="position:absolute; top:10%; left:-10%; width:600px; height:600px; background:radial-gradient(circle, var(--bg) 0%, transparent 70%); pointer-events:none;">
 
             </div>
 
@@ -545,7 +545,7 @@
 
                             <h3
 
-                                style="font-family:var(--font-serif); font-size:2rem; color:#fff; margin-bottom:0.5rem;">
+                                style="font-family:var(--font-serif); font-size:2rem; color: var(--text-main); margin-bottom:0.5rem;">
 
                                 Finger Millet (Ragi)</h3>
 
@@ -577,7 +577,7 @@
 
                                     <span
 
-                                        style="font-family:var(--font-mono); font-size:1.25rem; font-weight:700; color:#fff;">8,000<span
+                                        style="font-family:var(--font-mono); font-size:1.25rem; font-weight:700; color: var(--text-main);">8,000<span
 
                                             style="font-size:0.8rem; font-weight:400;">mg</span></span>
 
@@ -614,7 +614,7 @@
 
                             <h3
 
-                                style="font-family:var(--font-serif); font-size:2rem; color:#fff; margin-bottom:0.5rem;">
+                                style="font-family:var(--font-serif); font-size:2rem; color: var(--text-main); margin-bottom:0.5rem;">
 
                                 Pearl Millet (Bajra)</h3>
 
@@ -646,7 +646,7 @@
 
                                     <span
 
-                                        style="font-family:var(--font-mono); font-size:1.25rem; font-weight:700; color:#fff;">4,000<span
+                                        style="font-family:var(--font-mono); font-size:1.25rem; font-weight:700; color: var(--text-main);">4,000<span
 
                                             style="font-size:0.8rem; font-weight:400;">mg</span></span>
 
@@ -713,7 +713,7 @@
 
                             <h3
 
-                                style="font-family:var(--font-serif); font-size:2rem; color:#fff; margin-bottom:0.5rem;">
+                                style="font-family:var(--font-serif); font-size:2rem; color: var(--text-main); margin-bottom:0.5rem;">
 
                                 Lion's Mane Extract</h3>
 
@@ -747,7 +747,7 @@
 
                                     <span
 
-                                        style="font-family:var(--font-mono); font-size:1.25rem; font-weight:700; color:#fff;">1,000<span
+                                        style="font-family:var(--font-mono); font-size:1.25rem; font-weight:700; color: var(--text-main);">1,000<span
 
                                             style="font-size:0.8rem; font-weight:400;">mg</span></span>
 
@@ -772,7 +772,7 @@
 
                             <h3
 
-                                style="font-family:var(--font-serif); font-size:2rem; color:#fff; margin-bottom:0.5rem;">
+                                style="font-family:var(--font-serif); font-size:2rem; color: var(--text-main); margin-bottom:0.5rem;">
 
                                 Cordyceps Militaris</h3>
 
@@ -804,7 +804,7 @@
 
                                     <span
 
-                                        style="font-family:var(--font-mono); font-size:1.25rem; font-weight:700; color:#fff;">500<span
+                                        style="font-family:var(--font-mono); font-size:1.25rem; font-weight:700; color: var(--text-main);">500<span
 
                                             style="font-size:0.8rem; font-weight:400;">mg</span></span>
 
@@ -829,7 +829,7 @@
 
                             <h3
 
-                                style="font-family:var(--font-serif); font-size:2rem; color:#fff; margin-bottom:0.5rem;">
+                                style="font-family:var(--font-serif); font-size:2rem; color: var(--text-main); margin-bottom:0.5rem;">
 
                                 Reishi (Ganoderma)</h3>
 
@@ -861,7 +861,7 @@
 
                                     <span
 
-                                        style="font-family:var(--font-mono); font-size:1.25rem; font-weight:700; color:#fff;">400<span
+                                        style="font-family:var(--font-mono); font-size:1.25rem; font-weight:700; color: var(--text-main);">400<span
 
                                             style="font-size:0.8rem; font-weight:400;">mg</span></span>
 
@@ -900,7 +900,7 @@
 
                     THE OXYGEN BENCHMARK</h4>
 
-                <h2 style="font-family:var(--font-serif); font-size:2rem; margin-bottom:1rem; color:#fff;">Full
+                <h2 style="font-family:var(--font-serif); font-size:2rem; margin-bottom:1rem; color: var(--text-main);">Full
 
                     Certificate of Analysis for every batch.</h2>
 
