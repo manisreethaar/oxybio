@@ -500,7 +500,7 @@ a {
 
 /* ── Hero ────────────────────────────────────────────────── */
 .hero-section {
-    padding-top: 120px;
+    padding-top: clamp(90px, 12vh, 120px);
     padding-bottom: 0;
     background: var(--bg);
     overflow: hidden;
