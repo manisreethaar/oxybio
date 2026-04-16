@@ -360,10 +360,11 @@
 
     /* Hero section */
     .sci-hero {
-        position: relative; min-height: 100svh;
+        position: relative; min-height: 100svh; height: auto;
         background: var(--bg); overflow: hidden;
         display: flex; align-items: center;
         padding-top: clamp(80px,10vh,100px);
+        padding-bottom: calc(5rem + 50px); /* Space for scroll cue */
     }
     .sci-hero-inner {
         position: relative; z-index: 2; width: 100%;
@@ -794,21 +795,23 @@
          METRICS COUNTER STRIP — dark continuation
     ═══════════════════════════════════════════ -->
     <section class="sci-metrics">
-        <div class="sci-metrics-row">
-            <div class="sci-metric-cell" style="transition-delay:0s;">
-                <div class="sci-metric-num"><span class="counter" data-target="60">0</span><span class="accent">%</span></div>
-                <div class="sci-metric-label">Phytic Acid Reduction</div>
-                <div class="sci-metric-desc">Target reduction in anti-nutrient levels via controlled LAB fermentation</div>
-            </div>
-            <div class="sci-metric-cell" style="transition-delay:0.15s;">
-                <div class="sci-metric-num"><span class="counter" data-target="48">0</span><span class="accent">hr</span></div>
-                <div class="sci-metric-label">Fermentation Cycle</div>
-                <div class="sci-metric-desc">Duration of our controlled Levilactobacillus brevis fermentation window</div>
-            </div>
-            <div class="sci-metric-cell" style="transition-delay:0.3s;">
-                <div class="sci-metric-num"><span class="counter" data-target="3">0</span><span class="accent"> layers</span></div>
-                <div class="sci-metric-label">Validation Matrix</div>
-                <div class="sci-metric-desc">Fermented base → GABA biosynthesis → species-specific extracts</div>
+        <div class="container">
+            <div class="sci-metrics-row">
+                <div class="sci-metric-cell" style="transition-delay:0s;">
+                    <div class="sci-metric-num"><span class="counter" data-target="60">0</span><span class="accent">%</span></div>
+                    <div class="sci-metric-label">Phytic Acid Reduction</div>
+                    <div class="sci-metric-desc">Target reduction in anti-nutrient levels via controlled LAB fermentation</div>
+                </div>
+                <div class="sci-metric-cell" style="transition-delay:0.15s;">
+                    <div class="sci-metric-num"><span class="counter" data-target="48">0</span><span class="accent">hr</span></div>
+                    <div class="sci-metric-label">Fermentation Cycle</div>
+                    <div class="sci-metric-desc">Duration of our controlled Levilactobacillus brevis fermentation window</div>
+                </div>
+                <div class="sci-metric-cell" style="transition-delay:0.3s;">
+                    <div class="sci-metric-num"><span class="counter" data-target="3">0</span><span class="accent"> layers</span></div>
+                    <div class="sci-metric-label">Validation Matrix</div>
+                    <div class="sci-metric-desc">Fermented base → GABA biosynthesis → species-specific extracts</div>
+                </div>
             </div>
         </div>
     </section>
