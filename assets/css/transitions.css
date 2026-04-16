@@ -4,28 +4,28 @@
  * JS adds .page-ready class to fade in after everything loads.
  */
 
-/* Start invisible — JS will add .page-ready to fade in */
+/* Guaranteed CSS fallback — page ALWAYS becomes visible after 0.8s no matter what */
+@keyframes forceBodyVisible {
+    to { opacity: 1; }
+}
+
+/* Start invisible — JS will add .page-ready to fade in smoothly */
 body {
     opacity: 0;
     transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    /* CSS-only fallback: if JS never runs, page appears after 0.8s */
+    animation: forceBodyVisible 0.35s 0.8s forwards;
 }
 
-/* Triggered by JS when page is ready */
+/* JS-triggered: smooth fade-in — overrides the animation */
 body.page-ready {
     opacity: 1;
+    animation: none;
 }
 
 /* Exit animation triggered before navigation */
 body.page-exit {
     opacity: 0;
     transition: opacity 0.2s cubic-bezier(0.4, 0, 1, 1);
-}
-
-/* Fallback: if JS fails, still show the page after 1s */
-@keyframes forceVisible {
-    to { opacity: 1; }
-}
-
-body.page-ready-fallback {
-    animation: forceVisible 0.1s 1s forwards;
+    animation: none;
 }
