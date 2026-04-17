@@ -1,31 +1,31 @@
-/**
- * PAGE TRANSITIONS — CSS-first approach
- * body starts invisible so there is NEVER a flash of unformatted content.
- * JS adds .page-ready class to fade in after everything loads.
- */
-
-/* Guaranteed CSS fallback — page ALWAYS becomes visible after 0.8s no matter what */
-@keyframes forceBodyVisible {
-    to { opacity: 1; }
-}
-
-/* Start invisible — JS will add .page-ready to fade in smoothly */
-body {
-    opacity: 0;
-    transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    /* CSS-only fallback: if JS never runs, page appears after 0.8s */
-    animation: forceBodyVisible 0.35s 0.8s forwards;
-}
-
-/* JS-triggered: smooth fade-in — overrides the animation */
-body.page-ready {
-    opacity: 1;
-    animation: none;
-}
-
-/* Exit animation triggered before navigation */
-body.page-exit {
-    opacity: 0;
-    transition: opacity 0.2s cubic-bezier(0.4, 0, 1, 1);
-    animation: none;
-}
+-/-*-*-
+- -*- -P-A-G-E- -T-R-A-N-S-I-T-I-O-N-S- -—- -C-S-S---f-i-r-s-t- -a-p-p-r-o-a-c-h-
+- -*- -b-o-d-y- -s-t-a-r-t-s- -i-n-v-i-s-i-b-l-e- -s-o- -t-h-e-r-e- -i-s- -N-E-V-E-R- -a- -f-l-a-s-h- -o-f- -u-n-f-o-r-m-a-t-t-e-d- -c-o-n-t-e-n-t-.-
+- -*- -J-S- -a-d-d-s- -.-p-a-g-e---r-e-a-d-y- -c-l-a-s-s- -t-o- -f-a-d-e- -i-n- -a-f-t-e-r- -e-v-e-r-y-t-h-i-n-g- -l-o-a-d-s-.-
+- -*-/-
+-
+-/-*- -G-u-a-r-a-n-t-e-e-d- -C-S-S- -f-a-l-l-b-a-c-k- -—- -p-a-g-e- -A-L-W-A-Y-S- -b-e-c-o-m-e-s- -v-i-s-i-b-l-e- -a-f-t-e-r- -0-.-8-s- -n-o- -m-a-t-t-e-r- -w-h-a-t- -*-/-
+-@-k-e-y-f-r-a-m-e-s- -f-o-r-c-e-B-o-d-y-V-i-s-i-b-l-e- -{-
+- - - - -t-o- -{- -o-p-a-c-i-t-y-:- -1-;- -}-
+-}-
+-
+-/-*- -S-t-a-r-t- -i-n-v-i-s-i-b-l-e- -—- -J-S- -w-i-l-l- -a-d-d- -.-p-a-g-e---r-e-a-d-y- -t-o- -f-a-d-e- -i-n- -s-m-o-o-t-h-l-y- -*-/-
+-b-o-d-y- -{-
+- - - - -o-p-a-c-i-t-y-:- -0-;-
+- - - - -t-r-a-n-s-i-t-i-o-n-:- -o-p-a-c-i-t-y- -0-.-3-5-s- -c-u-b-i-c---b-e-z-i-e-r-(-0-.-4-,- -0-,- -0-.-2-,- -1-)-;-
+- - - - -/-*- -C-S-S---o-n-l-y- -f-a-l-l-b-a-c-k-:- -i-f- -J-S- -n-e-v-e-r- -r-u-n-s-,- -p-a-g-e- -a-p-p-e-a-r-s- -a-f-t-e-r- -0-.-8-s- -*-/-
+- - - - -a-n-i-m-a-t-i-o-n-:- -f-o-r-c-e-B-o-d-y-V-i-s-i-b-l-e- -0-.-3-5-s- -0-.-8-s- -f-o-r-w-a-r-d-s-;-
+-}-
+-
+-/-*- -J-S---t-r-i-g-g-e-r-e-d-:- -s-m-o-o-t-h- -f-a-d-e---i-n- -—- -o-v-e-r-r-i-d-e-s- -t-h-e- -a-n-i-m-a-t-i-o-n- -*-/-
+-b-o-d-y-.-p-a-g-e---r-e-a-d-y- -{-
+- - - - -o-p-a-c-i-t-y-:- -1-;-
+- - - - -a-n-i-m-a-t-i-o-n-:- -n-o-n-e-;-
+-}-
+-
+-/-*- -E-x-i-t- -a-n-i-m-a-t-i-o-n- -t-r-i-g-g-e-r-e-d- -b-e-f-o-r-e- -n-a-v-i-g-a-t-i-o-n- -*-/-
+-b-o-d-y-.-p-a-g-e---e-x-i-t- -{-
+- - - - -o-p-a-c-i-t-y-:- -0-;-
+- - - - -t-r-a-n-s-i-t-i-o-n-:- -o-p-a-c-i-t-y- -0-.-2-s- -c-u-b-i-c---b-e-z-i-e-r-(-0-.-4-,- -0-,- -1-,- -1-)-;-
+- - - - -a-n-i-m-a-t-i-o-n-:- -n-o-n-e-;-
+-}-
