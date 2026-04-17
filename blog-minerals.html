@@ -154,15 +154,6 @@
 
 <body>
 
-    <!-- Critical: ensure page is always visible even if page-transitions.js is delayed -->
-    <script>
-        (function(){
-            var t = setTimeout(function(){ document.body.classList.add('page-ready'); }, 50);
-            window.addEventListener('load', function(){ clearTimeout(t); document.body.classList.add('page-ready'); });
-        })();
-    </script>
-
-
     <header id="header" style="background:var(--bg); border-bottom:1px solid var(--border); box-shadow:none;">
 
         <div class="container nav-container" style="display:flex; justify-content:space-between; align-items:center;">

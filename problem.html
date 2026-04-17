@@ -84,15 +84,6 @@
 
 <body>
 
-    <!-- Critical: ensure page is always visible even if page-transitions.js is delayed -->
-    <script>
-        (function(){
-            var t = setTimeout(function(){ document.body.classList.add('page-ready'); }, 50);
-            window.addEventListener('load', function(){ clearTimeout(t); document.body.classList.add('page-ready'); });
-        })();
-    </script>
-
-
 
 
     <!-- -- Navigation ---------------------------------------- -->
@@ -516,18 +507,8 @@
                         ctx.fill();
                     }
                 }
-                const COUNT = window.innerWidth < 768 ? 20 : 35;
-                for(let i=0; i<COUNT; i++) particles.push(new P());
-                
-                let lastTime = 0;
-                const FPS = 30;
-                const interval = 1000 / FPS;
-
-                function loop(timestamp) {
-                    requestAnimationFrame(loop);
-                    if (timestamp - lastTime < interval) return;
-                    lastTime = timestamp;
-
+                for(let i=0; i<60; i++) particles.push(new P());
+                function loop() {
                     ctx.clearRect(0,0,W,H);
                     for(let i=0; i<particles.length; i++){
                         particles[i].update();
@@ -536,9 +517,8 @@
                         for(let j=i+1; j<particles.length; j++){
                             let dx = particles[i].x - particles[j].x;
                             let dy = particles[i].y - particles[j].y;
-                            let distSq = dx*dx + dy*dy;
-                            if(distSq < 10000) {
-                                let dist = Math.sqrt(distSq);
+                            let dist = Math.sqrt(dx*dx+dy*dy);
+                            if(dist < 100) {
                                 ctx.beginPath();
                                 ctx.strokeStyle = `rgba(234, 179, 8, ${0.08 * (1 - dist/100)})`;
                                 ctx.moveTo(particles[i].x, particles[i].y);
@@ -547,8 +527,9 @@
                             }
                         }
                     }
+                    requestAnimationFrame(loop);
                 }
-                requestAnimationFrame(loop);
+                loop();
             })();
             </script>
         </section>
@@ -890,8 +871,9 @@
                     </div>
 
                 </div>
+
             </div>
-        </div>
+
         </section>
 
 
@@ -958,7 +940,9 @@
                     </p>
 
                 </div>
-            </div>
+
+
+
         </section>
 
 
