@@ -347,7 +347,7 @@
 
 
     <style>
-    /* Problem Premium Hero */
+    /* ─── Problem Page Hero ─────────────────────────────── */
     .prob-hero {
         position: relative; min-height: 90svh;
         background: var(--bg); overflow: hidden;
@@ -355,13 +355,9 @@
         padding-top: clamp(80px,10vh,100px);
         border-bottom: 1px solid var(--border);
     }
-    #prob-canvas {
-        position: absolute; inset: 0; width: 100%; height: 100%;
-        pointer-events: none; z-index: 0;
-    }
-    .prob-hero-inner {
-        position: relative; z-index: 2; width: 100%;
-    }
+    #prob-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+    .prob-hero-inner { position: relative; z-index: 2; width: 100%; }
+
     .prob-eyebrow {
         font-family: var(--font-mono); font-size: 0.7rem;
         letter-spacing: 0.25em; text-transform: uppercase;
@@ -369,61 +365,123 @@
         display: flex; align-items: center; gap: 1rem;
         opacity: 0; animation: fadeSlideUp 0.8s 0.2s forwards;
     }
-    .prob-eyebrow::before {
-        content: ''; display: block; width: 40px; height: 1px;
-        background: #0D8A74;
-    }
+    .prob-eyebrow::before { content: ''; display: block; width: 40px; height: 1px; background: #0D8A74; }
+
+    /* Hero — reduced to match science/about page proportions */
     .prob-h1 {
         font-family: var(--font-serif);
-        font-size: clamp(3.5rem, 8vw, 8rem);
-        font-weight: 900; line-height: 0.9;
+        font-size: clamp(2.6rem, 5vw, 5rem);
+        font-weight: 900; line-height: 1.0;
         letter-spacing: -0.04em; color: var(--text-main);
         margin-bottom: 2rem;
         opacity: 0; animation: fadeSlideUp 0.9s 0.35s forwards;
     }
     .prob-sub {
-        font-size: clamp(1.1rem, 1.8vw, 1.35rem); line-height: 1.65;
-        color: var(--text-muted); max-width: 580px;
+        font-size: clamp(1rem, 1.5vw, 1.2rem); line-height: 1.65;
+        color: var(--text-muted); max-width: 560px;
         opacity: 0; animation: fadeSlideUp 0.9s 0.5s forwards;
     }
     .prob-sub strong { color: var(--text-main); }
 
-    /* Glassmorphism Exploration Guide */
+    /* ─── Exploration Guide ─────────────────────────────── */
     .prob-guide {
         display: flex; flex-direction: column; gap: 1px;
         background: var(--bg-alt); border-radius: 12px;
         border: 1px solid var(--border); overflow: hidden;
         opacity: 0; animation: fadeSlideLeft 1s 0.6s forwards;
     }
-    .prob-guide-header {
-        padding: 1.25rem 2rem; background: rgba(13, 138, 116,0.08);
-        display: flex; align-items: center; gap: 0.75rem;
-    }
-    .prob-guide-header span.dot {
-        width: 6px; height: 6px; border-radius: 50%; background: #0D8A74;
-        box-shadow: 0 0 8px #0D8A74; animation: pulse-glow-teal 2s infinite;
-    }
-    .prob-guide-header span.text {
-        font-family: var(--font-mono); font-size: 0.65rem;
-        letter-spacing: 0.2em; text-transform: uppercase; color: #0D8A74;
-    }
+    .prob-guide-header { padding: 1.25rem 2rem; background: rgba(13,138,116,0.08); display: flex; align-items: center; gap: 0.75rem; }
+    .prob-guide-header span.dot { width: 6px; height: 6px; border-radius: 50%; background: #0D8A74; box-shadow: 0 0 8px #0D8A74; animation: pulse-glow-teal 2s infinite; }
+    .prob-guide-header span.text { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: #0D8A74; }
     .prob-guide-link {
         text-decoration: none; padding: 1.5rem 2rem;
         background: var(--bg); display: flex; align-items: center; gap: 1.5rem;
-        transition: background 0.3s ease;
+        border-left: 3px solid transparent;
+        transition: background 0.28s ease, padding-left 0.28s ease, border-color 0.28s ease;
     }
-    .prob-guide-link:hover { background: rgba(13, 138, 116,0.05); }
-    .prob-guide-link .num {
-        font-family: var(--font-mono); font-size: 1.5rem; color: var(--text-muted);
-        font-weight: 700; width: 40px; transition: color 0.3s;
-    }
+    .prob-guide-link:hover { background: rgba(13,138,116,0.05); padding-left: 2.4rem; border-left-color: #0D8A74; }
+    .prob-guide-link .num { font-family: var(--font-mono); font-size: 1.5rem; color: var(--text-muted); font-weight: 700; width: 40px; transition: color 0.28s; }
     .prob-guide-link:hover .num { color: #0D8A74; }
     .prob-guide-label { font-size: 0.95rem; font-weight: 600; color: var(--text-main); margin-bottom: 0.35rem; }
     .prob-guide-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; }
 
-    @keyframes fadeSlideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes fadeSlideLeft { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
-    @keyframes pulse-glow-teal { 0%,100% { box-shadow: 0 0 8px #0D8A74; } 50% { box-shadow: 0 0 16px #0D8A74; } }
+    /* ─── Stat Cards (57%, ~76%, 47%) ──────────────────── */
+    .prob-stat-card {
+        border: 1px solid var(--border); border-radius: 12px;
+        padding: 2rem; background: var(--bg);
+        transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.35s var(--ease);
+        will-change: transform; cursor: default;
+    }
+    .prob-stat-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 40px rgba(13,138,116,0.1);
+        border-color: #0D8A74;
+    }
+    .prob-stat-num {
+        font-size: 3rem; font-weight: 900; color: var(--text-main);
+        font-family: var(--font-serif); line-height: 1; margin-bottom: 0.5rem;
+        transition: color 0.35s ease;
+    }
+    .prob-stat-card:hover .prob-stat-num { color: #0D8A74; }
+
+    /* ─── Info Cards (Layer 03 — Traditional Knowledge etc) */
+    .prob-info-card {
+        border: 1px solid var(--border); border-radius: 12px;
+        padding: 2rem; background: var(--bg);
+        position: relative; overflow: hidden;
+        transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+    }
+    .prob-info-card::before {
+        content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+        background: linear-gradient(90deg, #0D8A74, rgba(13,138,116,0.3));
+        transform: scaleX(0); transform-origin: left;
+        transition: transform 0.4s var(--ease);
+    }
+    .prob-info-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(0,0,0,0.07); }
+    .prob-info-card:hover::before { transform: scaleX(1); }
+
+    /* ─── Process Steps (numbered + accent lists) ────────── */
+    .prob-step {
+        border: 1px solid var(--border); padding: 0.75rem 1rem;
+        background: var(--bg); font-family: var(--font-mono);
+        font-size: 0.85rem; color: var(--text-main);
+        transition: background 0.22s ease, border-color 0.22s ease,
+                    padding-left 0.22s ease, color 0.22s ease;
+        cursor: default;
+    }
+    .prob-step:hover { background: rgba(13,138,116,0.06); border-color: #0D8A74; padding-left: 1.4rem; color: #0D8A74; }
+    .prob-step-accent {
+        border: 1px solid var(--border); padding: 0.75rem 1rem;
+        background: var(--bg); border-left: 4px solid var(--text-main);
+        font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-main);
+        transition: background 0.22s ease, border-left-color 0.22s ease, padding-left 0.22s ease;
+        cursor: default;
+    }
+    .prob-step-accent:hover { background: rgba(13,138,116,0.06); border-left-color: #0D8A74; padding-left: 1.4rem; }
+
+    /* ─── Bento cells ────────────────────────────────────── */
+    .bento-cell { transition: box-shadow 0.35s var(--ease); }
+    .bento-cell:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.06); }
+
+    /* ─── Comparison bar rows ────────────────────────────── */
+    .compare-row { transition: background 0.22s ease; border-radius: 6px; padding: 0.35rem 0.5rem; margin: 0 -0.5rem; }
+    .compare-row:hover { background: rgba(13,138,116,0.06); }
+
+    /* ─── Blockquote / statement box ─────────────────────── */
+    .prob-statement {
+        padding: 2rem; background: var(--bg); border-left: 4px solid #0D8A74;
+        animation: borderPulse 3.5s ease-in-out infinite;
+    }
+    @keyframes borderPulse { 0%, 100% { border-left-color: #0D8A74; } 50% { border-left-color: rgba(13,138,116,0.3); } }
+
+    /* ─── Stagger entrance ───────────────────────────────── */
+    .stagger-item { opacity: 0; transform: translateY(18px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .stagger-item.in-view { opacity: 1; transform: translateY(0); }
+
+    /* ─── Keyframes ───────────────────────────────────────── */
+    @keyframes fadeSlideUp   { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes fadeSlideLeft { from { opacity:0; transform:translateX(30px); } to { opacity:1; transform:translateX(0); } }
+    @keyframes pulse-glow-teal { 0%,100% { box-shadow:0 0 8px #0D8A74; } 50% { box-shadow:0 0 18px #0D8A74; } }
     </style>
 
         <section class="prob-hero">
@@ -558,24 +616,24 @@
                     </p>
                 </div>
 
-                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,280px),1fr)); gap:1.5rem; margin-bottom:2.5rem;">
+                <div class="stagger-group" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,280px),1fr)); gap:1.5rem; margin-bottom:2.5rem;">
 
-                    <div style="border:1px solid var(--border); border-radius:12px; padding:2rem; background:var(--bg);">
-                        <div style="font-family:var(--font-serif); font-size:3rem; font-weight:900; color:var(--text-main); line-height:1; margin-bottom:0.5rem;">57%</div>
+                    <div class="prob-stat-card stagger-item">
+                        <div class="prob-stat-num">57%</div>
                         <div style="font-size:0.85rem; font-weight:700; color:var(--text-main); margin-bottom:0.5rem;">Iron Deficiency Anaemia</div>
                         <p style="font-size:0.95rem; line-height:1.6; color:var(--text-muted); margin-bottom:1rem;">57% of women aged 15&ndash;49 in India are anaemic &mdash; a figure that has not meaningfully declined despite two decades of synthetic iron supplementation programs. The delivery mechanism, not the intent, is the failure point.</p>
                         <div style="font-family:var(--font-mono); font-size:0.65rem; color:var(--text-muted); letter-spacing:0.08em;">SOURCE: NFHS-5, 2019&ndash;21 &middot; Ministry of Health &amp; Family Welfare</div>
                     </div>
 
-                    <div style="border:1px solid var(--border); border-radius:12px; padding:2rem; background:var(--bg);">
-                        <div style="font-family:var(--font-serif); font-size:3rem; font-weight:900; color:var(--text-main); line-height:1; margin-bottom:0.5rem;">~76%</div>
+                    <div class="prob-stat-card stagger-item">
+                        <div class="prob-stat-num">~76%</div>
                         <div style="font-size:0.85rem; font-weight:700; color:var(--text-main); margin-bottom:0.5rem;">Vitamin D Deficiency</div>
                         <p style="font-size:0.95rem; line-height:1.6; color:var(--text-muted); margin-bottom:1rem;">Over 76% of urban Indians are Vitamin D deficient or insufficient, driven by indoor professional environments and the near-absence of dietary D3 sources in predominantly vegetarian diets.</p>
                         <div style="font-family:var(--font-mono); font-size:0.65rem; color:var(--text-muted); letter-spacing:0.08em;">SOURCE: ICMR&ndash;NIN, Nutritional Status of the Population, 2023</div>
                     </div>
 
-                    <div style="border:1px solid var(--border); border-radius:12px; padding:2rem; background:var(--bg);">
-                        <div style="font-family:var(--font-serif); font-size:3rem; font-weight:900; color:var(--text-main); line-height:1; margin-bottom:0.5rem;">47%</div>
+                    <div class="prob-stat-card stagger-item">
+                        <div class="prob-stat-num">47%</div>
                         <div style="font-size:0.85rem; font-weight:700; color:var(--text-main); margin-bottom:0.5rem;">B12 Deficiency in Vegetarian Adults</div>
                         <p style="font-size:0.95rem; line-height:1.6; color:var(--text-muted); margin-bottom:1rem;">Approximately 47% of vegetarian adults in India show measurable B12 insufficiency. B12 is not synthesised by the body and is almost entirely absent from plant-based diets without deliberate fortification.</p>
                         <div style="font-family:var(--font-mono); font-size:0.65rem; color:var(--text-muted); letter-spacing:0.08em;">SOURCE: Shatrugna et al., ICMR Collaborative Study</div>
@@ -583,7 +641,7 @@
 
                 </div>
 
-                <div style="padding:2rem; background:var(--bg-alt); border-radius:12px; border:1px solid var(--border);">
+                <div class="prob-statement">
                     <p style="font-size:1.1rem; color:var(--text-muted); margin:0; font-family:var(--font-serif); font-style:italic;">
                         These are not lifestyle gaps. They are documented, persistent deficiencies in the operating population our platform is designed to serve. The data is the mandate.
                     </p>
@@ -709,29 +767,26 @@
                     The deficiency data is not new. The supplementation programs are not new. The failure to close the gap is decades old. The question is not whether a nutritional problem exists &mdash; it is why existing solutions have not solved it. The answer is delivery. Synthetic mineral salts are poorly tolerated and poorly absorbed. Isolated compounds bypass the food matrix that biology evolved to process. The body is not a chemistry flask. It is a system that responds to whole-food contexts.
                 </p>
 
-                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,280px),1fr)); gap:1.5rem; margin-bottom:var(--space-lg);">
+                <div class="stagger-group" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,280px),1fr)); gap:1.5rem; margin-bottom:var(--space-lg);">
 
-                    <div style="border:1px solid var(--border); border-radius:12px; padding:2rem; background:var(--bg);">
-                        <div style="font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:#0D8A74; margin-bottom:1rem;">Traditional Knowledge</div>
+                    <div class="prob-info-card stagger-item"><div style="font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:#0D8A74; margin-bottom:1rem;">Traditional Knowledge</div>
                         <h4 style="font-family:var(--font-serif); font-size:1.3rem; margin-bottom:0.75rem; color:var(--text-main);">Food as the original delivery mechanism</h4>
                         <p style="font-size:0.95rem; line-height:1.6; color:var(--text-muted);">Indigenous Indian fermented foods &mdash; idli, dosa, ambali &mdash; were not invented as functional foods. They were practical solutions to digestibility and nutrition. The principle that fermentation unlocks nutrients is thousands of years old. The science that explains why is modern.</p>
                     </div>
 
-                    <div style="border:1px solid var(--border); border-radius:12px; padding:2rem; background:var(--bg);">
-                        <div style="font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:#0D8A74; margin-bottom:1rem;">Modern Biochemistry</div>
+                    <div class="prob-info-card stagger-item"><div style="font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:#0D8A74; margin-bottom:1rem;">Modern Biochemistry</div>
                         <h4 style="font-family:var(--font-serif); font-size:1.3rem; margin-bottom:0.75rem; color:var(--text-main);">Phytate reduction, confirmed</h4>
                         <p style="font-size:0.95rem; line-height:1.6; color:var(--text-muted);">Lactic acid fermentation enzymatically degrades phytic acid &mdash; the anti-nutrient that binds iron, calcium, and zinc in grain matrices and blocks absorption. This is not a hypothesis; it is established nutritional biochemistry. What we are engineering is a controlled, standardised version of an effect that traditional food science has always relied on.</p>
                     </div>
 
-                    <div style="border:1px solid var(--border); border-radius:12px; padding:2rem; background:var(--bg);">
-                        <div style="font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:#0D8A74; margin-bottom:1rem;">The Platform</div>
+                    <div class="prob-info-card stagger-item"><div style="font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:#0D8A74; margin-bottom:1rem;">The Platform</div>
                         <h4 style="font-family:var(--font-serif); font-size:1.3rem; margin-bottom:0.75rem; color:var(--text-main);">Indigenous grain base. Functional mushroom layer.</h4>
                         <p style="font-size:0.95rem; line-height:1.6; color:var(--text-muted);">Our formulation architecture places a fermented Ragi and Karuppu Kavuni base &mdash; bioavailability-optimised &mdash; beneath a standardised functional mushroom extract layer. The base solves the mineral absorption problem. The extract layer adds targeted functional mechanisms. These are not competing decisions. They are complementary layers.</p>
                     </div>
 
                 </div>
 
-                <div style="margin-top:0; padding:2rem; border-left:4px solid #0D8A74; background:var(--bg);">
+                <div class="prob-statement">
 
                     <p style="font-size:1.15rem; line-height:1.6; color:var(--text-main);">
                         The market currently offers two options: affordable, massive-scale products without scientific rigour, or premium imported products that ignore Indian indigenous biology and price themselves out of daily use.
@@ -904,19 +959,19 @@
 
                             style="display:flex; flex-direction:column; gap:0.5rem; font-family:var(--font-mono); font-size:0.85rem; color:var(--text-main);">
 
-                            <div style="border:1px solid var(--border); padding:0.75rem; background:var(--bg);">1.
+                            <div class="prob-step">1.
 
                                 Source organic from Karnataka</div>
 
-                            <div style="border:1px solid var(--border); padding:0.75rem; background:var(--bg);">2.
+                            <div class="prob-step">2.
 
                                 Sprout/Malt (48h, lowers phytic acid 60%)</div>
 
-                            <div style="border:1px solid var(--border); padding:0.75rem; background:var(--bg);">3.
+                            <div class="prob-step">3.
 
                                 Gentle Drying</div>
 
-                            <div style="border:1px solid var(--border); padding:0.75rem; background:var(--bg);">4.
+                            <div class="prob-step">4.
 
                                 Micro-Milling</div>
 
@@ -950,27 +1005,19 @@
 
                             style="display:flex; flex-direction:column; gap:0.5rem; font-family:var(--font-mono); font-size:0.85rem; color:var(--text-main);">
 
-                            <div
-
-                                style="border:1px solid var(--border); padding:0.75rem; background:var(--bg); border-left:4px solid var(--text-main);">
+                            <div class="prob-step-accent">
 
                                 Fruiting body only</div>
 
-                            <div
-
-                                style="border:1px solid var(--border); padding:0.75rem; background:var(--bg); border-left:4px solid var(--text-main);">
+                            <div class="prob-step-accent">
 
                                 Dual extraction (Hot water + Ethanol)</div>
 
-                            <div
-
-                                style="border:1px solid var(--border); padding:0.75rem; background:var(--bg); border-left:4px solid var(--text-main);">
+                            <div class="prob-step-accent">
 
                                 Megazyme AOAC verified</div>
 
-                            <div
-
-                                style="border:1px solid var(--border); padding:0.75rem; background:var(--bg); border-left:4px solid var(--text-main);">
+                            <div class="prob-step-accent">
 
                                 =30% ß-glucan guaranteed</div>
 
@@ -1163,6 +1210,25 @@
 
     <script src="assets/js/page-transitions.js"></script>
 
+
+    <script>
+    // Stagger observer — fires .in-view class sequentially on each .stagger-item group
+    (function() {
+        const groups = document.querySelectorAll('.stagger-group');
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const items = entry.target.querySelectorAll('.stagger-item');
+                    items.forEach((el, i) => {
+                        setTimeout(() => el.classList.add('in-view'), i * 90);
+                    });
+                    io.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        groups.forEach(g => io.observe(g));
+    })();
+    </script>
 </body>
 
 
