@@ -365,13 +365,13 @@
     .prob-eyebrow {
         font-family: var(--font-mono); font-size: 0.7rem;
         letter-spacing: 0.25em; text-transform: uppercase;
-        color: #eab308; margin-bottom: 2rem;
+        color: #0D8A74; margin-bottom: 2rem;
         display: flex; align-items: center; gap: 1rem;
         opacity: 0; animation: fadeSlideUp 0.8s 0.2s forwards;
     }
     .prob-eyebrow::before {
         content: ''; display: block; width: 40px; height: 1px;
-        background: #eab308;
+        background: #0D8A74;
     }
     .prob-h1 {
         font-family: var(--font-serif);
@@ -396,34 +396,34 @@
         opacity: 0; animation: fadeSlideLeft 1s 0.6s forwards;
     }
     .prob-guide-header {
-        padding: 1.25rem 2rem; background: rgba(234,179,8,0.08); /* Yellow tint */
+        padding: 1.25rem 2rem; background: rgba(13, 138, 116,0.08);
         display: flex; align-items: center; gap: 0.75rem;
     }
     .prob-guide-header span.dot {
-        width: 6px; height: 6px; border-radius: 50%; background: #eab308;
-        box-shadow: 0 0 8px #eab308; animation: pulse-glow-yellow 2s infinite;
+        width: 6px; height: 6px; border-radius: 50%; background: #0D8A74;
+        box-shadow: 0 0 8px #0D8A74; animation: pulse-glow-teal 2s infinite;
     }
     .prob-guide-header span.text {
         font-family: var(--font-mono); font-size: 0.65rem;
-        letter-spacing: 0.2em; text-transform: uppercase; color: #eab308;
+        letter-spacing: 0.2em; text-transform: uppercase; color: #0D8A74;
     }
     .prob-guide-link {
         text-decoration: none; padding: 1.5rem 2rem;
         background: var(--bg); display: flex; align-items: center; gap: 1.5rem;
         transition: background 0.3s ease;
     }
-    .prob-guide-link:hover { background: rgba(234,179,8,0.05); }
+    .prob-guide-link:hover { background: rgba(13, 138, 116,0.05); }
     .prob-guide-link .num {
         font-family: var(--font-mono); font-size: 1.5rem; color: var(--text-muted);
         font-weight: 700; width: 40px; transition: color 0.3s;
     }
-    .prob-guide-link:hover .num { color: #eab308; }
+    .prob-guide-link:hover .num { color: #0D8A74; }
     .prob-guide-label { font-size: 0.95rem; font-weight: 600; color: var(--text-main); margin-bottom: 0.35rem; }
     .prob-guide-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; }
 
     @keyframes fadeSlideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes fadeSlideLeft { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
-    @keyframes pulse-glow-yellow { 0%,100% { box-shadow: 0 0 8px #eab308; } 50% { box-shadow: 0 0 16px #eab308; } }
+    @keyframes pulse-glow-teal { 0%,100% { box-shadow: 0 0 8px #0D8A74; } 50% { box-shadow: 0 0 16px #0D8A74; } }
     </style>
 
         <section class="prob-hero">
@@ -434,7 +434,7 @@
                     <!-- Left: Main Copy -->
                     <div>
                         <div class="prob-eyebrow">Formulation Science</div>
-                        <h1 class="prob-h1">The Science<br><em style="color:#eab308; font-style:italic;">Behind Oxygen.</em></h1>
+                        <h1 class="prob-h1">The Science<br><em style="color:#0D8A74; font-style:italic;">Behind Oxygen.</em></h1>
                         <p class="prob-sub">
                             We engineer functional foods designed around <strong>traditional millet fermentation</strong> bioavailability science and <strong>medicinal mushrooms</strong> — formulated for high bioavailability and targeted toward memory, athletic recovery, and on-the-go professionals.
                         </p>
@@ -503,7 +503,7 @@
                     draw() {
                         ctx.beginPath();
                         ctx.arc(this.x, this.y, this.size, 0, Math.PI*2);
-                        ctx.fillStyle = `rgba(234, 179, 8, ${this.opacity})`;
+                        ctx.fillStyle = `rgba(13, 138, 116, ${this.opacity})`;
                         ctx.fill();
                     }
                 }
@@ -520,7 +520,7 @@
                             let dist = Math.sqrt(dx*dx+dy*dy);
                             if(dist < 100) {
                                 ctx.beginPath();
-                                ctx.strokeStyle = `rgba(234, 179, 8, ${0.08 * (1 - dist/100)})`;
+                                ctx.strokeStyle = `rgba(13, 138, 116, ${0.08 * (1 - dist/100)})`;
                                 ctx.moveTo(particles[i].x, particles[i].y);
                                 ctx.lineTo(particles[j].x, particles[j].y);
                                 ctx.stroke();
