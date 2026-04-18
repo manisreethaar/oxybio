@@ -1,325 +1,119 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
-
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Oxygen Bioinnovations | DETI@ACE TBI</title>
-
-    <link
-
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
-
-        rel="stylesheet">
-
-        <link rel="stylesheet" href="assets/css/transitions.css">
-<link rel="stylesheet" href="assets/css/styles.css?v=42">
-
+    <title>Inside DETI@ACE TBI: What R&D Actually Looks Like at Phase 0 | Oxygen Bioinnovations</title>
+    <meta name="description" content="An honest, unfiltered look at what R&D inside a university incubator actually looks like — fermentation runs, protocol failures, and the realities of Phase 0 science.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/transitions.css">
+    <link rel="stylesheet" href="assets/css/styles.css?v=42">
     <link rel="stylesheet" href="assets/css/v2_premium.css?v=42">
-
     <style>
-
-        /* Enforce structured, justified typography for reading */
-
-        .blog-content {
-
-            max-width: 680px;
-
-            margin: 0 auto;
-
-        }
-
-
-
-        .blog-content p {
-
-            margin-bottom: 2rem;
-
-            font-size: 1.15rem;
-
-            line-height: 1.85;
-
-            color: var(--text-main);
-
-            text-align: justify;
-
-            hyphens: auto;
-
-            -webkit-hyphens: auto;
-
-            text-justify: inter-word;
-
-        }
-
-
-
-        .blog-content h3 {
-
-            font-family: var(--font-serif);
-
-            font-size: 2rem;
-
-            margin-top: 3.5rem;
-
-            margin-bottom: 1.5rem;
-
-            line-height: 1.3;
-
-            color: var(--text-main);
-
-            text-align: left;
-
-        }
-
-
-
-        .blog-content blockquote {
-
-            border-left: 4px solid var(--text-main);
-
-            padding-left: 1.5rem;
-
-            margin: 3rem 0;
-
-            font-family: var(--font-serif);
-
-            font-size: 1.5rem;
-
-            line-height: 1.4;
-
-            color: var(--text-muted);
-
-            font-style: italic;
-
-        }
-
+        .blog-content { max-width: 680px; margin: 0 auto; }
+        .blog-content p { margin-bottom: 2rem; font-size: 1.15rem; line-height: 1.85; color: var(--text-main); text-align: justify; hyphens: auto; -webkit-hyphens: auto; text-justify: inter-word; }
+        .blog-content h3 { font-family: var(--font-serif); font-size: 2rem; margin-top: 3.5rem; margin-bottom: 1.5rem; line-height: 1.3; color: var(--text-main); text-align: left; }
+        .blog-content blockquote { border-left: 4px solid var(--text-main); padding-left: 1.5rem; margin: 3rem 0; font-family: var(--font-serif); font-size: 1.5rem; line-height: 1.4; color: var(--text-muted); font-style: italic; }
+        .blog-callout { background: var(--bg-alt); padding: 2rem; border-left: 4px solid #0D8A74; margin: 3rem 0; }
+        .blog-callout h4 { font-family: var(--font-mono); text-transform: uppercase; font-size: 0.85rem; margin-bottom: 1rem; color: #0D8A74; }
+        .blog-callout p { margin: 0; font-size: 1.1rem; line-height: 1.7; text-align: left; }
     </style>
-
-
-
-    <!-- Google Structured Data (Organization) -->
-
     <script type="application/ld+json">
-
- {
-
- "@context": "https://schema.org",
-
- "@type": "Organization",
-
- "name": "Oxygen Bioinnovations",
-
- "url": "https://oxygenbioinnovations.com/",
-
- "logo": "https://oxygenbioinnovations.com/assets/images/logo-full.png?v=6",
-
- "description": "Oxygen Bioinnovations | R&D Lab currently active in DETI@ACE TBI, Hosur. Developing indigenous Indian biological models."
-
- }
-
- </script>
-
-
-
-
-    <!-- Vercel Analytics -->
-
-    <script>
-
-      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-
+    { "@context": "https://schema.org", "@type": "Article",
+      "headline": "Inside DETI@ACE TBI: What R&D Actually Looks Like at Phase 0",
+      "author": { "@type": "Person", "name": "Founder, Oxygen Bioinnovations" },
+      "publisher": { "@type": "Organization", "name": "Oxygen Bioinnovations", "url": "https://oxygenbioinnovations.com/" },
+      "datePublished": "2026-04-02" }
     </script>
-
+    <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
     <script defer src="/_vercel/insights/script.js"></script>
-
-    <!-- Vercel Speed Insights -->
-
-    <script>
-
-      window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
-
-    </script>
-
+    <script>window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };</script>
     <script defer src="/_vercel/speed-insights/script.js"></script>
-
 </head>
-
-
-
 <body>
-
-    <!-- Critical: ensure page is always visible even if page-transitions.js is delayed -->
-    <script>
-        (function(){
-            var t = setTimeout(function(){ document.body.classList.add('page-ready'); }, 50);
-            window.addEventListener('load', function(){ clearTimeout(t); document.body.classList.add('page-ready'); });
-        })();
-    </script>
-
+    <script>(function(){ var t = setTimeout(function(){ document.body.classList.add('page-ready'); }, 50); window.addEventListener('load', function(){ clearTimeout(t); document.body.classList.add('page-ready'); }); })();</script>
 
     <header id="header" style="background:var(--bg); border-bottom:1px solid var(--border); box-shadow:none;">
-
         <div class="container nav-container" style="display:flex; justify-content:space-between; align-items:center;">
-
             <a href="index.html" class="nav-logo" style="display:flex; align-items:center; gap:10px; text-decoration:none;">
-
                 <img src="assets/images/logo-full.png?v=6" alt="Oxygen Bioinnovations Logo" style="height:36px; width:auto; display:block;">
-
-                <span style="font-family: var(--font-heading, ''Inter'', sans-serif); font-weight: 800; font-size: 1.25rem; color: var(--text-main, #0B192C); letter-spacing: -0.02em;">Oxygen <span style="color:#0D8A74;">Bioinnovations</span></span>
-
+                <span style="font-family:var(--font-heading,'Inter',sans-serif); font-weight:800; font-size:1.25rem; color:var(--text-main); letter-spacing:-0.02em;">Oxygen <span style="color:#0D8A74;">Bioinnovations</span></span>
             </a>
-
-            <a href="blog.html" class="btn btn-outline "
-
-                style="border:1px solid var(--border); padding:0.5rem 1rem; font-size:0.85rem;">← Back to Journal</a>
-
+            <a href="blog.html" class="btn btn-outline" style="border:1px solid var(--border); padding:0.5rem 1rem; font-size:0.85rem;">&#x2190; Back to Journal</a>
         </div>
-
     </header>
 
-
-
     <main>
-
         <article class="structure-section" style="padding-top:clamp(90px, 12vh, 120px); padding-bottom:100px;">
-
             <div class="container" style="max-width:800px; margin:0 auto;">
 
-                <div
-
-                    style="font-family:var(--font-mono); font-size:var(--text-xs); color:var(--text-muted); display:flex; gap:1rem; margin-bottom:2rem; text-transform:uppercase;">
-
-                    <span>Feb 10, 2026</span> · <span>The Founder</span> · <span>6 min read</span>
-
+                <div style="font-family:var(--font-mono); font-size:var(--text-xs); color:var(--text-muted); display:flex; gap:1rem; margin-bottom:2rem; text-transform:uppercase; flex-wrap:wrap;">
+                    <span>Apr 02, 2026</span>
+                    <span>&middot;</span>
+                    <span>Founder</span>
+                    <span>&middot;</span>
+                    <span style="padding:0.15rem 0.6rem; background:rgba(13,138,116,0.1); border-radius:4px; font-weight:600; color:#0D8A74;">Lab Journal</span>
+                    <span>&middot;</span>
+                    <span>8 min read</span>
                 </div>
 
-                <h1
+                <h1 style="font-family:var(--font-serif); font-size:clamp(2rem, 4vw, 3rem); line-height:1.15; margin-bottom:2rem; letter-spacing:-0.02em; font-weight:900;">Inside DETI@ACE TBI: What R&amp;D Actually Looks Like at Phase 0</h1>
 
-                    style="font-family:var(--font-serif); font-size:clamp(2rem, 4vw, 3rem); line-height:1.15; margin-bottom:2rem; letter-spacing:-0.02em; font-weight:900;">
-
-                    Bootstrapping Science: Building an Evidence-Based Startup in a World of Marketing Gimmicks</h1>
-
-
-
-                <p
-
-                    style="font-size:1.35rem; line-height:1.6; color:var(--text-main); font-weight:500; margin-bottom:3rem; padding-bottom:2.5rem; border-bottom:1px solid var(--border);">
-
-                    How we navigated the early days of formulating Oxygen, rejecting cheap ingredients, and why we chose
-
-                    to start at a biotech incubator.
-
-                </p>
-
-
+                <p style="font-size:1.35rem; line-height:1.6; color:var(--text-main); font-weight:500; margin-bottom:3rem; padding-bottom:2.5rem; border-bottom:1px solid var(--border);">No glossy labs. No manufactured optimism. This is an honest account of what it actually looks like to run fermentation R&amp;D inside a university incubator &mdash; from Run 01 failures to the protocol we have now.</p>
 
                 <div class="blog-content">
 
-                    <p>When you tell a standard food and beverage manufacturer in India that you want to use 48-hour fermented millets, KSM-66® Ashwagandha, and High-Yield Mushroom Extracts in a single formulation, they
+                    <p>Every startup that touches &ldquo;biotech&rdquo; eventually has to answer the same uncomfortable question: where, exactly, is the science happening? For some, the answer involves rented clean-room space in a pharmaceutical hub. For us, at this stage, the answer is DETI@ACE TBI at Adhiyamaan College of Engineering, Hosur.</p>
 
-                        usually laugh at you.</p>
+                    <p>I want to be honest about what that means in practice, because the biotech founder narrative tends to sanitise early-stage R&amp;D into something that sounds more polished than it is.</p>
 
-                    <p>"Sir, the cost per serving will be 8x higher than the market standard," they tell me. "Indian
+                    <h3>What Phase 0 Actually Looks Like</h3>
 
-                        consumers only care about the MRP. Just use Maltodextrin and Synthetic Flavoring. No one reads
+                    <p>Phase 0, in our context, means: we do not yet have a validated, reproducible fermentation protocol. We have a hypothesis &mdash; that LAB fermentation of Ragi and Karuppu Kavuni (Black Rice) substrates can meaningfully reduce phytate concentration and enhance mineral bioavailability &mdash; and we are running systematic experiments to test whether that hypothesis holds under controlled conditions.</p>
 
-                        the ingredient list."</p>
+                    <p>Run 01 did not work. The inoculation density was off, and the fermentation stalled after six hours. Run 02 taught us something about substrate moisture that we had not accounted for. Run 03 was the first time we got a measurable CO2 evolution curve, which suggested active fermentation but we still had no bioassay data to confirm phytate reduction. Each run costs money, time, and a non-trivial amount of Ragi flour.</p>
 
-                    <h3>The Manufacturer Rejection Tour</h3>
+                    <div class="blog-callout">
+                        <h4>Current Status &mdash; Apr 2026</h4>
+                        <p>We are on Run 05. The protocol has stabilized sufficiently that we are now able to run phytate colorimetric assays post-fermentation. Preliminary readings suggest measurable reduction vs. unfermented control. Formal validation is pending. We will publish those numbers when they are confirmed.</p>
+                    </div>
 
-                    <p>For the first two months of Oxygen's existence, I went on what I now call the 'Manufacturer
+                    <h3>Why We Pitched a TBI Instead of a Contract Manufacturer</h3>
 
-                        Rejection Tour'. I reached out to multiple third-party manufacturing facilities across several states. Every single one of them pushed back on our formulation.</p>
+                    <p>The first instinct when building a food product is to go straight to a contract manufacturer: they have equipment, they have process engineers, they have regulatory compliance. But every contract manufacturer we spoke to in the early phase had the same advice &mdash; simplify the formula, use extrusion instead of fermentation, use maltodextrin as a carrier. The economics of their business do not accommodate low-volume, slow-process, innovation-led formulation work.</p>
 
-                    <p>They wanted to add maltodextrin as a filler. They wanted to use synthetic colors. They refused to
+                    <p>DETI@ACE TBI understood the brief immediately when we pitched the idea. We were not pitching a consumer product &mdash; we were pitching a primary R&amp;D programme aimed at understanding whether fermentation could be systematically used to improve the bioavailability of micronutrients in traditional Indian grains. The TBI gave us lab access, mentorship access, and institutional credibility in exchange for being part of India&rsquo;s growing deep-tech incubation ecosystem.</p>
 
-                        run the low-heat processing required to keep our mushroom extracts bio-active. They were
+                    <blockquote>&ldquo;If you want to build a cheap product, there are a thousand factories ready to help you. If you want to build something real, you have to own the research environment first.&rdquo;</blockquote>
 
-                        optimized for volume and margin, taking pride in blending cheap powders fast.</p>
+                    <h3>The Honest Realities of Incubation</h3>
 
-                    <blockquote>"If you want to build a cheap product, there are a thousand factories ready to serve
+                    <p>Incubation is not glamorous. The lab hours are shared. Equipment booking sometimes conflicts with other researchers&rsquo; needs. There are days where the fermentation run produces nothing useful and you have to start over. The data is messy and inconclusive in ways that no pitch deck ever acknowledges.</p>
 
-                        you. If you want to build a perfect product, you have to build the lab yourself."</blockquote>
+                    <p>But these constraints are, counterintuitively, what make the output credible. Every run we document, every failed protocol, every colorimetric reading &mdash; it builds an evidence trail. When we eventually have a validated formula, it will not be the result of a marketing team deciding what nutrients to list on a label. It will be the result of a systematic research process that documented every failure on the way to a result that works.</p>
 
-                    <h3>Finding Refuge at DETI@ACE - TBI</h3>
+                    <h3>What Comes Next</h3>
 
-                    <p>I realized we couldn't rely on the existing ecosystem. If we wanted to build uncompromised
+                    <p>Once Run 05 is complete and phytate reduction is formally validated, the next phase is organoleptic testing &mdash; understanding what the fermented substrate tastes, smells, and feels like, and whether it can be formulated into a consumable product without destroying the bioavailability gains we are creating in the fermentation step. That problem is harder than it sounds, and we will write about it in detail when we get there.</p>
 
-                        science, we needed to own the research environment.</p>
-
-                    <p>That's when we pitched Oxygen to the DETI@ACE - TBI at Adhiyamaan College of
-
-                        Engineering (ACE). We didn't pitch a consumer brand; we pitched a biotech formulation lab aiming
-
-                        to reverse-engineer Indian nutritional deficiencies.</p>
-
-                    <p>DETI@ACE - TBI understood the vision immediately. They gave us the lab space, the equipment, and the
-
-                        institutional backing we needed to begin primary R&D without being forced to compromise by
-
-                        commercial manufacturers.</p>
-
-                    <p>We spent the next six weeks sourcing raw materials from agri-tech and cultivation partners across the
-
-                        globe, bringing them back to Hosur, and beginning the agonizing process of taste-masking highly
-
-                        bitter active ingredients without using refined sugars. It was brutal, slow, and lonely. But it
-
-                        was ours.</p>
+                    <p>We are building this in public because we believe the Indian functional food market deserves to see what honest, evidence-led product development actually requires. If that transparency costs us some early credibility, that is a cost we are willing to pay.</p>
 
                 </div>
-
             </div>
-
         </article>
 
-
-
         <section class="structure-section" style="background:var(--bg-alt); text-align:center;">
-
             <div class="container" style="max-width:600px;">
-
-                <h2 style="font-family:var(--font-serif); font-size:2rem; margin-bottom:1rem;">Follow our journey.</h2>
-
-                <p style="color:var(--text-muted); margin-bottom:2rem;">One honest update every week. No spam. No
-
-                    marketing.</p>
-
-                <form onsubmit="event.preventDefault(); alert('Subscribed');"
-
-                    style="display:flex; gap:0.5rem; max-width:400px; margin:0 auto;">
-
-                    <input type="email" required placeholder="Enter your email"
-
-                        style="flex:1; padding:0.75rem 1rem; border:1px solid var(--border); border-radius:4px;">
-
-                    <button type="submit" class="btn btn-outline"
-
-                        style="padding:0.75rem 1.5rem;">Subscribe</button>
-
+                <h2 style="font-family:var(--font-serif); font-size:2rem; margin-bottom:1rem;">Follow our R&amp;D journey.</h2>
+                <p style="color:var(--text-muted); margin-bottom:2rem;">One honest update each week. No spam. No marketing.</p>
+                <form onsubmit="event.preventDefault(); alert('Subscribed');" style="display:flex; gap:0.5rem; max-width:400px; margin:0 auto;">
+                    <input type="email" required placeholder="Enter your email" style="flex:1; padding:0.75rem 1rem; border:1px solid var(--border); border-radius:4px;">
+                    <button type="submit" class="btn btn-outline" style="padding:0.75rem 1.5rem;">Subscribe</button>
                 </form>
-
             </div>
-
         </section>
-
     </main>
 
-
-
-    <!-- Footer included via basic script or manual if needed. Leaving simple for now. -->
-
     <script src="assets/js/page-transitions.js"></script>
-
 </body>
-
-
-
 </html>
-
