@@ -233,6 +233,11 @@
                 grid-template-columns: 1fr !important;
             }
         }
+
+        @keyframes pulse-dot {
+            0%, 100% { box-shadow: 0 0 6px #0D8A74; }
+            50%       { box-shadow: 0 0 14px #0D8A74; }
+        }
     </style>
 
 
@@ -1036,9 +1041,16 @@
 
                 <!-- Section Header -->
                 <div class="mentor-reveal" style="margin-bottom:var(--space-xl);">
-                    <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem;">
-                        <div style="width:32px; height:1px; background:rgba(13,138,116,0.8);"></div>
-                        <div style="font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; color:rgba(13,138,116,0.9);">The People Behind The Science</div>
+                    <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem; flex-wrap:wrap; justify-content:space-between;">
+                        <div style="display:flex; align-items:center; gap:1rem;">
+                            <div style="width:32px; height:1px; background:rgba(13,138,116,0.8);"></div>
+                            <div style="font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; color:rgba(13,138,116,0.9);">The People Behind The Science</div>
+                        </div>
+                        <!-- List Finalised badge -->
+                        <div style="display:inline-flex; align-items:center; gap:0.55rem; background:rgba(13,138,116,0.12); border:1px solid rgba(13,138,116,0.35); color:#0D8A74; padding:0.4rem 1rem; border-radius:50px; font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.12em; text-transform:uppercase; white-space:nowrap;">
+                            <span style="width:6px; height:6px; background:#0D8A74; border-radius:50%; display:inline-block; box-shadow:0 0 8px #0D8A74; animation:pulse-dot 2s infinite;"></span>
+                            List Finalised
+                        </div>
                     </div>
                     <h2 style="font-family:var(--font-serif); font-size:clamp(2.5rem, 5vw, 4rem); color:#fff; line-height:0.95; letter-spacing:-0.03em; margin-bottom:1.5rem;">
                         Knowledge Support<br><em style="color:rgba(255,255,255,0.35); font-weight:400;">Network.</em>
@@ -1070,6 +1082,11 @@
                                     <span class="mentor-domain-tag">Domain</span>
                                 </div>
                             </div>
+                            <!-- Profile coming soon strip -->
+                            <div style="margin-top:1.5rem; padding:0.6rem 0.9rem; background:rgba(13,138,116,0.07); border:1px solid rgba(13,138,116,0.18); border-radius:6px; display:flex; align-items:center; gap:0.6rem;">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(13,138,116,0.7)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                <span style="font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.12em; text-transform:uppercase; color:rgba(13,138,116,0.75);">Profile Pending Reveal</span>
+                            </div>
                         </div>
                         <div class="mentor-card-glow"></div>
                     </div>
@@ -1091,6 +1108,10 @@
                                     <span class="mentor-domain-tag">Domain</span>
                                 </div>
                             </div>
+                            <div style="margin-top:1.5rem; padding:0.6rem 0.9rem; background:rgba(13,138,116,0.07); border:1px solid rgba(13,138,116,0.18); border-radius:6px; display:flex; align-items:center; gap:0.6rem;">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(13,138,116,0.7)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                <span style="font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.12em; text-transform:uppercase; color:rgba(13,138,116,0.75);">Profile Pending Reveal</span>
+                            </div>
                         </div>
                         <div class="mentor-card-glow"></div>
                     </div>
@@ -1111,6 +1132,10 @@
                                 <div class="mentor-domain">
                                     <span class="mentor-domain-tag">Domain</span>
                                 </div>
+                            </div>
+                            <div style="margin-top:1.5rem; padding:0.6rem 0.9rem; background:rgba(13,138,116,0.07); border:1px solid rgba(13,138,116,0.18); border-radius:6px; display:flex; align-items:center; gap:0.6rem;">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(13,138,116,0.7)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                <span style="font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.12em; text-transform:uppercase; color:rgba(13,138,116,0.75);">Profile Pending Reveal</span>
                             </div>
                         </div>
                         <div class="mentor-card-glow"></div>
