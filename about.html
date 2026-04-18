@@ -104,8 +104,8 @@
         /* Card inner — the actual visible surface */
         .mentor-card-inner {
             position: relative;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.09);
+            background: var(--bg);
+            border: 1px solid var(--border);
             border-radius: 16px;
             padding: 2rem;
             transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),
@@ -117,9 +117,9 @@
         }
 
         .mentor-card:hover .mentor-card-inner {
-            border-color: rgba(13,138,116,0.35);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.35),
-                        0 0 0 1px rgba(13,138,116,0.12) inset;
+            border-color: #0D8A74;
+            box-shadow: 0 16px 40px rgba(13,138,116,0.1),
+                        0 0 0 1px rgba(13,138,116,0.1) inset;
         }
 
         /* Ambient glow that follows the tilt */
@@ -127,7 +127,7 @@
             position: absolute;
             inset: -2px;
             border-radius: 18px;
-            background: radial-gradient(circle at 50% 50%, rgba(13,138,116,0.15), transparent 65%);
+            background: radial-gradient(circle at 50% 50%, rgba(13,138,116,0.08), transparent 65%);
             opacity: 0;
             transition: opacity 0.4s ease;
             pointer-events: none;
@@ -149,7 +149,7 @@
             width: 88px;
             height: 88px;
             border-radius: 14px;
-            background: rgba(13,138,116,0.1);
+            background: rgba(13,138,116,0.08);
             border: 1px solid rgba(13,138,116,0.2);
             display: flex;
             align-items: center;
@@ -159,7 +159,7 @@
         }
 
         .mentor-card:hover .mentor-image-placeholder {
-            border-color: rgba(13,138,116,0.45);
+            border-color: rgba(13,138,116,0.5);
         }
 
         /* Role badge — sits bottom-right of the photo */
@@ -176,7 +176,7 @@
             padding: 0.28rem 0.6rem;
             border-radius: 4px;
             white-space: nowrap;
-            box-shadow: 0 4px 12px rgba(13,138,116,0.4);
+            box-shadow: 0 4px 12px rgba(13,138,116,0.3);
         }
 
         /* Text info */
@@ -186,14 +186,14 @@
             font-family: var(--font-serif);
             font-size: 1.2rem;
             font-weight: 700;
-            color: #fff;
+            color: var(--text-main);
             margin-bottom: 0.3rem;
             line-height: 1.25;
         }
 
         .mentor-title {
             font-size: 0.85rem;
-            color: rgba(255,255,255,0.55);
+            color: var(--text-muted);
             line-height: 1.45;
             margin-bottom: 0.25rem;
         }
@@ -202,7 +202,7 @@
             font-family: var(--font-mono);
             font-size: 0.68rem;
             letter-spacing: 0.06em;
-            color: rgba(13,138,116,0.75);
+            color: #0D8A74;
             margin-bottom: 1.2rem;
         }
 
@@ -219,9 +219,9 @@
             letter-spacing: 0.08em;
             text-transform: uppercase;
             padding: 0.25rem 0.65rem;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid var(--border);
             border-radius: 3px;
-            color: rgba(255,255,255,0.35);
+            color: var(--text-muted);
         }
 
         /* Mobile — disable tilt, keep visual */
@@ -1031,11 +1031,11 @@
         <!-- ═══════════════════════════════════════════════════════
              SECTION 8 — KNOWLEDGE SUPPORT NETWORK (Mentor Team)
         ════════════════════════════════════════════════════════════ -->
-        <section id="about-mentors" style="background:var(--text-main); padding:var(--space-xl) 0; position:relative; overflow:hidden;">
+        <section id="about-mentors" style="background:var(--bg-alt); padding:var(--space-xl) 0; position:relative; overflow:hidden; border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
 
             <!-- Background ambient glow elements -->
-            <div style="position:absolute; top:-20%; left:-10%; width:600px; height:600px; background:radial-gradient(circle, rgba(13,138,116,0.12) 0%, transparent 70%); pointer-events:none; z-index:0;"></div>
-            <div style="position:absolute; bottom:-20%; right:-10%; width:500px; height:500px; background:radial-gradient(circle, rgba(13,138,116,0.08) 0%, transparent 70%); pointer-events:none; z-index:0;"></div>
+            <div style="position:absolute; top:-20%; left:-10%; width:600px; height:600px; background:radial-gradient(circle, rgba(13,138,116,0.06) 0%, transparent 70%); pointer-events:none; z-index:0;"></div>
+            <div style="position:absolute; bottom:-20%; right:-10%; width:500px; height:500px; background:radial-gradient(circle, rgba(13,138,116,0.04) 0%, transparent 70%); pointer-events:none; z-index:0;"></div>
 
             <div class="container" style="position:relative; z-index:1;">
 
@@ -1052,10 +1052,10 @@
                             List Finalised
                         </div>
                     </div>
-                    <h2 style="font-family:var(--font-serif); font-size:clamp(2.5rem, 5vw, 4rem); color:#fff; line-height:0.95; letter-spacing:-0.03em; margin-bottom:1.5rem;">
-                        Knowledge Support<br><em style="color:rgba(255,255,255,0.35); font-weight:400;">Network.</em>
+                    <h2 style="font-family:var(--font-serif); font-size:clamp(2.5rem, 5vw, 4rem); color:var(--text-main); line-height:0.95; letter-spacing:-0.03em; margin-bottom:1.5rem;">
+                        Knowledge Support<br><em style="color:var(--text-muted); font-weight:400;">Network.</em>
                     </h2>
-                    <p style="font-size:1.05rem; color:rgba(255,255,255,0.5); line-height:1.7; max-width:560px;">
+                    <p style="font-size:1.05rem; color:var(--text-muted); line-height:1.7; max-width:560px;">
                         We don't build in isolation. These are the domain experts, academics, and industry veterans whose guidance actively shapes our formulation decisions and research direction.
                     </p>
                 </div>
@@ -1147,11 +1147,11 @@
                 </div>
 
                 <!-- Bottom CTA note -->
-                <div class="mentor-reveal" style="margin-top:4rem; padding-top:3rem; border-top:1px solid rgba(255,255,255,0.06); display:flex; align-items:center; gap:2rem; flex-wrap:wrap; justify-content:space-between;">
-                    <p style="font-family:var(--font-mono); font-size:0.75rem; color:rgba(255,255,255,0.25); letter-spacing:0.06em; max-width:480px; line-height:1.7; margin:0;">
+                <div class="mentor-reveal" style="margin-top:4rem; padding-top:3rem; border-top:1px solid var(--border); display:flex; align-items:center; gap:2rem; flex-wrap:wrap; justify-content:space-between;">
+                    <p style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-muted); letter-spacing:0.06em; max-width:480px; line-height:1.7; margin:0;">
                         Our mentors provide domain expertise and strategic guidance. They are not investors, board members, or equity holders — their involvement is purely knowledge-based.
                     </p>
-                    <div style="font-family:var(--font-mono); font-size:0.65rem; padding:0.45rem 1rem; border:1px solid rgba(13,138,116,0.3); color:rgba(13,138,116,0.7); letter-spacing:0.1em; text-transform:uppercase; border-radius:2px; white-space:nowrap;">
+                    <div style="font-family:var(--font-mono); font-size:0.65rem; padding:0.45rem 1rem; border:1px solid rgba(13,138,116,0.4); color:#0D8A74; letter-spacing:0.1em; text-transform:uppercase; border-radius:2px; white-space:nowrap;">
                         SUPPORT NETWORK ACTIVE
                     </div>
                 </div>
