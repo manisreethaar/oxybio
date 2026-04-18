@@ -1062,14 +1062,36 @@
                     </p>
                 </div>
 
-                <!-- Premium List Layout for Support Network -->
+                <!-- Premium List Layout for Support Network (v2) -->
                 <style>
+                    .support-banner-header {
+                        font-family: var(--font-serif);
+                        font-size: 1.75rem;
+                        color: var(--text-main);
+                        margin: 3rem 0 1.5rem 0;
+                        padding-bottom: 0.5rem;
+                        border-bottom: 1px solid var(--border);
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+                    }
+                    .support-banner-header span.badge {
+                        background:rgba(13,138,116,0.1); 
+                        border:1px solid rgba(13,138,116,0.2); 
+                        color:#0D8A74; 
+                        padding:0.25rem 0.6rem; 
+                        border-radius:4px; 
+                        font-family:var(--font-mono); 
+                        font-size:0.65rem; 
+                        text-transform:uppercase; 
+                        letter-spacing:0.1em;
+                    }
                     .support-row {
                         display: grid;
-                        grid-template-columns: 140px 1fr 1fr auto;
+                        grid-template-columns: 60px 2fr 3fr 120px;
                         gap: 1.5rem;
                         align-items: center;
-                        padding: 1.5rem 1rem;
+                        padding: 1.25rem 1rem;
                         border-bottom: 1px solid var(--border);
                         transition: all 0.3s ease;
                         border-radius: 6px;
@@ -1079,26 +1101,34 @@
                         border-color: rgba(13,138,116,0.2);
                         transform: translateX(5px);
                     }
-                    .support-row-badge {
-                        font-family: var(--font-mono);
-                        font-size: 0.65rem;
-                        padding: 0.3rem 0.6rem;
-                        border-radius: 4px;
-                        letter-spacing: 0.05em;
-                        text-transform: uppercase;
-                        display: inline-block;
+                    .support-avatar {
+                        width: 48px;
+                        height: 48px;
+                        border-radius: 50%;
+                        background: var(--bg);
+                        border: 1px solid var(--border);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
                     }
-                    .badge-industry { background: rgba(13,138,116,0.1); color: #0D8A74; border: 1px solid rgba(13,138,116,0.2); }
-                    .badge-academic { background: var(--bg); border: 1px solid var(--border); color: var(--text-main); }
-                    
+                    .support-avatar svg {
+                        width: 20px;
+                        height: 20px;
+                        stroke: rgba(13,138,116,0.5);
+                    }
                     @media (max-width: 768px) {
                         .support-row {
-                            grid-template-columns: 1fr;
-                            gap: 0.75rem;
+                            grid-template-columns: 48px 1fr;
+                            gap: 1rem;
                             padding: 1.5rem;
                             background: var(--bg);
                             border: 1px solid var(--border);
                             margin-bottom: 1rem;
+                            align-items: start;
+                        }
+                        .support-row > div:nth-child(3),
+                        .support-row > div:nth-child(4) {
+                            grid-column: 1 / -1;
                         }
                         .support-row:hover { transform: translateY(-3px); }
                     }
@@ -1106,146 +1136,244 @@
 
                 <div class="support-list-container" style="margin-top:2rem;">
                     
+                    <!-- INDUSTRY BANNER -->
+                    <div class="support-banner-header mentor-reveal">
+                        Industry Advisory Board <span class="badge">03 Members</span>
+                    </div>
+
                     <!-- Header Row (Hidden on mobile) -->
-                    <div class="support-row" style="border-bottom:2px solid var(--border); padding-bottom:1rem; margin-bottom:0.5rem; opacity:0.6;">
-                        <div style="font-family:var(--font-mono); font-size:0.65rem; text-transform:uppercase; letter-spacing:0.1em;">Category</div>
-                        <div style="font-family:var(--font-mono); font-size:0.65rem; text-transform:uppercase; letter-spacing:0.1em;">Profile</div>
-                        <div style="font-family:var(--font-mono); font-size:0.65rem; text-transform:uppercase; letter-spacing:0.1em;">Credentials / Designation</div>
+                    <div class="support-row mentor-reveal" style="border-bottom:2px solid var(--border); padding-bottom:1rem; margin-bottom:0.5rem; opacity:0.6;">
+                        <div style="font-family:var(--font-mono); font-size:0.65rem; text-transform:uppercase; letter-spacing:0.1em;">Pic</div>
+                        <div style="font-family:var(--font-mono); font-size:0.65rem; text-transform:uppercase; letter-spacing:0.1em;">Name &amp; Nature of Support</div>
+                        <div style="font-family:var(--font-mono); font-size:0.65rem; text-transform:uppercase; letter-spacing:0.1em;">Designation &amp; Employment</div>
                         <div style="font-family:var(--font-mono); font-size:0.65rem; text-transform:uppercase; letter-spacing:0.1em; text-align:right;">Status</div>
                     </div>
 
-                    <!-- Industry -->
+                    <!-- Industry Row -->
                     <div class="support-row mentor-reveal">
-                        <div><span class="support-row-badge badge-industry">Industry Expert</span></div>
-                        <div style="font-family:var(--font-serif); font-size:1.25rem; color:var(--text-main); font-weight:600;">[Profile Pending]</div>
-                        <div style="font-size:0.9rem; color:var(--text-muted);">[Institution / Organisation]</div>
+                        <div>
+                            <div class="support-avatar"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+                        </div>
+                        <div>
+                            <div style="font-family:var(--font-serif); font-size:1.15rem; color:var(--text-main); font-weight:600; margin-bottom:0.25rem;">[Name Pending]</div>
+                            <div style="font-size:0.85rem; color:#0D8A74;">[Nature of Support — e.g. Strategy / Scale-up]</div>
+                        </div>
+                        <div>
+                            <div style="font-size:0.9rem; color:var(--text-main); font-weight:500;">[Current Designation]</div>
+                            <div style="font-size:0.85rem; color:var(--text-muted);">[Institution / Organisation]</div>
+                        </div>
                         <div style="text-align:right;">
                             <div style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.25rem 0.5rem; background:rgba(0,0,0,0.04); border-radius:4px; font-family:var(--font-mono); font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em; border:1px solid rgba(0,0,0,0.05);">
                                 <div style="width:4px; height:4px; background:#eab308; border-radius:50%;"></div> Confidential
                             </div>
                         </div>
                     </div>
-                    <!-- Industry -->
+                    <!-- Industry Row -->
                     <div class="support-row mentor-reveal">
-                        <div><span class="support-row-badge badge-industry">Industry Expert</span></div>
-                        <div style="font-family:var(--font-serif); font-size:1.25rem; color:var(--text-main); font-weight:600;">[Profile Pending]</div>
-                        <div style="font-size:0.9rem; color:var(--text-muted);">[Institution / Organisation]</div>
+                        <div>
+                            <div class="support-avatar"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+                        </div>
+                        <div>
+                            <div style="font-family:var(--font-serif); font-size:1.15rem; color:var(--text-main); font-weight:600; margin-bottom:0.25rem;">[Name Pending]</div>
+                            <div style="font-size:0.85rem; color:#0D8A74;">[Nature of Support — e.g. Strategy / Scale-up]</div>
+                        </div>
+                        <div>
+                            <div style="font-size:0.9rem; color:var(--text-main); font-weight:500;">[Current Designation]</div>
+                            <div style="font-size:0.85rem; color:var(--text-muted);">[Institution / Organisation]</div>
+                        </div>
                         <div style="text-align:right;">
                             <div style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.25rem 0.5rem; background:rgba(0,0,0,0.04); border-radius:4px; font-family:var(--font-mono); font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em; border:1px solid rgba(0,0,0,0.05);">
                                 <div style="width:4px; height:4px; background:#eab308; border-radius:50%;"></div> Confidential
                             </div>
                         </div>
                     </div>
-                    <!-- Industry -->
+                    <!-- Industry Row -->
                     <div class="support-row mentor-reveal">
-                        <div><span class="support-row-badge badge-industry">Industry Expert</span></div>
-                        <div style="font-family:var(--font-serif); font-size:1.25rem; color:var(--text-main); font-weight:600;">[Profile Pending]</div>
-                        <div style="font-size:0.9rem; color:var(--text-muted);">[Institution / Organisation]</div>
+                        <div>
+                            <div class="support-avatar"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+                        </div>
+                        <div>
+                            <div style="font-family:var(--font-serif); font-size:1.15rem; color:var(--text-main); font-weight:600; margin-bottom:0.25rem;">[Name Pending]</div>
+                            <div style="font-size:0.85rem; color:#0D8A74;">[Nature of Support — e.g. Strategy / Scale-up]</div>
+                        </div>
+                        <div>
+                            <div style="font-size:0.9rem; color:var(--text-main); font-weight:500;">[Current Designation]</div>
+                            <div style="font-size:0.85rem; color:var(--text-muted);">[Institution / Organisation]</div>
+                        </div>
                         <div style="text-align:right;">
                             <div style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.25rem 0.5rem; background:rgba(0,0,0,0.04); border-radius:4px; font-family:var(--font-mono); font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em; border:1px solid rgba(0,0,0,0.05);">
                                 <div style="width:4px; height:4px; background:#eab308; border-radius:50%;"></div> Confidential
                             </div>
                         </div>
                     </div>
-                    <!-- Academic -->
-                    <div class="support-row mentor-reveal">
-                        <div><span class="support-row-badge badge-academic">Academic</span></div>
-                        <div style="font-family:var(--font-serif); font-size:1.25rem; color:var(--text-main); font-weight:600;">Dr. [Profile Pending]</div>
-                        <div style="font-size:0.9rem; color:var(--text-muted);">Doctorate &mdash; [Institution]</div>
-                        <div style="text-align:right;">
-                            <div style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.25rem 0.5rem; background:rgba(0,0,0,0.04); border-radius:4px; font-family:var(--font-mono); font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em; border:1px solid rgba(0,0,0,0.05);">
-                                <div style="width:4px; height:4px; background:#eab308; border-radius:50%;"></div> Confidential
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Academic -->
-                    <div class="support-row mentor-reveal">
-                        <div><span class="support-row-badge badge-academic">Academic</span></div>
-                        <div style="font-family:var(--font-serif); font-size:1.25rem; color:var(--text-main); font-weight:600;">Dr. [Profile Pending]</div>
-                        <div style="font-size:0.9rem; color:var(--text-muted);">Doctorate &mdash; [Institution]</div>
-                        <div style="text-align:right;">
-                            <div style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.25rem 0.5rem; background:rgba(0,0,0,0.04); border-radius:4px; font-family:var(--font-mono); font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em; border:1px solid rgba(0,0,0,0.05);">
-                                <div style="width:4px; height:4px; background:#eab308; border-radius:50%;"></div> Confidential
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Academic -->
-                    <div class="support-row mentor-reveal">
-                        <div><span class="support-row-badge badge-academic">Academic</span></div>
-                        <div style="font-family:var(--font-serif); font-size:1.25rem; color:var(--text-main); font-weight:600;">Dr. [Profile Pending]</div>
-                        <div style="font-size:0.9rem; color:var(--text-muted);">Doctorate &mdash; [Institution]</div>
-                        <div style="text-align:right;">
-                            <div style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.25rem 0.5rem; background:rgba(0,0,0,0.04); border-radius:4px; font-family:var(--font-mono); font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em; border:1px solid rgba(0,0,0,0.05);">
-                                <div style="width:4px; height:4px; background:#eab308; border-radius:50%;"></div> Confidential
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Academic -->
-                    <div class="support-row mentor-reveal">
-                        <div><span class="support-row-badge badge-academic">Academic</span></div>
-                        <div style="font-family:var(--font-serif); font-size:1.25rem; color:var(--text-main); font-weight:600;">Dr. [Profile Pending]</div>
-                        <div style="font-size:0.9rem; color:var(--text-muted);">Doctorate &mdash; [Institution]</div>
-                        <div style="text-align:right;">
-                            <div style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.25rem 0.5rem; background:rgba(0,0,0,0.04); border-radius:4px; font-family:var(--font-mono); font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em; border:1px solid rgba(0,0,0,0.05);">
-                                <div style="width:4px; height:4px; background:#eab308; border-radius:50%;"></div> Confidential
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Academic -->
-                    <div class="support-row mentor-reveal">
-                        <div><span class="support-row-badge badge-academic">Academic</span></div>
-                        <div style="font-family:var(--font-serif); font-size:1.25rem; color:var(--text-main); font-weight:600;">Dr. [Profile Pending]</div>
-                        <div style="font-size:0.9rem; color:var(--text-muted);">Doctorate &mdash; [Institution]</div>
-                        <div style="text-align:right;">
-                            <div style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.25rem 0.5rem; background:rgba(0,0,0,0.04); border-radius:4px; font-family:var(--font-mono); font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em; border:1px solid rgba(0,0,0,0.05);">
-                                <div style="width:4px; height:4px; background:#eab308; border-radius:50%;"></div> Confidential
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Academic -->
-                    <div class="support-row mentor-reveal">
-                        <div><span class="support-row-badge badge-academic">Academic</span></div>
-                        <div style="font-family:var(--font-serif); font-size:1.25rem; color:var(--text-main); font-weight:600;">Dr. [Profile Pending]</div>
-                        <div style="font-size:0.9rem; color:var(--text-muted);">Doctorate &mdash; [Institution]</div>
-                        <div style="text-align:right;">
-                            <div style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.25rem 0.5rem; background:rgba(0,0,0,0.04); border-radius:4px; font-family:var(--font-mono); font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em; border:1px solid rgba(0,0,0,0.05);">
-                                <div style="width:4px; height:4px; background:#eab308; border-radius:50%;"></div> Confidential
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Academic -->
-                    <div class="support-row mentor-reveal">
-                        <div><span class="support-row-badge badge-academic">PhD Pursuing</span></div>
-                        <div style="font-family:var(--font-serif); font-size:1.25rem; color:var(--text-main); font-weight:600;">[Profile Pending]</div>
-                        <div style="font-size:0.9rem; color:var(--text-muted);">Research Scholar &mdash; [Institution]</div>
-                        <div style="text-align:right;">
-                            <div style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.25rem 0.5rem; background:rgba(0,0,0,0.04); border-radius:4px; font-family:var(--font-mono); font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em; border:1px solid rgba(0,0,0,0.05);">
-                                <div style="width:4px; height:4px; background:#eab308; border-radius:50%;"></div> Confidential
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Academic -->
-                    <div class="support-row mentor-reveal">
-                        <div><span class="support-row-badge badge-academic">PhD Viva Completed</span></div>
-                        <div style="font-family:var(--font-serif); font-size:1.25rem; color:var(--text-main); font-weight:600;">[Profile Pending]</div>
-                        <div style="font-size:0.9rem; color:var(--text-muted);">Post-Doctoral &mdash; [Institution]</div>
-                        <div style="text-align:right;">
-                            <div style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.25rem 0.5rem; background:rgba(0,0,0,0.04); border-radius:4px; font-family:var(--font-mono); font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em; border:1px solid rgba(0,0,0,0.05);">
-                                <div style="width:4px; height:4px; background:#eab308; border-radius:50%;"></div> Confidential
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mentor-reveal" style="margin-top:4rem; padding-top:3rem; border-top:1px solid var(--border); display:flex; align-items:center; gap:2rem; flex-wrap:wrap; justify-content:space-between;">
-                    <p style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-muted); letter-spacing:0.06em; max-width:480px; line-height:1.7; margin:0;">
-                        Our mentors provide domain expertise and strategic guidance. They are not investors, board members, or equity holders — their involvement is purely knowledge-based.
-                    </p>
-                    <div style="font-family:var(--font-mono); font-size:0.65rem; padding:0.45rem 1rem; border:1px solid rgba(13,138,116,0.4); color:#0D8A74; letter-spacing:0.1em; text-transform:uppercase; border-radius:2px; white-space:nowrap;">
-                        SUPPORT NETWORK ACTIVE
-                    </div>
-                </div>
 
+                    <!-- ACADEMIC BANNER -->
+                    <div class="support-banner-header mentor-reveal" style="margin-top:4rem;">
+                        Academic &amp; Research Review <span class="badge" style="background:var(--bg); border-color:var(--border); color:var(--text-main);">08 Members</span>
+                    </div>
+
+                    <!-- Header Row (Hidden on mobile) -->
+                    <div class="support-row mentor-reveal" style="border-bottom:2px solid var(--border); padding-bottom:1rem; margin-bottom:0.5rem; opacity:0.6;">
+                        <div style="font-family:var(--font-mono); font-size:0.65rem; text-transform:uppercase; letter-spacing:0.1em;">Pic</div>
+                        <div style="font-family:var(--font-mono); font-size:0.65rem; text-transform:uppercase; letter-spacing:0.1em;">Name &amp; Nature of Support</div>
+                        <div style="font-family:var(--font-mono); font-size:0.65rem; text-transform:uppercase; letter-spacing:0.1em;">Designation &amp; Employment</div>
+                        <div style="font-family:var(--font-mono); font-size:0.65rem; text-transform:uppercase; letter-spacing:0.1em; text-align:right;">Status</div>
+                    </div>
+                    <!-- Academic Row: Doctorate -->
+                    <div class="support-row mentor-reveal">
+                        <div>
+                            <div class="support-avatar"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+                        </div>
+                        <div>
+                            <div style="font-family:var(--font-serif); font-size:1.15rem; color:var(--text-main); font-weight:600; margin-bottom:0.25rem;">Dr. [Name Pending]</div>
+                            <div style="font-size:0.85rem; color:var(--text-main);">[Nature of Support — e.g. Scientific Validation]</div>
+                        </div>
+                        <div>
+                            <div style="font-size:0.9rem; color:var(--text-main); font-weight:500;">Doctorate <span style="font-weight:400; color:var(--text-muted);">&mdash; [Role]</span></div>
+                            <div style="font-size:0.85rem; color:var(--text-muted);">[Institution / Organisation]</div>
+                        </div>
+                        <div style="text-align:right;">
+                            <div style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.25rem 0.5rem; background:rgba(0,0,0,0.04); border-radius:4px; font-family:var(--font-mono); font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em; border:1px solid rgba(0,0,0,0.05);">
+                                <div style="width:4px; height:4px; background:#eab308; border-radius:50%;"></div> Confidential
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Academic Row: Doctorate -->
+                    <div class="support-row mentor-reveal">
+                        <div>
+                            <div class="support-avatar"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+                        </div>
+                        <div>
+                            <div style="font-family:var(--font-serif); font-size:1.15rem; color:var(--text-main); font-weight:600; margin-bottom:0.25rem;">Dr. [Name Pending]</div>
+                            <div style="font-size:0.85rem; color:var(--text-main);">[Nature of Support — e.g. Scientific Validation]</div>
+                        </div>
+                        <div>
+                            <div style="font-size:0.9rem; color:var(--text-main); font-weight:500;">Doctorate <span style="font-weight:400; color:var(--text-muted);">&mdash; [Role]</span></div>
+                            <div style="font-size:0.85rem; color:var(--text-muted);">[Institution / Organisation]</div>
+                        </div>
+                        <div style="text-align:right;">
+                            <div style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.25rem 0.5rem; background:rgba(0,0,0,0.04); border-radius:4px; font-family:var(--font-mono); font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em; border:1px solid rgba(0,0,0,0.05);">
+                                <div style="width:4px; height:4px; background:#eab308; border-radius:50%;"></div> Confidential
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Academic Row: Doctorate -->
+                    <div class="support-row mentor-reveal">
+                        <div>
+                            <div class="support-avatar"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+                        </div>
+                        <div>
+                            <div style="font-family:var(--font-serif); font-size:1.15rem; color:var(--text-main); font-weight:600; margin-bottom:0.25rem;">Dr. [Name Pending]</div>
+                            <div style="font-size:0.85rem; color:var(--text-main);">[Nature of Support — e.g. Scientific Validation]</div>
+                        </div>
+                        <div>
+                            <div style="font-size:0.9rem; color:var(--text-main); font-weight:500;">Doctorate <span style="font-weight:400; color:var(--text-muted);">&mdash; [Role]</span></div>
+                            <div style="font-size:0.85rem; color:var(--text-muted);">[Institution / Organisation]</div>
+                        </div>
+                        <div style="text-align:right;">
+                            <div style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.25rem 0.5rem; background:rgba(0,0,0,0.04); border-radius:4px; font-family:var(--font-mono); font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em; border:1px solid rgba(0,0,0,0.05);">
+                                <div style="width:4px; height:4px; background:#eab308; border-radius:50%;"></div> Confidential
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Academic Row: Doctorate -->
+                    <div class="support-row mentor-reveal">
+                        <div>
+                            <div class="support-avatar"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+                        </div>
+                        <div>
+                            <div style="font-family:var(--font-serif); font-size:1.15rem; color:var(--text-main); font-weight:600; margin-bottom:0.25rem;">Dr. [Name Pending]</div>
+                            <div style="font-size:0.85rem; color:var(--text-main);">[Nature of Support — e.g. Scientific Validation]</div>
+                        </div>
+                        <div>
+                            <div style="font-size:0.9rem; color:var(--text-main); font-weight:500;">Doctorate <span style="font-weight:400; color:var(--text-muted);">&mdash; [Role]</span></div>
+                            <div style="font-size:0.85rem; color:var(--text-muted);">[Institution / Organisation]</div>
+                        </div>
+                        <div style="text-align:right;">
+                            <div style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.25rem 0.5rem; background:rgba(0,0,0,0.04); border-radius:4px; font-family:var(--font-mono); font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em; border:1px solid rgba(0,0,0,0.05);">
+                                <div style="width:4px; height:4px; background:#eab308; border-radius:50%;"></div> Confidential
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Academic Row: Doctorate -->
+                    <div class="support-row mentor-reveal">
+                        <div>
+                            <div class="support-avatar"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+                        </div>
+                        <div>
+                            <div style="font-family:var(--font-serif); font-size:1.15rem; color:var(--text-main); font-weight:600; margin-bottom:0.25rem;">Dr. [Name Pending]</div>
+                            <div style="font-size:0.85rem; color:var(--text-main);">[Nature of Support — e.g. Scientific Validation]</div>
+                        </div>
+                        <div>
+                            <div style="font-size:0.9rem; color:var(--text-main); font-weight:500;">Doctorate <span style="font-weight:400; color:var(--text-muted);">&mdash; [Role]</span></div>
+                            <div style="font-size:0.85rem; color:var(--text-muted);">[Institution / Organisation]</div>
+                        </div>
+                        <div style="text-align:right;">
+                            <div style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.25rem 0.5rem; background:rgba(0,0,0,0.04); border-radius:4px; font-family:var(--font-mono); font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em; border:1px solid rgba(0,0,0,0.05);">
+                                <div style="width:4px; height:4px; background:#eab308; border-radius:50%;"></div> Confidential
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Academic Row: Doctorate -->
+                    <div class="support-row mentor-reveal">
+                        <div>
+                            <div class="support-avatar"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+                        </div>
+                        <div>
+                            <div style="font-family:var(--font-serif); font-size:1.15rem; color:var(--text-main); font-weight:600; margin-bottom:0.25rem;">Dr. [Name Pending]</div>
+                            <div style="font-size:0.85rem; color:var(--text-main);">[Nature of Support — e.g. Scientific Validation]</div>
+                        </div>
+                        <div>
+                            <div style="font-size:0.9rem; color:var(--text-main); font-weight:500;">Doctorate <span style="font-weight:400; color:var(--text-muted);">&mdash; [Role]</span></div>
+                            <div style="font-size:0.85rem; color:var(--text-muted);">[Institution / Organisation]</div>
+                        </div>
+                        <div style="text-align:right;">
+                            <div style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.25rem 0.5rem; background:rgba(0,0,0,0.04); border-radius:4px; font-family:var(--font-mono); font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em; border:1px solid rgba(0,0,0,0.05);">
+                                <div style="width:4px; height:4px; background:#eab308; border-radius:50%;"></div> Confidential
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Academic Row: PhD Pursuing -->
+                    <div class="support-row mentor-reveal">
+                        <div>
+                            <div class="support-avatar"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+                        </div>
+                        <div>
+                            <div style="font-family:var(--font-serif); font-size:1.15rem; color:var(--text-main); font-weight:600; margin-bottom:0.25rem;">[Name Pending]</div>
+                            <div style="font-size:0.85rem; color:var(--text-main);">[Nature of Support — e.g. Scientific Validation]</div>
+                        </div>
+                        <div>
+                            <div style="font-size:0.9rem; color:var(--text-main); font-weight:500;">PhD Pursuing <span style="font-weight:400; color:var(--text-muted);">&mdash; [Role]</span></div>
+                            <div style="font-size:0.85rem; color:var(--text-muted);">[Institution / Organisation]</div>
+                        </div>
+                        <div style="text-align:right;">
+                            <div style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.25rem 0.5rem; background:rgba(0,0,0,0.04); border-radius:4px; font-family:var(--font-mono); font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em; border:1px solid rgba(0,0,0,0.05);">
+                                <div style="width:4px; height:4px; background:#eab308; border-radius:50%;"></div> Confidential
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Academic Row: PhD Viva Completed -->
+                    <div class="support-row mentor-reveal">
+                        <div>
+                            <div class="support-avatar"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+                        </div>
+                        <div>
+                            <div style="font-family:var(--font-serif); font-size:1.15rem; color:var(--text-main); font-weight:600; margin-bottom:0.25rem;">Dr. [Name Pending]</div>
+                            <div style="font-size:0.85rem; color:var(--text-main);">[Nature of Support — e.g. Scientific Validation]</div>
+                        </div>
+                        <div>
+                            <div style="font-size:0.9rem; color:var(--text-main); font-weight:500;">PhD Viva Completed <span style="font-weight:400; color:var(--text-muted);">&mdash; [Role]</span></div>
+                            <div style="font-size:0.85rem; color:var(--text-muted);">[Institution / Organisation]</div>
+                        </div>
+                        <div style="text-align:right;">
+                            <div style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.25rem 0.5rem; background:rgba(0,0,0,0.04); border-radius:4px; font-family:var(--font-mono); font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em; border:1px solid rgba(0,0,0,0.05);">
+                                <div style="width:4px; height:4px; background:#eab308; border-radius:50%;"></div> Confidential
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            
         </section>
 
 
