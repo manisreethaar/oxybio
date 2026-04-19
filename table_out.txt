@@ -1,0 +1,23 @@
+<div class="duel-row">
+ <div class="duel-category">
+  Lab Reports
+ </div>
+ <div class="duel-vs-grid">
+  <div class="duel-us">
+   <span class="duel-icon good">
+    ✓
+   </span>
+   <span class="duel-text">
+    Public CoA committed at launch
+   </span>
+  </div>
+  <div class="duel-them">
+   <span class="duel-icon bad">
+    ✖
+   </span>
+   <span class="duel-text">
+    No Transparency
+   </span>
+  </div>
+ </div>
+</div>

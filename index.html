@@ -77,6 +77,64 @@
 
     <script defer src="/_vercel/speed-insights/script.js"></script>
 
+
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="Oxygen Bioinnovations | Advanced Functional Foods. Powered by Fermentation.">
+    <meta property="og:description" content="Oxygen Bioinnovations | R&D Lab currently active in DETI@ACE TBI, Hosur. Developing indigenous Indian biological models.">
+    <meta property="og:image" content="https://oxygenbioinnovations.com/assets/images/og-image.jpg">
+    <meta property="og:url" content="https://oxygenbioinnovations.com/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+
+    <!-- Mobile Comparison Table Fix from User Request -->
+    <style>
+    @media (max-width: 768px) {
+        /* Convert comparison grid to Card-per-row */
+        .duel-row {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 0.5rem;
+            background: var(--bg-alt);
+            padding: 1.25rem !important;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+        .duel-category {
+            font-size: 1rem !important;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.25rem;
+            width: 100%;
+        }
+        .duel-vs-grid {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 0.5rem !important;
+            width: 100%;
+        }
+        /* Style us vs them */
+        .duel-us, .duel-them {
+            padding: 0.5rem !important;
+            border-radius: 8px;
+            background: var(--bg);
+        }
+        .duel-us {
+            border: 1px solid rgba(13,138,116,0.2);
+        }
+        .duel-them {
+            border: 1px solid var(--border);
+            opacity: 0.85;
+        }
+        /* Mobile Specific hidden rows toggle logic setup (if needed later) */
+        .desktop-duel-header {
+            display: none !important;
+        }
+    }
+    </style>
 </head>
 
 
@@ -709,12 +767,12 @@
                         <div class="problem-panel">
                             <div class="problem-panel-num">02</div>
                             <h4 class="problem-panel-title">The Extraction Gap</h4>
-                            <p class="problem-panel-text">Current medicinal compounds often contain up to 70% starch because manufacturers do not utilize species-specific fruiting-body liquid extraction.</p>
+                            <p class="problem-panel-text">Current medicinal compounds often contain high starch content from myceliated grain substrates [Nammex / ConsumerLab].</p>
                         </div>
                         <div class="problem-panel">
                             <div class="problem-panel-num">03</div>
                             <h4 class="problem-panel-title">The Price Gap</h4>
-                            <p class="problem-panel-text">Scientifically backed functional health currently requires importing products at a 600% markup. There is no &#8377;65 indigenous equivalent.</p>
+                            <p class="problem-panel-text">Scientifically backed functional health currently is priced 3–8x beyond reach of most Indian consumers. There is no &#8377;65 indigenous equivalent.</p>
                         </div>
                     </div>
                 </div>
@@ -1368,7 +1426,7 @@
 
                                     <span class="duel-icon bad">✖</span>
 
-                                    <span class="duel-text">Chemical Heat Extraction</span>
+                                    <span class="duel-text">Unverified extraction method</span>
 
                                 </div>
 
@@ -1480,7 +1538,7 @@
 
                                     <span class="duel-icon good">✓</span>
 
-                                    <span class="duel-text">Public CoA every batch</span>
+                                    <span class="duel-text">Public CoA committed at launch</span>
 
                                 </div>
 
@@ -1664,7 +1722,7 @@
 
                     <li><a href="careers.html">Careers</a></li>
 
-                    <li><a href="life.html">Life at Oxygen</a></li>
+                    <li><a href="careers.html">Life at Oxygen</a></li>
 
                 </ul>
 
