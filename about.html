@@ -1135,77 +1135,117 @@
                     }
                 </style>
 
-                <div class="support-list-container" style="margin-top:2rem;">
-                    
+                <div class="support-grid-container" style="margin-top:2rem;">
+
                     <!-- INDUSTRY BANNER -->
                     <div class="support-banner-header mentor-reveal">
                         Industry Advisory Board <span class="badge">03 Members</span>
                     </div>
 
-                    <!-- Header Row (Hidden on mobile) -->
-                    <div class="support-row mentor-reveal" style="border-bottom:2px solid var(--border); padding-bottom:1rem; margin-bottom:0.5rem; opacity:0.6;">
-                        <div style="font-family:var(--font-mono); font-size:0.65rem; text-transform:uppercase; letter-spacing:0.1em;">Pic</div>
-                        <div style="font-family:var(--font-mono); font-size:0.65rem; text-transform:uppercase; letter-spacing:0.1em;">Name &amp; Nature of Support</div>
-                        <div style="font-family:var(--font-mono); font-size:0.65rem; text-transform:uppercase; letter-spacing:0.1em;">Designation &amp; Employment</div>
-                        <div style="font-family:var(--font-mono); font-size:0.65rem; text-transform:uppercase; letter-spacing:0.1em; text-align:right;">Status</div>
-                    </div>
+                    <!-- 3 Column Grid -->
+                    <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap:1.5rem; margin-bottom:3rem;">
+                    <!-- Mentor Grid Card -->
+                    <div class="mentor-reveal" style="position:relative; background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:2rem 1.5rem; display:flex; flex-direction:column; transition:all 0.3s ease;" onmouseover="this.style.borderColor='rgba(13,138,116,0.3)'; this.style.transform='translateY(-6px)';" onmouseout="this.style.borderColor='var(--border)'; this.style.transform='none';">
+                        
+                        <!-- Status Badge -->
+                        <div style="position:absolute; top:1.25rem; right:1.25rem;">
+                            <span style="font-family:var(--font-mono); font-size:0.55rem; text-transform:uppercase; letter-spacing:0.05em; padding:0.25rem 0.6rem; border-radius:4px; display:inline-flex; align-items:center; gap:0.4rem; background:rgba(13,138,116,0.1); color:#0D8A74; border:1px solid rgba(13,138,116,0.2);">
+                                <span style="width:4px; height:4px; border-radius:50%; background:#0D8A74;"></span> Confirmed
+                            </span>
+                        </div>
 
-                    <!-- Industry Row -->
-                    <div class="support-row mentor-reveal">
-                        <div>
-                            <div class="support-avatar"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
-                        </div>
-                        <div>
-                            <div style="font-family:var(--font-serif); font-size:1.15rem; color:var(--text-main); font-weight:600; margin-bottom:0.25rem;"><a href="https://www.linkedin.com/in/prabahar-jerik-s-70430a162" target="_blank" rel="noopener noreferrer" style="color:var(--text-main); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#0D8A74'" onmouseout="this.style.color='var(--text-main)'">PRABAHAR JERIK S &#x2197;</a></div>
-                            <div style="font-size:0.85rem; color:#0D8A74;">Scale-up &amp; Bioprocess Advisory</div>
-                        </div>
-                        <div>
-                            <div style="font-size:0.9rem; color:var(--text-main); font-weight:500;">Senior Scientist MSAT</div>
-                            <div style="font-size:0.85rem; color:var(--text-muted);">Syngene International Limited</div>
-                        </div>
-                        <div style="text-align:right;">
-                            <div style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.25rem 0.6rem; background:rgba(13,138,116,0.1); border-radius:4px; font-family:var(--font-mono); font-size:0.6rem; text-transform:uppercase; color:#0D8A74; letter-spacing:0.05em; border:1px solid rgba(13,138,116,0.2);">
-                                <div style="width:4px; height:4px; background:#0D8A74; border-radius:50%;"></div> Confirmed
+                        <!-- Pic & Tag -->
+                        <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem;">
+                            <div style="width:52px; height:52px; border-radius:50%; background:var(--bg-alt); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="rgba(13,138,116,0.5)" stroke-width="1.5" style="width:22px; height:22px;"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
                             </div>
+                            <div>
+                                <div style="font-family:var(--font-mono); font-size:0.6rem; color:#0D8A74; text-transform:uppercase; letter-spacing:0.05em;">Scale-up Advisory</div>
+                                
+                            </div>
+                        </div>
+
+                        <!-- Name -->
+                        <div style="margin-bottom:1.5rem;">
+                            <h3 style="font-family:var(--font-serif); font-size:1.3rem; font-weight:600; color:var(--text-main); margin:0; line-height:1.2;">
+                                <a href="https://www.linkedin.com/in/prabahar-jerik-s-70430a162" target="_blank" rel="noopener noreferrer" style="color:var(--text-main); text-decoration:none; transition:color 0.2s; display:inline-flex; align-items:center; gap:0.3rem;" onmouseover="this.style.color='#0D8A74'" onmouseout="this.style.color='var(--text-main)'">Prabahar Jerik S <span style="font-family:var(--font-sans); font-size:1rem;">&#x2197;</span></a>
+                            </h3>
+                        </div>
+
+                        <!-- Designation & Org -->
+                        <div style="margin-top:auto;">
+                            <div style="font-size:0.9rem; font-weight:500; color:var(--text-main); margin-bottom:0.15rem;">Senior Scientist, MSAT</div>
+                            <div style="font-size:0.8rem; color:var(--text-muted); line-height:1.4;">Syngene International Limited</div>
                         </div>
                     </div>
-                    <!-- Industry Row -->
-                    <div class="support-row mentor-reveal">
-                        <div>
-                            <div class="support-avatar"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+                    <!-- Mentor Grid Card -->
+                    <div class="mentor-reveal" style="position:relative; background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:2rem 1.5rem; display:flex; flex-direction:column; transition:all 0.3s ease;" onmouseover="this.style.borderColor='rgba(13,138,116,0.3)'; this.style.transform='translateY(-6px)';" onmouseout="this.style.borderColor='var(--border)'; this.style.transform='none';">
+                        
+                        <!-- Status Badge -->
+                        <div style="position:absolute; top:1.25rem; right:1.25rem;">
+                            <span style="font-family:var(--font-mono); font-size:0.55rem; text-transform:uppercase; letter-spacing:0.05em; padding:0.25rem 0.6rem; border-radius:4px; display:inline-flex; align-items:center; gap:0.4rem; background:rgba(13,138,116,0.1); color:#0D8A74; border:1px solid rgba(13,138,116,0.2);">
+                                <span style="width:4px; height:4px; border-radius:50%; background:#0D8A74;"></span> Confirmed
+                            </span>
                         </div>
-                        <div>
-                            <div style="font-family:var(--font-serif); font-size:1.15rem; color:var(--text-main); font-weight:600; margin-bottom:0.25rem;"><a href="https://www.linkedin.com/in/yeslin-pushan" target="_blank" rel="noopener noreferrer" style="color:var(--text-main); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#0D8A74'" onmouseout="this.style.color='var(--text-main)'">Yeslin Pushan M &#x2197;</a></div>
-                            <div style="font-size:0.85rem; color:#0D8A74;">Scale-up &amp; Bioprocess Advisory</div>
-                        </div>
-                        <div>
-                            <div style="font-size:0.9rem; color:var(--text-main); font-weight:500;">Senior Scientist MSAT</div>
-                            <div style="font-size:0.85rem; color:var(--text-muted);">Syngene International Limited</div>
-                        </div>
-                        <div style="text-align:right;">
-                            <div style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.25rem 0.6rem; background:rgba(13,138,116,0.1); border-radius:4px; font-family:var(--font-mono); font-size:0.6rem; text-transform:uppercase; color:#0D8A74; letter-spacing:0.05em; border:1px solid rgba(13,138,116,0.2);">
-                                <div style="width:4px; height:4px; background:#0D8A74; border-radius:50%;"></div> Confirmed
+
+                        <!-- Pic & Tag -->
+                        <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem;">
+                            <div style="width:52px; height:52px; border-radius:50%; background:var(--bg-alt); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="rgba(13,138,116,0.5)" stroke-width="1.5" style="width:22px; height:22px;"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
                             </div>
+                            <div>
+                                <div style="font-family:var(--font-mono); font-size:0.6rem; color:#0D8A74; text-transform:uppercase; letter-spacing:0.05em;">Scale-up Advisory</div>
+                                
+                            </div>
+                        </div>
+
+                        <!-- Name -->
+                        <div style="margin-bottom:1.5rem;">
+                            <h3 style="font-family:var(--font-serif); font-size:1.3rem; font-weight:600; color:var(--text-main); margin:0; line-height:1.2;">
+                                <a href="https://www.linkedin.com/in/yeslin-pushan" target="_blank" rel="noopener noreferrer" style="color:var(--text-main); text-decoration:none; transition:color 0.2s; display:inline-flex; align-items:center; gap:0.3rem;" onmouseover="this.style.color='#0D8A74'" onmouseout="this.style.color='var(--text-main)'">Yeslin Pushan M <span style="font-family:var(--font-sans); font-size:1rem;">&#x2197;</span></a>
+                            </h3>
+                        </div>
+
+                        <!-- Designation & Org -->
+                        <div style="margin-top:auto;">
+                            <div style="font-size:0.9rem; font-weight:500; color:var(--text-main); margin-bottom:0.15rem;">Senior Scientist, MSAT</div>
+                            <div style="font-size:0.8rem; color:var(--text-muted); line-height:1.4;">Syngene International Limited</div>
                         </div>
                     </div>
-                    <!-- Industry Row -->
-                    <div class="support-row mentor-reveal">
-                        <div>
-                            <div class="support-avatar"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+                    <!-- Mentor Grid Card -->
+                    <div class="mentor-reveal" style="position:relative; background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:2rem 1.5rem; display:flex; flex-direction:column; transition:all 0.3s ease;" onmouseover="this.style.borderColor='rgba(13,138,116,0.3)'; this.style.transform='translateY(-6px)';" onmouseout="this.style.borderColor='var(--border)'; this.style.transform='none';">
+                        
+                        <!-- Status Badge -->
+                        <div style="position:absolute; top:1.25rem; right:1.25rem;">
+                            <span style="font-family:var(--font-mono); font-size:0.55rem; text-transform:uppercase; letter-spacing:0.05em; padding:0.25rem 0.6rem; border-radius:4px; display:inline-flex; align-items:center; gap:0.4rem; background:rgba(0,0,0,0.04); color:var(--text-muted); border:1px solid rgba(0,0,0,0.05);">
+                                <span style="width:4px; height:4px; border-radius:50%; background:#eab308;"></span> Confidential
+                            </span>
                         </div>
-                        <div>
-                            <div style="font-family:var(--font-serif); font-size:1.15rem; color:var(--text-main); font-weight:600; margin-bottom:0.25rem;">[Name Pending]</div>
-                            <div style="font-size:0.85rem; color:#0D8A74;">[Nature of Support — e.g. Strategy / Scale-up]</div>
-                        </div>
-                        <div>
-                            <div style="font-size:0.9rem; color:var(--text-main); font-weight:500;">[Current Designation]</div>
-                            <div style="font-size:0.85rem; color:var(--text-muted);">[Institution / Organisation]</div>
-                        </div>
-                        <div style="text-align:right;">
-                            <div style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.25rem 0.5rem; background:rgba(0,0,0,0.04); border-radius:4px; font-family:var(--font-mono); font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em; border:1px solid rgba(0,0,0,0.05);">
-                                <div style="width:4px; height:4px; background:#eab308; border-radius:50%;"></div> Confidential
+
+                        <!-- Pic & Tag -->
+                        <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem;">
+                            <div style="width:52px; height:52px; border-radius:50%; background:var(--bg-alt); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="rgba(13,138,116,0.5)" stroke-width="1.5" style="width:22px; height:22px;"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                            </div>
+                            <div>
+                                <div style="font-family:var(--font-mono); font-size:0.6rem; color:#0D8A74; text-transform:uppercase; letter-spacing:0.05em;">[Nature of Support]</div>
+                                
                             </div>
                         </div>
+
+                        <!-- Name -->
+                        <div style="margin-bottom:1.5rem;">
+                            <h3 style="font-family:var(--font-serif); font-size:1.3rem; font-weight:600; color:var(--text-main); margin:0; line-height:1.2;">
+                                <span style="color:var(--text-main);">[Name Pending]</span>
+                            </h3>
+                        </div>
+
+                        <!-- Designation & Org -->
+                        <div style="margin-top:auto;">
+                            <div style="font-size:0.9rem; font-weight:500; color:var(--text-main); margin-bottom:0.15rem;">[Current Designation]</div>
+                            <div style="font-size:0.8rem; color:var(--text-muted); line-height:1.4;">[Institution / Organisation]</div>
+                        </div>
+                    </div>
                     </div>
 
                     <!-- ACADEMIC BANNER -->
@@ -1213,164 +1253,280 @@
                         Academic &amp; Research Review <span class="badge" style="background:var(--bg); border-color:var(--border); color:var(--text-main);">08 Members</span>
                     </div>
 
-                    <!-- Header Row (Hidden on mobile) -->
-                    <div class="support-row mentor-reveal" style="border-bottom:2px solid var(--border); padding-bottom:1rem; margin-bottom:0.5rem; opacity:0.6;">
-                        <div style="font-family:var(--font-mono); font-size:0.65rem; text-transform:uppercase; letter-spacing:0.1em;">Pic</div>
-                        <div style="font-family:var(--font-mono); font-size:0.65rem; text-transform:uppercase; letter-spacing:0.1em;">Name &amp; Nature of Support</div>
-                        <div style="font-family:var(--font-mono); font-size:0.65rem; text-transform:uppercase; letter-spacing:0.1em;">Designation &amp; Employment</div>
-                        <div style="font-family:var(--font-mono); font-size:0.65rem; text-transform:uppercase; letter-spacing:0.1em; text-align:right;">Status</div>
-                    </div>
-                    <!-- Academic Row: Doctorate -->
-                    <div class="support-row mentor-reveal">
-                        <div>
-                            <div class="support-avatar"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+                    <!-- 3 Column Grid -->
+                    <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap:1.5rem; margin-bottom:3rem;">
+                    <!-- Mentor Grid Card -->
+                    <div class="mentor-reveal" style="position:relative; background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:2rem 1.5rem; display:flex; flex-direction:column; transition:all 0.3s ease;" onmouseover="this.style.borderColor='rgba(13,138,116,0.3)'; this.style.transform='translateY(-6px)';" onmouseout="this.style.borderColor='var(--border)'; this.style.transform='none';">
+                        
+                        <!-- Status Badge -->
+                        <div style="position:absolute; top:1.25rem; right:1.25rem;">
+                            <span style="font-family:var(--font-mono); font-size:0.55rem; text-transform:uppercase; letter-spacing:0.05em; padding:0.25rem 0.6rem; border-radius:4px; display:inline-flex; align-items:center; gap:0.4rem; background:rgba(13,138,116,0.1); color:#0D8A74; border:1px solid rgba(13,138,116,0.2);">
+                                <span style="width:4px; height:4px; border-radius:50%; background:#0D8A74;"></span> Confirmed
+                            </span>
                         </div>
-                        <div>
-                            <div style="font-family:var(--font-serif); font-size:1.15rem; color:var(--text-main); font-weight:600; margin-bottom:0.25rem;"><a href="https://www.linkedin.com/in/dr-hari-lakshmi-120a9b195/" target="_blank" rel="noopener noreferrer" style="color:var(--text-main); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#0D8A74'" onmouseout="this.style.color='var(--text-main)'">Dr. S. Hari Lakshmi &#x2197;</a></div>
-                            <div style="font-size:0.85rem; color:var(--text-main);">Scientific Validation &amp; Advisory</div>
-                        </div>
-                        <div>
-                            <div style="font-size:0.9rem; color:var(--text-main); font-weight:500;">Doctorate <span style="font-weight:400; color:var(--text-muted);">&mdash; Assistant Professor</span></div>
-                            <div style="font-size:0.85rem; color:var(--text-muted);">Sri Shakthi Institute Of Engineering And Technology, Coimbatore</div>
-                        </div>
-                        <div style="text-align:right;">
-                            <div style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.25rem 0.6rem; background:rgba(13,138,116,0.1); border-radius:4px; font-family:var(--font-mono); font-size:0.6rem; text-transform:uppercase; color:#0D8A74; letter-spacing:0.05em; border:1px solid rgba(13,138,116,0.2);">
-                                <div style="width:4px; height:4px; background:#0D8A74; border-radius:50%;"></div> Confirmed
+
+                        <!-- Pic & Tag -->
+                        <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem;">
+                            <div style="width:52px; height:52px; border-radius:50%; background:var(--bg-alt); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="rgba(13,138,116,0.5)" stroke-width="1.5" style="width:22px; height:22px;"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                            </div>
+                            <div>
+                                <div style="font-family:var(--font-mono); font-size:0.6rem; color:#0D8A74; text-transform:uppercase; letter-spacing:0.05em;">Scientific Validation</div>
+                                <div style="font-family:var(--font-sans); font-size:0.8rem; color:var(--text-muted); margin-top:0.2rem;">Doctorate</div>
                             </div>
                         </div>
-                    </div>
-                    <!-- Academic Row: Doctorate -->
-                    <div class="support-row mentor-reveal">
-                        <div>
-                            <div class="support-avatar"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+
+                        <!-- Name -->
+                        <div style="margin-bottom:1.5rem;">
+                            <h3 style="font-family:var(--font-serif); font-size:1.3rem; font-weight:600; color:var(--text-main); margin:0; line-height:1.2;">
+                                <a href="https://www.linkedin.com/in/dr-hari-lakshmi-120a9b195/" target="_blank" rel="noopener noreferrer" style="color:var(--text-main); text-decoration:none; transition:color 0.2s; display:inline-flex; align-items:center; gap:0.3rem;" onmouseover="this.style.color='#0D8A74'" onmouseout="this.style.color='var(--text-main)'">Dr. S. Hari Lakshmi <span style="font-family:var(--font-sans); font-size:1rem;">&#x2197;</span></a>
+                            </h3>
                         </div>
-                        <div>
-                            <div style="font-family:var(--font-serif); font-size:1.15rem; color:var(--text-main); font-weight:600; margin-bottom:0.25rem;">Dr. [Name Pending]</div>
-                            <div style="font-size:0.85rem; color:var(--text-main);">[Nature of Support — e.g. Scientific Validation]</div>
-                        </div>
-                        <div>
-                            <div style="font-size:0.9rem; color:var(--text-main); font-weight:500;">Doctorate <span style="font-weight:400; color:var(--text-muted);">&mdash; [Role]</span></div>
-                            <div style="font-size:0.85rem; color:var(--text-muted);">[Institution / Organisation]</div>
-                        </div>
-                        <div style="text-align:right;">
-                            <div style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.25rem 0.5rem; background:rgba(0,0,0,0.04); border-radius:4px; font-family:var(--font-mono); font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em; border:1px solid rgba(0,0,0,0.05);">
-                                <div style="width:4px; height:4px; background:#eab308; border-radius:50%;"></div> Confidential
-                            </div>
+
+                        <!-- Designation & Org -->
+                        <div style="margin-top:auto;">
+                            <div style="font-size:0.9rem; font-weight:500; color:var(--text-main); margin-bottom:0.15rem;">Assistant Professor</div>
+                            <div style="font-size:0.8rem; color:var(--text-muted); line-height:1.4;">Sri Shakthi Institute of Engineering and Technology, Coimbatore</div>
                         </div>
                     </div>
-                    <!-- Academic Row: Doctorate -->
-                    <div class="support-row mentor-reveal">
-                        <div>
-                            <div class="support-avatar"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+                    <!-- Mentor Grid Card -->
+                    <div class="mentor-reveal" style="position:relative; background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:2rem 1.5rem; display:flex; flex-direction:column; transition:all 0.3s ease;" onmouseover="this.style.borderColor='rgba(13,138,116,0.3)'; this.style.transform='translateY(-6px)';" onmouseout="this.style.borderColor='var(--border)'; this.style.transform='none';">
+                        
+                        <!-- Status Badge -->
+                        <div style="position:absolute; top:1.25rem; right:1.25rem;">
+                            <span style="font-family:var(--font-mono); font-size:0.55rem; text-transform:uppercase; letter-spacing:0.05em; padding:0.25rem 0.6rem; border-radius:4px; display:inline-flex; align-items:center; gap:0.4rem; background:rgba(13,138,116,0.1); color:#0D8A74; border:1px solid rgba(13,138,116,0.2);">
+                                <span style="width:4px; height:4px; border-radius:50%; background:#0D8A74;"></span> Confirmed
+                            </span>
                         </div>
-                        <div>
-                            <div style="font-family:var(--font-serif); font-size:1.15rem; color:var(--text-main); font-weight:600; margin-bottom:0.25rem;">Dr. [Name Pending]</div>
-                            <div style="font-size:0.85rem; color:var(--text-main);">[Nature of Support — e.g. Scientific Validation]</div>
-                        </div>
-                        <div>
-                            <div style="font-size:0.9rem; color:var(--text-main); font-weight:500;">Doctorate <span style="font-weight:400; color:var(--text-muted);">&mdash; [Role]</span></div>
-                            <div style="font-size:0.85rem; color:var(--text-muted);">[Institution / Organisation]</div>
-                        </div>
-                        <div style="text-align:right;">
-                            <div style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.25rem 0.5rem; background:rgba(0,0,0,0.04); border-radius:4px; font-family:var(--font-mono); font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em; border:1px solid rgba(0,0,0,0.05);">
-                                <div style="width:4px; height:4px; background:#eab308; border-radius:50%;"></div> Confidential
+
+                        <!-- Pic & Tag -->
+                        <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem;">
+                            <div style="width:52px; height:52px; border-radius:50%; background:var(--bg-alt); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="rgba(13,138,116,0.5)" stroke-width="1.5" style="width:22px; height:22px;"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
                             </div>
+                            <div>
+                                <div style="font-family:var(--font-mono); font-size:0.6rem; color:#0D8A74; text-transform:uppercase; letter-spacing:0.05em;">Scientific Validation</div>
+                                <div style="font-family:var(--font-sans); font-size:0.8rem; color:var(--text-muted); margin-top:0.2rem;">PhD Viva Completed</div>
+                            </div>
+                        </div>
+
+                        <!-- Name -->
+                        <div style="margin-bottom:1.5rem;">
+                            <h3 style="font-family:var(--font-serif); font-size:1.3rem; font-weight:600; color:var(--text-main); margin:0; line-height:1.2;">
+                                <a href="https://www.linkedin.com/in/aashikaravi24/" target="_blank" rel="noopener noreferrer" style="color:var(--text-main); text-decoration:none; transition:color 0.2s; display:inline-flex; align-items:center; gap:0.3rem;" onmouseover="this.style.color='#0D8A74'" onmouseout="this.style.color='var(--text-main)'">R.C. Aashika <span style="font-family:var(--font-sans); font-size:1rem;">&#x2197;</span></a>
+                            </h3>
+                        </div>
+
+                        <!-- Designation & Org -->
+                        <div style="margin-top:auto;">
+                            <div style="font-size:0.9rem; font-weight:500; color:var(--text-main); margin-bottom:0.15rem;">Assistant Professor</div>
+                            <div style="font-size:0.8rem; color:var(--text-muted); line-height:1.4;">Jeppiaar Engineering College (Semmencheri, Chennai)</div>
                         </div>
                     </div>
-                    <!-- Academic Row: Doctorate -->
-                    <div class="support-row mentor-reveal">
-                        <div>
-                            <div class="support-avatar"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+                    <!-- Mentor Grid Card -->
+                    <div class="mentor-reveal" style="position:relative; background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:2rem 1.5rem; display:flex; flex-direction:column; transition:all 0.3s ease;" onmouseover="this.style.borderColor='rgba(13,138,116,0.3)'; this.style.transform='translateY(-6px)';" onmouseout="this.style.borderColor='var(--border)'; this.style.transform='none';">
+                        
+                        <!-- Status Badge -->
+                        <div style="position:absolute; top:1.25rem; right:1.25rem;">
+                            <span style="font-family:var(--font-mono); font-size:0.55rem; text-transform:uppercase; letter-spacing:0.05em; padding:0.25rem 0.6rem; border-radius:4px; display:inline-flex; align-items:center; gap:0.4rem; background:rgba(13,138,116,0.1); color:#0D8A74; border:1px solid rgba(13,138,116,0.2);">
+                                <span style="width:4px; height:4px; border-radius:50%; background:#0D8A74;"></span> Confirmed
+                            </span>
                         </div>
-                        <div>
-                            <div style="font-family:var(--font-serif); font-size:1.15rem; color:var(--text-main); font-weight:600; margin-bottom:0.25rem;">Dr. [Name Pending]</div>
-                            <div style="font-size:0.85rem; color:var(--text-main);">[Nature of Support — e.g. Scientific Validation]</div>
-                        </div>
-                        <div>
-                            <div style="font-size:0.9rem; color:var(--text-main); font-weight:500;">Doctorate <span style="font-weight:400; color:var(--text-muted);">&mdash; [Role]</span></div>
-                            <div style="font-size:0.85rem; color:var(--text-muted);">[Institution / Organisation]</div>
-                        </div>
-                        <div style="text-align:right;">
-                            <div style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.25rem 0.5rem; background:rgba(0,0,0,0.04); border-radius:4px; font-family:var(--font-mono); font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em; border:1px solid rgba(0,0,0,0.05);">
-                                <div style="width:4px; height:4px; background:#eab308; border-radius:50%;"></div> Confidential
+
+                        <!-- Pic & Tag -->
+                        <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem;">
+                            <div style="width:52px; height:52px; border-radius:50%; background:var(--bg-alt); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="rgba(13,138,116,0.5)" stroke-width="1.5" style="width:22px; height:22px;"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
                             </div>
+                            <div>
+                                <div style="font-family:var(--font-mono); font-size:0.6rem; color:#0D8A74; text-transform:uppercase; letter-spacing:0.05em;">Scientific Validation</div>
+                                <div style="font-family:var(--font-sans); font-size:0.8rem; color:var(--text-muted); margin-top:0.2rem;">PhD Pursuing</div>
+                            </div>
+                        </div>
+
+                        <!-- Name -->
+                        <div style="margin-bottom:1.5rem;">
+                            <h3 style="font-family:var(--font-serif); font-size:1.3rem; font-weight:600; color:var(--text-main); margin:0; line-height:1.2;">
+                                <a href="https://www.linkedin.com/in/gopi-karuppaiah-756411175/" target="_blank" rel="noopener noreferrer" style="color:var(--text-main); text-decoration:none; transition:color 0.2s; display:inline-flex; align-items:center; gap:0.3rem;" onmouseover="this.style.color='#0D8A74'" onmouseout="this.style.color='var(--text-main)'">Gopi K <span style="font-family:var(--font-sans); font-size:1rem;">&#x2197;</span></a>
+                            </h3>
+                        </div>
+
+                        <!-- Designation & Org -->
+                        <div style="margin-top:auto;">
+                            <div style="font-size:0.9rem; font-weight:500; color:var(--text-main); margin-bottom:0.15rem;">Bioengineering Major</div>
+                            <div style="font-size:0.8rem; color:var(--text-muted); line-height:1.4;">Chung-Ang University, Seoul</div>
                         </div>
                     </div>
-                    <!-- Academic Row: Doctorate -->
-                    <div class="support-row mentor-reveal">
-                        <div>
-                            <div class="support-avatar"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+                    <!-- Mentor Grid Card -->
+                    <div class="mentor-reveal" style="position:relative; background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:2rem 1.5rem; display:flex; flex-direction:column; transition:all 0.3s ease;" onmouseover="this.style.borderColor='rgba(13,138,116,0.3)'; this.style.transform='translateY(-6px)';" onmouseout="this.style.borderColor='var(--border)'; this.style.transform='none';">
+                        
+                        <!-- Status Badge -->
+                        <div style="position:absolute; top:1.25rem; right:1.25rem;">
+                            <span style="font-family:var(--font-mono); font-size:0.55rem; text-transform:uppercase; letter-spacing:0.05em; padding:0.25rem 0.6rem; border-radius:4px; display:inline-flex; align-items:center; gap:0.4rem; background:rgba(0,0,0,0.04); color:var(--text-muted); border:1px solid rgba(0,0,0,0.05);">
+                                <span style="width:4px; height:4px; border-radius:50%; background:#eab308;"></span> Confidential
+                            </span>
                         </div>
-                        <div>
-                            <div style="font-family:var(--font-serif); font-size:1.15rem; color:var(--text-main); font-weight:600; margin-bottom:0.25rem;">Dr. [Name Pending]</div>
-                            <div style="font-size:0.85rem; color:var(--text-main);">[Nature of Support — e.g. Scientific Validation]</div>
-                        </div>
-                        <div>
-                            <div style="font-size:0.9rem; color:var(--text-main); font-weight:500;">Doctorate <span style="font-weight:400; color:var(--text-muted);">&mdash; [Role]</span></div>
-                            <div style="font-size:0.85rem; color:var(--text-muted);">[Institution / Organisation]</div>
-                        </div>
-                        <div style="text-align:right;">
-                            <div style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.25rem 0.5rem; background:rgba(0,0,0,0.04); border-radius:4px; font-family:var(--font-mono); font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em; border:1px solid rgba(0,0,0,0.05);">
-                                <div style="width:4px; height:4px; background:#eab308; border-radius:50%;"></div> Confidential
+
+                        <!-- Pic & Tag -->
+                        <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem;">
+                            <div style="width:52px; height:52px; border-radius:50%; background:var(--bg-alt); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="rgba(13,138,116,0.5)" stroke-width="1.5" style="width:22px; height:22px;"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
                             </div>
+                            <div>
+                                <div style="font-family:var(--font-mono); font-size:0.6rem; color:#0D8A74; text-transform:uppercase; letter-spacing:0.05em;">[Nature of Support]</div>
+                                <div style="font-family:var(--font-sans); font-size:0.8rem; color:var(--text-muted); margin-top:0.2rem;">Doctorate</div>
+                            </div>
+                        </div>
+
+                        <!-- Name -->
+                        <div style="margin-bottom:1.5rem;">
+                            <h3 style="font-family:var(--font-serif); font-size:1.3rem; font-weight:600; color:var(--text-main); margin:0; line-height:1.2;">
+                                <span style="color:var(--text-main);">Dr. [Name Pending]</span>
+                            </h3>
+                        </div>
+
+                        <!-- Designation & Org -->
+                        <div style="margin-top:auto;">
+                            <div style="font-size:0.9rem; font-weight:500; color:var(--text-main); margin-bottom:0.15rem;">[Role]</div>
+                            <div style="font-size:0.8rem; color:var(--text-muted); line-height:1.4;">[Institution / Organisation]</div>
                         </div>
                     </div>
-                    <!-- Academic Row: Doctorate -->
-                    <div class="support-row mentor-reveal">
-                        <div>
-                            <div class="support-avatar"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+                    <!-- Mentor Grid Card -->
+                    <div class="mentor-reveal" style="position:relative; background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:2rem 1.5rem; display:flex; flex-direction:column; transition:all 0.3s ease;" onmouseover="this.style.borderColor='rgba(13,138,116,0.3)'; this.style.transform='translateY(-6px)';" onmouseout="this.style.borderColor='var(--border)'; this.style.transform='none';">
+                        
+                        <!-- Status Badge -->
+                        <div style="position:absolute; top:1.25rem; right:1.25rem;">
+                            <span style="font-family:var(--font-mono); font-size:0.55rem; text-transform:uppercase; letter-spacing:0.05em; padding:0.25rem 0.6rem; border-radius:4px; display:inline-flex; align-items:center; gap:0.4rem; background:rgba(0,0,0,0.04); color:var(--text-muted); border:1px solid rgba(0,0,0,0.05);">
+                                <span style="width:4px; height:4px; border-radius:50%; background:#eab308;"></span> Confidential
+                            </span>
                         </div>
-                        <div>
-                            <div style="font-family:var(--font-serif); font-size:1.15rem; color:var(--text-main); font-weight:600; margin-bottom:0.25rem;">Dr. [Name Pending]</div>
-                            <div style="font-size:0.85rem; color:var(--text-main);">[Nature of Support — e.g. Scientific Validation]</div>
-                        </div>
-                        <div>
-                            <div style="font-size:0.9rem; color:var(--text-main); font-weight:500;">Doctorate <span style="font-weight:400; color:var(--text-muted);">&mdash; [Role]</span></div>
-                            <div style="font-size:0.85rem; color:var(--text-muted);">[Institution / Organisation]</div>
-                        </div>
-                        <div style="text-align:right;">
-                            <div style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.25rem 0.5rem; background:rgba(0,0,0,0.04); border-radius:4px; font-family:var(--font-mono); font-size:0.6rem; text-transform:uppercase; color:var(--text-muted); letter-spacing:0.05em; border:1px solid rgba(0,0,0,0.05);">
-                                <div style="width:4px; height:4px; background:#eab308; border-radius:50%;"></div> Confidential
+
+                        <!-- Pic & Tag -->
+                        <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem;">
+                            <div style="width:52px; height:52px; border-radius:50%; background:var(--bg-alt); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="rgba(13,138,116,0.5)" stroke-width="1.5" style="width:22px; height:22px;"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
                             </div>
+                            <div>
+                                <div style="font-family:var(--font-mono); font-size:0.6rem; color:#0D8A74; text-transform:uppercase; letter-spacing:0.05em;">[Nature of Support]</div>
+                                <div style="font-family:var(--font-sans); font-size:0.8rem; color:var(--text-muted); margin-top:0.2rem;">Doctorate</div>
+                            </div>
+                        </div>
+
+                        <!-- Name -->
+                        <div style="margin-bottom:1.5rem;">
+                            <h3 style="font-family:var(--font-serif); font-size:1.3rem; font-weight:600; color:var(--text-main); margin:0; line-height:1.2;">
+                                <span style="color:var(--text-main);">Dr. [Name Pending]</span>
+                            </h3>
+                        </div>
+
+                        <!-- Designation & Org -->
+                        <div style="margin-top:auto;">
+                            <div style="font-size:0.9rem; font-weight:500; color:var(--text-main); margin-bottom:0.15rem;">[Role]</div>
+                            <div style="font-size:0.8rem; color:var(--text-muted); line-height:1.4;">[Institution / Organisation]</div>
                         </div>
                     </div>
-                    <!-- Academic Row: PhD Pursuing -->
-                    <div class="support-row mentor-reveal">
-                        <div>
-                            <div class="support-avatar"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+                    <!-- Mentor Grid Card -->
+                    <div class="mentor-reveal" style="position:relative; background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:2rem 1.5rem; display:flex; flex-direction:column; transition:all 0.3s ease;" onmouseover="this.style.borderColor='rgba(13,138,116,0.3)'; this.style.transform='translateY(-6px)';" onmouseout="this.style.borderColor='var(--border)'; this.style.transform='none';">
+                        
+                        <!-- Status Badge -->
+                        <div style="position:absolute; top:1.25rem; right:1.25rem;">
+                            <span style="font-family:var(--font-mono); font-size:0.55rem; text-transform:uppercase; letter-spacing:0.05em; padding:0.25rem 0.6rem; border-radius:4px; display:inline-flex; align-items:center; gap:0.4rem; background:rgba(0,0,0,0.04); color:var(--text-muted); border:1px solid rgba(0,0,0,0.05);">
+                                <span style="width:4px; height:4px; border-radius:50%; background:#eab308;"></span> Confidential
+                            </span>
                         </div>
-                        <div>
-                            <div style="font-family:var(--font-serif); font-size:1.15rem; color:var(--text-main); font-weight:600; margin-bottom:0.25rem;"><a href="https://www.linkedin.com/in/gopi-karuppaiah-756411175/" target="_blank" rel="noopener noreferrer" style="color:var(--text-main); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#0D8A74'" onmouseout="this.style.color='var(--text-main)'">Gopi K &#x2197;</a></div>
-                            <div style="font-size:0.85rem; color:var(--text-main);">Scientific Validation &amp; Advisory</div>
-                        </div>
-                        <div>
-                            <div style="font-size:0.9rem; color:var(--text-main); font-weight:500;">PhD Pursuing <span style="font-weight:400; color:var(--text-muted);">&mdash; Bioengineering Major</span></div>
-                            <div style="font-size:0.85rem; color:var(--text-muted);">Chung-Ang University, Seoul</div>
-                        </div>
-                        <div style="text-align:right;">
-                            <div style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.25rem 0.6rem; background:rgba(13,138,116,0.1); border-radius:4px; font-family:var(--font-mono); font-size:0.6rem; text-transform:uppercase; color:#0D8A74; letter-spacing:0.05em; border:1px solid rgba(13,138,116,0.2);">
-                                <div style="width:4px; height:4px; background:#0D8A74; border-radius:50%;"></div> Confirmed
+
+                        <!-- Pic & Tag -->
+                        <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem;">
+                            <div style="width:52px; height:52px; border-radius:50%; background:var(--bg-alt); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="rgba(13,138,116,0.5)" stroke-width="1.5" style="width:22px; height:22px;"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
                             </div>
+                            <div>
+                                <div style="font-family:var(--font-mono); font-size:0.6rem; color:#0D8A74; text-transform:uppercase; letter-spacing:0.05em;">[Nature of Support]</div>
+                                <div style="font-family:var(--font-sans); font-size:0.8rem; color:var(--text-muted); margin-top:0.2rem;">Doctorate</div>
+                            </div>
+                        </div>
+
+                        <!-- Name -->
+                        <div style="margin-bottom:1.5rem;">
+                            <h3 style="font-family:var(--font-serif); font-size:1.3rem; font-weight:600; color:var(--text-main); margin:0; line-height:1.2;">
+                                <span style="color:var(--text-main);">Dr. [Name Pending]</span>
+                            </h3>
+                        </div>
+
+                        <!-- Designation & Org -->
+                        <div style="margin-top:auto;">
+                            <div style="font-size:0.9rem; font-weight:500; color:var(--text-main); margin-bottom:0.15rem;">[Role]</div>
+                            <div style="font-size:0.8rem; color:var(--text-muted); line-height:1.4;">[Institution / Organisation]</div>
                         </div>
                     </div>
-                    <!-- Academic Row: PhD Viva Completed -->
-                    <div class="support-row mentor-reveal">
-                        <div>
-                            <div class="support-avatar"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+                    <!-- Mentor Grid Card -->
+                    <div class="mentor-reveal" style="position:relative; background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:2rem 1.5rem; display:flex; flex-direction:column; transition:all 0.3s ease;" onmouseover="this.style.borderColor='rgba(13,138,116,0.3)'; this.style.transform='translateY(-6px)';" onmouseout="this.style.borderColor='var(--border)'; this.style.transform='none';">
+                        
+                        <!-- Status Badge -->
+                        <div style="position:absolute; top:1.25rem; right:1.25rem;">
+                            <span style="font-family:var(--font-mono); font-size:0.55rem; text-transform:uppercase; letter-spacing:0.05em; padding:0.25rem 0.6rem; border-radius:4px; display:inline-flex; align-items:center; gap:0.4rem; background:rgba(0,0,0,0.04); color:var(--text-muted); border:1px solid rgba(0,0,0,0.05);">
+                                <span style="width:4px; height:4px; border-radius:50%; background:#eab308;"></span> Confidential
+                            </span>
                         </div>
-                        <div>
-                            <div style="font-family:var(--font-serif); font-size:1.15rem; color:var(--text-main); font-weight:600; margin-bottom:0.25rem;"><a href="https://www.linkedin.com/in/aashikaravi24/" target="_blank" rel="noopener noreferrer" style="color:var(--text-main); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#0D8A74'" onmouseout="this.style.color='var(--text-main)'">R.C. AAshika &#x2197;</a></div>
-                            <div style="font-size:0.85rem; color:var(--text-main);">Scientific Validation &amp; Advisory</div>
-                        </div>
-                        <div>
-                            <div style="font-size:0.9rem; color:var(--text-main); font-weight:500;">PhD Viva Completed <span style="font-weight:400; color:var(--text-muted);">&mdash; Assistant Professor</span></div>
-                            <div style="font-size:0.85rem; color:var(--text-muted);">Jeppiaar Engineering College (Semmencheri, Chennai)</div>
-                        </div>
-                        <div style="text-align:right;">
-                            <div style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.25rem 0.6rem; background:rgba(13,138,116,0.1); border-radius:4px; font-family:var(--font-mono); font-size:0.6rem; text-transform:uppercase; color:#0D8A74; letter-spacing:0.05em; border:1px solid rgba(13,138,116,0.2);">
-                                <div style="width:4px; height:4px; background:#0D8A74; border-radius:50%;"></div> Confirmed
+
+                        <!-- Pic & Tag -->
+                        <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem;">
+                            <div style="width:52px; height:52px; border-radius:50%; background:var(--bg-alt); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="rgba(13,138,116,0.5)" stroke-width="1.5" style="width:22px; height:22px;"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                            </div>
+                            <div>
+                                <div style="font-family:var(--font-mono); font-size:0.6rem; color:#0D8A74; text-transform:uppercase; letter-spacing:0.05em;">[Nature of Support]</div>
+                                <div style="font-family:var(--font-sans); font-size:0.8rem; color:var(--text-muted); margin-top:0.2rem;">Doctorate</div>
                             </div>
                         </div>
+
+                        <!-- Name -->
+                        <div style="margin-bottom:1.5rem;">
+                            <h3 style="font-family:var(--font-serif); font-size:1.3rem; font-weight:600; color:var(--text-main); margin:0; line-height:1.2;">
+                                <span style="color:var(--text-main);">Dr. [Name Pending]</span>
+                            </h3>
+                        </div>
+
+                        <!-- Designation & Org -->
+                        <div style="margin-top:auto;">
+                            <div style="font-size:0.9rem; font-weight:500; color:var(--text-main); margin-bottom:0.15rem;">[Role]</div>
+                            <div style="font-size:0.8rem; color:var(--text-muted); line-height:1.4;">[Institution / Organisation]</div>
+                        </div>
+                    </div>
+                    <!-- Mentor Grid Card -->
+                    <div class="mentor-reveal" style="position:relative; background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:2rem 1.5rem; display:flex; flex-direction:column; transition:all 0.3s ease;" onmouseover="this.style.borderColor='rgba(13,138,116,0.3)'; this.style.transform='translateY(-6px)';" onmouseout="this.style.borderColor='var(--border)'; this.style.transform='none';">
+                        
+                        <!-- Status Badge -->
+                        <div style="position:absolute; top:1.25rem; right:1.25rem;">
+                            <span style="font-family:var(--font-mono); font-size:0.55rem; text-transform:uppercase; letter-spacing:0.05em; padding:0.25rem 0.6rem; border-radius:4px; display:inline-flex; align-items:center; gap:0.4rem; background:rgba(0,0,0,0.04); color:var(--text-muted); border:1px solid rgba(0,0,0,0.05);">
+                                <span style="width:4px; height:4px; border-radius:50%; background:#eab308;"></span> Confidential
+                            </span>
+                        </div>
+
+                        <!-- Pic & Tag -->
+                        <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem;">
+                            <div style="width:52px; height:52px; border-radius:50%; background:var(--bg-alt); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="rgba(13,138,116,0.5)" stroke-width="1.5" style="width:22px; height:22px;"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                            </div>
+                            <div>
+                                <div style="font-family:var(--font-mono); font-size:0.6rem; color:#0D8A74; text-transform:uppercase; letter-spacing:0.05em;">[Nature of Support]</div>
+                                <div style="font-family:var(--font-sans); font-size:0.8rem; color:var(--text-muted); margin-top:0.2rem;">Doctorate</div>
+                            </div>
+                        </div>
+
+                        <!-- Name -->
+                        <div style="margin-bottom:1.5rem;">
+                            <h3 style="font-family:var(--font-serif); font-size:1.3rem; font-weight:600; color:var(--text-main); margin:0; line-height:1.2;">
+                                <span style="color:var(--text-main);">Dr. [Name Pending]</span>
+                            </h3>
+                        </div>
+
+                        <!-- Designation & Org -->
+                        <div style="margin-top:auto;">
+                            <div style="font-size:0.9rem; font-weight:500; color:var(--text-main); margin-bottom:0.15rem;">[Role]</div>
+                            <div style="font-size:0.8rem; color:var(--text-muted); line-height:1.4;">[Institution / Organisation]</div>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
