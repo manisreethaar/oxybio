@@ -6094,3 +6094,7 @@ html, body {
     line-height: 1.75;
     max-width: 640px;
 }
+
+
+/* Premium Card Hover Effect for About Page */
+.premium-card-hover:hover .bg-num { transform: scale(1.15) !important; color: rgba(13,138,116,0.1) !important; }
