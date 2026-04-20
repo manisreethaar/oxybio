@@ -24,6 +24,14 @@
     --shadow-lg: 0 12px 48px rgba(0, 0, 0, 0.08);
     --container: 1220px;
     --section-py: clamp(6rem, 10vw, 10rem);
+    /* ── Inner Page Hero Tokens ── */
+    --hero-h1-size:      clamp(2.75rem, 5.5vw, 4.5rem);
+    --hero-eyebrow-size: clamp(0.65rem, 1vw, 0.85rem);
+    --hero-sub-size:     clamp(1rem, 1.5vw, 1.2rem);
+    /* ── Inner Page Hero Tokens ── */
+    --hero-h1-size:      clamp(2.75rem, 5.5vw, 4.5rem);
+    --hero-eyebrow-size: clamp(0.65rem, 1vw, 0.85rem);
+    --hero-sub-size:     clamp(1rem, 1.5vw, 1.2rem);
     --font-serif: 'Outfit', system-ui, sans-serif;
     /* Repurposing serif class for our geometric display font */
     --font-sans: 'Inter', system-ui, sans-serif;
@@ -5971,4 +5979,118 @@ html, body {
         flex-direction: column !important;
         gap: 1.5rem !important;
     }
+}
+
+
+/* ═══════════════════════════════════════════
+   SHARED INNER-PAGE HERO SYSTEM
+   All inner pages (non-homepage) use these classes.
+   Changing --hero-h1-size in :root scales every page at once.
+══════════════════════════════════════════════ */
+
+.page-hero {
+    padding: var(--section-py) 0 calc(var(--section-py) * 0.6);
+    border-bottom: 1px solid var(--border);
+}
+
+.page-hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: var(--font-mono);
+    font-size: var(--hero-eyebrow-size);
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.page-hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: #0D8A74;
+    flex-shrink: 0;
+}
+
+.page-hero-title {
+    font-family: var(--font-serif);
+    font-size: var(--hero-h1-size);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    color: var(--text-main);
+    margin-bottom: 1.5rem;
+}
+
+.page-hero-title em {
+    color: #0D8A74;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.page-hero-sub {
+    font-size: var(--hero-sub-size);
+    color: var(--text-muted);
+    line-height: 1.75;
+    max-width: 640px;
+}
+
+
+/* ═══════════════════════════════════════════
+   SHARED INNER-PAGE HERO SYSTEM
+   All inner pages (non-homepage) use these classes.
+   Changing --hero-h1-size in :root scales every page at once.
+══════════════════════════════════════════════ */
+
+.page-hero {
+    padding: var(--section-py) 0 calc(var(--section-py) * 0.6);
+    border-bottom: 1px solid var(--border);
+}
+
+.page-hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: var(--font-mono);
+    font-size: var(--hero-eyebrow-size);
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.page-hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: #0D8A74;
+    flex-shrink: 0;
+}
+
+.page-hero-title {
+    font-family: var(--font-serif);
+    font-size: var(--hero-h1-size);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    color: var(--text-main);
+    margin-bottom: 1.5rem;
+}
+
+.page-hero-title em {
+    color: #0D8A74;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.page-hero-sub {
+    font-size: var(--hero-sub-size);
+    color: var(--text-muted);
+    line-height: 1.75;
+    max-width: 640px;
 }
