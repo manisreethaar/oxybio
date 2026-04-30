@@ -378,7 +378,7 @@
         font-family: var(--font-mono); font-size: 0.7rem;
         letter-spacing: 0.25em; text-transform: uppercase;
         color: #0D8A74; margin-bottom: 2rem;
-        display: flex; align-items: center; gap: 1rem;
+        display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
         opacity: 0; animation: fadeSlideUp 0.8s 0.2s forwards;
     }
     .ing-eyebrow::before {
@@ -409,7 +409,7 @@
         opacity: 0; animation: fadeSlideLeft 1s 0.6s forwards;
     }
     .ing-catalog-item {
-        display: flex; justify-content: space-between; align-items: center;
+        display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;
         padding: 1.25rem 2rem; background: var(--bg);
         transition: background 0.3s ease;
     }
@@ -572,7 +572,7 @@
 
 
 
-                            <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px dashed var(--border); padding-top:1.5rem;">
+                            <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1rem; border-top:1px dashed var(--border); padding-top:1.5rem;">
 
                                 <div>
 
@@ -611,7 +611,7 @@
                             <h3 style="font-family:var(--font-serif); font-size:2rem; color:var(--text-main); margin-bottom:0.5rem;">Karuppu Kavuni Black Rice</h3>
                             <p style="font-size:1.05rem; line-height:1.6; color:var(--text-muted); margin-bottom:1.5rem;">Indigenous Tamil Nadu heritage grain rich in anthocyanins and dietary fibre. Used alongside Ragi as the co-fermentation substrate — contributes natural colour, antioxidant activity, and a more complex fermentable carbohydrate profile.</p>
                             <div style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.1em; color:#0F6E56; background:#E1F5EE; display:inline-block; padding:0.2rem 0.6rem; border-radius:4px; margin-bottom:1.5rem;">&#9632; PUBLISHED — established nutritional literature</div>
-                            <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px dashed var(--border); padding-top:1.5rem;">
+                            <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1rem; border-top:1px dashed var(--border); padding-top:1.5rem;">
                                 <div>
                                     <span style="font-family:var(--font-mono); font-size:0.7rem; color:var(--text-muted); display:block;">PRIMARY BIOACTIVE</span>
                                     <span style="font-family:var(--font-mono); font-size:0.9rem; color:var(--text-muted);">Anthocyanins (Cyanidin-3-glucoside)</span>
@@ -671,7 +671,7 @@
                 </div>
 
                 <!-- ── Sourcing Note ─────────────────────────────────── -->
-                <div class="reveal" style="margin-bottom:var(--space-xl); background:var(--bg); border:1px solid var(--border); border-radius:16px; padding:2.5rem;">
+                <div class="reveal" style="margin-bottom:var(--space-xl); background:var(--bg); border:1px solid var(--border); border-radius:16px; padding:clamp(1.5rem, 5vw, 2.5rem);">
                     <div style="font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1rem;">Sourcing Integrity</div>
                     <div style="display:grid; grid-template-columns:1fr 1fr; gap:3rem;" class="mobile-stack">
                         <div>
@@ -738,7 +738,7 @@
 
 
 
-                            <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px dashed var(--border); padding-top:1.5rem;">
+                            <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1rem; border-top:1px dashed var(--border); padding-top:1.5rem;">
 
                                 <div>
 
@@ -785,7 +785,7 @@
 
 
 
-                            <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px dashed var(--border); padding-top:1.5rem;">
+                            <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1rem; border-top:1px dashed var(--border); padding-top:1.5rem;">
 
                                 <div>
 
@@ -834,7 +834,7 @@
 
 
 
-                            <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px dashed var(--border); padding-top:1.5rem;">
+                            <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1rem; border-top:1px dashed var(--border); padding-top:1.5rem;">
 
                                 <div>
 
@@ -1052,7 +1052,7 @@
         
 <div class="footer-bottom" style="text-align: center; border-top: 1px solid var(--border); margin-top: 2rem; padding-top: 1.5rem; font-size: 0.85rem; color: var(--text-muted); width: 100%; grid-column: 1 / -1; display: block;">
 
-            &copy; 2026 Oxygen Bioinnovations Private Limited with CIN: U72100TZ2026PTC038160. All rights reserved.
+            &copy; 2026 Oxygen Bioinnovations Private Limited with CIN: U72100TZ2026PTC038160. DPIIT Recognized Startup (DIPP258270). All rights reserved.
 
         </div>
 </div>
