@@ -4,14 +4,14 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>About Us | Oxygen Bioinnovations</title>
+<title>Our Story | Oxygen Bioinnovations</title>
 <meta content="Oxygen Bioinnovations | R&amp;D Lab currently active in DETI@ACE TBI, Hosur. Developing indigenous Indian biological models." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Outfit:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
 <link href="assets/css/transitions.css" rel="stylesheet"/>
-<link href="assets/css/styles.css?v=42" rel="stylesheet"/>
-<link href="assets/css/v2_premium.css?v=42" rel="stylesheet"/>
+<link href="assets/css/styles.css?v=43" rel="stylesheet"/>
+<link href="assets/css/v2_premium.css?v=43" rel="stylesheet"/>
 <style>
         /* Mobile Premium Fade-up Animations for About Sections */
 
@@ -262,6 +262,9 @@
 <meta content="https://oxygenbioinnovations.com/" property="og:url"/>
 <meta content="website" property="og:type"/>
 <meta content="summary_large_image" name="twitter:card"/>
+
+    <link rel="canonical" href="https://www.oxygenbioinnovations.com/about">
+    <link rel="icon" href="assets/images/logo-full.png?v=6" type="image/png">
 </head>
 <body>
 <!-- Critical: ensure page is always visible even if page-transitions.js is delayed -->
@@ -386,7 +389,8 @@
 <a class="menu-link" href="blog.html">Blog</a>
 <a class="menu-link" href="careers.html">Careers</a>
 <a class="menu-link" href="contact.html">Contact</a>
-<div class="mobile-cta">
+        <a href="investors.html" class="menu-link" style="color:#0D8A74; font-weight:600;">Investors &amp; Partners</a>
+        <div class="mobile-cta">
 <a class="btn btn-outline" href="#updates" style="width:100%;justify-content:center;padding:1rem;">Follow the Build</a>
 </div>
 </nav>
@@ -534,10 +538,11 @@
                             current = idx;
                         }
                         function startAuto() {
-                            autoTimer = setInterval(function () {
+                            autoTimer = // Slowed auto-rotate for better UX
+    setInterval(function () {
                                 current = (current + 1) % nodes.length;
                                 showPhase(current);
-                            }, 3000);
+                            }, 5000);
                         }
                         function stopAuto() { clearInterval(autoTimer); }
                         nodes.forEach(function (btn, idx) {
