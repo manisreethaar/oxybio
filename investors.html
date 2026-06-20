@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Investors & Partners | Oxygen Bioinnovations</title>
-    <meta name="description" content="Investment overview for Oxygen Bioinnovations — India's first fermented-grain + medicinal mushroom functional beverage platform. DPIIT-recognised, SISFS applicant, incubated at DETI@ACE TBI.">
+    <meta name="description" content="Investment overview for Oxygen Bioinnovations — India's first fermented-grain + medicinal mushroom functional beverage platform. DPIIT-recognised startup.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,516 +19,340 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="Investors & Partners | Oxygen Bioinnovations">
-    <meta property="og:description" content="SISFS grant overview, market data, and partnership opportunities for Oxygen Bioinnovations — DPIIT-recognised functional beverage startup.">
+    <meta property="og:description" content="Grant overview, market data, and partnership opportunities for Oxygen Bioinnovations — DPIIT-recognised functional beverage startup.">
     <meta property="og:image" content="https://oxygenbioinnovations.com/assets/images/logo-full.png">
     <meta property="og:url" content="https://www.oxygenbioinnovations.com/investors">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
 
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Oxygen Bioinnovations",
-        "url": "https://oxygenbioinnovations.com/",
-        "logo": "https://oxygenbioinnovations.com/assets/images/logo-full.png?v=6",
-        "description": "Oxygen Bioinnovations — India's first fermented-grain and medicinal mushroom functional beverage platform."
-    }
-    </script>
-
     <!-- Vercel Analytics -->
     <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
     <script defer src="/_vercel/insights/script.js"></script>
-    <script>window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };</script>
-    <script defer src="/_vercel/speed-insights/script.js"></script>
 
     <style>
-    /* ── INVESTOR PAGE STYLES ─────────────────────────────── */
-    .inv-hero {
-        position: relative;
-        padding-top: clamp(100px, 14vh, 150px);
-        padding-bottom: clamp(60px, 8vw, 100px);
-        background: var(--bg);
-        border-bottom: 1px solid var(--border);
-        overflow: hidden;
-    }
-    .inv-hero::before {
-        content: '';
-        position: absolute;
-        top: 0; right: -20%;
-        width: 60vw; height: 60vw;
-        background: radial-gradient(circle, rgba(13,138,116,0.04) 0%, transparent 60%);
-        pointer-events: none;
-    }
-    /* Confidentiality / status badge */
-    .inv-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.6rem;
-        padding: 0.45rem 1.1rem;
-        background: rgba(13,138,116,0.06);
-        border: 1px solid rgba(13,138,116,0.25);
-        border-radius: 50px;
-        font-family: var(--font-mono);
-        font-size: 0.62rem;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: #0D8A74;
-        margin-bottom: 2rem;
-    }
-    .inv-badge::before {
-        content: '';
-        width: 6px; height: 6px;
-        border-radius: 50%;
-        background: #0D8A74;
-        box-shadow: 0 0 8px rgba(13,138,116,0.6);
-        animation: pulse 2s ease-in-out infinite;
-    }
+        /* Light Mode Premium Styling */
+        .inv-page-wrapper {
+            background-color: var(--bg);
+            color: var(--text-main);
+            min-height: 100vh;
+        }
 
-    /* Disclaimer banner */
-    .inv-disclaimer {
-        background: rgba(234,179,8,0.07);
-        border: 1px solid rgba(234,179,8,0.3);
-        border-radius: 12px;
-        padding: 1.25rem 1.75rem;
-        font-size: 0.88rem;
-        color: #92400e;
-        line-height: 1.65;
-        margin-top: 2.5rem;
-    }
-    .inv-disclaimer strong { color: #78350f; }
+        /* Cinematic Hero */
+        .premium-hero {
+            position: relative;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding-top: 100px;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border);
+        }
 
-    /* Metric grid */
-    .inv-metric-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 1px;
-        background: var(--border);
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        overflow: hidden;
-        margin-top: 3rem;
-    }
-    .inv-metric-cell {
-        background: var(--bg);
-        padding: 2.5rem 2rem;
-        transition: background 0.3s ease;
-    }
-    .inv-metric-cell:hover { background: var(--bg-alt); }
-    .inv-metric-num {
-        font-family: var(--font-serif);
-        font-size: clamp(2rem, 4vw, 3rem);
-        font-weight: 900;
-        color: var(--text-main);
-        line-height: 1;
-        letter-spacing: -0.04em;
-        margin-bottom: 0.5rem;
-    }
-    .inv-metric-num .accent { color: #0D8A74; }
-    .inv-metric-label {
-        font-family: var(--font-mono);
-        font-size: 0.6rem;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        color: var(--text-muted);
-        margin-bottom: 0.5rem;
-    }
-    .inv-metric-source {
-        font-size: 0.72rem;
-        color: var(--text-muted);
-        line-height: 1.5;
-        font-style: italic;
-    }
+        /* Glassmorphism Metrics */
+        .glass-metric-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 4rem;
+        }
+        .glass-metric {
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.4s ease, box-shadow 0.4s ease;
+        }
+        .glass-metric:hover {
+            transform: translateY(-8px);
+            background: #ffffff;
+            border-color: rgba(13, 138, 116, 0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        }
+        .metric-value {
+            font-family: var(--font-serif);
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            font-weight: 900;
+            color: var(--text-main);
+            line-height: 1;
+            margin-bottom: 0.75rem;
+        }
+        .metric-label {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #0D8A74;
+            margin-bottom: 0.5rem;
+        }
+        .metric-sub {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
 
-    /* Section structure */
-    .inv-section {
-        padding: clamp(4rem, 8vw, 7rem) 0;
-        border-bottom: 1px solid var(--border);
-    }
-    .inv-section-label {
-        font-family: var(--font-mono);
-        font-size: 0.62rem;
-        letter-spacing: 0.22em;
-        text-transform: uppercase;
-        color: var(--text-muted);
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        margin-bottom: 1.5rem;
-    }
-    .inv-section-label::before {
-        content: '';
-        width: 28px; height: 1px;
-        background: #0D8A74;
-    }
+        /* Pre-Revenue Disclaimer */
+        .pre-revenue-box {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(234, 179, 8, 0.1);
+            border: 1px solid rgba(234, 179, 8, 0.3);
+            border-radius: 100px;
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #b45309;
+            margin-bottom: 2.5rem;
+        }
 
-    /* Stage cards */
-    .inv-stage-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
-        margin-top: 3rem;
-    }
-    .inv-stage-card {
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        padding: 2.25rem 2rem;
-        background: var(--bg);
-        transition: transform 0.4s var(--ease), box-shadow 0.4s ease;
-        position: relative;
-        overflow: hidden;
-    }
-    .inv-stage-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 16px 40px rgba(0,0,0,0.06);
-    }
-    .inv-stage-card::after {
-        content: '';
-        position: absolute;
-        top: 0; left: 0;
-        width: 100%; height: 3px;
-        background: linear-gradient(90deg, #0D8A74, transparent);
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 0.5s var(--ease);
-    }
-    .inv-stage-card:hover::after { transform: scaleX(1); }
-    .inv-stage-num {
-        font-family: var(--font-mono);
-        font-size: 0.58rem;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: #0D8A74;
-        margin-bottom: 0.75rem;
-    }
-    .inv-stage-title {
-        font-family: var(--font-serif);
-        font-size: 1.2rem;
-        font-weight: 700;
-        color: var(--text-main);
-        margin-bottom: 0.75rem;
-        line-height: 1.3;
-    }
-    .inv-stage-desc {
-        font-size: 0.88rem;
-        color: var(--text-muted);
-        line-height: 1.65;
-    }
+        /* Standard Section Formatting */
+        .light-section {
+            padding: clamp(5rem, 10vw, 8rem) 0;
+            position: relative;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+        }
+        .light-section.alt {
+            background: var(--bg-alt);
+        }
+        
+        .section-eyebrow {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .section-eyebrow::after {
+            content: '';
+            height: 1px;
+            width: 40px;
+            background: #0D8A74;
+        }
 
-    /* Revenue model */
-    .inv-rev-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0;
-        margin-top: 3rem;
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        overflow: hidden;
-    }
-    .inv-rev-col {
-        padding: 2.5rem 2rem;
-        border-right: 1px solid var(--border);
-        transition: background 0.3s ease;
-    }
-    .inv-rev-col:last-child { border-right: none; }
-    .inv-rev-col:hover { background: var(--bg-alt); }
-    .inv-rev-phase {
-        font-family: var(--font-mono);
-        font-size: 0.58rem;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        color: #0D8A74;
-        margin-bottom: 0.5rem;
-    }
-    .inv-rev-title {
-        font-family: var(--font-serif);
-        font-size: 1.2rem;
-        font-weight: 700;
-        color: var(--text-main);
-        margin-bottom: 1.25rem;
-        line-height: 1.3;
-    }
-    .inv-rev-margin {
-        font-family: var(--font-serif);
-        font-size: 1.6rem;
-        font-weight: 900;
-        color: #0D8A74;
-        margin-bottom: 0.25rem;
-        line-height: 1;
-    }
-    .inv-rev-margin-label {
-        font-family: var(--font-mono);
-        font-size: 0.6rem;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--text-muted);
-        margin-bottom: 1rem;
-    }
-    .inv-rev-list {
-        list-style: none;
-        padding: 0;
-        font-size: 0.85rem;
-        color: var(--text-muted);
-        line-height: 1.6;
-    }
-    .inv-rev-list li {
-        padding: 0.4rem 0;
-        border-bottom: 1px solid var(--border);
-        display: flex;
-        gap: 0.5rem;
-    }
-    .inv-rev-list li:last-child { border-bottom: none; }
-    .inv-rev-list li::before {
-        content: '—';
-        color: #0D8A74;
-        flex-shrink: 0;
-    }
+        /* Animated TAM Chart */
+        .tam-chart-container {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .chart-row {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .chart-row:last-child { margin-bottom: 0; }
+        
+        .chart-label {
+            width: 60px;
+            font-family: var(--font-serif);
+            font-weight: 900;
+            font-size: 1.5rem;
+            color: var(--text-main);
+        }
+        .chart-bar-wrap {
+            flex: 1;
+            height: 12px;
+            background: rgba(13, 138, 116, 0.1);
+            border-radius: 100px;
+            overflow: hidden;
+        }
+        .chart-bar {
+            height: 100%;
+            border-radius: 100px;
+            width: 0%;
+            transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .chart-bar.tam { background: rgba(13, 138, 116, 0.2); }
+        .chart-bar.sam { background: rgba(13, 138, 116, 0.5); }
+        .chart-bar.som { background: #0D8A74; box-shadow: 0 0 10px rgba(13,138,116,0.3); }
+        
+        .reveal.active .chart-bar.tam { width: 100%; }
+        .reveal.active .chart-bar.sam { width: 40%; }
+        .reveal.active .chart-bar.som { width: 10%; }
 
-    /* Milestones */
-    .inv-milestone-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 2rem;
-        font-size: 0.9rem;
-    }
-    .inv-milestone-table thead {
-        background: var(--text-main);
-        color: #fff;
-    }
-    .inv-milestone-table th {
-        padding: 1.1rem 1.5rem;
-        text-align: left;
-        font-family: var(--font-mono);
-        font-size: 0.62rem;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-    }
-    .inv-milestone-table td {
-        padding: 1rem 1.5rem;
-        border-bottom: 1px solid var(--border);
-        color: var(--text-muted);
-        vertical-align: top;
-    }
-    .inv-milestone-table td:first-child {
-        font-weight: 600;
-        color: var(--text-main);
-        white-space: nowrap;
-    }
-    .inv-milestone-table tr:hover td { background: rgba(13,138,116,0.03); }
-    .inv-milestone-table .amount-cell {
-        font-family: var(--font-serif);
-        font-weight: 800;
-        font-size: 1rem;
-        color: #0D8A74;
-        white-space: nowrap;
-    }
+        .chart-data {
+            width: 200px;
+        }
+        .chart-num {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.25rem;
+        }
+        .chart-desc {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
 
-    /* Competitor table */
-    .inv-comp-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 2rem;
-        font-size: 0.85rem;
-    }
-    .inv-comp-table thead th {
-        padding: 1rem 1.25rem;
-        text-align: left;
-        background: var(--bg-alt);
-        font-family: var(--font-mono);
-        font-size: 0.6rem;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--text-muted);
-        border-bottom: 1px solid var(--border);
-    }
-    .inv-comp-table tbody td {
-        padding: 0.9rem 1.25rem;
-        border-bottom: 1px solid var(--border);
-        color: var(--text-muted);
-        vertical-align: middle;
-    }
-    .inv-comp-table tbody td:first-child {
-        font-weight: 600;
-        color: var(--text-main);
-        font-size: 0.88rem;
-    }
-    .inv-comp-table .oxy-row td {
-        background: rgba(13,138,116,0.05);
-        font-weight: 600;
-        color: var(--text-main);
-    }
-    .inv-comp-table .oxy-row td:first-child { color: #0D8A74; }
-    .inv-comp-table tr:hover td { background: rgba(13,138,116,0.03); }
-    .inv-comp-table .oxy-row:hover td { background: rgba(13,138,116,0.08); }
-    .check-icon { color: #0D8A74; font-weight: 700; }
-    .cross-icon { color: #d1d5db; }
-    .part-icon  { color: #d97706; }
+        /* Anonymized Competitor Table */
+        .premium-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            background: #ffffff;
+            box-shadow: var(--shadow-sm);
+        }
+        .premium-table th {
+            background: var(--bg-alt);
+            padding: 1.25rem;
+            text-align: left;
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            border-bottom: 1px solid var(--border);
+        }
+        .premium-table td {
+            padding: 1.25rem;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+            color: var(--text-main);
+            transition: background 0.3s ease;
+        }
+        .premium-table tr:last-child td { border-bottom: none; }
+        .premium-table tr:hover td { background: var(--bg-alt); }
+        
+        /* The OBI Highlight Row */
+        .premium-table tr.highlight td {
+            background: rgba(13, 138, 116, 0.05);
+            font-weight: 600;
+        }
+        .premium-table tr.highlight:hover td {
+            background: rgba(13, 138, 116, 0.08);
+        }
+        .premium-table tr.highlight td:first-child { color: #0D8A74; }
 
-    /* Funding dark card */
-    .inv-ask-card {
-        background: var(--text-main);
-        color: #fff;
-        border-radius: 24px;
-        padding: clamp(3rem, 6vw, 5rem);
-        position: relative;
-        overflow: hidden;
-        margin-top: 3rem;
-    }
-    .inv-ask-card::before {
-        content: '';
-        position: absolute;
-        top: -30%; right: -10%;
-        width: 50vw; height: 50vw;
-        background: radial-gradient(circle, rgba(13,138,116,0.12) 0%, transparent 60%);
-        pointer-events: none;
-    }
-    .inv-ask-grid {
-        display: grid;
-        grid-template-columns: 1fr 1.1fr;
-        gap: 4rem;
-        align-items: start;
-        position: relative;
-        z-index: 1;
-    }
-    .inv-ask-amount {
-        font-family: var(--font-serif);
-        font-size: clamp(2.5rem, 5vw, 4rem);
-        font-weight: 900;
-        line-height: 1;
-        letter-spacing: -0.04em;
-        margin-bottom: 0.75rem;
-    }
-    .inv-ask-amount .currency { color: #0D8A74; }
-    .inv-use-list {
-        list-style: none;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-    }
-    .inv-use-item {
-        display: flex;
-        gap: 1rem;
-        align-items: flex-start;
-        padding: 1.1rem 1.4rem;
-        background: rgba(255,255,255,0.05);
-        border: 1px solid rgba(255,255,255,0.08);
-        border-radius: 12px;
-    }
-    .inv-use-pct {
-        font-family: var(--font-serif);
-        font-size: 1.3rem;
-        font-weight: 900;
-        color: #0D8A74;
-        flex-shrink: 0;
-        min-width: 48px;
-        line-height: 1;
-        padding-top: 0.1rem;
-    }
-    .inv-use-label {
-        font-size: 0.88rem;
-        color: rgba(255,255,255,0.75);
-        line-height: 1.5;
-    }
-    .inv-use-label strong {
-        color: #fff;
-        display: block;
-        margin-bottom: 0.15rem;
-        font-size: 0.9rem;
-    }
+        .icon-y { color: #0D8A74; font-weight: 700; font-size: 1.1rem; }
+        .icon-n { color: #d1d5db; }
+        .icon-p { color: #d97706; }
 
-    /* Recognition pills */
-    .inv-recognition-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        margin-top: 2.5rem;
-    }
-    .inv-rec-pill {
-        display: flex;
-        flex-direction: column;
-        gap: 0.25rem;
-        padding: 1rem 1.5rem;
-        border: 1px solid var(--border);
-        border-radius: 12px;
-        background: var(--bg);
-        flex: 1;
-        min-width: 200px;
-        transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    }
-    .inv-rec-pill:hover {
-        border-color: rgba(13,138,116,0.3);
-        box-shadow: 0 4px 16px rgba(13,138,116,0.06);
-    }
-    .inv-rec-pill-label {
-        font-family: var(--font-mono);
-        font-size: 0.58rem;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        color: var(--text-muted);
-    }
-    .inv-rec-pill-value {
-        font-size: 0.92rem;
-        font-weight: 600;
-        color: var(--text-main);
-    }
-    .inv-rec-pill-sub {
-        font-size: 0.78rem;
-        color: var(--text-muted);
-        line-height: 1.4;
-    }
+        /* Horizontal Roadmap Grid */
+        .roadmap-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .roadmap-card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            position: relative;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .roadmap-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            border-color: rgba(13,138,116,0.3);
+            z-index: 2;
+        }
+        .roadmap-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 2rem; right: 2rem;
+            height: 3px;
+            background: #0D8A74;
+            border-radius: 0 0 4px 4px;
+            opacity: 0.2;
+            transition: opacity 0.4s ease;
+        }
+        .roadmap-card:hover::before {
+            opacity: 1;
+        }
+        .road-year {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            color: #0D8A74;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        .road-title {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 0.75rem;
+            line-height: 1.2;
+        }
+        .road-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+        @media (min-width: 1025px) {
+            .roadmap-card:not(:last-child)::after {
+                content: '→';
+                position: absolute;
+                top: 50%;
+                right: -1rem;
+                transform: translateY(-50%);
+                color: var(--text-muted);
+                opacity: 0.3;
+                font-family: var(--font-mono);
+                font-size: 1.5rem;
+            }
+        }
 
-    /* CTA */
-    .inv-cta {
-        text-align: center;
-        padding: clamp(5rem, 10vw, 8rem) 0;
-        background: var(--bg-alt);
-    }
+        /* Huge Ask Section */
+        .the-ask-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .ask-amount {
+            font-family: var(--font-serif);
+            font-size: clamp(4rem, 8vw, 6rem);
+            font-weight: 900;
+            color: var(--text-main);
+            line-height: 0.9;
+            margin-bottom: 1rem;
+        }
+        .ask-amount span { color: #0D8A74; }
 
-    /* Phase 0 status banner */
-    .inv-status-banner {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.75rem;
-        padding: 0.6rem 1.25rem;
-        background: rgba(234,179,8,0.08);
-        border: 1px solid rgba(234,179,8,0.3);
-        border-radius: 50px;
-        font-family: var(--font-mono);
-        font-size: 0.62rem;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        color: #92400e;
-        margin-bottom: 1.5rem;
-    }
-    .inv-status-banner::before {
-        content: '';
-        width: 6px; height: 6px;
-        border-radius: 50%;
-        background: #d97706;
-    }
-
-    @media (max-width: 1024px) {
-        .inv-metric-grid { grid-template-columns: repeat(2, 1fr); }
-        .inv-stage-grid { grid-template-columns: 1fr; }
-        .inv-rev-grid { grid-template-columns: 1fr; }
-        .inv-rev-col { border-right: none; border-bottom: 1px solid var(--border); }
-        .inv-rev-col:last-child { border-bottom: none; }
-        .inv-ask-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-    }
-    @media (max-width: 768px) {
-        .inv-metric-grid { grid-template-columns: 1fr; }
-        .inv-milestone-table { font-size: 0.8rem; }
-        .inv-milestone-table th, .inv-milestone-table td { padding: 0.8rem 1rem; }
-        .inv-comp-table { font-size: 0.78rem; }
-        .inv-comp-table th, .inv-comp-table td { padding: 0.75rem 0.75rem; }
-        .inv-recognition-row { flex-direction: column; }
-        .inv-rec-pill { min-width: unset; }
-    }
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .glass-metric-grid { grid-template-columns: repeat(2, 1fr); }
+            .the-ask-grid { grid-template-columns: 1fr; }
+            .tam-chart-container { padding: 2rem; }
+            .roadmap-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .glass-metric-grid { grid-template-columns: 1fr; }
+            .premium-table { display: block; overflow-x: auto; white-space: nowrap; }
+            .chart-row { flex-direction: column; align-items: flex-start; gap: 0.5rem; margin-bottom: 2rem; }
+            .chart-bar-wrap { width: 100%; margin-bottom: 0.5rem; }
+            .chart-label { width: 100%; }
+            .roadmap-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 
-<body>
+<body class="inv-page-wrapper">
     <script>
         (function(){
             var t = setTimeout(function(){ document.body.classList.add('page-ready'); }, 50);
@@ -535,51 +360,17 @@
         })();
     </script>
 
-    <!-- ── Navigation ───────────────────────────────────────── -->
+    <!-- Navigation (Light Mode Default) -->
     <header id="header">
         <div class="container nav-container">
             <a href="index.html" class="nav-logo" style="display:flex; align-items:center; gap:10px; text-decoration:none;">
                 <img src="assets/images/logo-full.png?v=6" alt="Oxygen Bioinnovations Logo" style="height:36px; width:auto; display:block;">
-                <span style="font-family: var(--font-heading, 'Inter', sans-serif); font-weight: 800; font-size: 1.25rem; color: var(--text-main, #0B192C); letter-spacing: -0.02em;">Oxygen <span style="color:#0D8A74;">Bioinnovations</span></span>
+                <span style="font-family: var(--font-heading, 'Inter', sans-serif); font-weight: 800; font-size: 1.25rem; color: var(--text-main); letter-spacing: -0.02em;">Oxygen <span style="color:#0D8A74;">Bioinnovations</span></span>
             </a>
             <nav class="desktop-nav custom-nav-replaced">
                 <a href="index.html">Home</a>
-                <div class="nav-item">
-                    <a href="about.html">About Us <svg width="12" height="12" viewBox="0 0 24 24" fill="none" class="nav-arrow" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
-                    <div class="mega-dropdown">
-                        <div class="mega-dropdown-inner">
-                            <div class="mega-feature">
-                                <div class="icon-wrap"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg></div>
-                                <h4>Lab Priorities</h4>
-                                <p>Research targets and unvarnished realities.</p>
-                            </div>
-                            <div class="mega-links-col">
-                                <a href="about.html#about-story" class="mega-nav-link"><span class="link-title">Our Story</span><span class="link-desc">Frustrations and the realities of incubation.</span></a>
-                                <a href="about.html#about-vision" class="mega-nav-link"><span class="link-title">R&amp;D Platform Goals</span><span class="link-desc">The strategic framework and three pillars guiding us.</span></a>
-                                <a href="about.html#about-who" class="mega-nav-link"><span class="link-title">Who We Are</span><span class="link-desc">The founder, the science, and our operating principles.</span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="nav-item">
-                    <a href="science.html">Our Science <svg width="12" height="12" viewBox="0 0 24 24" fill="none" class="nav-arrow" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
-                    <div class="mega-dropdown">
-                        <div class="mega-dropdown-inner">
-                            <div class="mega-feature">
-                                <div class="icon-wrap"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 2v7.31M14 9.31V2M8.5 2h7M14 9.31l6.5 11.17c.39.66-.08 1.5-.85 1.5H4.35c-.77 0-1.24-.84-.85-1.5L10 9.31M8.5 16.5h7" /></svg></div>
-                                <h4>The Scientific Mechanisms</h4>
-                                <p>Researching millet bioavailability and mushroom fortification.</p>
-                            </div>
-                            <div class="mega-links-col">
-                                <a href="problem.html" class="mega-nav-link"><span class="link-title">The Problem</span><span class="link-desc">The biological deficits mapping our targets.</span></a>
-                                <a href="ingredients.html" class="mega-nav-link"><span class="link-title">Lab Materials</span><span class="link-desc">The raw extracts and compounds in our models.</span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <a href="blog.html">Blog</a>
-                <a href="careers.html">Careers</a>
-                <a href="contact.html">Contact</a>
+                <a href="about.html">About Us</a>
+                <a href="science.html">Our Science</a>
                 <a href="investors.html" class="btn btn-outline" style="margin-left: 1rem; border-color: rgba(13,138,116,0.5); color: #0D8A74;">Investors</a>
             </nav>
             <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
@@ -593,529 +384,305 @@
     <nav class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-header">
             <a href="index.html" class="nav-logo" style="display:flex; align-items:center; gap:10px; text-decoration:none;">
-                <img src="assets/images/logo-full.png?v=6" alt="Oxygen Bioinnovations Logo" style="height:36px; width:auto; display:block;">
-                <span style="font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.25rem; color: var(--text-main); letter-spacing: -0.02em;">Oxygen <span style="color:#0D8A74;">Bioinnovations</span></span>
+                <img src="assets/images/logo-full.png?v=6" alt="Oxygen Bioinnovations Logo" style="height:36px; width:auto;">
+                <span style="font-family: var(--font-heading, 'Inter', sans-serif); font-weight: 800; font-size: 1.25rem; color: var(--text-main); letter-spacing: -0.02em;">Oxygen <span style="color:#0D8A74;">Bioinnovations</span></span>
             </a>
-            <button class="mobile-close" id="mobileClose" aria-label="Close">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-            </button>
+            <button class="mobile-close" id="mobileClose"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
         </div>
         <a href="index.html" class="menu-link">Home</a>
         <a href="about.html" class="menu-link">About Us</a>
         <a href="science.html" class="menu-link">Our Science</a>
-        <a href="blog.html" class="menu-link">Blog</a>
-        <a href="careers.html" class="menu-link">Careers</a>
-        <a href="contact.html" class="menu-link">Contact</a>
         <a href="investors.html" class="menu-link" style="color:#0D8A74; font-weight:700;">Investors &amp; Partners</a>
-        <div class="mobile-cta">
-            <a href="investors.html" class="btn btn-outline" style="width:100%; justify-content:center; padding:1rem;">Investors</a>
-        </div>
     </nav>
 
 
     <main>
+        <!-- ════════════════════════════════════════════════════
+             HERO
+        ═════════════════════════════════════════════════════ -->
+        <section class="premium-hero">
+            <!-- Light ambient glow instead of dark -->
+            <div class="v2-ambient-glow top-right" style="background: radial-gradient(circle, rgba(13, 138, 116, 0.05) 0%, rgba(250, 250, 250, 0) 70%);"></div>
 
-    <!-- ════════════════════════════════════════════════════
-         HERO
-    ═════════════════════════════════════════════════════ -->
-    <section class="inv-hero">
-        <div class="container" style="position:relative; z-index:2;">
-            <div class="reveal">
-                <div class="inv-status-banner">Phase 0 — Pre-Revenue Lab Validation</div>
-                <div class="inv-badge">Investor &amp; Grant Overview</div>
-                <h1 style="font-family:var(--font-serif); font-size:clamp(2.5rem, 5.5vw, 4.5rem); font-weight:900; line-height:0.95; letter-spacing:-0.04em; color:var(--text-main); margin-bottom:2rem; max-width:820px;">
-                    India's First Fermented-Grain<br>+ Medicinal Mushroom<br><em style="color:var(--text-muted); font-weight:400;">Functional Beverage Platform.</em>
+            <div class="container" style="position:relative; z-index:2;">
+                
+                <div class="pre-revenue-box reveal">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                    Phase 0 — Pre-Revenue Validation
+                </div>
+
+                <h1 class="reveal" style="font-family:var(--font-serif); font-size:clamp(3rem, 6vw, 5.5rem); font-weight:900; line-height:0.95; letter-spacing:-0.03em; margin-bottom:1.5rem; max-width:900px;">
+                    India's Functional<br>Beverage Platform.
                 </h1>
-                <p style="font-size:clamp(1rem, 2vw, 1.2rem); line-height:1.7; color:var(--text-muted); max-width:620px;">
-                    Sprouted ragi. Karuppu Kavuni black rice. <em>L. brevis</em> fermentation. Species-specific medicinal mushroom extraction. Sub-&#8377;100 per serving. No cold chain. Made in India.
+                
+                <p class="reveal" style="font-size:clamp(1.1rem, 2vw, 1.25rem); color:var(--text-muted); max-width:650px; line-height:1.6;">
+                    Sprouted indigenous grains. <em>L. brevis</em> fermentation. Species-specific medicinal mushroom extraction. Affordable, daily-habit functional nutrition made in India.
                 </p>
 
-                <div class="inv-disclaimer">
-                    <strong>Important — Pre-Revenue Disclosure:</strong> Oxygen Bioinnovations was incorporated in March 2026. All financial projections on this page are pre-revenue estimates only — no audited accounts exist. No commercial product has been sold. All bioactive claims are design targets pending NABL-accredited third-party validation, which is the funded objective of our SISFS application. This page is for informational purposes only and does not constitute an offer or solicitation of investment.
-                </div>
-            </div>
-
-            <!-- Key Metrics -->
-            <div class="inv-metric-grid reveal" style="margin-top:3rem;">
-                <div class="inv-metric-cell">
-                    <div class="inv-metric-label">India Functional Beverages Market (2025)</div>
-                    <div class="inv-metric-num">$<span class="accent">6.9</span>B</div>
-                    <div class="inv-metric-source">&#8377;57,000 Cr — Grand View Research, 2024</div>
-                </div>
-                <div class="inv-metric-cell">
-                    <div class="inv-metric-label">Market CAGR (2025–2034)</div>
-                    <div class="inv-metric-num"><span class="accent">10.74</span>%</div>
-                    <div class="inv-metric-source">India Functional Beverages segment — Grand View Research, 2024</div>
-                </div>
-                <div class="inv-metric-cell">
-                    <div class="inv-metric-label">Target Retail Price</div>
-                    <div class="inv-metric-num">Sub-&#8377;<span class="accent">100</span></div>
-                    <div class="inv-metric-source">Per 200ml serving — designed as a daily habit, not a supplement</div>
-                </div>
-                <div class="inv-metric-cell">
-                    <div class="inv-metric-label">Indian RTD Brands Combining LAB Fermentation + Medicinal Mushroom Bioactives</div>
-                    <div class="inv-metric-num"><span class="accent">0</span></div>
-                    <div class="inv-metric-source">No existing Indian brand holds this combination — our market analysis, June 2026</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ════════════════════════════════════════════════════
-         RECOGNITION & CREDENTIALS
-    ═════════════════════════════════════════════════════ -->
-    <section class="inv-section" style="background:var(--bg);">
-        <div class="container reveal">
-            <div class="inv-section-label">01 — Recognition &amp; Credentials</div>
-            <h2 style="font-family:var(--font-serif); font-size:clamp(2rem, 4vw, 2.75rem); font-weight:900; color:var(--text-main); line-height:1.1; margin-bottom:1rem;">
-                Who we are, verifiably.
-            </h2>
-            <p style="font-size:1rem; color:var(--text-muted); max-width:580px; line-height:1.7;">
-                These credentials are verified, publicly verifiable facts — not marketing claims.
-            </p>
-
-            <div class="inv-recognition-row">
-                <div class="inv-rec-pill">
-                    <div class="inv-rec-pill-label">DPIIT Recognition</div>
-                    <div class="inv-rec-pill-value">DIPP258270</div>
-                    <div class="inv-rec-pill-sub">DeepTech, Biotechnology · Issued 29 April 2026 · Valid to 04 March 2036</div>
-                </div>
-                <div class="inv-rec-pill">
-                    <div class="inv-rec-pill-label">Company Registration</div>
-                    <div class="inv-rec-pill-value">U72100TZ2026PTC038160</div>
-                    <div class="inv-rec-pill-sub">Incorporated March 2026 · MCA registered private limited company</div>
-                </div>
-                <div class="inv-rec-pill">
-                    <div class="inv-rec-pill-label">Incubator</div>
-                    <div class="inv-rec-pill-value">TBI-DETI@ACE, Hosur</div>
-                    <div class="inv-rec-pill-sub">Adhiyamaan College of Engineering · Technology Business Incubator · Lab access, mentorship, infrastructure</div>
-                </div>
-                <div class="inv-rec-pill">
-                    <div class="inv-rec-pill-label">Grant Application</div>
-                    <div class="inv-rec-pill-value">SISFS No. 113783</div>
-                    <div class="inv-rec-pill-sub">Indigram Labs Foundation · Screening Presentation: 19 June 2026 · Status: In Progress</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ════════════════════════════════════════════════════
-         MARKET OPPORTUNITY
-    ═════════════════════════════════════════════════════ -->
-    <section class="inv-section" style="background:var(--bg-alt);">
-        <div class="container reveal">
-            <div class="inv-section-label">02 — Market Opportunity</div>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start;" class="mobile-stack">
-                <div>
-                    <h2 style="font-family:var(--font-serif); font-size:clamp(1.8rem, 3.5vw, 2.75rem); font-weight:900; color:var(--text-main); line-height:1.1; margin-bottom:1.5rem;">
-                        A $6.9B market<br><em style="color:var(--text-muted); font-weight:400;">with zero Indian RTD brands<br>combining both technologies.</em>
-                    </h2>
-                    <p style="font-size:1rem; color:var(--text-muted); line-height:1.75; margin-bottom:1.5rem;">
-                        India's functional beverages market was valued at <strong style="color:var(--text-main);">$6.9B (&#8377;57,000 Cr)</strong> in 2025 and is projected to grow at <strong style="color:var(--text-main);">10.74% CAGR</strong> through 2034, reaching $18.8B (Grand View Research, 2024).
-                    </p>
-                    <p style="font-size:1rem; color:var(--text-muted); line-height:1.75; margin-bottom:1.5rem;">
-                        No Indian RTD beverage brand currently combines <strong style="color:var(--text-main);">LAB fermentation</strong> with <strong style="color:var(--text-main);">medicinal mushroom bioactives</strong>. Emerging Indian fermented millet RTDs (BlissBody, milSipp) are gut-health only — no mushroom bioactives.
-                    </p>
-
-                    <!-- TAM/SAM/SOM -->
-                    <div style="display:flex; flex-direction:column; gap:0.75rem; margin-top:2rem;">
-                        <div style="padding:1.25rem 1.5rem; border:1px solid var(--border); border-radius:12px; background:var(--bg); display:flex; gap:1.5rem; align-items:center;">
-                            <div style="font-family:var(--font-serif); font-size:1.8rem; font-weight:900; color:#0D8A74; min-width:90px;">TAM</div>
-                            <div>
-                                <div style="font-weight:600; color:var(--text-main); font-size:0.95rem;">India Functional Beverages</div>
-                                <div style="font-size:0.82rem; color:var(--text-muted);">$6.9B (&#8377;57,000 Cr) · 2025 · Grand View Research 2024 · &#8377;4,200 Cr South India 18–45 Urban (bottom-up, Census + Nielsen)</div>
-                            </div>
-                        </div>
-                        <div style="padding:1.25rem 1.5rem; border:1px solid var(--border); border-radius:12px; background:var(--bg); display:flex; gap:1.5rem; align-items:center;">
-                            <div style="font-family:var(--font-serif); font-size:1.8rem; font-weight:900; color:#0D8A74; min-width:90px;">SAM</div>
-                            <div>
-                                <div style="font-weight:600; color:var(--text-main); font-size:0.95rem;">Urban functional RTD, South India</div>
-                                <div style="font-size:0.82rem; color:var(--text-muted);">&#8377;264–336 Cr · Bengaluru + Chennai + Hosur, 18–35, D2C + quick commerce reachable (1.1–1.4M consumers)</div>
-                            </div>
-                        </div>
-                        <div style="padding:1.25rem 1.5rem; border:1px solid rgba(13,138,116,0.2); border-radius:12px; background:rgba(13,138,116,0.04); display:flex; gap:1.5rem; align-items:center;">
-                            <div style="font-family:var(--font-serif); font-size:1.8rem; font-weight:900; color:#0D8A74; min-width:90px;">SOM</div>
-                            <div>
-                                <div style="font-weight:600; color:var(--text-main); font-size:0.95rem;">Year 1 beachhead target</div>
-                                <div style="font-size:0.82rem; color:var(--text-muted);">500 customers (10% of Adhiyamaan College, 5,000 students) + early Bengaluru B2B accounts · &#8377;10–17L Year 1 estimate · ~2 purchases/week per active customer</div>
-                            </div>
-                        </div>
+                <!-- Cinematic Metrics Grid -->
+                <div class="glass-metric-grid reveal">
+                    <div class="glass-metric">
+                        <div class="metric-label">TAM (2025)</div>
+                        <div class="metric-value">$6.9B</div>
+                        <div class="metric-sub">India Functional Beverages Market</div>
+                    </div>
+                    <div class="glass-metric">
+                        <div class="metric-label">Market CAGR</div>
+                        <div class="metric-value">10.74%</div>
+                        <div class="metric-sub">Projected Growth 2025–2034</div>
+                    </div>
+                    <div class="glass-metric">
+                        <div class="metric-label">Unit Economics</div>
+                        <div class="metric-value">Sub-&#8377;100</div>
+                        <div class="metric-sub">Target Retail Price / 200ml</div>
+                    </div>
+                    <div class="glass-metric">
+                        <div class="metric-label">Platform Margin</div>
+                        <div class="metric-value">45-55%</div>
+                        <div class="metric-sub">Estimated D2C Gross Margin</div>
                     </div>
                 </div>
 
-                <div>
-                    <div style="font-family:var(--font-mono); font-size:0.62rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1.5rem;">The Gap — What No Indian RTD Offers Today</div>
-                    <div style="display:flex; flex-direction:column; gap:1rem;">
-                        <div style="padding:1.5rem; border:1px solid var(--border); border-radius:12px; background:var(--bg);">
-                            <div style="font-family:var(--font-mono); font-size:0.58rem; letter-spacing:0.15em; text-transform:uppercase; color:#0D8A74; margin-bottom:0.5rem;">Gap 01</div>
-                            <div style="font-family:var(--font-serif); font-size:1.1rem; font-weight:700; color:var(--text-main); margin-bottom:0.5rem;">No Healthy Carbonated Alternative</div>
-                            <div style="font-size:0.88rem; color:var(--text-muted); line-height:1.65;">India's &#8377;30,000 Cr carbonated soft drink market delivers 25–35g sugar per serving. India has 101 million diabetics (IDF 2023). No Indian brand offers a functional, low-sugar carbonated RTD at accessible price.</div>
+            </div>
+        </section>
+
+
+        <!-- ════════════════════════════════════════════════════
+             THE OPPORTUNITY (VISUAL DATA)
+        ═════════════════════════════════════════════════════ -->
+        <section class="light-section alt">
+            <div class="container reveal">
+                <div class="section-eyebrow">01 — The Opportunity</div>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center;">
+                    <div>
+                        <h2 style="font-family:var(--font-serif); font-size:clamp(2rem, 4vw, 3rem); font-weight:900; line-height:1.1; margin-bottom:1.5rem;">
+                            A massive market.<br><span style="color:var(--text-muted);">Zero domestic innovation.</span>
+                        </h2>
+                        <p style="font-size:1.05rem; color:var(--text-muted); line-height:1.7;">
+                            Indian consumers are aware of functional ingredients, but current solutions are either imported premium supplements (&#8377;2,000/month), or sugary lifestyle drinks with zero clinical backing. We are building the first affordable, ambient-stable RTD leveraging both LAB fermentation and mushroom bioactives.
+                        </p>
+                    </div>
+
+                    <!-- Animated CSS Chart -->
+                    <div class="tam-chart-container reveal" data-reveal-class="active">
+                        <div class="chart-row">
+                            <div class="chart-label">TAM</div>
+                            <div class="chart-bar-wrap"><div class="chart-bar tam"></div></div>
+                            <div class="chart-data">
+                                <div class="chart-num">$6.9B (&#8377;57K Cr)</div>
+                                <div class="chart-desc">India Functional Beverages 2025</div>
+                            </div>
                         </div>
-                        <div style="padding:1.5rem; border:1px solid var(--border); border-radius:12px; background:var(--bg);">
-                            <div style="font-family:var(--font-mono); font-size:0.58rem; letter-spacing:0.15em; text-transform:uppercase; color:#0D8A74; margin-bottom:0.5rem;">Gap 02</div>
-                            <div style="font-family:var(--font-serif); font-size:1.1rem; font-weight:700; color:var(--text-main); margin-bottom:0.5rem;">Cognitive Fatigue Without Affordable Solutions</div>
-                            <div style="font-size:0.88rem; color:var(--text-muted); line-height:1.65;">40%+ of Indian students report chronic cognitive fatigue and stress. No affordable, daily-use functional solution exists that combines GABA production with medicinal mushroom neuro-support. Source: NFHS-5.</div>
+                        <div class="chart-row">
+                            <div class="chart-label">SAM</div>
+                            <div class="chart-bar-wrap"><div class="chart-bar sam"></div></div>
+                            <div class="chart-data">
+                                <div class="chart-num">&#8377;264–336 Cr</div>
+                                <div class="chart-desc">Urban South India, 18-35 (D2C)</div>
+                            </div>
                         </div>
-                        <div style="padding:1.5rem; border:1px solid var(--border); border-radius:12px; background:var(--bg);">
-                            <div style="font-family:var(--font-mono); font-size:0.58rem; letter-spacing:0.15em; text-transform:uppercase; color:#0D8A74; margin-bottom:0.5rem;">Gap 03</div>
-                            <div style="font-family:var(--font-serif); font-size:1.1rem; font-weight:700; color:var(--text-main); margin-bottom:0.5rem;">Imported Supplements: &#8377;500–2,000/month</div>
-                            <div style="font-size:0.88rem; color:var(--text-muted); line-height:1.65;">Foreign mushroom supplement brands (e.g. Four Sigmatic) cost &#8377;500–2,000/month — out of reach for students and young professionals. No Indian grain base, no fermentation, no cold-chain-free format.</div>
+                        <div class="chart-row">
+                            <div class="chart-label">SOM</div>
+                            <div class="chart-bar-wrap"><div class="chart-bar som"></div></div>
+                            <div class="chart-data">
+                                <div class="chart-num">&#8377;10–17 Lakhs</div>
+                                <div class="chart-desc">Year 1 Target (500 Active Customers)</div>
+                            </div>
                         </div>
+                        <div style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-muted); text-align:right; margin-top:1.5rem; text-transform:uppercase;">Source: Grand View Research 2024 / Internal Estimates</div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
 
-    <!-- ════════════════════════════════════════════════════
-         REVENUE MODEL (3 STREAMS)
-    ═════════════════════════════════════════════════════ -->
-    <section class="inv-section" style="background:var(--bg);">
-        <div class="container reveal">
-            <div class="inv-section-label">03 — Revenue Model</div>
-            <h2 style="font-family:var(--font-serif); font-size:clamp(1.8rem, 3.5vw, 2.75rem); font-weight:900; color:var(--text-main); line-height:1.1; margin-bottom:0.75rem;">
-                Three streams. One production line.
-            </h2>
-            <p style="font-size:1rem; color:var(--text-muted); max-width:580px; line-height:1.7; margin-bottom:0.5rem;">
-                All revenue is pre-commercial — no products sold yet. Commercial production is gated on FSSAI State Manufacturing Licence. Launch target: Q1 2027, post-licence.
-            </p>
-
-            <div class="inv-rev-grid">
-                <!-- Stream 1 -->
-                <div class="inv-rev-col">
-                    <div class="inv-rev-phase">Phase 1 · 2026–27</div>
-                    <div class="inv-rev-title">D2C Beverages</div>
-                    <div class="inv-rev-margin">45–55%</div>
-                    <div class="inv-rev-margin-label">Gross Margin (estimated)</div>
-                    <ul class="inv-rev-list">
-                        <li>Sub-&#8377;100 / 200ml — daily habit positioning</li>
-                        <li>Customers: students &amp; young professionals</li>
-                        <li>Channel: WhatsApp + own website → Blinkit, Zepto, Swiggy Instamart → Amazon, Flipkart (Phase 2)</li>
-                        <li>Geography: Hosur pilot → Bengaluru expansion</li>
-                        <li>Growth: Instagram/campus outreach, influencer partnerships with college wellness clubs</li>
-                    </ul>
-                </div>
-                <!-- Stream 2 -->
-                <div class="inv-rev-col">
-                    <div class="inv-rev-phase">Phase 1–2 · 2026–28</div>
-                    <div class="inv-rev-title">Institutional B2B</div>
-                    <div class="inv-rev-margin">35–45%</div>
-                    <div class="inv-rev-margin-label">Gross Margin (estimated)</div>
-                    <ul class="inv-rev-list">
-                        <li>Bulk pricing for gyms, co-working spaces, college canteens, corporate cafeterias</li>
-                        <li>Bengaluru: 2,000+ gyms targeted as key B2B accounts</li>
-                        <li>Channel: Direct B2B sales team, MOQ-based monthly replenishment contracts</li>
-                        <li>Advantage: No refrigeration needed — ambient storage reduces account cost</li>
-                    </ul>
-                </div>
-                <!-- Stream 3 -->
-                <div class="inv-rev-col">
-                    <div class="inv-rev-phase">Phase 2 · 2027–28</div>
-                    <div class="inv-rev-title">Subscription + Carbonated Variant</div>
-                    <div class="inv-rev-margin">50–60%</div>
-                    <div class="inv-rev-margin-label">Gross Margin (estimated)</div>
-                    <ul class="inv-rev-list">
-                        <li>30-unit/month doorstep delivery subscription</li>
-                        <li>Customers: health-conscious urban professionals — highest lifetime value segment</li>
-                        <li>Carbonated variant: same fermented base + bioactives, fizzy format — targets Coke/Pepsi replacement</li>
-                        <li>Retention-first model — daily habit positioning reduces churn</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Current Status Note -->
-            <div style="margin-top:2rem; padding:1.25rem 1.75rem; border:1px solid var(--border); border-radius:12px; background:var(--bg-alt); font-size:0.88rem; color:var(--text-muted); line-height:1.65;">
-                <strong style="color:var(--text-main);">Current status:</strong> Zero revenue. Pre-revenue by design — FSSAI state manufacturing licence is required before any commercial sale or distribution under Indian food safety law. Operating geography: Tamil Nadu (manufacturing) + Karnataka (B2B sales).
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ════════════════════════════════════════════════════
-         FIVE-YEAR MILESTONES
-    ═════════════════════════════════════════════════════ -->
-    <section class="inv-section" style="background:var(--bg-alt);">
-        <div class="container reveal">
-            <div class="inv-section-label">04 — Five-Year Goals</div>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start;" class="mobile-stack">
-                <div>
-                    <h2 style="font-family:var(--font-serif); font-size:clamp(1.8rem, 3.5vw, 2.75rem); font-weight:900; color:var(--text-main); line-height:1.1; margin-bottom:1.5rem;">
-                        Milestone-linked<br><em style="color:var(--text-muted); font-weight:400;">roadmap to scale.</em>
-                    </h2>
-                    <p style="font-size:0.95rem; color:var(--text-muted); line-height:1.7; margin-bottom:1.5rem;">
-                        All figures are pre-revenue estimates. Company incorporated March 2026 — no audited accounts exist. Projections are based on bottom-up market analysis, not extrapolated from historical performance.
-                    </p>
-                    <div style="display:flex; flex-direction:column; gap:1rem;">
-                        <div style="padding:1.25rem 1.5rem; border:1px solid rgba(13,138,116,0.2); border-radius:12px; background:rgba(13,138,116,0.04);">
-                            <div style="font-family:var(--font-mono); font-size:0.58rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted);">Year 3 Customer Target</div>
-                            <div style="font-family:var(--font-serif); font-size:1.8rem; font-weight:900; color:#0D8A74; line-height:1;">3,000–5,000</div>
-                            <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">Active customers, South India (~2 purchases/week per customer)</div>
-                        </div>
-                        <div style="padding:1.25rem 1.5rem; border:1px solid rgba(13,138,116,0.2); border-radius:12px; background:rgba(13,138,116,0.04);">
-                            <div style="font-family:var(--font-mono); font-size:0.58rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted);">Year 5 Revenue Target</div>
-                            <div style="font-family:var(--font-serif); font-size:1.8rem; font-weight:900; color:#0D8A74; line-height:1;">&#8377;1,000–1,400L</div>
-                            <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">Midpoint &#8377;1,200L — pre-revenue estimate only. Assumptions: South India scale, full 3-SKU launch, 1,000+ B2B accounts.</div>
-                        </div>
-                    </div>
-                </div>
+        <!-- ════════════════════════════════════════════════════
+             COMPETITIVE LANDSCAPE
+        ═════════════════════════════════════════════════════ -->
+        <section class="light-section">
+            <div class="container reveal">
+                <div class="section-eyebrow">02 — Competitive Moat</div>
+                <h2 style="font-family:var(--font-serif); font-size:clamp(2rem, 4vw, 3rem); font-weight:900; line-height:1.1; margin-bottom:3rem;">
+                    How we stack up.
+                </h2>
 
                 <div style="overflow-x:auto;">
-                    <table class="inv-milestone-table">
+                    <table class="premium-table">
                         <thead>
                             <tr>
-                                <th>Year</th>
-                                <th>Key Milestones</th>
+                                <th>Category / Product Type</th>
+                                <th>Indian Grain Base</th>
+                                <th>LAB Fermentation</th>
+                                <th>Species-Specific Mushroom Extraction</th>
+                                <th>Natural GABA (No MSG)</th>
+                                <th>Ambient RTD (No Cold Chain)</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <!-- OBI Row -->
+                            <tr class="highlight">
+                                <td>Oxygen Bioinnovations Platform</td>
+                                <td><span class="icon-y">✓ Yes</span></td>
+                                <td><span class="icon-y">✓ Yes</span></td>
+                                <td><span class="icon-y">✓ Yes</span></td>
+                                <td><span class="icon-y">✓ Yes</span></td>
+                                <td><span class="icon-y">✓ Yes</span></td>
+                            </tr>
+                            <!-- Anonymized Competitors -->
                             <tr>
-                                <td>Year 1</td>
-                                <td>FSSAI licence granted · NABL testing complete · Patent filed · NBEC result · Consumer survey complete</td>
+                                <td>Imported Mushroom Brands (USA)</td>
+                                <td><span class="icon-n">✗</span></td>
+                                <td><span class="icon-p">~</span></td>
+                                <td><span class="icon-y">✓ Yes</span></td>
+                                <td><span class="icon-y">✓ Yes</span></td>
+                                <td><span class="icon-y">✓ Yes</span></td>
                             </tr>
                             <tr>
-                                <td>Year 2</td>
-                                <td>CLARITY launch · 50+ B2B accounts · Subscription live · Carbonated variant launched</td>
+                                <td>Legacy Probiotic Drinks (MNC)</td>
+                                <td><span class="icon-n">✗</span></td>
+                                <td><span class="icon-y">✓ Yes</span></td>
+                                <td><span class="icon-n">✗</span></td>
+                                <td><span class="icon-n">✗</span></td>
+                                <td><span class="icon-n">✗ (Cold Chain)</span></td>
                             </tr>
                             <tr>
-                                <td>Year 3</td>
-                                <td>All 3 SKUs launched · 200+ B2B accounts · BIRAC BIG secured · Functional food line initiated</td>
+                                <td>Indian Capsule Supplements</td>
+                                <td><span class="icon-n">✗</span></td>
+                                <td><span class="icon-n">✗</span></td>
+                                <td><span class="icon-n">✗</span></td>
+                                <td><span class="icon-n">N/A</span></td>
+                                <td><span class="icon-n">✗ (Not RTD)</span></td>
                             </tr>
                             <tr>
-                                <td>Year 4</td>
-                                <td>20L+ fermenter scale-up · Bengaluru institutional dominance · 1,000+ B2B accounts · Series A readiness</td>
+                                <td>Lifestyle RTD Brands (India)</td>
+                                <td><span class="icon-y">✓ Yes</span></td>
+                                <td><span class="icon-n">✗</span></td>
+                                <td><span class="icon-n">✗</span></td>
+                                <td><span class="icon-n">✗</span></td>
+                                <td><span class="icon-n">✗</span></td>
                             </tr>
                             <tr>
-                                <td>Year 5</td>
-                                <td>South India scale · Full IP portfolio filed · Manufacturing facility · Explore North India entry</td>
+                                <td>Emerging Fermented Millet RTDs</td>
+                                <td><span class="icon-y">✓ Yes</span></td>
+                                <td><span class="icon-y">✓ Yes</span></td>
+                                <td><span class="icon-n">✗</span></td>
+                                <td><span class="icon-n">✗</span></td>
+                                <td><span class="icon-y">✓ Yes</span></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
 
-    <!-- ════════════════════════════════════════════════════
-         COMPETITIVE LANDSCAPE
-    ═════════════════════════════════════════════════════ -->
-    <section class="inv-section" style="background:var(--bg);">
-        <div class="container reveal">
-            <div class="inv-section-label">05 — Competitive Landscape</div>
-            <h2 style="font-family:var(--font-serif); font-size:clamp(1.8rem, 3.5vw, 2.75rem); font-weight:900; color:var(--text-main); line-height:1.1; margin-bottom:1rem;">
-                How OBI stacks up.
-            </h2>
-            <p style="font-size:1rem; color:var(--text-muted); max-width:580px; line-height:1.7;">
-                ~ = Partial / claimed but not species-specific. N/A = capsule format, column not applicable. All competitor assessments are based on publicly available product information as of June 2026.
-            </p>
-
-            <div style="overflow-x:auto; margin-top:2rem;">
-                <table class="inv-comp-table">
-                    <thead>
-                        <tr>
-                            <th>Company / Product</th>
-                            <th>Indian Grain Base</th>
-                            <th>LAB Fermentation</th>
-                            <th>Species-Specific Mushroom Extraction</th>
-                            <th>Natural GABA (No MSG)</th>
-                            <th>Ambient RTD (No Cold Chain)</th>
-                            <th>Sub-&#8377;100 / Serving</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="oxy-row">
-                            <td>&#10022; OBI — CLARITY / MOMENTUM / VITALITY</td>
-                            <td><span class="check-icon">✓</span></td>
-                            <td><span class="check-icon">✓</span></td>
-                            <td><span class="check-icon">✓</span></td>
-                            <td><span class="check-icon">✓</span></td>
-                            <td><span class="check-icon">✓</span></td>
-                            <td><span class="check-icon">✓</span></td>
-                        </tr>
-                        <tr>
-                            <td>Four Sigmatic (USA import)</td>
-                            <td><span class="cross-icon">✗</span></td>
-                            <td><span class="part-icon">~</span></td>
-                            <td><span class="check-icon">✓</span></td>
-                            <td><span class="check-icon">✓</span></td>
-                            <td><span class="check-icon">✓</span></td>
-                            <td><span class="cross-icon">✗</span></td>
-                        </tr>
-                        <tr>
-                            <td>Himalayan Organics (capsule)</td>
-                            <td><span class="cross-icon">✗</span></td>
-                            <td><span class="cross-icon">✗</span></td>
-                            <td><span class="cross-icon">✗</span></td>
-                            <td>N/A</td>
-                            <td><span class="cross-icon">✗</span></td>
-                            <td><span class="cross-icon">✗</span></td>
-                        </tr>
-                        <tr>
-                            <td>WOW Life Science (capsule)</td>
-                            <td><span class="cross-icon">✗</span></td>
-                            <td><span class="cross-icon">✗</span></td>
-                            <td><span class="cross-icon">✗</span></td>
-                            <td>N/A</td>
-                            <td><span class="cross-icon">✗</span></td>
-                            <td><span class="cross-icon">✗</span></td>
-                        </tr>
-                        <tr>
-                            <td>Yakult India (probiotic drink)</td>
-                            <td><span class="cross-icon">✗</span></td>
-                            <td><span class="check-icon">✓</span></td>
-                            <td><span class="cross-icon">✗</span></td>
-                            <td><span class="cross-icon">✗</span></td>
-                            <td><span class="cross-icon">✗</span></td>
-                            <td><span class="check-icon">✓</span></td>
-                        </tr>
-                        <tr>
-                            <td>Paper Boat / Raw Pressery (RTD)</td>
-                            <td><span class="check-icon">✓</span></td>
-                            <td><span class="cross-icon">✗</span></td>
-                            <td><span class="cross-icon">✗</span></td>
-                            <td><span class="cross-icon">✗</span></td>
-                            <td><span class="cross-icon">✗</span></td>
-                            <td><span class="cross-icon">✗</span></td>
-                        </tr>
-                        <tr>
-                            <td>BlissBody / FamNutra (Fermented Millet RTD)</td>
-                            <td><span class="check-icon">✓</span></td>
-                            <td><span class="check-icon">✓</span></td>
-                            <td><span class="cross-icon">✗</span></td>
-                            <td><span class="cross-icon">✗</span></td>
-                            <td><span class="check-icon">✓</span></td>
-                            <td><span class="check-icon">✓</span></td>
-                        </tr>
-                        <tr>
-                            <td>milSipp / Gutzy (Fermented Millet RTD)</td>
-                            <td><span class="check-icon">✓</span></td>
-                            <td><span class="check-icon">✓</span></td>
-                            <td><span class="cross-icon">✗</span></td>
-                            <td><span class="cross-icon">✗</span></td>
-                            <td><span class="check-icon">✓</span></td>
-                            <td><span class="check-icon">✓</span></td>
-                        </tr>
-                    </tbody>
-                </table>
+        <!-- ════════════════════════════════════════════════════
+             ROADMAP / TIMELINE
+        ═════════════════════════════════════════════════════ -->
+        <section class="light-section alt">
+            <div class="container reveal">
+                <div class="section-eyebrow">03 — Execution Roadmap</div>
+                
+                <div class="roadmap-grid">
+                    <div class="roadmap-card reveal">
+                        <div class="road-year">YEAR 1 (Current)</div>
+                        <div class="road-title">Validation &amp; IP</div>
+                        <div class="road-desc">Secure FSSAI state manufacturing licence. Complete NABL-accredited third party testing and bioactive quantification. File for Proprietary IP protection.</div>
+                    </div>
+                    <div class="roadmap-card reveal">
+                        <div class="road-year">YEAR 2</div>
+                        <div class="road-title">Launch &amp; B2B Beachhead</div>
+                        <div class="road-desc">Commercial launch of first SKU (Cognitive focus). Secure 50+ institutional B2B accounts in Bengaluru (gyms, co-working). Launch D2C subscription model.</div>
+                    </div>
+                    <div class="roadmap-card reveal">
+                        <div class="road-year">YEAR 3</div>
+                        <div class="road-title">Full Line &amp; Scale</div>
+                        <div class="road-desc">Launch remaining 2 SKUs (Energy & Immunity). Scale to 200+ active B2B accounts. Initiate scale-up funding (Series A readiness). Target: 3,000+ active customers.</div>
+                    </div>
+                    <div class="roadmap-card reveal">
+                        <div class="road-year">YEAR 4 & 5</div>
+                        <div class="road-title">Manufacturing Infrastructure</div>
+                        <div class="road-desc">Transition to 20L+ fermenter scale. Full IP portfolio filed. Achieve South India market dominance and prepare for North India market entry.</div>
+                    </div>
+                </div>
             </div>
-            <div style="margin-top:1.25rem; font-size:0.8rem; color:var(--text-muted); font-style:italic;">
-                Competitor data based on publicly available product information as of June 2026. ~ = Partial or claimed but not species-specific. N/A = capsule format, column not applicable to comparison.
-            </div>
-        </div>
-    </section>
+        </section>
 
 
-    <!-- ════════════════════════════════════════════════════
-         GRANT ASK — SISFS ₹20L
-    ═════════════════════════════════════════════════════ -->
-    <section class="inv-section" style="background:var(--bg-alt); border-bottom:none;">
-        <div class="container reveal">
-            <div class="inv-section-label">06 — Current Funding Ask</div>
-
-            <div class="inv-ask-card">
-                <div class="inv-ask-grid">
+        <!-- ════════════════════════════════════════════════════
+             THE ASK & CTA
+        ═════════════════════════════════════════════════════ -->
+        <section class="light-section" style="border-bottom:none; padding-bottom:10rem;">
+            <div class="container reveal">
+                <div class="section-eyebrow">04 — Current Status &amp; Ask</div>
+                
+                <div class="the-ask-grid">
                     <div>
-                        <div style="font-family:var(--font-mono); font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-bottom:1.25rem;">SISFS Grant — Indigram Labs Foundation · Application No. 113783</div>
-                        <div class="inv-ask-amount"><span class="currency">&#8377;</span>20,00,000</div>
-                        <div style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.12em; color:rgba(255,255,255,0.5); margin-top:0.5rem; margin-bottom:1.5rem;">Total Grant Requested · Debt: None · Equity: None</div>
-                        <p style="font-size:0.95rem; color:rgba(255,255,255,0.65); line-height:1.7; max-width:450px;">
-                            This grant funds the 18-month validation and regulatory phase — bioactive HPLC quantification, NABL batch testing, FSSAI licence application, provisional patent filing, accelerated shelf-life study, and a 100-unit pilot batch.
+                        <div class="ask-amount" style="font-size: clamp(3rem, 6vw, 4.5rem);">Raising <br><span>Pre-Seed</span></div>
+                        <div style="font-family:var(--font-mono); font-size:0.8rem; letter-spacing:0.1em; color:#0D8A74; text-transform:uppercase; margin-bottom:1.5rem;">Phase 0 Validation Round</div>
+                        <p style="font-size:1.05rem; color:var(--text-muted); line-height:1.7; margin-bottom:2.5rem; max-width:480px;">
+                            We are currently seeking non-dilutive grant funding or strategic seed investment to complete our 18-month Phase 0 Validation. This capital explicitly funds NABL batch testing, HPLC bioactive quantification, IP filing, and regulatory licensing prior to commercial launch.
                         </p>
-                        <div style="margin-top:2rem; display:flex; gap:1rem; flex-wrap:wrap;">
-                            <a href="contact.html" class="btn" style="background:#fff; color:var(--text-main); padding:1rem 2rem; font-size:0.9rem;">Speak to the Founder</a>
-                            <a href="mailto:invest@oxygenbioinnovations.com" class="btn" style="background:transparent; border:1.5px solid rgba(255,255,255,0.3); color:#fff; padding:1rem 2rem; font-size:0.9rem;">invest@oxygenbioinnovations.com</a>
+
+                        <!-- Magnetic CTA Button -->
+                        <a href="mailto:invest@oxygenbioinnovations.com" class="magnetic-btn btn" style="background:#0D8A74; color:#fff; border:none; padding:1.25rem 2.5rem; font-size:0.95rem; font-weight:600; box-shadow: 0 10px 30px rgba(13,138,116,0.3);">
+                            <span class="magnetic-content">Request Full Pitch Deck &amp; Data Room</span>
+                        </a>
+                    </div>
+
+                    <!-- Clean Use of Funds List -->
+                    <div style="background:#ffffff; border:1px solid var(--border); border-radius:24px; padding:3rem; box-shadow:var(--shadow-sm);">
+                        <h3 style="font-family:var(--font-serif); font-size:1.5rem; margin-bottom:2rem; color:var(--text-main);">Use of Funds Overview</h3>
+                        <div style="display:flex; flex-direction:column; gap:1.5rem;">
+                            <div style="display:flex; gap:1rem; align-items:flex-start;">
+                                <div style="font-family:var(--font-mono); font-size:1.1rem; color:#0D8A74; font-weight:700;">30%</div>
+                                <div>
+                                    <div style="color:var(--text-main); font-weight:600; margin-bottom:0.25rem;">Bioactive &amp; NABL Validation</div>
+                                    <div style="font-size:0.85rem; color:var(--text-muted);">HPLC quantification, strain deposit, microbial/heavy metal testing.</div>
+                                </div>
+                            </div>
+                            <div style="display:flex; gap:1rem; align-items:flex-start;">
+                                <div style="font-family:var(--font-mono); font-size:1.1rem; color:#0D8A74; font-weight:700;">25%</div>
+                                <div>
+                                    <div style="color:var(--text-main); font-weight:600; margin-bottom:0.25rem;">Regulatory &amp; IP Filing</div>
+                                    <div style="font-size:0.85rem; color:var(--text-muted);">FSSAI state licensing, Schedule 4 audit, provisional patent application.</div>
+                                </div>
+                            </div>
+                            <div style="display:flex; gap:1rem; align-items:flex-start;">
+                                <div style="font-family:var(--font-mono); font-size:1.1rem; color:#0D8A74; font-weight:700;">20%</div>
+                                <div>
+                                    <div style="color:var(--text-main); font-weight:600; margin-bottom:0.25rem;">Shelf-Life &amp; Pilot Batch</div>
+                                    <div style="font-size:0.85rem; color:var(--text-muted);">Accelerated stability analysis and 100-unit pilot production.</div>
+                                </div>
+                            </div>
+                            <div style="display:flex; gap:1rem; align-items:flex-start;">
+                                <div style="font-family:var(--font-mono); font-size:1.1rem; color:#0D8A74; font-weight:700;">25%</div>
+                                <div>
+                                    <div style="color:var(--text-main); font-weight:600; margin-bottom:0.25rem;">Lab Infrastructure &amp; Contingency</div>
+                                    <div style="font-size:0.85rem; color:var(--text-muted);">Reagents, intern stipends, and operational overhead.</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                </div>
 
-                    <div>
-                        <div style="font-family:var(--font-mono); font-size:0.62rem; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-bottom:1.25rem;">Milestone-Linked Deployment</div>
-                        <ul class="inv-use-list">
-                            <li class="inv-use-item">
-                                <div class="inv-use-pct">30%</div>
-                                <div class="inv-use-label"><strong>Bioactive Validation + NABL Testing — &#8377;6,00,000</strong>HPLC quantification (GABA, hericenones, cordycepin, ganoderic acids, beta-glucans), 3 batches. NABL-accredited microbial, heavy metals, nutritional, mycotoxin testing. L. brevis MTCC strain deposit + 16S rRNA characterisation.</div>
-                            </li>
-                            <li class="inv-use-item">
-                                <div class="inv-use-pct">25%</div>
-                                <div class="inv-use-label"><strong>Regulatory + IP Filing — &#8377;5,00,000</strong>FSSAI FoSCoS application, FOSTAC certification (2 staff), Schedule 4 compliance audit + upgrades. Provisional patent application — IPO Chennai, post-HPLC + MTCC deposit.</div>
-                            </li>
-                            <li class="inv-use-item">
-                                <div class="inv-use-pct">20%</div>
-                                <div class="inv-use-label"><strong>Shelf-Life + Process Validation — &#8377;4,00,000</strong>6-month accelerated shelf-life study, DSC thermal stability analysis. 100-unit CLARITY pilot batch + structured consumer panel (20+ participants).</div>
-                            </li>
-                            <li class="inv-use-item">
-                                <div class="inv-use-pct">25%</div>
-                                <div class="inv-use-label"><strong>Consumables, Reagents + Stipends — &#8377;5,00,000</strong>Lab reagents, consumables, Research Fellow + intern stipend support, miscellaneous contingency. Months 1–18.</div>
-                            </li>
-                        </ul>
+                <div style="margin-top:4rem; padding-top:2rem; border-top:1px solid var(--border); display:flex; gap:3rem; justify-content:center; flex-wrap:wrap;">
+                    <div style="text-align:center;">
+                        <div style="font-family:var(--font-mono); font-size:0.55rem; letter-spacing:0.15em; color:var(--text-muted); text-transform:uppercase;">DPIIT Recognition</div>
+                        <div style="font-size:0.85rem; font-weight:600; color:var(--text-main); margin-top:0.25rem;">DIPP258270</div>
+                    </div>
+                    <div style="text-align:center;">
+                        <div style="font-family:var(--font-mono); font-size:0.55rem; letter-spacing:0.15em; color:var(--text-muted); text-transform:uppercase;">Company Status</div>
+                        <div style="font-size:0.85rem; font-weight:600; color:var(--text-main); margin-top:0.25rem;">Private Limited (2026)</div>
+                    </div>
+                    <div style="text-align:center;">
+                        <div style="font-family:var(--font-mono); font-size:0.55rem; letter-spacing:0.15em; color:var(--text-muted); text-transform:uppercase;">Incubation</div>
+                        <div style="font-size:0.85rem; font-weight:600; color:var(--text-main); margin-top:0.25rem;">TBI-DETI@ACE</div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Funding pipeline -->
-            <div style="margin-top:3rem;">
-                <div style="font-family:var(--font-mono); font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1.5rem;">Funding Pipeline</div>
-                <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem;" class="mobile-stack">
-                    <div style="padding:1.5rem; border:1px solid var(--border); border-radius:12px; background:var(--bg);">
-                        <div style="font-family:var(--font-mono); font-size:0.58rem; letter-spacing:0.12em; text-transform:uppercase; color:#0D8A74; margin-bottom:0.5rem;">Confirmed</div>
-                        <div style="font-family:var(--font-serif); font-size:1.1rem; font-weight:700; color:var(--text-main); margin-bottom:0.35rem;">Bootstrapped</div>
-                        <div style="font-size:0.85rem; color:var(--text-muted);">Phase 0 operational — fully founder-funded. 99% Manisreethaar S, 1% Libinraj Christopher. Zero external capital drawn.</div>
-                    </div>
-                    <div style="padding:1.5rem; border:1px solid rgba(234,179,8,0.3); border-radius:12px; background:rgba(234,179,8,0.04);">
-                        <div style="font-family:var(--font-mono); font-size:0.58rem; letter-spacing:0.12em; text-transform:uppercase; color:#d97706; margin-bottom:0.5rem;">In Progress</div>
-                        <div style="font-family:var(--font-serif); font-size:1.1rem; font-weight:700; color:var(--text-main); margin-bottom:0.35rem;">SISFS — Indigram Labs · &#8377;20L</div>
-                        <div style="font-size:0.85rem; color:var(--text-muted);">Application No. 113783 · Screening presentation 19 June 2026 · Result awaited.</div>
-                    </div>
-                    <div style="padding:1.5rem; border:1px solid var(--border); border-radius:12px; background:var(--bg);">
-                        <div style="font-family:var(--font-mono); font-size:0.58rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.5rem;">Planned</div>
-                        <div style="font-family:var(--font-serif); font-size:1.1rem; font-weight:700; color:var(--text-main); margin-bottom:0.35rem;">BIRAC BIG Grant · &#8377;50L target</div>
-                        <div style="font-size:0.85rem; color:var(--text-muted);">July 2026 call · Also exploring: TANSEED, TANFUND, CFTRI BioNEST, NIFTEM N-SIP, DST NIDHI, DBT schemes. No debt instruments being pursued.</div>
-                    </div>
-                </div>
             </div>
-        </div>
-    </section>
-
-
-    <!-- ════════════════════════════════════════════════════
-         CTA
-    ═════════════════════════════════════════════════════ -->
-    <section class="inv-cta">
-        <div class="container reveal">
-            <div style="font-family:var(--font-mono); font-size:0.62rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-muted); margin-bottom:1.5rem;">Partnership &amp; Grant Inquiry</div>
-            <h2 style="font-family:var(--font-serif); font-size:clamp(2rem, 4vw, 3.5rem); font-weight:900; color:var(--text-main); line-height:1.05; letter-spacing:-0.03em; margin-bottom:1.5rem;">
-                Backing real food science,<br><em style="color:var(--text-muted); font-weight:400;">made in India.</em>
-            </h2>
-            <p style="font-size:1.05rem; color:var(--text-muted); max-width:540px; margin:0 auto 2.5rem; line-height:1.7;">
-                We're open to conversations with grant providers, angel investors, incubators, and strategic partners. We will share a full data room — including current batch data, SOPs, and OxyOS platform access — upon request.
-            </p>
-            <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
-                <a href="mailto:invest@oxygenbioinnovations.com" class="btn btn-outline" style="padding:1rem 2rem;">invest@oxygenbioinnovations.com</a>
-                <a href="contact.html" class="btn btn-outline" style="padding:1rem 2rem;">Schedule a Call →</a>
-            </div>
-            <div style="margin-top:3rem; display:flex; gap:2.5rem; justify-content:center; flex-wrap:wrap;">
-                <div style="text-align:center;">
-                    <div style="font-family:var(--font-mono); font-size:0.58rem; letter-spacing:0.12em; color:var(--text-muted); text-transform:uppercase;">CIN</div>
-                    <div style="font-size:0.85rem; font-weight:600; color:var(--text-main); margin-top:0.25rem;">U72100TZ2026PTC038160</div>
-                </div>
-                <div style="text-align:center;">
-                    <div style="font-family:var(--font-mono); font-size:0.58rem; letter-spacing:0.12em; color:var(--text-muted); text-transform:uppercase;">DPIIT Recognition</div>
-                    <div style="font-size:0.85rem; font-weight:600; color:var(--text-main); margin-top:0.25rem;">DIPP258270 · Valid to 2036</div>
-                </div>
-                <div style="text-align:center;">
-                    <div style="font-family:var(--font-mono); font-size:0.58rem; letter-spacing:0.12em; color:var(--text-muted); text-transform:uppercase;">Incubator</div>
-                    <div style="font-size:0.85rem; font-weight:600; color:var(--text-main); margin-top:0.25rem;">TBI-DETI@ACE, Hosur, Tamil Nadu</div>
-                </div>
-                <div style="text-align:center;">
-                    <div style="font-family:var(--font-mono); font-size:0.58rem; letter-spacing:0.12em; color:var(--text-muted); text-transform:uppercase;">SISFS Application</div>
-                    <div style="font-size:0.85rem; font-weight:600; color:var(--text-main); margin-top:0.25rem;">No. 113783 · In Progress</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+        </section>
     </main>
 
     <!-- Footer -->
@@ -1158,14 +725,56 @@
             </div>
             <div style="text-align:center; border-top:1px solid var(--border); margin-top:2rem; padding-top:1.5rem; font-size:0.72rem; color:var(--text-muted); width:100%; grid-column:1/-1;">
                 <p style="line-height:1.6; margin-bottom:0.75rem; font-family:var(--font-mono);">
-                    All financial projections on this page are pre-revenue estimates only — no audited accounts exist. No commercial product has been sold. All bioactive claims are design targets pending NABL-accredited third-party validation. Market data attributed to Grand View Research 2024 and NFHS-5. This page does not constitute an offer or solicitation of investment.
+                    Disclaimer: Oxygen Bioinnovations is a pre-revenue biotechnology startup. All financial projections on this page are estimates based on market research and design targets. No commercial products have been sold. Bioactive claims are subject to successful NABL-accredited validation. This page does not constitute an offer, solicitation, or recommendation for investment.
                 </p>
-                &copy; 2026 Oxygen Bioinnovations Private Limited · CIN: U72100TZ2026PTC038160 · DPIIT Recognised Startup (DIPP258270) · All rights reserved.
+                &copy; 2026 Oxygen Bioinnovations Private Limited · CIN: U72100TZ2026PTC038160 · All rights reserved.
             </div>
         </div>
     </footer>
 
     <script src="assets/js/main.js"></script>
     <script src="assets/js/page-transitions.js"></script>
+    
+    <!-- Premium Magnetic Button & Reveal JS (Simplified for this page) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Trigger reveals with staggered delay
+            const reveals = document.querySelectorAll('.reveal');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        // Optional CSS class trigger
+                        if (entry.target.dataset.revealClass) {
+                            entry.target.classList.add(entry.target.dataset.revealClass);
+                        }
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            reveals.forEach(r => observer.observe(r));
+
+            // Magnetic Button Effect
+            const magneticBtns = document.querySelectorAll('.magnetic-btn');
+            magneticBtns.forEach(btn => {
+                btn.addEventListener('mousemove', (e) => {
+                    const rect = btn.getBoundingClientRect();
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+                    
+                    btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+                    const content = btn.querySelector('.magnetic-content');
+                    if(content) content.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
+                });
+                
+                btn.addEventListener('mouseleave', () => {
+                    btn.style.transform = 'translate(0px, 0px)';
+                    const content = btn.querySelector('.magnetic-content');
+                    if(content) content.style.transform = 'translate(0px, 0px)';
+                });
+            });
+        });
+    </script>
 </body>
 </html>

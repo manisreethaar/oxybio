@@ -1,11 +1,40 @@
-Origin Protocol</div>
-<h2 class="display" style="font-size:clamp(2.5rem, 5vw, 3.5rem); line-height:0.95; letter-spacing:-0.03em; font-family:var(--font-serif);">Built from<br/><em style="color:var(--text-muted); font-weight:400;">frustration.</em></h2>
-<p style="margin-top:1.5rem; font-size:1rem; color:var(--text-muted); line-height:1.65; max-width:300px;">Not a corporate origin story. The honest account of a problem we couldn't ignore.</p>
-</div>
-<!-- Right content -->
-<div style="font-size:1.1rem; line-height:1.75; color:var(--text-muted);">
-<p style="margin-bottom:1.5rem; color:var(--text-main); font-size:1.15rem;">
-                            I always had a dream of starting a business, but more fundamentally, I was fed up with working for someone else's growth. Why work 8 or 10 hours a day for someone else's goals, when you can use the exact same hours to build something for yourself? We all have one life: I wanted to do something remarkable and actually useful.
-                        </p>
-<p style="margin-bottom:2rem;">
-                            Due to technology development and modernization, our lifestyle has changed dramatically. We are encountering sweeping lifestyle problems, and for most of these issues, the core driver revolves around the food we are eating — processed, low quality, filled with chemicals, and packaged with fake promises. There is an ancient Tamil quote, <strong>"Unnave marundhu" (food is medicine)</strong>, but we have completely forgotten it 
+
+    /* Tamil card: smaller on mobile */
+    .tamil-card-wrapper {
+        padding: 1.5rem 1.25rem !important;
+        border-radius: 20px !important;
+        width: 90% !important;
+    }
+
+    .tamil-hero-text {
+        font-size: clamp(2.5rem, 12vw, 4rem) !important;
+        line-height: 1.5 !important;
+        padding-top: 0.2em !important;
+        padding-bottom: 0.2em !important;
+    }
+
+    /* O2 animation: smaller on mobile */
+    .hero-animation-wrapper.bottom-mounted {
+        transform: scale(0.75) !important;
+        margin-top: 1rem !important;
+    }
+
+    /* Solution cards: DISABLE sticky on mobile */
+    #solution-cards .apple-slide {
+        position: relative !important;
+        top: auto !important;
+        min-height: auto !important;
+        padding: 2rem 0 !important;
+    }
+
+    #solution-cards {
+        padding-bottom: 1rem !important;
+    }
+
+    /* Solution card inner content: stack vertically on mobile */
+    .mobile-stack-card {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1.5rem !important;
+    }
+}

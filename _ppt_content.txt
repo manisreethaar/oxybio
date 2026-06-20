@@ -1,0 +1,511 @@
+Total slides: 16
+======================================================================
+
+--- SLIDE 1: ppt/slides/slide1.xml ---
+  DPIIT Recognised ? DIPP258270 ? Valid to 2036
+  BIOTECHNOLOGY  ?  FOODTECH  ?  FUNCTIONAL BEVERAGES
+  OXYGEN BIOINNOVATIONS
+  PRIVATE LIMITED
+  ???? ???????  ?  Food Is Medicine
+  VISION
+  Building India?s first science-grounded functional food brand from traditional grains and medicinal mushrooms ? affordable, daily, rooted in South Indian agricultural heritage. Fermentation platform. Traditional ingredients. Full-scale brand vision.
+  CLARITY  ?  MOMENTUM  ?  VITALITY  (working names ? not finalised brand identities)
+  CIN: U72100TZ2026PTC038160   ?   TBI-DETI@ACE, Hosur, Tamil Nadu   ?   SISFS Application No. 113783
+
+--- SLIDE 2: ppt/slides/slide10.xml ---
+  COMPETITORS
+  How OBI Stacks Up Against the Competitive Landscape
+  Company / Product
+  Indian Grain
+  Fermentation
+  Species-Specific
+  Mushroom Extraction
+  Natural GABA
+  (No MSG)
+  Ambient RTD
+  (No Cold Chain)
+  Medicinal
+  Mushroom Bioactives
+  Sub-?100
+  Per Serving
+  OBI ? CLARITY / MOMENTUM / VITALITY (Us)
+  ?
+  ?
+  ?
+  ?
+  ?
+  ?
+  Four Sigmatic (USA import)
+  ?
+  ~
+  ?
+  ?
+  ?
+  ?
+  Himalayan Organics (capsule)
+  ?
+  ?
+  ?
+  N/A
+  ?
+  ?
+  WOW Life Science (capsule)
+  ?
+  ?
+  ?
+  N/A
+  ?
+  ?
+  Yakult India (probiotic drink)
+  ?
+  ?
+  ?
+  ?
+  ?
+  ?
+  Paper Boat / Raw Pressery (RTD)
+  ?
+  ?
+  ?
+  ?
+  ?
+  ?
+  BlissBody (FamNutra Millet Foods) ? Fermented Millet RTD
+  ?
+  ?
+  ?
+  ?
+  ?
+  ?
+  ?
+  milSipp / Gutzy (ACUITiY / Munico) ? Fermented Millet RTD
+  ?
+  ?
+  ?
+  ?
+  ?
+  ?
+  ?
+  ~ = Partial/Claimed but not species-specific  ?  N/A = Capsule format, not applicable to this comparison
+
+--- SLIDE 3: ppt/slides/slide11.xml ---
+  REVENUE MODEL
+  Three Streams ? One Production Line  ?  How We Earn, Who Pays, and Our Market Strategy
+  D2C Beverages
+  Phase 1 ? 2026?27
+  45?55% Gross Margin
+  Price:
+  Affordable sub-?100 / 200ml ? Daily habit positioning
+  Who pays:
+  Individual consumers ? students, young professionals
+  Sales channel:
+  WhatsApp + owned website (D2C) ? Blinkit, Zepto, Swiggy Instamart (quick commerce) ? Amazon, Flipkart (Phase 2). Hosur pilot ? Bengaluru expansion.
+  Market strategy:
+  Direct Instagram/campus outreach. Word-of-mouth. Influencer partnerships with college wellness clubs.
+  Institutional B2B
+  Phase 1?2 ? 2026?28
+  35?45% Gross Margin
+  Price:
+  Institutional bulk pricing ? colleges, gyms, co-working spaces
+  Who pays:
+  Gyms, co-working spaces, college canteens, corporate cafeterias ? Bengaluru (2,000+ gyms targeted)
+  Sales channel:
+  Direct B2B sales team. MOQ-based contracts. Monthly replenishment.
+  Market strategy:
+  Bengaluru gym managers are the key account target. Ambient storage = no refrigeration cost for account.
+  Subscription Model
+  Phase 2 ? 2027?28 ? Carbonated Variant + Subscription
+  50?60% Gross Margin
+  Price:
+  30 units / month ? doorstep delivery
+  Who pays:
+  Health-conscious urban professional ? repeat customer, high lifetime value
+  Sales channel:
+  Website subscription. Monthly auto-delivery. SKU personalisation (CLARITY / MOMENTUM / VITALITY mix).
+  Market strategy:
+  Retention-first model. Subscription locks in recurring revenue. Phase 2 product: carbonated variant of the same fermented base ? same bioactives, familiar fizzy format targeting Coke/Pepsi replacement market. Low churn expected from daily habit positioning.
+  Current market share: Zero ? Pre-revenue. Operating geography: Tamil Nadu (manufacturing) + Karnataka (B2B sales).
+
+--- SLIDE 4: ppt/slides/slide12.xml ---
+  FIVE-YEAR GOALS
+  Revenue Projections  ?  Market Share Objectives  ?  Operational Milestones
+  All figures are pre-revenue estimates. Company incorporated March 2026 ? no audited accounts exist.
+  KEY MILESTONES BY YEAR
+  Year 1
+  FSSAI licence granted ? NABL testing complete ? Patent filed ? NBEC result ? Consumer survey done
+  Year 2
+  Product launch (CLARITY) ? 50+ B2B accounts ? Subscription live ? Carbonated variant launched
+  Year 3
+  All 3 SKUs launched ? 200+ B2B accounts ? BIRAC BIG secured ? Functional food line initiated
+  Year 4
+  20L+ fermenter scale-up ? Bengaluru institutional dominance ? 1,000+ B2B ? Series A readiness
+  Year 5
+  South India scale ? Full IP portfolio filed ? Manufacturing facility ? Explore North India entry
+  Year 3 market share target:
+  3,000?5,000 active customers, South India (~2 purchases/week per customer)  ?
+  Year 5 revenue target:
+  ?1,000?1,400L (midpoint ?1,200L)
+
+--- SLIDE 5: ppt/slides/slide13.xml ---
+  CHALLENGES
+  Known Risks ? Identified Before Investors Do ? With Active Mitigations
+  MEDIUM
+  FSSAI Licence Timeline
+  Risk:
+  State manufacturing licence application takes 60?90 days to process. Any delay extends the time-to-revenue window.
+  Mitigation:
+  Application being prepared for immediate submission. State Licence processing: 30?60 days (corrected from prior 60?90 day estimate). Validation work continues in parallel. No revenue dependency until product launch (Q1 2027) ? a 30-day licensing delay does not break the plan.
+  MEDIUM
+  GABA Yield Uncertainty
+  Risk:
+  Our wild L. brevis isolate may not produce commercially meaningful GABA concentrations in every batch.
+  Mitigation:
+  Bioactive validation covers GABA, hericenones, cordycepin, ganoderic acids, beta-glucans, and anthocyanins ? not GABA alone. MTCC 25662 backup strain ordered if wild isolate underperforms. Multiple substrate conditions tested in parallel. HPLC outsourced to NABL lab ? funded by SISFS grant. 16S rRNA characterisation in progress at TBI-DETI@ACE.
+  LOW
+  Raw Material Quality + Batch-to-Batch Consistency
+  Risk:
+  Ragi, Karuppu Kavuni, and urad dal vary seasonally ? affecting fermentation performance and bioactive yield. Natural fermentation produces batch-to-batch variation in pH endpoint, colour, and taste.
+  Mitigation:
+  SISFS funds transition to controlled 2L bioprocess (pH stat, temperature control, agitation) ? primary mitigation for batch-to-batch inconsistency. OxyOS tracks every batch parameter statistically, enabling CAPA. Instrument constraints are anticipated and budgeted ? not a surprise. Autoclave confirmed operational in shared lab.
+  LOW
+  Mushroom Cost / Supply + Large Company Replication
+  Risk:
+  Medicinal mushroom extracts (Lion?s Mane, Cordyceps, Reishi) are import-dependent and expensive. If OBI proves the category, large FMCG players may replicate with greater resources. Patent-sensitive process details excluded from all public documents.
+  Mitigation:
+  Phase 2: domestic mushroom cultivation partnerships + multiple supplier qualification to reduce import dependence and cost. Patent filing covers integrated novel process ? IP moat. First-mover brand loyalty + Karuppu Kavuni sourcing network + OxyOS infrastructure = replication barriers. Large FMCG companies require 18?36 months to enter a new subcategory.
+
+--- SLIDE 6: ppt/slides/slide14.xml ---
+  FUNDING / AWARDS / CAP TABLE
+  Recognition  ?  Current Funding Status  ?  Capital Structure
+  AWARDS & RECOGNITION
+  DPIIT Recognised
+  Certificate No. DIPP258270 ? DeepTech, Biotechnology ? Issued 29 April 2026 ? Valid until 04 March 2036
+  TBI-DETI@ACE Incubatee
+  Adhiyamaan College of Engineering, Hosur, Tamil Nadu ? Technology Business Incubator ? Lab access, mentorship, infrastructure
+  SISFS Applicant
+  Application No. 113783 ? Indigram Labs Foundation ? Screening Presentation: 19 June 2026
+  FUNDING PIPELINE
+  Bootstrapped
+  Phase 0 operational
+  Confirmed
+  SISFS ? Indigram Labs
+  ?20L (this application)
+  In Progress
+  BIRAC BIG Grant
+  ?50L target ? July 2026 call
+  Planned
+  CAP TABLE
+  Manisreethaar S (CEO & Director):
+  99% equity
+  Libinraj Christopher (Co-Director):
+  1%
+  External equity / Debt drawn:
+  None ? 100% founder-owned, zero external capital
+  PIPELINE ? NOT YET APPLIED
+  TANSEED ? TANFUND ? CFTRI BioNEST ? NIFTEM N-SIP ? DST NIDHI ? DBT schemes ? C-CAMP NBEC 2026 (applied, result awaited) ? research ongoing. Loan / debt instruments not being pursued at this stage. Focus is 100% on grant-funded validation before any capex decision.
+
+--- SLIDE 7: ppt/slides/slide15.xml ---
+  FUND REQUIRED
+  SISFS Grant Ask ? ?20,00,000  ?  Milestone-Linked Deployment Plan
+  ?20,00,000
+  Total Grant Requested  ?  Debt: None  ?  Equity: None
+  Bioactive Validation + NABL Testing (30%) ? ?6,00,000
+  Regulatory + IP Filing (25%) ? ?5,00,000
+  Shelf-Life + Process Validation (20%) ? ?4,00,000
+  Consumables, Reagents + Stipends (25%) ? ?5,00,000
+  Milestone
+  Deliverable
+  Timeline
+  Fund (?)
+  Bioactive Yield Validation
+  HPLC quantification ? 3 batches (GABA, hericenones, cordycepin, ganoderic acids, beta-glucans); L. brevis MTCC strain deposit; 16S rRNA characterisation
+  Month 1?3
+  ?3,00,000
+  NABL Batch Testing
+  Microbial, heavy metals, nutritional, mycotoxin certificate ? 3 production batches (?35,000?45,000/batch, South India NABL labs, non-carbonated category) + HPLC bioactive panel
+  Month 3?5
+  ?3,00,000
+  FSSAI Licence Application
+  FoSCoS application + FOSTAC certification (2 staff) + Schedule 4 premises compliance audit and upgrades (handwashing station, pest control certification, drainage) + regulatory consultant retainer for application support and category verification
+  Month 1?4
+  ?2,50,000
+  Patent Provisional Filing
+  Provisional application filed with IPO Chennai (post-HPLC + MTCC deposit) + patent agent retainer covering prior-art search, claims drafting, and complete specification preparation within 12 months of provisional
+  Month 2?3
+  ?2,50,000
+  Shelf-Life Study
+  6-month accelerated shelf-life data; DSC thermal stability analysis
+  Month 4?8
+  ?1,50,000
+  Process Validation Batch
+  100-unit CLARITY pilot batch; structured consumer panel (20+ participants)
+  Month 6?9
+  ?2,50,000
+  Consumables & Stipends
+  Lab reagents, consumables, Research Fellow + intern stipend support, misc contingency
+  Month 1?18
+  ?5,00,000
+  TOTAL
+  Full 18-month validation and regulatory phase (maximum SISFS project duration). Verify final timeline with Indigram at presentation.
+  12 Months
+  ?20,00,000
+
+--- SLIDE 8: ppt/slides/slide16.xml ---
+  ADVISORY BOARD
+  Expert Advisory ? Industry & Academic
+  Confirmed advisors from leading biotech CROs, pharmaceutical companies, and academic institutions
+  INDUSTRY ADVISORY
+  Prabahar Jerik S
+  Senior Scientist MSAT ? Syngene International Ltd
+  Pilot Scale-Up Strategy
+  Yeslin Pushan M
+  Associate Scientist MSAT ? Syngene International Ltd
+  Process Analytics
+  Jegan K
+  Sr. Executive, Process Development ? Aragen Life Sciences
+  Commercial Bioprocessing
+  ACADEMIC & RESEARCH ADVISORY
+  Dr. P. Suresh Babu
+  Professor & Head, Dept of Biotechnology ? Savitha University, Chennai
+  Academic Advisory
+  Dr. V. Manivasagan
+  Professor & Head, Dept of Biotechnology ? Adhiyamaan College of Engineering, Hosur
+  Academic Advisory
+  Dr. S. Hari Lakshmi
+  Asst Professor ? Sri Shakthi Institute of Engg & Tech, Coimbatore
+  Bioactive Profiling
+  R.C. Aashika
+  Asst Professor ? Jeppiaar Engineering College, Chennai
+  Functional Methodology
+  Gopi K
+  Bioengineering Major ? Chung-Ang University, Seoul
+  Biological Assay Design
+  Incubated at TBI-DETI@ACE, Cabin D, Hosur, Tamil Nadu  ?  CIN: U72100TZ2026PTC038160  ?  DPIIT Recognised: DIPP258270
+
+--- SLIDE 9: ppt/slides/slide2.xml ---
+  THE TEAM
+  Founders & Core Team
+  Both founders hold M.Tech Nanoscience (Anna University) + B.Tech Biotechnology ? full-time, founding roles
+  Manisreethaar S
+  CEO & Director  ?  Majority Shareholder  ?  Full-Time
+  Education:
+  M.Tech Nanoscience & Technology, Anna University | B.Tech Biotechnology
+  Prior Experience:
+  Faculty + Project Mentor, Dept of Biotechnology, Adhiyamaan College of Engineering, Hosur (2022?2025, 3 years) ? Microbial upstream R&D, pharma-grade fermentation ? Anthem Biosciences, Bengaluru (2025?2026)
+  At OBI:
+  Fermentation platform architect; species-specific extraction protocol development; OxyOS full-stack design; scientific, strategic and grant lead
+  Libinraj Christopher
+  Co-Director  ?  1% Shareholder  ?  Full-Time
+  Education:
+  M.Tech Nanoscience & Technology, Anna University | B.Tech Biotechnology
+  Prior Experience:
+  Senior Research Analyst, Lyceum Pvt Ltd (2023?2026, 2 years)
+  At OBI:
+  Day-to-day lab operations, intern supervision, sample analysis, document and literature research, compliance documentation support
+  EXTENDED TEAM ? Incubated at TBI-DETI@ACE, Adhiyamaan College of Engineering, Hosur
+  1 Research Fellow
+  (Fermentation science & lab operations)   ?
+  4 B.Tech Final-Year Interns
+  (Lab execution, assay, data recording)   ?
+  3 B.Tech Third-Year Interns
+  (SOP training, fermentation support)
+
+--- SLIDE 10: ppt/slides/slide3.xml ---
+  PROBLEM
+  Who Is Our Customer ? And What Is Their Problem?
+  TARGET CUSTOMER
+  Urban Students &
+  Young Professionals
+  Age:
+  18?45 years ? Primary filter: health awareness and education, not age
+  Geography:
+  Hosur, Tamil Nadu + Bengaluru, Karnataka
+  Profile:
+  Engineering students, first-job professionals, gym-going, health-aware
+  Daily spend:
+  Sub-?100 daily beverage budget ? health-conscious spending
+  Mindset:
+  Aware of functional foods but lacks access ? educated early adopters who drive word-of-mouth awareness
+  THE PROBLEM
+  Three Unresolved Needs
+  Cognitive Stress & Fatigue
+  40%+ of Indian students report chronic cognitive fatigue and stress. No affordable, daily-use solution exists. (Source: NFHS-5)
+  Micronutrient & Adaptogen Gap
+  Diet deficient in B-vitamins, iron, and adaptogens ? yet supplements are either unaffordable or in capsule form that breaks the daily habit.
+  No India-Origin Functional RTD
+  No Indian-origin RTD beverage combines LAB fermentation with medicinal mushroom bioactives. Existing options are imported supplements (?500?2,000/month), Indian capsules/powders, or probiotic drinks without mushroom bioactives. Emerging Indian fermented millet RTDs (BlissBody, milSipp) are gut-health only ? zero medicinal mushroom bioactives.
+  No Healthy Carbonated Alternative
+  India?s ?30,000 Cr carbonated soft drink market delivers 25?35g sugar per serving, zero functional nutrition, and fuels India?s 101 million diabetic burden (IDF 2023). No Indian brand offers a healthy, functional carbonated RTD at accessible price.
+
+--- SLIDE 11: ppt/slides/slide4.xml ---
+  PROBLEM
+  How Big Is the Opportunity ? and Why Existing Solutions Fall Short
+  $6.9B (?57,000 Cr)
+  India Functional Beverages Market 2025 ? Grand View Research 2024
+  $18.8B
+  Projected by 2034 (10.74% CAGR)
+  10.74%
+  India Functional Beverages CAGR 2025?2034
+  0
+  Indian RTD brands combining LAB fermentation with medicinal mushroom bioactives
+  CURRENT SOLUTIONS AND THEIR GAPS
+  Imported Mushroom
+  Supplements
+  Four Sigmatic, Wellbeing Nutrition
+  ?500?2,000/month ? out of reach for health-aware students and young professionals. Foreign brand, no Indian grain base, no fermentation. Imported, padded with fillers. Consumer has no way to verify bioactive content or potency. Not a daily-habit format.
+  Capsule Supplements
+  (Indian)
+  Himalayan Organics, WOW Life Science
+  Capsule format breaks daily habit ? clinical associations reduce accessibility. No fermentation. No RTD. No GABA or postbiotic benefit. High price per month. No cultural connection to Indian diet. Consumer compliance is low for capsule regimes.
+  Probiotic RTD Drinks
+  Yakult, Epigamia, Mother Dairy
+  No medicinal mushroom bioactives. Limited to dairy-based Lactobacillus strains. No GABA. No adaptogenic effect. Cold-chain dependent (live cultures). Flavored with sugar and additives. Gut health only ? no cognitive or energy functional claim possible with current formulation.
+  Energy / Functional
+  Beverages
+  Red Bull, Complan, Paper Boat
+  No functional mushroom content. 25?35g added sugar per serving. No LAB fermentation, no postbiotics, no GABA. Lifestyle branding without science backing. Carbonated soft drink category ? 101 million Indian diabetics (IDF 2023) have no healthier carbonated alternative at accessible price.
+
+--- SLIDE 12: ppt/slides/slide5.xml ---
+  SOLUTION
+  One Fermentation Platform. Three Functional SKUs.
+  Sprouted ragi + Karuppu Kavuni black rice + urad dal  ?  L. brevis fermentation  ?  Species-specific mushroom extraction  ?  200ml  ?  Affordable sub-?100 price point  ?  No synthetic preservatives
+  PHASE 1
+  Substrate
+  Preparation
+  Sprouted ragi + Karuppu Kavuni (GI-tagged Tamil Nadu heirloom black rice) + urad dal. Ground and mixed. Karuppu Kavuni delivers anthocyanins and natural purple colour. Sprouting reduces antinutritional factors and improves mineral bioavailability. Substrate ratios and fermentation parameters optimised through systematic bioprocess design across multiple batch conditions.
+  PHASE 2
+  Fermentation
+  (L. brevis)
+  L. brevis inoculated into substrate. Anaerobic fermentation. Target pH endpoint: 3.8?4.2 (confirmed, Trial Batch 1). Urad dal provides natural glutamic acid ? the substrate for L. brevis enzymatic GABA conversion. No MSG. No additives. Natural slurry fermentation.
+  PHASE 3
+  Postbiotic
+  Stabilisation
+  Post-fermentation heat treatment inactivates live cells while preserving GABA and metabolites. Shelf-stable postbiotic base. No cold chain. No synthetic preservatives.
+  THREE SKUs ? ONE BASE, SPECIES-SPECIFIC MUSHROOM EXTRACTION
+  CLARITY
+  Lion's Mane (Hericium erinaceus)
+  Bioactives: Hericenones + Beta-glucans
+  Cognitive support & focus
+  Hot-water extraction ?70?C ceiling (hericenones denature above 70?C)
+  MOMENTUM
+  Cordyceps (Cordyceps militaris)
+  Bioactives: Cordycepin + Adenosine
+  Energy & performance
+  Ethanol-first inverted solvent sequence (preserves cordycepin)
+  VITALITY
+  Reishi (Ganoderma lucidum)
+  Bioactives: Beta-glucans + Ganoderic acids
+  Immunity & recovery
+  Dual extraction mandatory ? ganoderic acids are ethanol-soluble only
+
+--- SLIDE 13: ppt/slides/slide6.xml ---
+  SOLUTION
+  Why Will the Customer Buy OBI Instead of Available Solutions?
+  Affordable Price
+  Affordable Daily Habit
+  Sub-?100 per serving ? designed as a daily habit, not a luxury supplement. Competitive against a daily chai or energy drink, not against imported functional products.
+  No Cold Chain
+  Shelf-Stable, Logistics-Friendly
+  Post-fermentation heat stabilisation makes our beverage ambient shelf-stable. No refrigeration. Distribution to Tier 2 cities and institutional buyers is viable from day one.
+  Indian Grain Base
+  Cultural & Nutritional Fit
+  Ragi (Nutri-cereal, National Millet Mission), Karuppu Kavuni (GI-tagged Tamil Nadu heirloom black rice, near-extinct variety), and urad dal ? 100% indigenous ingredients. OBI creating commercial demand for Karuppu Kavuni directly supports heirloom variety conservation and farmer income. Vocal for Local. Make in India.
+  Science-Backed Claims
+  Not Lifestyle Marketing
+  Every SKU is designed around specific target bioactives and specific extraction protocols. We do not make generic 'immune boost' claims ? we target hericenones, cordycepin, ganoderic acids, and GABA specifically.
+  No Synthetic Additives
+  Clean Label
+  No MSG, no synthetic preservatives, no artificial colours. GABA is produced naturally in-situ. Fermentation provides natural preservation and flavour.
+  OBI is building a full-scale Indian functional food brand ? not just 3 beverages. Current SKUs are the validation-stage starting point. More products and product varieties will be developed.  ?  Working SKU names (CLARITY / MOMENTUM / VITALITY) are internal references only ? not finalised brand identities.
+
+--- SLIDE 14: ppt/slides/slide7.xml ---
+  SOLUTION (CONTINUED)
+  Third-Party Validation  ?  Regulatory Status  ?  Intellectual Property
+  THIRD-PARTY VALIDATED?
+  Not yet ? validation is the funded objective of this SISFS application.
+  Planned:
+  NABL-accredited microbial testing (total plate count, coliforms, pathogens, heavy metals) on 3 production batches  ?
+  HPLC bioactive quantification:
+  GABA yield, hericenones, cordycepin, beta-glucans  ?
+  Shelf-life accelerated study (6 months)
+  REGULATORY APPROVAL?
+  FSSAI State Manufacturing Licence ? To Be Applied
+  Status:
+  Not yet applied. Application in preparation.
+  Processing time:
+  30?60 days once submitted (State Licence standard processing time).
+  Commercial production gated on licence grant.
+  INTELLECTUAL PROPERTY
+  ? DPIIT Recognised:
+  DIPP258270 ? DeepTech, Biotechnology. Valid to 2036.
+  ? Patent:
+  Discussions initiated with registered patent agent (IPO Chennai). Provisional application in preparation ? filing planned after HPLC data confirmation and MTCC strain deposit. Not yet filed.
+  ? OxyOS Platform:
+  Automatic copyright on creation.
+  ? Trademarks:
+  CLARITY, MOMENTUM, VITALITY ? filing planned, Class 32 + Class 5.
+  OBI is at Phase 0 validation stage. All claims above are scientifically grounded ? all confirmatory tests are deliverables of the SISFS-funded work plan.
+  Phase 0 Milestones Completed:
+  ? pH endpoint 3.8?4.2 confirmed ? Trial Batch 1 (bench probe)
+  ? MacConkey contamination baseline established
+  ? 2 batch sets completed across multiple flask conditions ? substrate parameter optimisation ongoing
+  ? OxyOS digital batch management platform live ? 37 SOPs, full team acknowledged, batch tracking active
+  ? Market analysis and product basic design completed
+  ? C-CAMP NBEC 2026 application submitted ? result awaited
+
+--- SLIDE 15: ppt/slides/slide8.xml ---
+  SOLUTION (CONTINUED)
+  Market Size  ?  Customer Segment  ?  Stage of Development  ?  Orders
+  MARKET SIZE ? TAM / SAM / SOM
+  TAM
+  India Functional Beverages
+  $6.9B (?57,000 Cr) India Functional Beverages 2025 ? ?4,200 Cr South India 18?45 Urban (bottom-up, Census + Nielsen)
+  SAM
+  Urban functional RTD, South India
+  ?264?336 Cr ? Bengaluru + Chennai + Hosur, 18?35, D2C + quick commerce reachable (1.1?1.4M consumers)
+  SOM
+  Year 1 SOM ? Concrete beachhead
+  500 customers (10% of Adhiyamaan College, 5,000 students) + early Bengaluru accounts ? ?10?17L Yr1 ? ?80?150L Yr3 ? ~2 purchases/week per active customer
+  CUSTOMER SEGMENT
+  Primary:
+  Health-aware educated urban consumers ? students and professionals, 18?45, South India. Pre-launch consumer survey planned across Hosur and Bengaluru campuses and professional networks to validate willingness-to-pay and awareness baseline.
+  Health interest:
+  Cognitive performance, stress relief, energy ? not gym bodybuilding
+  Purchase behaviour:
+  Daily-habit beverages, willing to pay ?65?100 for perceived health benefit
+  Channel:
+  WhatsApp + owned website (D2C) ? Blinkit, Zepto, Swiggy Instamart (quick commerce) ? College canteens, gym front-desks, co-working spaces (institutional B2B) ? Amazon, Flipkart (online marketplace Phase 2)
+  STAGE OF DEVELOPMENT
+  Pre-Revenue ? MVP Development
+  Phase 0 lab validation in progress at TBI-DETI@ACE, Hosur (250ml working volume).
+  Product launch target: Q1 2027, post-FSSAI licence.
+  No commercial production until regulatory clearance obtained.
+  ORDERS RECEIVED / ON HAND
+  Zero ? Pre-Revenue by Design
+  FSSAI state manufacturing licence is required before any commercial sale or distribution can legally commence under Indian food safety law.
+  We are completing the validation work that makes us sale-ready. This SISFS grant accelerates that path.
+  Revenue commencement: Month 7?9 post-FSSAI licence grant.
+
+--- SLIDE 16: ppt/slides/slide9.xml ---
+  UNFAIR ADVANTAGE
+  What Makes OBI Difficult to Replicate ? and Built to Survive Long-Term
+  01
+  Pharma-Grade
+  Fermentation Pedigree
+  Our CEO's prior role at Anthem Biosciences (pharma-grade microbial upstream R&D, Bengaluru) gives us process rigour that consumer-food competitors typically lack. We apply pharmaceutical process discipline to food fermentation.
+  02
+  Species-Specific
+  Extraction Protocols
+  The Indian industry applies a generic hot-water extraction protocol to all mushrooms. We have developed separate protocols for each species ? ?70?C ceiling for Lion's Mane (hericenone protection), ethanol-first for Cordyceps (cordycepin preservation), dual extraction for Reishi. This is a technical moat.
+  03
+  Substrate-Engineered
+  Natural GABA
+  Urad dal provides natural glutamic acid as substrate for in-situ GABA biosynthesis via L. brevis enzymatic activity ? no MSG, no additives. Mushroom extraction layer adds species-specific bioactives (hericenones, cordycepin, ganoderic acids, beta-glucans). Multi-bioactive validated platform ? not a single-compound product.
+  04
+  OxyOS ? Digital GMP
+  Platform (Pre-Revenue)
+  A fully functional digital batch management platform ? built before revenue. Records, maintains, and digitises every lab activity. Compares each process and batch statistically. Tracks SOP compliance, inventory, and CAPA. Full batch traceability from raw material lot to final product. Infrastructure most food startups build after Series A.
+  05
+  Platform Economics &
+  Extensibility
+  One fermentation architecture ? unlimited grain + mushroom combinations. New SKUs without process re-engineering. OBI is building a full-scale Indian functional food brand ? beverages are the starting point, not the ceiling. Karuppu Kavuni (GI-tagged Tamil Nadu heirloom rice) sourcing relationships and domestic mushroom cultivation partnerships are supply chain moats no competitor can replicate quickly. National policy alignment: Make in India ? Vocal for Local ? National Millet Mission ? Atmanirbhar Bharat.
