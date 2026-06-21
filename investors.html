@@ -360,39 +360,172 @@
         })();
     </script>
 
-    <!-- Navigation (Light Mode Default) -->
+    <!-- Navigation -->
     <header id="header">
+
         <div class="container nav-container">
-            <a href="index.html" class="nav-logo" style="display:flex; align-items:center; gap:10px; text-decoration:none;">
-                <img src="assets/images/logo-full.png?v=6" alt="Oxygen Bioinnovations Logo" style="height:36px; width:auto; display:block;">
-                <span style="font-family: var(--font-heading, 'Inter', sans-serif); font-weight: 800; font-size: 1.25rem; color: var(--text-main); letter-spacing: -0.02em;">Oxygen <span style="color:#0D8A74;">Bioinnovations</span></span>
+
+            <a href="index.html" class="nav-logo"
+                style="display:flex; align-items:center; gap:10px; text-decoration:none;">
+
+                <img src="assets/images/logo-full.png?v=6" alt="Oxygen Bioinnovations Logo"
+                    style="height:36px; width:auto; display:block;">
+
+                <span
+                    style="font-family: var(--font-heading, 'Inter', sans-serif); font-weight: 800; font-size: 1.25rem; color: var(--text-main, #0B192C); letter-spacing: -0.02em;">Oxygen
+                    <span style="color:#0D8A74;">Bioinnovations</span></span>
+
             </a>
+
             <nav class="desktop-nav custom-nav-replaced">
+
                 <a href="index.html">Home</a>
-                <a href="about.html">About Us</a>
-                <a href="science.html">Our Science</a>
+
+                <div class="nav-item">
+
+                    <a href="about.html">About Us <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                            class="nav-arrow" stroke="currentColor" stroke-width="2.5">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg></a>
+
+                    <div class="mega-dropdown">
+                        <div class="mega-dropdown-inner">
+                            <div class="mega-feature">
+                                <div class="icon-wrap">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <path d="M12 16v-4"></path>
+                                        <path d="M12 8h.01"></path>
+                                    </svg>
+                                </div>
+                                <h4>Lab Priorities</h4>
+                                <p>Research targets and unvarnished realities.</p>
+                            </div>
+                            <div class="mega-links-col">
+                                <a href="about.html#about-story" class="mega-nav-link">
+                                    <span class="link-title">Our Story</span>
+                                    <span class="link-desc">Frustrations and the realities of incubation.</span>
+                                </a>
+                                <a href="about.html#about-vision" class="mega-nav-link">
+                                    <span class="link-title">R&amp;D Platform Goals</span>
+                                    <span class="link-desc">The strategic framework and three pillars guiding us.</span>
+                                </a>
+                                <a href="about.html#about-who" class="mega-nav-link">
+                                    <span class="link-title">Who We Are</span>
+                                    <span class="link-desc">The founder, the science, and our operating principles.</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="nav-item">
+
+                    <a href="science.html">Our Science <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                            class="nav-arrow" stroke="currentColor" stroke-width="2.5">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg></a>
+
+                    <div class="mega-dropdown">
+                        <div class="mega-dropdown-inner">
+                            <div class="mega-feature">
+                                <div class="icon-wrap">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M10 2v7.31M14 9.31V2M8.5 2h7M14 9.31l6.5 11.17c.39.66-.08 1.5-.85 1.5H4.35c-.77 0-1.24-.84-.85-1.5L10 9.31M8.5 16.5h7" />
+                                    </svg>
+                                </div>
+                                <h4>The Scientific Mechanisms</h4>
+                                <p>Researching millet bioavailability and mushroom fortification.</p>
+                            </div>
+                            <div class="mega-links-col">
+                                <a href="problem.html" class="mega-nav-link">
+                                    <span class="link-title">The Problem</span>
+                                    <span class="link-desc">The biological deficits mapping our targets.</span>
+                                </a>
+                                <a href="ingredients.html" class="mega-nav-link">
+                                    <span class="link-title">Lab Materials</span>
+                                    <span class="link-desc">The raw extracts and compounds in our models.</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <a href="blog.html">Blog</a>
+
+                <a href="careers.html">Careers</a>
+
+                <a href="contact.html">Contact</a>
+
                 <a href="investors.html" class="btn btn-outline" style="margin-left: 1rem; border-color: rgba(13,138,116,0.5); color: #0D8A74;">Investors</a>
+
             </nav>
+
             <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
                 <span></span><span></span><span></span>
             </button>
+
         </div>
+
     </header>
 
     <!-- Mobile Menu -->
     <div class="mobile-overlay" id="mobileOverlay"></div>
+
     <nav class="mobile-menu" id="mobileMenu">
+
         <div class="mobile-menu-header">
-            <a href="index.html" class="nav-logo" style="display:flex; align-items:center; gap:10px; text-decoration:none;">
-                <img src="assets/images/logo-full.png?v=6" alt="Oxygen Bioinnovations Logo" style="height:36px; width:auto;">
-                <span style="font-family: var(--font-heading, 'Inter', sans-serif); font-weight: 800; font-size: 1.25rem; color: var(--text-main); letter-spacing: -0.02em;">Oxygen <span style="color:#0D8A74;">Bioinnovations</span></span>
+
+            <a href="index.html" class="nav-logo"
+                style="display:flex; align-items:center; gap:10px; text-decoration:none;">
+
+                <img src="assets/images/logo-full.png?v=6" alt="Oxygen Bioinnovations Logo"
+                    style="height:36px; width:auto; display:block;">
+
+                <span
+                    style="font-family: var(--font-heading, 'Inter', sans-serif); font-weight: 800; font-size: 1.25rem; color: var(--text-main, #0B192C); letter-spacing: -0.02em;">Oxygen
+                    <span style="color:#0D8A74;">Bioinnovations</span></span>
+
             </a>
-            <button class="mobile-close" id="mobileClose"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+
+            <button class="mobile-close" id="mobileClose" aria-label="Close">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+
         </div>
+
         <a href="index.html" class="menu-link">Home</a>
+
         <a href="about.html" class="menu-link">About Us</a>
+
+        <div class="mobile-submenu">
+            <a href="about.html#about-story" class="menu-link">Our Story</a>
+            <a href="about.html#about-vision" class="menu-link">R&amp;D Platform Goals</a>
+            <a href="about.html#about-who" class="menu-link">Who We Are</a>
+        </div>
+
         <a href="science.html" class="menu-link">Our Science</a>
-        <a href="investors.html" class="menu-link" style="color:#0D8A74; font-weight:700;">Investors &amp; Partners</a>
+
+        <div class="mobile-submenu">
+            <a href="problem.html" class="menu-link">The Problem</a>
+            <a href="ingredients.html" class="menu-link">Lab Materials</a>
+        </div>
+
+        <a href="blog.html" class="menu-link">Blog</a>
+
+        <a href="careers.html" class="menu-link">Careers</a>
+
+        <a href="contact.html" class="menu-link">Contact</a>
+
+        <div class="mobile-cta">
+            <a href="investors.html" class="menu-link" style="color:#0D8A74; font-weight:700;">Investors &amp; Partners</a>
+        </div>
+
     </nav>
 
 
@@ -712,101 +845,4 @@
                         <div style="font-size:0.85rem; font-weight:600; color:var(--text-main); margin-top:0.25rem;">TBI-DETI@ACE</div>
                     </div>
                 </div>
-
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <a href="index.html" style="display:flex; align-items:center; gap:10px; margin-bottom:1.5rem; text-decoration:none;">
-                    <img src="assets/images/logo-full.png?v=6" alt="Oxygen Bioinnovations Logo" style="height:36px; width:auto; display:block;">
-                    <span style="font-family:'Inter',sans-serif; font-weight:800; font-size:1.25rem; color:var(--text-main); letter-spacing:-0.02em;">Oxygen <span style="color:#0D8A74;">Bioinnovations</span></span>
-                </a>
-                <p>Incubated at TBI-DETI@ACE, Hosur. Developing fermented-grain + medicinal mushroom functional beverages grounded in peer-reviewed biochemistry.</p>
-                <div class="footer-socials">
-                    <a href="https://www.linkedin.com/company/oxygen-bioinnovations" target="_blank" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
-                </div>
-            </div>
-            <div class="footer-column">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="science.html">Our Science</a></li>
-                    <li><a href="ingredients.html">Ingredients</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="investors.html">Investors</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Get In Touch</h4>
-                <ul>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="careers.html">Careers</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Legal</h4>
-                <ul>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="terms.html">Terms &amp; Conditions</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                </ul>
-            </div>
-            <div style="text-align:center; border-top:1px solid var(--border); margin-top:2rem; padding-top:1.5rem; font-size:0.72rem; color:var(--text-muted); width:100%; grid-column:1/-1;">
-                <p style="line-height:1.6; margin-bottom:0.75rem; font-family:var(--font-mono);">
-                    Disclaimer: Oxygen Bioinnovations is a pre-revenue biotechnology startup. All financial projections on this page are estimates based on market research and design targets. No commercial products have been sold. Bioactive claims are subject to successful NABL-accredited validation. This page does not constitute an offer, solicitation, or recommendation for investment.
-                </p>
-                &copy; 2026 Oxygen Bioinnovations Private Limited · CIN: U72100TZ2026PTC038160 · All rights reserved.
-            </div>
-        </div>
-    </footer>
-
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/page-transitions.js"></script>
-    
-    <!-- Premium Magnetic Button & Reveal JS (Simplified for this page) -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Trigger reveals with staggered delay
-            const reveals = document.querySelectorAll('.reveal');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                        // Optional CSS class trigger
-                        if (entry.target.dataset.revealClass) {
-                            entry.target.classList.add(entry.target.dataset.revealClass);
-                        }
-                    }
-                });
-            }, { threshold: 0.15 });
-
-            reveals.forEach(r => observer.observe(r));
-
-            // Magnetic Button Effect
-            const magneticBtns = document.querySelectorAll('.magnetic-btn');
-            magneticBtns.forEach(btn => {
-                btn.addEventListener('mousemove', (e) => {
-                    const rect = btn.getBoundingClientRect();
-                    const x = e.clientX - rect.left - rect.width / 2;
-                    const y = e.clientY - rect.top - rect.height / 2;
-                    
-                    btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
-                    const content = btn.querySelector('.magnetic-content');
-                    if(content) content.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
-                });
-                
-                btn.addEventListener('mouseleave', () => {
-                    btn.style.transform = 'translate(0px, 0px)';
-                    const content = btn.querySelector('.magnetic-content');
-                    if(content) content.style.transform = 'translate(0px, 0px)';
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+
