@@ -8,17 +8,17 @@
 /* ── Tokens ─────────────────────────────────────────────── */
 :root {
     --bg: #FFFFFF;
-    --bg-alt: #DCE6F1;
-    --bg-tint: #EDF2F9;
-    --bg-dark: #1F3864;
-    --accent: #1F3864;
-    --accent-mid: #1F3864;
-    --accent-light: #DCE6F1;
+    --bg-alt: #F4F4F0;
+    --bg-tint: #E8E8E4;
+    --bg-dark: #0A0A0A;
+    --accent: #0A0A0A;
+    --accent-mid: #0A0A0A;
+    --accent-light: #E8E8E4;
     --accent-lime: #A3A3A3;
     --accent-green: #0D8A74;
-    --text-main: #1F3864;
+    --text-main: #0A0A0A;
     --text-muted: #4a4a4a;
-    --border: #D6E0EC;
+    --border: #E5E5E5;
     --border-dark: rgba(255, 255, 255, 0.1);
     --card: #FFFFFF;
     --shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
@@ -4227,7 +4227,7 @@ blockquote {
 }
 
 .duel-us-header {
-    background: #1F3864;
+    background: #1a1a1a;
     color: rgba(255, 255, 255, 0.75);
     font-weight: 700;
 }
@@ -4719,7 +4719,7 @@ blockquote {
    PROBLEM SECTION — DARK CINEMATIC PANEL
    ═══════════════════════════════════════════════════════ */
 .problem-dark-panel {
-    background: #1F3864;
+    background: #0a0a0a;
     color: #f5f5f5;
     padding: clamp(4rem, 8vw, 7rem) 0;
     position: relative;
@@ -4855,7 +4855,7 @@ blockquote {
 
 .problem-cta:hover {
     background: #fff;
-    color: #1F3864;
+    color: #0a0a0a;
     border-color: #fff;
     transform: translateY(-1px);
 }
@@ -5097,7 +5097,7 @@ blockquote {
    MISSION CONTROL DASHBOARD — Journey Timeline
    ═══════════════════════════════════════════════════════ */
 .mc-dashboard {
-    background: #1F3864;
+    background: #0a0a0a;
     border-radius: 20px;
     padding: clamp(1.5rem, 3vw, 2.5rem);
     position: relative;
@@ -5828,9 +5828,18 @@ html, body {
     padding-top: clamp(90px, 12vh, 120px) !important;
 }
 
-/* Apple sticky scroll: correct offset for 72px fixed nav */
+/* Disable the pinned sticky-stack scroll effect entirely: each later card
+   slides over and permanently covers the previous card's content before
+   it can be read. Render all slides in normal document flow instead. */
 #solution-cards .apple-slide {
-    top: 72px !important;
+    position: relative !important;
+    top: auto !important;
+    min-height: auto !important;
+    z-index: auto !important;
+}
+
+#solution-cards .sticky-spacer {
+    display: none !important;
 }
 
 /* O2 animation: always visible */
