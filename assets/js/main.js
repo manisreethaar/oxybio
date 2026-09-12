@@ -21,10 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Map sub-pages to their parent nav items
     const routeMap = {
         'problem.html': 'science.html',
-        'ingredients.html': 'science.html',
         'blog-origin.html': 'blog.html',
         'blog-bootstrapping.html': 'blog.html',
-        'blog-minerals.html': 'blog.html',
+        'blog-disclosure.html': 'blog.html',
         'blog.html': 'blog.html',
         'about.html': 'about.html',
         'science.html': 'science.html',

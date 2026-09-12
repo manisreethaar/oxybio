@@ -1,4 +1,16 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/blog-ragi", "destination": "/blog", "permanent": true },
+    { "source": "/blog-ragi.html", "destination": "/blog", "permanent": true },
+    { "source": "/blog-kavuni", "destination": "/blog", "permanent": true },
+    { "source": "/blog-kavuni.html", "destination": "/blog", "permanent": true },
+    { "source": "/blog-minerals", "destination": "/blog", "permanent": true },
+    { "source": "/blog-minerals.html", "destination": "/blog", "permanent": true },
+    { "source": "/ingredients", "destination": "/science", "permanent": true },
+    { "source": "/ingredients.html", "destination": "/science", "permanent": true },
+    { "source": "/blog-gaba", "destination": "/blog-disclosure", "permanent": true },
+    { "source": "/blog-gaba.html", "destination": "/blog-disclosure", "permanent": true }
+  ]
 }
