@@ -350,8 +350,8 @@
 }
 
 .compare-row {
-    background: #1F3864;
-    border: 1px solid #33507e;
+    background: #1a1a1a;
+    border: 1px solid #333;
     border-radius: 8px;
     padding: 1.25rem 1.5rem;
     display: grid;
