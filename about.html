@@ -4,8 +4,8 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Our Story | Oxygen Bioinnovations</title>
-<meta content="Oxygen Bioinnovations | R&amp;D Lab currently active in DETI@ACE TBI, Hosur. Developing indigenous Indian biological models." name="description"/>
+<title>About Us | Oxygen Bioinnovations</title>
+<meta content="Oxygen Bioinnovations | R&amp;D Lab currently active in DETI@ACE TBI, Hosur. Developing indigenous Indian biological models. Company, team, incubation, and investment traction." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Outfit:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
@@ -14,58 +14,30 @@
 <link href="assets/css/v2_premium.css?v=44" rel="stylesheet"/>
 <style>
         /* Mobile Premium Fade-up Animations for About Sections */
-
         @media (max-width: 768px) {
-
             .mobile-fade-up {
-
                 opacity: 0;
-
                 transform: translateY(50px) scale(0.97);
-
                 filter: blur(5px);
-
                 will-change: transform, opacity, filter;
-
                 transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1),
-
                     transform 1.2s cubic-bezier(0.19, 1, 0.22, 1),
-
                     filter 1s cubic-bezier(0.22, 1, 0.36, 1);
-
             }
-
-
-
             .mobile-fade-up.is-revealed {
-
                 opacity: 1;
-
                 transform: translateY(0) scale(1);
-
                 filter: blur(0);
-
             }
-
         }
-
-
 
         /* Premium hover effect for background numbers */
-
         .premium-card-hover:hover .bg-num {
-
             transform: scale(1.15) translate(-4px, 4px) !important;
-
             color: rgba(13, 138, 116, 0.18) !important;
-
         }
 
-        /* ──────────────────────────────────────────────────
-           MENTOR / KNOWLEDGE SUPPORT TEAM. Premium Cards
-        ────────────────────────────────────────────────── */
-
-        /* Staggered scroll-reveal */
+        /* ── MENTOR / KNOWLEDGE SUPPORT TEAM CARDS ── */
         .mentor-reveal {
             opacity: 0;
             transform: translateY(40px);
@@ -76,14 +48,7 @@
             opacity: 1;
             transform: translateY(0);
         }
-
-        /* Card shell. perspective for 3D tilt */
-        .mentor-card {
-            perspective: 800px;
-            cursor: default;
-        }
-
-        /* Card inner. the actual visible surface */
+        .mentor-card { perspective: 800px; cursor: default; }
         .mentor-card-inner {
             position: relative;
             background: var(--bg);
@@ -97,14 +62,11 @@
             will-change: transform;
             z-index: 1;
         }
-
         .mentor-card:hover .mentor-card-inner {
             border-color: #0D8A74;
             box-shadow: 0 16px 40px rgba(13,138,116,0.1),
                         0 0 0 1px rgba(13,138,116,0.1) inset;
         }
-
-        /* Ambient glow that follows the tilt */
         .mentor-card-glow {
             position: absolute;
             inset: -2px;
@@ -115,110 +77,115 @@
             pointer-events: none;
             z-index: 0;
         }
-        .mentor-card:hover .mentor-card-glow {
-            opacity: 1;
-        }
-
-        /* Photo area */
-        .mentor-image-wrap {
-            position: relative;
-            width: 88px;
-            height: 88px;
-            margin-bottom: 1.5rem;
-        }
-
+        .mentor-card:hover .mentor-card-glow { opacity: 1; }
+        .mentor-image-wrap { position: relative; width: 88px; height: 88px; margin-bottom: 1.5rem; }
         .mentor-image-placeholder {
-            width: 88px;
-            height: 88px;
-            border-radius: 14px;
+            width: 88px; height: 88px; border-radius: 14px;
             background: rgba(13,138,116,0.08);
             border: 1px solid rgba(13,138,116,0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: flex; align-items: center; justify-content: center;
             overflow: hidden;
             transition: border-color 0.3s ease;
         }
-
-        .mentor-card:hover .mentor-image-placeholder {
-            border-color: rgba(13,138,116,0.5);
-        }
-
-        /* Role badge. sits bottom-right of the photo */
+        .mentor-card:hover .mentor-image-placeholder { border-color: rgba(13,138,116,0.5); }
         .mentor-role-badge {
-            position: absolute;
-            bottom: -8px;
-            right: -8px;
-            background: #0D8A74;
-            color: #fff;
-            font-family: var(--font-mono);
-            font-size: 0.55rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            padding: 0.28rem 0.6rem;
-            border-radius: 4px;
+            position: absolute; bottom: -8px; right: -8px;
+            background: #0D8A74; color: #fff;
+            font-family: var(--font-mono); font-size: 0.55rem;
+            letter-spacing: 0.1em; text-transform: uppercase;
+            padding: 0.28rem 0.6rem; border-radius: 4px;
             white-space: nowrap;
             box-shadow: 0 4px 12px rgba(13,138,116,0.3);
         }
-
-        /* Text info */
         .mentor-info { position: relative; z-index: 1; }
-
-        .mentor-name {
-            font-family: var(--font-serif);
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 0.3rem;
-            line-height: 1.25;
-        }
-
-        .mentor-title {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            line-height: 1.45;
-            margin-bottom: 0.25rem;
-        }
-
-        .mentor-org {
-            font-family: var(--font-mono);
-            font-size: 0.68rem;
-            letter-spacing: 0.06em;
-            color: #0D8A74;
-            margin-bottom: 1.2rem;
-        }
-
-        /* Domain expertise tags */
-        .mentor-domain {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.4rem;
-        }
-
+        .mentor-name { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.3rem; line-height: 1.25; }
+        .mentor-title { font-size: 0.85rem; color: var(--text-muted); line-height: 1.45; margin-bottom: 0.25rem; }
+        .mentor-org { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.06em; color: #0D8A74; margin-bottom: 1.2rem; }
+        .mentor-domain { display: flex; flex-wrap: wrap; gap: 0.4rem; }
         .mentor-domain-tag {
-            font-family: var(--font-mono);
-            font-size: 0.62rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            padding: 0.25rem 0.65rem;
-            border: 1px solid var(--border);
-            border-radius: 3px;
-            color: var(--text-muted);
+            font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase;
+            padding: 0.25rem 0.65rem; border: 1px solid var(--border); border-radius: 3px; color: var(--text-muted);
         }
-
-        /* Mobile. disable tilt, keep visual */
         @media (max-width: 768px) {
-            .mentor-card-inner {
-                transform: none !important;
-            }
-            #mentor-grid {
-                grid-template-columns: 1fr !important;
-            }
+            .mentor-card-inner { transform: none !important; }
+            #mentor-grid { grid-template-columns: 1fr !important; }
         }
-
         @keyframes pulse-dot {
             0%, 100% { box-shadow: 0 0 6px #0D8A74; }
             50%       { box-shadow: 0 0 14px #0D8A74; }
+        }
+
+        /* ── INVESTMENT & TRACTION (merged from investors.html) ── */
+        .section-eyebrow {
+            font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+            color: var(--text-muted); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;
+        }
+        .section-eyebrow::after { content: ''; height: 1px; width: 40px; background: #0D8A74; }
+        .pre-revenue-box {
+            display: inline-flex; align-items: center; gap: 1rem; padding: 0.75rem 1.5rem;
+            background: rgba(234, 179, 8, 0.1); border: 1px solid rgba(234, 179, 8, 0.3);
+            border-radius: 100px; font-family: var(--font-mono); font-size: 0.65rem;
+            letter-spacing: 0.15em; text-transform: uppercase; color: #b45309; margin-bottom: 2.5rem;
+        }
+        .glass-metric-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 3rem; }
+        .glass-metric {
+            background: rgba(255, 255, 255, 0.7); border: 1px solid var(--border); border-radius: 20px;
+            padding: 2rem; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.4s ease, box-shadow 0.4s ease;
+        }
+        .glass-metric:hover {
+            transform: translateY(-8px); background: #ffffff; border-color: rgba(13, 138, 116, 0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        }
+        .metric-value { font-family: var(--font-serif); font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 900; color: var(--text-main); line-height: 1; margin-bottom: 0.75rem; }
+        .metric-label { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: #0D8A74; margin-bottom: 0.5rem; }
+        .metric-sub { font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; }
+        .tam-chart-container { background: #ffffff; border: 1px solid var(--border); border-radius: 24px; padding: 3rem; box-shadow: var(--shadow-sm); }
+        .chart-row { display: flex; align-items: center; gap: 2rem; margin-bottom: 1.5rem; }
+        .chart-row:last-child { margin-bottom: 0; }
+        .chart-label { width: 60px; font-family: var(--font-serif); font-weight: 900; font-size: 1.5rem; color: var(--text-main); }
+        .chart-bar-wrap { flex: 1; height: 12px; background: rgba(13, 138, 116, 0.1); border-radius: 100px; overflow: hidden; }
+        .chart-bar { height: 100%; border-radius: 100px; width: 0%; transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1); }
+        .chart-bar.tam { background: rgba(13, 138, 116, 0.2); }
+        .chart-bar.sam { background: rgba(13, 138, 116, 0.5); }
+        .chart-bar.som { background: #0D8A74; box-shadow: 0 0 10px rgba(13,138,116,0.3); }
+        .reveal.active .chart-bar.tam { width: 100%; }
+        .reveal.active .chart-bar.sam { width: 40%; }
+        .reveal.active .chart-bar.som { width: 10%; }
+        .chart-data { width: 200px; }
+        .chart-num { font-family: var(--font-serif); font-size: 1.25rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.25rem; }
+        .chart-desc { font-size: 0.75rem; color: var(--text-muted); line-height: 1.4; }
+        .roadmap-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 3rem; }
+        .roadmap-card {
+            background: #ffffff; border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem 2rem;
+            position: relative; box-shadow: var(--shadow-sm);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+            display: flex; flex-direction: column;
+        }
+        .roadmap-card:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(0,0,0,0.05); border-color: rgba(13,138,116,0.3); z-index: 2; }
+        .roadmap-card::before {
+            content: ''; position: absolute; top: 0; left: 2rem; right: 2rem; height: 3px;
+            background: #0D8A74; border-radius: 0 0 4px 4px; opacity: 0.2; transition: opacity 0.4s ease;
+        }
+        .roadmap-card:hover::before { opacity: 1; }
+        .road-year { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.15em; color: #0D8A74; margin-bottom: 1rem; font-weight: 700; }
+        .road-title { font-family: var(--font-serif); font-size: 1.25rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.75rem; line-height: 1.2; }
+        .road-desc { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; flex-grow: 1; }
+        .the-ask-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .ask-amount { font-family: var(--font-serif); font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 900; color: var(--text-main); line-height: 0.9; margin-bottom: 1rem; }
+        .ask-amount span { color: #0D8A74; }
+        @media (max-width: 1024px) {
+            .glass-metric-grid { grid-template-columns: repeat(2, 1fr); }
+            .the-ask-grid { grid-template-columns: 1fr; }
+            .tam-chart-container { padding: 2rem; }
+            .roadmap-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .glass-metric-grid { grid-template-columns: 1fr; }
+            .chart-row { flex-direction: column; align-items: flex-start; gap: 0.5rem; margin-bottom: 2rem; }
+            .chart-bar-wrap { width: 100%; margin-bottom: 0.5rem; }
+            .chart-label { width: 100%; }
+            .roadmap-grid { grid-template-columns: 1fr; }
         }
     </style>
 <!-- Google Structured Data (Organization) -->
@@ -257,9 +224,9 @@
 <script defer="" src="/_vercel/speed-insights/script.js"></script>
 <!-- Open Graph / Social -->
 <meta content="About Us | Oxygen Bioinnovations" property="og:title"/>
-<meta content="Oxygen Bioinnovations | R&amp;D Lab currently active in DETI@ACE TBI, Hosur. Developing indigenous Indian biological models." property="og:description"/>
+<meta content="Oxygen Bioinnovations | R&amp;D Lab currently active in DETI@ACE TBI, Hosur. Company, team, incubation, and investment traction." property="og:description"/>
 <meta content="https://oxygenbioinnovations.com/assets/images/og-image.jpg" property="og:image"/>
-<meta content="https://oxygenbioinnovations.com/" property="og:url"/>
+<meta content="https://www.oxygenbioinnovations.com/about" property="og:url"/>
 <meta content="website" property="og:type"/>
 <meta content="summary_large_image" name="twitter:card"/>
 
@@ -312,16 +279,18 @@
 </a>
 <a class="mega-nav-link" href="about.html#about-who">
 <span class="link-title">Who We Are</span>
-<span class="link-desc">The founder, the science, and our operating
-
-                                        principles.</span>
+<span class="link-desc">The founder, the science, and our operating principles.</span>
+</a>
+<a class="mega-nav-link" href="about.html#about-invest">
+<span class="link-title">Investment &amp; Traction</span>
+<span class="link-desc">Market opportunity, milestones, and the current ask.</span>
 </a>
 </div>
 </div>
 </div>
 </div>
 <div class="nav-item">
-<a href="science.html">Our Science <svg class="nav-arrow" fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="12">
+<a href="platform.html">Platform <svg class="nav-arrow" fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="12">
 <polyline points="6 9 12 15 18 9"></polyline>
 </svg></a>
 <div class="mega-dropdown">
@@ -332,11 +301,11 @@
 <path d="M10 2v7.31M14 9.31V2M8.5 2h7M14 9.31l6.5 11.17c.39.66-.08 1.5-.85 1.5H4.35c-.77 0-1.24-.84-.85-1.5L10 9.31M8.5 16.5h7"></path>
 </svg>
 </div>
-<h4>The Scientific Mechanisms</h4>
-<p>Researching indigenous grain bioavailability and mushroom fortification.</p>
+<h4>The Research Platform</h4>
+<p>The problem we target and the methodology we are validating.</p>
 </div>
 <div class="mega-links-col">
-<a class="mega-nav-link" href="problem.html">
+<a class="mega-nav-link" href="platform.html#layer-01">
 <span class="link-title">The Problem</span>
 <span class="link-desc">The biological deficits mapping our targets.</span>
 </a>
@@ -344,10 +313,10 @@
 </div>
 </div>
 </div>
-<a href="blog.html">Blog</a>
+<a href="updates.html">Updates</a>
 <a href="careers.html">Careers</a>
 <a href="contact.html">Contact</a>
-<a class="btn btn-outline" href="index.html#updates" style="margin-left: 1rem;">Follow the Build</a>
+<a class="btn btn-outline" href="about.html#about-invest" style="margin-left: 1rem; border-color: rgba(13,138,116,0.5); color: #0D8A74;">Investors</a>
 </nav>
 <button aria-label="Toggle menu" class="menu-btn" id="menuBtn">
 <span></span><span></span><span></span>
@@ -376,15 +345,12 @@
 <a class="menu-link" href="about.html#about-story">Our Story</a>
 <a class="menu-link" href="about.html#about-vision">R&amp;D Platform Goals</a>
 <a class="menu-link" href="about.html#about-who">Who We Are</a>
+<a class="menu-link" href="about.html#about-invest">Investment &amp; Traction</a>
 </div>
-<a class="menu-link" href="science.html">Our Science</a>
-<div class="mobile-submenu">
-<a class="menu-link" href="problem.html">The Problem</a>
-</div>
-<a class="menu-link" href="blog.html">Blog</a>
+<a class="menu-link" href="platform.html">Platform</a>
+<a class="menu-link" href="updates.html">Updates</a>
 <a class="menu-link" href="careers.html">Careers</a>
 <a class="menu-link" href="contact.html">Contact</a>
-        <a href="investors.html" class="menu-link" style="color:#0D8A74; font-weight:600;">Investors &amp; Partners</a>
         <div class="mobile-cta">
 <a class="btn btn-outline" href="#updates" style="width:100%;justify-content:center;padding:1rem;">Follow the Build</a>
 </div>
@@ -407,36 +373,7 @@
 </div>
 </section>
 <!-- ═══════════════════════════════════════════════════════
-             SECTION 2: THE PROBLEM (External proof the gap is real)
-        ════════════════════════════════════════════════════════════ -->
-<section style="background:var(--text-main); color:#fff; padding:var(--space-xl) 0; border-bottom:1px solid rgba(255,255,255,0.1);">
-<div class="container reveal">
-<div style="text-align:center; margin-bottom:3rem;">
-<div style="font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-bottom:1rem;">The Gap We Are Targeting</div>
-<h2 style="font-family:var(--font-serif); font-size:clamp(2rem, 4vw, 3rem); color:#fff; line-height:1.1; margin-bottom:1rem;">The problem is not a theory.<br/><em style="color:rgba(255,255,255,0.5);">It's in the data.</em></h2>
-</div>
-<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap:1px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.08); border-radius:8px; overflow:hidden;">
-<div style="background:var(--text-main); padding:2.5rem 2rem;">
-<div style="font-family:var(--font-serif); font-size:3.5rem; font-weight:900; color:#fff; line-height:1; margin-bottom:0.5rem;">57%</div>
-<div style="font-size:1rem; color:rgba(255,255,255,0.65); line-height:1.5; margin-bottom:1rem;">of women aged 15–49 in India are anemic. the primary driver for our iron bioavailability formulation work.</div>
-<div style="font-family:var(--font-mono); font-size:0.65rem; color:rgba(255,255,255,0.3); letter-spacing:0.08em;">SOURCE: NFHS-5 (2019–21)</div>
-</div>
-<div style="background:var(--text-main); padding:2.5rem 2rem;">
-<div style="font-family:var(--font-serif); font-size:3.5rem; font-weight:900; color:#fff; line-height:1; margin-bottom:0.5rem;">70%+</div>
-<div style="font-size:1rem; color:rgba(255,255,255,0.65); line-height:1.5; margin-bottom:1rem;">of urban Indians are micronutrient deficiency. driven by low dietary diversity and poor bioavailability from ultra-processed foods.</div>
-<div style="font-family:var(--font-mono); font-size:0.65rem; color:rgba(255,255,255,0.3); letter-spacing:0.08em;">SOURCE: ICMR Nutritional Data</div>
-</div>
-<div style="background:var(--text-main); padding:2.5rem 2rem;">
-<div style="font-family:var(--font-serif); font-size:3.5rem; font-weight:900; color:#fff; line-height:1; margin-bottom:0.5rem;">47%</div>
-<div style="font-size:1rem; color:rgba(255,255,255,0.65); line-height:1.5; margin-bottom:1rem;">of vegetarian adults in India show measurable B12 insufficiency. a micronutrient almost entirely absent from plant-based diets without deliberate fortification.</div>
-<div style="font-family:var(--font-mono); font-size:0.65rem; color:rgba(255,255,255,0.3); letter-spacing:0.08em;">SOURCE: Shatrugna et al., ICMR Collaborative Study</div>
-</div>
-</div>
-<p style="text-align:center; font-size:1rem; color:rgba(255,255,255,0.45); margin-top:2rem; font-family:var(--font-serif); font-style:italic;">These are the exact physiological gaps our formulations are designed to target.</p>
-</div>
-</section>
-<!-- ═══════════════════════════════════════════════════════
-             SECTION 3: WHERE WE ARE NOW (Phase Stepper. PROMOTED)
+             SECTION 2: WHERE WE ARE NOW (Phase Stepper. PROMOTED)
         ════════════════════════════════════════════════════════════ -->
 <section id="about-journey" style="background:var(--bg-alt); border-bottom:1px solid var(--border); padding:var(--space-xl) 0;">
 <div class="container reveal">
@@ -530,8 +467,7 @@
                             current = idx;
                         }
                         function startAuto() {
-                            autoTimer = // Slowed auto-rotate for better UX
-    setInterval(function () {
+                            autoTimer = setInterval(function () {
                                 current = (current + 1) % nodes.length;
                                 showPhase(current);
                             }, 5000);
@@ -554,7 +490,7 @@
 </div>
 </section>
 <!-- ═══════════════════════════════════════════════════════
-             R&D TRANSPARENCY LOG
+             R&D TRANSPARENCY LOG + PHASE 0 MILESTONES
         ════════════════════════════════════════════════════════════ -->
 <section style="background:var(--bg); border-bottom:1px solid var(--border); padding:var(--space-lg) 0;">
 <div class="container reveal">
@@ -568,7 +504,7 @@
                         VALIDATION ACTIVE
                     </div>
 </div>
-<div style="border:1px solid var(--border); border-radius:12px; overflow:hidden;">
+<div style="border:1px solid var(--border); border-radius:12px; overflow:hidden; margin-bottom:2.5rem;">
 <div class="mobile-stack" style="display:grid; grid-template-columns:auto 1fr auto; gap:1.5rem; align-items:center; padding:1.75rem 2rem; background:var(--bg-alt); border-bottom:1px solid var(--border);">
 <div style="font-family:var(--font-mono); font-size:2rem; font-weight:900; color:var(--text-main); letter-spacing:-0.03em;">ACTIVE</div>
 <div>
@@ -586,10 +522,117 @@
                         </p>
 </div>
 </div>
+
+<h3 style="font-family:var(--font-serif); font-size:1.4rem; color:var(--text-main); margin-bottom:1.5rem;">Phase 0 Milestones Completed</h3>
+<div style="display:flex; flex-direction:column; gap:1px; background:var(--border); border-radius:12px; overflow:hidden; border:1px solid var(--border);">
+    <div style="background:var(--bg); padding:1.25rem 2rem; display:flex; gap:1.5rem; align-items:flex-start;">
+        <span style="color:#0D8A74; font-size:1.1rem; flex-shrink:0; margin-top:0.1rem;">&#10003;</span>
+        <div><span style="font-weight:600; color:var(--text-main);">Process parameters confirmed</span> <span style="color:var(--text-muted); font-size:0.9rem;">Initial fermentation parameters confirmed through bench-scale testing</span></div>
+    </div>
+    <div style="background:var(--bg-alt); padding:1.25rem 2rem; display:flex; gap:1.5rem; align-items:flex-start;">
+        <span style="color:#0D8A74; font-size:1.1rem; flex-shrink:0; margin-top:0.1rem;">&#10003;</span>
+        <div><span style="font-weight:600; color:var(--text-main);">Contamination baseline established</span> <span style="color:var(--text-muted); font-size:0.9rem;">Microbial screening baseline established for process hygiene monitoring</span></div>
+    </div>
+    <div style="background:var(--bg); padding:1.25rem 2rem; display:flex; gap:1.5rem; align-items:flex-start;">
+        <span style="color:#0D8A74; font-size:1.1rem; flex-shrink:0; margin-top:0.1rem;">&#10003;</span>
+        <div><span style="font-weight:600; color:var(--text-main);">Batch testing underway</span> <span style="color:var(--text-muted); font-size:0.9rem;">Multiple flask conditions tested; substrate parameter optimisation ongoing</span></div>
+    </div>
+    <div style="background:var(--bg-alt); padding:1.25rem 2rem; display:flex; gap:1.5rem; align-items:flex-start;">
+        <span style="color:#0D8A74; font-size:1.1rem; flex-shrink:0; margin-top:0.1rem;">&#10003;</span>
+        <div><span style="font-weight:600; color:var(--text-main);">OxyOS platform live</span> <span style="color:var(--text-muted); font-size:0.9rem;">SOPs active, full team acknowledged, batch tracking and CAPA operational</span></div>
+    </div>
+    <div style="background:var(--bg); padding:1.25rem 2rem; display:flex; gap:1.5rem; align-items:flex-start;">
+        <span style="color:#0D8A74; font-size:1.1rem; flex-shrink:0; margin-top:0.1rem;">&#10003;</span>
+        <div><span style="font-weight:600; color:var(--text-main);">Market analysis &amp; product design complete</span> <span style="color:var(--text-muted); font-size:0.9rem;">TAM/SAM/SOM mapped; 3 SKU formulation architecture finalised</span></div>
+    </div>
+    <div style="background:var(--bg-alt); padding:1.25rem 2rem; display:flex; gap:1.5rem; align-items:flex-start;">
+        <span style="color:#0D8A74; font-size:1.1rem; flex-shrink:0; margin-top:0.1rem;">&#10003;</span>
+        <div><span style="font-weight:600; color:var(--text-main);">C-CAMP NBEC 2026 application submitted</span> <span style="color:var(--text-muted); font-size:0.9rem;">Result awaited</span></div>
+    </div>
+</div>
 </div>
 </section>
 <!-- ═══════════════════════════════════════════════════════
-             SECTION 4: THE ORIGIN (Condensed, authentic voice)
+             SECTION: INVESTMENT & TRACTION (merged from investors.html)
+        ════════════════════════════════════════════════════════════ -->
+<section id="about-invest" style="background:var(--bg-alt); border-bottom:1px solid var(--border); padding:var(--space-xl) 0;">
+<div class="container reveal">
+    <div class="pre-revenue-box">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+        Phase 0: Pre-Revenue Validation
+    </div>
+    <div class="section-eyebrow">Investment &amp; Traction</div>
+    <h2 style="font-family:var(--font-serif); font-size:clamp(2rem, 4vw, 3rem); font-weight:900; line-height:1.1; margin-bottom:1.5rem; max-width:900px;">
+        India's Functional<br>Beverage Platform.
+    </h2>
+    <p style="font-size:1.05rem; color:var(--text-muted); max-width:650px; line-height:1.7; margin-bottom:0;">
+        Sprouted indigenous grains. Proprietary fermentation process. Species-specific medicinal mushroom extraction. Affordable, daily-habit functional nutrition made in India.
+    </p>
+
+    <div class="glass-metric-grid">
+        <div class="glass-metric">
+            <div class="metric-label">TAM (2025)</div>
+            <div class="metric-value">$6.9B</div>
+            <div class="metric-sub">India Functional Beverages Market</div>
+        </div>
+        <div class="glass-metric">
+            <div class="metric-label">Market CAGR</div>
+            <div class="metric-value">10.74%</div>
+            <div class="metric-sub">Projected Growth 2025–2034</div>
+        </div>
+        <div class="glass-metric">
+            <div class="metric-label">Unit Economics</div>
+            <div class="metric-value">Sub-&#8377;100</div>
+            <div class="metric-sub">Target Retail Price / 200ml</div>
+        </div>
+        <div class="glass-metric">
+            <div class="metric-label">Platform Margin</div>
+            <div class="metric-value">45-55%</div>
+            <div class="metric-sub">Estimated D2C Gross Margin</div>
+        </div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; margin-top:4rem;" class="mobile-stack">
+        <div>
+            <h3 style="font-family:var(--font-serif); font-size:clamp(1.5rem, 3vw, 2rem); font-weight:900; line-height:1.15; margin-bottom:1.5rem;">
+                A massive market.<br><span style="color:var(--text-muted);">Zero domestic innovation.</span>
+            </h3>
+            <p style="font-size:1rem; color:var(--text-muted); line-height:1.7;">
+                Indian consumers are aware of functional ingredients, but current solutions are either imported premium supplements (&#8377;2,000/month), or sugary lifestyle drinks with zero clinical backing. We are building the first affordable, ambient-stable RTD leveraging both fermentation and mushroom bioactives.
+            </p>
+        </div>
+        <div class="tam-chart-container reveal" data-reveal-class="active">
+            <div class="chart-row">
+                <div class="chart-label">TAM</div>
+                <div class="chart-bar-wrap"><div class="chart-bar tam"></div></div>
+                <div class="chart-data">
+                    <div class="chart-num">$6.9B (&#8377;57K Cr)</div>
+                    <div class="chart-desc">India Functional Beverages 2025</div>
+                </div>
+            </div>
+            <div class="chart-row">
+                <div class="chart-label">SAM</div>
+                <div class="chart-bar-wrap"><div class="chart-bar sam"></div></div>
+                <div class="chart-data">
+                    <div class="chart-num">&#8377;264–336 Cr</div>
+                    <div class="chart-desc">Urban South India, 18-35 (D2C)</div>
+                </div>
+            </div>
+            <div class="chart-row">
+                <div class="chart-label">SOM</div>
+                <div class="chart-bar-wrap"><div class="chart-bar som"></div></div>
+                <div class="chart-data">
+                    <div class="chart-num">&#8377;10–17 Lakhs</div>
+                    <div class="chart-desc">Year 1 Target (500 Active Customers)</div>
+                </div>
+            </div>
+            <div style="font-family:var(--font-mono); font-size:0.6rem; color:var(--text-muted); text-align:right; margin-top:1.5rem; text-transform:uppercase;">Source: Grand View Research 2024 / Internal Estimates</div>
+        </div>
+    </div>
+</div>
+</section>
+<!-- ═══════════════════════════════════════════════════════
+             SECTION: THE ORIGIN (Condensed, authentic voice)
         ════════════════════════════════════════════════════════════ -->
 <section id="about-vision" style="background:var(--bg); border-bottom:1px solid var(--border); padding:var(--space-xl) 0;">
 <div class="container">
@@ -636,7 +679,7 @@
 </div>
 </section>
 <!-- ═══════════════════════════════════════════════════════
-             SECTION 5: WHAT WE BELIEVE (3 Grounded beliefs)
+             SECTION: WHAT WE BELIEVE (3 Grounded beliefs)
         ════════════════════════════════════════════════════════════ -->
 <section style="background:var(--bg-alt); border-bottom:1px solid var(--border); padding:var(--space-xl) 0;">
 <div class="container reveal">
@@ -685,7 +728,7 @@
 </div>
 </section>
 <!-- ═══════════════════════════════════════════════════════
-             SECTION 6: R&amp;D Platform Goals (Real, specific, honest)
+             SECTION: R&amp;D Platform Goals (Real, specific, honest)
         ════════════════════════════════════════════════════════════ -->
 <section id="about-who" style="background:var(--bg); border-bottom:1px solid var(--border); padding:var(--space-xl) 0;">
 <div class="container reveal">
@@ -716,9 +759,47 @@
 </div>
 </section>
 <!-- ═══════════════════════════════════════════════════════
-             SECTION 7: FOUNDING TEAM & CREDENTIALS
+             SECTION: UNFAIR ADVANTAGE (merged from investors.html)
         ════════════════════════════════════════════════════════════ -->
-<section style="background:var(--bg-alt); padding:var(--space-xl) 0;">
+<section style="background:var(--bg-alt); border-bottom:1px solid var(--border); padding:var(--space-xl) 0;">
+<div class="container reveal">
+    <div class="section-eyebrow">What Makes OBI Difficult to Replicate</div>
+    <h2 style="font-family:var(--font-serif); font-size:clamp(2rem, 4vw, 3rem); font-weight:900; line-height:1.1; margin-bottom:1.5rem;">Structural Advantages.</h2>
+    <p style="font-size:1.05rem; line-height:1.7; color:var(--text-muted); max-width:720px; margin-bottom:3rem;">Advantages that compound over time. not just a product, but a platform built on process discipline, supply chain moats, and digital infrastructure.</p>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,300px),1fr)); gap:1.5rem;">
+
+        <div style="border:1px solid var(--border); border-radius:12px; padding:2rem; background:var(--bg); position:relative; overflow:hidden; transition:transform 0.3s ease, box-shadow 0.3s ease;" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 40px rgba(0,0,0,0.08)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+            <div style="font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.15em; color:#0D8A74; text-transform:uppercase; margin-bottom:1rem;">Advantage 01</div>
+            <h4 style="font-family:var(--font-serif); font-size:1.2rem; color:var(--text-main); margin-bottom:0.75rem; line-height:1.2;">Pharma-Grade Fermentation Pedigree</h4>
+            <p style="font-size:0.9rem; line-height:1.65; color:var(--text-muted);">Our CEO&rsquo;s prior role in pharma-grade microbial upstream R&amp;D gives us process rigour that consumer-food competitors typically lack. We apply pharmaceutical process discipline to food fermentation. GMP thinking from day one.</p>
+        </div>
+
+        <div style="border:1px solid var(--border); border-radius:12px; padding:2rem; background:var(--bg); position:relative; overflow:hidden; transition:transform 0.3s ease, box-shadow 0.3s ease;" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 40px rgba(0,0,0,0.08)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+            <div style="font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.15em; color:#0D8A74; text-transform:uppercase; margin-bottom:1rem;">Advantage 02</div>
+            <h4 style="font-family:var(--font-serif); font-size:1.2rem; color:var(--text-main); margin-bottom:0.75rem; line-height:1.2;">Species-Specific Extraction Protocols</h4>
+            <p style="font-size:0.9rem; line-height:1.65; color:var(--text-muted);">The Indian industry applies a generic extraction protocol to all mushrooms. We have developed separate, proprietary protocols for each species. optimised to protect distinct bioactive compounds that degrade under standard conditions. This is a technical moat.</p>
+        </div>
+
+        <div style="border:1px solid var(--border); border-radius:12px; padding:2rem; background:var(--bg); position:relative; overflow:hidden; transition:transform 0.3s ease, box-shadow 0.3s ease; border-color:rgba(13,138,116,0.4);" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 40px rgba(13,138,116,0.12)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+            <div style="font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.15em; color:#0D8A74; text-transform:uppercase; margin-bottom:1rem;">Advantage 03</div>
+            <h4 style="font-family:var(--font-serif); font-size:1.2rem; color:var(--text-main); margin-bottom:0.75rem; line-height:1.2;">OxyOS. Digital GMP Platform</h4>
+            <p style="font-size:0.9rem; line-height:1.65; color:var(--text-muted);">A fully functional digital batch management platform. built before revenue. SOP compliance tracking, CAPA, inventory, and full batch traceability from raw material lot to final product. Infrastructure most food startups build after Series A.</p>
+        </div>
+
+        <div style="border:1px solid var(--border); border-radius:12px; padding:2rem; background:var(--bg); position:relative; overflow:hidden; transition:transform 0.3s ease, box-shadow 0.3s ease;" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 40px rgba(0,0,0,0.08)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+            <div style="font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.15em; color:#0D8A74; text-transform:uppercase; margin-bottom:1rem;">Advantage 04</div>
+            <h4 style="font-family:var(--font-serif); font-size:1.2rem; color:var(--text-main); margin-bottom:0.75rem; line-height:1.2;">Platform Economics &amp; Extensibility</h4>
+            <p style="font-size:0.9rem; line-height:1.65; color:var(--text-muted);">One fermentation architecture &rarr; unlimited grain + mushroom combinations. New SKUs without process re-engineering. Indigenous grain sourcing and domestic mushroom cultivation partnerships are supply chain moats. Aligned with Make in India &middot; National Millet Mission &middot; Atmanirbhar Bharat.</p>
+        </div>
+
+    </div>
+</div>
+</section>
+<!-- ═══════════════════════════════════════════════════════
+             SECTION: FOUNDING TEAM & CREDENTIALS
+        ════════════════════════════════════════════════════════════ -->
+<section style="background:var(--bg); padding:var(--space-xl) 0;">
 <div class="container reveal">
 <div style="max-width:800px; margin-bottom:var(--space-lg);">
 <div class="section-label" style="margin-bottom:var(--space-md);">
@@ -730,8 +811,8 @@
 </div>
 <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:2rem; margin-bottom:4rem;">
 <!-- CEO Profile -->
-<div class="premium-card-hover" style="background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:2.5rem; text-align:center; position:relative; overflow:hidden;">
-<div class="mentor-image-placeholder" style="width:120px; height:120px; border-radius:50%; margin:0 auto 1.5rem; border:2px dashed var(--border); background:var(--bg-alt); display:flex; align-items:center; justify-content:center;">
+<div class="premium-card-hover" style="background:var(--bg-alt); border:1px solid var(--border); border-radius:12px; padding:2.5rem; text-align:center; position:relative; overflow:hidden;">
+<div class="mentor-image-placeholder" style="width:120px; height:120px; border-radius:50%; margin:0 auto 1.5rem; border:2px dashed var(--border); background:var(--bg); display:flex; align-items:center; justify-content:center;">
 <span style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.1em; color:var(--text-muted);">IMAGE PENDING</span>
 </div>
 <h3 style="font-family:var(--font-serif); font-size:1.75rem; color:var(--text-main); margin-bottom:0.25rem;">Manisreethaar Selvaraj</h3>
@@ -741,14 +822,14 @@
                             LinkedIn Profile ↗
                         </a>
 </div>
-<!-- CTO Profile -->
-<div class="premium-card-hover" style="background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:2.5rem; text-align:center; position:relative; overflow:hidden;">
-<div class="mentor-image-placeholder" style="width:120px; height:120px; border-radius:50%; margin:0 auto 1.5rem; border:2px dashed var(--border); background:var(--bg-alt); display:flex; align-items:center; justify-content:center;">
+<!-- Co-Director Profile -->
+<div class="premium-card-hover" style="background:var(--bg-alt); border:1px solid var(--border); border-radius:12px; padding:2.5rem; text-align:center; position:relative; overflow:hidden;">
+<div class="mentor-image-placeholder" style="width:120px; height:120px; border-radius:50%; margin:0 auto 1.5rem; border:2px dashed var(--border); background:var(--bg); display:flex; align-items:center; justify-content:center;">
 <span style="font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.1em; color:var(--text-muted);">IMAGE PENDING</span>
 </div>
 <h3 style="font-family:var(--font-serif); font-size:1.75rem; color:var(--text-main); margin-bottom:0.25rem;">Libinraj Christopher</h3>
 <div style="font-family:var(--font-mono); font-size:0.8rem; color:#0D8A74; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:1.5rem; font-weight:700;">Co-Director</div>
-<p style="font-size:0.95rem; color:var(--text-muted); margin-bottom:2rem; line-height:1.6;">Leading technical strategy, operational scale-up, and engineering development for Oxygen's product formulations and core laboratory capabilities.</p>
+<p style="font-size:0.95rem; color:var(--text-muted); margin-bottom:2rem; line-height:1.6;">Leads lab operations: fermentation runs, intern supervision, sample analysis, document research, and compliance documentation support. Designated investor presenter for the SISFS pitch track.</p>
 <a class="btn btn-outline" href="https://www.linkedin.com/in/libin-raj-christopher-61b4b0128/" rel="noopener noreferrer" style="padding:0.6rem 1.25rem; font-size:0.85rem; border-color:var(--text-main); color:var(--text-main); display:inline-flex; align-items:center; gap:0.5rem; justify-content:center;" target="_blank">
                             LinkedIn Profile ↗
                         </a>
@@ -769,13 +850,11 @@
                         </div>
 </div>
 <div style="position:relative; width:100%; border-radius:16px; overflow:hidden; border:1px solid var(--border); background:var(--bg-alt); min-height:450px; display:flex; align-items:center; justify-content:center;">
-<!-- Placeholder for the actual image. Replace styles when actual image is added -->
 <div style="position:absolute; inset:0; background:linear-gradient(45deg, rgba(13,138,116,0.05) 0%, rgba(0,0,0,0.02) 100%);"></div>
 <div style="text-align:center; z-index:2; padding:2rem;">
 <svg fill="none" height="48" stroke="var(--text-muted)" stroke-width="1" style="margin:0 auto 1rem; opacity:0.5;" viewbox="0 0 24 24" width="48"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
 <div style="font-family:var(--font-mono); font-size:0.8rem; letter-spacing:0.2em; color:var(--text-muted); text-transform:uppercase;">Team Photo Placeholder</div>
 </div>
-<!-- Team Roster Glassmorphic Overlay -->
 <div style="position:absolute; bottom:1.5rem; left:1.5rem; right:1.5rem; background:rgba(255,255,255,0.8); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.5); padding:1.25rem 2rem; border-radius:12px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.5rem;">
 <div style="font-family:var(--font-serif); font-size:1.5rem; color:var(--text-main); font-weight:700;">
                                 10 <span style="font-size:1rem; font-weight:400; color:var(--text-muted); font-family:var(--font-sans);">Members</span>
@@ -790,21 +869,18 @@
 </div>
 </div>
 <!-- ═══════════════════════════════════════════════════════
-             SECTION 8: KNOWLEDGE SUPPORT NETWORK (Mentor Team)
+             SECTION: KNOWLEDGE SUPPORT NETWORK (Mentor Team)
         ════════════════════════════════════════════════════════════ -->
-<section id="about-mentors" style="background:var(--bg-alt); padding:var(--space-xl) 0; position:relative; overflow:hidden; border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
-<!-- Background ambient glow elements -->
+<section id="about-mentors" style="background:var(--bg-alt); padding:var(--space-xl) 0; position:relative; overflow:hidden; border-top:1px solid var(--border); border-bottom:1px solid var(--border); margin-top:var(--space-xl);">
 <div style="position:absolute; top:-20%; left:-10%; width:600px; height:600px; background:radial-gradient(circle, rgba(13,138,116,0.06) 0%, transparent 70%); pointer-events:none; z-index:0;"></div>
 <div style="position:absolute; bottom:-20%; right:-10%; width:500px; height:500px; background:radial-gradient(circle, rgba(13,138,116,0.04) 0%, transparent 70%); pointer-events:none; z-index:0;"></div>
 <div class="container" style="position:relative; z-index:1;">
-<!-- Section Header -->
 <div class="mentor-reveal" style="margin-bottom:var(--space-xl);">
 <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem; flex-wrap:wrap; justify-content:space-between;">
 <div style="display:flex; align-items:center; gap:1rem;">
 <div style="width:32px; height:1px; background:rgba(13,138,116,0.8);"></div>
 <div style="font-family:var(--font-mono); font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; color:rgba(13,138,116,0.9);">The People Behind The Science</div>
 </div>
-<!-- List Finalised badge -->
 <div style="display:inline-flex; align-items:center; gap:0.55rem; background:rgba(13,138,116,0.12); border:1px solid rgba(13,138,116,0.35); color:#0D8A74; padding:0.4rem 1rem; border-radius:50px; font-family:var(--font-mono); font-size:0.65rem; letter-spacing:0.12em; text-transform:uppercase; white-space:nowrap;">
 <span style="width:6px; height:6px; background:#0D8A74; border-radius:50%; display:inline-block; box-shadow:0 0 8px #0D8A74; animation:pulse-dot 2s infinite;"></span>
                             List Finalised
@@ -818,7 +894,6 @@
 <em>Our mentors provide domain expertise and strategic guidance. They are not investors, board members, or equity holders. their involvement is purely knowledge-based.</em>
 </p>
 </div>
-<!-- Premium List Layout for Support Network (v2) -->
 <style>
                     .support-banner-header {
                         font-family: var(--font-serif);
@@ -832,79 +907,28 @@
                         gap: 1rem;
                     }
                     .support-banner-header span.badge {
-                        background:rgba(13,138,116,0.1); 
-                        border:1px solid rgba(13,138,116,0.2); 
-                        color:#0D8A74; 
-                        padding:0.25rem 0.6rem; 
-                        border-radius:4px; 
-                        font-family:var(--font-mono); 
-                        font-size:0.65rem; 
-                        text-transform:uppercase; 
+                        background:rgba(13,138,116,0.1);
+                        border:1px solid rgba(13,138,116,0.2);
+                        color:#0D8A74;
+                        padding:0.25rem 0.6rem;
+                        border-radius:4px;
+                        font-family:var(--font-mono);
+                        font-size:0.65rem;
+                        text-transform:uppercase;
                         letter-spacing:0.1em;
-                    }
-                    .support-row {
-                        display: grid;
-                        grid-template-columns: 60px 2fr 3fr 120px;
-                        gap: 1.5rem;
-                        align-items: center;
-                        padding: 1.25rem 1rem;
-                        border-bottom: 1px solid var(--border);
-                        transition: all 0.3s ease;
-                        border-radius: 6px;
-                    }
-                    .support-row:hover {
-                        background: rgba(13,138,116,0.03);
-                        border-color: rgba(13,138,116,0.2);
-                        transform: translateX(5px);
-                    }
-                    .support-avatar {
-                        width: 48px;
-                        height: 48px;
-                        border-radius: 50%;
-                        background: var(--bg);
-                        border: 1px solid var(--border);
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                    }
-                    .support-avatar svg {
-                        width: 20px;
-                        height: 20px;
-                        stroke: rgba(13,138,116,0.5);
-                    }
-                    @media (max-width: 768px) {
-                        .support-row {
-                            grid-template-columns: 48px 1fr;
-                            gap: 1rem;
-                            padding: 1.5rem;
-                            background: var(--bg);
-                            border: 1px solid var(--border);
-                            margin-bottom: 1rem;
-                            align-items: start;
-                        }
-                        .support-row > div:nth-child(3),
-                        .support-row > div:nth-child(4) {
-                            grid-column: 1 / -1;
-                        }
-                        .support-row:hover { transform: translateY(-3px); }
                     }
                 </style>
 <div class="support-grid-container" style="margin-top:2rem;">
-<!-- INDUSTRY BANNER -->
 <div class="support-banner-header mentor-reveal">
                         Industry Advisory Board <span class="badge">03 Members</span>
 </div>
-<!-- 3 Column Grid -->
 <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap:1.5rem; margin-bottom:3rem;">
-<!-- Mentor Grid Card -->
 <div class="mentor-reveal" onmouseout="this.style.borderColor='var(--border)'; this.style.transform='none';" onmouseover="this.style.borderColor='rgba(13,138,116,0.3)'; this.style.transform='translateY(-6px)';" style="position:relative; background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:2rem 1.5rem; display:flex; flex-direction:column; transition:all 0.3s ease;">
-<!-- Status Badge -->
 <div style="position:absolute; top:1.25rem; right:1.25rem;">
 <span style="font-family:var(--font-mono); font-size:0.55rem; text-transform:uppercase; letter-spacing:0.05em; padding:0.25rem 0.6rem; border-radius:4px; display:inline-flex; align-items:center; gap:0.4rem; background:rgba(13,138,116,0.1); color:#0D8A74; border:1px solid rgba(13,138,116,0.2);">
 <span style="width:4px; height:4px; border-radius:50%; background:#0D8A74;"></span> Confirmed
                             </span>
 </div>
-<!-- Pic & Tag -->
 <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem;">
 <div style="width:52px; height:52px; border-radius:50%; background:var(--bg-alt); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
 <svg fill="none" stroke="rgba(13,138,116,0.5)" stroke-width="1.5" style="width:22px; height:22px;" viewbox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"></path></svg>
@@ -913,27 +937,22 @@
 <div style="font-family:var(--font-mono); font-size:0.6rem; color:#0D8A74; text-transform:uppercase; letter-spacing:0.05em;">Pilot Scale-up Strategy</div>
 </div>
 </div>
-<!-- Name -->
 <div style="margin-bottom:1.5rem;">
 <h3 style="font-family:var(--font-serif); font-size:1.3rem; font-weight:600; color:var(--text-main); margin:0; line-height:1.2;">
 <a href="https://www.linkedin.com/in/prabahar-jerik-s-70430a162" onmouseout="this.style.color='var(--text-main)'" onmouseover="this.style.color='#0D8A74'" rel="noopener noreferrer" style="color:var(--text-main); text-decoration:none; transition:color 0.2s; display:inline-flex; align-items:center; gap:0.3rem;" target="_blank">Prabahar Jerik S <span style="font-family:var(--font-sans); font-size:1rem;">↗</span></a>
 </h3>
 </div>
-<!-- Designation & Org -->
 <div style="margin-top:auto;">
 <div style="font-size:0.9rem; font-weight:500; color:var(--text-main); margin-bottom:0.15rem;">Senior Scientist, MSAT</div>
 <div style="font-size:0.8rem; color:var(--text-muted); line-height:1.4;">Syngene International Limited</div>
 </div>
 </div>
-<!-- Mentor Grid Card -->
 <div class="mentor-reveal" onmouseout="this.style.borderColor='var(--border)'; this.style.transform='none';" onmouseover="this.style.borderColor='rgba(13,138,116,0.3)'; this.style.transform='translateY(-6px)';" style="position:relative; background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:2rem 1.5rem; display:flex; flex-direction:column; transition:all 0.3s ease;">
-<!-- Status Badge -->
 <div style="position:absolute; top:1.25rem; right:1.25rem;">
 <span style="font-family:var(--font-mono); font-size:0.55rem; text-transform:uppercase; letter-spacing:0.05em; padding:0.25rem 0.6rem; border-radius:4px; display:inline-flex; align-items:center; gap:0.4rem; background:rgba(13,138,116,0.1); color:#0D8A74; border:1px solid rgba(13,138,116,0.2);">
 <span style="width:4px; height:4px; border-radius:50%; background:#0D8A74;"></span> Confirmed
                             </span>
 </div>
-<!-- Pic & Tag -->
 <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem;">
 <div style="width:52px; height:52px; border-radius:50%; background:var(--bg-alt); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
 <svg fill="none" stroke="rgba(13,138,116,0.5)" stroke-width="1.5" style="width:22px; height:22px;" viewbox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"></path></svg>
@@ -942,27 +961,22 @@
 <div style="font-family:var(--font-mono); font-size:0.6rem; color:#0D8A74; text-transform:uppercase; letter-spacing:0.05em;">Process Analytics</div>
 </div>
 </div>
-<!-- Name -->
 <div style="margin-bottom:1.5rem;">
 <h3 style="font-family:var(--font-serif); font-size:1.3rem; font-weight:600; color:var(--text-main); margin:0; line-height:1.2;">
 <a href="https://www.linkedin.com/in/yeslin-pushan" onmouseout="this.style.color='var(--text-main)'" onmouseover="this.style.color='#0D8A74'" rel="noopener noreferrer" style="color:var(--text-main); text-decoration:none; transition:color 0.2s; display:inline-flex; align-items:center; gap:0.3rem;" target="_blank">Yeslin Pushan M <span style="font-family:var(--font-sans); font-size:1rem;">↗</span></a>
 </h3>
 </div>
-<!-- Designation & Org -->
 <div style="margin-top:auto;">
 <div style="font-size:0.9rem; font-weight:500; color:var(--text-main); margin-bottom:0.15rem;">Associate Scientist, MSAT</div>
 <div style="font-size:0.8rem; color:var(--text-muted); line-height:1.4;">Syngene International Limited</div>
 </div>
 </div>
-<!-- Mentor Grid Card -->
 <div class="mentor-reveal" onmouseout="this.style.borderColor='var(--border)'; this.style.transform='none';" onmouseover="this.style.borderColor='rgba(13,138,116,0.3)'; this.style.transform='translateY(-6px)';" style="position:relative; background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:2rem 1.5rem; display:flex; flex-direction:column; transition:all 0.3s ease;">
-<!-- Status Badge -->
 <div style="position:absolute; top:1.25rem; right:1.25rem;">
 <span style="font-family:var(--font-mono); font-size:0.55rem; text-transform:uppercase; letter-spacing:0.05em; padding:0.25rem 0.6rem; border-radius:4px; display:inline-flex; align-items:center; gap:0.4rem; background:rgba(13,138,116,0.1); color:#0D8A74; border:1px solid rgba(13,138,116,0.2);">
 <span style="width:4px; height:4px; border-radius:50%; background:#0D8A74;"></span> Confirmed
                             </span>
 </div>
-<!-- Pic & Tag -->
 <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem;">
 <div style="width:52px; height:52px; border-radius:50%; background:var(--bg-alt); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
 <svg fill="none" stroke="rgba(13,138,116,0.5)" stroke-width="1.5" style="width:22px; height:22px;" viewbox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"></path></svg>
@@ -971,34 +985,27 @@
 <div style="font-family:var(--font-mono); font-size:0.6rem; color:#0D8A74; text-transform:uppercase; letter-spacing:0.05em;">Commercial Bioprocessing</div>
 </div>
 </div>
-<!-- Name -->
 <div style="margin-bottom:1.5rem;">
 <h3 style="font-family:var(--font-serif); font-size:1.3rem; font-weight:600; color:var(--text-main); margin:0; line-height:1.2;">
 <a href="https://www.linkedin.com/in/jegan-kannan-70a67a18b/" onmouseout="this.style.color='var(--text-main)'" onmouseover="this.style.color='#0D8A74'" rel="noopener noreferrer" style="color:var(--text-main); text-decoration:none; transition:color 0.2s; display:inline-flex; align-items:center; gap:0.3rem;" target="_blank">Jegan K <span style="font-family:var(--font-sans); font-size:1rem;">↗</span></a>
 </h3>
 </div>
-<!-- Designation & Org -->
 <div style="margin-top:auto;">
 <div style="font-size:0.9rem; font-weight:500; color:var(--text-main); margin-bottom:0.15rem;">Senior Executive - Process Development</div>
 <div style="font-size:0.8rem; color:var(--text-muted); line-height:1.4;">Aragen Life Sciences</div>
 </div>
 </div>
 </div>
-<!-- ACADEMIC BANNER -->
 <div class="support-banner-header mentor-reveal" style="margin-top:4rem;">
                         Academic &amp; Research Review <span class="badge" style="background:var(--bg); border-color:var(--border); color:var(--text-main);">05 Members</span>
 </div>
-<!-- 3 Column Grid -->
 <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap:1.5rem; margin-bottom:3rem;">
-<!-- Mentor Grid Card -->
 <div class="mentor-reveal" onmouseout="this.style.borderColor='var(--border)'; this.style.transform='none';" onmouseover="this.style.borderColor='rgba(13,138,116,0.3)'; this.style.transform='translateY(-6px)';" style="position:relative; background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:2rem 1.5rem; display:flex; flex-direction:column; transition:all 0.3s ease;">
-<!-- Status Badge -->
 <div style="position:absolute; top:1.25rem; right:1.25rem;">
 <span style="font-family:var(--font-mono); font-size:0.55rem; text-transform:uppercase; letter-spacing:0.05em; padding:0.25rem 0.6rem; border-radius:4px; display:inline-flex; align-items:center; gap:0.4rem; background:rgba(13,138,116,0.1); color:#0D8A74; border:1px solid rgba(13,138,116,0.2);">
 <span style="width:4px; height:4px; border-radius:50%; background:#0D8A74;"></span> Confirmed
                             </span>
 </div>
-<!-- Pic & Tag -->
 <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem;">
 <div style="width:52px; height:52px; border-radius:50%; background:var(--bg-alt); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
 <svg fill="none" stroke="rgba(13,138,116,0.5)" stroke-width="1.5" style="width:22px; height:22px;" viewbox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"></path></svg>
@@ -1008,27 +1015,22 @@
 <div style="font-family:var(--font-sans); font-size:0.8rem; color:var(--text-muted); margin-top:0.2rem;">Doctorate</div>
 </div>
 </div>
-<!-- Name -->
 <div style="margin-bottom:1.5rem;">
 <h3 style="font-family:var(--font-serif); font-size:1.3rem; font-weight:600; color:var(--text-main); margin:0; line-height:1.2;">
 <a href="https://www.linkedin.com/in/dr-ing-suresh-babu-palanisamy-697b55109/" onmouseout="this.style.color='var(--text-main)'" onmouseover="this.style.color='#0D8A74'" rel="noopener noreferrer" style="color:var(--text-main); text-decoration:none; transition:color 0.2s; display:inline-flex; align-items:center; gap:0.3rem;" target="_blank">Dr. P. Suresh Babu <span style="font-family:var(--font-sans); font-size:1rem;">↗</span></a>
 </h3>
 </div>
-<!-- Designation & Org -->
 <div style="margin-top:auto;">
 <div style="font-size:0.9rem; font-weight:500; color:var(--text-main); margin-bottom:0.15rem;">Professor &amp; Head, Dept of Biotechnology</div>
 <div style="font-size:0.8rem; color:var(--text-muted); line-height:1.4;">Savitha University, Chennai</div>
 </div>
 </div>
-<!-- Mentor Grid Card -->
 <div class="mentor-reveal" onmouseout="this.style.borderColor='var(--border)'; this.style.transform='none';" onmouseover="this.style.borderColor='rgba(13,138,116,0.3)'; this.style.transform='translateY(-6px)';" style="position:relative; background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:2rem 1.5rem; display:flex; flex-direction:column; transition:all 0.3s ease;">
-<!-- Status Badge -->
 <div style="position:absolute; top:1.25rem; right:1.25rem;">
 <span style="font-family:var(--font-mono); font-size:0.55rem; text-transform:uppercase; letter-spacing:0.05em; padding:0.25rem 0.6rem; border-radius:4px; display:inline-flex; align-items:center; gap:0.4rem; background:rgba(13,138,116,0.1); color:#0D8A74; border:1px solid rgba(13,138,116,0.2);">
 <span style="width:4px; height:4px; border-radius:50%; background:#0D8A74;"></span> Confirmed
                             </span>
 </div>
-<!-- Pic & Tag -->
 <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem;">
 <div style="width:52px; height:52px; border-radius:50%; background:var(--bg-alt); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
 <svg fill="none" stroke="rgba(13,138,116,0.5)" stroke-width="1.5" style="width:22px; height:22px;" viewbox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"></path></svg>
@@ -1038,27 +1040,22 @@
 <div style="font-family:var(--font-sans); font-size:0.8rem; color:var(--text-muted); margin-top:0.2rem;">Doctorate</div>
 </div>
 </div>
-<!-- Name -->
 <div style="margin-bottom:1.5rem;">
 <h3 style="font-family:var(--font-serif); font-size:1.3rem; font-weight:600; color:var(--text-main); margin:0; line-height:1.2;">
 <a href="https://www.linkedin.com/in/manivasagan-veerasamy-11260837/" onmouseout="this.style.color='var(--text-main)'" onmouseover="this.style.color='#0D8A74'" rel="noopener noreferrer" style="color:var(--text-main); text-decoration:none; transition:color 0.2s; display:inline-flex; align-items:center; gap:0.3rem;" target="_blank">Dr. V. Manivasagan <span style="font-family:var(--font-sans); font-size:1rem;">↗</span></a>
 </h3>
 </div>
-<!-- Designation & Org -->
 <div style="margin-top:auto;">
 <div style="font-size:0.9rem; font-weight:500; color:var(--text-main); margin-bottom:0.15rem;">Professor &amp; Head, Dept of Biotechnology</div>
 <div style="font-size:0.8rem; color:var(--text-muted); line-height:1.4;">Adhiyamaan College of Engineering, Hosur</div>
 </div>
 </div>
-<!-- Mentor Grid Card -->
 <div class="mentor-reveal" onmouseout="this.style.borderColor='var(--border)'; this.style.transform='none';" onmouseover="this.style.borderColor='rgba(13,138,116,0.3)'; this.style.transform='translateY(-6px)';" style="position:relative; background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:2rem 1.5rem; display:flex; flex-direction:column; transition:all 0.3s ease;">
-<!-- Status Badge -->
 <div style="position:absolute; top:1.25rem; right:1.25rem;">
 <span style="font-family:var(--font-mono); font-size:0.55rem; text-transform:uppercase; letter-spacing:0.05em; padding:0.25rem 0.6rem; border-radius:4px; display:inline-flex; align-items:center; gap:0.4rem; background:rgba(13,138,116,0.1); color:#0D8A74; border:1px solid rgba(13,138,116,0.2);">
 <span style="width:4px; height:4px; border-radius:50%; background:#0D8A74;"></span> Confirmed
                             </span>
 </div>
-<!-- Pic & Tag -->
 <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem;">
 <div style="width:52px; height:52px; border-radius:50%; background:var(--bg-alt); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
 <svg fill="none" stroke="rgba(13,138,116,0.5)" stroke-width="1.5" style="width:22px; height:22px;" viewbox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"></path></svg>
@@ -1068,27 +1065,22 @@
 <div style="font-family:var(--font-sans); font-size:0.8rem; color:var(--text-muted); margin-top:0.2rem;">Doctorate</div>
 </div>
 </div>
-<!-- Name -->
 <div style="margin-bottom:1.5rem;">
 <h3 style="font-family:var(--font-serif); font-size:1.3rem; font-weight:600; color:var(--text-main); margin:0; line-height:1.2;">
 <a href="https://www.linkedin.com/in/dr-hari-lakshmi-120a9b195/" onmouseout="this.style.color='var(--text-main)'" onmouseover="this.style.color='#0D8A74'" rel="noopener noreferrer" style="color:var(--text-main); text-decoration:none; transition:color 0.2s; display:inline-flex; align-items:center; gap:0.3rem;" target="_blank">Dr. S. Hari Lakshmi <span style="font-family:var(--font-sans); font-size:1rem;">↗</span></a>
 </h3>
 </div>
-<!-- Designation & Org -->
 <div style="margin-top:auto;">
 <div style="font-size:0.9rem; font-weight:500; color:var(--text-main); margin-bottom:0.15rem;">Assistant Professor</div>
 <div style="font-size:0.8rem; color:var(--text-muted); line-height:1.4;">Sri Shakthi Institute of Engineering and Technology, Coimbatore</div>
 </div>
 </div>
-<!-- Mentor Grid Card -->
 <div class="mentor-reveal" onmouseout="this.style.borderColor='var(--border)'; this.style.transform='none';" onmouseover="this.style.borderColor='rgba(13,138,116,0.3)'; this.style.transform='translateY(-6px)';" style="position:relative; background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:2rem 1.5rem; display:flex; flex-direction:column; transition:all 0.3s ease;">
-<!-- Status Badge -->
 <div style="position:absolute; top:1.25rem; right:1.25rem;">
 <span style="font-family:var(--font-mono); font-size:0.55rem; text-transform:uppercase; letter-spacing:0.05em; padding:0.25rem 0.6rem; border-radius:4px; display:inline-flex; align-items:center; gap:0.4rem; background:rgba(13,138,116,0.1); color:#0D8A74; border:1px solid rgba(13,138,116,0.2);">
 <span style="width:4px; height:4px; border-radius:50%; background:#0D8A74;"></span> Confirmed
                             </span>
 </div>
-<!-- Pic & Tag -->
 <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem;">
 <div style="width:52px; height:52px; border-radius:50%; background:var(--bg-alt); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
 <svg fill="none" stroke="rgba(13,138,116,0.5)" stroke-width="1.5" style="width:22px; height:22px;" viewbox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"></path></svg>
@@ -1098,27 +1090,22 @@
 <div style="font-family:var(--font-sans); font-size:0.8rem; color:var(--text-muted); margin-top:0.2rem;">PhD Viva Completed</div>
 </div>
 </div>
-<!-- Name -->
 <div style="margin-bottom:1.5rem;">
 <h3 style="font-family:var(--font-serif); font-size:1.3rem; font-weight:600; color:var(--text-main); margin:0; line-height:1.2;">
 <a href="https://www.linkedin.com/in/aashikaravi24/" onmouseout="this.style.color='var(--text-main)'" onmouseover="this.style.color='#0D8A74'" rel="noopener noreferrer" style="color:var(--text-main); text-decoration:none; transition:color 0.2s; display:inline-flex; align-items:center; gap:0.3rem;" target="_blank">R.C. Aashika <span style="font-family:var(--font-sans); font-size:1rem;">↗</span></a>
 </h3>
 </div>
-<!-- Designation & Org -->
 <div style="margin-top:auto;">
 <div style="font-size:0.9rem; font-weight:500; color:var(--text-main); margin-bottom:0.15rem;">Assistant Professor</div>
 <div style="font-size:0.8rem; color:var(--text-muted); line-height:1.4;">Jeppiaar Engineering College, Semmencheri, Chennai</div>
 </div>
 </div>
-<!-- Mentor Grid Card -->
 <div class="mentor-reveal" onmouseout="this.style.borderColor='var(--border)'; this.style.transform='none';" onmouseover="this.style.borderColor='rgba(13,138,116,0.3)'; this.style.transform='translateY(-6px)';" style="position:relative; background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:2rem 1.5rem; display:flex; flex-direction:column; transition:all 0.3s ease;">
-<!-- Status Badge -->
 <div style="position:absolute; top:1.25rem; right:1.25rem;">
 <span style="font-family:var(--font-mono); font-size:0.55rem; text-transform:uppercase; letter-spacing:0.05em; padding:0.25rem 0.6rem; border-radius:4px; display:inline-flex; align-items:center; gap:0.4rem; background:rgba(13,138,116,0.1); color:#0D8A74; border:1px solid rgba(13,138,116,0.2);">
 <span style="width:4px; height:4px; border-radius:50%; background:#0D8A74;"></span> Confirmed
                             </span>
 </div>
-<!-- Pic & Tag -->
 <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem;">
 <div style="width:52px; height:52px; border-radius:50%; background:var(--bg-alt); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
 <svg fill="none" stroke="rgba(13,138,116,0.5)" stroke-width="1.5" style="width:22px; height:22px;" viewbox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"></path></svg>
@@ -1128,13 +1115,11 @@
 <div style="font-family:var(--font-sans); font-size:0.8rem; color:var(--text-muted); margin-top:0.2rem;">PhD Pursuing</div>
 </div>
 </div>
-<!-- Name -->
 <div style="margin-bottom:1.5rem;">
 <h3 style="font-family:var(--font-serif); font-size:1.3rem; font-weight:600; color:var(--text-main); margin:0; line-height:1.2;">
 <a href="https://www.linkedin.com/in/gopi-karuppaiah-756411175/" onmouseout="this.style.color='var(--text-main)'" onmouseover="this.style.color='#0D8A74'" rel="noopener noreferrer" style="color:var(--text-main); text-decoration:none; transition:color 0.2s; display:inline-flex; align-items:center; gap:0.3rem;" target="_blank">Gopi K <span style="font-family:var(--font-sans); font-size:1rem;">↗</span></a>
 </h3>
 </div>
-<!-- Designation & Org -->
 <div style="margin-top:auto;">
 <div style="font-size:0.9rem; font-weight:500; color:var(--text-main); margin-bottom:0.15rem;">Bioengineering Major</div>
 <div style="font-size:0.8rem; color:var(--text-muted); line-height:1.4;">Chung-Ang University, Seoul</div>
@@ -1142,14 +1127,156 @@
 </div>
 </div>
 </div>
+</div>
 </section>
-</div></section></main>
+</div>
+</section>
+<!-- ═══════════════════════════════════════════════════════
+             SECTION: GO-TO-MARKET (merged from investors.html)
+        ════════════════════════════════════════════════════════════ -->
+<section style="background:var(--bg); border-top:1px solid var(--border); padding:var(--space-xl) 0;">
+<div class="container reveal">
+    <div class="section-eyebrow">Go-to-Market</div>
+    <h2 style="font-family:var(--font-serif); font-size:clamp(2rem, 4vw, 3rem); font-weight:900; line-height:1.1; margin-bottom:1.5rem;">Channel Strategy.</h2>
+    <p style="font-size:1.05rem; line-height:1.7; color:var(--text-muted); max-width:720px; margin-bottom:3rem;">A phased channel approach starting with high-trust, low-cost D2C channels and building toward full national distribution. All commercial activity is gated on FSSAI State Manufacturing Licence grant.</p>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,220px),1fr)); gap:1rem;">
+        <div style="border:1px solid var(--border); border-radius:10px; padding:1.75rem; background:var(--bg-alt); text-align:center;">
+            <div style="font-family:var(--font-serif); font-size:2rem; font-weight:900; color:var(--text-main); margin-bottom:0.5rem;">01</div>
+            <div style="font-weight:700; color:var(--text-main); margin-bottom:0.5rem; font-size:0.95rem;">D2C. Owned Channels</div>
+            <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.6;">WhatsApp-first community + owned website. College campus and professional network seeding. Zero platform dependency at launch.</p>
+        </div>
+        <div style="border:1px solid var(--border); border-radius:10px; padding:1.75rem; background:var(--bg-alt); text-align:center;">
+            <div style="font-family:var(--font-serif); font-size:2rem; font-weight:900; color:var(--text-main); margin-bottom:0.5rem;">02</div>
+            <div style="font-weight:700; color:var(--text-main); margin-bottom:0.5rem; font-size:0.95rem;">Quick Commerce</div>
+            <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.6;">Blinkit, Zepto, Swiggy Instamart. Bengaluru and Hosur priority. No cold chain required. Ambient shelf-stable product is a logistics fit.</p>
+        </div>
+        <div style="border:1px solid var(--border); border-radius:10px; padding:1.75rem; background:var(--bg-alt); text-align:center;">
+            <div style="font-family:var(--font-serif); font-size:2rem; font-weight:900; color:var(--text-main); margin-bottom:0.5rem;">03</div>
+            <div style="font-weight:700; color:var(--text-main); margin-bottom:0.5rem; font-size:0.95rem;">Institutional B2B</div>
+            <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.6;">College canteens, gym front-desks, co-working spaces. Recurring bulk orders with brand visibility. Beachhead: Adhiyamaan College of Engineering (5,000 students).</p>
+        </div>
+        <div style="border:1px solid var(--border); border-radius:10px; padding:1.75rem; background:var(--bg-alt); text-align:center;">
+            <div style="font-family:var(--font-serif); font-size:2rem; font-weight:900; color:var(--text-main); margin-bottom:0.5rem;">04</div>
+            <div style="font-weight:700; color:var(--text-main); margin-bottom:0.5rem; font-size:0.95rem;">Online Marketplace</div>
+            <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.6;">Amazon &amp; Flipkart in Phase 2 once brand credibility and reviews are established through D2C and institutional channels.</p>
+        </div>
+    </div>
+</div>
+</section>
+<!-- ═══════════════════════════════════════════════════════
+             SECTION: EXECUTION ROADMAP (merged from investors.html)
+        ════════════════════════════════════════════════════════════ -->
+<section style="background:var(--bg-alt); border-top:1px solid var(--border); padding:var(--space-xl) 0;">
+<div class="container reveal">
+    <div class="section-eyebrow">Execution Roadmap</div>
+    <div class="roadmap-grid">
+        <div class="roadmap-card reveal">
+            <div class="road-year">YEAR 1 (Current)</div>
+            <div class="road-title">Validation &amp; IP</div>
+            <div class="road-desc">Secure FSSAI state manufacturing licence. Complete NABL-accredited third party testing and bioactive quantification. Patent: discussions initiated with registered patent agent; provisional filing planned post third-party instrumental validation.</div>
+        </div>
+        <div class="roadmap-card reveal">
+            <div class="road-year">YEAR 2</div>
+            <div class="road-title">Launch &amp; B2B Beachhead</div>
+            <div class="road-desc">Commercial launch of first SKU (Cognitive focus). Secure 50+ institutional B2B accounts in Bengaluru (gyms, co-working). Launch D2C subscription model.</div>
+        </div>
+        <div class="roadmap-card reveal">
+            <div class="road-year">YEAR 3</div>
+            <div class="road-title">Full Line &amp; Scale</div>
+            <div class="road-desc">Launch remaining 2 SKUs (Energy &amp; Immunity). Scale to 200+ active B2B accounts. Initiate scale-up funding (Series A readiness). Target: 3,000+ active customers.</div>
+        </div>
+        <div class="roadmap-card reveal">
+            <div class="road-year">YEAR 4 &amp; 5</div>
+            <div class="road-title">Manufacturing Infrastructure</div>
+            <div class="road-desc">Transition to 20L+ fermenter scale. Full IP portfolio filed. Achieve South India market dominance and prepare for North India market entry.</div>
+        </div>
+    </div>
+</div>
+</section>
+<!-- ═══════════════════════════════════════════════════════
+             SECTION: CURRENT STATUS & THE ASK (merged from investors.html)
+        ════════════════════════════════════════════════════════════ -->
+<section style="background:var(--bg); border-top:1px solid var(--border); padding:var(--space-xl) 0 8rem;">
+<div class="container reveal">
+    <div class="section-eyebrow">Current Status &amp; Ask</div>
+
+    <div class="the-ask-grid">
+        <div>
+            <div class="ask-amount" style="font-size: clamp(3rem, 6vw, 4.5rem);">Raising <br><span>Pre-Seed</span></div>
+            <div style="font-family:var(--font-mono); font-size:0.8rem; letter-spacing:0.1em; color:#0D8A74; text-transform:uppercase; margin-bottom:1.5rem;">Phase 0 Validation Round</div>
+            <p style="font-size:1.05rem; color:var(--text-muted); line-height:1.7; margin-bottom:2.5rem; max-width:480px;">
+                We are currently seeking non-dilutive grant funding or strategic seed investment to complete our 18-month Phase 0 Validation. This capital explicitly funds NABL batch testing, instrumental bioactive quantification, IP filing, and regulatory licensing prior to commercial launch.
+            </p>
+            <a href="contact.html" class="btn" style="background:#0D8A74; color:#fff; border:none; padding:1.25rem 2.5rem; font-size:0.95rem; font-weight:600; box-shadow: 0 10px 30px rgba(13,138,116,0.3);">
+                Request Full Pitch Deck &amp; Data Room
+            </a>
+        </div>
+
+        <div style="background:var(--bg-alt); border:1px solid var(--border); border-radius:24px; padding:3rem;">
+            <h3 style="font-family:var(--font-serif); font-size:1.5rem; margin-bottom:2rem; color:var(--text-main);">Use of Funds Overview</h3>
+            <div style="display:flex; flex-direction:column; gap:1.5rem;">
+                <div style="display:flex; gap:1rem; align-items:flex-start;">
+                    <div style="font-family:var(--font-mono); font-size:1.1rem; color:#0D8A74; font-weight:700;">30%</div>
+                    <div>
+                        <div style="color:var(--text-main); font-weight:600; margin-bottom:0.25rem;">Bioactive &amp; NABL Validation</div>
+                        <div style="font-size:0.85rem; color:var(--text-muted);">Instrumental bioactive quantification, microbial/heavy metal testing.</div>
+                    </div>
+                </div>
+                <div style="display:flex; gap:1rem; align-items:flex-start;">
+                    <div style="font-family:var(--font-mono); font-size:1.1rem; color:#0D8A74; font-weight:700;">25%</div>
+                    <div>
+                        <div style="color:var(--text-main); font-weight:600; margin-bottom:0.25rem;">Regulatory &amp; IP Filing</div>
+                        <div style="font-size:0.85rem; color:var(--text-muted);">FSSAI state licensing, Schedule 4 audit, provisional patent application.</div>
+                    </div>
+                </div>
+                <div style="display:flex; gap:1rem; align-items:flex-start;">
+                    <div style="font-family:var(--font-mono); font-size:1.1rem; color:#0D8A74; font-weight:700;">20%</div>
+                    <div>
+                        <div style="color:var(--text-main); font-weight:600; margin-bottom:0.25rem;">Shelf-Life &amp; Pilot Batch</div>
+                        <div style="font-size:0.85rem; color:var(--text-muted);">Accelerated stability analysis and 100-unit pilot production.</div>
+                    </div>
+                </div>
+                <div style="display:flex; gap:1rem; align-items:flex-start;">
+                    <div style="font-family:var(--font-mono); font-size:1.1rem; color:#0D8A74; font-weight:700;">25%</div>
+                    <div>
+                        <div style="color:var(--text-main); font-weight:600; margin-bottom:0.25rem;">Lab Infrastructure &amp; Contingency</div>
+                        <div style="font-size:0.85rem; color:var(--text-muted);">Reagents, intern stipends, and operational overhead.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top:4rem; padding-top:2rem; border-top:1px solid var(--border); display:flex; gap:3rem; justify-content:center; flex-wrap:wrap;">
+        <div style="text-align:center;">
+            <div style="font-family:var(--font-mono); font-size:0.55rem; letter-spacing:0.15em; color:var(--text-muted); text-transform:uppercase;">DPIIT Recognition</div>
+            <div style="font-size:0.85rem; font-weight:600; color:var(--text-main); margin-top:0.25rem;">DIPP258270</div>
+        </div>
+        <div style="text-align:center;">
+            <div style="font-family:var(--font-mono); font-size:0.55rem; letter-spacing:0.15em; color:var(--text-muted); text-transform:uppercase;">Company Status</div>
+            <div style="font-size:0.85rem; font-weight:600; color:var(--text-main); margin-top:0.25rem;">Private Limited (2026)</div>
+        </div>
+        <div style="text-align:center;">
+            <div style="font-family:var(--font-mono); font-size:0.55rem; letter-spacing:0.15em; color:var(--text-muted); text-transform:uppercase;">Incubation</div>
+            <div style="font-size:0.85rem; font-weight:600; color:var(--text-main); margin-top:0.25rem;">TBI-DETI@ACE</div>
+        </div>
+    </div>
+
+    <div style="margin-top:2rem; text-align:center;">
+        <p style="font-size:0.75rem; color:var(--text-muted); line-height:1.6; max-width:700px; margin:0 auto;">
+            Disclaimer: Oxygen Bioinnovations is a pre-revenue biotechnology startup. All financial projections on this page are estimates based on market research and design targets. No commercial products have been sold. Bioactive claims are subject to successful NABL-accredited validation. This page does not constitute an offer, solicitation, or recommendation for investment.
+        </p>
+    </div>
+</div>
+</section>
+</main>
 <!-- Site Footer -->
 <footer class="site-footer">
 <div class="container footer-grid">
 <div class="footer-brand">
-<a href="index.html" style="display: none !important;  align-items:center; gap:10px; margin-bottom:1.5rem; text-decoration:none;">
-<img alt="Oxygen Bioinnovations Logo" src="assets/images/logo-full.png?v=6" style="display: none !important; height:36px; width:auto; "/>
+<a href="index.html" style="display:flex; align-items:center; gap:10px; margin-bottom:1.5rem; text-decoration:none;">
+<img alt="Oxygen Bioinnovations Logo" src="assets/images/logo-full.png?v=6" style="height:36px; width:auto; display:block;"/>
 <span style="font-family: var(--font-heading, ''Inter'', sans-serif); font-weight: 800; font-size: 1.25rem; color: var(--text-main, #0B192C); letter-spacing: -0.02em;">Oxygen
                         <span style="color:#0D8A74;">Bioinnovations</span></span>
 </a>
@@ -1176,8 +1303,8 @@
 <h4>Quick Links</h4>
 <ul>
 <li><a href="about.html">About Us</a></li>
-<li><a href="science.html">Our Science</a></li>
-<li><a href="blog.html">Blog</a></li>
+<li><a href="platform.html">Platform</a></li>
+<li><a href="updates.html">Updates</a></li>
 </ul>
 </div>
 <div class="footer-column">
@@ -1185,7 +1312,6 @@
 <ul>
 <li><a href="contact.html">Contact Us</a></li>
 <li><a href="careers.html">Careers</a></li>
-<li><a href="careers.html">Life at Oxygen</a></li>
 </ul>
 </div>
 <div class="footer-column">
@@ -1201,7 +1327,7 @@
 <li><a href="faq.html">FAQ</a></li>
 </ul>
 </div>
-<div class="footer-bottom" style="display: none !important; text-align: center; border-top: 1px solid var(--border); margin-top: 2rem; padding-top: 1.5rem; font-size: 0.85rem; color: var(--text-muted); width: 100%; grid-column: 1 / -1; ">
+<div class="footer-bottom" style="text-align: center; border-top: 1px solid var(--border); margin-top: 2rem; padding-top: 1.5rem; font-size: 0.85rem; color: var(--text-muted); width: 100%; grid-column: 1 / -1; display: block;">
 <p style="font-size:0.72rem; color:var(--text-muted); line-height:1.6; margin-bottom:0.75rem; font-family:var(--font-mono);">Our products are currently in pre-commercial R&amp;D. Claims on this site represent our research direction and have not been evaluated by FSSAI.</p>
 
                 © 2026 Oxygen Bioinnovations Private Limited with CIN: U72100TZ2026PTC038160. DPIIT Recognized Startup (DIPP258270). All rights reserved.
@@ -1213,185 +1339,7 @@
 <script src="assets/js/v2_scroll.js"></script>
 <script src="assets/js/v2_canvas.js"></script>
 <script src="assets/js/v2_premium.js"></script>
-<!-- Master-Detail Tab Logic for About Page -->
-<style>
-        /* Unselected Tab States */
-
-        .index-nav-item {
-
-            opacity: 0.5;
-
-        }
-
-
-
-        .index-nav-item:hover {
-
-            opacity: 0.8;
-
-        }
-
-
-
-        /* Selected Tab States */
-
-        .index-nav-item.active-tab {
-
-            opacity: 1;
-
-            color: var(--text-main) !important;
-
-        }
-
-
-
-        .index-nav-item.active-tab .tab-title {
-
-            color: var(--text-main) !important;
-
-        }
-
-
-
-        .index-nav-item.active-tab .tab-num {
-
-            color: var(--text-main) !important;
-
-        }
-
-
-
-        /* Stop native grid overlapping on mobile screens so it defaults back to scrolling */
-
-        @media (max-width: 768px) {
-
-
-
-            #story-tab-container,
-
-            #who-tab-container {
-
-                display: flex !important;
-
-                flex-direction: column !important;
-
-            }
-
-
-
-            .tab-pane {
-
-                grid-area: auto !important;
-
-                opacity: 1 !important;
-
-                visibility: visible !important;
-
-                pointer-events: auto !important;
-
-                margin-bottom: var(--space-lg);
-
-            }
-
-
-
-            .index-nav-item {
-
-                display: none !important;
-
-            }
-
-
-
-            /* Hide the sidebar clicks on mobile */
-
-        }
-    </style>
-<script>
-
-        function switchTab(group, targetId) {
-
-            if (window.innerWidth <= 768) return; // Disable tab logic on mobile stacking
-
-
-
-            // 1. Clear active state from sidebar items in this section group
-
-            const navItems = document.querySelectorAll('.index-nav-item');
-
-            navItems.forEach(item => {
-
-                const onclickAttr = item.getAttribute('onclick') || '';
-
-                if (onclickAttr.includes(`'${group}'`)) {
-
-                    item.classList.remove('active-tab');
-
-                    if (item.getAttribute('data-target') === targetId) {
-
-                        item.classList.add('active-tab');
-
-                    }
-
-                }
-
-            });
-
-
-
-            // 2. Identify content container based on group
-
-            const containerId = group === 'story' ? 'story-tab-container' : 'who-tab-container';
-
-            const context = document.getElementById(containerId);
-
-            if (!context) return;
-
-
-
-            // 3. Fade out all panes in this container, fade in the target
-
-            const panes = context.querySelectorAll('.tab-pane');
-
-            panes.forEach(pane => {
-
-                if (pane.id === targetId) {
-
-                    pane.style.opacity = '1';
-
-                    pane.style.visibility = 'visible';
-
-                    pane.style.pointerEvents = 'auto';
-
-                    pane.classList.add('active');
-
-                } else {
-
-                    pane.style.opacity = '0';
-
-                    pane.style.visibility = 'hidden';
-
-                    pane.style.pointerEvents = 'none';
-
-                    pane.classList.remove('active');
-
-                }
-
-            });
-
-
-
-            // 4. Smooth scroll back to top of context to prevent disorientation
-
-            const yOffset = -150;
-
-            const y = context.getBoundingClientRect().top + window.pageYOffset + yOffset;
-
-            window.scrollTo({ top: y, behavior: 'smooth' });
-
-        }
-
-    </script>
+<script src="assets/js/page-transitions.js"></script>
 <!-- Premium Number Counter Animation -->
 <script>
 
@@ -1425,8 +1373,6 @@
 
             };
 
-
-
             var observer = new IntersectionObserver(function (entries, obs) {
 
                 entries.forEach(function (entry) {
@@ -1451,12 +1397,27 @@
 
             }, { threshold: 0.1 });
 
-
-
             document.querySelectorAll('.count-up').forEach(function (el) { observer.observe(el); });
 
         });
 
+    </script>
+<!-- Reveal on scroll (shared 'reveal' + 'reveal.active' pattern used across investment section) -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        if (entry.target.dataset.revealClass) {
+                            entry.target.classList.add(entry.target.dataset.revealClass);
+                        }
+                    }
+                });
+            }, { threshold: 0.15 });
+            reveals.forEach(r => observer.observe(r));
+        });
     </script>
 <!-- Mobile Apple-style Fade Up Animation -->
 <script>
@@ -1465,13 +1426,7 @@
 
             if (window.innerWidth <= 768) {
 
-                // Select elements that need the premium fade up
-
                 const animatedElements = document.querySelectorAll('.vision-cell, .vision-pillar-row, .chapter-section h3, .chapter-section p, .development-timeline, .clinical-data, div[style*="max-width:320px"]');
-
-
-
-                // Add the base class to them
 
                 animatedElements.forEach(el => {
 
@@ -1479,19 +1434,15 @@
 
                 });
 
-
-
                 const observerOptions = {
 
                     root: null,
 
                     rootMargin: '0px 0px -5% 0px',
 
-                    thred: 0.
+                    threshold: 0.1
 
                 };
-
-
 
                 let delay = 0;
 
@@ -1503,21 +1454,13 @@
 
                     if (now - lastIntersectTime > 100) { delay = 0; }
 
-
-
                     entries.forEach(entry => {
 
                         if (entry.isIntersecting) {
 
                             entry.target.style.transitionDelay = `${delay}ms`;
 
-
-
-                            // Force reflow
-
                             void entry.target.offsetWidth;
-
-
 
                             entry.target.classList.add('is-revealed');
 
@@ -1533,8 +1476,6 @@
 
                 }, observerOptions);
 
-
-
                 animatedElements.forEach(el => {
 
                     fadeObserver.observe(el);
@@ -1546,21 +1487,19 @@
         });
 
     </script>
-<script src="assets/js/page-transitions.js"></script>
 <!-- Mentor Section Interactions -->
 <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // 1. Staggered Scroll Reveal
             const mentorObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const delay = entry.target.getAttribute('data-delay') || '0';
                         entry.target.style.transitionDelay = `${delay}ms`;
-                        
+
                         requestAnimationFrame(() => {
                             entry.target.classList.add('is-visible');
                         });
-                        
+
                         observer.unobserve(entry.target);
                     }
                 });
@@ -1574,30 +1513,29 @@
                 mentorObserver.observe(el);
             });
 
-            // 2. 3D Tilt Hover Effect (Desktop Only)
             if (window.innerWidth > 768) {
                 const cards = document.querySelectorAll('.mentor-card');
-                
+
                 cards.forEach(card => {
                     const inner = card.querySelector('.mentor-card-inner');
-                    
+
                     card.addEventListener('mousemove', (e) => {
                         const rect = card.getBoundingClientRect();
                         const x = e.clientX - rect.left;
                         const y = e.clientY - rect.top;
-                        
+
                         const centerX = rect.width / 2;
                         const centerY = rect.height / 2;
-                        
+
                         const maxRotateX = 8;
                         const maxRotateY = 8;
-                        
+
                         const rotateX = ((y - centerY) / centerY) * -maxRotateX;
                         const rotateY = ((x - centerX) / centerX) * maxRotateY;
-                        
+
                         inner.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
                     });
-                    
+
                     card.addEventListener('mouseleave', () => {
                         inner.style.transform = 'rotateX(0) rotateY(0) scale3d(1, 1, 1)';
                     });
