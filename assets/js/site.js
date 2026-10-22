@@ -69,7 +69,7 @@
     var root = document.documentElement;
     if (root.classList.contains('js-motion')) {
         var selector = '.section-head, .split > *, .card, .figure-stat, .flow-step, .point, .facts, ' +
-            '.advisors li, .post-list li, .statements > div, .notice, .quote-card, .timeline';
+            '.advisor, .post-list li, .statements > div, .notice, .quote-card, .timeline';
         var observer = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {
                 if (!entry.isIntersecting) return;
