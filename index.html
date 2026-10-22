@@ -21,7 +21,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Source+Serif+4:opsz,wght@8..60,600&amp;display=swap">
-    <link rel="stylesheet" href="/assets/css/site.css?v=1">
+    <link rel="stylesheet" href="/assets/css/site.css?v=2">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -190,9 +190,21 @@
                 <div class="section-head">
                     <span class="eyebrow">Waitlist</span>
                     <h2 id="waitlist-heading">Hear from us when there is something to taste.</h2>
-                    <p>Nothing is for sale today. Send us an email and we will write when there is real progress to share: lab updates, tasting panels, and launch news once a licence is in place. We only use your email address for this.</p>
+                    <p>Nothing is for sale today. Leave your email address and we will write when there is real progress to share: lab updates, tasting panels, and launch news once a licence is in place.</p>
                 </div>
-                <a class="btn" href="mailto:info@oxygenbioinnovations.com?subject=Join%20the%20waitlist">Join by email</a>
+                <form class="form form--inline" id="waitlist-form" data-gform data-status="waitlist-form-status" action="https://docs.google.com/forms/d/e/1FAIpQLScndz1l9JCdS_CpWdZ9uJtzTojDwTi0eY1ZoSHakaPrmgMJQg/formResponse" method="POST" target="waitlist-form-target">
+                    <input type="hidden" name="entry.1633920210" value="Waitlist sign-up">
+                    <input type="hidden" name="entry.790080973" value="Other">
+                    <input type="hidden" name="entry.1846923513" value="Waitlist sign-up from the home page">
+                    <div class="form-row">
+                        <label for="wl-email">Email address</label>
+                        <input id="wl-email" type="email" name="entry.227649005" autocomplete="email" required>
+                    </div>
+                    <button class="btn" type="submit">Join the waitlist</button>
+                    <p class="form-note">We use your email address only to send waitlist updates, and you can ask us to remove it at any time. See our <a href="/privacy">privacy policy</a>.</p>
+                </form>
+                <p class="form-status" id="waitlist-form-status" role="status" tabindex="-1" hidden>Thank you. You are on the waitlist.</p>
+                <iframe name="waitlist-form-target" title="Waitlist form submission" hidden></iframe>
             </div>
         </section>
 
@@ -234,6 +246,6 @@
         </div>
     </footer>
 
-    <script src="/assets/js/site.js?v=1"></script>
+    <script src="/assets/js/site.js?v=2"></script>
 </body>
 </html>

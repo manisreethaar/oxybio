@@ -1,4 +1,4 @@
-// Mobile navigation toggle and contact form confirmation.
+// Mobile navigation toggle and form submission confirmation.
 (function () {
     var toggle = document.querySelector('.nav-toggle');
     var nav = document.getElementById('site-nav');
@@ -19,12 +19,13 @@
         });
     }
 
-    // The contact form posts to Google Forms through a hidden iframe so the page does not navigate away.
-    var form = document.getElementById('contact-form');
-    var frame = document.getElementById('contact-form-target');
-    var status = document.getElementById('contact-form-status');
+    // Forms marked data-gform post to Google Forms through a hidden iframe so the page does not
+    // navigate away; once the iframe loads after a submit, the form is swapped for its status message.
+    document.querySelectorAll('form[data-gform]').forEach(function (form) {
+        var frame = document.querySelector('iframe[name="' + form.target + '"]');
+        var status = document.getElementById(form.dataset.status);
+        if (!frame || !status) return;
 
-    if (form && frame && status) {
         var submitted = false;
         form.addEventListener('submit', function () {
             submitted = true;
@@ -35,5 +36,5 @@
             status.hidden = false;
             status.focus();
         });
-    }
+    });
 })();
