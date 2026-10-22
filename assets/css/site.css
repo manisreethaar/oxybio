@@ -1,13 +1,13 @@
 /* Oxygen Bioinnovations: site stylesheet
    Palette follows the company document identity: navy primary, ice blue support,
-   one accent (teal, taken from the logo). Light-first. */
+   one accent (a mid blue from the navy family). Light-first. */
 
 :root {
     --navy: #1F3864;
     --navy-deep: #152747;
     --ice: #DCE6F1;
     --ice-soft: #EEF3F9;
-    --accent: #0F6E63;
+    --accent: #2B5BB5;
     --ink: #1A2233;
     --muted: #4A5568;
     --line: #C9D5E3;
@@ -988,7 +988,7 @@ li + li {
 .hero--home::after {
     width: 28rem;
     height: 28rem;
-    background: #CFE7E2;
+    background: #D3E0F5;
     bottom: -16rem;
     right: -6rem;
     animation: drift 22s ease-in-out infinite alternate-reverse;
