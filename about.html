@@ -21,7 +21,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Source+Serif+4:opsz,wght@8..60,600&amp;display=swap">
-    <link rel="stylesheet" href="/assets/css/site.css?v=5">
+    <link rel="stylesheet" href="/assets/css/site.css?v=6">
     <script>
         if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
             document.documentElement.classList.add('js-motion');
@@ -221,26 +221,36 @@
             <div class="wrap">
                 <div class="section-head">
                     <span class="eyebrow">Team</span>
-                    <h2 id="team-heading">A team of ten.</h2>
+                    <h2 id="team-heading">The people doing the work.</h2>
                 </div>
-                <div class="grid grid--2">
-                    <article class="card person">
-                        <span class="mono" aria-hidden="true">MS</span>
-                        <div>
-                            <h3>Manisreethaar Selvaraj</h3>
-                            <p>Biotechnologist (M.Tech Nanoscience, B.Tech Biotechnology). Leads research and formulation, with a background in fermentation and bioprocess engineering.</p>
-                            <p><a href="https://www.linkedin.com/in/manisreethaar-selvaraj-07242712a" rel="noopener">LinkedIn profile</a></p>
-                        </div>
+                <dl class="team-facts">
+                    <div><dt>People</dt><dd>10</dd></div>
+                    <div><dt>Advisors</dt><dd>8</dd></div>
+                    <div><dt>Incubated at</dt><dd>TBI-DETI@ACE</dd></div>
+                </dl>
+                <div class="grid grid--4">
+                    <article class="card">
+                        <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6"/><path d="M10 3v6l-5 9a2 2 0 0 0 1.7 3h10.6a2 2 0 0 0 1.7-3l-5-9V3"/><path d="M7.5 15h9"/></svg></span>
+                        <h3>Research and formulation</h3>
+                        <p>Developing the grain base and the two formats built on it.</p>
                     </article>
-                    <article class="card person">
-                        <span class="mono" aria-hidden="true">LC</span>
-                        <div>
-                            <h3>Libinraj Christopher</h3>
-                            <p>Leads laboratory operations, technical strategy and compliance documentation.</p>
-                            <p><a href="https://www.linkedin.com/in/libin-raj-christopher-61b4b0128/" rel="noopener">LinkedIn profile</a></p>
-                        </div>
+                    <article class="card">
+                        <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h8M8 17h5"/></svg></span>
+                        <h3>Laboratory operations</h3>
+                        <p>Running experiments and characterising every batch.</p>
+                    </article>
+                    <article class="card">
+                        <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+                        <h3>Quality and documentation</h3>
+                        <p>Standard operating procedures and complete batch records.</p>
+                    </article>
+                    <article class="card">
+                        <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/></svg></span>
+                        <h3>Regulatory and compliance</h3>
+                        <p>FSSAI preparation, and the safety and testing plan.</p>
                     </article>
                 </div>
+                <p class="section-foot">Leadership profiles are shared with investors and grant bodies on request. <a class="more" href="/contact#investor">Request them</a></p>
             </div>
         </section>
 
@@ -413,6 +423,6 @@
         </div>
     </footer>
 
-    <script src="/assets/js/site.js?v=5"></script>
+    <script src="/assets/js/site.js?v=6"></script>
 </body>
 </html>
