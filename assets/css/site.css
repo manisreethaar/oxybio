@@ -632,13 +632,6 @@ li + li {
     margin-bottom: 0.25rem;
 }
 
-.person .role {
-    color: var(--accent);
-    font-weight: 600;
-    font-size: 0.95rem;
-    margin-bottom: 1rem;
-}
-
 .advisors {
     list-style: none;
     padding: 0;
