@@ -21,7 +21,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Source+Serif+4:opsz,wght@8..60,600&amp;display=swap">
-    <link rel="stylesheet" href="/assets/css/site.css?v=2">
+    <link rel="stylesheet" href="/assets/css/site.css?v=4">
+    <script>
+        if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            document.documentElement.classList.add('js-motion');
+        }
+    </script>
 
     <script>
         window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
@@ -66,21 +71,25 @@
                 <h2 id="routes-heading" class="visually-hidden">Enquiry routes</h2>
                 <div class="grid grid--2">
                     <article class="card" id="investor">
+                        <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19h16"/><path d="M6 15l4-4 3 3 5-6"/><path d="M15 8h3v3"/></svg></span>
                         <h3>Investors and grant bodies</h3>
                         <p>For the investor deck, funding discussions or grant evaluation.</p>
                         <p><a href="mailto:info@oxygenbioinnovations.com?subject=Investor%20enquiry">Email an investor enquiry</a></p>
                     </article>
                     <article class="card" id="partnerships">
+                        <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="12" r="4"/><circle cx="16" cy="12" r="4"/></svg></span>
                         <h3>Research and partnerships</h3>
                         <p>For academic collaboration, joint projects, contract research or distribution. All collaborations are governed by a formal agreement.</p>
                         <p><a href="mailto:info@oxygenbioinnovations.com?subject=Partnership%20enquiry">Email a partnership enquiry</a></p>
                     </article>
                     <article class="card">
+                        <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v10H9l-5 4z"/></svg></span>
                         <h3>General and press</h3>
                         <p>For anything else, including media enquiries and visits. Visits are by appointment only.</p>
                         <p><a href="mailto:info@oxygenbioinnovations.com">info@oxygenbioinnovations.com</a></p>
                     </article>
                     <article class="card">
+                        <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="7.5" width="17" height="12" rx="2"/><path d="M9 7.5V5.5h6v2"/><path d="M3.5 12.5h17"/></svg></span>
                         <h3>Careers</h3>
                         <p>For job and internship applications.</p>
                         <p><a href="mailto:careers@oxygenbioinnovations.com">careers@oxygenbioinnovations.com</a></p>
@@ -177,6 +186,6 @@
         </div>
     </footer>
 
-    <script src="/assets/js/site.js?v=2"></script>
+    <script src="/assets/js/site.js?v=4"></script>
 </body>
 </html>

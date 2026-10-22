@@ -21,7 +21,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Source+Serif+4:opsz,wght@8..60,600&amp;display=swap">
-    <link rel="stylesheet" href="/assets/css/site.css?v=2">
+    <link rel="stylesheet" href="/assets/css/site.css?v=4">
+    <script>
+        if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            document.documentElement.classList.add('js-motion');
+        }
+    </script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -30,7 +35,7 @@
       "alternateName": "Oxygen Bioinnovations",
       "url": "https://www.oxygenbioinnovations.com/",
       "logo": "https://www.oxygenbioinnovations.com/assets/images/logo-full.png",
-      "description": "DPIIT-recognised food biotechnology startup developing a fermented indigenous grain base. Pre-commercial research and development, incubated at TBI-DETI@ACE, Hosur.",
+      "description": "DPIIT-recognised food biotechnology startup developing a fermented base made from indigenous Indian grains. Pre-commercial research and development, incubated at TBI-DETI@ACE, Hosur.",
       "email": "info@oxygenbioinnovations.com",
       "address": {
         "@type": "PostalAddress",
@@ -80,11 +85,65 @@
             <div class="wrap">
                 <span class="eyebrow">About</span>
                 <h1>A food biotechnology company at laboratory stage.</h1>
-                <p class="lede">Oxygen Bioinnovations Private Limited was incorporated in 2026 to build everyday foods on indigenous Indian grains, with the evidence in place before the claims. We work from TBI-DETI@ACE, Hosur.</p>
+                <p class="lede">Oxygen Bioinnovations Private Limited was incorporated in 2026 to build everyday food on indigenous Indian grains, with the evidence in place before the claims.</p>
             </div>
         </section>
 
-        <section class="section" aria-labelledby="facts-heading">
+        <section class="section" aria-labelledby="story-heading">
+            <div class="wrap split">
+                <div>
+                    <span class="eyebrow">Our story</span>
+                    <h2 id="story-heading">Built from frustration.</h2>
+                </div>
+                <div class="prose">
+                    <p>The way India eats has changed faster in one generation than in the centuries before it. Much of what fills the gap is over-processed and sold on what is printed on the pack. The supply chain is built for shelf life and margin; whether the food does anything for the person eating it is rarely measured.</p>
+                    <p>We started from a simpler question: what would it take to build an everyday food whose value is measured, not asserted, and which is built on grains that have always been part of the Indian diet?</p>
+                    <p>Answering it properly meant owning the research environment. The contract manufacturers we spoke to advised simplifying the formula and using cheaper carriers. A technology business incubator gave us a laboratory, mentorship and the time to do the work slowly and in the open. That is why we are at TBI-DETI@ACE in Hosur.</p>
+                    <p><a class="more" href="/blog-origin">Read how the company started</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section--ice" aria-labelledby="direction-heading">
+            <div class="wrap">
+                <h2 id="direction-heading" class="visually-hidden">Vision and mission</h2>
+                <div class="grid grid--2 statements">
+                    <div>
+                        <span class="eyebrow">Vision</span>
+                        <p class="statement">A world where traditional Indian food knowledge and modern nutrition science point to the same answer.</p>
+                    </div>
+                    <div>
+                        <span class="eyebrow">Mission</span>
+                        <p class="statement">To build everyday foods that are honestly formulated, grounded in evidence, and priced for daily life.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="principles-heading">
+            <div class="wrap">
+                <div class="section-head">
+                    <span class="eyebrow">Principles</span>
+                    <h2 id="principles-heading">Three commitments.</h2>
+                </div>
+                <div class="grid grid--3">
+                    <article class="card">
+                        <h3>Evidence before claims.</h3>
+                        <p>Every statement has a source, and nothing is claimed before it is measured. If the evidence is weak, we say so. If we are wrong, we correct it publicly.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Respect for traditional food knowledge.</h3>
+                        <p>Indigenous grains are Indian food culture, not exotic superfoods. We cite that knowledge correctly and build on it honestly.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Negative results reported.</h3>
+                        <p>If something does not work as expected, the updates log will say so. The process matters as much as the product.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section--ice" aria-labelledby="facts-heading">
             <div class="wrap split">
                 <div>
                     <span class="eyebrow">Company</span>
@@ -98,7 +157,6 @@
                         <tr><th scope="row">Recognition</th><td>DPIIT Recognised Startup, DIPP258270</td></tr>
                         <tr><th scope="row">Incubation</th><td>TBI-DETI@ACE, Adhiyamaan College of Engineering, Hosur</td></tr>
                         <tr><th scope="row">Knowledge partner</th><td>Adhiyamaan College of Engineering (an autonomous institution)</td></tr>
-                        <tr><th scope="row">Registered office</th><td>Cabin D, DETI@ACE TBI, Adhiyamaan College of Engineering Campus, Hosur, Tamil Nadu 635130</td></tr>
                         <tr><th scope="row">Stage</th><td>Pre-revenue. Laboratory validation. No product on sale.</td></tr>
                         <tr><th scope="row">Regulatory</th><td>FSSAI licence application to be filed</td></tr>
                     </tbody>
@@ -106,108 +164,88 @@
             </div>
         </section>
 
-        <section class="section section--ice" aria-labelledby="origin-heading">
+        <section class="section" id="roadmap" aria-labelledby="roadmap-heading">
             <div class="wrap split">
                 <div>
-                    <span class="eyebrow">Why we started</span>
-                    <h2 id="origin-heading">Labels were doing the work that food should do.</h2>
-                </div>
-                <div>
-                    <p>Health drinks in India are sold on what is printed on the pack. We started from a different question: what would it take to build a daily food whose value is measured, not asserted, and which is built on grains that have always been part of the Indian diet?</p>
-                    <p>There is a Tamil phrase, <span lang="ta">உணவே மருந்து</span> (<i>unave marundhu</i>), that is usually translated as "food is medicine". We take it as a reason to do the science properly, not as a claim.</p>
-                    <p><a href="/blog-origin">Read how the company started</a></p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" aria-labelledby="principles-heading">
-            <div class="wrap">
-                <div class="section-head">
-                    <span class="eyebrow">Principles</span>
-                    <h2 id="principles-heading">Three commitments.</h2>
-                </div>
-                <div class="grid grid--3">
-                    <article class="card">
-                        <h3>We will not publish a claim we cannot support.</h3>
-                        <p>Every statement has a source. If the evidence is weak, we say so. If we are wrong, we correct it publicly.</p>
-                    </article>
-                    <article class="card">
-                        <h3>We respect traditional Indian food knowledge.</h3>
-                        <p>Indigenous grains are Indian food culture, not exotic superfoods. We cite that knowledge correctly and build on it honestly.</p>
-                    </article>
-                    <article class="card">
-                        <h3>We report negative results.</h3>
-                        <p>If something does not work as expected, the updates log will say so. The process matters as much as the product.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section--ice" id="roadmap" aria-labelledby="roadmap-heading">
-            <div class="wrap">
-                <div class="section-head">
                     <span class="eyebrow">Roadmap</span>
                     <h2 id="roadmap-heading">Where we are.</h2>
-                    <p>Each stage gates the next. Nothing is sold before the last one.</p>
+                    <p class="muted">Each stage gates the next. Nothing is sold before the last one.</p>
                 </div>
-                <ol class="timeline">
-                    <li class="is-done">
-                        <span class="tag">Complete</span>
-                        <h3>Problem analysis</h3>
-                        <p>Review of national nutrition datasets, including NFHS-5, ICMR and WHO India sources, to define the gap the work addresses.</p>
-                    </li>
-                    <li class="is-done">
-                        <span class="tag">Complete</span>
-                        <h3>Product concept</h3>
-                        <p>A fermented indigenous grain base, reconstituted in milk or carbonated water.</p>
-                    </li>
-                    <li class="is-current">
-                        <span class="tag">Current, since April 2026</span>
-                        <h3>Phase 0: laboratory validation</h3>
-                        <p>Development and characterisation of the grain base at TBI-DETI@ACE, Hosur.</p>
-                    </li>
-                    <li>
-                        <span class="tag">Next</span>
-                        <h3>Prototype development</h3>
-                        <p>Laboratory-scale batches of each format, with multiple iterations expected.</p>
-                    </li>
-                    <li>
-                        <span class="tag">Later</span>
-                        <h3>Testing and licensing</h3>
-                        <p>Sensory evaluation, shelf-life studies, accredited third-party safety testing and the FSSAI licence application.</p>
-                    </li>
-                    <li>
-                        <span class="tag">Later</span>
-                        <h3>Pilot production and launch</h3>
-                        <p>Only after an FSSAI licence is granted.</p>
-                    </li>
-                </ol>
+                <div>
+                    <ol class="timeline">
+                        <li class="is-done">
+                            <span class="tag">Complete</span>
+                            <h3>Problem analysis</h3>
+                            <p>Review of national nutrition datasets, including NFHS-5, ICMR and WHO India sources, to define the gap the work addresses.</p>
+                        </li>
+                        <li class="is-done">
+                            <span class="tag">Complete</span>
+                            <h3>Product concept</h3>
+                            <p>A fermented base made from indigenous Indian grains, developed in two formats.</p>
+                        </li>
+                        <li class="is-current">
+                            <span class="tag">Current</span>
+                            <h3>Phase 0: laboratory validation</h3>
+                            <p>Development and characterisation of the base at TBI-DETI@ACE, Hosur.</p>
+                        </li>
+                        <li>
+                            <span class="tag">Next</span>
+                            <h3>Prototype development</h3>
+                            <p>Laboratory-scale batches of each format, with several iterations expected.</p>
+                        </li>
+                        <li>
+                            <span class="tag">Later</span>
+                            <h3>Testing and licensing</h3>
+                            <p>Sensory evaluation, shelf-life studies, accredited third-party safety testing and the FSSAI licence application.</p>
+                        </li>
+                        <li>
+                            <span class="tag">Later</span>
+                            <h3>Pilot production and launch</h3>
+                            <p>Only after an FSSAI licence is granted.</p>
+                        </li>
+                    </ol>
+                    <div class="log">
+                        <h3>Activity log</h3>
+                        <table class="facts">
+                            <caption class="visually-hidden">Research activity log</caption>
+                            <tbody>
+                                <tr><th scope="row"><time datetime="2026-04">April 2026</time></th><td>Phase 0 laboratory validation commenced at TBI-DETI@ACE.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="section" aria-labelledby="team-heading">
+        <section class="section section--ice" aria-labelledby="team-heading">
             <div class="wrap">
                 <div class="section-head">
                     <span class="eyebrow">Team</span>
-                    <h2 id="team-heading">The people doing the work.</h2>
+                    <h2 id="team-heading">A team of ten.</h2>
+                    <p>Working from TBI-DETI@ACE, Hosur.</p>
                 </div>
                 <div class="grid grid--2">
                     <article class="card person">
-                        <h3>Manisreethaar Selvaraj</h3>
-                        <p>Biotechnologist (M.Tech Nanoscience, B.Tech Biotechnology). Leads research and formulation, with a background in fermentation and bioprocess engineering.</p>
-                        <p><a href="https://www.linkedin.com/in/manisreethaar-selvaraj-07242712a" rel="noopener">LinkedIn profile</a></p>
+                        <span class="mono" aria-hidden="true">MS</span>
+                        <div>
+                            <h3>Manisreethaar Selvaraj</h3>
+                            <p>Biotechnologist (M.Tech Nanoscience, B.Tech Biotechnology). Leads research and formulation, with a background in fermentation and bioprocess engineering.</p>
+                            <p><a href="https://www.linkedin.com/in/manisreethaar-selvaraj-07242712a" rel="noopener">LinkedIn profile</a></p>
+                        </div>
                     </article>
                     <article class="card person">
-                        <h3>Libinraj Christopher</h3>
-                        <p>Leads laboratory operations, technical strategy and compliance documentation.</p>
-                        <p><a href="https://www.linkedin.com/in/libin-raj-christopher-61b4b0128/" rel="noopener">LinkedIn profile</a></p>
+                        <span class="mono" aria-hidden="true">LC</span>
+                        <div>
+                            <h3>Libinraj Christopher</h3>
+                            <p>Leads laboratory operations, technical strategy and compliance documentation.</p>
+                            <p><a href="https://www.linkedin.com/in/libin-raj-christopher-61b4b0128/" rel="noopener">LinkedIn profile</a></p>
+                        </div>
                     </article>
                 </div>
-                <p style="margin-top:2rem">We are a team of ten, working from TBI-DETI@ACE, Hosur.</p>
             </div>
         </section>
 
-        <section class="section section--ice" aria-labelledby="advisors-heading">
+        <section class="section" aria-labelledby="advisors-heading">
             <div class="wrap">
                 <div class="section-head">
                     <span class="eyebrow">Advisors</span>
@@ -232,7 +270,7 @@
                         <span>Commercial bioprocessing</span>
                     </li>
                 </ul>
-                <h3 style="margin-top:2.5rem">Academic and research</h3>
+                <h3 class="advisors-title">Academic and research</h3>
                 <ul class="advisors">
                     <li>
                         <strong><a href="https://www.linkedin.com/in/dr-ing-suresh-babu-palanisamy-697b55109/" rel="noopener">Dr. P. Suresh Babu</a></strong>
@@ -270,16 +308,26 @@
                     <h2 id="investors-heading">Funding the validation stage.</h2>
                     <p>We are seeking non-dilutive grant funding and strategic seed investment to complete Phase 0 validation.</p>
                 </div>
-                <div class="grid grid--2">
+                <div class="grid grid--3 investor-cols">
                     <div>
                         <h3>Market context</h3>
                         <p>India's functional beverages market was valued at USD 6.9 billion in 2025, with a projected compound annual growth rate of 10.74% from 2026 to 2034.</p>
-                        <p class="source" style="color:var(--ice)">Source: IMARC Group, India Functional Beverages Market report.</p>
+                        <p class="source">Source: IMARC Group, India Functional Beverages Market report.</p>
+                    </div>
+                    <div>
+                        <h3>Route to market</h3>
+                        <ol class="steps">
+                            <li>Our own website and community</li>
+                            <li>Quick-commerce apps</li>
+                            <li>Institutions: campuses, gyms and co-working spaces</li>
+                            <li>Online marketplaces</li>
+                        </ol>
+                        <p class="source">All commercial activity follows the FSSAI licence.</p>
                     </div>
                     <div>
                         <h3>What the capital funds</h3>
                         <ul class="checklist">
-                            <li>Accredited third-party testing of the base and formats</li>
+                            <li>Accredited third-party testing</li>
                             <li>Regulatory licensing</li>
                             <li>Shelf-life studies and pilot batches</li>
                             <li>Laboratory operations and the research team</li>
@@ -330,6 +378,6 @@
         </div>
     </footer>
 
-    <script src="/assets/js/site.js?v=2"></script>
+    <script src="/assets/js/site.js?v=4"></script>
 </body>
 </html>

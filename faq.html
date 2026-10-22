@@ -21,7 +21,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Source+Serif+4:opsz,wght@8..60,600&amp;display=swap">
-    <link rel="stylesheet" href="/assets/css/site.css?v=2">
+    <link rel="stylesheet" href="/assets/css/site.css?v=4">
+    <script>
+        if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            document.documentElement.classList.add('js-motion');
+        }
+    </script>
 
     <script>
         window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
@@ -57,7 +62,7 @@
             <div class="wrap">
                 <span class="eyebrow">FAQ</span>
                 <h1>Questions, answered plainly.</h1>
-                <p class="lede">About the company, the product, working here, and investing or collaborating with us.</p>
+                <p class="lede">Short answers, with links to the page that has the detail.</p>
             </div>
         </section>
 
@@ -67,102 +72,94 @@
                     <h2>The company</h2>
                     <details>
                         <summary>What is Oxygen Bioinnovations?</summary>
-                        <p>A food biotechnology research and development startup based at TBI-DETI@ACE, Adhiyamaan College of Engineering, Hosur, Tamil Nadu. We are developing a fermented base made from indigenous Indian grains for everyday drinks.</p>
+                        <p>A food biotechnology research and development startup at TBI-DETI@ACE, Adhiyamaan College of Engineering, Hosur, developing a fermented base made from indigenous Indian grains. <a href="/about">More about us</a>.</p>
                     </details>
                     <details>
                         <summary>Are you a product company or a research company?</summary>
-                        <p>Both, by design. We are at research and development stage today, and everything we research is intended to reach people as real products once it has been validated and licensed.</p>
+                        <p>Both, by design. We are at research and development stage today, and what we research is intended to reach people as products once it has been validated and licensed.</p>
                     </details>
                     <details>
                         <summary>Are you a registered company?</summary>
-                        <p>Yes. Oxygen Bioinnovations Private Limited is incorporated under the Companies Act, 2013 (CIN U72100TZ2026PTC038160) and is a DPIIT Recognised Startup (DIPP258270). We are incubated at TBI-DETI@ACE, Adhiyamaan College of Engineering, Hosur.</p>
+                        <p>Yes. Oxygen Bioinnovations Private Limited is incorporated under the Companies Act, 2013, and is a DPIIT Recognised Startup. Registration details are on the <a href="/about">about page</a>.</p>
                     </details>
                     <details>
-                        <summary>Where are you located? Can I visit?</summary>
-                        <p>We operate from TBI-DETI@ACE on the Adhiyamaan College of Engineering campus in Hosur. Visits are by appointment only: write to <a href="mailto:info@oxygenbioinnovations.com">info@oxygenbioinnovations.com</a> with the purpose of your visit.</p>
+                        <summary>Can I visit?</summary>
+                        <p>Visits are by appointment only. <a href="/contact">Write to us</a> with the purpose of your visit.</p>
                     </details>
                 </div>
                 <div class="faq-group" id="product">
                     <h2>The product</h2>
                     <details>
                         <summary>What are you making?</summary>
-                        <p>A fermented powder made from indigenous Indian grains, designed to be reconstituted in milk or in carbonated water. Both formats are in development. See the <a href="/platform">platform page</a>.</p>
+                        <p>A fermented base made from indigenous Indian grains, in development in two formats. See the <a href="/platform">platform page</a>.</p>
                     </details>
                     <details>
                         <summary>Can I buy it?</summary>
-                        <p>No. Nothing is for sale. We will not sell any product until an FSSAI licence has been granted; the application is to be filed. You can <a href="/#waitlist">join the waitlist</a> to hear when there is news.</p>
+                        <p>No. Nothing will be sold until an FSSAI licence has been granted, and the application is to be filed. <a href="/#waitlist">Join the waitlist</a> to hear when there is news.</p>
                     </details>
                     <details>
                         <summary>Do your products have proven health benefits?</summary>
-                        <p>No product claims have been made or evaluated. What we are investigating is listed on the <a href="/platform">platform page</a>, and results will be reported on the <a href="/updates">updates page</a> as they are measured.</p>
+                        <p>No product claims have been made or evaluated. What we are investigating is listed on the <a href="/platform">platform page</a>, and results will be reported on the <a href="/updates">updates page</a>.</p>
                     </details>
                 </div>
                 <div class="faq-group" id="working">
                     <h2>Working here</h2>
                     <details>
-                        <summary>What does a Research Associate actually do?</summary>
-                        <p>Designs and runs laboratory experiments, develops and tests formulations, analyses data, keeps research documentation, reads the literature, and contributes directly to product decisions. There is no layer of bureaucracy between the bench and the business.</p>
+                        <summary>What does a Research Associate do?</summary>
+                        <p>Designs and runs laboratory experiments, develops and tests formulations, analyses data, keeps research documentation and contributes directly to product decisions. Details of current roles are on the <a href="/careers">careers page</a>.</p>
                     </details>
                     <details>
                         <summary>What qualifications do you look for?</summary>
-                        <p>A background in Biotechnology, Microbiology, Food Science, Biochemistry or a related life science. Beyond that: curiosity, the ability to work independently, comfort with ambiguity, willingness to learn across disciplines, and integrity in your work.</p>
+                        <p>A background in Biotechnology, Microbiology, Food Science, Biochemistry or a related life science, plus curiosity, independence, comfort with ambiguity and integrity in your work.</p>
                     </details>
                     <details>
                         <summary>Is my job secure at a startup?</summary>
-                        <p>An early-stage startup carries more uncertainty than an established company, and we will not pretend otherwise. We are building with long-term intent, are backed by a technology business incubator, and are actively pursuing grants and investment.</p>
+                        <p>An early-stage startup carries more uncertainty than an established company, and we will not pretend otherwise. We are building with long-term intent, backed by a technology business incubator, and actively pursuing grants and investment.</p>
                     </details>
                     <details>
                         <summary>How do I apply?</summary>
-                        <p>Send your CV and a short note (three to five sentences) on why you want to work here specifically to <a href="mailto:careers@oxygenbioinnovations.com">careers@oxygenbioinnovations.com</a>. Applications that show no awareness of our work are not shortlisted.</p>
+                        <p>By email, as described on the <a href="/careers">careers page</a>.</p>
                     </details>
                 </div>
                 <div class="faq-group" id="internships">
                     <h2>Internships</h2>
                     <details>
-                        <summary>Who can apply for an internship?</summary>
-                        <p>Undergraduate and postgraduate students in Biotechnology, Microbiology, Food Science, Biochemistry or related fields, from any Indian college or university. Internships run from one to six months.</p>
-                    </details>
-                    <details>
-                        <summary>Are internships paid?</summary>
-                        <p>Paid internships are offered to students contributing to active research for three to six months; the stipend is discussed at selection. Shorter or academic-project internships are unpaid and include a completion certificate, a work experience letter and a recommendation letter. We never charge a fee for an internship.</p>
+                        <summary>Who can apply, and are internships paid?</summary>
+                        <p>Undergraduate and postgraduate students in related fields, for one to six months. Longer research internships are paid. Eligibility and terms are on the <a href="/careers">careers page</a>. We never charge a fee for an internship.</p>
                     </details>
                     <details>
                         <summary>What will I learn?</summary>
                         <p>Hands-on laboratory work from the first week: experiment design, formulation development, stability testing, documentation and literature review, with direct, hands-on mentorship.</p>
                     </details>
                 </div>
-                <div class="faq-group" id="pay">
+                <div class="faq-group" id="culture">
                     <h2>Pay and culture</h2>
                     <details>
-                        <summary>What is the salary for research positions?</summary>
-                        <p>Competitive for an incubator-stage startup, not comparable to a large established company. Specific pay is discussed individually; the most recent Research Associate role was advertised at &#8377;18,000 to &#8377;25,000 per month. We also offer direct mentorship and the chance to co-author research outputs.</p>
-                    </details>
-                    <details>
-                        <summary>When is salary paid?</summary>
-                        <p>On or before the fifth working day of the following month, by bank transfer, with a monthly pay slip. Intern stipends follow the same schedule.</p>
+                        <summary>What are pay and leave like?</summary>
+                        <p>Pay is competitive for an incubator-stage startup and paid by the fifth working day of the following month. The full leave policy, including cycle leave, is on the <a href="/careers">careers page</a>.</p>
                     </details>
                     <details>
                         <summary>What is the culture like?</summary>
-                        <p>Curious, rigorous and honest. Everyone is expected to question and contribute; if an experiment is designed badly, say so. Data integrity is not negotiable. Startups are demanding, but we will never create stress through poor management or unclear expectations.</p>
+                        <p>Curious, rigorous and honest. Everyone is expected to question and contribute; if an experiment is designed badly, say so. Data integrity is not negotiable.</p>
                     </details>
                     <details>
                         <summary>What is your policy on workplace harassment?</summary>
-                        <p>Zero tolerance. We comply with the POSH Act, have clear grievance procedures, and handle every complaint confidentially. Leave and working hours are set out on the <a href="/careers">careers page</a>.</p>
+                        <p>Zero tolerance. We comply with the POSH Act, have clear grievance procedures, and handle every complaint confidentially.</p>
                     </details>
                 </div>
                 <div class="faq-group" id="invest">
                     <h2>Investment and collaboration</h2>
                     <details>
                         <summary>Are you open to investment?</summary>
-                        <p>Yes. We are seeking non-dilutive grant funding and strategic seed investment, particularly from investors who understand deep-tech and research-led timelines. See the <a href="/about#investors">investor section</a> or <a href="/contact#investor">get in touch</a>.</p>
+                        <p>Yes, particularly from investors who understand research-led timelines. See the <a href="/about#investors">investor section</a>.</p>
                     </details>
                     <details>
                         <summary>Can we collaborate on research?</summary>
-                        <p>Yes, with universities, research institutions and complementary companies. All collaborations are governed by a formal MOU or collaboration agreement. <a href="/contact#partnerships">Start a conversation</a>.</p>
+                        <p>Yes, with universities, research institutions and complementary companies, under a formal agreement. <a href="/contact#partnerships">Start a conversation</a>.</p>
                     </details>
                     <details>
                         <summary>Do you offer contract research?</summary>
-                        <p>Yes, in functional food formulation and food process development. Write to <a href="mailto:info@oxygenbioinnovations.com">info@oxygenbioinnovations.com</a> with your requirements.</p>
+                        <p>Yes, in functional food formulation and food process development. <a href="/contact">Tell us what you need</a>.</p>
                     </details>
                 </div>
                 <p>Still have a question? <a href="/contact">Write to us</a>. You will get a reply from a person.</p>
@@ -207,6 +204,6 @@
         </div>
     </footer>
 
-    <script src="/assets/js/site.js?v=2"></script>
+    <script src="/assets/js/site.js?v=4"></script>
 </body>
 </html>

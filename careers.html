@@ -21,7 +21,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Source+Serif+4:opsz,wght@8..60,600&amp;display=swap">
-    <link rel="stylesheet" href="/assets/css/site.css?v=2">
+    <link rel="stylesheet" href="/assets/css/site.css?v=4">
+    <script>
+        if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            document.documentElement.classList.add('js-motion');
+        }
+    </script>
 
     <script>
         window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
@@ -78,7 +83,7 @@
                     <article class="card">
                         <span class="tag">Open</span>
                         <h3>Research internships</h3>
-                        <p>For undergraduate and postgraduate students in Biotechnology, Microbiology, Food Science, Biochemistry or related fields, from any Indian college or university. One to six months, depending on your academic requirement and our project needs.</p>
+                        <p>For undergraduate and postgraduate students in Biotechnology, Microbiology, Food Science, Biochemistry or related fields, from any Indian college or university. One to six months.</p>
                         <p>Paid internships are offered for students contributing to active research over three to six months; the stipend is discussed at selection. Shorter or academic-project internships are unpaid and include a completion certificate, a work experience letter and a recommendation letter.</p>
                         <p><strong>We never charge a fee for an internship.</strong> Anyone asking you to pay is not authorised by us.</p>
                     </article>
@@ -86,17 +91,16 @@
             </div>
         </section>
 
-        <section class="section section--ice" aria-labelledby="apply-heading">
+        <section class="section section--ice" aria-labelledby="cycle-heading">
             <div class="wrap split">
                 <div>
-                    <span class="eyebrow">How to apply</span>
-                    <h2 id="apply-heading">Send a CV and a short note.</h2>
+                    <span class="eyebrow">Cycle leave</span>
+                    <h2 id="cycle-heading">One day a month. No questions.</h2>
                 </div>
-                <div>
-                    <p>Email your CV with three to five sentences on why you want to work here specifically. Generic cover letters are not shortlisted, and neither are applications that show no awareness of what we do. For internships, include your college, degree, year of passing and the dates you are available.</p>
-                    <div class="actions">
-                        <a class="btn" href="mailto:careers@oxygenbioinnovations.com?subject=Application">careers@oxygenbioinnovations.com</a>
-                    </div>
+                <div class="prose">
+                    <p>Every woman on the team can take one day off each month for menstrual health. No certificate, no explanation, no awkward conversation: a short message is enough.</p>
+                    <p>No one at the company may question, discourage or comment on this leave. It is a right, not a favour.</p>
+                    <p>We are a science company and we follow the evidence: supporting menstrual health supports wellbeing, productivity and trust.</p>
                 </div>
             </div>
         </section>
@@ -105,7 +109,7 @@
             <div class="wrap">
                 <div class="section-head">
                     <span class="eyebrow">Working here</span>
-                    <h2 id="working-heading">What we offer, plainly.</h2>
+                    <h2 id="working-heading">Leave, hours and pay.</h2>
                 </div>
                 <div class="split">
                     <div>
@@ -119,7 +123,7 @@
                         <tbody>
                             <tr><th scope="row">Casual leave</th><td>8 days a year, pro-rated from your joining month. Half-day and one-hour short permission available.</td></tr>
                             <tr><th scope="row">Sick leave</th><td>8 days a year. No certificate needed for one or two days.</td></tr>
-                            <tr><th scope="row">Cycle leave</th><td>1 day a month for every woman on the team. No certificate, no questions.</td></tr>
+                            <tr><th scope="row">Cycle leave</th><td>1 day a month, as above.</td></tr>
                             <tr><th scope="row">Maternity leave</th><td>26 weeks, fully paid. Job, seniority and salary protected.</td></tr>
                             <tr><th scope="row">Paternity leave</th><td>5 days paid, on the birth or adoption of a child.</td></tr>
                             <tr><th scope="row">Public holidays</th><td>All Tamil Nadu Government notified public holidays. The list is shared every January.</td></tr>
@@ -136,10 +140,25 @@
                     <span class="eyebrow">An honest note</span>
                     <h2 id="honest-heading">Where we are as an employer.</h2>
                 </div>
-                <div>
+                <div class="prose">
                     <p>We are an early-stage startup, and that carries more uncertainty than an established company. Earned leave is not in our policy today; we will add it as we grow and give 30 days' notice when we do.</p>
                     <p>What we can offer now: direct mentorship, real ownership of your work, and your name on the research you contribute to.</p>
-                    <p>We have zero tolerance for harassment, comply with the POSH Act, and handle every complaint confidentially. Questions about working here are answered in the <a href="/faq">FAQ</a>.</p>
+                    <p>We have zero tolerance for harassment, comply with the POSH Act, and handle every complaint confidentially.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section--navy" aria-labelledby="apply-heading">
+            <div class="wrap split">
+                <div>
+                    <span class="eyebrow">How to apply</span>
+                    <h2 id="apply-heading">Send a CV and a short note.</h2>
+                </div>
+                <div>
+                    <p>Email your CV with three to five sentences on why you want to work here specifically. Generic cover letters are not shortlisted, and neither are applications that show no awareness of what we do. For internships, include your college, degree, year of passing and the dates you are available.</p>
+                    <div class="actions">
+                        <a class="btn" href="mailto:careers@oxygenbioinnovations.com?subject=Application">careers@oxygenbioinnovations.com</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -182,6 +201,6 @@
         </div>
     </footer>
 
-    <script src="/assets/js/site.js?v=2"></script>
+    <script src="/assets/js/site.js?v=4"></script>
 </body>
 </html>
