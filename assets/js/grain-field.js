@@ -9,6 +9,7 @@
     }
 
     function GrainField(canvas, options) {
+        this.palette = (options && options.palette) || PALETTE;
         this.canvas = canvas;
         this.ctx = canvas.getContext('2d');
         this.options = options || {};
@@ -50,7 +51,7 @@
                 rot: rand(0, Math.PI),
                 spin: rand(-0.01, 0.01),
                 phase: rand(0, Math.PI * 2),
-                color: Math.floor(Math.random() * PALETTE.length),
+                color: Math.floor(Math.random() * this.palette.length),
                 alpha: rand(0.45, 0.95)
             });
         }
@@ -147,8 +148,8 @@
     GrainField.prototype.draw = function () {
         var ctx = this.ctx;
         ctx.clearRect(0, 0, this.width, this.height);
-        for (var c = 0; c < PALETTE.length; c++) {
-            ctx.fillStyle = PALETTE[c];
+        for (var c = 0; c < this.palette.length; c++) {
+            ctx.fillStyle = this.palette[c];
             for (var pass = 0; pass < 2; pass++) {
                 ctx.globalAlpha = pass ? 0.9 : 0.55;
                 ctx.beginPath();
@@ -274,6 +275,40 @@
                 return pts;
             };
         }
+    };
+
+    // Grains that spell out a short piece of text, sampled from an offscreen render.
+    Shapes.text = function (text, fontFamily) {
+        return function (n, w, h) {
+            var off = document.createElement('canvas');
+            off.width = Math.max(1, Math.round(w));
+            off.height = Math.max(1, Math.round(h));
+            var c = off.getContext('2d');
+            var size = h * 0.78;
+            c.font = '600 ' + size + 'px ' + fontFamily;
+            while (c.measureText(text).width > w * 0.9 && size > 10) {
+                size *= 0.92;
+                c.font = '600 ' + size + 'px ' + fontFamily;
+            }
+            c.textAlign = 'center';
+            c.textBaseline = 'middle';
+            c.fillStyle = '#000';
+            c.fillText(text, w / 2, h / 2 + size * 0.04);
+            var data = c.getImageData(0, 0, off.width, off.height).data;
+            var hits = [];
+            var step = Math.max(2, Math.round(size / 60));
+            for (var y = 0; y < off.height; y += step) {
+                for (var x = 0; x < off.width; x += step) {
+                    if (data[(y * off.width + x) * 4 + 3] > 128) hits.push({ x: x, y: y });
+                }
+            }
+            var pts = [];
+            for (var i = 0; i < n; i++) {
+                var p = hits.length ? hits[Math.floor(Math.random() * hits.length)] : { x: w / 2, y: h / 2 };
+                pts.push({ x: p.x + rand(-step, step) * 0.6, y: p.y + rand(-step, step) * 0.6 });
+            }
+            return pts;
+        };
     };
 
     window.GrainField = GrainField;
