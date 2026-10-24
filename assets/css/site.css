@@ -1115,6 +1115,8 @@ li + li {
     left: 3.75rem;
     right: -1.75rem;
     border-top: 2px dashed #9FB3CF;
+    transform: scaleX(var(--connector, 1));
+    transform-origin: left;
 }
 
 @media (max-width: 760px) {
@@ -1578,7 +1580,8 @@ html.curtain-in::after {
 }
 
 .hero-mark img {
-    width: 100%;
+    width: 76%;
+    margin: 0 auto;
     filter: drop-shadow(0 0 18px rgba(169, 192, 227, 0.6));
 }
 
@@ -1901,4 +1904,102 @@ html.cursor-away .cursor-ring {
     .scroll-cue {
         display: none;
     }
+}
+
+/* ===================== Page scenes ===================== */
+
+/* Inner-page heroes share the dark grain field */
+.hero--inner {
+    min-height: min(72svh, 660px);
+}
+
+.hero--inner h1 {
+    font-size: clamp(2.4rem, 5.6vw, 4.4rem);
+    max-width: 18ch;
+}
+
+.hero--field a:not(.btn) {
+    color: var(--white);
+}
+
+.hero--field .post-meta {
+    color: #A9C0E3;
+}
+
+/* Grains that assemble into a figure */
+.grain-number {
+    position: relative;
+    height: clamp(170px, 22vw, 250px);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 1.25rem;
+    background:
+        radial-gradient(28rem 16rem at 50% 50%, rgba(43, 91, 181, 0.35), transparent 70%),
+        var(--navy-deep);
+}
+
+.grain-number .value {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: clamp(3.5rem, 9vw, 6rem);
+    transition: opacity 0.4s ease;
+}
+
+.grain-number.is-drawn .value {
+    opacity: 0;
+}
+
+.figure-stat--grain {
+    border-left: 0;
+    padding-left: 0;
+}
+
+/* Roadmap stages light up as the line reaches them */
+.has-gsap .timeline:not(.timeline--mini) li::before {
+    transform: scale(0.55);
+    transition: transform 0.45s cubic-bezier(0.3, 1.6, 0.5, 1), background-color 0.3s ease;
+}
+
+.has-gsap .timeline:not(.timeline--mini) li.is-lit::before {
+    transform: scale(1);
+}
+
+/* Checklists tick in one by one */
+.has-gsap .checklist li {
+    opacity: 0.35;
+    transition: opacity 0.5s ease;
+}
+
+.has-gsap .checklist li::before {
+    transform: scale(0);
+    transition: transform 0.45s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+
+.has-gsap .checklist li.is-ticked {
+    opacity: 1;
+}
+
+.has-gsap .checklist li.is-ticked::before {
+    transform: scale(1);
+}
+
+.big-statement--sm {
+    font-size: clamp(1.4rem, 2.6vw, 2.1rem);
+    max-width: 34ch;
+    margin-bottom: 1.5rem;
+}
+
+.has-gsap :is(.card, .advisor, .facts, .team-facts) {
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+/* Text over grain fields: a soft dark halo keeps every word readable */
+.hero--field :is(h1, .lede, .eyebrow, .post-meta, figcaption),
+.scene :is(h2, .eyebrow, .step-word, .scene-steps p, .scene-link) {
+    text-shadow: 0 0 18px rgba(21, 39, 71, 0.95), 0 0 6px rgba(21, 39, 71, 0.9);
 }

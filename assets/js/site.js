@@ -87,7 +87,13 @@
                 observer.unobserve(el);
             });
         }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+        // When GSAP drives cards, advisors and tables, show them here and let it animate them.
+        var gsapOwned = root.classList.contains('has-gsap') ? '.card, .advisor, .facts, .team-facts' : '';
         document.querySelectorAll(selector).forEach(function (el) {
+            if (gsapOwned && el.matches(gsapOwned)) {
+                el.classList.add('is-in');
+                return;
+            }
             observer.observe(el);
         });
     }

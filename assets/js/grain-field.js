@@ -9,6 +9,7 @@
     }
 
     function GrainField(canvas, options) {
+        this.palette = (options && options.palette) || PALETTE;
         this.canvas = canvas;
         this.ctx = canvas.getContext('2d');
         this.options = options || {};
@@ -50,12 +51,68 @@
                 rot: rand(0, Math.PI),
                 spin: rand(-0.01, 0.01),
                 phase: rand(0, Math.PI * 2),
-                color: Math.floor(Math.random() * PALETTE.length),
+                color: Math.floor(Math.random() * this.palette.length),
                 alpha: rand(0.45, 0.95)
             });
         }
         this.particles.length = n;
+        if (this.options.keepOut) this.computeZones();
         if (this.shapeBuilders) this.buildShapes();
+    };
+
+    // Keep-clear zones: one padded rectangle per line of text in the given elements, so grains
+    // flow around words instead of across them.
+    GrainField.prototype.computeZones = function () {
+        var get = this.options.keepOut;
+        var els = typeof get === 'function' ? get() : (get || []);
+        var c = this.canvas.getBoundingClientRect();
+        var pad = this.options.keepPad || 22;
+        var zones = [];
+        Array.prototype.forEach.call(els, function (el) {
+            if (!el || !el.getClientRects) return;
+            var range = document.createRange();
+            range.selectNodeContents(el);
+            var rects = Array.prototype.slice.call(range.getClientRects());
+            if (!rects.length) rects = Array.prototype.slice.call(el.getClientRects());
+            // Merge fragments that sit on the same line into one box per line.
+            var lines = [];
+            rects.forEach(function (r) {
+                if (r.width < 1 || r.height < 1) return;
+                var line = lines.find(function (l) { return Math.abs(l.top - r.top) < r.height * 0.6; });
+                if (line) {
+                    line.left = Math.min(line.left, r.left);
+                    line.right = Math.max(line.right, r.right);
+                    line.top = Math.min(line.top, r.top);
+                    line.bottom = Math.max(line.bottom, r.bottom);
+                } else {
+                    lines.push({ left: r.left, right: r.right, top: r.top, bottom: r.bottom });
+                }
+            });
+            lines.forEach(function (l) {
+                zones.push({
+                    x0: l.left - c.left - pad, y0: l.top - c.top - pad,
+                    x1: l.right - c.left + pad, y1: l.bottom - c.top + pad
+                });
+            });
+        });
+        this.zones = zones;
+    };
+
+    GrainField.prototype.zoneAt = function (x, y) {
+        var zs = this.zones;
+        if (!zs) return null;
+        for (var i = 0; i < zs.length; i++) {
+            var z = zs[i];
+            if (x > z.x0 && x < z.x1 && y > z.y0 && y < z.y1) return z;
+        }
+        return null;
+    };
+
+    // Recompute zones and shapes after layout changes (fonts loading, resizing).
+    GrainField.prototype.refresh = function () {
+        this.computeZones();
+        if (this.shapeBuilders) this.buildShapes();
+        if (!this.running) this.still();
     };
 
     // Each builder returns an array of {x, y} for n particles at the current size.
@@ -67,8 +124,18 @@
     GrainField.prototype.buildShapes = function () {
         var self = this;
         var n = this.particles.length;
+        if (this.options.keepOut && !this.zones) this.computeZones();
         this.shapes = this.shapeBuilders.map(function (build) {
-            return build(n, self.width, self.height);
+            var pts = build(n, self.width, self.height);
+            if (self.zones && self.zones.length) {
+                for (var i = 0; i < pts.length; i++) {
+                    var tries = 0;
+                    while (self.zoneAt(pts[i].x, pts[i].y) && tries++ < 40) {
+                        pts[i] = { x: rand(0, self.width), y: rand(0, self.height) };
+                    }
+                }
+            }
+            return pts;
         });
     };
 
@@ -123,6 +190,13 @@
         for (var i = 0; i < this.particles.length; i++) {
             var p = this.particles[i];
             var tgt = this.targetFor(i);
+            // Mid-morph paths can cross text; slide such targets to the nearest edge of the zone.
+            var tz = tgt && this.zones && this.zones.length ? this.zoneAt(tgt.x, tgt.y) : null;
+            if (tz) {
+                var dl = tgt.x - tz.x0, dr = tz.x1 - tgt.x, dt = tgt.y - tz.y0, db = tz.y1 - tgt.y;
+                var dm = Math.min(dl, dr, dt, db);
+                if (dm === dl) tgt.x = tz.x0 - 2; else if (dm === dr) tgt.x = tz.x1 + 2; else if (dm === dt) tgt.y = tz.y0 - 2; else tgt.y = tz.y1 + 2;
+            }
             if (tgt) {
                 var bx = Math.sin(this.time * 0.9 + p.phase) * 1.6;
                 var by = Math.cos(this.time * 0.7 + p.phase) * 1.6;
@@ -136,6 +210,12 @@
                 p.vx += (dx / d) * f;
                 p.vy += (dy / d) * f;
             }
+            var z = this.zones && this.zones.length ? this.zoneAt(p.x, p.y) : null;
+            if (z) {
+                var l = p.x - z.x0, r = z.x1 - p.x, t = p.y - z.y0, b = z.y1 - p.y;
+                var m = Math.min(l, r, t, b);
+                if (m === l) p.vx -= 2.4; else if (m === r) p.vx += 2.4; else if (m === t) p.vy -= 2.4; else p.vy += 2.4;
+            }
             p.vx *= 0.82;
             p.vy *= 0.82;
             p.x += p.vx;
@@ -147,8 +227,8 @@
     GrainField.prototype.draw = function () {
         var ctx = this.ctx;
         ctx.clearRect(0, 0, this.width, this.height);
-        for (var c = 0; c < PALETTE.length; c++) {
-            ctx.fillStyle = PALETTE[c];
+        for (var c = 0; c < this.palette.length; c++) {
+            ctx.fillStyle = this.palette[c];
             for (var pass = 0; pass < 2; pass++) {
                 ctx.globalAlpha = pass ? 0.9 : 0.55;
                 ctx.beginPath();
@@ -274,6 +354,40 @@
                 return pts;
             };
         }
+    };
+
+    // Grains that spell out a short piece of text, sampled from an offscreen render.
+    Shapes.text = function (text, fontFamily) {
+        return function (n, w, h) {
+            var off = document.createElement('canvas');
+            off.width = Math.max(1, Math.round(w));
+            off.height = Math.max(1, Math.round(h));
+            var c = off.getContext('2d');
+            var size = h * 0.78;
+            c.font = '600 ' + size + 'px ' + fontFamily;
+            while (c.measureText(text).width > w * 0.9 && size > 10) {
+                size *= 0.92;
+                c.font = '600 ' + size + 'px ' + fontFamily;
+            }
+            c.textAlign = 'center';
+            c.textBaseline = 'middle';
+            c.fillStyle = '#000';
+            c.fillText(text, w / 2, h / 2 + size * 0.04);
+            var data = c.getImageData(0, 0, off.width, off.height).data;
+            var hits = [];
+            var step = Math.max(2, Math.round(size / 60));
+            for (var y = 0; y < off.height; y += step) {
+                for (var x = 0; x < off.width; x += step) {
+                    if (data[(y * off.width + x) * 4 + 3] > 128) hits.push({ x: x, y: y });
+                }
+            }
+            var pts = [];
+            for (var i = 0; i < n; i++) {
+                var p = hits.length ? hits[Math.floor(Math.random() * hits.length)] : { x: w / 2, y: h / 2 };
+                pts.push({ x: p.x + rand(-step, step) * 0.6, y: p.y + rand(-step, step) * 0.6 });
+            }
+            return pts;
+        };
     };
 
     window.GrainField = GrainField;

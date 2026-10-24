@@ -14,7 +14,18 @@
         if (!hero || !window.GrainField) return null;
         var canvas = hero.querySelector('canvas');
         var anchor = hero.querySelector('[data-ring-anchor]');
-        var field = new GrainField(canvas, { pointerTarget: hero, density: 0.0024, max: 2800 });
+        var keep = function () {
+            var els = Array.prototype.slice.call(hero.querySelectorAll('.eyebrow, h1, .lede, .actions, .post-meta, .hero-mark figcaption'));
+            var nav = document.querySelector('.site-header .wrap');
+            if (nav) els.push(nav);
+            return els;
+        };
+        if (!anchor) {
+            var drift = new GrainField(canvas, { pointerTarget: hero, density: 0.0007, max: 1100, pushRadius: 140, keepOut: keep });
+            drift.setShapes([GrainShapes.field(), GrainShapes.fall()]);
+            return { el: hero, field: drift };
+        }
+        var field = new GrainField(canvas, { pointerTarget: hero, density: 0.0024, max: 2800, keepOut: keep });
         field.setShapes([
             GrainShapes.ring(function (w, h) {
                 var c = canvas.getBoundingClientRect(), a = anchor.getBoundingClientRect();
@@ -30,7 +41,10 @@
         var scene = document.querySelector('[data-formats-scene]');
         if (!scene || !window.GrainField) return null;
         var canvas = scene.querySelector('canvas');
-        var field = new GrainField(canvas, { pointerTarget: scene, density: 0.0016, max: 2000, pushRadius: 90 });
+        var field = new GrainField(canvas, {
+            pointerTarget: scene, density: 0.0016, max: 2000, pushRadius: 90,
+            keepOut: function () { return scene.querySelectorAll('.scene-copy .eyebrow, .scene-copy h2, .scene-steps, .scene-link'); }
+        });
         var narrow = function (w) { return w < 760; };
         field.setShapes([
             GrainShapes.field(),
@@ -50,12 +64,31 @@
         return { el: scene, field: field };
     }
 
+    function grainNumbers() {
+        if (!window.GrainField) return [];
+        return Array.prototype.map.call(document.querySelectorAll('[data-grain-number]'), function (box) {
+            var field = new GrainField(box.querySelector('canvas'), { pointerTarget: box, density: 0.02, max: 1800, pushRadius: 50 });
+            field.setShapes([GrainShapes.field(), GrainShapes.text(box.getAttribute('data-grain-number'), '"Source Serif 4", Georgia, serif')]);
+            return { el: box, field: field };
+        });
+    }
+
     var hero = heroField();
     var scene = sceneField();
+    var numbers = grainNumbers();
+
+    // Web fonts change line lengths, so re-measure the keep-clear zones once they settle.
+    function refreshZones() {
+        if (hero) hero.field.refresh();
+        if (scene) scene.field.refresh();
+    }
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(refreshZones);
+    window.addEventListener('load', refreshZones);
 
     if (reduce || !hasGsap) {
         if (hero) { hero.field.progress = 0; reduce ? hero.field.still() : hero.field.start(); }
         if (scene) { scene.field.progress = 1; scene.field.still(); }
+        numbers.forEach(function (n) { n.field.progress = 1; n.field.still(); n.el.classList.add('is-drawn'); });
         return;
     }
 
@@ -159,11 +192,11 @@
             trigger: hero.el, start: 'top top', end: 'bottom top', scrub: true,
             onUpdate: function (st) { hero.field.progress = st.progress; }
         });
-        gsap.to(hero.el.querySelector('.hero-copy'), {
+        if (hero.el.querySelector('.hero-copy')) gsap.to(hero.el.querySelector('.hero-copy'), {
             yPercent: -18, opacity: 0.2, ease: 'none',
             scrollTrigger: { trigger: hero.el, start: 'top top', end: 'bottom top', scrub: true }
         });
-        gsap.from('.hero-mark', { opacity: 0, scale: 0.85, duration: 1.4, delay: 0.7, ease: 'expo.out' });
+        if (hero.el.querySelector('.hero-mark')) gsap.from('.hero-mark', { opacity: 0, scale: 0.85, duration: 1.4, delay: 0.7, ease: 'expo.out' });
         gsap.from('.hero .lede, .hero .actions, .hero .eyebrow', {
             y: 24, opacity: 0, duration: 1, delay: 0.9, stagger: 0.12, ease: 'expo.out'
         });
@@ -203,6 +236,81 @@
             }
         });
     }
+
+    // ---------- Grain numbers assemble as they scroll in ----------
+
+    numbers.forEach(function (n) {
+        n.el.classList.add('is-drawn');
+        n.field.start();
+        ScrollTrigger.create({
+            trigger: n.el, start: 'top 85%', end: 'center 50%', scrub: 0.8,
+            onUpdate: function (st) { n.field.progress = st.progress; }
+        });
+    });
+
+    // ---------- Platform flow: connectors draw and steps light in order ----------
+
+    document.querySelectorAll('.flow').forEach(function (flow) {
+        var steps = flow.querySelectorAll('.flow-step');
+        var tl = gsap.timeline({ scrollTrigger: { trigger: flow, start: 'top 75%', end: 'bottom 55%', scrub: 0.6 } });
+        steps.forEach(function (step, i) {
+            tl.fromTo(step, { opacity: 0.25, y: 20 }, { opacity: 1, y: 0, duration: 1 }, i * 1.2);
+            tl.fromTo(step.querySelector('.icon'), { scale: 0.6 }, { scale: 1, duration: 0.8, ease: 'back.out(2)' }, i * 1.2);
+            if (i < steps.length - 1) tl.fromTo(step, { '--connector': 0 }, { '--connector': 1, duration: 1.2 }, i * 1.2 + 0.4);
+        });
+    });
+
+    // ---------- Roadmap: the line grows with the reader, stages light as it passes ----------
+
+    document.querySelectorAll('.timeline:not(.timeline--mini)').forEach(function (tl) {
+        var current = tl.querySelector('.is-current');
+        var full = current ? current.offsetTop + 8 : tl.offsetHeight;
+        gsap.fromTo(tl, { '--fill': '0px' }, {
+            '--fill': full + 'px', ease: 'none',
+            scrollTrigger: { trigger: tl, start: 'top 70%', end: function () { return '+=' + full; }, scrub: true }
+        });
+        tl.querySelectorAll('li').forEach(function (li) {
+            ScrollTrigger.create({
+                trigger: li, start: 'top 72%',
+                onEnter: function () { li.classList.add('is-lit'); },
+                onLeaveBack: function () { li.classList.remove('is-lit'); }
+            });
+        });
+    });
+
+    // ---------- Cards and advisors fall into place in batches ----------
+
+    ScrollTrigger.batch('.card, .advisor, .team-facts > div, .flow-step .icon', {
+        start: 'top 88%', once: true,
+        onEnter: function (batch) {
+            // fromTo with explicit end values: a repeated trigger can never leave cards hidden.
+            gsap.fromTo(batch,
+                { rotateX: -18, y: 40, opacity: 0, transformPerspective: 900, transformOrigin: '50% 0%' },
+                { rotateX: 0, y: 0, opacity: 1, duration: 0.9, ease: 'expo.out', stagger: 0.08, overwrite: 'auto' });
+        }
+    });
+
+    // ---------- Facts and leave tables: rows slide in ----------
+
+    gsap.utils.toArray('.facts').forEach(function (table) {
+        gsap.fromTo(table.querySelectorAll('tr'), { x: -24, opacity: 0 }, {
+            x: 0, opacity: 1, duration: 0.6, ease: 'power3.out', stagger: 0.06,
+            scrollTrigger: { trigger: table, start: 'top 85%', once: true }
+        });
+    });
+
+    // ---------- Checklists tick themselves ----------
+
+    gsap.utils.toArray('.checklist').forEach(function (list) {
+        ScrollTrigger.create({
+            trigger: list, start: 'top 80%', once: true,
+            onEnter: function () {
+                list.querySelectorAll('li').forEach(function (li, i) {
+                    setTimeout(function () { li.classList.add('is-ticked'); }, i * 220);
+                });
+            }
+        });
+    });
 
     // ---------- Parallax on large figures and statements ----------
 
