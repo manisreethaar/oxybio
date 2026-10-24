@@ -1256,17 +1256,6 @@ li + li {
     transform: rotate(45deg);
 }
 
-/* Page transitions between pages, in browsers that support them */
-
-@view-transition {
-    navigation: auto;
-}
-
-::view-transition-old(root),
-::view-transition-new(root) {
-    animation-duration: 0.15s;
-}
-
 /* Scroll reveal. Only active when the head script has confirmed motion is welcome,
    so content is always visible without JavaScript. */
 
@@ -1307,9 +1296,6 @@ li + li {
         transition: none !important;
     }
 
-    @view-transition {
-        navigation: none;
-    }
 }
 
 /* Advisors: grouped card grid */
@@ -1445,4 +1431,474 @@ li + li {
 
 .section--ice .card .icon {
     background: var(--ice);
+}
+
+/* ===================== Motion layer ===================== */
+
+/* Smooth scroll (Lenis) */
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+/* Page curtain between pages */
+html.curtain-in::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: var(--navy-deep);
+    z-index: 200;
+}
+
+.curtain {
+    position: fixed;
+    inset: 0;
+    z-index: 210;
+    background: var(--navy-deep);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.curtain img {
+    width: 56px;
+    height: 56px;
+    filter: brightness(0) invert(1);
+}
+
+/* Header: hides on scroll down, turns transparent over dark heroes */
+.site-header {
+    transition: box-shadow 0.25s ease, transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1), background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.site-header.is-hidden {
+    transform: translateY(-100%);
+}
+
+.site-header.is-over {
+    background: transparent;
+    border-bottom-color: transparent;
+    box-shadow: none;
+}
+
+.site-header.is-over .brand,
+.site-header.is-over .site-nav a {
+    color: var(--white);
+}
+
+.site-header.is-over .brand img {
+    filter: brightness(0) invert(1);
+}
+
+.site-header.is-over .nav-toggle {
+    color: var(--white);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+@media (max-width: 760px) {
+    .site-header.is-over .site-nav a {
+        color: var(--ink);
+    }
+}
+
+/* Word-by-word headings */
+.w {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+    padding-bottom: 0.1em;
+    margin-bottom: -0.1em;
+}
+
+.wi {
+    display: inline-block;
+    will-change: transform;
+}
+
+/* Hero with grain field */
+.hero--field {
+    position: relative;
+    overflow: hidden;
+    min-height: min(100svh, 940px);
+    display: flex;
+    align-items: center;
+    padding: 9rem 0 6rem;
+    margin-top: -73px;
+    background:
+        radial-gradient(60rem 40rem at 78% 40%, rgba(43, 91, 181, 0.35), transparent 60%),
+        radial-gradient(40rem 30rem at 10% 90%, rgba(43, 91, 181, 0.25), transparent 60%),
+        var(--navy-deep);
+    color: var(--white);
+    border-bottom: 0;
+}
+
+.field-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.hero--field .wrap {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+.hero--field h1 {
+    color: var(--white);
+    font-size: clamp(2.6rem, 6.4vw, 5.2rem);
+    line-height: 1.04;
+    max-width: 14ch;
+}
+
+.hero--field .eyebrow {
+    color: #A9C0E3;
+}
+
+.hero--field .lede {
+    color: #C9D6EA;
+}
+
+.hero-mark {
+    margin: 0;
+    text-align: center;
+    justify-self: center;
+    width: min(100%, 22rem);
+}
+
+.hero-mark img {
+    width: 100%;
+    filter: drop-shadow(0 0 18px rgba(169, 192, 227, 0.6));
+}
+
+.hero-mark figcaption {
+    margin-top: 0.75rem;
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    color: #A9C0E3;
+}
+
+@media (max-width: 860px) {
+    .hero--field {
+        padding-top: 7rem;
+    }
+
+    .hero-mark {
+        width: min(80%, 18rem);
+        margin-top: 3rem;
+    }
+}
+
+.btn--light {
+    background: var(--white);
+    border-color: var(--white);
+    color: var(--navy);
+}
+
+.btn--light:hover {
+    background: var(--ice);
+    border-color: var(--ice);
+    color: var(--navy);
+}
+
+.btn--outline-light {
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.55);
+    color: var(--white);
+}
+
+.btn--outline-light:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--white);
+    color: var(--white);
+}
+
+.scroll-cue {
+    position: absolute;
+    left: 50%;
+    bottom: 1.75rem;
+    transform: translateX(-50%);
+    z-index: 1;
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #A9C0E3;
+    padding-bottom: 2.4rem;
+}
+
+.scroll-cue::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 1px;
+    height: 2rem;
+    background: linear-gradient(#A9C0E3, transparent);
+    animation: cue 2s ease-in-out infinite;
+    transform-origin: top;
+}
+
+@keyframes cue {
+    0% { transform: scaleY(0); opacity: 1; }
+    60% { transform: scaleY(1); opacity: 1; }
+    100% { transform: scaleY(1); opacity: 0; }
+}
+
+/* Big scroll-lit statement */
+.big-statement {
+    font-family: var(--font-serif);
+    font-size: clamp(1.9rem, 4.4vw, 3.6rem);
+    line-height: 1.22;
+    font-weight: 600;
+    color: var(--navy);
+    max-width: 30ch;
+    margin: 0.5rem 0 0;
+    text-wrap: pretty;
+}
+
+/* Pinned formats scene */
+.scene {
+    position: relative;
+    background:
+        radial-gradient(50rem 36rem at 70% 50%, rgba(43, 91, 181, 0.32), transparent 60%),
+        var(--navy-deep);
+    color: var(--white);
+}
+
+.scene-pin {
+    position: relative;
+    height: 100svh;
+    min-height: 560px;
+    overflow: hidden;
+}
+
+.scene-copy {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.scene-copy a {
+    pointer-events: auto;
+}
+
+.scene-copy > * {
+    max-width: 30rem;
+}
+
+.scene .eyebrow {
+    color: #A9C0E3;
+}
+
+.scene h2 {
+    color: var(--white);
+    font-size: clamp(2.2rem, 4.6vw, 3.6rem);
+}
+
+.scene-steps {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 2rem;
+    display: grid;
+    gap: 1.25rem;
+}
+
+.scene-steps li + li {
+    margin-top: 0;
+}
+
+.step-word {
+    display: block;
+    font-family: var(--font-serif);
+    font-weight: 600;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    color: var(--white);
+    line-height: 1.15;
+}
+
+.scene-steps p {
+    color: #C9D6EA;
+    margin: 0.4rem 0 0;
+}
+
+/* Once the scene is driven by scroll, steps replace one another in place. */
+html.scene-ready .scene-steps li {
+    grid-area: 1 / 1;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+html.scene-ready .scene-steps li.is-active {
+    opacity: 1;
+    transform: none;
+}
+
+html.scene-ready .step-word {
+    font-size: clamp(2.6rem, 6vw, 4.6rem);
+}
+
+.scene-link {
+    margin: 0;
+}
+
+.scene .more {
+    color: var(--white);
+}
+
+.scene-progress {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3px;
+    background: rgba(220, 230, 241, 0.15);
+    z-index: 1;
+}
+
+.scene-progress span {
+    display: block;
+    height: 100%;
+    width: calc(var(--scene-progress, 0) * 100%);
+    background: #A9C0E3;
+}
+
+@media (max-width: 760px) {
+    .scene-copy {
+        justify-content: flex-start;
+        padding-top: 14vh;
+    }
+}
+
+/* Waitlist card with a slowly turning gradient border */
+@property --angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+
+.waitlist-section h2 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.glow-card {
+    position: relative;
+    max-width: 40rem;
+    padding: 2rem;
+    border-radius: 16px;
+    background: var(--white);
+    isolation: isolate;
+}
+
+.glow-card::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: 18px;
+    background: conic-gradient(from var(--angle), var(--ice), var(--accent), var(--navy), var(--ice));
+    z-index: -1;
+    animation: turn 6s linear infinite;
+}
+
+.glow-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    background: var(--white);
+    z-index: -1;
+}
+
+@keyframes turn {
+    to {
+        --angle: 360deg;
+    }
+}
+
+/* Card glare that follows the pointer */
+.card,
+.advisor {
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.card::after,
+.advisor::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(circle at var(--gx, 50%) var(--gy, 50%), rgba(43, 91, 181, 0.12), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.card:hover::after,
+.advisor:hover::after {
+    opacity: 1;
+}
+
+/* Cursor ring (the system cursor stays visible) */
+.cursor-dot {
+    display: none;
+}
+
+.cursor-ring {
+    position: fixed;
+    top: -18px;
+    left: -18px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1.5px solid var(--accent);
+    pointer-events: none;
+    z-index: 300;
+    opacity: 0.6;
+    transition: width 0.25s ease, height 0.25s ease, top 0.25s ease, left 0.25s ease, opacity 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+}
+
+html.cursor-active .cursor-ring {
+    width: 64px;
+    height: 64px;
+    top: -32px;
+    left: -32px;
+    background: rgba(43, 91, 181, 0.08);
+}
+
+html.cursor-on-dark .cursor-ring {
+    border-color: #A9C0E3;
+}
+
+html.cursor-away .cursor-ring {
+    opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .curtain,
+    .cursor-ring,
+    .scroll-cue::after {
+        display: none;
+    }
+}
+
+@media (max-width: 860px) {
+    .scroll-cue {
+        display: none;
+    }
 }

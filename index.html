@@ -21,11 +21,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Source+Serif+4:opsz,wght@8..60,600&amp;display=swap">
-    <link rel="stylesheet" href="/assets/css/site.css?v=7">
+    <link rel="stylesheet" href="/assets/css/site.css?v=8">
     <script>
-        if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            document.documentElement.classList.add('js-motion');
-        }
+        (function () {
+            var root = document.documentElement;
+            if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            root.classList.add('js-motion');
+            try {
+                if (sessionStorage.getItem('obi-curtain')) {
+                    sessionStorage.removeItem('obi-curtain');
+                    root.classList.add('curtain-in');
+                    setTimeout(function () { root.classList.remove('curtain-in'); }, 2500);
+                }
+            } catch (e) {}
+        })();
     </script>
     <script type="application/ld+json">
     {
@@ -81,22 +90,24 @@
     </header>
 
     <main id="main">
-        <section class="hero hero--home">
+        <section class="hero hero--field" data-hero-field>
+            <canvas class="field-canvas" aria-hidden="true"></canvas>
             <div class="wrap hero-grid">
-                <div>
+                <div class="hero-copy">
                     <span class="eyebrow">Food biotechnology &middot; R&amp;D stage</span>
                     <h1>Everyday nutrition, built on Indian grains.</h1>
                     <p class="lede">We are building everyday food on Indian grains, and measuring what it does before we claim anything.</p>
                     <div class="actions">
-                        <a class="btn" href="/platform">See the platform</a>
-                        <a class="btn btn--ghost" href="#waitlist">Join the waitlist</a>
+                        <a class="btn btn--light" href="/platform">See the platform</a>
+                        <a class="btn btn--outline-light" href="#waitlist">Join the waitlist</a>
                     </div>
                 </div>
-                <figure class="quote-card">
-                    <img src="/assets/images/tamil-quote.png" alt="உணவே மருந்து, Tamil calligraphy" width="1024" height="322" lang="ta">
+                <figure class="hero-mark" data-ring-anchor>
+                    <img src="/assets/images/tamil-quote-light.png" alt="உணவே மருந்து, Tamil calligraphy" width="794" height="182" lang="ta">
                     <figcaption>&ldquo;Food is medicine&rdquo;</figcaption>
                 </figure>
             </div>
+            <span class="scroll-cue" aria-hidden="true">Scroll</span>
         </section>
 
         <section class="credentials" aria-label="Company credentials">
@@ -123,49 +134,39 @@
         </section>
 
         <section class="section section--ice" aria-labelledby="why-heading">
-            <div class="wrap split">
-                <div>
-                    <span class="eyebrow">Why we exist</span>
-                    <h2 id="why-heading">Modern routines have outpaced everyday food.</h2>
-                </div>
-                <div>
-                    <p>We skip breakfast. We run on coffee. We buy supplements on the strength of their marketing, and wonder why so little changes.</p>
-                    <p>We think the food people already eat every day can do more for them.</p>
-                    <p><a class="more" href="/platform">Read the problem</a></p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" aria-labelledby="building-heading">
             <div class="wrap">
-                <div class="section-head">
-                    <span class="eyebrow">What we are building</span>
-                    <h2 id="building-heading">One base. Two formats.</h2>
-                    <p>A single base sits at the core of the work. Both formats are built on it.</p>
-                </div>
-                <div class="grid grid--2">
-                    <article class="card">
-                        <span class="tag">In development</span>
-                        <h3>Format one</h3>
-                        <p>Built on the fermented grain base.</p>
-                    </article>
-                    <article class="card">
-                        <span class="tag">In development</span>
-                        <h3>Format two</h3>
-                        <p>Built on the same base.</p>
-                    </article>
-                </div>
-                <p class="section-foot"><a class="more" href="/platform">How the platform works</a></p>
+                <span class="eyebrow">Why we exist</span>
+                <h2 id="why-heading" class="visually-hidden">Why we exist</h2>
+                <p class="big-statement" data-scrub-text>We skip breakfast. We run on coffee. We buy supplements on the strength of their marketing, and wonder why so little changes. We think the food people already eat every day can do more for them.</p>
+                <p class="section-foot"><a class="more" href="/platform">Read the problem</a></p>
             </div>
         </section>
 
-        <section class="section section--navy" id="waitlist" aria-labelledby="waitlist-heading">
+        <section class="scene" data-formats-scene aria-labelledby="building-heading">
+            <div class="scene-pin">
+                <canvas class="field-canvas" aria-hidden="true"></canvas>
+                <div class="wrap scene-copy">
+                    <span class="eyebrow">Platform</span>
+                    <h2 id="building-heading">What we are building.</h2>
+                    <ol class="scene-steps">
+                        <li data-step="0"><span class="step-word">Grains</span><p>It starts with grains that have always been part of the Indian diet.</p></li>
+                        <li data-step="1"><span class="step-word">One base</span><p>A single base sits at the core of the work.</p></li>
+                        <li data-step="2"><span class="step-word">Two formats</span><p>Both formats are built on it. Neither has a product name yet.</p></li>
+                    </ol>
+                    <p class="scene-link"><a class="more" href="/platform">How the platform works</a></p>
+                </div>
+                <div class="scene-progress" aria-hidden="true"><span></span></div>
+            </div>
+        </section>
+
+        <section class="section waitlist-section" id="waitlist" aria-labelledby="waitlist-heading">
             <div class="wrap">
                 <div class="section-head">
                     <span class="eyebrow">Waitlist</span>
                     <h2 id="waitlist-heading">Hear from us when there is something to taste.</h2>
                     <p>Leave your email address and we will write when there is real progress to share: lab updates, tasting panels and launch news.</p>
                 </div>
+                <div class="glow-card">
                 <form class="form form--inline" id="waitlist-form" data-gform data-status="waitlist-form-status" action="https://docs.google.com/forms/d/e/1FAIpQLScndz1l9JCdS_CpWdZ9uJtzTojDwTi0eY1ZoSHakaPrmgMJQg/formResponse" method="POST" target="waitlist-form-target">
                     <input type="hidden" name="entry.1633920210" value="Waitlist sign-up">
                     <input type="hidden" name="entry.790080973" value="Other">
@@ -179,6 +180,7 @@
                 </form>
                 <p class="form-status" id="waitlist-form-status" role="status" tabindex="-1" hidden>Thank you. You are on the waitlist.</p>
                 <iframe name="waitlist-form-target" title="Waitlist form submission" hidden></iframe>
+                </div>
             </div>
         </section>
 
@@ -218,6 +220,11 @@
         </div>
     </footer>
 
-    <script src="/assets/js/site.js?v=7"></script>
+    <script src="/assets/vendor/gsap.min.js?v=3.13.0" defer></script>
+    <script src="/assets/vendor/ScrollTrigger.min.js?v=3.13.0" defer></script>
+    <script src="/assets/vendor/lenis.min.js?v=1.3.4" defer></script>
+    <script src="/assets/js/grain-field.js?v=8" defer></script>
+    <script src="/assets/js/motion.js?v=8" defer></script>
+    <script src="/assets/js/site.js?v=8" defer></script>
 </body>
 </html>
