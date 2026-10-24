@@ -41,10 +41,13 @@
     // Header gains a shadow once content scrolls beneath it; posts also show a reading-progress bar.
     var header = document.querySelector('.site-header');
     var progress = document.querySelector('.read-progress span');
+    // Over a dark full-bleed hero the header turns transparent with light text.
+    var darkHero = document.querySelector('.hero--field');
     var ticking = false;
     function onScroll() {
         ticking = false;
         if (header) header.classList.toggle('is-scrolled', window.scrollY > 8);
+        if (header && darkHero) header.classList.toggle('is-over', window.scrollY < darkHero.offsetHeight - 120);
         if (progress) {
             var max = document.documentElement.scrollHeight - window.innerHeight;
             progress.style.width = (max > 0 ? Math.min(100, (window.scrollY / max) * 100) : 0) + '%';

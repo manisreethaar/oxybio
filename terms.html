@@ -21,11 +21,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Source+Serif+4:opsz,wght@8..60,600&amp;display=swap">
-    <link rel="stylesheet" href="/assets/css/site.css?v=6">
+    <link rel="stylesheet" href="/assets/css/site.css?v=8">
     <script>
-        if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            document.documentElement.classList.add('js-motion');
-        }
+        (function () {
+            var root = document.documentElement;
+            if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            root.classList.add('js-motion');
+            try {
+                if (sessionStorage.getItem('obi-curtain')) {
+                    sessionStorage.removeItem('obi-curtain');
+                    root.classList.add('curtain-in');
+                    setTimeout(function () { root.classList.remove('curtain-in'); }, 2500);
+                }
+            } catch (e) {}
+        })();
     </script>
 
     <script>
@@ -79,8 +88,7 @@
             <div class="footer-grid">
                 <div>
                     <h2>Oxygen Bioinnovations</h2>
-                    <p>Food biotechnology research and development. Incubated at TBI-DETI@ACE, Adhiyamaan College of Engineering, Hosur, Tamil Nadu.</p>
-                    <p><a href="mailto:info@oxygenbioinnovations.com">info@oxygenbioinnovations.com</a></p>
+                    <p>Food biotechnology, at research and development stage.</p>
                 </div>
                 <div>
                     <h2>Company</h2>
@@ -104,12 +112,16 @@
                 </div>
             </div>
             <div class="footer-disclaimer">
-                <p><strong>Pre-commercial research and development.</strong> No product is for sale. Statements on this site describe research direction and have not been evaluated by FSSAI. An FSSAI licence application is to be filed; no licence is held.</p>
-                <p>&copy; 2026 Oxygen Bioinnovations Private Limited. CIN U72100TZ2026PTC038160. DPIIT Recognised Startup DIPP258270.</p>
+                <p><strong>Pre-commercial R&amp;D.</strong> No product is for sale. Not evaluated by FSSAI; no licence held. &copy; 2026 Oxygen Bioinnovations Private Limited &middot; CIN U72100TZ2026PTC038160 &middot; DPIIT DIPP258270</p>
             </div>
         </div>
     </footer>
 
-    <script src="/assets/js/site.js?v=6"></script>
+    <script src="/assets/vendor/gsap.min.js?v=3.13.0" defer></script>
+    <script src="/assets/vendor/ScrollTrigger.min.js?v=3.13.0" defer></script>
+    <script src="/assets/vendor/lenis.min.js?v=1.3.4" defer></script>
+    <script src="/assets/js/grain-field.js?v=8" defer></script>
+    <script src="/assets/js/motion.js?v=8" defer></script>
+    <script src="/assets/js/site.js?v=8" defer></script>
 </body>
 </html>

@@ -21,34 +21,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Source+Serif+4:opsz,wght@8..60,600&amp;display=swap">
-    <link rel="stylesheet" href="/assets/css/site.css?v=6">
+    <link rel="stylesheet" href="/assets/css/site.css?v=8">
     <script>
-        if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            document.documentElement.classList.add('js-motion');
-        }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Oxygen Bioinnovations Private Limited",
-      "alternateName": "Oxygen Bioinnovations",
-      "url": "https://www.oxygenbioinnovations.com/",
-      "logo": "https://www.oxygenbioinnovations.com/assets/images/logo-full.png?v=2",
-      "description": "DPIIT-recognised food biotechnology startup developing a fermented base made from indigenous Indian grains. Pre-commercial research and development, incubated at TBI-DETI@ACE, Hosur.",
-      "email": "info@oxygenbioinnovations.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Cabin D, DETI@ACE TBI, Adhiyamaan College of Engineering Campus",
-        "addressLocality": "Hosur",
-        "addressRegion": "Tamil Nadu",
-        "postalCode": "635130",
-        "addressCountry": "IN"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/company/oxygen-bioinnovations"
-      ]
-    }
+        (function () {
+            var root = document.documentElement;
+            if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            root.classList.add('js-motion');
+            try {
+                if (sessionStorage.getItem('obi-curtain')) {
+                    sessionStorage.removeItem('obi-curtain');
+                    root.classList.add('curtain-in');
+                    setTimeout(function () { root.classList.remove('curtain-in'); }, 2500);
+                }
+            } catch (e) {}
+        })();
     </script>
 
     <script>
@@ -98,7 +84,6 @@
                 <div class="prose">
                     <p>The way India eats has changed faster in one generation than in the centuries before it. Much of what fills the gap is over-processed and sold on what is printed on the pack. The supply chain is built for shelf life and margin; whether the food does anything for the person eating it is rarely measured.</p>
                     <p>We started from a simpler question: what would it take to build an everyday food whose value is measured, not asserted, and which is built on grains that have always been part of the Indian diet?</p>
-                    <p>Answering it properly meant owning the research environment. The contract manufacturers we spoke to advised simplifying the formula and using cheaper carriers. A technology business incubator gave us a laboratory, mentorship and the time to do the work slowly and in the open. That is why we are at TBI-DETI@ACE in Hosur.</p>
                     <p><a class="more" href="/blog-origin">Read how the company started</a></p>
                 </div>
             </div>
@@ -143,28 +128,7 @@
             </div>
         </section>
 
-        <section class="section section--ice" aria-labelledby="facts-heading">
-            <div class="wrap split">
-                <div>
-                    <span class="eyebrow">Company</span>
-                    <h2 id="facts-heading">The facts.</h2>
-                </div>
-                <table class="facts">
-                    <caption class="visually-hidden">Company registration details</caption>
-                    <tbody>
-                        <tr><th scope="row">Legal name</th><td>Oxygen Bioinnovations Private Limited</td></tr>
-                        <tr><th scope="row">CIN</th><td>U72100TZ2026PTC038160</td></tr>
-                        <tr><th scope="row">Recognition</th><td>DPIIT Recognised Startup, DIPP258270</td></tr>
-                        <tr><th scope="row">Incubation</th><td>TBI-DETI@ACE, Adhiyamaan College of Engineering, Hosur</td></tr>
-                        <tr><th scope="row">Knowledge partner</th><td>Adhiyamaan College of Engineering (an autonomous institution)</td></tr>
-                        <tr><th scope="row">Stage</th><td>Pre-revenue. Laboratory validation. No product on sale.</td></tr>
-                        <tr><th scope="row">Regulatory</th><td>FSSAI licence application to be filed</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <section class="section" id="roadmap" aria-labelledby="roadmap-heading">
+        <section class="section section--ice" id="roadmap" aria-labelledby="roadmap-heading">
             <div class="wrap split">
                 <div>
                     <span class="eyebrow">Roadmap</span>
@@ -181,10 +145,10 @@
                         <li class="is-done">
                             <span class="tag">Complete</span>
                             <h3>Product concept</h3>
-                            <p>One base, developed in two formats.</p>
+                            <p>The base and the products built on it, defined.</p>
                         </li>
                         <li class="is-current">
-                            <span class="tag">Current</span>
+                            <span class="tag">Current, since April 2026</span>
                             <h3>Phase 0: laboratory validation</h3>
                             <p>Development and characterisation of the base.</p>
                         </li>
@@ -196,28 +160,19 @@
                         <li>
                             <span class="tag">Later</span>
                             <h3>Testing and licensing</h3>
-                            <p>Sensory evaluation, shelf-life studies, accredited third-party safety testing and the FSSAI licence application.</p>
+                            <p>Sensory, safety and regulatory work, before anything is sold.</p>
                         </li>
                         <li>
                             <span class="tag">Later</span>
                             <h3>Pilot production and launch</h3>
-                            <p>Only after an FSSAI licence is granted.</p>
+                            <p>The final stage.</p>
                         </li>
                     </ol>
-                    <div class="log">
-                        <h3>Activity log</h3>
-                        <table class="facts">
-                            <caption class="visually-hidden">Research activity log</caption>
-                            <tbody>
-                                <tr><th scope="row"><time datetime="2026-04">April 2026</time></th><td>Phase 0 laboratory validation commenced at TBI-DETI@ACE.</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="section section--ice" aria-labelledby="team-heading">
+        <section class="section" aria-labelledby="team-heading">
             <div class="wrap">
                 <div class="section-head">
                     <span class="eyebrow">Team</span>
@@ -226,13 +181,12 @@
                 <dl class="team-facts">
                     <div><dt>People</dt><dd>10</dd></div>
                     <div><dt>Advisors</dt><dd>8</dd></div>
-                    <div><dt>Incubated at</dt><dd>TBI-DETI@ACE</dd></div>
                 </dl>
                 <div class="grid grid--4">
                     <article class="card">
                         <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6"/><path d="M10 3v6l-5 9a2 2 0 0 0 1.7 3h10.6a2 2 0 0 0 1.7-3l-5-9V3"/><path d="M7.5 15h9"/></svg></span>
                         <h3>Research and formulation</h3>
-                        <p>Developing the grain base and the two formats built on it.</p>
+                        <p>Developing the base and the products built on it.</p>
                     </article>
                     <article class="card">
                         <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h8M8 17h5"/></svg></span>
@@ -250,11 +204,11 @@
                         <p>FSSAI preparation, and the safety and testing plan.</p>
                     </article>
                 </div>
-                <p class="section-foot">Leadership profiles are shared with investors and grant bodies on request. <a class="more" href="/contact#investor">Request them</a></p>
+                <p class="section-foot">Leadership profiles are shared with investors and grant bodies on request.</p>
             </div>
         </section>
 
-        <section class="section" aria-labelledby="advisors-heading">
+        <section class="section section--ice" aria-labelledby="advisors-heading">
             <div class="wrap">
                 <div class="section-head">
                     <span class="eyebrow">Advisors</span>
@@ -351,7 +305,7 @@
                 <div class="section-head">
                     <span class="eyebrow">Investors and grant bodies</span>
                     <h2 id="investors-heading">Funding the validation stage.</h2>
-                    <p>We are seeking non-dilutive grant funding and strategic seed investment to complete Phase 0 validation.</p>
+                    <p>We are seeking non-dilutive grant funding and strategic seed investment to fund the current stage of work.</p>
                 </div>
                 <div class="grid grid--3 investor-cols">
                     <div>
@@ -367,14 +321,12 @@
                             <li>Institutions: campuses, gyms and co-working spaces</li>
                             <li>Online marketplaces</li>
                         </ol>
-                        <p class="source">All commercial activity follows the FSSAI licence.</p>
                     </div>
                     <div>
                         <h3>What the capital funds</h3>
                         <ul class="checklist">
-                            <li>Accredited third-party testing</li>
-                            <li>Regulatory licensing</li>
-                            <li>Shelf-life studies and pilot batches</li>
+                            <li>Validation and licensing</li>
+                            <li>Pilot batches</li>
                             <li>Laboratory operations and the research team</li>
                         </ul>
                     </div>
@@ -392,8 +344,7 @@
             <div class="footer-grid">
                 <div>
                     <h2>Oxygen Bioinnovations</h2>
-                    <p>Food biotechnology research and development. Incubated at TBI-DETI@ACE, Adhiyamaan College of Engineering, Hosur, Tamil Nadu.</p>
-                    <p><a href="mailto:info@oxygenbioinnovations.com">info@oxygenbioinnovations.com</a></p>
+                    <p>Food biotechnology, at research and development stage.</p>
                 </div>
                 <div>
                     <h2>Company</h2>
@@ -417,12 +368,16 @@
                 </div>
             </div>
             <div class="footer-disclaimer">
-                <p><strong>Pre-commercial research and development.</strong> No product is for sale. Statements on this site describe research direction and have not been evaluated by FSSAI. An FSSAI licence application is to be filed; no licence is held.</p>
-                <p>&copy; 2026 Oxygen Bioinnovations Private Limited. CIN U72100TZ2026PTC038160. DPIIT Recognised Startup DIPP258270.</p>
+                <p><strong>Pre-commercial R&amp;D.</strong> No product is for sale. Not evaluated by FSSAI; no licence held. &copy; 2026 Oxygen Bioinnovations Private Limited &middot; CIN U72100TZ2026PTC038160 &middot; DPIIT DIPP258270</p>
             </div>
         </div>
     </footer>
 
-    <script src="/assets/js/site.js?v=6"></script>
+    <script src="/assets/vendor/gsap.min.js?v=3.13.0" defer></script>
+    <script src="/assets/vendor/ScrollTrigger.min.js?v=3.13.0" defer></script>
+    <script src="/assets/vendor/lenis.min.js?v=1.3.4" defer></script>
+    <script src="/assets/js/grain-field.js?v=8" defer></script>
+    <script src="/assets/js/motion.js?v=8" defer></script>
+    <script src="/assets/js/site.js?v=8" defer></script>
 </body>
 </html>

@@ -21,11 +21,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Source+Serif+4:opsz,wght@8..60,600&amp;display=swap">
-    <link rel="stylesheet" href="/assets/css/site.css?v=6">
+    <link rel="stylesheet" href="/assets/css/site.css?v=8">
     <script>
-        if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            document.documentElement.classList.add('js-motion');
-        }
+        (function () {
+            var root = document.documentElement;
+            if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            root.classList.add('js-motion');
+            try {
+                if (sessionStorage.getItem('obi-curtain')) {
+                    sessionStorage.removeItem('obi-curtain');
+                    root.classList.add('curtain-in');
+                    setTimeout(function () { root.classList.remove('curtain-in'); }, 2500);
+                }
+            } catch (e) {}
+        })();
     </script>
 
     <script>
@@ -72,7 +81,7 @@
                     <h2>The company</h2>
                     <details>
                         <summary>What is Oxygen Bioinnovations?</summary>
-                        <p>A food biotechnology research and development startup in Hosur, Tamil Nadu, building everyday food on Indian grains. <a href="/about">More about us</a>.</p>
+                        <p>A food biotechnology research and development startup building everyday food on Indian grains. <a href="/about">More about us</a>.</p>
                     </details>
                     <details>
                         <summary>Are you a product company or a research company?</summary>
@@ -80,7 +89,7 @@
                     </details>
                     <details>
                         <summary>Are you a registered company?</summary>
-                        <p>Yes. Oxygen Bioinnovations Private Limited is incorporated under the Companies Act, 2013, and is a DPIIT Recognised Startup. Registration details are on the <a href="/about">about page</a>.</p>
+                        <p>Yes. Oxygen Bioinnovations Private Limited is incorporated under the Companies Act, 2013, and is a DPIIT Recognised Startup. Registration numbers are on the <a href="/">home page</a>.</p>
                     </details>
                     <details>
                         <summary>Can I visit?</summary>
@@ -91,11 +100,11 @@
                     <h2>The product</h2>
                     <details>
                         <summary>What are you making?</summary>
-                        <p>One grain base, in development in two formats. Details are on the <a href="/platform">platform page</a>.</p>
+                        <p>An everyday food built on Indian grains. The <a href="/platform">platform page</a> explains what we are building.</p>
                     </details>
                     <details>
                         <summary>Can I buy it?</summary>
-                        <p>No. Nothing will be sold until an FSSAI licence has been granted, and the application is to be filed. <a href="/#waitlist">Join the waitlist</a> to hear when there is news.</p>
+                        <p>Not yet. <a href="/#waitlist">Join the waitlist</a> to hear when there is news.</p>
                     </details>
                     <details>
                         <summary>Do your products have proven health benefits?</summary>
@@ -105,46 +114,12 @@
                 <div class="faq-group" id="working">
                     <h2>Working here</h2>
                     <details>
-                        <summary>What does a Research Associate do?</summary>
-                        <p>Designs and runs laboratory experiments, develops and tests formulations, analyses data, keeps research documentation and contributes directly to product decisions. Details of current roles are on the <a href="/careers">careers page</a>.</p>
-                    </details>
-                    <details>
-                        <summary>What qualifications do you look for?</summary>
-                        <p>A background in Biotechnology, Microbiology, Food Science, Biochemistry or a related life science, plus curiosity, independence, comfort with ambiguity and integrity in your work.</p>
-                    </details>
-                    <details>
-                        <summary>Is my job secure at a startup?</summary>
-                        <p>An early-stage startup carries more uncertainty than an established company, and we will not pretend otherwise. We are building with long-term intent, backed by a technology business incubator, and actively pursuing grants and investment.</p>
-                    </details>
-                    <details>
-                        <summary>How do I apply?</summary>
-                        <p>By email, as described on the <a href="/careers">careers page</a>.</p>
-                    </details>
-                </div>
-                <div class="faq-group" id="internships">
-                    <h2>Internships</h2>
-                    <details>
-                        <summary>Who can apply, and are internships paid?</summary>
-                        <p>Undergraduate and postgraduate students in related fields, for one to six months. Longer research internships are paid. Eligibility and terms are on the <a href="/careers">careers page</a>. We never charge a fee for an internship.</p>
-                    </details>
-                    <details>
-                        <summary>What will I learn?</summary>
-                        <p>Hands-on laboratory work from the first week: experiment design, formulation development, stability testing, documentation and literature review, with direct, hands-on mentorship.</p>
-                    </details>
-                </div>
-                <div class="faq-group" id="culture">
-                    <h2>Pay and culture</h2>
-                    <details>
-                        <summary>What are pay and leave like?</summary>
-                        <p>Pay is competitive for an incubator-stage startup and paid by the fifth working day of the following month. The full leave policy, including cycle leave, is on the <a href="/careers">careers page</a>.</p>
+                        <summary>Where can I find open roles, internships, pay and leave?</summary>
+                        <p>Everything about working here is on the <a href="/careers">careers page</a>.</p>
                     </details>
                     <details>
                         <summary>What is the culture like?</summary>
                         <p>Curious, rigorous and honest. Everyone is expected to question and contribute; if an experiment is designed badly, say so. Data integrity is not negotiable.</p>
-                    </details>
-                    <details>
-                        <summary>What is your policy on workplace harassment?</summary>
-                        <p>Zero tolerance. We comply with the POSH Act, have clear grievance procedures, and handle every complaint confidentially.</p>
                     </details>
                 </div>
                 <div class="faq-group" id="invest">
@@ -173,8 +148,7 @@
             <div class="footer-grid">
                 <div>
                     <h2>Oxygen Bioinnovations</h2>
-                    <p>Food biotechnology research and development. Incubated at TBI-DETI@ACE, Adhiyamaan College of Engineering, Hosur, Tamil Nadu.</p>
-                    <p><a href="mailto:info@oxygenbioinnovations.com">info@oxygenbioinnovations.com</a></p>
+                    <p>Food biotechnology, at research and development stage.</p>
                 </div>
                 <div>
                     <h2>Company</h2>
@@ -198,12 +172,16 @@
                 </div>
             </div>
             <div class="footer-disclaimer">
-                <p><strong>Pre-commercial research and development.</strong> No product is for sale. Statements on this site describe research direction and have not been evaluated by FSSAI. An FSSAI licence application is to be filed; no licence is held.</p>
-                <p>&copy; 2026 Oxygen Bioinnovations Private Limited. CIN U72100TZ2026PTC038160. DPIIT Recognised Startup DIPP258270.</p>
+                <p><strong>Pre-commercial R&amp;D.</strong> No product is for sale. Not evaluated by FSSAI; no licence held. &copy; 2026 Oxygen Bioinnovations Private Limited &middot; CIN U72100TZ2026PTC038160 &middot; DPIIT DIPP258270</p>
             </div>
         </div>
     </footer>
 
-    <script src="/assets/js/site.js?v=6"></script>
+    <script src="/assets/vendor/gsap.min.js?v=3.13.0" defer></script>
+    <script src="/assets/vendor/ScrollTrigger.min.js?v=3.13.0" defer></script>
+    <script src="/assets/vendor/lenis.min.js?v=1.3.4" defer></script>
+    <script src="/assets/js/grain-field.js?v=8" defer></script>
+    <script src="/assets/js/motion.js?v=8" defer></script>
+    <script src="/assets/js/site.js?v=8" defer></script>
 </body>
 </html>
