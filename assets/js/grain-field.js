@@ -56,7 +56,63 @@
             });
         }
         this.particles.length = n;
+        if (this.options.keepOut) this.computeZones();
         if (this.shapeBuilders) this.buildShapes();
+    };
+
+    // Keep-clear zones: one padded rectangle per line of text in the given elements, so grains
+    // flow around words instead of across them.
+    GrainField.prototype.computeZones = function () {
+        var get = this.options.keepOut;
+        var els = typeof get === 'function' ? get() : (get || []);
+        var c = this.canvas.getBoundingClientRect();
+        var pad = this.options.keepPad || 22;
+        var zones = [];
+        Array.prototype.forEach.call(els, function (el) {
+            if (!el || !el.getClientRects) return;
+            var range = document.createRange();
+            range.selectNodeContents(el);
+            var rects = Array.prototype.slice.call(range.getClientRects());
+            if (!rects.length) rects = Array.prototype.slice.call(el.getClientRects());
+            // Merge fragments that sit on the same line into one box per line.
+            var lines = [];
+            rects.forEach(function (r) {
+                if (r.width < 1 || r.height < 1) return;
+                var line = lines.find(function (l) { return Math.abs(l.top - r.top) < r.height * 0.6; });
+                if (line) {
+                    line.left = Math.min(line.left, r.left);
+                    line.right = Math.max(line.right, r.right);
+                    line.top = Math.min(line.top, r.top);
+                    line.bottom = Math.max(line.bottom, r.bottom);
+                } else {
+                    lines.push({ left: r.left, right: r.right, top: r.top, bottom: r.bottom });
+                }
+            });
+            lines.forEach(function (l) {
+                zones.push({
+                    x0: l.left - c.left - pad, y0: l.top - c.top - pad,
+                    x1: l.right - c.left + pad, y1: l.bottom - c.top + pad
+                });
+            });
+        });
+        this.zones = zones;
+    };
+
+    GrainField.prototype.zoneAt = function (x, y) {
+        var zs = this.zones;
+        if (!zs) return null;
+        for (var i = 0; i < zs.length; i++) {
+            var z = zs[i];
+            if (x > z.x0 && x < z.x1 && y > z.y0 && y < z.y1) return z;
+        }
+        return null;
+    };
+
+    // Recompute zones and shapes after layout changes (fonts loading, resizing).
+    GrainField.prototype.refresh = function () {
+        this.computeZones();
+        if (this.shapeBuilders) this.buildShapes();
+        if (!this.running) this.still();
     };
 
     // Each builder returns an array of {x, y} for n particles at the current size.
@@ -68,8 +124,18 @@
     GrainField.prototype.buildShapes = function () {
         var self = this;
         var n = this.particles.length;
+        if (this.options.keepOut && !this.zones) this.computeZones();
         this.shapes = this.shapeBuilders.map(function (build) {
-            return build(n, self.width, self.height);
+            var pts = build(n, self.width, self.height);
+            if (self.zones && self.zones.length) {
+                for (var i = 0; i < pts.length; i++) {
+                    var tries = 0;
+                    while (self.zoneAt(pts[i].x, pts[i].y) && tries++ < 40) {
+                        pts[i] = { x: rand(0, self.width), y: rand(0, self.height) };
+                    }
+                }
+            }
+            return pts;
         });
     };
 
@@ -124,6 +190,13 @@
         for (var i = 0; i < this.particles.length; i++) {
             var p = this.particles[i];
             var tgt = this.targetFor(i);
+            // Mid-morph paths can cross text; slide such targets to the nearest edge of the zone.
+            var tz = tgt && this.zones && this.zones.length ? this.zoneAt(tgt.x, tgt.y) : null;
+            if (tz) {
+                var dl = tgt.x - tz.x0, dr = tz.x1 - tgt.x, dt = tgt.y - tz.y0, db = tz.y1 - tgt.y;
+                var dm = Math.min(dl, dr, dt, db);
+                if (dm === dl) tgt.x = tz.x0 - 2; else if (dm === dr) tgt.x = tz.x1 + 2; else if (dm === dt) tgt.y = tz.y0 - 2; else tgt.y = tz.y1 + 2;
+            }
             if (tgt) {
                 var bx = Math.sin(this.time * 0.9 + p.phase) * 1.6;
                 var by = Math.cos(this.time * 0.7 + p.phase) * 1.6;
@@ -136,6 +209,12 @@
                 var d = Math.sqrt(d2);
                 p.vx += (dx / d) * f;
                 p.vy += (dy / d) * f;
+            }
+            var z = this.zones && this.zones.length ? this.zoneAt(p.x, p.y) : null;
+            if (z) {
+                var l = p.x - z.x0, r = z.x1 - p.x, t = p.y - z.y0, b = z.y1 - p.y;
+                var m = Math.min(l, r, t, b);
+                if (m === l) p.vx -= 2.4; else if (m === r) p.vx += 2.4; else if (m === t) p.vy -= 2.4; else p.vy += 2.4;
             }
             p.vx *= 0.82;
             p.vy *= 0.82;

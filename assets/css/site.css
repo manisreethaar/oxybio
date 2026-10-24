@@ -1580,7 +1580,8 @@ html.curtain-in::after {
 }
 
 .hero-mark img {
-    width: 100%;
+    width: 76%;
+    margin: 0 auto;
     filter: drop-shadow(0 0 18px rgba(169, 192, 227, 0.6));
 }
 
@@ -1917,7 +1918,7 @@ html.cursor-away .cursor-ring {
     max-width: 18ch;
 }
 
-.hero--field a {
+.hero--field a:not(.btn) {
     color: var(--white);
 }
 
@@ -1995,4 +1996,10 @@ html.cursor-away .cursor-ring {
 
 .has-gsap :is(.card, .advisor, .facts, .team-facts) {
     transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+/* Text over grain fields: a soft dark halo keeps every word readable */
+.hero--field :is(h1, .lede, .eyebrow, .post-meta, figcaption),
+.scene :is(h2, .eyebrow, .step-word, .scene-steps p, .scene-link) {
+    text-shadow: 0 0 18px rgba(21, 39, 71, 0.95), 0 0 6px rgba(21, 39, 71, 0.9);
 }
