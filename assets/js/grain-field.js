@@ -85,6 +85,28 @@
             self.mouse.x = -9999;
             self.mouse.y = -9999;
         });
+        // Touch: grains follow the finger while it moves and burst outward where it lands.
+        var release;
+        function touchAt(t) {
+            var r = self.canvas.getBoundingClientRect();
+            self.mouse.x = t.clientX - r.left;
+            self.mouse.y = t.clientY - r.top;
+            self.lastTouch = Date.now();
+        }
+        host.addEventListener('touchstart', function (e) {
+            clearTimeout(release);
+            touchAt(e.touches[0]);
+            self.burst(self.mouse.x, self.mouse.y);
+        }, { passive: true });
+        host.addEventListener('touchmove', function (e) {
+            touchAt(e.touches[0]);
+        }, { passive: true });
+        host.addEventListener('touchend', function () {
+            release = setTimeout(function () {
+                self.mouse.x = -9999;
+                self.mouse.y = -9999;
+            }, 250);
+        }, { passive: true });
         var resizeTimer;
         window.addEventListener('resize', function () {
             clearTimeout(resizeTimer);
@@ -116,8 +138,34 @@
         return { x: pa.x + (pb.x - pa.x) * local, y: pa.y + (pb.y - pa.y) * local };
     };
 
+    // A shockwave: grains near (x, y) are thrown outward and spring back to their shape.
+    GrainField.prototype.burst = function (x, y, power) {
+        var radius = (this.options.pushRadius || 110) * 2.6;
+        var strength = power || 26;
+        for (var i = 0; i < this.particles.length; i++) {
+            var p = this.particles[i];
+            var dx = p.x - x, dy = p.y - y, d = Math.sqrt(dx * dx + dy * dy) || 1;
+            if (d > radius) continue;
+            var f = (1 - d / radius) * strength;
+            p.vx += (dx / d) * f;
+            p.vy += (dy / d) * f;
+            p.spin += (Math.random() - 0.5) * 0.2;
+        }
+    };
+
+    // On touch screens nobody hovers, so a slow invisible "wind" wanders through the field
+    // whenever the reader is not touching it.
+    GrainField.prototype.wander = function () {
+        if (!this.options.autoWander) return;
+        if (this.lastTouch && Date.now() - this.lastTouch < 2500) return;
+        var t = this.time;
+        this.mouse.x = this.width * (0.5 + 0.42 * Math.sin(t * 0.33));
+        this.mouse.y = this.height * (0.5 + 0.36 * Math.sin(t * 0.51 + 1.2));
+    };
+
     GrainField.prototype.step = function () {
         this.time += 0.016;
+        this.wander();
         var mx = this.mouse.x, my = this.mouse.y;
         var radius = this.options.pushRadius || 110;
         var r2 = radius * radius;
@@ -125,8 +173,9 @@
             var p = this.particles[i];
             var tgt = this.targetFor(i);
             if (tgt) {
-                var bx = Math.sin(this.time * 0.9 + p.phase) * 1.6;
-                var by = Math.cos(this.time * 0.7 + p.phase) * 1.6;
+                var amp = this.options.breathe || 1.6;
+                var bx = Math.sin(this.time * 0.9 + p.phase) * amp;
+                var by = Math.cos(this.time * 0.7 + p.phase) * amp;
                 p.vx += (tgt.x + bx - p.x) * 0.045;
                 p.vy += (tgt.y + by - p.y) * 0.045;
             }
@@ -141,6 +190,8 @@
             p.vy *= 0.82;
             p.x += p.vx;
             p.y += p.vy;
+            p.spin *= 0.985;
+            if (Math.abs(p.spin) < 0.002) p.spin = p.spin < 0 ? -0.002 : 0.002;
             p.rot += p.spin + p.vx * 0.02;
         }
     };

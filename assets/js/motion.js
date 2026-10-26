@@ -9,17 +9,27 @@
 
     // ---------- Grain fields (hero and the formats scene) ----------
 
+    // On touch screens fields are livelier: bigger finger radius, deeper breathing, and a
+    // wandering wind so they keep moving without a hovering cursor.
+    function tuned(o) {
+        if (finePointer) return o;
+        o.autoWander = true;
+        o.breathe = 3;
+        o.pushRadius = (o.pushRadius || 110) * 1.5;
+        return o;
+    }
+
     function heroField() {
         var hero = document.querySelector('[data-hero-field]');
         if (!hero || !window.GrainField) return null;
         var canvas = hero.querySelector('canvas');
         var anchor = hero.querySelector('[data-ring-anchor]');
         if (!anchor) {
-            var drift = new GrainField(canvas, { pointerTarget: hero, density: 0.0007, max: 1100, pushRadius: 140 });
+            var drift = new GrainField(canvas, tuned({ pointerTarget: hero, density: finePointer ? 0.0007 : 0.0016, max: 1100, pushRadius: 140 }));
             drift.setShapes([GrainShapes.field(), GrainShapes.fall()]);
             return { el: hero, field: drift };
         }
-        var field = new GrainField(canvas, { pointerTarget: hero, density: 0.0024, max: 2800 });
+        var field = new GrainField(canvas, tuned({ pointerTarget: hero, density: finePointer ? 0.0024 : 0.0034, max: 2800 }));
         field.setShapes([
             GrainShapes.ring(function (w, h) {
                 var c = canvas.getBoundingClientRect(), a = anchor.getBoundingClientRect();
@@ -35,7 +45,7 @@
         var scene = document.querySelector('[data-formats-scene]');
         if (!scene || !window.GrainField) return null;
         var canvas = scene.querySelector('canvas');
-        var field = new GrainField(canvas, { pointerTarget: scene, density: 0.0016, max: 2000, pushRadius: 90 });
+        var field = new GrainField(canvas, tuned({ pointerTarget: scene, density: finePointer ? 0.0016 : 0.0026, max: 2000, pushRadius: 90 }));
         var narrow = function (w) { return w < 760; };
         field.setShapes([
             GrainShapes.field(),
@@ -58,7 +68,7 @@
     function grainNumbers() {
         if (!window.GrainField) return [];
         return Array.prototype.map.call(document.querySelectorAll('[data-grain-number]'), function (box) {
-            var field = new GrainField(box.querySelector('canvas'), { pointerTarget: box, density: 0.02, max: 1800, pushRadius: 50 });
+            var field = new GrainField(box.querySelector('canvas'), tuned({ pointerTarget: box, density: 0.02, max: 1800, pushRadius: 50 }));
             field.setShapes([GrainShapes.field(), GrainShapes.text(box.getAttribute('data-grain-number'), '"Source Serif 4", Georgia, serif')]);
             return { el: box, field: field };
         });
@@ -267,6 +277,12 @@
         start: 'top 88%', once: true,
         onEnter: function (batch) {
             // fromTo with explicit end values: a repeated trigger can never leave cards hidden.
+            if (!finePointer) {
+                gsap.fromTo(batch,
+                    { x: function (i) { return i % 2 ? 90 : -90; }, rotate: function (i) { return i % 2 ? 6 : -6; }, scale: 0.86, opacity: 0 },
+                    { x: 0, rotate: 0, scale: 1, opacity: 1, duration: 1.1, ease: 'expo.out', stagger: 0.12, overwrite: 'auto' });
+                return;
+            }
             gsap.fromTo(batch,
                 { rotateX: -18, y: 40, opacity: 0, transformPerspective: 900, transformOrigin: '50% 0%' },
                 { rotateX: 0, y: 0, opacity: 1, duration: 0.9, ease: 'expo.out', stagger: 0.08, overwrite: 'auto' });
@@ -313,6 +329,44 @@
             onUpdate: function (st) { header.classList.toggle('is-hidden', st.direction === 1); }
         });
     }
+
+    // ---------- Content leans with scroll speed (touch screens) ----------
+
+    if (!finePointer) {
+        var lean = gsap.quickTo(root, '--lean', { duration: 0.5, ease: 'power3.out' });
+        root.classList.add('touch-lean');
+        ScrollTrigger.create({
+            onUpdate: function (st) {
+                var v = gsap.utils.clamp(-3.5, 3.5, st.getVelocity() / -400);
+                lean(v);
+            }
+        });
+        ScrollTrigger.addEventListener('scrollEnd', function () { lean(0); });
+
+        // Hero grains burst once as the page opens, so the field arrives with energy.
+        if (hero) {
+            setTimeout(function () {
+                hero.field.burst(hero.field.width / 2, hero.field.height * 0.65, 40);
+            }, 900);
+        }
+    }
+
+    // ---------- Buttons ripple where they are pressed ----------
+
+    document.querySelectorAll('.btn').forEach(function (btn) {
+        btn.addEventListener('pointerdown', function (e) {
+            var r = btn.getBoundingClientRect();
+            var dot = document.createElement('span');
+            dot.className = 'ripple';
+            dot.style.left = e.clientX - r.left + 'px';
+            dot.style.top = e.clientY - r.top + 'px';
+            btn.appendChild(dot);
+            gsap.fromTo(dot, { scale: 0, opacity: 0.45 }, {
+                scale: Math.max(r.width, r.height) / 6, opacity: 0, duration: 0.7, ease: 'power2.out',
+                onComplete: function () { dot.remove(); }
+            });
+        });
+    });
 
     // ---------- Pointer-only flourishes ----------
 

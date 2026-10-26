@@ -1917,7 +1917,7 @@ html.cursor-away .cursor-ring {
     max-width: 18ch;
 }
 
-.hero--field a {
+.hero--field a:not(.btn) {
     color: var(--white);
 }
 
@@ -1995,4 +1995,55 @@ html.cursor-away .cursor-ring {
 
 .has-gsap :is(.card, .advisor, .facts, .team-facts) {
     transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+/* ===================== Mobile drama ===================== */
+
+/* Groups of content lean slightly with scroll speed on touch screens */
+.touch-lean :is(.grid, .advisor-grid, .flow, .checklist, .timeline, .team-facts, .post-list) {
+    transform: skewY(calc(var(--lean, 0) * 1deg));
+    transform-origin: 50% 0%;
+}
+
+/* Tap ripple inside buttons */
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    margin: -6px 0 0 -6px;
+    border-radius: 50%;
+    background: currentColor;
+    pointer-events: none;
+}
+
+@media (max-width: 760px) {
+    /* Bigger, bolder type on phones so motion has something to move */
+    .hero--field h1 {
+        font-size: clamp(2.6rem, 11vw, 3.4rem);
+    }
+
+    .hero--inner h1 {
+        font-size: clamp(2.3rem, 10vw, 3rem);
+    }
+
+    .big-statement {
+        font-size: clamp(1.75rem, 7.6vw, 2.3rem);
+    }
+
+    html.scene-ready .step-word {
+        font-size: clamp(2.6rem, 12vw, 3.6rem);
+    }
+
+    .grain-number {
+        height: 190px;
+    }
+
+    .hero--inner {
+        min-height: 82svh;
+    }
 }
