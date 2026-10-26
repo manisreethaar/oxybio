@@ -14,18 +14,12 @@
         if (!hero || !window.GrainField) return null;
         var canvas = hero.querySelector('canvas');
         var anchor = hero.querySelector('[data-ring-anchor]');
-        var keep = function () {
-            var els = Array.prototype.slice.call(hero.querySelectorAll('.eyebrow, h1, .lede, .actions, .post-meta, .hero-mark figcaption'));
-            var nav = document.querySelector('.site-header .wrap');
-            if (nav) els.push(nav);
-            return els;
-        };
         if (!anchor) {
-            var drift = new GrainField(canvas, { pointerTarget: hero, density: 0.0007, max: 1100, pushRadius: 140, keepOut: keep });
+            var drift = new GrainField(canvas, { pointerTarget: hero, density: 0.0007, max: 1100, pushRadius: 140 });
             drift.setShapes([GrainShapes.field(), GrainShapes.fall()]);
             return { el: hero, field: drift };
         }
-        var field = new GrainField(canvas, { pointerTarget: hero, density: 0.0024, max: 2800, keepOut: keep });
+        var field = new GrainField(canvas, { pointerTarget: hero, density: 0.0024, max: 2800 });
         field.setShapes([
             GrainShapes.ring(function (w, h) {
                 var c = canvas.getBoundingClientRect(), a = anchor.getBoundingClientRect();
@@ -41,10 +35,7 @@
         var scene = document.querySelector('[data-formats-scene]');
         if (!scene || !window.GrainField) return null;
         var canvas = scene.querySelector('canvas');
-        var field = new GrainField(canvas, {
-            pointerTarget: scene, density: 0.0016, max: 2000, pushRadius: 90,
-            keepOut: function () { return scene.querySelectorAll('.scene-copy .eyebrow, .scene-copy h2, .scene-steps, .scene-link'); }
-        });
+        var field = new GrainField(canvas, { pointerTarget: scene, density: 0.0016, max: 2000, pushRadius: 90 });
         var narrow = function (w) { return w < 760; };
         field.setShapes([
             GrainShapes.field(),
@@ -76,14 +67,6 @@
     var hero = heroField();
     var scene = sceneField();
     var numbers = grainNumbers();
-
-    // Web fonts change line lengths, so re-measure the keep-clear zones once they settle.
-    function refreshZones() {
-        if (hero) hero.field.refresh();
-        if (scene) scene.field.refresh();
-    }
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(refreshZones);
-    window.addEventListener('load', refreshZones);
 
     if (reduce || !hasGsap) {
         if (hero) { hero.field.progress = 0; reduce ? hero.field.still() : hero.field.start(); }
