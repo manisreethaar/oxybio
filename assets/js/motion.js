@@ -33,7 +33,9 @@
         field.setShapes([
             GrainShapes.ring(function (w, h) {
                 var c = canvas.getBoundingClientRect(), a = anchor.getBoundingClientRect();
-                var R = Math.min(Math.max(a.width * 0.62, 120), Math.min(w, h) * 0.42);
+                var R = w < 760
+                    ? Math.min(a.width * 0.58, w * 0.4)
+                    : Math.min(Math.max(a.width * 0.62, 120), Math.min(w, h) * 0.42);
                 return { cx: a.left - c.left + a.width / 2, cy: a.top - c.top + a.height / 2, R: R };
             }),
             GrainShapes.fall()
@@ -50,11 +52,11 @@
         field.setShapes([
             GrainShapes.field(),
             function (n, w, h) {
-                return GrainShapes.disc(narrow(w) ? 0.5 : 0.68, narrow(w) ? 0.68 : 0.5, narrow(w) ? 0.24 : 0.26)(n, w, h);
+                return GrainShapes.disc(narrow(w) ? 0.5 : 0.68, 0.5, narrow(w) ? 0.34 : 0.26)(n, w, h);
             },
             function (n, w, h) {
                 return narrow(w)
-                    ? GrainShapes.pair(0.2, 0.68, 0.17)(n, w, h)
+                    ? GrainShapes.pair(0.22, 0.5, 0.26)(n, w, h)
                     : function (n2, w2, h2) {
                         var pts = GrainShapes.pair(0.12, 0.5, 0.22)(n2, w2, h2);
                         for (var i = 0; i < pts.length; i++) pts[i].x += w2 * 0.18;
@@ -330,19 +332,9 @@
         });
     }
 
-    // ---------- Content leans with scroll speed (touch screens) ----------
+    // ---------- Touch screens: the hero opens with a burst ----------
 
     if (!finePointer) {
-        var lean = gsap.quickTo(root, '--lean', { duration: 0.5, ease: 'power3.out' });
-        root.classList.add('touch-lean');
-        ScrollTrigger.create({
-            onUpdate: function (st) {
-                var v = gsap.utils.clamp(-3.5, 3.5, st.getVelocity() / -400);
-                lean(v);
-            }
-        });
-        ScrollTrigger.addEventListener('scrollEnd', function () { lean(0); });
-
         // Hero grains burst once as the page opens, so the field arrives with energy.
         if (hero) {
             setTimeout(function () {

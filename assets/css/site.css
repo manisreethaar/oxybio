@@ -1999,12 +1999,6 @@ html.cursor-away .cursor-ring {
 
 /* ===================== Mobile drama ===================== */
 
-/* Groups of content lean slightly with scroll speed on touch screens */
-.touch-lean :is(.grid, .advisor-grid, .flow, .checklist, .timeline, .team-facts, .post-list) {
-    transform: skewY(calc(var(--lean, 0) * 1deg));
-    transform-origin: 50% 0%;
-}
-
 /* Tap ripple inside buttons */
 .btn {
     position: relative;
@@ -2045,5 +2039,106 @@ html.cursor-away .cursor-ring {
 
     .hero--inner {
         min-height: 82svh;
+    }
+}
+
+/* ===================== Phone layout fixes ===================== */
+
+@media (max-width: 760px) {
+    /* Home hero: the ring sits clear of the buttons, with room below it */
+    .hero--field {
+        padding-bottom: 8rem;
+    }
+
+    .hero-mark {
+        width: min(68%, 15rem);
+        margin-top: 6rem;
+    }
+
+    /* Inner heroes: grains gather below the text so it stays readable */
+    .hero--inner .field-canvas {
+        -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.15) 40%, #000 80%);
+        mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.15) 40%, #000 80%);
+    }
+
+    .hero--inner {
+        min-height: 78svh;
+        align-items: flex-start;
+        padding-top: 8rem;
+    }
+
+    .hero--inner h1 {
+        font-size: clamp(2rem, 8.6vw, 2.6rem);
+        max-width: none;
+    }
+
+    .hero--field h1 {
+        font-size: clamp(2.3rem, 10vw, 3rem);
+    }
+
+    /* Formats scene: captions on top, grains in their own space below */
+    .scene-pin {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        min-height: 0;
+    }
+
+    html.scene-ready .scene-pin {
+        height: 100svh;
+    }
+
+    .scene-copy {
+        height: auto;
+        padding-top: 6rem;
+        padding-bottom: 0.5rem;
+        justify-content: flex-start;
+    }
+
+    .scene .field-canvas {
+        position: relative;
+        inset: auto;
+        order: 2;
+        flex: 1 1 0;
+        height: 0;
+        min-height: 40svh;
+    }
+
+    /* Tighter card padding so text gets the width */
+    .card,
+    .advisor,
+    .glow-card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 560px) {
+    /* Stacked buttons share one width */
+    .actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 400px) {
+    /* Keep the brand on one line beside the menu button on narrow phones */
+    .brand {
+        font-size: 0.95rem;
+        white-space: nowrap;
+        gap: 0.45rem;
+    }
+
+    .brand img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .nav-toggle {
+        padding: 0.4rem 0.65rem;
     }
 }
