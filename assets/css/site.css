@@ -1917,7 +1917,7 @@ html.cursor-away .cursor-ring {
     max-width: 18ch;
 }
 
-.hero--field a {
+.hero--field a:not(.btn) {
     color: var(--white);
 }
 
@@ -1995,4 +1995,232 @@ html.cursor-away .cursor-ring {
 
 .has-gsap :is(.card, .advisor, .facts, .team-facts) {
     transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+/* ===================== Mobile drama ===================== */
+
+/* Tap ripple inside buttons */
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    margin: -6px 0 0 -6px;
+    border-radius: 50%;
+    background: currentColor;
+    pointer-events: none;
+}
+
+@media (max-width: 760px) {
+    /* Bigger, bolder type on phones so motion has something to move */
+    .hero--field h1 {
+        font-size: clamp(2.6rem, 11vw, 3.4rem);
+    }
+
+    .hero--inner h1 {
+        font-size: clamp(2.3rem, 10vw, 3rem);
+    }
+
+    .big-statement {
+        font-size: clamp(1.75rem, 7.6vw, 2.3rem);
+    }
+
+    html.scene-ready .step-word {
+        font-size: clamp(2.6rem, 12vw, 3.6rem);
+    }
+
+    .grain-number {
+        height: 190px;
+    }
+
+    .hero--inner {
+        min-height: 82svh;
+    }
+}
+
+/* ===================== Phone layout fixes ===================== */
+
+@media (max-width: 760px) {
+    /* Home hero: the ring sits clear of the buttons, with room below it */
+    .hero--field {
+        padding-bottom: 8rem;
+    }
+
+    .hero-mark {
+        width: min(68%, 15rem);
+        margin-top: 6rem;
+    }
+
+    /* Inner heroes: grains gather below the text so it stays readable */
+    .hero--inner .field-canvas {
+        -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.15) 40%, #000 80%);
+        mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.15) 40%, #000 80%);
+    }
+
+    .hero--inner {
+        min-height: 78svh;
+        align-items: flex-start;
+        padding-top: 8rem;
+    }
+
+    .hero--inner h1 {
+        font-size: clamp(2rem, 8.6vw, 2.6rem);
+        max-width: none;
+    }
+
+    .hero--field h1 {
+        font-size: clamp(2.3rem, 10vw, 3rem);
+    }
+
+    /* Formats scene: captions on top, grains in their own space below */
+    .scene-pin {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        min-height: 0;
+    }
+
+    html.scene-ready .scene-pin {
+        height: 100svh;
+    }
+
+    .scene-copy {
+        height: auto;
+        padding-top: 6rem;
+        padding-bottom: 0.5rem;
+        justify-content: flex-start;
+    }
+
+    .scene .field-canvas {
+        position: relative;
+        inset: auto;
+        order: 2;
+        flex: 1 1 0;
+        height: 0;
+        min-height: 40svh;
+    }
+
+    /* Tighter card padding so text gets the width */
+    .card,
+    .advisor,
+    .glow-card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 560px) {
+    /* Stacked buttons share one width */
+    .actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 400px) {
+    /* Keep the brand on one line beside the menu button on narrow phones */
+    .brand {
+        font-size: 0.95rem;
+        white-space: nowrap;
+        gap: 0.45rem;
+    }
+
+    .brand img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .nav-toggle {
+        padding: 0.4rem 0.65rem;
+    }
+}
+
+/* ===================== Home: product cards ===================== */
+
+.product-card {
+    padding: 0;
+    overflow: hidden;
+}
+
+.product-visual {
+    position: relative;
+    height: clamp(200px, 26vw, 280px);
+    background:
+        radial-gradient(22rem 14rem at 50% 50%, rgba(43, 91, 181, 0.4), transparent 70%),
+        var(--navy-deep);
+    overflow: hidden;
+}
+
+.product-body {
+    padding: 1.75rem 2rem 2rem;
+}
+
+.product-body h3 {
+    font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+    margin-bottom: 0.35rem;
+}
+
+.product-body p {
+    font-size: 1.1rem;
+}
+
+/* ===================== Home: reasons ===================== */
+
+.reasons .point h3 {
+    font-size: 1.2rem;
+}
+
+/* ===================== Home: how it's made ===================== */
+
+.made {
+    position: relative;
+    overflow: hidden;
+    min-height: 80svh;
+    display: flex;
+    align-items: center;
+    padding: clamp(5rem, 12vw, 9rem) 0;
+    background:
+        radial-gradient(46rem 30rem at 50% 50%, rgba(43, 91, 181, 0.28), transparent 65%),
+        var(--navy-deep);
+    color: var(--white);
+}
+
+.made-copy {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    pointer-events: none;
+}
+
+.made-copy a {
+    pointer-events: auto;
+}
+
+.made .eyebrow {
+    color: #A9C0E3;
+}
+
+.made h2 {
+    color: var(--white);
+    font-size: clamp(2.1rem, 5.2vw, 4.2rem);
+    line-height: 1.12;
+    max-width: 20ch;
+    margin: 0.75rem auto 1.75rem;
+    text-wrap: balance;
+}
+
+.made .more {
+    color: var(--white);
+}
+
+.made .more:hover {
+    color: #DCE6F1;
 }

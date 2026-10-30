@@ -28,7 +28,8 @@
         var area = this.width * this.height;
         var density = this.options.density || 0.0021;
         var max = this.options.max || 2600;
-        return Math.max(500, Math.min(max, Math.round(area * density)));
+        var min = this.options.min || 500;
+        return Math.max(min, Math.min(max, Math.round(area * density)));
     };
 
     GrainField.prototype.resize = function () {
@@ -52,7 +53,9 @@
                 spin: rand(-0.01, 0.01),
                 phase: rand(0, Math.PI * 2),
                 color: Math.floor(Math.random() * this.palette.length),
-                alpha: rand(0.45, 0.95)
+                alpha: rand(0.45, 0.95),
+                orbit: Math.sqrt(Math.random()),
+                speed: rand(0.4, 1.4)
             });
         }
         this.particles.length = n;
@@ -85,6 +88,28 @@
             self.mouse.x = -9999;
             self.mouse.y = -9999;
         });
+        // Touch: grains follow the finger while it moves and burst outward where it lands.
+        var release;
+        function touchAt(t) {
+            var r = self.canvas.getBoundingClientRect();
+            self.mouse.x = t.clientX - r.left;
+            self.mouse.y = t.clientY - r.top;
+            self.lastTouch = Date.now();
+        }
+        host.addEventListener('touchstart', function (e) {
+            clearTimeout(release);
+            touchAt(e.touches[0]);
+            self.burst(self.mouse.x, self.mouse.y);
+        }, { passive: true });
+        host.addEventListener('touchmove', function (e) {
+            touchAt(e.touches[0]);
+        }, { passive: true });
+        host.addEventListener('touchend', function () {
+            release = setTimeout(function () {
+                self.mouse.x = -9999;
+                self.mouse.y = -9999;
+            }, 250);
+        }, { passive: true });
         var resizeTimer;
         window.addEventListener('resize', function () {
             clearTimeout(resizeTimer);
@@ -102,6 +127,14 @@
     };
 
     GrainField.prototype.targetFor = function (i) {
+        // Swirl: grains circle a slow vortex, inner ones faster, like a drink being stirred.
+        if (this.options.flow === 'swirl') {
+            var q = this.particles[i];
+            var R = Math.min(this.width, this.height) * 0.46;
+            var r = R * (0.12 + q.orbit * 0.88);
+            var ang = q.phase + this.time * (0.25 + (1 - q.orbit) * 0.9);
+            return { x: this.width / 2 + Math.cos(ang) * r * 1.35, y: this.height / 2 + Math.sin(ang) * r * 0.8 };
+        }
         var shapes = this.shapes;
         if (!shapes.length) return null;
         var p = Math.max(0, Math.min(shapes.length - 1, this.progress));
@@ -116,17 +149,57 @@
         return { x: pa.x + (pb.x - pa.x) * local, y: pa.y + (pb.y - pa.y) * local };
     };
 
+    // A shockwave: grains near (x, y) are thrown outward and spring back to their shape.
+    GrainField.prototype.burst = function (x, y, power) {
+        var radius = (this.options.pushRadius || 110) * 2.6;
+        var strength = power || 26;
+        for (var i = 0; i < this.particles.length; i++) {
+            var p = this.particles[i];
+            var dx = p.x - x, dy = p.y - y, d = Math.sqrt(dx * dx + dy * dy) || 1;
+            if (d > radius) continue;
+            var f = (1 - d / radius) * strength;
+            p.vx += (dx / d) * f;
+            p.vy += (dy / d) * f;
+            p.spin += (Math.random() - 0.5) * 0.2;
+        }
+    };
+
+    // On touch screens nobody hovers, so a slow invisible "wind" wanders through the field
+    // whenever the reader is not touching it.
+    GrainField.prototype.wander = function () {
+        if (!this.options.autoWander) return;
+        if (this.lastTouch && Date.now() - this.lastTouch < 2500) return;
+        var t = this.time;
+        this.mouse.x = this.width * (0.5 + 0.42 * Math.sin(t * 0.33));
+        this.mouse.y = this.height * (0.5 + 0.36 * Math.sin(t * 0.51 + 1.2));
+    };
+
     GrainField.prototype.step = function () {
         this.time += 0.016;
+        this.wander();
         var mx = this.mouse.x, my = this.mouse.y;
         var radius = this.options.pushRadius || 110;
         var r2 = radius * radius;
+        var rise = this.options.flow === 'rise';
         for (var i = 0; i < this.particles.length; i++) {
             var p = this.particles[i];
-            var tgt = this.targetFor(i);
+            var tgt = rise ? null : this.targetFor(i);
+            // Rise: grains float upward like bubbles, sway, and re-enter from the bottom.
+            if (rise) {
+                p.y -= p.speed * (0.6 + p.size * 0.35);
+                p.x += Math.sin(this.time * 1.6 + p.phase) * 0.25;
+                if (p.y < -8) {
+                    p.y = this.height + rand(4, 30);
+                    p.x = rand(0, this.width);
+                    p.vx = p.vy = 0;
+                }
+                if (p.x < -8) p.x = this.width + 6;
+                if (p.x > this.width + 8) p.x = -6;
+            }
             if (tgt) {
-                var bx = Math.sin(this.time * 0.9 + p.phase) * 1.6;
-                var by = Math.cos(this.time * 0.7 + p.phase) * 1.6;
+                var amp = this.options.breathe || 1.6;
+                var bx = Math.sin(this.time * 0.9 + p.phase) * amp;
+                var by = Math.cos(this.time * 0.7 + p.phase) * amp;
                 p.vx += (tgt.x + bx - p.x) * 0.045;
                 p.vy += (tgt.y + by - p.y) * 0.045;
             }
@@ -141,6 +214,8 @@
             p.vy *= 0.82;
             p.x += p.vx;
             p.y += p.vy;
+            p.spin *= 0.985;
+            if (Math.abs(p.spin) < 0.002) p.spin = p.spin < 0 ? -0.002 : 0.002;
             p.rot += p.spin + p.vx * 0.02;
         }
     };
