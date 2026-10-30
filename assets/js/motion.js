@@ -76,14 +76,45 @@
         });
     }
 
+    // Product cards: a stirred swirl for the creamy drink, rising bubbles for the sparkling one.
+    function cardFields() {
+        if (!window.GrainField) return [];
+        return Array.prototype.map.call(document.querySelectorAll('[data-grain-card]'), function (box) {
+            var field = new GrainField(box.querySelector('canvas'), tuned({
+                pointerTarget: box.closest('.card') || box, flow: box.getAttribute('data-grain-card') === 'rise' ? 'rise' : 'swirl',
+                density: 0.006, min: 260, max: 900, pushRadius: 60
+            }));
+            field.options.autoWander = false;
+            return { el: box, field: field };
+        });
+    }
+
+    // How it's made: loose grains on dark navy gather into one body as the section arrives.
+    function madeField() {
+        var box = document.querySelector('[data-made-field]');
+        if (!box || !window.GrainField) return null;
+        var field = new GrainField(box.querySelector('canvas'), tuned({
+            pointerTarget: box, palette: ['#24477F', '#2E5591', '#3A64A6', '#4F74BF', '#7F9DD0'],
+            density: finePointer ? 0.0018 : 0.0026, max: 2200, pushRadius: 120
+        }));
+        field.setShapes([GrainShapes.field(), function (n, w, h) {
+            return GrainShapes.disc(0.5, 0.5, w < 760 ? 0.62 : 0.5)(n, w, h);
+        }]);
+        return { el: box, field: field };
+    }
+
     var hero = heroField();
     var scene = sceneField();
     var numbers = grainNumbers();
+    var cards = cardFields();
+    var made = madeField();
 
     if (reduce || !hasGsap) {
         if (hero) { hero.field.progress = 0; reduce ? hero.field.still() : hero.field.start(); }
         if (scene) { scene.field.progress = 1; scene.field.still(); }
         numbers.forEach(function (n) { n.field.progress = 1; n.field.still(); n.el.classList.add('is-drawn'); });
+        cards.forEach(function (c) { reduce ? c.field.still() : c.field.start(); });
+        if (made) { made.field.progress = 1; reduce ? made.field.still() : made.field.start(); }
         return;
     }
 
@@ -242,6 +273,21 @@
             onUpdate: function (st) { n.field.progress = st.progress; }
         });
     });
+
+    // ---------- Product cards and the made section ----------
+
+    cards.forEach(function (c) { c.field.start(); });
+    if (made) {
+        made.field.start();
+        ScrollTrigger.create({
+            trigger: made.el, start: 'top 85%', end: 'center 50%', scrub: 0.8,
+            onUpdate: function (st) { made.field.progress = st.progress; }
+        });
+        gsap.fromTo(made.el.querySelector('.made-copy'), { scale: 0.92, opacity: 0 }, {
+            scale: 1, opacity: 1, ease: 'none',
+            scrollTrigger: { trigger: made.el, start: 'top 75%', end: 'center 55%', scrub: true }
+        });
+    }
 
     // ---------- Platform flow: connectors draw and steps light in order ----------
 

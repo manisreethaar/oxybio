@@ -2142,3 +2142,85 @@ html.cursor-away .cursor-ring {
         padding: 0.4rem 0.65rem;
     }
 }
+
+/* ===================== Home: product cards ===================== */
+
+.product-card {
+    padding: 0;
+    overflow: hidden;
+}
+
+.product-visual {
+    position: relative;
+    height: clamp(200px, 26vw, 280px);
+    background:
+        radial-gradient(22rem 14rem at 50% 50%, rgba(43, 91, 181, 0.4), transparent 70%),
+        var(--navy-deep);
+    overflow: hidden;
+}
+
+.product-body {
+    padding: 1.75rem 2rem 2rem;
+}
+
+.product-body h3 {
+    font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+    margin-bottom: 0.35rem;
+}
+
+.product-body p {
+    font-size: 1.1rem;
+}
+
+/* ===================== Home: reasons ===================== */
+
+.reasons .point h3 {
+    font-size: 1.2rem;
+}
+
+/* ===================== Home: how it's made ===================== */
+
+.made {
+    position: relative;
+    overflow: hidden;
+    min-height: 80svh;
+    display: flex;
+    align-items: center;
+    padding: clamp(5rem, 12vw, 9rem) 0;
+    background:
+        radial-gradient(46rem 30rem at 50% 50%, rgba(43, 91, 181, 0.28), transparent 65%),
+        var(--navy-deep);
+    color: var(--white);
+}
+
+.made-copy {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    pointer-events: none;
+}
+
+.made-copy a {
+    pointer-events: auto;
+}
+
+.made .eyebrow {
+    color: #A9C0E3;
+}
+
+.made h2 {
+    color: var(--white);
+    font-size: clamp(2.1rem, 5.2vw, 4.2rem);
+    line-height: 1.12;
+    max-width: 20ch;
+    margin: 0.75rem auto 1.75rem;
+    text-wrap: balance;
+}
+
+.made .more {
+    color: var(--white);
+}
+
+.made .more:hover {
+    color: #DCE6F1;
+}

@@ -28,7 +28,8 @@
         var area = this.width * this.height;
         var density = this.options.density || 0.0021;
         var max = this.options.max || 2600;
-        return Math.max(500, Math.min(max, Math.round(area * density)));
+        var min = this.options.min || 500;
+        return Math.max(min, Math.min(max, Math.round(area * density)));
     };
 
     GrainField.prototype.resize = function () {
@@ -52,7 +53,9 @@
                 spin: rand(-0.01, 0.01),
                 phase: rand(0, Math.PI * 2),
                 color: Math.floor(Math.random() * this.palette.length),
-                alpha: rand(0.45, 0.95)
+                alpha: rand(0.45, 0.95),
+                orbit: Math.sqrt(Math.random()),
+                speed: rand(0.4, 1.4)
             });
         }
         this.particles.length = n;
@@ -124,6 +127,14 @@
     };
 
     GrainField.prototype.targetFor = function (i) {
+        // Swirl: grains circle a slow vortex, inner ones faster, like a drink being stirred.
+        if (this.options.flow === 'swirl') {
+            var q = this.particles[i];
+            var R = Math.min(this.width, this.height) * 0.46;
+            var r = R * (0.12 + q.orbit * 0.88);
+            var ang = q.phase + this.time * (0.25 + (1 - q.orbit) * 0.9);
+            return { x: this.width / 2 + Math.cos(ang) * r * 1.35, y: this.height / 2 + Math.sin(ang) * r * 0.8 };
+        }
         var shapes = this.shapes;
         if (!shapes.length) return null;
         var p = Math.max(0, Math.min(shapes.length - 1, this.progress));
@@ -169,9 +180,22 @@
         var mx = this.mouse.x, my = this.mouse.y;
         var radius = this.options.pushRadius || 110;
         var r2 = radius * radius;
+        var rise = this.options.flow === 'rise';
         for (var i = 0; i < this.particles.length; i++) {
             var p = this.particles[i];
-            var tgt = this.targetFor(i);
+            var tgt = rise ? null : this.targetFor(i);
+            // Rise: grains float upward like bubbles, sway, and re-enter from the bottom.
+            if (rise) {
+                p.y -= p.speed * (0.6 + p.size * 0.35);
+                p.x += Math.sin(this.time * 1.6 + p.phase) * 0.25;
+                if (p.y < -8) {
+                    p.y = this.height + rand(4, 30);
+                    p.x = rand(0, this.width);
+                    p.vx = p.vy = 0;
+                }
+                if (p.x < -8) p.x = this.width + 6;
+                if (p.x > this.width + 8) p.x = -6;
+            }
             if (tgt) {
                 var amp = this.options.breathe || 1.6;
                 var bx = Math.sin(this.time * 0.9 + p.phase) * amp;
