@@ -76,12 +76,12 @@
         });
     }
 
-    // Product cards: a stirred swirl for the creamy drink, rising bubbles for the sparkling one.
+    // Need-area cards: each runs its own grain motion (swirl, rise, bloom or wave).
     function cardFields() {
         if (!window.GrainField) return [];
         return Array.prototype.map.call(document.querySelectorAll('[data-grain-card]'), function (box) {
             var field = new GrainField(box.querySelector('canvas'), tuned({
-                pointerTarget: box.closest('.card') || box, flow: box.getAttribute('data-grain-card') === 'rise' ? 'rise' : 'swirl',
+                pointerTarget: box.closest('.card') || box, flow: box.getAttribute('data-grain-card') || 'swirl',
                 density: 0.006, min: 260, max: 900, pushRadius: 60
             }));
             field.options.autoWander = false;

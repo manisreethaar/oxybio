@@ -2224,3 +2224,95 @@ html.cursor-away .cursor-ring {
 .made .more:hover {
     color: #DCE6F1;
 }
+
+/* ===================== Home: need areas, standard, waitlist choices, work with us ===================== */
+
+.need-grid .product-visual {
+    height: clamp(170px, 20vw, 220px);
+}
+
+.made-body {
+    max-width: 34rem;
+    margin: 0 auto;
+    color: #DCE6F1;
+    font-size: 1.15rem;
+}
+
+.section-foot .more {
+    font-weight: 600;
+}
+
+.choice-group {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.choice-group legend {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--navy);
+    margin-bottom: 0.6rem;
+    padding: 0;
+}
+
+.choice-group .optional {
+    font-weight: 400;
+    color: #4A5A72;
+}
+
+.form label.choice {
+    margin: 0;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.form .choice input {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+}
+
+.choice span {
+    display: inline-block;
+    padding: 0.5rem 0.9rem;
+    border: 1px solid #8A9BB3;
+    border-radius: 999px;
+    background: var(--white);
+    color: var(--navy);
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.choice:hover span {
+    border-color: var(--accent);
+}
+
+.choice input:checked + span {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: var(--white);
+}
+
+.choice input:focus-visible + span {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.talk-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.talk-card h3 {
+    color: var(--navy);
+}
+
+.talk-card:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}

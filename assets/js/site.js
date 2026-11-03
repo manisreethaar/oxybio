@@ -21,6 +21,23 @@
 
     // Forms marked data-gform post to Google Forms through a hidden iframe so the page does not
     // navigate away; once the iframe loads after a submit, the form is swapped for its status message.
+    // The waitlist's interest and role choices have no field of their own in the Google Form, so
+    // they are folded into the message field and left out of the post itself.
+    document.querySelectorAll('form[data-waitlist]').forEach(function (form) {
+        form.addEventListener('submit', function () {
+            var picked = function (name) {
+                return Array.prototype.filter.call(form.elements[name] || [], function (el) { return el.checked; })
+                    .map(function (el) { return el.value; });
+            };
+            var interests = picked('interest'), role = picked('role');
+            var msg = 'Waitlist sign-up from the home page.';
+            if (interests.length) msg += ' Interested in: ' + interests.join(', ') + '.';
+            if (role.length) msg += " I'm a: " + role[0] + '.';
+            form.elements['entry.1846923513'].value = msg;
+            form.querySelectorAll('input[name="interest"], input[name="role"]').forEach(function (el) { el.disabled = true; });
+        });
+    });
+
     document.querySelectorAll('form[data-gform]').forEach(function (form) {
         var frame = document.querySelector('iframe[name="' + form.target + '"]');
         var status = document.getElementById(form.dataset.status);

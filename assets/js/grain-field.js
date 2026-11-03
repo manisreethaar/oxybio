@@ -135,6 +135,22 @@
             var ang = q.phase + this.time * (0.25 + (1 - q.orbit) * 0.9);
             return { x: this.width / 2 + Math.cos(ang) * r * 1.35, y: this.height / 2 + Math.sin(ang) * r * 0.8 };
         }
+        // Bloom: grains trace slowly turning petals that open and close.
+        if (this.options.flow === 'bloom') {
+            var b = this.particles[i];
+            var BR = Math.min(this.width, this.height) * 0.48;
+            var ba = b.phase + this.time * 0.15;
+            var petal = 0.35 + 0.65 * Math.abs(Math.cos(ba * 2.5 - this.time * 0.15 * 2.5));
+            var br = BR * b.orbit * petal * (0.9 + 0.1 * Math.sin(this.time * 1.1));
+            return { x: this.width / 2 + Math.cos(ba) * br * 1.3, y: this.height / 2 + Math.sin(ba) * br };
+        }
+        // Wave: grains ride three gentle currents across the card.
+        if (this.options.flow === 'wave') {
+            var v = this.particles[i];
+            var lane = Math.floor(v.phase / (Math.PI * 2) * 3);
+            var ly = this.height * (0.28 + lane * 0.22) + (v.orbit - 0.5) * this.height * 0.1;
+            return { x: v.x, y: ly + Math.sin(v.x * 0.022 + this.time * 1.4 + lane * 2) * this.height * 0.1 };
+        }
         var shapes = this.shapes;
         if (!shapes.length) return null;
         var p = Math.max(0, Math.min(shapes.length - 1, this.progress));
@@ -195,6 +211,10 @@
                 }
                 if (p.x < -8) p.x = this.width + 6;
                 if (p.x > this.width + 8) p.x = -6;
+            }
+            if (this.options.flow === 'wave') {
+                p.x += p.speed * 0.9;
+                if (p.x > this.width + 8) { p.x = -6; p.vx = 0; }
             }
             if (tgt) {
                 var amp = this.options.breathe || 1.6;
