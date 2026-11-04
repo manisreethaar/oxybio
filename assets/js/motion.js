@@ -1,6 +1,6 @@
-// Motion layer: smooth scroll, page curtain, word-by-word headings, scroll scenes, magnetic
-// buttons, cursor and tilt. Everything here is progressive: without GSAP, without a fine
-// pointer, or under reduced motion, the page stays fully readable and static.
+// Motion layer: smooth scroll, page curtain, word-by-word headings, grain fields and scroll
+// scenes. Everything here is progressive: without GSAP or under reduced motion, the page stays
+// fully readable and static.
 (function () {
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var finePointer = window.matchMedia('(pointer: fine)').matches;
@@ -9,21 +9,33 @@
 
     // ---------- Grain fields (hero and the formats scene) ----------
 
+    // On touch screens fields are livelier: bigger finger radius, deeper breathing, and a
+    // wandering wind so they keep moving without a hovering cursor.
+    function tuned(o) {
+        if (finePointer) return o;
+        o.autoWander = true;
+        o.breathe = 3;
+        o.pushRadius = (o.pushRadius || 110) * 1.5;
+        return o;
+    }
+
     function heroField() {
         var hero = document.querySelector('[data-hero-field]');
         if (!hero || !window.GrainField) return null;
         var canvas = hero.querySelector('canvas');
         var anchor = hero.querySelector('[data-ring-anchor]');
         if (!anchor) {
-            var drift = new GrainField(canvas, { pointerTarget: hero, density: 0.0007, max: 1100, pushRadius: 140 });
+            var drift = new GrainField(canvas, tuned({ pointerTarget: hero, density: finePointer ? 0.0007 : 0.0016, max: 1100, pushRadius: 140 }));
             drift.setShapes([GrainShapes.field(), GrainShapes.fall()]);
             return { el: hero, field: drift };
         }
-        var field = new GrainField(canvas, { pointerTarget: hero, density: 0.0024, max: 2800 });
+        var field = new GrainField(canvas, tuned({ pointerTarget: hero, density: finePointer ? 0.0024 : 0.0034, max: 2800 }));
         field.setShapes([
             GrainShapes.ring(function (w, h) {
                 var c = canvas.getBoundingClientRect(), a = anchor.getBoundingClientRect();
-                var R = Math.min(Math.max(a.width * 0.62, 120), Math.min(w, h) * 0.42);
+                var R = w < 760
+                    ? Math.min(a.width * 0.58, w * 0.4)
+                    : Math.min(Math.max(a.width * 0.62, 120), Math.min(w, h) * 0.42);
                 return { cx: a.left - c.left + a.width / 2, cy: a.top - c.top + a.height / 2, R: R };
             }),
             GrainShapes.fall()
@@ -35,16 +47,16 @@
         var scene = document.querySelector('[data-formats-scene]');
         if (!scene || !window.GrainField) return null;
         var canvas = scene.querySelector('canvas');
-        var field = new GrainField(canvas, { pointerTarget: scene, density: 0.0016, max: 2000, pushRadius: 90 });
+        var field = new GrainField(canvas, tuned({ pointerTarget: scene, density: finePointer ? 0.0016 : 0.0026, max: 2000, pushRadius: 90 }));
         var narrow = function (w) { return w < 760; };
         field.setShapes([
             GrainShapes.field(),
             function (n, w, h) {
-                return GrainShapes.disc(narrow(w) ? 0.5 : 0.68, narrow(w) ? 0.68 : 0.5, narrow(w) ? 0.24 : 0.26)(n, w, h);
+                return GrainShapes.disc(narrow(w) ? 0.5 : 0.68, 0.5, narrow(w) ? 0.34 : 0.26)(n, w, h);
             },
             function (n, w, h) {
                 return narrow(w)
-                    ? GrainShapes.pair(0.2, 0.68, 0.17)(n, w, h)
+                    ? GrainShapes.pair(0.22, 0.5, 0.26)(n, w, h)
                     : function (n2, w2, h2) {
                         var pts = GrainShapes.pair(0.12, 0.5, 0.22)(n2, w2, h2);
                         for (var i = 0; i < pts.length; i++) pts[i].x += w2 * 0.18;
@@ -58,20 +70,80 @@
     function grainNumbers() {
         if (!window.GrainField) return [];
         return Array.prototype.map.call(document.querySelectorAll('[data-grain-number]'), function (box) {
-            var field = new GrainField(box.querySelector('canvas'), { pointerTarget: box, density: 0.02, max: 1800, pushRadius: 50 });
-            field.setShapes([GrainShapes.field(), GrainShapes.text(box.getAttribute('data-grain-number'), '"Source Serif 4", Georgia, serif')]);
+            var field = new GrainField(box.querySelector('canvas'), tuned({ pointerTarget: box, density: 0.02, max: 1800, pushRadius: 50 }));
+            field.setShapes([GrainShapes.field(), GrainShapes.text(box.getAttribute('data-grain-number'), 'Inter, system-ui, sans-serif')]);
             return { el: box, field: field };
         });
     }
 
+    // Need-area cards: each runs its own grain motion (swirl, rise, bloom or wave).
+    function cardFields() {
+        if (!window.GrainField) return [];
+        return Array.prototype.map.call(document.querySelectorAll('[data-grain-card]'), function (box) {
+            var field = new GrainField(box.querySelector('canvas'), tuned({
+                pointerTarget: box.closest('.card') || box, flow: box.getAttribute('data-grain-card') || 'swirl',
+                palette: ['#E0CDB2', '#CDB08A', '#B48C61', '#9C6E45', '#8E5A32'],
+                density: 0.006, min: 260, max: 900, pushRadius: 60
+            }));
+            field.options.autoWander = false;
+            return { el: box, field: field };
+        });
+    }
+
+    // How it's made: loose grains on dark navy gather into one body as the section arrives.
+    function madeField() {
+        var box = document.querySelector('[data-made-field]');
+        if (!box || !window.GrainField) return null;
+        var field = new GrainField(box.querySelector('canvas'), tuned({
+            pointerTarget: box, palette: ['#E0CDB2', '#CDB08A', '#B48C61', '#9C6E45', '#8E5A32'],
+            density: finePointer ? 0.0018 : 0.0026, max: 2200, pushRadius: 120
+        }));
+        field.setShapes([GrainShapes.field(), function (n, w, h) {
+            return GrainShapes.disc(0.5, 0.5, w < 760 ? 0.62 : 0.5)(n, w, h);
+        }]);
+        return { el: box, field: field };
+    }
+
+    // Our standard: loose grains settle into an even, aligned grid.
+    function measureField() {
+        var box = document.querySelector('[data-measure-field]');
+        if (!box || !window.GrainField) return null;
+        var field = new GrainField(box.querySelector('canvas'), {
+            pointerTarget: box, align: true, palette: ['#CDB08A', '#B48C61', '#9C6E45', '#8E5A32'],
+            density: 0.0016, min: 160, max: 330, pushRadius: 50, breathe: 0.6
+        });
+        field.setShapes([GrainShapes.field(), GrainShapes.grid(0.1)]);
+        return { el: box, field: field };
+    }
+
+    // One platform: a slow swirl of grains inside the dark lead card.
+    function bentoField() {
+        var box = document.querySelector('[data-bento-field]');
+        if (!box || !window.GrainField) return null;
+        var field = new GrainField(box.querySelector('canvas'), tuned({
+            pointerTarget: box, flow: 'swirl', palette: ['#5E5750', '#8E5A32', '#B48C61', '#CDB08A', '#E0CDB2'],
+            density: 0.004, min: 300, max: 1100, pushRadius: 80
+        }));
+        field.options.autoWander = false;
+        return { el: box, field: field };
+    }
+
+    var bento = bentoField();
+    var measure = measureField();
     var hero = heroField();
     var scene = sceneField();
     var numbers = grainNumbers();
+    var cards = cardFields();
+    var made = madeField();
 
     if (reduce || !hasGsap) {
         if (hero) { hero.field.progress = 0; reduce ? hero.field.still() : hero.field.start(); }
         if (scene) { scene.field.progress = 1; scene.field.still(); }
         numbers.forEach(function (n) { n.field.progress = 1; n.field.still(); n.el.classList.add('is-drawn'); });
+        cards.forEach(function (c) { reduce ? c.field.still() : c.field.start(); });
+        if (bento) { reduce ? bento.field.still() : bento.field.start(); }
+        if (measure) { measure.field.progress = 1; reduce ? measure.field.still() : measure.field.start(); }
+        if (made) { made.field.progress = 1; reduce ? made.field.still() : made.field.start(); }
         return;
     }
 
@@ -103,7 +175,7 @@
     var curtain = document.createElement('div');
     curtain.className = 'curtain';
     curtain.setAttribute('aria-hidden', 'true');
-    curtain.innerHTML = '<img src="/assets/images/logo-full.png?v=2" alt="" width="56" height="56">';
+    curtain.innerHTML = '<img src="/assets/images/logo-full.png?v=3" alt="" width="56" height="56">';
     document.body.appendChild(curtain);
     // Arriving from another page of the site: the head script has already covered the page.
     if (root.classList.contains('curtain-in')) {
@@ -161,8 +233,8 @@
         splitWords(h);
         var words = h.querySelectorAll('.wi');
         gsap.from(words, {
-            yPercent: 115, rotate: 4, duration: 0.9, ease: 'expo.out', stagger: 0.045,
-            delay: h.tagName === 'H1' ? 0.55 : 0,
+            yPercent: 105, duration: 1.1, ease: 'expo.out', stagger: 0.03,
+            delay: h.tagName === 'H1' ? 0.35 : 0,
             scrollTrigger: h.tagName === 'H1' ? null : { trigger: h, start: 'top 88%', once: true }
         });
     });
@@ -231,6 +303,65 @@
         });
     });
 
+    // ---------- Product cards and the made section ----------
+
+    cards.forEach(function (c) { c.field.start(); });
+    if (made) {
+        made.field.start();
+        ScrollTrigger.create({
+            trigger: made.el, start: 'top 85%', end: 'center 50%', scrub: 0.8,
+            onUpdate: function (st) { made.field.progress = st.progress; }
+        });
+        gsap.fromTo(made.el.querySelector('.made-copy'), { scale: 0.92, opacity: 0 }, {
+            scale: 1, opacity: 1, ease: 'none',
+            scrollTrigger: { trigger: made.el, start: 'top 75%', end: 'center 55%', scrub: true }
+        });
+    }
+
+    // ---------- Home hero: copy rises in, the visual panel settles ----------
+
+    if (document.querySelector('.hb-hero')) {
+        gsap.from('.hb-hero-copy .chip, .hb-hero-copy .lede, .hb-hero-copy .actions', {
+            y: 22, opacity: 0, duration: 1, delay: 0.5, stagger: 0.1, ease: 'expo.out'
+        });
+        gsap.fromTo('.hb-visual', { opacity: 0, y: 30, scale: 0.97 }, { opacity: 1, y: 0, scale: 1, duration: 1.4, delay: 0.25, ease: 'expo.out' });
+        gsap.fromTo('.stat-row .stat', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1, delay: 0.8, stagger: 0.08, ease: 'expo.out' });
+    }
+
+    if (bento) bento.field.start();
+    gsap.utils.toArray('.bento').forEach(function (grid) {
+        gsap.fromTo(grid.children, { y: 40, opacity: 0, scale: 0.97 }, {
+            y: 0, opacity: 1, scale: 1, duration: 1.1, ease: 'expo.out', stagger: 0.08,
+            scrollTrigger: { trigger: grid, start: 'top 82%', once: true }
+        });
+    });
+
+    // ---------- Hairlines draw across as their columns arrive ----------
+
+    gsap.utils.toArray('.rule-grid').forEach(function (grid) {
+        gsap.fromTo(grid.querySelectorAll('.rule-col'), { '--rule': 0, y: 24, opacity: 0 }, {
+            '--rule': 1, y: 0, opacity: 1, duration: 1.2, ease: 'expo.out', stagger: 0.15,
+            scrollTrigger: { trigger: grid, start: 'top 85%', once: true }
+        });
+    });
+
+    gsap.utils.toArray('.index-links').forEach(function (list) {
+        gsap.fromTo(list.querySelectorAll('li'), { y: 30, opacity: 0 }, {
+            y: 0, opacity: 1, duration: 1, ease: 'expo.out', stagger: 0.1,
+            scrollTrigger: { trigger: list, start: 'top 88%', once: true }
+        });
+    });
+
+    // ---------- Our standard: grains settle into a measured grid ----------
+
+    if (measure) {
+        measure.field.start();
+        ScrollTrigger.create({
+            trigger: measure.el, start: 'top 85%', end: 'center 50%', scrub: 0.8,
+            onUpdate: function (st) { measure.field.progress = st.progress; }
+        });
+    }
+
     // ---------- Platform flow: connectors draw and steps light in order ----------
 
     document.querySelectorAll('.flow').forEach(function (flow) {
@@ -267,9 +398,8 @@
         start: 'top 88%', once: true,
         onEnter: function (batch) {
             // fromTo with explicit end values: a repeated trigger can never leave cards hidden.
-            gsap.fromTo(batch,
-                { rotateX: -18, y: 40, opacity: 0, transformPerspective: 900, transformOrigin: '50% 0%' },
-                { rotateX: 0, y: 0, opacity: 1, duration: 0.9, ease: 'expo.out', stagger: 0.08, overwrite: 'auto' });
+            gsap.fromTo(batch, { y: 36, opacity: 0 },
+                { y: 0, opacity: 1, duration: 1.1, ease: 'expo.out', stagger: 0.08, overwrite: 'auto' });
         }
     });
 
@@ -313,54 +443,4 @@
             onUpdate: function (st) { header.classList.toggle('is-hidden', st.direction === 1); }
         });
     }
-
-    // ---------- Pointer-only flourishes ----------
-
-    if (!finePointer) return;
-
-    // Magnetic buttons drift toward the cursor.
-    document.querySelectorAll('.btn').forEach(function (btn) {
-        var xTo = gsap.quickTo(btn, 'x', { duration: 0.5, ease: 'elastic.out(1, 0.4)' });
-        var yTo = gsap.quickTo(btn, 'y', { duration: 0.5, ease: 'elastic.out(1, 0.4)' });
-        btn.addEventListener('pointermove', function (e) {
-            var r = btn.getBoundingClientRect();
-            xTo((e.clientX - r.left - r.width / 2) * 0.3);
-            yTo((e.clientY - r.top - r.height / 2) * 0.45);
-        });
-        btn.addEventListener('pointerleave', function () { xTo(0); yTo(0); });
-    });
-
-    // Cards tilt slightly toward the cursor.
-    document.querySelectorAll('.card, .advisor').forEach(function (card) {
-        card.addEventListener('pointermove', function (e) {
-            var r = card.getBoundingClientRect();
-            var px = (e.clientX - r.left) / r.width - 0.5, py = (e.clientY - r.top) / r.height - 0.5;
-            gsap.to(card, { rotateY: px * 6, rotateX: -py * 6, transformPerspective: 800, duration: 0.4, ease: 'power2.out' });
-            card.style.setProperty('--gx', (px + 0.5) * 100 + '%');
-            card.style.setProperty('--gy', (py + 0.5) * 100 + '%');
-        });
-        card.addEventListener('pointerleave', function () {
-            gsap.to(card, { rotateY: 0, rotateX: 0, duration: 0.6, ease: 'power3.out' });
-        });
-    });
-
-    // Cursor: a small dot with a trailing ring that grows over interactive elements.
-    var dot = document.createElement('div');
-    var ring = document.createElement('div');
-    dot.className = 'cursor-dot';
-    ring.className = 'cursor-ring';
-    dot.setAttribute('aria-hidden', 'true');
-    ring.setAttribute('aria-hidden', 'true');
-    document.body.append(dot, ring);
-    root.classList.add('has-cursor');
-    var dx = gsap.quickTo(dot, 'x', { duration: 0.08 }), dy = gsap.quickTo(dot, 'y', { duration: 0.08 });
-    var rx = gsap.quickTo(ring, 'x', { duration: 0.45, ease: 'power3.out' }), ry = gsap.quickTo(ring, 'y', { duration: 0.45, ease: 'power3.out' });
-    window.addEventListener('pointermove', function (e) {
-        dx(e.clientX); dy(e.clientY); rx(e.clientX); ry(e.clientY);
-        var interactive = e.target.closest('a, button, summary, input, select, textarea, label');
-        root.classList.toggle('cursor-active', !!interactive);
-        root.classList.toggle('cursor-on-dark', !!e.target.closest('.hero--field, .scene, .section--navy, .site-footer'));
-    });
-    document.addEventListener('pointerleave', function () { root.classList.add('cursor-away'); });
-    document.addEventListener('pointerenter', function () { root.classList.remove('cursor-away'); });
 })();
