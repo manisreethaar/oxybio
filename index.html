@@ -20,8 +20,8 @@
     <link rel="icon" href="/assets/images/logo-full.png?v=3" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Source+Serif+4:opsz,wght@8..60,600&amp;display=swap">
-    <link rel="stylesheet" href="/assets/css/site.css?v=14">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+    <link rel="stylesheet" href="/assets/css/site.css?v=15">
     <script>
         (function () {
             var root = document.documentElement;
@@ -68,6 +68,7 @@
     <script defer src="/_vercel/speed-insights/script.js"></script>
 </head>
 <body>
+<div class="frame">
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header">
@@ -86,155 +87,122 @@
                 <li><a href="/contact">Contact</a></li>
                 </ul>
             </nav>
+            <a class="btn btn--sm header-cta" href="/#waitlist">Join waitlist</a>
         </div>
     </header>
 
     <main id="main">
-        <section class="hero-home" aria-labelledby="hero-heading">
-            <div class="wrap hero-home-grid">
-                <div class="hero-home-copy">
-                    <span class="eyebrow">Food biotechnology &middot; R&amp;D stage &middot; Hosur, Tamil Nadu</span>
-                    <h1 id="hero-heading" class="display">Everyday nutrition from Indian grains.</h1>
+        <section class="hb-hero" aria-labelledby="hero-heading">
+            <div class="wrap hb-hero-grid">
+                <div class="hb-hero-copy">
+                    <span class="chip"><i aria-hidden="true"></i>R&amp;D stage &middot; Hosur, Tamil Nadu</span>
+                    <h1 id="hero-heading" class="hb-display">Everyday nutrition from <span class="accent-text">Indian grains.</span></h1>
                     <p class="lede">We&rsquo;re a food biotechnology company developing everyday foods from India&rsquo;s traditional grains, and testing them in accredited laboratories before we claim anything.</p>
                     <div class="actions">
-                        <a class="btn" href="#waitlist">Join the waitlist</a>
-                        <a class="btn btn--outline" href="#building">See what we&rsquo;re building</a>
+                        <a class="btn btn--arrow" href="#waitlist">Join the waitlist <span aria-hidden="true">&rarr;</span></a>
+                        <a class="btn btn--soft" href="#building">See what we&rsquo;re building</a>
                     </div>
                 </div>
-                <figure class="hero-sphere" data-grain-sphere>
+                <figure class="hb-visual" data-hero-field>
                     <canvas class="field-canvas" aria-hidden="true"></canvas>
-                    <div class="hero-sphere-mark">
+                    <div class="hb-visual-mark" data-ring-anchor>
                         <img src="/assets/images/tamil-quote-dark.png" alt="உணவே மருந்து, Tamil calligraphy" width="794" height="182" lang="ta">
-                        <figcaption>&ldquo;Food is medicine&rdquo;</figcaption>
                     </div>
+                    <figcaption class="hb-visual-cap"><span>உணவே மருந்து &middot; &ldquo;Food is medicine&rdquo;</span><span>Since 2026</span></figcaption>
                 </figure>
             </div>
-        </section>
-
-        <section class="credentials" aria-label="Company credentials">
             <div class="wrap">
-                <dl>
-                    <div>
-                        <dt>DPIIT recognised</dt>
-                        <dd>DIPP258270</dd>
-                    </div>
-                    <div>
-                        <dt>Incubated at</dt>
-                        <dd>TBI-DETI@ACE, Hosur</dd>
-                    </div>
-                    <div>
-                        <dt>Knowledge partner</dt>
-                        <dd class="partner">
-                            <img src="/assets/images/ace-logo.png" alt="Adhiyamaan College of Engineering logo" width="56" height="42">
-                            <span>Adhiyamaan College of Engineering</span>
-                        </dd>
-                    </div>
+                <dl class="stat-row" aria-label="Company credentials">
+                    <div class="stat"><dt>DPIIT recognised</dt><dd>DIPP258270</dd></div>
+                    <div class="stat"><dt>Incubated at</dt><dd>TBI-DETI@ACE, Hosur</dd></div>
+                    <div class="stat stat--partner"><dt>Knowledge partner</dt><dd><img src="/assets/images/ace-logo.png" alt="Adhiyamaan College of Engineering logo" width="40" height="30"> Adhiyamaan College of Engineering</dd></div>
                 </dl>
-                <p class="credentials-legal">CIN U72100TZ2026PTC038160 &middot; Cabin D, DETI@ACE TBI, Adhiyamaan College of Engineering Campus, Hosur, Tamil Nadu 635130</p>
+                <p class="stat-legal">CIN U72100TZ2026PTC038160 &middot; Cabin D, DETI@ACE TBI, Adhiyamaan College of Engineering Campus, Hosur, Tamil Nadu 635130</p>
             </div>
         </section>
 
-        <section class="section" aria-labelledby="why-heading">
-            <div class="wrap label-split">
-                <div class="label-col">
-                    <span class="eyebrow rule-label">Why we exist</span>
-                    <h2 id="why-heading" class="visually-hidden">Why we exist</h2>
-                </div>
-                <p class="big-statement" data-scrub-text>India has always eaten its own grains. Today, many packaged grain foods lean on sugar and marketing instead of measured nutrition, and few are made for the way people actually live.</p>
-            </div>
-        </section>
-
-        <section class="section section--cream" aria-labelledby="work-heading">
+        <section class="section section--cream" aria-labelledby="why-heading">
             <div class="wrap">
-                <div class="head-row">
-                    <div>
-                        <span class="eyebrow rule-label">How we work</span>
-                        <h2 id="work-heading">Grain first. Science in the middle. Proof before promises.</h2>
-                    </div>
-                    <a class="more" href="/platform">How the platform works</a>
+                <span class="chip chip--plain">Why we exist</span>
+                <h2 id="why-heading" class="visually-hidden">Why we exist</h2>
+                <p class="big-statement hb-statement" data-scrub-text>India has always eaten its own grains. Today, many packaged grain foods lean on sugar and marketing instead of measured nutrition, and few are made for the way people actually live.</p>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="work-heading">
+            <div class="wrap">
+                <div class="hb-head">
+                    <span class="chip chip--plain">How we work</span>
+                    <h2 id="work-heading" class="hb-h2">Grain first. Science in the middle. Proof before promises.</h2>
                 </div>
-                <div class="rule-grid">
-                    <div class="rule-col">
+                <div class="grid grid--3">
+                    <article class="card hb-card">
+                        <span class="hb-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21V5"/><path d="M12 9c-2 0-3.2-1.3-3.2-3.2C10.8 5.8 12 7.1 12 9z"/><path d="M12 9c2 0 3.2-1.3 3.2-3.2C13.2 5.8 12 7.1 12 9z"/><path d="M12 13c-2.5 0-4-1.6-4-4 2.5 0 4 1.6 4 4z"/><path d="M12 13c2.5 0 4-1.6 4-4-2.5 0-4 1.6-4 4z"/><path d="M12 17c-2.5 0-4-1.6-4-4 2.5 0 4 1.6 4 4z"/><path d="M12 17c2.5 0 4-1.6 4-4-2.5 0-4 1.6-4 4z"/></svg></span>
                         <h3>Start with Indian grains</h3>
                         <p>Traditional grains that are already part of India&rsquo;s kitchens.</p>
-                    </div>
-                    <div class="rule-col">
+                    </article>
+                    <article class="card hb-card">
+                        <span class="hb-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6"/><path d="M10 3v6l-5 9a2 2 0 0 0 1.7 3h10.6a2 2 0 0 0 1.7-3l-5-9V3"/><path d="M7.5 15h9"/></svg></span>
                         <h3>Research in our own laboratory</h3>
                         <p>Formulation and testing happen in our laboratory in Hosur.</p>
-                    </div>
-                    <div class="rule-col">
+                    </article>
+                    <article class="card hb-card">
+                        <span class="hb-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
                         <h3>Measure before we claim</h3>
                         <p>We say only what independent test data and Indian food regulations allow.</p>
-                    </div>
+                    </article>
                 </div>
+                <p class="section-foot"><a class="more" href="/platform">How the platform works</a></p>
             </div>
         </section>
 
-        <section class="track-section" id="building" aria-labelledby="building-heading" data-track>
-            <div class="track-pin">
-                <div class="wrap track-head">
-                    <div>
-                        <span class="eyebrow rule-label">What we&rsquo;re building</span>
+        <section class="section section--cream" id="building" aria-labelledby="building-heading">
+            <div class="wrap bento">
+                <article class="bento-lead" data-bento-field>
+                    <canvas class="field-canvas" aria-hidden="true"></canvas>
+                    <span class="bento-label">What we&rsquo;re building</span>
+                    <div class="bento-lead-copy">
                         <h2 id="building-heading">One platform. Products for real days.</h2>
+                        <p>In development. Not yet for sale.</p>
                     </div>
-                    <p class="track-note">In development. Not yet for sale.</p>
-                </div>
-                <div class="track-viewport">
-                    <div class="track">
-                        <article class="need-card">
-                            <div class="need-visual" data-grain-card="swirl"><canvas class="field-canvas" aria-hidden="true"></canvas></div>
-                            <div class="need-body">
-                                <span class="tag">In development</span>
-                                <h3>Everyday nourishment</h3>
-                                <p>Daily drinks for the whole family, creamy or sparkling, with nothing to hide on the label.</p>
-                            </div>
-                        </article>
-                        <article class="need-card">
-                            <div class="need-visual" data-grain-card="rise"><canvas class="field-canvas" aria-hidden="true"></canvas></div>
-                            <div class="need-body">
-                                <span class="tag">In development</span>
-                                <h3>Active days</h3>
-                                <p>Nutrition for people who train, work long hours, or spend the day on their feet.</p>
-                            </div>
-                        </article>
-                        <article class="need-card">
-                            <div class="need-visual" data-grain-card="bloom"><canvas class="field-canvas" aria-hidden="true"></canvas></div>
-                            <div class="need-body">
-                                <span class="tag">In development</span>
-                                <h3>Women&rsquo;s nutrition</h3>
-                                <p>Everyday foods developed with the nutrition needs of Indian women in mind.</p>
-                            </div>
-                        </article>
-                        <article class="need-card">
-                            <div class="need-visual" data-grain-card="wave"><canvas class="field-canvas" aria-hidden="true"></canvas></div>
-                            <div class="need-body">
-                                <span class="tag">In development</span>
-                                <h3>Traditional refreshers</h3>
-                                <p>South Indian grain drinks people grew up with, made convenient.</p>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-                <div class="wrap"><div class="track-progress" aria-hidden="true"><span></span></div></div>
+                </article>
+                <article class="bento-card">
+                    <span class="bento-label">In development</span>
+                    <div><h3>Everyday nourishment</h3><p>Daily drinks for the whole family, creamy or sparkling, with nothing to hide on the label.</p></div>
+                </article>
+                <article class="bento-card">
+                    <span class="bento-label">In development</span>
+                    <div><h3>Active days</h3><p>Nutrition for people who train, work long hours, or spend the day on their feet.</p></div>
+                </article>
+                <article class="bento-card">
+                    <span class="bento-label">In development</span>
+                    <div><h3>Women&rsquo;s nutrition</h3><p>Everyday foods developed with the nutrition needs of Indian women in mind.</p></div>
+                </article>
+                <article class="bento-card">
+                    <span class="bento-label">In development</span>
+                    <div><h3>Traditional refreshers</h3><p>South Indian grain drinks people grew up with, made convenient.</p></div>
+                </article>
             </div>
         </section>
 
-        <section class="section section--cream standard" id="standard" aria-labelledby="standard-heading">
-            <div class="wrap standard-grid">
-                <div class="standard-copy">
-                    <span class="eyebrow rule-label">Our standard</span>
-                    <h2 id="standard-heading" class="display-2">We&rsquo;d rather show you the numbers.</h2>
-                    <p>Every batch we make for evaluation goes to independent, accredited testing. No claim goes out without data behind it.</p>
+        <section class="section" id="standard" aria-labelledby="standard-heading">
+            <div class="wrap">
+                <div class="hb-panel standard-grid">
+                    <div class="standard-copy">
+                        <span class="chip chip--plain">Our standard</span>
+                        <h2 id="standard-heading" class="hb-h2">We&rsquo;d rather show you the numbers.</h2>
+                        <p>Every batch we make for evaluation goes to independent, accredited testing. No claim goes out without data behind it.</p>
+                    </div>
+                    <div class="standard-visual" data-measure-field><canvas class="field-canvas" aria-hidden="true"></canvas></div>
                 </div>
-                <div class="standard-visual" data-measure-field><canvas class="field-canvas" aria-hidden="true"></canvas></div>
             </div>
         </section>
 
-        <section class="section" id="waitlist" aria-labelledby="waitlist-heading">
+        <section class="section section--cream" id="waitlist" aria-labelledby="waitlist-heading">
             <div class="wrap waitlist-split">
                 <div>
-                    <span class="eyebrow rule-label">Waitlist</span>
-                    <h2 id="waitlist-heading" class="display-2">Be the first to taste it.</h2>
+                    <span class="chip chip--plain">Waitlist</span>
+                    <h2 id="waitlist-heading" class="hb-h2">Be the first to taste it.</h2>
                     <p class="lede-dark">Get lab updates and launch news. Tell us what you&rsquo;d use, and it shapes what we make first.</p>
                 </div>
                 <div class="form-card">
@@ -261,7 +229,7 @@
                         <label class="choice"><input type="radio" name="role" value="Investor"><span>Investor</span></label>
                         <label class="choice"><input type="radio" name="role" value="Researcher"><span>Researcher</span></label>
                     </fieldset>
-                    <button class="btn" type="submit">Join the waitlist</button>
+                    <button class="btn btn--arrow" type="submit">Join the waitlist <span aria-hidden="true">&rarr;</span></button>
                     <p class="form-note">We use your email address only to send waitlist updates, and you can ask us to remove it at any time. See our <a href="/privacy">privacy policy</a>.</p>
                 </form>
                 <p class="form-status" id="waitlist-form-status" role="status" tabindex="-1" hidden>Thank you. You are on the waitlist.</p>
@@ -270,15 +238,17 @@
             </div>
         </section>
 
-        <section class="section section--cream" aria-labelledby="talk-heading">
+        <section class="section" aria-labelledby="talk-heading">
             <div class="wrap">
-                <span class="eyebrow rule-label">Work with us</span>
-                <h2 id="talk-heading">Building the future of Indian grain nutrition? Talk to us.</h2>
-                <ul class="index-links">
-                    <li><a href="/about#investors"><span class="index-title">Investors and grant partners</span><span class="index-desc">Funding the validation stage</span><span class="index-arrow" aria-hidden="true">&rarr;</span></a></li>
-                    <li><a href="/contact"><span class="index-title">Research collaborators</span><span class="index-desc">Get in touch</span><span class="index-arrow" aria-hidden="true">&rarr;</span></a></li>
-                    <li><a href="/careers"><span class="index-title">Join the team</span><span class="index-desc">See open roles</span><span class="index-arrow" aria-hidden="true">&rarr;</span></a></li>
-                </ul>
+                <div class="hb-head">
+                    <span class="chip chip--plain">Work with us</span>
+                    <h2 id="talk-heading" class="hb-h2">Building the future of Indian grain nutrition? Talk to us.</h2>
+                </div>
+                <div class="grid grid--3">
+                    <a class="card hb-link-card" href="/about#investors"><h3>Investors and grant partners</h3><p>Funding the validation stage</p><span class="hb-arrow" aria-hidden="true">&rarr;</span></a>
+                    <a class="card hb-link-card" href="/contact"><h3>Research collaborators</h3><p>Get in touch</p><span class="hb-arrow" aria-hidden="true">&rarr;</span></a>
+                    <a class="card hb-link-card" href="/careers"><h3>Join the team</h3><p>See open roles</p><span class="hb-arrow" aria-hidden="true">&rarr;</span></a>
+                </div>
             </div>
         </section>
 
@@ -318,11 +288,12 @@
         </div>
     </footer>
 
+</div>
     <script src="/assets/vendor/gsap.min.js?v=3.13.0" defer></script>
     <script src="/assets/vendor/ScrollTrigger.min.js?v=3.13.0" defer></script>
     <script src="/assets/vendor/lenis.min.js?v=1.3.4" defer></script>
-    <script src="/assets/js/grain-field.js?v=14" defer></script>
-    <script src="/assets/js/motion.js?v=14" defer></script>
-    <script src="/assets/js/site.js?v=14" defer></script>
+    <script src="/assets/js/grain-field.js?v=15" defer></script>
+    <script src="/assets/js/motion.js?v=15" defer></script>
+    <script src="/assets/js/site.js?v=15" defer></script>
 </body>
 </html>

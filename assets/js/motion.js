@@ -71,7 +71,7 @@
         if (!window.GrainField) return [];
         return Array.prototype.map.call(document.querySelectorAll('[data-grain-number]'), function (box) {
             var field = new GrainField(box.querySelector('canvas'), tuned({ pointerTarget: box, density: 0.02, max: 1800, pushRadius: 50 }));
-            field.setShapes([GrainShapes.field(), GrainShapes.text(box.getAttribute('data-grain-number'), '"Source Serif 4", Georgia, serif')]);
+            field.setShapes([GrainShapes.field(), GrainShapes.text(box.getAttribute('data-grain-number'), 'Inter, system-ui, sans-serif')]);
             return { el: box, field: field };
         });
     }
@@ -104,13 +104,6 @@
         return { el: box, field: field };
     }
 
-    // Home hero: a turning sphere of grains around the calligraphy.
-    function sphereField() {
-        var box = document.querySelector('[data-grain-sphere]');
-        if (!box || !window.GrainSphere) return null;
-        return { el: box, field: new GrainSphere(box.querySelector('canvas'), { pointerTarget: box, count: finePointer ? 1100 : 800 }) };
-    }
-
     // Our standard: loose grains settle into an even, aligned grid.
     function measureField() {
         var box = document.querySelector('[data-measure-field]');
@@ -123,7 +116,19 @@
         return { el: box, field: field };
     }
 
-    var sphere = sphereField();
+    // One platform: a slow swirl of grains inside the dark lead card.
+    function bentoField() {
+        var box = document.querySelector('[data-bento-field]');
+        if (!box || !window.GrainField) return null;
+        var field = new GrainField(box.querySelector('canvas'), tuned({
+            pointerTarget: box, flow: 'swirl', palette: ['#5E5750', '#8E5A32', '#B48C61', '#CDB08A', '#E0CDB2'],
+            density: 0.004, min: 300, max: 1100, pushRadius: 80
+        }));
+        field.options.autoWander = false;
+        return { el: box, field: field };
+    }
+
+    var bento = bentoField();
     var measure = measureField();
     var hero = heroField();
     var scene = sceneField();
@@ -136,7 +141,7 @@
         if (scene) { scene.field.progress = 1; scene.field.still(); }
         numbers.forEach(function (n) { n.field.progress = 1; n.field.still(); n.el.classList.add('is-drawn'); });
         cards.forEach(function (c) { reduce ? c.field.still() : c.field.start(); });
-        if (sphere) { reduce ? sphere.field.draw() : sphere.field.start(); }
+        if (bento) { reduce ? bento.field.still() : bento.field.start(); }
         if (measure) { measure.field.progress = 1; reduce ? measure.field.still() : measure.field.start(); }
         if (made) { made.field.progress = 1; reduce ? made.field.still() : made.field.start(); }
         return;
@@ -313,20 +318,23 @@
         });
     }
 
-    // ---------- Home hero: the sphere turns, and scatters as the page scrolls on ----------
+    // ---------- Home hero: copy rises in, the visual panel settles ----------
 
-    if (sphere) {
-        sphere.field.start();
-        var homeHero = sphere.el.closest('.hero-home');
-        ScrollTrigger.create({
-            trigger: homeHero, start: 'top top', end: 'bottom top', scrub: 0.6,
-            onUpdate: function (st) { sphere.field.scatter = st.progress; }
+    if (document.querySelector('.hb-hero')) {
+        gsap.from('.hb-hero-copy .chip, .hb-hero-copy .lede, .hb-hero-copy .actions', {
+            y: 22, opacity: 0, duration: 1, delay: 0.5, stagger: 0.1, ease: 'expo.out'
         });
-        gsap.fromTo(sphere.el, { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 1.6, ease: 'expo.out', delay: 0.2 });
-        gsap.from('.hero-home .lede, .hero-home .actions, .hero-home .eyebrow', {
-            y: 18, opacity: 0, duration: 1, delay: 0.6, stagger: 0.1, ease: 'expo.out'
-        });
+        gsap.fromTo('.hb-visual', { opacity: 0, y: 30, scale: 0.97 }, { opacity: 1, y: 0, scale: 1, duration: 1.4, delay: 0.25, ease: 'expo.out' });
+        gsap.fromTo('.stat-row .stat', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1, delay: 0.8, stagger: 0.08, ease: 'expo.out' });
     }
+
+    if (bento) bento.field.start();
+    gsap.utils.toArray('.bento').forEach(function (grid) {
+        gsap.fromTo(grid.children, { y: 40, opacity: 0, scale: 0.97 }, {
+            y: 0, opacity: 1, scale: 1, duration: 1.1, ease: 'expo.out', stagger: 0.08,
+            scrollTrigger: { trigger: grid, start: 'top 82%', once: true }
+        });
+    });
 
     // ---------- Hairlines draw across as their columns arrive ----------
 
@@ -341,37 +349,6 @@
         gsap.fromTo(list.querySelectorAll('li'), { y: 30, opacity: 0 }, {
             y: 0, opacity: 1, duration: 1, ease: 'expo.out', stagger: 0.1,
             scrollTrigger: { trigger: list, start: 'top 88%', once: true }
-        });
-    });
-
-    // ---------- What we're building: a pinned horizontal track on wide screens ----------
-
-    document.querySelectorAll('[data-track]').forEach(function (section) {
-        var viewport = section.querySelector('.track-viewport');
-        var track = section.querySelector('.track');
-        var bar = section.querySelector('.track-progress span');
-        var mm = gsap.matchMedia();
-        mm.add('(min-width: 900px)', function () {
-            section.classList.add('is-pinned');
-            var distance = function () { return Math.max(0, track.scrollWidth - viewport.clientWidth); };
-            gsap.to(track, {
-                x: function () { return -distance(); }, ease: 'none',
-                scrollTrigger: {
-                    trigger: section, start: 'top top', end: function () { return '+=' + distance(); },
-                    pin: section.querySelector('.track-pin'), scrub: 0.8, anticipatePin: 1, invalidateOnRefresh: true,
-                    onUpdate: function (st) { if (bar) bar.style.transform = 'scaleX(' + st.progress.toFixed(3) + ')'; }
-                }
-            });
-            return function () { section.classList.remove('is-pinned'); };
-        });
-        mm.add('(max-width: 899px)', function () {
-            var onScroll = function () {
-                var max = viewport.scrollWidth - viewport.clientWidth;
-                if (bar) bar.style.transform = 'scaleX(' + (max > 0 ? viewport.scrollLeft / max : 0).toFixed(3) + ')';
-            };
-            viewport.addEventListener('scroll', onScroll, { passive: true });
-            onScroll();
-            return function () { viewport.removeEventListener('scroll', onScroll); };
         });
     });
 
@@ -417,7 +394,7 @@
 
     // ---------- Cards and advisors fall into place in batches ----------
 
-    ScrollTrigger.batch('.card, .advisor, .team-facts > div, .flow-step .icon, .need-card', {
+    ScrollTrigger.batch('.card, .advisor, .team-facts > div, .flow-step .icon', {
         start: 'top 88%', once: true,
         onEnter: function (batch) {
             // fromTo with explicit end values: a repeated trigger can never leave cards hidden.
