@@ -3,6 +3,16 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/index",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
       "source": "/science",
       "destination": "/platform",
       "statusCode": 301
@@ -66,6 +76,41 @@
       "source": "/blog-((?!origin|bootstrapping)[^/]*)",
       "destination": "/updates",
       "statusCode": 301
+    }
+  ],
+  "headers": [
+    {
+      "source": "/assets/docs/Privacy_Policy.pdf",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "<https://www.oxygenbioinnovations.com/privacy>; rel=\"canonical\""
+        }
+      ]
+    },
+    {
+      "source": "/assets/docs/Terms_and_Conditions.pdf",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "<https://www.oxygenbioinnovations.com/terms>; rel=\"canonical\""
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": ".*\\.vercel\\.app"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
     }
   ]
 }
